@@ -1,2 +1,3 @@
-# proyecto-lp2
-Un proyecto de LP2.
+# Pixies TM
+
+Proyecto para el curso de Lenguaje de Programación 2.

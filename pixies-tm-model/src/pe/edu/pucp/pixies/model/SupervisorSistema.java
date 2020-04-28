@@ -1,5 +1,5 @@
 package pe.edu.pucp.pixies.model;
 
-public class SupervisorSistema {
+public class SupervisorSistema extends SupervisorEquipo {
 
 }

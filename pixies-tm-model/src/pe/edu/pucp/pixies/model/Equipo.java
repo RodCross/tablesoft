@@ -34,7 +34,23 @@ public class Equipo {
         this.lista_agentes.add(agente);
     }
 
+    public void quitarAgente(int id_agente) {
+        for (Agente agente : lista_agentes) {
+            if (id_agente == agente.getIdAgente()) {
+                this.lista_agentes.remove(id_agente);
+            }
+        }
+    }
+
     public void agregarCategoria(Categoria categoria) {
         this.lista_categorias.add(categoria);
+    }
+
+    public void quitarCategoria(int id_categoria) {
+        for (Categoria categoria : lista_categorias) {
+            if (id_categoria == categoria.getIdCategoria()) {
+                this.lista_categorias.remove(id_categoria);
+            }
+        }
     }
 }

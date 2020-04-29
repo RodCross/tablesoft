@@ -27,4 +27,13 @@ public class UsuarioSistemaBiblioteca extends UsuarioPUCP {
     public void agregarTicket(Ticket ticket) {
         lista_tickets.add(ticket);
     }
+
+    public int obtenerEstado(int id_ticket) {
+        for (Ticket ticket : lista_tickets) {
+            if (id_ticket == ticket.getIdTicket()) {
+                return ticket.getEstado();
+            }
+        }
+        return -1; // not found
+    }
 }

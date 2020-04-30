@@ -45,4 +45,12 @@ public class Agente extends UsuarioPUCP {
             }
         }
     }
+
+    public void escalarTicket(int id_ticket, int id_proveedor) {
+        for (Ticket ticket : lista_tickets) {
+            if (id_ticket == ticket.getIdTicket()) {
+                ticket.escalar(id_proveedor);
+            }
+        }
+    }
 }

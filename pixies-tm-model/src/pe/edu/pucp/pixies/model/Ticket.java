@@ -112,4 +112,8 @@ public class Ticket {
     public void reasignarCategoria(int id_categoria) {
         this.setIdCategoria(id_categoria);
     }
+
+    public void escalar(int id_proveedor) {
+        this.setIdProveedor(id_proveedor);
+    }
 }

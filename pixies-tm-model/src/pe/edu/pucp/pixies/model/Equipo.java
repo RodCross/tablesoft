@@ -53,4 +53,16 @@ public class Equipo {
             }
         }
     }
+
+    public void asignarSupervisor(SupervisorEquipo supervisor) {
+        this.setSupervisor(supervisor);
+    }
+
+    public void asignarTicket(int id_agente, Ticket ticket) {
+        for (Agente agente : lista_agentes) {
+            if (id_agente == agente.getIdAgente()) {
+                agente.agregarTicket(ticket);
+            }
+        }
+    }
 }

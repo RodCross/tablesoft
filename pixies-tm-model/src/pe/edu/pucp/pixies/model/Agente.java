@@ -37,4 +37,12 @@ public class Agente extends UsuarioPUCP {
     public void agregarTicket(Ticket ticket) {
         lista_tickets.add(ticket);
     }
+
+    public void reasignarCategoria(int id_ticket, int id_categoria) {
+        for (Ticket ticket : lista_tickets) {
+            if (id_ticket == ticket.getIdTicket()) {
+                ticket.reasignarCategoria(id_categoria);
+            }
+        }
+    }
 }

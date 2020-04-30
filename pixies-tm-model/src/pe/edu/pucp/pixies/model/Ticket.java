@@ -108,4 +108,8 @@ public class Ticket {
     public void setFechaCierre(LocalDateTime fecha_cierre) {
         this.fecha_cierre = fecha_cierre;
     }
+
+    public void reasignarCategoria(int id_categoria) {
+        this.setIdCategoria(id_categoria);
+    }
 }

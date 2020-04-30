@@ -21,4 +21,8 @@ public class MesaAyuda {
     public void agregarEquipo(Equipo equipo) {
         this.lista_equipos.add(equipo);
     }
+
+    public void agregarSupervisor(SupervisorSistema supervisor) {
+        this.setSupervisor(supervisor);
+    }
 }

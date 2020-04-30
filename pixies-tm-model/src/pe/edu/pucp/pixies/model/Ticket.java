@@ -14,13 +14,13 @@ public class Ticket {
     private LocalDateTime fecha_primera_respuesta;
     private LocalDateTime fecha_cierre;
 
-    public Ticket(int id_ticket, int id_categoria, int id_urgencia, int id_proveedor, int estado, String info_adicional,
+    // Ticket no se inicializa con un id_proveedor
+    public Ticket(int id_ticket, int id_categoria, int id_urgencia, int estado, String info_adicional,
             int id_activo_fijo, LocalDateTime fecha_envio, LocalDateTime fecha_primera_respuesta,
             LocalDateTime fecha_cierre) {
         this.id_ticket = id_ticket;
         this.id_categoria = id_categoria;
         this.id_urgencia = id_urgencia;
-        this.id_proveedor = id_proveedor;
         this.estado = estado;
         this.info_adicional = info_adicional;
         this.id_activo_fijo = id_activo_fijo;

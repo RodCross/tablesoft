@@ -18,7 +18,7 @@ public class MesaAyuda {
         this.supervisor = supervisor;
     }
 
-    public void agregarAgente(Equipo equipo) {
+    public void agregarEquipo(Equipo equipo) {
         this.lista_equipos.add(equipo);
     }
 }

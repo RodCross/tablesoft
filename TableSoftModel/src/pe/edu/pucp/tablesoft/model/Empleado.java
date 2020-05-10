@@ -3,7 +3,8 @@ package pe.edu.pucp.tablesoft.model;
 import java.util.ArrayList;
 
 public class Empleado extends Usuario {
-    private int id_usuario_sist_bibl;
+    
+    private int id_empleado;
     private ArrayList<Ticket> lista_tickets;
 
     public Empleado(int codigo_pucp, int dni, String nombre) {
@@ -16,13 +17,22 @@ public class Empleado extends Usuario {
         this.lista_tickets = new ArrayList<>();
     }
 
-    public int getIdUsuarioSistBibl() {
-        return this.id_usuario_sist_bibl;
+    public int getId_empleado() {
+        return id_empleado;
     }
 
-    public void setIdUsuarioSistBibl(int id_usuario_sist_bibl) {
-        this.id_usuario_sist_bibl = id_usuario_sist_bibl;
+    public void setId_empleado(int id_empleado) {
+        this.id_empleado = id_empleado;
     }
+
+    public ArrayList<Ticket> getLista_tickets() {
+        return lista_tickets;
+    }
+
+    public void setLista_tickets(ArrayList<Ticket> lista_tickets) {
+        this.lista_tickets = lista_tickets;
+    }
+
 
     public void agregarTicket(Ticket ticket) {
         lista_tickets.add(ticket);

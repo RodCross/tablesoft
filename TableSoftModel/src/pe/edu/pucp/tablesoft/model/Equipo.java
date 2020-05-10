@@ -10,8 +10,13 @@ public class Equipo {
 
     public Equipo(int id_equipo) {
         this.id_equipo = id_equipo;
-        this.lista_agentes = new ArrayList<Agente>();
-        this.lista_categorias = new ArrayList<Categoria>();
+        this.lista_agentes = new ArrayList<>();
+        this.lista_categorias = new ArrayList<>();
+    }
+    
+    public Equipo(){
+        this.lista_agentes = new ArrayList<>();
+        this.lista_categorias = new ArrayList<>();
     }
 
     public int getId_equipo() {

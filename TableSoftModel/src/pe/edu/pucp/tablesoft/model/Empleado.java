@@ -31,10 +31,7 @@ public class Empleado extends Usuario {
         this.id_empleado = id_empleado;
     }
 
-    public ArrayList<Ticket> getLista_tickets() {       // vale como listarTickets()
-                                                        // que lista tickets creados por agente
-        // FALTA
-        // usa TicketDAO.listar() pero filtra solo aquellos creados por this.id_empleado
+    public ArrayList<Ticket> getLista_tickets() {
         return lista_tickets;
     }
 
@@ -42,7 +39,7 @@ public class Empleado extends Usuario {
         this.lista_tickets = lista_tickets;
     }
 
-
+    // Metodos del negocio
     public void agregarTicket(Ticket ticket) {
         lista_tickets.add(ticket);
     }
@@ -54,5 +51,15 @@ public class Empleado extends Usuario {
             }
         }
         return -1; // not found
+    }
+    
+    public ArrayList<Ticket> listarTickets(){
+        // FALTA
+        // Actualiza el atributo lista_ticket y lo llena con los tickets creados por este empleado
+        // Estos ya podrian estar en la BD
+        // Usa TicketDAO.listar() pero filtra solo aquellos creados por this.id_empleado
+        // Los asigna a este empleado y devuelve la lista
+        
+        return this.lista_tickets;
     }
 }

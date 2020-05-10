@@ -1,13 +1,11 @@
 package pe.edu.pucp.tablesoft.model;
 
-import java.time.LocalDate;
-
 public class Urgencia {
     private int id_urgencia;
     private String nombre;
-    private LocalDate plazo_maximo;
+    private int plazo_maximo;
 
-    public Urgencia(int id_urgencia, String nombre, LocalDate plazo_maximo) {
+    public Urgencia(int id_urgencia, String nombre, int plazo_maximo) {
         this.id_urgencia = id_urgencia;
         this.nombre = nombre;
         this.plazo_maximo = plazo_maximo;
@@ -32,11 +30,11 @@ public class Urgencia {
         this.nombre = nombre;
     }
 
-    public LocalDate getPlazoMaximo() {
+    public int getPlazoMaximo() {
         return this.plazo_maximo;
     }
 
-    public void setPlazoMaximo(LocalDate plazo_maximo) {
+    public void setPlazoMaximo(int plazo_maximo) {
         this.plazo_maximo = plazo_maximo;
     }
 }

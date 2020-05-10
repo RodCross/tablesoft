@@ -1,5 +1,7 @@
 package pe.edu.pucp.tablesoft.model;
 
+import java.time.LocalDateTime;
+
 public class Supervisor extends Agente {
     
     // Constructores
@@ -11,6 +13,23 @@ public class Supervisor extends Agente {
     }
     
     // Metodos del negocio
-    //public String reporteTickets()
+    public String reporteTickets(LocalDateTime fecha_inicio, LocalDateTime fecha_fin){
+        /* Reporte de tickets del mismo equipo */
+        String reporte = "";
+        Equipo miEquipo = this.getEquipo();
+        
+        // FALTA
+        
+        return reporte;
+    }
     
+    public void agregarCategoria(Categoria categoria){
+        /* Agrega una categoria al equipo */
+        this.getEquipo().agregarCategoria(categoria);
+    }
+    
+    public void quitarCategoria(int id_categoria){
+        /* Quita una categoria del equipo */
+        this.getEquipo().quitarCategoria(id_categoria);
+    }
 }

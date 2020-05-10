@@ -14,6 +14,9 @@ public class Ticket {
     private LocalDateTime fecha_primera_respuesta;
     private LocalDateTime fecha_cierre;
 
+    private Usuario creador;
+    private Agente agente;
+    
     // Ticket no se inicializa con un id_proveedor
     public Ticket(int id_ticket, Categoria categoria, Urgencia urgencia, int estado, String info_adicional,
             int id_activo_fijo, LocalDateTime fecha_envio, LocalDateTime fecha_primera_respuesta,
@@ -51,16 +54,16 @@ public class Ticket {
     public Categoria getCategoria() {
         return categoria;
     }
-    // Reasignar categoria
-    public void setCategoria(Categoria categoria) {
+    
+    public void setCategoria(Categoria categoria) { // Reasignar categoria
         this.categoria = categoria;
     }
 
     public Proveedor getProveedor() {
         return proveedor;
     }
-    // Escalar
-    public void setProveedor(Proveedor proveedor) {
+    
+    public void setProveedor(Proveedor proveedor) { // Escalar
         this.proveedor = proveedor;
     }
 

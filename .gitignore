@@ -23,3 +23,5 @@
 hs_err_pid*
 /TableSoft/nbproject/private/
 /TableSoftModel/nbproject/private/
+/TableSoftModel/build/
+/TableSoftModel/dist/

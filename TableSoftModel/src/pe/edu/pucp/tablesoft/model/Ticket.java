@@ -4,9 +4,9 @@ import java.time.LocalDateTime;
 
 public class Ticket {
     private int id_ticket;
-    private int id_categoria;
-    private int id_urgencia;
-    private int id_proveedor;
+    private Urgencia urgencia;
+    private Categoria categoria;
+    private Proveedor proveedor;
     private int estado;
     private String info_adicional;
     private int id_activo_fijo;
@@ -15,12 +15,12 @@ public class Ticket {
     private LocalDateTime fecha_cierre;
 
     // Ticket no se inicializa con un id_proveedor
-    public Ticket(int id_ticket, int id_categoria, int id_urgencia, int estado, String info_adicional,
+    public Ticket(int id_ticket, Categoria categoria, Urgencia urgencia, int estado, String info_adicional,
             int id_activo_fijo, LocalDateTime fecha_envio, LocalDateTime fecha_primera_respuesta,
             LocalDateTime fecha_cierre) {
         this.id_ticket = id_ticket;
-        this.id_categoria = id_categoria;
-        this.id_urgencia = id_urgencia;
+        this.categoria = categoria;
+        this.urgencia = urgencia;
         this.estado = estado;
         this.info_adicional = info_adicional;
         this.id_activo_fijo = id_activo_fijo;
@@ -28,7 +28,10 @@ public class Ticket {
         this.fecha_primera_respuesta = fecha_primera_respuesta;
         this.fecha_cierre = fecha_cierre;
     }
-
+    public Ticket(){
+        
+    }
+    
     public int getIdTicket() {
         return this.id_ticket;
     }
@@ -37,28 +40,28 @@ public class Ticket {
         this.id_ticket = id_ticket;
     }
 
-    public int getIdCategoria() {
-        return this.id_categoria;
+    public Urgencia getUrgencia() {
+        return urgencia;
     }
 
-    public void setIdCategoria(int id_categoria) {
-        this.id_categoria = id_categoria;
+    public void setUrgencia(Urgencia urgencia) {
+        this.urgencia = urgencia;
     }
 
-    public int getIdUrgencia() {
-        return this.id_urgencia;
+    public Categoria getCategoria() {
+        return categoria;
+    }
+    // Reasignar categoria
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
-    public void setIdUrgencia(int id_urgencia) {
-        this.id_urgencia = id_urgencia;
+    public Proveedor getProveedor() {
+        return proveedor;
     }
-
-    public int getIdProveedor() {
-        return this.id_proveedor;
-    }
-
-    public void setIdProveedor(int id_proveedor) {
-        this.id_proveedor = id_proveedor;
+    // Escalar
+    public void setProveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
     }
 
     public int getEstado() {
@@ -107,13 +110,5 @@ public class Ticket {
 
     public void setFechaCierre(LocalDateTime fecha_cierre) {
         this.fecha_cierre = fecha_cierre;
-    }
-
-    public void reasignarCategoria(int id_categoria) {
-        this.setIdCategoria(id_categoria);
-    }
-
-    public void escalar(int id_proveedor) {
-        this.setIdProveedor(id_proveedor);
     }
 }

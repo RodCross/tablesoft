@@ -8,6 +8,9 @@ public class Proveedor {
         this.id_proveedor = id_proveedor;
         this.nombre = nombre;
     }
+    public Proveedor(){
+        
+    }
 
     public int getId_proveedor() {
         return this.id_proveedor;

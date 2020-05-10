@@ -16,6 +16,10 @@ public class Empleado extends Usuario {
         super(codigo_pucp, dni, nombre, correo_electronico);
         this.lista_tickets = new ArrayList<>();
     }
+    
+    public Empleado(){
+        this.lista_tickets = new ArrayList<>();
+    }
 
     public int getId_empleado() {
         return id_empleado;

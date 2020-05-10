@@ -12,6 +12,9 @@ public class Urgencia {
         this.nombre = nombre;
         this.plazo_maximo = plazo_maximo;
     }
+    public Urgencia(){
+        
+    }
 
     public int getIdUrgencia() {
         return this.id_urgencia;

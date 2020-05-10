@@ -51,18 +51,18 @@ public class Agente extends Usuario {
         lista_tickets.add(ticket);
     }
 
-    public void reasignarCategoria(int id_ticket, int id_categoria) {
+    public void reasignarCategoria(int id_ticket, Categoria categoria) {
         for (Ticket ticket : lista_tickets) {
             if (id_ticket == ticket.getIdTicket()) {
-                ticket.reasignarCategoria(id_categoria);
+                ticket.setCategoria(categoria);
             }
         }
     }
 
-    public void escalarTicket(int id_ticket, int id_proveedor) {
+    public void escalarTicket(int id_ticket, Proveedor proveedor) {
         for (Ticket ticket : lista_tickets) {
             if (id_ticket == ticket.getIdTicket()) {
-                ticket.escalar(id_proveedor);
+                ticket.setProveedor(proveedor);
             }
         }
     }

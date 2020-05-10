@@ -7,6 +7,7 @@ public class Empleado extends Usuario {
     private int id_empleado;
     private ArrayList<Ticket> lista_tickets;
 
+    // Constructores
     public Empleado(int codigo_pucp, int dni, String nombre) {
         super(codigo_pucp, dni, nombre);
         this.lista_tickets = new ArrayList<>();
@@ -20,7 +21,8 @@ public class Empleado extends Usuario {
     public Empleado(){
         this.lista_tickets = new ArrayList<>();
     }
-
+    
+    // Getters y setters
     public int getId_empleado() {
         return id_empleado;
     }
@@ -29,7 +31,10 @@ public class Empleado extends Usuario {
         this.id_empleado = id_empleado;
     }
 
-    public ArrayList<Ticket> getLista_tickets() {
+    public ArrayList<Ticket> getLista_tickets() {       // vale como listarTickets()
+                                                        // que lista tickets creados por agente
+        // FALTA
+        // usa TicketDAO.listar() pero filtra solo aquellos creados por this.id_empleado
         return lista_tickets;
     }
 

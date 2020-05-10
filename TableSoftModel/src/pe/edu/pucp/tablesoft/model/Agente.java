@@ -7,7 +7,24 @@ public class Agente extends Usuario {
     private String correo_agente;
     private ArrayList<Ticket> lista_tickets;
     private Equipo equipo;
+    
+    // Constructores
+    public Agente(){
+            lista_tickets = new ArrayList();
+        }
 
+    public Agente(int codigo_pucp, int dni, String nombre) {
+        super(codigo_pucp, dni, nombre);
+        lista_tickets = new ArrayList<>();
+    }
+
+    public Agente(int codigo_pucp, int dni, String nombre, String correo_agente) {
+        super(codigo_pucp, dni, nombre);
+        this.correo_agente = correo_agente;
+        lista_tickets = new ArrayList<>();
+    }
+    
+    // Getter y setter
     public int getId_agente() {
         return id_agente;
     }
@@ -31,22 +48,27 @@ public class Agente extends Usuario {
     public void setCorreo_agente(String correo_agente) {
         this.correo_agente = correo_agente;
     }
+
+    public ArrayList<Ticket> getLista_tickets() {
+        return lista_tickets;
+    }
+
+    public void setLista_tickets(ArrayList<Ticket> lista_tickets) {
+        this.lista_tickets = lista_tickets;
+    }
     
-    public Agente(){
-        lista_tickets = new ArrayList();
+    
+    // Metodos del negocio
+    public ArrayList<Ticket> listarTickets(){
+        // FALTA
+        // Actualiza el atributo lista_ticket y lo llena con los tickets asignados a este agente
+        // Estos estan en la BD
+        // Usa TicketDAO.listar() pero filtra solo aquellos asignaods a este agente
+        // Los asigna a este objeto y devuelve la lista
+        
+        return this.lista_tickets;
     }
-
-    public Agente(int codigo_pucp, int dni, String nombre) {
-        super(codigo_pucp, dni, nombre);
-        lista_tickets = new ArrayList<>();
-    }
-
-    public Agente(int codigo_pucp, int dni, String nombre, String correo_agente) {
-        super(codigo_pucp, dni, nombre);
-        this.correo_agente = correo_agente;
-        lista_tickets = new ArrayList<>();
-    }
-
+    
     public void agregarTicket(Ticket ticket) {
         lista_tickets.add(ticket);
     }

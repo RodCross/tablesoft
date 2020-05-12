@@ -44,13 +44,13 @@ public class Empleado extends Usuario {
         lista_tickets.add(ticket);
     }
 
-    public int obtenerEstado(int id_ticket) {
+    public String obtenerEstado(int id_ticket) {
         for (Ticket ticket : lista_tickets) {
-            if (id_ticket == ticket.getIdTicket()) {
+            if (id_ticket == ticket.getTicketId()) {
                 return ticket.getEstado();
             }
         }
-        return -1; // not found
+        return ""; // not found
     }
     
     public ArrayList<Ticket> listarTickets(){

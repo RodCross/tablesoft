@@ -75,7 +75,7 @@ public class Agente extends Usuario {
 
     public void reasignarCategoria(int id_ticket, Categoria categoria) {
         for (Ticket ticket : listaTickets) {
-            if (id_ticket == ticket.getIdTicket()) {
+            if (id_ticket == ticket.getTicketId()) {
                 ticket.setCategoria(categoria);
             }
         }
@@ -83,7 +83,7 @@ public class Agente extends Usuario {
 
     public void escalarTicket(int id_ticket, Proveedor proveedor) {
         for (Ticket ticket : listaTickets) {
-            if (id_ticket == ticket.getIdTicket()) {
+            if (id_ticket == ticket.getTicketId()) {
                 ticket.setProveedor(proveedor);
             }
         }

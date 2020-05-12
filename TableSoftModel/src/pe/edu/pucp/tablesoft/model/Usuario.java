@@ -2,17 +2,17 @@ package pe.edu.pucp.tablesoft.model;
 
 public class Usuario {
     private String codigoPUCP;
-    private int dni;
+    private String dni;
     private String nombre;
     private String emailUsuario;
 
-    public Usuario(String codigo_pucp, int dni, String nombre) {
+    public Usuario(String codigo_pucp, String dni, String nombre) {
         this.codigoPUCP = codigo_pucp;
         this.dni = dni;
         this.nombre = nombre;
     }
 
-    public Usuario(String codigo_pucp, int dni, String nombre, String correo_electronico) {
+    public Usuario(String codigo_pucp, String dni, String nombre, String correo_electronico) {
         this.codigoPUCP = codigo_pucp;
         this.dni = dni;
         this.nombre = nombre;
@@ -31,11 +31,11 @@ public class Usuario {
         this.codigoPUCP = codigo_pucp;
     }
 
-    public int getDni() {
+    public String getDni() {
         return this.dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

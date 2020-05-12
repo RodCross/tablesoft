@@ -105,7 +105,7 @@ public class EquipoMySQL implements EquipoDAO{
                         Supervisor sup = new Supervisor();
                         sup.setAgenteEmail(rs.getString("agente_email"));
                         sup.setAgenteId(rs.getInt("agente_id"));
-                        //sup.setCodigoPucp(rs.getString("codigo"));
+                        sup.setCodigoPucp(rs.getString("codigo"));
                     }
                 }
             }

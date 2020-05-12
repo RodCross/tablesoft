@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
 import pe.edu.pucp.tablesoft.model.Agente;
+import pe.edu.pucp.tablesoft.model.Categoria;
 import pe.edu.pucp.tablesoft.model.Equipo;
 import pe.edu.pucp.tablesoft.model.Supervisor;
 
@@ -106,7 +107,29 @@ public class EquipoMySQL implements EquipoDAO{
                         sup.setAgenteEmail(rs.getString("agente_email"));
                         sup.setAgenteId(rs.getInt("agente_id"));
                         sup.setCodigoPucp(rs.getString("codigo"));
+                        sup.setEquipo(e);
+                        // FALTA: asignar nombre, dni y correoUsuario
+                        e.asignarSupervisor(sup);
                     }
+                    else if("Agente".equals(rol)){
+                        Agente ag = new Agente();
+                        ag.setAgenteEmail(rs.getString("agente_email"));
+                        ag.setAgenteId(rs.getInt("agente_id"));
+                        ag.setCodigoPucp(rs.getString("codigo"));
+                        ag.setEquipo(e);
+                        // FALTA: asignar nombre, dni y correoUsuario
+                        e.agregarAgente(ag);
+                    }
+                }
+                // Para cada equipo buscamos sus categorias
+                sql = "SELECT * FROM CATEGORIA WHERE equipo_id = " + e.getId_equipo();
+                ps = con.prepareStatement(sql);
+                rs = ps.executeQuery();
+                while(rs.next()){
+                    Categoria cat = new Categoria();
+                    cat.setIdCategoria(rs.getInt("categoria_id"));
+                    cat.setNombre(rs.getString("nombre"));
+                    //cat.setEquipo(e);
                 }
             }
             con.close();

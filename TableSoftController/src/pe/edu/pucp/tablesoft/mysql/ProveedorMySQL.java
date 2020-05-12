@@ -25,10 +25,10 @@ public class ProveedorMySQL implements ProveedorDAO {
             
             CallableStatement cs = con.prepareCall(
                     "{call INSERTAR_PROVEEDOR(?,?)}");
-            cs.registerOutParameter("proveedor_id", java.sql.Types.INTEGER);
-            cs.setString("nombre", proveedor.getNombre());
+            cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
+            cs.setString("_NOMBRE", proveedor.getNombre());
             cs.executeUpdate();
-            rpta = cs.getInt("proveedor_id");
+            rpta = cs.getInt("_ID");
             con.close();
          }catch(Exception ex){
              System.out.println(ex.getMessage());

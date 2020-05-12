@@ -1,14 +1,18 @@
 package pe.edu.pucp.tablesoft.model;
 
+import java.util.ArrayList;
+
 public class Urgencia {
     private int id_urgencia;
     private String nombre;
     private int plazo_maximo;
+    private ArrayList<Ticket> lista_tickets;
 
     public Urgencia(int id_urgencia, String nombre, int plazo_maximo) {
         this.id_urgencia = id_urgencia;
         this.nombre = nombre;
         this.plazo_maximo = plazo_maximo;
+        this.lista_tickets = new ArrayList<>();
     }
     public Urgencia(){}
 

@@ -75,7 +75,7 @@ public class EquipoMySQL implements EquipoDAO{
     public ArrayList<Equipo> listar() {
         // Devuelve una lista de los Equipos en la BD
         // Cada equipo estara lleno con su respectiva lista de categorias,
-        // agentes y supervisor. Cada agente solo tendra su id.
+        // agentes y supervisor.
         ArrayList<Equipo> equipos = new ArrayList<>();
         Connection con;
         try{
@@ -85,7 +85,7 @@ public class EquipoMySQL implements EquipoDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
-            String sql = "SELECT * FROM EQUIPO";
+            String sql = "SELECT * FROM equipo";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){

@@ -3,25 +3,25 @@ package pe.edu.pucp.tablesoft.model;
 import java.util.ArrayList;
 
 public class Urgencia {
-    private int id_urgencia;
+    private int urgenciaId;
     private String nombre;
-    private int plazo_maximo;
-    private ArrayList<Ticket> lista_tickets;
+    private int plazoMaximo;
+    private ArrayList<Ticket> listaTickets;
 
-    public Urgencia(int id_urgencia, String nombre, int plazo_maximo) {
-        this.id_urgencia = id_urgencia;
+    public Urgencia(int urgenciaId, String nombre, int plazoMaximo) {
+        this.urgenciaId = urgenciaId;
         this.nombre = nombre;
-        this.plazo_maximo = plazo_maximo;
-        this.lista_tickets = new ArrayList<>();
+        this.plazoMaximo = plazoMaximo;
+        this.listaTickets = new ArrayList<>();
     }
     public Urgencia(){}
 
-    public int getIdUrgencia() {
-        return this.id_urgencia;
+    public int getUrgenciaId() {
+        return this.urgenciaId;
     }
 
-    public void setIdUrgencia(int id_urgencia) {
-        this.id_urgencia = id_urgencia;
+    public void setUrgenciaId(int id_urgencia) {
+        this.urgenciaId = id_urgencia;
     }
 
     public String getNombre() {
@@ -33,10 +33,10 @@ public class Urgencia {
     }
 
     public int getPlazoMaximo() {
-        return this.plazo_maximo;
+        return this.plazoMaximo;
     }
 
-    public void setPlazoMaximo(int plazo_maximo) {
-        this.plazo_maximo = plazo_maximo;
+    public void setPlazoMaximo(int plazoMaximo) {
+        this.plazoMaximo = plazoMaximo;
     }
 }

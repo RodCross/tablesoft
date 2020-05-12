@@ -3,34 +3,34 @@ package pe.edu.pucp.tablesoft.model;
 import java.util.ArrayList;
 
 public class Agente extends Usuario {
-    private int id_agente;
-    private String correo_agente;
-    private ArrayList<Ticket> lista_tickets;
+    private int agenteId;
+    private String agenteEmail;
+    private ArrayList<Ticket> listaTickets;
     private Equipo equipo;
     
     // Constructores
     public Agente(){
-            lista_tickets = new ArrayList();
+            listaTickets = new ArrayList();
         }
 
     public Agente(int codigo_pucp, int dni, String nombre) {
         super(codigo_pucp, dni, nombre);
-        lista_tickets = new ArrayList<>();
+        listaTickets = new ArrayList<>();
     }
 
     public Agente(int codigo_pucp, int dni, String nombre, String correo_agente) {
         super(codigo_pucp, dni, nombre);
-        this.correo_agente = correo_agente;
-        lista_tickets = new ArrayList<>();
+        this.agenteEmail = correo_agente;
+        listaTickets = new ArrayList<>();
     }
     
     // Getter y setter
-    public int getId_agente() {
-        return id_agente;
+    public int getAgenteId() {
+        return agenteId;
     }
 
-    public void setId_agente(int id_agente) {
-        this.id_agente = id_agente;
+    public void setAgenteId(int agenteId) {
+        this.agenteId = agenteId;
     }
 
     public Equipo getEquipo() {
@@ -41,20 +41,20 @@ public class Agente extends Usuario {
         this.equipo = equipo;
     }
 
-    public String getCorreo_agente() {
-        return correo_agente;
+    public String getAgenteEmail() {
+        return agenteEmail;
     }
 
-    public void setCorreo_agente(String correo_agente) {
-        this.correo_agente = correo_agente;
+    public void setAgenteEmail(String agenteEmail) {
+        this.agenteEmail = agenteEmail;
     }
 
-    public ArrayList<Ticket> getLista_tickets() {
-        return lista_tickets;
+    public ArrayList<Ticket> getListaTickets() {
+        return listaTickets;
     }
 
-    public void setLista_tickets(ArrayList<Ticket> lista_tickets) {
-        this.lista_tickets = lista_tickets;
+    public void setListaTickets(ArrayList<Ticket> listaTickets) {
+        this.listaTickets = listaTickets;
     }
     
     
@@ -66,15 +66,15 @@ public class Agente extends Usuario {
         // Usa TicketDAO.listar() pero filtra solo aquellos asignaods a este agente
         // Los asigna a este objeto y devuelve la lista
         
-        return this.lista_tickets;
+        return this.listaTickets;
     }
     
     public void agregarTicket(Ticket ticket) {
-        lista_tickets.add(ticket);
+        listaTickets.add(ticket);
     }
 
     public void reasignarCategoria(int id_ticket, Categoria categoria) {
-        for (Ticket ticket : lista_tickets) {
+        for (Ticket ticket : listaTickets) {
             if (id_ticket == ticket.getIdTicket()) {
                 ticket.setCategoria(categoria);
             }
@@ -82,7 +82,7 @@ public class Agente extends Usuario {
     }
 
     public void escalarTicket(int id_ticket, Proveedor proveedor) {
-        for (Ticket ticket : lista_tickets) {
+        for (Ticket ticket : listaTickets) {
             if (id_ticket == ticket.getIdTicket()) {
                 ticket.setProveedor(proveedor);
             }

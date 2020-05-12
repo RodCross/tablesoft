@@ -62,7 +62,7 @@ public class Equipo {
         int i;
         i = 0;
         for (Agente agente : lista_agentes) {
-            if (id_agente == agente.getId_agente()) {
+            if (id_agente == agente.getAgenteId()) {
                 this.lista_agentes.remove(i);
             }
             i++;
@@ -107,7 +107,7 @@ public class Equipo {
 
     public void asignarTicket(int id_agente, Ticket ticket) {
         for (Agente agente : lista_agentes) {
-            if (id_agente == agente.getId_agente()) {
+            if (id_agente == agente.getAgenteId()) {
                 agente.agregarTicket(ticket);
             }
         }

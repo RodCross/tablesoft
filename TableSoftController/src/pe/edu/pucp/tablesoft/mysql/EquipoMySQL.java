@@ -103,8 +103,8 @@ public class EquipoMySQL implements EquipoDAO{
                     String rol = rs.getString("rol");
                     if("Supervisor".equals(rol)){
                         Supervisor sup = new Supervisor();
-                        sup.setCorreo_agente(rs.getString("agente_email"));
-                        sup.setId_agente(rs.getInt("agente_id"));
+                        sup.setAgenteEmail(rs.getString("agente_email"));
+                        sup.setAgenteId(rs.getInt("agente_id"));
                         //sup.setCodigoPucp(rs.getString("codigo"));
                     }
                 }

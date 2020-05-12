@@ -129,7 +129,8 @@ public class EquipoMySQL implements EquipoDAO{
                     Categoria cat = new Categoria();
                     cat.setIdCategoria(rs.getInt("categoria_id"));
                     cat.setNombre(rs.getString("nombre"));
-                    //cat.setEquipo(e);
+                    cat.setEquipo(e);
+                    e.agregarCategoria(cat);
                 }
             }
             con.close();

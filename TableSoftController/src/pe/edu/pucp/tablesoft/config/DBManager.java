@@ -8,7 +8,7 @@ package pe.edu.pucp.tablesoft.config;
 
 public class DBManager {
     public static String urlMySQL = "jdbc:mysql://" +
-                "lp2-pixies.chjoagiapimg.us-east-1.rds.amazonaws.com::3306/dbpixies";
+                "lp2-pixies.chjoagiapimg.us-east-1.rds.amazonaws.com:3306/dbpixies";
     public static String user = "admin";
     public static String password = "yosoyellobo";
 }

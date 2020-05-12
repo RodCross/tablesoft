@@ -7,9 +7,15 @@ public class Urgencia {
     private String nombre;
     private int plazoMaximo;
     private ArrayList<Ticket> listaTickets;
-
+    
     public Urgencia(int urgenciaId, String nombre, int plazoMaximo) {
         this.urgenciaId = urgenciaId;
+        this.nombre = nombre;
+        this.plazoMaximo = plazoMaximo;
+        this.listaTickets = new ArrayList<>();
+    }
+
+    public Urgencia(String nombre, int plazoMaximo) {
         this.nombre = nombre;
         this.plazoMaximo = plazoMaximo;
         this.listaTickets = new ArrayList<>();

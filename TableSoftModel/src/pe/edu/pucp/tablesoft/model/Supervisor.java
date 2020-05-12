@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 public class Supervisor extends Agente {
     
     // Constructores
-    public Supervisor(int codigo_pucp, int dni, String nombre, String correo_agente) {
+    public Supervisor(String codigo_pucp, String dni, String nombre, String correo_agente) {
         super(codigo_pucp, dni, nombre, correo_agente);
     }
     public Supervisor(){

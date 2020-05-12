@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.edu.pucp.tablesoft.mysql;
 
 import java.sql.CallableStatement;
@@ -29,10 +24,11 @@ public class ProveedorMySQL implements ProveedorDAO {
                     DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{call INSERTAR_PROVEEDOR(?)}");
-            cs.setString(1, proveedor.getNombre());
+                    "{call INSERTAR_PROVEEDOR(?,?)}");
+            cs.registerOutParameter("proveedor_id", java.sql.Types.INTEGER);
+            cs.setString("nombre", proveedor.getNombre());
             cs.executeUpdate();
-            rpta = cs.getInt("_ID_EMPLEADO");
+            rpta = cs.getInt("proveedor_id");
             con.close();
          }catch(Exception ex){
              System.out.println(ex.getMessage());

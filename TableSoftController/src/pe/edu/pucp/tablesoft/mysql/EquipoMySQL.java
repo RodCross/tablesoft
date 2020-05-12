@@ -8,7 +8,9 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
+import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.Equipo;
+import pe.edu.pucp.tablesoft.model.Supervisor;
 
 
 public class EquipoMySQL implements EquipoDAO{
@@ -97,7 +99,14 @@ public class EquipoMySQL implements EquipoDAO{
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
                 while(rs.next()){
-                    //Agente ag = new Agente();
+                    // Verificar el rol
+                    String rol = rs.getString("rol");
+                    if("Supervisor".equals(rol)){
+                        Supervisor sup = new Supervisor();
+                        sup.setCorreo_agente(rs.getString("agente_email"));
+                        sup.setId_agente(rs.getInt("agente_id"));
+                        //sup.setCodigoPucp(rs.getString("codigo"));
+                    }
                 }
             }
             con.close();

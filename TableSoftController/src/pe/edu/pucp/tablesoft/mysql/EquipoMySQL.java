@@ -33,6 +33,7 @@ public class EquipoMySQL implements EquipoDAO{
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             con.close();
+            equipo.setId_equipo(rpta);
             
          }catch(Exception ex){
              System.out.println(ex.getMessage());

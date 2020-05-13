@@ -59,6 +59,18 @@ public class AgenteMySQL implements AgenteDAO{
     @Override
     public int actualizar(Agente agente) {
         int res = 0;
+        
+        String rol;
+        if (agente instanceof Administrador) {
+            rol = "Administrador";
+        }
+        else if (agente instanceof Supervisor) {
+            rol = "Supervisor";
+        }
+        else {
+            rol = "Agente";
+        }
+        
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
@@ -69,7 +81,7 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setInt(1, agente.getAgenteId());
             cs.setString(2, agente.getCodigo());
             cs.setString(3, agente.getAgenteEmail());
-            cs.setString(4, "Agente");
+            cs.setString(4, rol);
             cs.setInt(5, agente.getEquipo().getEquipoId());
             
             cs.executeUpdate();
@@ -114,7 +126,26 @@ public class AgenteMySQL implements AgenteDAO{
             ResultSet rs=cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {
-                Agente agente = new Agente();
+                
+                String rol = rs.getString("rol");
+                Agente agente;
+                if(null != rol)switch (rol) {
+                    case "Agente":{
+                        agente = new Agente();
+                            break;
+                    }
+                    case "Supervisor":{
+                        Supervisor agente = new Supervisor();
+                        break;
+                    }
+                    case "Administrador":{
+                        Administrador agente = new Administrador();
+                        break;
+                    }
+                    default:
+                        break;
+                }
+                
                 agente.setAgenteId(rs.getInt("agente_id"));
                 agente.setCodigo(rs.getString("codigo"));
                 agente.setDni(rs.getString("dni"));

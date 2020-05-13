@@ -12,8 +12,14 @@ public class Categoria {
         tickets = new ArrayList<>();
     }
     
-    public Categoria(int categoriaId, String nombre) {
+    public Categoria(int categoriaId, String nombre, Equipo equipo) {
         this.categoriaId = categoriaId;
+        this.nombre = nombre;
+        tickets = new ArrayList<>();
+        this.equipo = equipo;
+    }
+    
+    public Categoria(String nombre) {
         this.nombre = nombre;
         tickets = new ArrayList<>();
     }

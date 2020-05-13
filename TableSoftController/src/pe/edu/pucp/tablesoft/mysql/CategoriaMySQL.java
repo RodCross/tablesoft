@@ -26,10 +26,9 @@ public class CategoriaMySQL implements CategoriaDAO{
                    DBManager.user, DBManager.password);
 
            CallableStatement cs = con.prepareCall(
-                   "{call INSERTAR_CATEGORIA(?,?,?)}");
+                   "{call INSERTAR_CATEGORIA(?,?)}");
            cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
            cs.setString("_NOMBRE", categoria.getNombre());
-           cs.setInt("_EQUIPO", categoria.getEquipo().getEquipoId());
            cs.executeUpdate();
            rpta = cs.getInt("_ID");
            categoria.setIdCategoria(rpta);

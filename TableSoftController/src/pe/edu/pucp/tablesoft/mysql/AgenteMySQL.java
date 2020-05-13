@@ -56,7 +56,7 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setString(2, agente.getCodigoPucp());
             cs.setString(3, agente.getAgenteEmail());
             cs.setString(4, "Agente");
-            cs.setInt(5, agente.getEquipo().getId_equipo());
+            cs.setInt(5, agente.getEquipo().getEquipoId());
             
             cs.executeUpdate();
             res = 1;

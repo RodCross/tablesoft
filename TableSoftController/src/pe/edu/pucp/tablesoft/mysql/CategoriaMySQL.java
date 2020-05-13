@@ -104,9 +104,9 @@ public class CategoriaMySQL implements CategoriaDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
-            String sql = "SELECT * FROM categoria";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ResultSet rs = ps.executeQuery();
+            CallableStatement cs = con.prepareCall(
+                    "{call listar_categoria()}");
+            ResultSet rs=cs.executeQuery();
             
             //Saco una lista de equipos
             ArrayList<Equipo> equipos = new ArrayList<>();

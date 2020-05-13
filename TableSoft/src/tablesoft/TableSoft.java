@@ -1,4 +1,5 @@
 package tablesoft;
+import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.model.Urgencia;
 import pe.edu.pucp.tablesoft.mysql.UrgenciaMySQL;
 import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
@@ -13,15 +14,22 @@ public class TableSoft {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        //UrgenciaDAO daoUrgencia = new UrgenciaMySQL();
-        
-        /*Urgencia urgencia = new Urgencia(5, "ELIMINABLE", 89);
+        UrgenciaDAO daoUrgencia = new UrgenciaMySQL();
+        ArrayList<Urgencia> urgencias = new ArrayList<>();
+        //Urgencia urgencia = new Urgencia(5, "ELIMINABLE", 89);
         int codigo = 5;
         int result;
         
-        result = daoUrgencia.eliminar(codigo);   */
-        //result = daoUrgencia.actualizar(urgencia);   
+        
+        
+        
+           
         //result = daoUrgencia.insertar(urgencia);
+        //result = daoUrgencia.actualizar(urgencia);
+        //result = daoUrgencia.eliminar(codigo);   
+        urgencias = daoUrgencia.listar();
+        
+        
         /*if(result==0)
             System.out.println("Ha ocurrido un error\n");
         else{
@@ -41,6 +49,12 @@ public class TableSoft {
         else{   
             System.out.println("Se ha eliminado de manera exitosa\n");            
         }*/
+        
+        urgencias = daoUrgencia.listar();
+        for (Urgencia u : urgencias)
+            System.out.println(u.mostrarDatosUrgencia());
+        
+        
         
     }
     

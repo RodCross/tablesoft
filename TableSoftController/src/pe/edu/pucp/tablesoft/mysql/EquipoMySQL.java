@@ -20,25 +20,25 @@ public class EquipoMySQL implements EquipoDAO{
     public int insertar(Equipo equipo) {
         Connection con;
         int rpta = 0;
-         try{
+        try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
-            
+
             CallableStatement cs = con.prepareCall(
                     "{call INSERTAR_EQUIPO(?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             con.close();
-            equipo.setId_equipo(rpta);
-            
-         }catch(Exception ex){
-             System.out.println(ex.getMessage());
-         }
-         return rpta;
+            equipo.setEquipoId(rpta);
+
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
     }
 
     @Override
@@ -51,25 +51,25 @@ public class EquipoMySQL implements EquipoDAO{
     public int eliminar(int idEquipo) {
         Connection con;
         int rpta = 0;
-         try{
+        try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
-            
+
             CallableStatement cs = con.prepareCall(
                     "{call ELIMINAR_EQUIPO(?)}");
             cs.setInt("_ID", idEquipo);
             cs.executeUpdate();
-            
+
             con.close();
-            
-         }catch(Exception ex){
-             System.out.println(ex.getMessage());
-             rpta = -1;
-         }
-         return rpta;
+
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        }
+        return rpta;
     }
 
     @Override
@@ -79,7 +79,7 @@ public class EquipoMySQL implements EquipoDAO{
         // agentes y supervisor.
         ArrayList<Equipo> equipos = new ArrayList<>();
         Connection con;
-        try{
+        try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
@@ -89,21 +89,21 @@ public class EquipoMySQL implements EquipoDAO{
             String sql = "SELECT * FROM equipo";
             PreparedStatement ps = con.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
-            while(rs.next()){
+            while(rs.next()) {
                 Equipo equipo = new Equipo();
-                equipo.setId_equipo(rs.getInt("equipo_id"));
+                equipo.setEquipoId(rs.getInt("equipo_id"));
                 equipos.add(equipo);
             }
             
-            for(Equipo e : equipos){
+            for(Equipo e : equipos) {
                 // Para cada equipo buscamos sus agentes y su supervisor
-                sql = "SELECT * FROM AGENTE WHERE equipo_id = " + e.getId_equipo();
+                sql = "SELECT * FROM AGENTE WHERE equipo_id = " + e.getEquipoId();
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
-                while(rs.next()){
+                while(rs.next()) {
                     // Verificar el rol
                     String rol = rs.getString("rol");
-                    if("Supervisor".equals(rol)){
+                    if("Supervisor".equals(rol)) {
                         Supervisor sup = new Supervisor();
                         sup.setAgenteEmail(rs.getString("agente_email"));
                         sup.setAgenteId(rs.getInt("agente_id"));
@@ -112,7 +112,7 @@ public class EquipoMySQL implements EquipoDAO{
                         // FALTA: asignar nombre, dni y correoUsuario
                         e.asignarSupervisor(sup);
                     }
-                    else if("Agente".equals(rol)){
+                    else if("Agente".equals(rol)) {
                         Agente ag = new Agente();
                         ag.setAgenteEmail(rs.getString("agente_email"));
                         ag.setAgenteId(rs.getInt("agente_id"));
@@ -123,10 +123,10 @@ public class EquipoMySQL implements EquipoDAO{
                     }
                 }
                 // Para cada equipo buscamos sus categorias
-                sql = "SELECT * FROM CATEGORIA WHERE equipo_id = " + e.getId_equipo();
+                sql = "SELECT * FROM CATEGORIA WHERE equipo_id = " + e.getEquipoId();
                 ps = con.prepareStatement(sql);
                 rs = ps.executeQuery();
-                while(rs.next()){
+                while(rs.next()) {
                     Categoria cat = new Categoria();
                     cat.setIdCategoria(rs.getInt("categoria_id"));
                     cat.setNombre(rs.getString("nombre"));
@@ -136,7 +136,7 @@ public class EquipoMySQL implements EquipoDAO{
             }
             con.close();
             
-        }catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return equipos;

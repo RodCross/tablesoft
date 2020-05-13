@@ -8,13 +8,13 @@ public class Categoria {
     private ArrayList<Ticket> tickets;
     private Equipo equipo;
     
-    public Categoria(int id_categoria, String nombre) {
-        this.categoriaId = id_categoria;
-        this.nombre = nombre;
+    public Categoria() {
         tickets = new ArrayList<>();
     }
     
-    public Categoria(){
+    public Categoria(int categoriaId, String nombre) {
+        this.categoriaId = categoriaId;
+        this.nombre = nombre;
         tickets = new ArrayList<>();
     }
 
@@ -26,13 +26,12 @@ public class Categoria {
         this.equipo = equipo;
     }
     
-    
     public int getIdCategoria() {
         return this.categoriaId;
     }
 
-    public void setIdCategoria(int id_categoria) {
-        this.categoriaId = id_categoria;
+    public void setIdCategoria(int categoriaId) {
+        this.categoriaId = categoriaId;
     }
 
     public String getNombre() {

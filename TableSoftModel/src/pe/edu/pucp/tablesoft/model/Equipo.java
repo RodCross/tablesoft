@@ -3,30 +3,30 @@ package pe.edu.pucp.tablesoft.model;
 import java.util.ArrayList;
 
 public class Equipo {
-    private int id_equipo;
-    private ArrayList<Agente> lista_agentes;
-    private ArrayList<Categoria> lista_categorias;
+    private int equipoId;
+    private ArrayList<Agente> listaAgentes;
+    private ArrayList<Categoria> listaCategorias;
     private Supervisor supervisor;
     
     // Constructores
-    public Equipo(int id_equipo) {
-        this.id_equipo = id_equipo;
-        this.lista_agentes = new ArrayList<>();
-        this.lista_categorias = new ArrayList<>();
+    public Equipo(int equipoId) {
+        this.equipoId = equipoId;
+        this.listaAgentes = new ArrayList<>();
+        this.listaCategorias = new ArrayList<>();
     }
     
-    public Equipo(){
-        this.lista_agentes = new ArrayList<>();
-        this.lista_categorias = new ArrayList<>();
+    public Equipo() {
+        this.listaAgentes = new ArrayList<>();
+        this.listaCategorias = new ArrayList<>();
     }
     
-    // Getter y setter
-    public int getId_equipo() {
-        return this.id_equipo;
+    // Getters y setters
+    public int getEquipoId() {
+        return equipoId;
     }
 
-    public void setId_equipo(int id_equipo) {
-        this.id_equipo = id_equipo;
+    public void setEquipoId(int equipoId) {
+        this.equipoId = equipoId;
     }
 
     public Supervisor getSupervisor() {
@@ -37,67 +37,62 @@ public class Equipo {
         this.supervisor = supervisor;
     }
 
-    public ArrayList<Agente> getLista_agentes() {
-        return lista_agentes;
+    public ArrayList<Agente> getListaAgentes() {
+        return listaAgentes;
     }
 
-    public void setLista_agentes(ArrayList<Agente> lista_agentes) {
-        this.lista_agentes = lista_agentes;
+    public void setListaAgentes(ArrayList<Agente> listaAgentes) {
+        this.listaAgentes = listaAgentes;
     }
 
-    public ArrayList<Categoria> getLista_categorias() {
-        return lista_categorias;
+    public ArrayList<Categoria> getListaCategorias() {
+        return listaCategorias;
     }
 
-    public void setLista_categorias(ArrayList<Categoria> lista_categorias) {
-        this.lista_categorias = lista_categorias;
+    public void setListaCategorias(ArrayList<Categoria> listaCategorias) {
+        this.listaCategorias = listaCategorias;
     }
     
     // Metodos del negocio
     public void agregarAgente(Agente agente) {
-        this.lista_agentes.add(agente);
+        this.listaAgentes.add(agente);
     }
 
-    public void quitarAgente(int id_agente) {
-        int i;
-        i = 0;
-        for (Agente agente : lista_agentes) {
-            if (id_agente == agente.getAgenteId()) {
-                this.lista_agentes.remove(i);
+    public void quitarAgente(int agenteId) {
+        for (Agente agente : listaAgentes) {
+            if (agenteId == agente.getAgenteId()) {
+                this.listaAgentes.remove(agente);
+                break;
             }
-            i++;
         }
     }
     
-    public ArrayList<Agente> listarAgentes(){
+    public ArrayList<Agente> listarAgentes() {
         // FALTA
-        // Actualiza el atributo lista_agentes y lo llena con 
+        // Actualiza el atributo listaAgentes y lo llena con 
         // los agentes registrados en este equipo en la BD
-        // Usa AgenteDAO.listar() pero filtra solo aquellos que pertenecen a this.id_equipo
+        // Usa AgenteDAO.listar() pero filtra solo aquellos que pertenecen a this.equipoId
         // Los asigna a este empleado y devuelve la lista
         
-        return this.lista_agentes;
+        return this.listaAgentes;
     }
     
-    public ArrayList<Categoria> listarCategorias(){
+    public ArrayList<Categoria> listarCategorias() {
         // FALTA
         // Saca los datos de la BD y actualiza el atributo correspondiente
         
-        return this.lista_categorias;
+        return this.listaCategorias;
     }
 
     public void agregarCategoria(Categoria categoria) {
-        this.lista_categorias.add(categoria);
+        this.listaCategorias.add(categoria);
     }
 
-    public void quitarCategoria(int id_categoria) {
-        int i;
-        i = 0;
-        for (Categoria categoria : lista_categorias) {
-            if (id_categoria == categoria.getIdCategoria()) {
-                this.lista_categorias.remove(i);
+    public void quitarCategoria(int categoriaId) {
+        for (Categoria categoria : listaCategorias) {
+            if (categoriaId == categoria.getIdCategoria()) {
+                this.listaCategorias.remove(categoria);
             }
-            i++;
         }
     }
 
@@ -106,7 +101,7 @@ public class Equipo {
     }
 
     public void asignarTicket(int id_agente, Ticket ticket) {
-        for (Agente agente : lista_agentes) {
+        for (Agente agente : listaAgentes) {
             if (id_agente == agente.getAgenteId()) {
                 agente.agregarTicket(ticket);
             }

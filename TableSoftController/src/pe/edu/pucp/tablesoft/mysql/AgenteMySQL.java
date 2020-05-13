@@ -30,13 +30,13 @@ public class AgenteMySQL implements AgenteDAO{
             
             String rol;
             if (agente instanceof Administrador) {
-                rol = "ADMINISTRADOR";
+                rol = "Administrador";
             }
             else if (agente instanceof Supervisor) {
-                rol = "SUPERVISOR";
+                rol = "Supervisor";
             }
             else {
-                rol = "AGENTE";
+                rol = "Agente";
             }
             
             CallableStatement cs = con.prepareCall("{CALL insertar_agente(?,?,?,?,?,?,?)}");
@@ -69,7 +69,7 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setInt(1, agente.getAgenteId());
             cs.setString(2, agente.getCodigo());
             cs.setString(3, agente.getAgenteEmail());
-            cs.setString(4, "AGENTE");
+            cs.setString(4, "Agente");
             cs.setInt(5, agente.getEquipo().getEquipoId());
             
             cs.executeUpdate();

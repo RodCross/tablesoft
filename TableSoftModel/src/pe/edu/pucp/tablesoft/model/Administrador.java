@@ -57,7 +57,7 @@ public class Administrador extends Supervisor {
         String reporte = "";
         // FALTA
         // Usa TicketsDAO.listar() para obtener todos los tickets
-        // O Agente.listar() para obtener todos los supervisores y usar su metodo de reporte
+        // O AgenteDAO.listar() para obtener todos los supervisores y usar su metodo de reporte
         // Modo define si es por equipos, o por categorias
         
         return reporte;

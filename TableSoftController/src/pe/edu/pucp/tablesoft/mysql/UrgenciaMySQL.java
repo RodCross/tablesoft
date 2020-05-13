@@ -8,6 +8,7 @@ package pe.edu.pucp.tablesoft.mysql;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
@@ -93,7 +94,37 @@ public class UrgenciaMySQL implements UrgenciaDAO{
 
     @Override
     public ArrayList<Urgencia> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Urgencia> urgencias=new ArrayList<>();
+        Connection con;
+        try{
+            // Registrar el jar de conexion
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            // executeQuery se usa para listados
+            // executeUpdate se usa para insert, update, delete
+            CallableStatement cs = con.prepareCall(
+                    "{call LISTAR_URGENCIA()}");
+            ResultSet rs=cs.executeQuery();
+            // Recorrer todas las filas que devuelve la ejecucion sentencia
+            while(rs.next()){
+                Urgencia urgencia=new Urgencia();
+                urgencia.setUrgenciaId(rs.getInt("urgencia_id"));
+                urgencia.setNombre(rs.getString("nombre"));
+                urgencia.setPlazoMaximo(rs.getInt("horas_plazo_maximo"));
+                urgencias.add(urgencia);
+            }
+            // No olvidarse de cerrar las conexiones
+            con.close();
+        }
+        catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        // Devolviendo los empleados
+        return urgencias;
     }
     
 }

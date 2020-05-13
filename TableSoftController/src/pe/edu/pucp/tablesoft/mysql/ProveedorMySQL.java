@@ -3,26 +3,25 @@ package pe.edu.pucp.tablesoft.mysql;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.model.Proveedor;
 
-
 public class ProveedorMySQL implements ProveedorDAO {
-    
-    Connection con;
-    
     @Override
     public int insertar(Proveedor proveedor) {
         int rpta = 0;
-         try{
+        try {
             //Registrar el JAR de conexión
+
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
+            Connection con;
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
-            
+
             CallableStatement cs = con.prepareCall(
                     "{call INSERTAR_PROVEEDOR(?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
@@ -30,26 +29,88 @@ public class ProveedorMySQL implements ProveedorDAO {
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             con.close();
-            proveedor.setId_proveedor(rpta);
-         }catch(Exception ex){
-             System.out.println(ex.getMessage());
-         }
-         return rpta;
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
     }
 
     @Override
     public int actualizar(Proveedor proveedor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rpta = 0;
+        try {
+            //Registrar el JAR de conexión
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            Connection con;
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+
+            CallableStatement cs = con.prepareCall(
+                    "{call ACTUALIZAR_PROVEEDOR(?,?)}");
+            cs.setInt("_ID", proveedor.getProveedorId());
+            cs.setString("_NOMBRE", proveedor.getNombre());
+            rpta=cs.executeUpdate();
+            con.close();
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
     }
 
     @Override
     public int eliminar(int idProveedor) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        int rpta = 0;
+        try {
+            //Registrar el JAR de conexión
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            Connection con;
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+
+            CallableStatement cs = con.prepareCall(
+                    "{call ELIMINAR_PROVEEDOR(?)}");
+            cs.setInt("_ID", idProveedor);
+            rpta = cs.executeUpdate();
+            con.close();
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
     }
 
     @Override
     public ArrayList<Proveedor> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Proveedor> proveedores=new ArrayList<>();
+        try {
+            // Registrar el jar de conexion
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            Connection con;
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            // executeQuery se usa para listados
+            // executeUpdate se usa para insert, update, delete
+            CallableStatement cs = con.prepareCall(
+                    "{call LISTAR_PROVEEDOR()}");
+            ResultSet rs=cs.executeQuery();
+            // Recorrer todas las filas que devuelve la ejecucion sentencia
+            while(rs.next()) {
+                Proveedor proveedor = new Proveedor();
+                proveedor.setProveedorId(rs.getInt("proveedor_id"));
+                proveedor.setNombre(rs.getString("nombre"));
+                proveedores.add(proveedor);
+            }
+            // No olvidarse de cerrar las conexiones
+            con.close();
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        // Devolviendo los empleados
+        return proveedores;
     }
-    
 }

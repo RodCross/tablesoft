@@ -1,30 +1,34 @@
 package pe.edu.pucp.tablesoft.model;
 
 public class Proveedor {
-    private int id_proveedor;
+    private int proveedorId;
     private String nombre;
 
-    public Proveedor(int id_proveedor, String nombre) {
-        this.id_proveedor = id_proveedor;
+    public Proveedor() {
+        
+    }  
+    
+    public Proveedor(String nombre) {
         this.nombre = nombre;
     }
-    public Proveedor(){
-        
+
+    public int getProveedorId() {
+        return proveedorId;
     }
 
-    public int getId_proveedor() {
-        return this.id_proveedor;
-    }
-
-    public void setId_proveedor(int id_proveedor) {
-        this.id_proveedor = id_proveedor;
+    public void setProveedorId(int proveedorId) {
+        this.proveedorId = proveedorId;
     }
 
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+    
+    public String mostrarDatos() {
+        return getProveedorId() + " - " + nombre;
     }
 }

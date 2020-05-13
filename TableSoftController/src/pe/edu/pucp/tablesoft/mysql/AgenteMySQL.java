@@ -126,35 +126,48 @@ public class AgenteMySQL implements AgenteDAO{
             ResultSet rs=cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {
-                
+                Equipo equipo;
                 String rol = rs.getString("rol");
-                Agente agente;
                 if(null != rol)switch (rol) {
-                    case "Agente":{
-                        agente = new Agente();
-                            break;
-                    }
-                    case "Supervisor":{
-                        Supervisor agente = new Supervisor();
+                    case "Agente":
+                        Agente agente = new Agente();
+                        agente.setAgenteId(rs.getInt("agente_id"));
+                        agente.setCodigo(rs.getString("codigo"));
+                        agente.setDni(rs.getString("dni"));
+                        agente.setNombre(rs.getString("nombre"));
+                        agente.setUsuarioEmail(rs.getString("usuario_email"));
+                        agente.setAgenteEmail(rs.getString("agente_email"));
+                        equipo = new Equipo(rs.getInt("equipo_id"));
+                        agente.setEquipo(equipo);
+                        agentes.add(agente);
                         break;
-                    }
-                    case "Administrador":{
-                        Administrador agente = new Administrador();
+                    case "Supervisor":
+                        Supervisor sup = new Supervisor();
+                        sup.setAgenteId(rs.getInt("agente_id"));
+                        sup.setCodigo(rs.getString("codigo"));
+                        sup.setDni(rs.getString("dni"));
+                        sup.setNombre(rs.getString("nombre"));
+                        sup.setUsuarioEmail(rs.getString("usuario_email"));
+                        sup.setAgenteEmail(rs.getString("agente_email"));
+                        equipo = new Equipo(rs.getInt("equipo_id"));
+                        sup.setEquipo(equipo);
+                        agentes.add(sup);
                         break;
-                    }
+                    case "Administrador":
+                        Administrador admin = new Administrador();
+                        admin.setAgenteId(rs.getInt("agente_id"));
+                        admin.setCodigo(rs.getString("codigo"));
+                        admin.setDni(rs.getString("dni"));
+                        admin.setNombre(rs.getString("nombre"));
+                        admin.setUsuarioEmail(rs.getString("usuario_email"));
+                        admin.setAgenteEmail(rs.getString("agente_email"));
+                        equipo = new Equipo(rs.getInt("equipo_id"));
+                        admin.setEquipo(equipo);
+                        agentes.add(admin);
+                        break;
                     default:
                         break;
                 }
-                
-                agente.setAgenteId(rs.getInt("agente_id"));
-                agente.setCodigo(rs.getString("codigo"));
-                agente.setDni(rs.getString("dni"));
-                agente.setNombre(rs.getString("nombre"));
-                agente.setUsuarioEmail(rs.getString("usuario_email"));
-                agente.setAgenteEmail(rs.getString("agente_email"));
-                Equipo equipo = new Equipo(rs.getInt("equipo_id"));
-                agente.setEquipo(equipo);
-                agentes.add(agente);
             }
             //cerrar conexion
             con.close();

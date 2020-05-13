@@ -20,7 +20,8 @@ public class Urgencia {
         this.plazoMaximo = plazoMaximo;
         this.listaTickets = new ArrayList<>();
     }
-    public Urgencia(){
+    
+    public Urgencia() {
         this.listaTickets = new ArrayList<>();
     }
 
@@ -48,11 +49,11 @@ public class Urgencia {
         this.plazoMaximo = plazoMaximo;
     }
     
-    public void agregarTicket(Ticket ticket){
+    public void agregarTicket(Ticket ticket) {
         this.listaTickets.add(ticket);
     }
     
-    public String mostrarDatosUrgencia(){
+    public String mostrarDatosUrgencia() {
         return urgenciaId + " - " + nombre + " - " + plazoMaximo;
     }
 }

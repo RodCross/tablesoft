@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.edu.pucp.tablesoft.mysql;
 
 import java.sql.CallableStatement;
@@ -21,7 +16,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
     public int insertar(Urgencia urgencia) {
         int rpta = 0;
         Connection con;
-         try{             
+        try {             
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
@@ -36,17 +31,17 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             con.close();
-         }catch(Exception ex){
-             System.out.println(ex.getMessage());
-         }
-         return rpta;
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
     }
 
     @Override
     public int actualizar(Urgencia urgencia) {
         int rpta = 0;
         Connection con;
-         try{             
+        try {             
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
@@ -62,17 +57,17 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             cs.executeUpdate();
             rpta = cs.getInt("_REALIZADO");
             con.close();
-         }catch(Exception ex){
-             System.out.println(ex.getMessage());
-         }
-         return rpta;
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
     }
 
     @Override
     public int eliminar(int idUrgencia) {
         Connection con;
         int rpta = 0;
-         try{
+        try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
@@ -86,17 +81,17 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             cs.executeUpdate();
             rpta = cs.getInt("_REALIZADO");
             con.close();
-         }catch(Exception ex){
-             System.out.println(ex.getMessage());
-         }
-         return rpta;
+        } catch(Exception ex) {
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
     }
 
     @Override
     public ArrayList<Urgencia> listar() {
         ArrayList<Urgencia> urgencias=new ArrayList<>();
         Connection con;
-        try{
+        try {
             // Registrar el jar de conexion
             Class.forName("com.mysql.cj.jdbc.Driver");
             //Establecer la conexion
@@ -110,7 +105,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
                     "{call LISTAR_URGENCIA()}");
             ResultSet rs=cs.executeQuery();
             // Recorrer todas las filas que devuelve la ejecucion sentencia
-            while(rs.next()){
+            while(rs.next()) {
                 Urgencia urgencia=new Urgencia();
                 urgencia.setUrgenciaId(rs.getInt("urgencia_id"));
                 urgencia.setNombre(rs.getString("nombre"));
@@ -119,8 +114,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             }
             // No olvidarse de cerrar las conexiones
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         // Devolviendo los empleados

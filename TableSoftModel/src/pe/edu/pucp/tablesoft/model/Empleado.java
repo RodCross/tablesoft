@@ -8,17 +8,13 @@ public class Empleado extends Usuario {
     private ArrayList<Ticket> listaTickets;
 
     // Constructores
-    public Empleado(String codigo, String dni, String nombre) {
-        super(codigo, dni, nombre);
-        this.listaTickets = new ArrayList<>();
-    }
-
-    public Empleado(String codigo, String dni, String nombre, String usuarioEmail) {
-        super(codigo, dni, nombre, usuarioEmail);
+    
+    public Empleado() {
         this.listaTickets = new ArrayList<>();
     }
     
-    public Empleado() {
+    public Empleado(String codigo, String dni, String nombre, String usuarioEmail) {
+        super(codigo, dni, nombre, usuarioEmail);
         this.listaTickets = new ArrayList<>();
     }
     

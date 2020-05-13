@@ -25,10 +25,13 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{CALL insertar_empleado(?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL insertar_empleado(?,?,?,?,?)}");
             
             cs.registerOutParameter(1, java.sql.Types.INTEGER);
             cs.setString(2, empleado.getCodigo());
+            cs.setString(3, empleado.getDni());
+            cs.setString(4, empleado.getNombre());
+            cs.setString(5, empleado.getUsuarioEmail());
             cs.executeUpdate();
             
             res = cs.getInt(1);

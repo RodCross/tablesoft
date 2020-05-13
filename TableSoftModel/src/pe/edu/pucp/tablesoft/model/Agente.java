@@ -13,13 +13,8 @@ public class Agente extends Usuario {
         listaTickets = new ArrayList();
     }
 
-    public Agente(String codigo, String dni, String nombre) {
-        super(codigo, dni, nombre);
-        listaTickets = new ArrayList<>();
-    }
-
-    public Agente(String codigo, String dni, String nombre, String agenteEmail) {
-        super(codigo, dni, nombre);
+    public Agente(String codigo, String dni, String nombre, String usuarioEmail, String agenteEmail) {
+        super(codigo, dni, nombre, usuarioEmail);
         this.agenteEmail = agenteEmail;
         listaTickets = new ArrayList<>();
     }

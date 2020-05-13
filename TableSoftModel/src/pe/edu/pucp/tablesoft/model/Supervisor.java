@@ -5,12 +5,12 @@ import java.time.LocalDateTime;
 public class Supervisor extends Agente {
     
     // Constructores
-    public Supervisor(String codigo, String dni, String nombre, String agenteEmail) {
-        super(codigo, dni, nombre, agenteEmail);
-    }
-    
     public Supervisor() {
         
+    }
+    
+    public Supervisor(String codigo, String dni, String nombre, String usuarioEmail, String agenteEmail) {
+        super(codigo, dni, nombre, usuarioEmail, agenteEmail);
     }
     
     // Metodos del negocio

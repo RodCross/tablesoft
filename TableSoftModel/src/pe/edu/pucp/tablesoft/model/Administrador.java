@@ -9,12 +9,12 @@ import java.time.LocalDateTime;
 */
 
 public class Administrador extends Supervisor {
-    public Administrador(String codigo, String dni, String nombre, String agenteEmail) {
-        super(codigo, dni, nombre, agenteEmail);
-    }
-    
     public Administrador() {
         
+    }
+    
+    public Administrador(String codigo, String dni, String nombre, String usuarioEmail, String agenteEmail) {
+        super(codigo, dni, nombre, usuarioEmail, agenteEmail);
     }
     
     // Metodos del negocio

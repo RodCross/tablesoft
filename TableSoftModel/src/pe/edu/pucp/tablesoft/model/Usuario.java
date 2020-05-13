@@ -9,12 +9,6 @@ public class Usuario {
     public Usuario() {
         
     }
-    
-    public Usuario(String codigo, String dni, String nombre) {
-        this.codigo = codigo;
-        this.dni = dni;
-        this.nombre = nombre;
-    }
 
     public Usuario(String codigo, String dni, String nombre, String usuarioEmail) {
         this.codigo = codigo;

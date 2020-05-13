@@ -12,8 +12,10 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
+import pe.edu.pucp.tablesoft.model.Administrador;
 import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.Equipo;
+import pe.edu.pucp.tablesoft.model.Supervisor;
 
 
 public class AgenteMySQL implements AgenteDAO{
@@ -26,12 +28,25 @@ public class AgenteMySQL implements AgenteDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{CALL insertar_agente(?,?,?,?)}");
+            String rol;
+            if (agente instanceof Administrador) {
+                rol = "ADMINISTRADOR";
+            }
+            else if (agente instanceof Supervisor) {
+                rol = "SUPERVISOR";
+            }
+            else {
+                rol = "AGENTE";
+            }
             
+            CallableStatement cs = con.prepareCall("{CALL insertar_agente(?,?,?,?,?,?,?)}");
             cs.registerOutParameter(1, java.sql.Types.INTEGER);
             cs.setString(2, agente.getCodigo());
-            cs.setString(3, agente.getAgenteEmail());
-            cs.setString(4, "AGENTE");
+            cs.setString(3, agente.getDni());
+            cs.setString(4, agente.getNombre());
+            cs.setString(5, agente.getUsuarioEmail());
+            cs.setString(6, agente.getAgenteEmail());
+            cs.setString(7, rol);
             cs.executeUpdate();
             res = cs.getInt(1);
             con.close();

@@ -1,4 +1,4 @@
-package tablesoft;
+package pe.edu.pucp.tablesoft.main;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.model.Urgencia;
 import pe.edu.pucp.tablesoft.mysql.UrgenciaMySQL;
@@ -7,7 +7,7 @@ import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
  *
  * @author migue
  */
-public class TableSoft {
+public class Principal {
 
     /**
      * @param args the command line arguments

@@ -67,22 +67,15 @@ public class Equipo {
         }
     }
     
-    public ArrayList<Agente> listarAgentes() {
-        // FALTA
-        // Actualiza el atributo listaAgentes y lo llena con
-        // los agentes registrados en este equipo en la BD
-        // Usa AgenteDAO.listar() pero filtra solo aquellos que pertenecen a this.equipoId
-        // Los asigna a este empleado y devuelve la lista
-        
-        return this.listaAgentes;
-    }
+//    public ArrayList<Agente> listarAgentes() { // es getListaAgentes
+//        
+//        return this.listaAgentes;
+//    }
     
-    public ArrayList<Categoria> listarCategorias() {
-        // FALTA
-        // Saca los datos de la BD y actualiza el atributo correspondiente
-        
-        return this.listaCategorias;
-    }
+//    public ArrayList<Categoria> listarCategorias() { // es getListaCategorias
+//
+//        return this.listaCategorias;
+//    }
 
     public void agregarCategoria(Categoria categoria) {
         this.listaCategorias.add(categoria);

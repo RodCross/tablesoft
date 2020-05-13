@@ -54,15 +54,10 @@ public class Agente extends Usuario {
     
     
     // Metodos del negocio
-    public ArrayList<Ticket> listarTickets() {
-        // FALTA
-        // Actualiza el atributo lista_ticket y lo llena con los tickets asignados a este agente
-        // Estos estan en la BD
-        // Usa TicketDAO.listar() pero filtra solo aquellos asignaods a este agente
-        // Los asigna a este objeto y devuelve la lista
-        
-        return this.listaTickets;
-    }
+//    public ArrayList<Ticket> listarTickets() {
+//         
+//        return this.listaTickets;
+//    }
     
     public void agregarTicket(Ticket ticket) {
         listaTickets.add(ticket);

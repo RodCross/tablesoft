@@ -50,13 +50,8 @@ public class Empleado extends Usuario {
         return ""; // not found
     }
     
-    public ArrayList<Ticket> listarTickets() {
-        // FALTA
-        // Actualiza el atributo lista_ticket y lo llena con los tickets creados por este empleado
-        // Estos ya podrian estar en la BD
-        // Usa TicketDAO.listar() pero filtra solo aquellos creados por this.id_empleado
-        // Los asigna a este empleado y devuelve la lista
-        
-        return this.listaTickets;
-    }
+//    public ArrayList<Ticket> listarTickets() {
+//           
+//        return this.listaTickets;
+//    }
 }

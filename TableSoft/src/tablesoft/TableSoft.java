@@ -15,17 +15,32 @@ public class TableSoft {
         // TODO code application logic here
         UrgenciaDAO daoUrgencia = new UrgenciaMySQL();
         
-        Urgencia urgencia = new Urgencia("CONSULTA", 72);
+        Urgencia urgencia = new Urgencia(5, "ELIMINABLE", 89);
+        int codigo = 5;
         int result;
-        result = daoUrgencia.insertar(urgencia);
-        if(result==0)
+        
+        result = daoUrgencia.eliminar(codigo);   
+        //result = daoUrgencia.actualizar(urgencia);   
+        //result = daoUrgencia.insertar(urgencia);
+        /*if(result==0)
             System.out.println("Ha ocurrido un error\n");
         else{
             System.out.println("Se ha registrado de manera exitosa\n");
             System.out.println("El id generado para el empleado es " + result);
             
+        }*/
+        
+        /*if(result==0)
+            System.out.println("Ha ocurrido un error\n");
+        else{
+            System.out.println("Se ha actualizado de manera exitosa\n");            
+        }*/
+         
+        if(result==0)
+            System.out.println("Ha ocurrido un error\n");
+        else{
+            System.out.println("Se ha eliminado de manera exitosa\n");            
         }
-            
     }
     
 }

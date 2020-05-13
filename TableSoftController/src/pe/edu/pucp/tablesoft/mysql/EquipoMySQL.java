@@ -44,7 +44,7 @@ public class EquipoMySQL implements EquipoDAO{
     @Override
     public int actualizar(Equipo equipo) {
         // No puede actualizar el identificador
-        throw new UnsupportedOperationException("Not supported yet.");
+        throw new UnsupportedOperationException("No se puede actualizar.");
     }
 
     @Override
@@ -107,7 +107,7 @@ public class EquipoMySQL implements EquipoDAO{
                         Supervisor sup = new Supervisor();
                         sup.setAgenteEmail(rs.getString("agente_email"));
                         sup.setAgenteId(rs.getInt("agente_id"));
-                        sup.setCodigoPucp(rs.getString("codigo"));
+                        sup.setCodigo(rs.getString("codigo"));
                         sup.setEquipo(e);
                         // FALTA: asignar nombre, dni y correoUsuario
                         e.asignarSupervisor(sup);
@@ -116,7 +116,7 @@ public class EquipoMySQL implements EquipoDAO{
                         Agente ag = new Agente();
                         ag.setAgenteEmail(rs.getString("agente_email"));
                         ag.setAgenteId(rs.getInt("agente_id"));
-                        ag.setCodigoPucp(rs.getString("codigo"));
+                        ag.setCodigo(rs.getString("codigo"));
                         ag.setEquipo(e);
                         // FALTA: asignar nombre, dni y correoUsuario
                         e.agregarAgente(ag);

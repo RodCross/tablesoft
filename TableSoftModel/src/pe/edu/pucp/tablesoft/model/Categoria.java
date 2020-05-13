@@ -32,11 +32,11 @@ public class Categoria {
         this.equipo = equipo;
     }
     
-    public int getIdCategoria() {
+    public int getCategoriaId() {
         return this.categoriaId;
     }
 
-    public void setIdCategoria(int categoriaId) {
+    public void setCategoriaId(int categoriaId) {
         this.categoriaId = categoriaId;
     }
 

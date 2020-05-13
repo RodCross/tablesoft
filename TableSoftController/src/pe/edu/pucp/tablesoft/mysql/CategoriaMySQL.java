@@ -31,7 +31,7 @@ public class CategoriaMySQL implements CategoriaDAO{
            cs.setString("_NOMBRE", categoria.getNombre());
            cs.executeUpdate();
            rpta = cs.getInt("_ID");
-           categoria.setIdCategoria(rpta);
+           categoria.setCategoriaId(rpta);
            con.close();
 
         } catch(Exception ex) {
@@ -53,7 +53,7 @@ public class CategoriaMySQL implements CategoriaDAO{
 
             CallableStatement cs = con.prepareCall(
                     "{CALL actualizar_categoria(?,?,?)}");
-            cs.setInt("_ID", categoria.getIdCategoria());
+            cs.setInt("_ID", categoria.getCategoriaId());
             cs.setString("_NOMBRE", categoria.getNombre());
             cs.setInt("_ID_EQUIPO", categoria.getEquipo().getEquipoId());
             cs.executeUpdate();
@@ -67,7 +67,7 @@ public class CategoriaMySQL implements CategoriaDAO{
     }
 
     @Override
-    public int eliminar(int idCategoria) {
+    public int eliminar(int getCategoriaId) {
         Connection con;
         int rpta = 0;
         try {
@@ -79,7 +79,7 @@ public class CategoriaMySQL implements CategoriaDAO{
 
             CallableStatement cs = con.prepareCall(
                     "{CALL eliminar_categoria(?)}");
-            cs.setInt("_ID", idCategoria);
+            cs.setInt("_ID", getCategoriaId);
             cs.executeUpdate();
             con.close();
 
@@ -115,7 +115,7 @@ public class CategoriaMySQL implements CategoriaDAO{
             
             while(rs.next()) {
                 Categoria categoria = new Categoria();
-                categoria.setIdCategoria(rs.getInt("categoria_id"));
+                categoria.setCategoriaId(rs.getInt("categoria_id"));
                 categoria.setNombre(rs.getString("nombre"));
                 // Agregamos su equipo correspondiente
                 for(Equipo e:equipos) {

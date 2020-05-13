@@ -98,9 +98,9 @@ public class EquipoMySQL implements EquipoDAO{
                 if(equipo_id_actual != equipo_id_anterior){
                     equipo = new Equipo();
                     equipos.add(equipo);
+                    equipo.setEquipoId(equipo_id_actual);
                 }
                 try{
-                    equipo.setEquipoId(equipo_id_actual);
                     String rol = rs.getString("rol");
                     if("Supervisor".equals(rol)){
                         Supervisor sup = new Supervisor();

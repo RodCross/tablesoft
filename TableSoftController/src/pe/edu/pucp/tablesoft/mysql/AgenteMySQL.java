@@ -26,7 +26,7 @@ public class AgenteMySQL implements AgenteDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call INSERTAR_AGENTE(?,?,?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL insertar_agente(?,?,?,?)}");
             
             cs.registerOutParameter(1, java.sql.Types.INTEGER);
             cs.setString(2, agente.getCodigo());
@@ -49,7 +49,7 @@ public class AgenteMySQL implements AgenteDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call ACTUALIZAR_AGENTE(?,?,?,?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL actualizar_agente(?,?,?,?,?)}");
             
             cs.setInt(1, agente.getAgenteId());
             cs.setString(2, agente.getCodigo());
@@ -74,7 +74,7 @@ public class AgenteMySQL implements AgenteDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call ELIMINAR_AGENTE(?)}");
+            CallableStatement cs = con.prepareCall("{CALL eliminar_agente(?)}");
             
             cs.setInt(1, agenteId);
             
@@ -95,7 +95,7 @@ public class AgenteMySQL implements AgenteDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             //Ejecutar una sentencia
-            CallableStatement cs = con.prepareCall("{call LISTAR_AGENTE()}");
+            CallableStatement cs = con.prepareCall("{CALL listar_agente()}");
             ResultSet rs=cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {

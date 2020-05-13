@@ -24,7 +24,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
                     DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{call INSERTAR_URGENCIA(?,?,?)}");
+                    "{CALL insertar_urgencia(?,?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_NOMBRE", urgencia.getNombre());
             cs.setInt("_TIEMPO", urgencia.getPlazoMaximo());
@@ -49,7 +49,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
                     DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{call ACTUALIZAR_URGENCIA(?,?,?,?)}");
+                    "{CALL actualizar_urgencia(?,?,?,?)}");
             cs.registerOutParameter("_REALIZADO", java.sql.Types.INTEGER);
             cs.setInt("_ID", urgencia.getUrgenciaId());
             cs.setString("_NOMBRE", urgencia.getNombre());
@@ -75,7 +75,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
                     DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{call ELIMINAR_URGENCIA(?,?)}");
+                    "{CALL eliminar_urgencia(?,?)}");
             cs.registerOutParameter("_REALIZADO", java.sql.Types.INTEGER);
             cs.setInt("_ID", idUrgencia);
             cs.executeUpdate();
@@ -102,7 +102,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             // executeQuery se usa para listados
             // executeUpdate se usa para insert, update, delete
             CallableStatement cs = con.prepareCall(
-                    "{call LISTAR_URGENCIA()}");
+                    "{CALL listar_urgencia()}");
             ResultSet rs=cs.executeQuery();
             // Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {

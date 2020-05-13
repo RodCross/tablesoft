@@ -23,7 +23,7 @@ public class ProveedorMySQL implements ProveedorDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{call INSERTAR_PROVEEDOR(?,?)}");
+                    "{CALL insertar_proveedor(?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_NOMBRE", proveedor.getNombre());
             cs.executeUpdate();
@@ -48,7 +48,7 @@ public class ProveedorMySQL implements ProveedorDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{call ACTUALIZAR_PROVEEDOR(?,?)}");
+                    "{CALL actualizar_proveedor(?,?)}");
             cs.setInt("_ID", proveedor.getProveedorId());
             cs.setString("_NOMBRE", proveedor.getNombre());
             rpta=cs.executeUpdate();
@@ -72,7 +72,7 @@ public class ProveedorMySQL implements ProveedorDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{call ELIMINAR_PROVEEDOR(?)}");
+                    "{CALL eliminar_proveedor(?)}");
             cs.setInt("_ID", idProveedor);
             rpta = cs.executeUpdate();
             con.close();
@@ -96,7 +96,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             // executeQuery se usa para listados
             // executeUpdate se usa para insert, update, delete
             CallableStatement cs = con.prepareCall(
-                    "{call LISTAR_PROVEEDOR()}");
+                    "{CALL listar_proveedor()}");
             ResultSet rs=cs.executeQuery();
             // Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {

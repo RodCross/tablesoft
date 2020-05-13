@@ -26,7 +26,7 @@ public class CategoriaMySQL implements CategoriaDAO{
                    DBManager.user, DBManager.password);
 
            CallableStatement cs = con.prepareCall(
-                   "{call INSERTAR_CATEGORIA(?,?)}");
+                   "{CALL insertar_categoria(?,?)}");
            cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
            cs.setString("_NOMBRE", categoria.getNombre());
            cs.executeUpdate();
@@ -52,7 +52,7 @@ public class CategoriaMySQL implements CategoriaDAO{
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{call ACTUALIZAR_CATEGORIA(?,?,?)}");
+                    "{CALL actualizar_categoria(?,?,?)}");
             cs.setInt("_ID", categoria.getIdCategoria());
             cs.setString("_NOMBRE", categoria.getNombre());
             cs.setInt("_ID_EQUIPO", categoria.getEquipo().getEquipoId());
@@ -78,7 +78,7 @@ public class CategoriaMySQL implements CategoriaDAO{
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{call ELIMINAR_CATEGORIA(?)}");
+                    "{CALL eliminar_categoria(?)}");
             cs.setInt("_ID", idCategoria);
             cs.executeUpdate();
             con.close();

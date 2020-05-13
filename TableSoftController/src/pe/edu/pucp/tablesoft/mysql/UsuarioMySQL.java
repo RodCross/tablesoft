@@ -24,7 +24,7 @@ public class UsuarioMySQL implements UsuarioDAO {
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL insertar_usuario(?,?,?,?)}");
             
             cs.setString(1, usuario.getCodigo());
             cs.setString(2, usuario.getDni());
@@ -48,7 +48,7 @@ public class UsuarioMySQL implements UsuarioDAO {
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call ACTUALIZAR_USUARIO(?,?,?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL actualizar_usuario(?,?,?,?)}");
             
             cs.setString(1, usuario.getCodigo());
             cs.setString(2, usuario.getDni());
@@ -72,7 +72,7 @@ public class UsuarioMySQL implements UsuarioDAO {
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call ELIMINAR_USUARIO(?)}");
+            CallableStatement cs = con.prepareCall("{CALL eliminar_usuario(?)}");
             
             cs.setString(1, codigo);
             
@@ -92,7 +92,7 @@ public class UsuarioMySQL implements UsuarioDAO {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
-            CallableStatement cs = con.prepareCall("{call LISTAR_USUARIO()}");
+            CallableStatement cs = con.prepareCall("{CALL listar_usuario()}");
             ResultSet rs = cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {

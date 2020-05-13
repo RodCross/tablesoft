@@ -25,7 +25,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call INSERTAR_EMPLEADO(?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL insertar_empleado(?,?)}");
             
             cs.registerOutParameter(1, java.sql.Types.INTEGER);
             cs.setString(2, empleado.getCodigo());
@@ -53,7 +53,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{call ELIMINAR_EMPLEADO(?)}");
+            CallableStatement cs = con.prepareCall("{CALL eliminar_empleado(?)}");
             
             cs.setInt(1, idEmpleado);
             
@@ -74,7 +74,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             //Ejecutar una sentencia
-            CallableStatement cs = con.prepareCall("{call LISTAR_EMPLEADO()}");
+            CallableStatement cs = con.prepareCall("{CALL listar_empleado()}");
             ResultSet rs=cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {

@@ -92,7 +92,7 @@ public class EquipoMySQL implements EquipoDAO{
             ResultSet rs=cs.executeQuery();
             
             int equipo_id_anterior = 0, equipo_id_actual;
-            Equipo equipo;
+            Equipo equipo = new Equipo();
             while(rs.next()) {
                 equipo_id_actual = rs.getInt("equipo_id");
                 if(equipo_id_actual != equipo_id_anterior){

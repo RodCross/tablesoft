@@ -15,28 +15,26 @@ import pe.edu.pucp.tablesoft.dao.UsuarioDAO;
 import pe.edu.pucp.tablesoft.model.Usuario;
 
 
-public class UsuarioMySQL implements UsuarioDAO{
-
+public class UsuarioMySQL implements UsuarioDAO {
     @Override
     public int insertar(Usuario usuario) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall("{call INSERTAR_USUARIO(?,?,?,?)}");
             
-            cs.setString(1, usuario.getCodigoPucp());
+            cs.setString(1, usuario.getCodigo());
             cs.setString(2, usuario.getDni());
             cs.setString(3, usuario.getNombre());
-            cs.setString(4, usuario.getCorreoElectronico());
+            cs.setString(4, usuario.getUsuarioEmail());
             
             cs.executeUpdate();
             res = 1;
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
@@ -45,45 +43,43 @@ public class UsuarioMySQL implements UsuarioDAO{
     @Override
     public int actualizar(Usuario usuario) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall("{call ACTUALIZAR_USUARIO(?,?,?,?)}");
             
-            cs.setString(1, usuario.getCodigoPucp());
+            cs.setString(1, usuario.getCodigo());
             cs.setString(2, usuario.getDni());
             cs.setString(3, usuario.getNombre());
-            cs.setString(4, usuario.getCorreoElectronico());
+            cs.setString(4, usuario.getUsuarioEmail());
             
             cs.executeUpdate();
             res = 1;
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
     }
 
     @Override
-    public int eliminar(int idUsuario) {
+    public int eliminar(String codigo) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall("{call ELIMINAR_USUARIO(?)}");
             
-            cs.setInt(1, idUsuario);
+            cs.setString(1, codigo);
             
             cs.executeUpdate();
             res = 1;
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
@@ -92,27 +88,27 @@ public class UsuarioMySQL implements UsuarioDAO{
     @Override
     public ArrayList<Usuario> listar() {
         ArrayList<Usuario> usuarios = new ArrayList<>();
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             CallableStatement cs = con.prepareCall("{call LISTAR_USUARIO()}");
-            ResultSet rs=cs.executeQuery();
+            ResultSet rs = cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
-            while(rs.next()){
+            while(rs.next()) {
                 Usuario usuario = new Usuario();
-                usuario.setCodigoPucp(rs.getString("codigo"));
+                usuario.setCodigo(rs.getString("codigo"));
                 usuario.setDni(rs.getString("dni"));
                 usuario.setNombre(rs.getString("nombre"));
-                usuario.setCorreoElectronico(rs.getString("usuario_email"));
+                usuario.setUsuarioEmail(rs.getString("usuario_email"));
                 usuarios.add(usuario);
             }
             //cerrar conexion
             con.close();
-        }catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
-        //Devolviendo los empleados
+        //Devolviendo los usuarios
         return usuarios;
     }
     

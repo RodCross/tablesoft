@@ -15,6 +15,6 @@ import pe.edu.pucp.tablesoft.model.Usuario;
 public interface UsuarioDAO {
     int insertar(Usuario usuario);
     int actualizar(Usuario usuario);
-    int eliminar(int idUsuario);
+    int eliminar(String idUsuario);
     ArrayList<Usuario> listar();
 }

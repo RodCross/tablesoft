@@ -9,18 +9,18 @@ public class Agente extends Usuario {
     private Equipo equipo;
     
     // Constructores
-    public Agente(){
-            listaTickets = new ArrayList();
-        }
+    public Agente() {
+        listaTickets = new ArrayList();
+    }
 
-    public Agente(String codigo_pucp, String dni, String nombre) {
-        super(codigo_pucp, dni, nombre);
+    public Agente(String codigo, String dni, String nombre) {
+        super(codigo, dni, nombre);
         listaTickets = new ArrayList<>();
     }
 
-    public Agente(String codigo_pucp, String dni, String nombre, String correo_agente) {
-        super(codigo_pucp, dni, nombre);
-        this.agenteEmail = correo_agente;
+    public Agente(String codigo, String dni, String nombre, String agenteEmail) {
+        super(codigo, dni, nombre);
+        this.agenteEmail = agenteEmail;
         listaTickets = new ArrayList<>();
     }
     
@@ -59,7 +59,7 @@ public class Agente extends Usuario {
     
     
     // Metodos del negocio
-    public ArrayList<Ticket> listarTickets(){
+    public ArrayList<Ticket> listarTickets() {
         // FALTA
         // Actualiza el atributo lista_ticket y lo llena con los tickets asignados a este agente
         // Estos estan en la BD

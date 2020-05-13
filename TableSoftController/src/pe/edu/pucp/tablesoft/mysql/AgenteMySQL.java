@@ -21,22 +21,21 @@ public class AgenteMySQL implements AgenteDAO{
     @Override
     public int insertar(Agente agente) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall("{call INSERTAR_AGENTE(?,?,?,?)}");
             
-            cs.registerOutParameter("agente_id", java.sql.Types.INTEGER);
-            cs.setString(2, agente.getCodigoPucp());
+            cs.registerOutParameter(1, java.sql.Types.INTEGER);
+            cs.setString(2, agente.getCodigo());
             cs.setString(3, agente.getAgenteEmail());
-            cs.setString(4, "Agente");
-            
-            res =cs.executeUpdate();
+            cs.setString(4, "AGENTE");
+            cs.executeUpdate();
+            res = cs.getInt(1);
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
@@ -45,7 +44,7 @@ public class AgenteMySQL implements AgenteDAO{
     @Override
     public int actualizar(Agente agente) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
@@ -53,38 +52,36 @@ public class AgenteMySQL implements AgenteDAO{
             CallableStatement cs = con.prepareCall("{call ACTUALIZAR_AGENTE(?,?,?,?,?)}");
             
             cs.setInt(1, agente.getAgenteId());
-            cs.setString(2, agente.getCodigoPucp());
+            cs.setString(2, agente.getCodigo());
             cs.setString(3, agente.getAgenteEmail());
-            cs.setString(4, "Agente");
+            cs.setString(4, "AGENTE");
             cs.setInt(5, agente.getEquipo().getEquipoId());
             
             cs.executeUpdate();
             res = 1;
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
     }
 
     @Override
-    public int eliminar(int idAgente) {
+    public int eliminar(int agenteId) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall("{call ELIMINAR_AGENTE(?)}");
             
-            cs.setInt(1, idAgente);
+            cs.setInt(1, agenteId);
             
             cs.executeUpdate();
             res = 1;
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
@@ -93,7 +90,7 @@ public class AgenteMySQL implements AgenteDAO{
     @Override
     public ArrayList<Agente> listar() {
         ArrayList<Agente> agentes = new ArrayList<>();
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
@@ -101,13 +98,13 @@ public class AgenteMySQL implements AgenteDAO{
             CallableStatement cs = con.prepareCall("{call LISTAR_AGENTE()}");
             ResultSet rs=cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
-            while(rs.next()){
+            while(rs.next()) {
                 Agente agente = new Agente();
                 agente.setAgenteId(rs.getInt("agente_id"));
-                agente.setCodigoPucp(rs.getString("codigo"));
+                agente.setCodigo(rs.getString("codigo"));
                 agente.setDni(rs.getString("dni"));
                 agente.setNombre(rs.getString("nombre"));
-                agente.setCorreoElectronico(rs.getString("usuario_email"));
+                agente.setUsuarioEmail(rs.getString("usuario_email"));
                 agente.setAgenteEmail(rs.getString("agente_email"));
                 Equipo equipo = new Equipo(rs.getInt("equipo_id"));
                 agente.setEquipo(equipo);
@@ -115,10 +112,10 @@ public class AgenteMySQL implements AgenteDAO{
             }
             //cerrar conexion
             con.close();
-        }catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
-        //Devolviendo los empleados
+        //Devolviendo los agentes
         return agentes;
     }
     

@@ -4,48 +4,49 @@ import java.util.ArrayList;
 
 public class Empleado extends Usuario {
     
-    private int id_empleado;
-    private ArrayList<Ticket> lista_tickets;
+    private int empleadoId;
+    private ArrayList<Ticket> listaTickets;
 
     // Constructores
-    public Empleado(String codigo_pucp, String dni, String nombre) {
-        super(codigo_pucp, dni, nombre);
-        this.lista_tickets = new ArrayList<>();
+    public Empleado(String codigo, String dni, String nombre) {
+        super(codigo, dni, nombre);
+        this.listaTickets = new ArrayList<>();
     }
 
-    public Empleado(String codigo_pucp, String dni, String nombre, String correo_electronico) {
-        super(codigo_pucp, dni, nombre, correo_electronico);
-        this.lista_tickets = new ArrayList<>();
+    public Empleado(String codigo, String dni, String nombre, String usuarioEmail) {
+        super(codigo, dni, nombre, usuarioEmail);
+        this.listaTickets = new ArrayList<>();
     }
     
-    public Empleado(){
-        this.lista_tickets = new ArrayList<>();
+    public Empleado() {
+        this.listaTickets = new ArrayList<>();
     }
     
     // Getters y setters
-    public int getId_empleado() {
-        return id_empleado;
+
+    public int getEmpleadoId() {
+        return empleadoId;
     }
 
-    public void setId_empleado(int id_empleado) {
-        this.id_empleado = id_empleado;
+    public void setEmpleadoId(int empleadoId) {
+        this.empleadoId = empleadoId;
     }
 
-    public ArrayList<Ticket> getLista_tickets() {
-        return lista_tickets;
+    public ArrayList<Ticket> getListaTickets() {
+        return listaTickets;
     }
 
-    public void setLista_tickets(ArrayList<Ticket> lista_tickets) {
-        this.lista_tickets = lista_tickets;
+    public void setListaTickets(ArrayList<Ticket> listaTickets) {
+        this.listaTickets = listaTickets;
     }
 
     // Metodos del negocio
     public void agregarTicket(Ticket ticket) {
-        lista_tickets.add(ticket);
+        listaTickets.add(ticket);
     }
 
     public String obtenerEstado(int id_ticket) {
-        for (Ticket ticket : lista_tickets) {
+        for (Ticket ticket : listaTickets) {
             if (id_ticket == ticket.getTicketId()) {
                 return ticket.getEstado();
             }
@@ -53,13 +54,13 @@ public class Empleado extends Usuario {
         return ""; // not found
     }
     
-    public ArrayList<Ticket> listarTickets(){
+    public ArrayList<Ticket> listarTickets() {
         // FALTA
         // Actualiza el atributo lista_ticket y lo llena con los tickets creados por este empleado
         // Estos ya podrian estar en la BD
         // Usa TicketDAO.listar() pero filtra solo aquellos creados por this.id_empleado
         // Los asigna a este empleado y devuelve la lista
         
-        return this.lista_tickets;
+        return this.listaTickets;
     }
 }

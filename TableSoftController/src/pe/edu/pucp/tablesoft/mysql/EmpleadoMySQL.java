@@ -20,20 +20,20 @@ public class EmpleadoMySQL implements EmpleadoDAO{
     @Override
     public int insertar(Empleado empleado) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall("{call INSERTAR_EMPLEADO(?,?)}");
             
-            cs.registerOutParameter("empleado_id", java.sql.Types.INTEGER);
-            cs.setString(2, empleado.getCodigoPucp());
+            cs.registerOutParameter(1, java.sql.Types.INTEGER);
+            cs.setString(2, empleado.getCodigo());
+            cs.executeUpdate();
             
-            res = cs.executeUpdate();
+            res = cs.getInt(1);
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
@@ -41,13 +41,14 @@ public class EmpleadoMySQL implements EmpleadoDAO{
 
     @Override
     public int actualizar(Empleado empleado) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // No se puede actualizar ningun campo de empleado
+        throw new UnsupportedOperationException("No se puede actualizar.");
     }
 
     @Override
     public int eliminar(int idEmpleado) {
         int res = 0;
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
@@ -59,8 +60,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             cs.executeUpdate();
             res = 1;
             con.close();
-        }
-        catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         return res;
@@ -69,7 +69,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
     @Override
     public ArrayList<Empleado> listar() {
         ArrayList<Empleado> empleados = new ArrayList<>();
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
@@ -77,18 +77,18 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             CallableStatement cs = con.prepareCall("{call LISTAR_EMPLEADO()}");
             ResultSet rs=cs.executeQuery();
             //Recorrer todas las filas que devuelve la ejecucion sentencia
-            while(rs.next()){
+            while(rs.next()) {
                 Empleado empleado = new Empleado();
-                empleado.setId_empleado(rs.getInt("empleado_id"));
-                empleado.setCodigoPucp(rs.getString("codigo"));
+                empleado.setEmpleadoId(rs.getInt("empleado_id"));
+                empleado.setCodigo(rs.getString("codigo"));
                 empleado.setDni(rs.getString("dni"));
                 empleado.setNombre(rs.getString("nombre"));
-                empleado.setCorreoElectronico(rs.getString("usuario_email"));
+                empleado.setUsuarioEmail(rs.getString("usuario_email"));
                 empleados.add(empleado);
             }
             //cerrar conexion
             con.close();
-        }catch(Exception ex){
+        } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
         //Devolviendo los empleados

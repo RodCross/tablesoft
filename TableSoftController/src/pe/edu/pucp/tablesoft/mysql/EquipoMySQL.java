@@ -28,7 +28,7 @@ public class EquipoMySQL implements EquipoDAO{
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{call instar_equipo(?)}");
+                    "{call insertar_equipo(?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.executeUpdate();
             rpta = cs.getInt("_ID");

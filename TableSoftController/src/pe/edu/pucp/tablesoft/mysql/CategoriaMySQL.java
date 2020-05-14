@@ -55,7 +55,7 @@ public class CategoriaMySQL implements CategoriaDAO{
                     "{CALL actualizar_categoria(?,?,?)}");
             cs.setInt("_ID", categoria.getCategoriaId());
             cs.setString("_NOMBRE", categoria.getNombre());
-            cs.setInt("_ID_EQUIPO", categoria.getEquipo().getEquipoId());
+            cs.setInt("_EQUIPO_ID", categoria.getEquipo().getEquipoId());
             cs.executeUpdate();
             con.close();
 

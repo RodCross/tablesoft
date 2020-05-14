@@ -12,6 +12,6 @@ import pe.edu.pucp.tablesoft.model.Ticket;
 public interface TicketDAO {
     int insertar(Ticket ticket);
     int actualizar(Ticket ticket);
-    int eliminar(int idTicket);
+    int eliminar(int ticketId);
     ArrayList<Ticket> listar();
 }

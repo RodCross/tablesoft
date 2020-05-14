@@ -131,4 +131,10 @@ public class Ticket {
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
+    
+    public String mostrarDatos() {
+        return getTicketId() + " - " + getEstado() + " - " +
+            getFechaEnvio() + " - " + getUrgencia().getUrgenciaId() + " - " +
+            getCategoria().getCategoriaId();
+    }
 }

@@ -1,5 +1,7 @@
 package pe.edu.pucp.tablesoft.main;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
@@ -28,6 +30,12 @@ import pe.edu.pucp.tablesoft.mysql.UsuarioMySQL;
 
 public class Principal {
     public static void main(String[] args) {
-        // Para pruebas
+        TicketDAO ticketDao = new TicketMySQL();
+        ArrayList<Ticket> tickets;
+        
+        tickets = ticketDao.listar();
+        for (Ticket ticket : tickets) {
+            System.out.println(ticket.mostrarDatos());
+        }
     }
 }

@@ -83,7 +83,7 @@ public class Equipo {
 
     public void quitarCategoria(int categoriaId) {
         for (Categoria categoria : listaCategorias) {
-            if (categoriaId == categoria.getIdCategoria()) {
+            if (categoriaId == categoria.getCategoriaId()) {
                 this.listaCategorias.remove(categoria);
             }
         }

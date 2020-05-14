@@ -30,12 +30,6 @@ import pe.edu.pucp.tablesoft.mysql.UsuarioMySQL;
 
 public class Principal {
     public static void main(String[] args) {
-        TicketDAO ticketDao = new TicketMySQL();
-        ArrayList<Ticket> tickets;
-        
-        tickets = ticketDao.listar();
-        for (Ticket ticket : tickets) {
-            System.out.println(ticket.mostrarDatos());
-        }
+        // Para probar
     }
 }

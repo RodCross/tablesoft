@@ -23,8 +23,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_urgencia(?,?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL insertar_urgencia(?,?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_NOMBRE", urgencia.getNombre());
             cs.setInt("_TIEMPO", urgencia.getPlazoMaximo());
@@ -48,14 +47,12 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_urgencia(?,?,?,?)}");
-            cs.registerOutParameter("_REALIZADO", java.sql.Types.INTEGER);
-            cs.setInt("_ID", urgencia.getUrgenciaId());
-            cs.setString("_NOMBRE", urgencia.getNombre());
-            cs.setInt("_TIEMPO", urgencia.getPlazoMaximo());
-            cs.executeUpdate();
-            rpta = cs.getInt("_REALIZADO");
+            CallableStatement cs = con.prepareCall("{CALL actualizar_urgencia(?,?,?)}");
+            cs.setInt(1, urgencia.getUrgenciaId());
+            cs.setString(2, urgencia.getNombre());
+            cs.setInt(3, urgencia.getPlazoMaximo());
+            rpta = cs.executeUpdate();
+            
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
@@ -74,12 +71,10 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall(
-                    "{CALL eliminar_urgencia(?,?)}");
-            cs.registerOutParameter("_REALIZADO", java.sql.Types.INTEGER);
-            cs.setInt("_ID", idUrgencia);
-            cs.executeUpdate();
-            rpta = cs.getInt("_REALIZADO");
+            CallableStatement cs = con.prepareCall("{CALL eliminar_urgencia(?)}");
+            cs.setInt(1, idUrgencia);
+            rpta = cs.executeUpdate();
+            
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());

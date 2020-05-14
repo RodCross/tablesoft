@@ -102,7 +102,7 @@ public class EquipoMySQL implements EquipoDAO{
                 }
                 try{
                     String rol = rs.getString("rol");
-                    if("Supervisor".equals(rol)){
+                    if("SUPERVISOR".equals(rol)){
                         Supervisor sup = new Supervisor();
                         sup.setAgenteEmail(rs.getString("agente_email"));
                         sup.setAgenteId(rs.getInt("agente_id"));
@@ -113,7 +113,7 @@ public class EquipoMySQL implements EquipoDAO{
                         sup.setEquipo(equipo);
                         equipo.asignarSupervisor(sup);
                     }
-                    if("Agente".equals(rol)){
+                    if("AGENTE".equals(rol)){
                         Agente ag = new Agente();
                         ag.setAgenteEmail(rs.getString("agente_email"));
                         ag.setAgenteId(rs.getInt("agente_id"));

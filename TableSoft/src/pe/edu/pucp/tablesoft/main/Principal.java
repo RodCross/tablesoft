@@ -30,6 +30,27 @@ import pe.edu.pucp.tablesoft.mysql.UsuarioMySQL;
 
 public class Principal {
     public static void main(String[] args) {
-        // Para probar
+        //UrgenciaDAO daoUrgencia = new UrgenciaMySQL();
+        //ArrayList<Urgencia> urgencias = new ArrayList<>();
+        //Urgencia urgencia = new Urgencia(5, "ELIMINABLE", 89);
+        //int codigo = 5;
+        //int result;
+        
+
+
+
+        //result = daoUrgencia.insertar(urgencia);
+        //result = daoUrgencia.actualizar(urgencia);
+        //result = daoUrgencia.eliminar(codigo);
+        //urgencias = daoUrgencia.listar();
+        /*if(result==0)
+            System.out.println("Ha ocurrido un error\n");
+        else{
+             System.out.println("Se ha eliminado de manera exitosa\n");            
+        }*/
+        //urgencias = daoUrgencia.listar();
+        //for (Urgencia u : urgencias)
+            //System.out.println(u.mostrarDatosUrgencia());
+        
     }
 }

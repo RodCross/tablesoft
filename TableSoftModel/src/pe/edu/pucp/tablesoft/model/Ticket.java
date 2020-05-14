@@ -26,6 +26,7 @@ public class Ticket {
         this.fechaEnvio = fechaEnvio;
         this.urgencia = urgencia;
         this.categoria = categoria;
+        this.activoFijoId = 0;
     }
 
     public int getTicketId() {

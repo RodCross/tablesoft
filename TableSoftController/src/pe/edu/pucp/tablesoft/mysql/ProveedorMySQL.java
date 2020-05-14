@@ -28,6 +28,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             cs.setString("_NOMBRE", proveedor.getNombre());
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
+            proveedor.setProveedorId(rpta);
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());

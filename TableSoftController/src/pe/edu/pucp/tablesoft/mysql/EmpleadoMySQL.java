@@ -35,6 +35,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             cs.executeUpdate();
             
             res = cs.getInt(1);
+            empleado.setEmpleadoId(res);
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());

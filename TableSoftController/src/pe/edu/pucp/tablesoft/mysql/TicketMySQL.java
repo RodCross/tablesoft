@@ -10,6 +10,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.TicketDAO;
@@ -72,10 +73,31 @@ public class TicketMySQL implements TicketDAO{
                 DBManager.password
             );
             
-            Timestamp fechaEnvio = Timestamp.valueOf(ticket.getFechaEnvio());
-            Timestamp fechaPrimeraRespuesta = Timestamp.valueOf(ticket.getFechaPrimeraRespuesta());
-            Timestamp fechaCierre = Timestamp.valueOf(ticket.getFechaCierre());
+            // Variables auxiliares
+            LocalDateTime envio = ticket.getFechaEnvio(); // nunca es null
+            LocalDateTime prim = ticket.getFechaPrimeraRespuesta();
+            LocalDateTime cierre = ticket.getFechaCierre();
+            int activoFijo = ticket.getActivoFijoId();
             
+            // Convertir a Timestamp
+            Timestamp fechaEnvio, fechaPrimeraRespuesta, fechaCierre;
+            
+            fechaEnvio = Timestamp.valueOf(envio);
+            
+            if (prim != null) {
+                fechaPrimeraRespuesta = Timestamp.valueOf(prim);
+            }
+            else {
+                fechaPrimeraRespuesta = null;
+            }
+            
+            if (cierre != null) {
+                fechaCierre = Timestamp.valueOf(cierre);
+            }
+            else {
+                fechaCierre = null;
+            }
+ 
             CallableStatement cs = con.prepareCall(
                 "{CALL actualizar_ticket(?,?,?,?,?,?,?,?,?,?,?,?,?)}"
             );
@@ -86,7 +108,12 @@ public class TicketMySQL implements TicketDAO{
             cs.setTimestamp(5, fechaEnvio);
             cs.setTimestamp(6, fechaPrimeraRespuesta);
             cs.setTimestamp(7, fechaCierre);
-            cs.setInt(8, ticket.getActivoFijoId());
+            if (activoFijo != 0) {
+                cs.setInt(8, activoFijo);
+            }
+            else {
+                cs.setNull(8, java.sql.Types.INTEGER);
+            }
             cs.setInt(9, ticket.getEmpleado().getEmpleadoId());
             cs.setInt(10, ticket.getAgente().getAgenteId());
             cs.setInt(11, ticket.getUrgencia().getUrgenciaId());

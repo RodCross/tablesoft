@@ -29,6 +29,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             cs.setInt("_TIEMPO", urgencia.getPlazoMaximo());
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
+            urgencia.setUrgenciaId(rpta);
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());

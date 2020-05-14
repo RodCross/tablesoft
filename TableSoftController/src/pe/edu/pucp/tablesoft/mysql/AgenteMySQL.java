@@ -30,13 +30,13 @@ public class AgenteMySQL implements AgenteDAO{
             
             String rol;
             if (agente instanceof Administrador) {
-                rol = "Administrador";
+                rol = "ADMINISTRADOR";
             }
             else if (agente instanceof Supervisor) {
-                rol = "Supervisor";
+                rol = "SUPERVISOR";
             }
             else {
-                rol = "Agente";
+                rol = "AGENTE";
             }
             
             CallableStatement cs = con.prepareCall("{CALL insertar_agente(?,?,?,?,?,?,?)}");
@@ -49,6 +49,7 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setString(7, rol);
             cs.executeUpdate();
             res = cs.getInt(1);
+            agente.setAgenteId(res);
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
@@ -62,13 +63,13 @@ public class AgenteMySQL implements AgenteDAO{
         
         String rol;
         if (agente instanceof Administrador) {
-            rol = "Administrador";
+            rol = "ADMINISTRADOR";
         }
         else if (agente instanceof Supervisor) {
-            rol = "Supervisor";
+            rol = "SUPERVISOR";
         }
         else {
-            rol = "Agente";
+            rol = "AGENTE";
         }
         
         try {
@@ -76,16 +77,18 @@ public class AgenteMySQL implements AgenteDAO{
             Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
                 DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{CALL actualizar_agente(?,?,?,?,?)}");
+            CallableStatement cs = con.prepareCall("{CALL actualizar_agente(?,?,?,?,?,?,?,?)}");
             
             cs.setInt(1, agente.getAgenteId());
             cs.setString(2, agente.getCodigo());
-            cs.setString(3, agente.getAgenteEmail());
-            cs.setString(4, rol);
-            cs.setInt(5, agente.getEquipo().getEquipoId());
+            cs.setString(3, agente.getDni());
+            cs.setString(4, agente.getNombre());
+            cs.setString(5, agente.getUsuarioEmail());
+            cs.setString(6, agente.getAgenteEmail());
+            cs.setString(7, rol);
+            cs.setInt(8, agente.getEquipo().getEquipoId());
             
-            cs.executeUpdate();
-            res = 1;
+            res = cs.executeUpdate();
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
@@ -129,7 +132,7 @@ public class AgenteMySQL implements AgenteDAO{
                 Equipo equipo;
                 String rol = rs.getString("rol");
                 if(null != rol)switch (rol) {
-                    case "Agente":
+                    case "AGENTE":
                         Agente agente = new Agente();
                         agente.setAgenteId(rs.getInt("agente_id"));
                         agente.setCodigo(rs.getString("codigo"));
@@ -141,7 +144,7 @@ public class AgenteMySQL implements AgenteDAO{
                         agente.setEquipo(equipo);
                         agentes.add(agente);
                         break;
-                    case "Supervisor":
+                    case "SUPERVISOR":
                         Supervisor sup = new Supervisor();
                         sup.setAgenteId(rs.getInt("agente_id"));
                         sup.setCodigo(rs.getString("codigo"));
@@ -153,7 +156,7 @@ public class AgenteMySQL implements AgenteDAO{
                         sup.setEquipo(equipo);
                         agentes.add(sup);
                         break;
-                    case "Administrador":
+                    case "ADMINISTRADOR":
                         Administrador admin = new Administrador();
                         admin.setAgenteId(rs.getInt("agente_id"));
                         admin.setCodigo(rs.getString("codigo"));

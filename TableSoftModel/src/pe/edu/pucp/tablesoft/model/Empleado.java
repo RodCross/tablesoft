@@ -50,6 +50,11 @@ public class Empleado extends Usuario {
         return ""; // not found
     }
     
+    public String mostrarDatos() {
+        return getEmpleadoId() + " - " + getCodigo() + " - " +
+            getDni() + " - " + getNombre() + " - " + getUsuarioEmail();
+    }
+    
 //    public ArrayList<Ticket> listarTickets() {
 //           
 //        return this.listaTickets;

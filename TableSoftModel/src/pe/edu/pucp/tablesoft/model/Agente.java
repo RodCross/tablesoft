@@ -78,4 +78,9 @@ public class Agente extends Usuario {
             }
         }
     }
+    
+    public String mostrarDatos() {
+        return getAgenteId() + " - " + getCodigo() + " - " +
+            getDni() + " - " + getNombre() + " - " + getUsuarioEmail();
+    }
 }

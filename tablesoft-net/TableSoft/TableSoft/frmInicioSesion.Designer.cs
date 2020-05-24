@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.btnInicio = new System.Windows.Forms.Label();
             this.lblPreguntasFrecuentes = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -48,7 +47,6 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.btnInicio);
             this.pnlTitulo.Controls.Add(this.lblPreguntasFrecuentes);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTitulo);
@@ -56,17 +54,6 @@
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(803, 90);
             this.pnlTitulo.TabIndex = 0;
-            // 
-            // btnInicio
-            // 
-            this.btnInicio.AutoSize = true;
-            this.btnInicio.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInicio.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnInicio.Location = new System.Drawing.Point(535, 50);
-            this.btnInicio.Name = "btnInicio";
-            this.btnInicio.Size = new System.Drawing.Size(78, 16);
-            this.btnInicio.TabIndex = 5;
-            this.btnInicio.Text = "Inicio Sesión";
             // 
             // lblPreguntasFrecuentes
             // 
@@ -221,7 +208,6 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label btnInicio;
         private System.Windows.Forms.Label lblPreguntasFrecuentes;
     }
 }

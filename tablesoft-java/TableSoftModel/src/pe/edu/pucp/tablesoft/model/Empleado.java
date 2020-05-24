@@ -2,7 +2,7 @@ package pe.edu.pucp.tablesoft.model;
 
 import java.util.ArrayList;
 
-public class Empleado extends Usuario {
+public class Empleado extends Persona {
     
     private int empleadoId;
     private ArrayList<Ticket> listaTickets;
@@ -11,6 +11,7 @@ public class Empleado extends Usuario {
     // Constructores
     
     public Empleado() {
+        biblioteca = new Biblioteca();
         this.listaTickets = new ArrayList<>();
     }
     
@@ -23,7 +24,6 @@ public class Empleado extends Usuario {
     public Biblioteca getBiblioteca() {
         return biblioteca;
     }
-
     
     public void setBiblioteca(Biblioteca biblioteca) {
         this.biblioteca = biblioteca;
@@ -46,13 +46,13 @@ public class Empleado extends Usuario {
     }
 
     // Metodos del negocio
-    public void agregarTicket(Ticket ticket) {
+    public void enviarTicket(Ticket ticket) {
         listaTickets.add(ticket);
     }
     
     public String mostrarDatos() {
         return getEmpleadoId() + " - " + getCodigo() + " - " +
-            getDni() + " - " + getNombre() + " - " + getUsuarioEmail();
+            getDni() + " - " + getNombre() + " - " + getPersonaEmail();
     }
     
 }

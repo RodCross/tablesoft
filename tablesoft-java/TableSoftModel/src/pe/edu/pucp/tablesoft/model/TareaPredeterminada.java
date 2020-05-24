@@ -9,6 +9,9 @@ public class TareaPredeterminada {
     private String descripcion;
     private Boolean activo;
 
+    public TareaPredeterminada() {
+    }
+
     public int getTareaPredeterminadaId() {
         return tareaPredeterminadaId;
     }
@@ -40,6 +43,5 @@ public class TareaPredeterminada {
     public void setActivo(Boolean activo) {
         this.activo = activo;
     }
-    
     
 }

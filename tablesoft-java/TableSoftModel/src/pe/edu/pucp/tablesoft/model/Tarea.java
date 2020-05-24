@@ -10,6 +10,7 @@ public class Tarea {
     private EstadoTarea estado;
 
     public Tarea() {
+        estado = new EstadoTarea();
     }
 
     public int getTareaId() {

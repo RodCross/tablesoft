@@ -1,28 +1,20 @@
 package pe.edu.pucp.tablesoft.model;
 
-
-public class EstadoTicket {
-    private int estadoId;
+/*
+ * @author migue
+ */
+public class Rol {
+    private int rolId;
     private String nombre;
     private String descripcion;
     private Boolean activo;
-    
-    public EstadoTicket(){
-        
+
+    public int getRolId() {
+        return rolId;
     }
 
-    public EstadoTicket(String nombre, String descripcion) {
-        this.nombre = nombre;
-        this.descripcion = descripcion;
-    }
-    
-
-    public int getEstadoId() {
-        return estadoId;
-    }
-
-    public void setEstadoId(int estadoId) {
-        this.estadoId = estadoId;
+    public void setRolId(int rolId) {
+        this.rolId = rolId;
     }
 
     public String getNombre() {

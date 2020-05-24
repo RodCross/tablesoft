@@ -23,18 +23,50 @@ public class Ticket {
     private String infoAdicional;
     private String alumnoEmail;
 
-    private ArrayList<Tarea> tareas;
-    private ArrayList<EventoEstadoTicket> historialEstadoTicket;
+    private ArrayList<Tarea> listaTareas;
+    private ArrayList<CambioEstadoTicket> historialEstado;
+    private ArrayList<TransferenciaTicket> historialTransferencia;
+    private ArrayList<Comentario> comentarios;
     
     public Ticket() {
-        tareas = new ArrayList<>();
-        historialEstadoTicket = new ArrayList<>();
+        listaTareas = new ArrayList<>();
+        historialEstado = new ArrayList<>();
+        historialTransferencia = new ArrayList();
+        comentarios = new ArrayList();
+        
+        estado = new EstadoTicket();
+        urgencia = new Urgencia();
+        categoria = new Categoria();
+        biblioteca = new Biblioteca();
     }
 
     public Ticket(Empleado empleado) {
         this.empleado = empleado;
-        tareas = new ArrayList<>();
-        historialEstadoTicket = new ArrayList<>();
+        listaTareas = new ArrayList<>();
+        historialEstado = new ArrayList<>();
+        historialTransferencia = new ArrayList();
+        comentarios = new ArrayList();
+        
+        estado = new EstadoTicket();
+        urgencia = new Urgencia();
+        categoria = new Categoria();
+        biblioteca = new Biblioteca();
+    }
+
+    public ArrayList<Comentario> getComentarios() {
+        return comentarios;
+    }
+
+    public void setComentarios(ArrayList<Comentario> comentarios) {
+        this.comentarios = comentarios;
+    }
+
+    public ArrayList<TransferenciaTicket> getHistorialTransferencia() {
+        return historialTransferencia;
+    }
+
+    public void setHistorialTransferencia(ArrayList<TransferenciaTicket> historialTransferencia) {
+        this.historialTransferencia = historialTransferencia;
     }
 
     public EstadoTicket getEstado() {
@@ -61,22 +93,21 @@ public class Ticket {
         this.biblioteca = biblioteca;
     }
 
-    public ArrayList<Tarea> getTareas() {
-        return tareas;
+    public ArrayList<Tarea> getListaTareas() {
+        return listaTareas;
     }
 
-    public void setTareas(ArrayList<Tarea> tareas) {
-        this.tareas = tareas;
+    public void setListaTareas(ArrayList<Tarea> listaTareas) {
+        this.listaTareas = listaTareas;
     }
 
-    public ArrayList<EventoEstadoTicket> getHistorialEstadoTicket() {
-        return historialEstadoTicket;
+    public ArrayList<CambioEstadoTicket> getHistorialEstado() {
+        return historialEstado;
     }
 
-    public void setHistorialEstadoTicket(ArrayList<EventoEstadoTicket> historialEstadoTicket) {
-        this.historialEstadoTicket = historialEstadoTicket;
+    public void setHistorialEstado(ArrayList<CambioEstadoTicket> historialEstado) {
+        this.historialEstado = historialEstado;
     }
-    
 
     public int getTicketId() {
         return ticketId;
@@ -154,7 +185,7 @@ public class Ticket {
         return proveedor;
     }
 
-    public void setProveedor(Proveedor proveedor) {
+    private void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
 
@@ -166,10 +197,44 @@ public class Ticket {
         this.categoria = categoria;
     }
     
+    // Metodos del negocio
+    
+    // AQUI IMPLEMENTAR LOS INDICADORES DE CALIDAD DE CADA TICKET
+    
+    public void actualizarEstado(EstadoTicket estado, String comentario){
+        this.setEstado(estado);
+        CambioEstadoTicket cambio = new CambioEstadoTicket(estado, getAgente() );
+        cambio.setComentario(comentario);
+        cambio.setFechaCambioEstado(LocalDateTime.now());
+        historialEstado.add(cambio);
+    }
+    
+    public void escalar(Proveedor proveedor, String comentario){
+        this.setProveedor(proveedor);
+        TransferenciaExterna escalado = new TransferenciaExterna(proveedor, getAgente());
+        escalado.setComentario(comentario);
+        escalado.setFecha(LocalDateTime.now());
+        this.historialTransferencia.add(escalado);
+    }
+    
+    public void agregarTarea(Tarea tarea){
+        tarea.setFechaCreacion(LocalDateTime.now());
+        this.listaTareas.add(tarea);
+    }
+    
+    public void cambiarCategoria(Categoria categoria, String comentario){
+        this.setCategoria(categoria);
+        TransferenciaInterna cambioCategoria = new TransferenciaInterna(categoria, getAgente());
+        cambioCategoria.setFecha(LocalDateTime.now());
+        cambioCategoria.setComentario(comentario);
+        this.historialTransferencia.add(cambioCategoria);
+    }
+    
+    public void mandarComentario(Comentario com){
+        this.comentarios.add(com);
+    }
+    
     public String mostrarDatos() {
-//        return getTicketId() + " - " + getEstado() + " - " +
-//            getFechaEnvio() + " - " + getUrgencia().getUrgenciaId() + " - " +
-//            getCategoria().getCategoriaId();
         return "";
     }
 }

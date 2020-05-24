@@ -1,20 +1,20 @@
 package pe.edu.pucp.tablesoft.model;
 
-public class Usuario {
+public class Persona {
     private String codigo;
     private String dni;
     private String nombre;
-    private String usuarioEmail;
+    private String personaEmail;
 
-    public Usuario() {
+    public Persona() {
         
     }
 
-    public Usuario(String codigo, String dni, String nombre, String usuarioEmail) {
+    public Persona(String codigo, String dni, String nombre, String personaEmail) {
         this.codigo = codigo;
         this.dni = dni;
         this.nombre = nombre;
-        this.usuarioEmail = usuarioEmail;
+        this.personaEmail = personaEmail;
     }
 
     public String getCodigo() {
@@ -41,11 +41,11 @@ public class Usuario {
         this.nombre = nombre;
     }
 
-    public String getUsuarioEmail() {
-        return usuarioEmail;
+    public String getPersonaEmail() {
+        return personaEmail;
     }
 
-    public void setUsuarioEmail(String usuarioEmail) {
-        this.usuarioEmail = usuarioEmail;
+    public void setPersonaEmail(String personaEmail) {
+        this.personaEmail = personaEmail;
     }
 }

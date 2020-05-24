@@ -6,15 +6,19 @@ import java.time.LocalDateTime;
  * @author migue
  */
 
-public class EventoEstadoTicket {
+public class CambioEstadoTicket {
     private int eventoEstadoTicketId;
     private LocalDateTime fechaCambioEstado;
     private String comentario;
     private Agente agenteResponsable;
     private EstadoTicket estadoTo;
 
-    public EventoEstadoTicket() {
-        
+    public CambioEstadoTicket(EstadoTicket estadoTo, Agente agenteResponsable ) {
+        this.agenteResponsable = agenteResponsable;
+        this.estadoTo = estadoTo;
+    }
+    public CambioEstadoTicket(){
+        estadoTo = new EstadoTicket();
     }
 
     public EstadoTicket getEstadoTo() {

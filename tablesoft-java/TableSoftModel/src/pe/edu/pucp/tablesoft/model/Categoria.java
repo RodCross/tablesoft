@@ -66,6 +66,12 @@ public class Categoria {
         this.nombre = nombre;
     }
     
+    // Metodos del negocio
+    
+    public void agregarTareaPredeterminada(TareaPredeterminada tarea){
+        this.tareasPredeterminadas.add(tarea);
+    }
+    
     public String mostrarDatos() {
         return getCategoriaId() + " - " + getNombre();
     }

@@ -2,14 +2,15 @@ package pe.edu.pucp.tablesoft.model;
 
 import java.util.ArrayList;
 
-public class Agente extends Usuario {
+public class Agente extends Persona {
     private int agenteId;
     private String agenteEmail;
     private ArrayList<Ticket> listaTickets;
-    private Equipo equipo;
+    private Rol rol;
     
     // Constructores
     public Agente() {
+        rol = new Rol();
         listaTickets = new ArrayList();
     }
 
@@ -20,20 +21,20 @@ public class Agente extends Usuario {
     }
     
     // Getter y setter
+    public Rol getRol() {
+        return rol;
+    }
+
+    public void setRol(Rol rol) {
+        this.rol = rol;
+    }
+    
     public int getAgenteId() {
         return agenteId;
     }
 
     public void setAgenteId(int agenteId) {
         this.agenteId = agenteId;
-    }
-
-    public Equipo getEquipo() {
-        return equipo;
-    }
-
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
     }
 
     public String getAgenteEmail() {
@@ -54,33 +55,22 @@ public class Agente extends Usuario {
     
     
     // Metodos del negocio
-//    public ArrayList<Ticket> listarTickets() {
-//         
-//        return this.listaTickets;
-//    }
-    
-    public void agregarTicket(Ticket ticket) {
+
+    public void asignarTicket(Ticket ticket) {
         listaTickets.add(ticket);
     }
-
-    public void reasignarCategoria(int id_ticket, Categoria categoria) {
-        for (Ticket ticket : listaTickets) {
-            if (id_ticket == ticket.getTicketId()) {
-                ticket.setCategoria(categoria);
-            }
+    
+    public ArrayList<Ticket> filtrarTicketsxEstado(EstadoTicket estado){
+        ArrayList<Ticket>listaFiltrada = new ArrayList<>();
+        for (Ticket t : listaTickets){
+            if(t.getEstado().getEstadoId() == estado.getEstadoId())
+                listaFiltrada.add(t);
         }
-    }
-
-    public void escalarTicket(int id_ticket, Proveedor proveedor) {
-        for (Ticket ticket : listaTickets) {
-            if (id_ticket == ticket.getTicketId()) {
-                ticket.setProveedor(proveedor);
-            }
-        }
+        return listaFiltrada;
     }
     
     public String mostrarDatos() {
         return getAgenteId() + " - " + getCodigo() + " - " +
-            getDni() + " - " + getNombre() + " - " + getUsuarioEmail();
+            getDni() + " - " + getNombre() + " - " + getPersonaEmail();
     }
 }

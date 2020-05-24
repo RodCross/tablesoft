@@ -34,17 +34,17 @@
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblSistemaDeMesaDeAyuda = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
-            this.lblCerrarSesion = new System.Windows.Forms.Label();
-            this.lblMisTickets = new System.Windows.Forms.Label();
             this.lblMiCuenta = new System.Windows.Forms.Label();
+            this.lblMisTickets = new System.Windows.Forms.Label();
+            this.lblCerrarSesion = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblAbrirTicket = new System.Windows.Forms.Label();
-            this.btnAbrirTicket = new System.Windows.Forms.Button();
-            this.lblDetalleAbrirTicket = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblDetalleAbrirTicket = new System.Windows.Forms.Label();
+            this.btnAbrirTicket = new System.Windows.Forms.Button();
+            this.lblAbrirTicket = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
@@ -110,16 +110,16 @@
             this.pnl.Size = new System.Drawing.Size(872, 51);
             this.pnl.TabIndex = 1;
             // 
-            // lblCerrarSesion
+            // lblMiCuenta
             // 
-            this.lblCerrarSesion.AutoSize = true;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(737, 15);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(126, 23);
-            this.lblCerrarSesion.TabIndex = 4;
-            this.lblCerrarSesion.Text = "Cerrar Sesion";
+            this.lblMiCuenta.AutoSize = true;
+            this.lblMiCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiCuenta.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblMiCuenta.Location = new System.Drawing.Point(488, 15);
+            this.lblMiCuenta.Name = "lblMiCuenta";
+            this.lblMiCuenta.Size = new System.Drawing.Size(99, 23);
+            this.lblMiCuenta.TabIndex = 6;
+            this.lblMiCuenta.Text = "Mi Cuenta";
             // 
             // lblMisTickets
             // 
@@ -132,16 +132,16 @@
             this.lblMisTickets.TabIndex = 5;
             this.lblMisTickets.Text = "Mis Tickets";
             // 
-            // lblMiCuenta
+            // lblCerrarSesion
             // 
-            this.lblMiCuenta.AutoSize = true;
-            this.lblMiCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiCuenta.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMiCuenta.Location = new System.Drawing.Point(488, 15);
-            this.lblMiCuenta.Name = "lblMiCuenta";
-            this.lblMiCuenta.Size = new System.Drawing.Size(99, 23);
-            this.lblMiCuenta.TabIndex = 6;
-            this.lblMiCuenta.Text = "Mi Cuenta";
+            this.lblCerrarSesion.AutoSize = true;
+            this.lblCerrarSesion.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblCerrarSesion.Location = new System.Drawing.Point(737, 15);
+            this.lblCerrarSesion.Name = "lblCerrarSesion";
+            this.lblCerrarSesion.Size = new System.Drawing.Size(126, 23);
+            this.lblCerrarSesion.TabIndex = 4;
+            this.lblCerrarSesion.Text = "Cerrar Sesion";
             // 
             // panel2
             // 
@@ -168,16 +168,50 @@
             this.panel3.Size = new System.Drawing.Size(659, 278);
             this.panel3.TabIndex = 0;
             // 
-            // lblAbrirTicket
+            // button1
             // 
-            this.lblAbrirTicket.AutoSize = true;
-            this.lblAbrirTicket.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAbrirTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.lblAbrirTicket.Location = new System.Drawing.Point(44, 34);
-            this.lblAbrirTicket.Name = "lblAbrirTicket";
-            this.lblAbrirTicket.Size = new System.Drawing.Size(238, 29);
-            this.lblAbrirTicket.TabIndex = 0;
-            this.lblAbrirTicket.Text = "Abrir un nuevo Ticket";
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(121)))), ((int)(((byte)(53)))));
+            this.button1.Location = new System.Drawing.Point(371, 193);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(256, 44);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "VER ESTADO DE MIS TICKETS";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(144)))), ((int)(((byte)(165)))));
+            this.label2.Location = new System.Drawing.Point(401, 114);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(244, 26);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Proporcionamos archivos del historial de todas sus\r\nsolicitudes de soporte, actua" +
+    "les y pasadas .";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(121)))), ((int)(((byte)(53)))));
+            this.label1.Location = new System.Drawing.Point(366, 34);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(278, 29);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Ver estado de mis Tickets";
+            // 
+            // lblDetalleAbrirTicket
+            // 
+            this.lblDetalleAbrirTicket.AutoSize = true;
+            this.lblDetalleAbrirTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(144)))), ((int)(((byte)(165)))));
+            this.lblDetalleAbrirTicket.Location = new System.Drawing.Point(68, 114);
+            this.lblDetalleAbrirTicket.Name = "lblDetalleAbrirTicket";
+            this.lblDetalleAbrirTicket.Size = new System.Drawing.Size(246, 26);
+            this.lblDetalleAbrirTicket.TabIndex = 2;
+            this.lblDetalleAbrirTicket.Text = "Por favor brinde el mayor detalle posible, con el fin \r\nde que podamos ayudarlo d" +
+    "e la mejor manera.";
             // 
             // btnAbrirTicket
             // 
@@ -191,66 +225,32 @@
             this.btnAbrirTicket.Text = "ABRIR UN NUEVO TICKET";
             this.btnAbrirTicket.UseVisualStyleBackColor = false;
             // 
-            // lblDetalleAbrirTicket
+            // lblAbrirTicket
             // 
-            this.lblDetalleAbrirTicket.AutoSize = true;
-            this.lblDetalleAbrirTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(144)))), ((int)(((byte)(165)))));
-            this.lblDetalleAbrirTicket.Location = new System.Drawing.Point(68, 114);
-            this.lblDetalleAbrirTicket.Name = "lblDetalleAbrirTicket";
-            this.lblDetalleAbrirTicket.Size = new System.Drawing.Size(246, 26);
-            this.lblDetalleAbrirTicket.TabIndex = 2;
-            this.lblDetalleAbrirTicket.Text = "Por favor brinde el mayor detalle posible, con el fin \r\nde que podamos ayudarlo d" +
-    "e la mejor manera.";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(121)))), ((int)(((byte)(53)))));
-            this.label1.Location = new System.Drawing.Point(366, 34);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(278, 29);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Ver estado de mis Tickets";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(144)))), ((int)(((byte)(165)))));
-            this.label2.Location = new System.Drawing.Point(401, 114);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(244, 26);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Proporcionamos archivos del historial de todas sus\r\nsolicitudes de soporte, actua" +
-    "les y pasadas .";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(121)))), ((int)(((byte)(53)))));
-            this.button1.Location = new System.Drawing.Point(371, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(256, 44);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "VER ESTADO DE MIS TICKETS";
-            this.button1.UseVisualStyleBackColor = false;
+            this.lblAbrirTicket.AutoSize = true;
+            this.lblAbrirTicket.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbrirTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
+            this.lblAbrirTicket.Location = new System.Drawing.Point(44, 34);
+            this.lblAbrirTicket.Name = "lblAbrirTicket";
+            this.lblAbrirTicket.Size = new System.Drawing.Size(238, 29);
+            this.lblAbrirTicket.TabIndex = 0;
+            this.lblAbrirTicket.Text = "Abrir un nuevo Ticket";
             // 
             // pictureBox1
             // 
             this.pictureBox1.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.InitialImage")));
-            this.pictureBox1.Location = new System.Drawing.Point(7, 105);
+            this.pictureBox1.Location = new System.Drawing.Point(15, 102);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox1.Size = new System.Drawing.Size(47, 50);
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.InitialImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.InitialImage")));
-            this.pictureBox2.Location = new System.Drawing.Point(340, 105);
+            this.pictureBox2.Location = new System.Drawing.Point(348, 102);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(55, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(47, 50);
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 

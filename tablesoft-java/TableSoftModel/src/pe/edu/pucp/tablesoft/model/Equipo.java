@@ -6,7 +6,7 @@ public class Equipo {
     private int equipoId;
     private ArrayList<Agente> listaAgentes;
     private ArrayList<Categoria> listaCategorias;
-    private Supervisor supervisor;
+    private Agente supervisor;
     
     // Constructores
     public Equipo(int equipoId) {
@@ -29,11 +29,11 @@ public class Equipo {
         this.equipoId = equipoId;
     }
 
-    public Supervisor getSupervisor() {
+    public Agente getSupervisor() {
         return this.supervisor;
     }
 
-    public void setSupervisor(Supervisor supervisor) {
+    public void setSupervisor(Agente supervisor) {
         this.supervisor = supervisor;
     }
 
@@ -66,16 +66,6 @@ public class Equipo {
             }
         }
     }
-    
-//    public ArrayList<Agente> listarAgentes() { // es getListaAgentes
-//        
-//        return this.listaAgentes;
-//    }
-    
-//    public ArrayList<Categoria> listarCategorias() { // es getListaCategorias
-//
-//        return this.listaCategorias;
-//    }
 
     public void agregarCategoria(Categoria categoria) {
         this.listaCategorias.add(categoria);
@@ -89,7 +79,7 @@ public class Equipo {
         }
     }
 
-    public void asignarSupervisor(Supervisor supervisor) {
+    public void asignarSupervisor(Agente supervisor) {
         this.setSupervisor(supervisor);
     }
 

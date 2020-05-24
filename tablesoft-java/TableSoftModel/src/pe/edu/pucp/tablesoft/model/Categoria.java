@@ -2,34 +2,52 @@ package pe.edu.pucp.tablesoft.model;
 
 import java.util.ArrayList;
 
+
 public class Categoria {
     private int categoriaId;
     private String nombre;
-    private ArrayList<Ticket> tickets;
-    private Equipo equipo;
+    private String descripcion;
+    private Boolean activo;
+    
+    private ArrayList<TareaPredeterminada> tareasPredeterminadas;
     
     public Categoria() {
-        tickets = new ArrayList<>();
+        tareasPredeterminadas = new ArrayList<>();
     }
     
-    public Categoria(int categoriaId, String nombre, Equipo equipo) {
+    public Categoria(int categoriaId, String nombre) {
         this.categoriaId = categoriaId;
         this.nombre = nombre;
-        tickets = new ArrayList<>();
-        this.equipo = equipo;
+        tareasPredeterminadas = new ArrayList<>();
     }
     
     public Categoria(String nombre) {
-        this.nombre = nombre;
-        tickets = new ArrayList<>();
+        this.nombre = nombre;  
+        tareasPredeterminadas = new ArrayList<>();
     }
 
-    public Equipo getEquipo() {
-        return equipo;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setEquipo(Equipo equipo) {
-        this.equipo = equipo;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
+    }
+
+    public ArrayList<TareaPredeterminada> getTareasPredeterminadas() {
+        return tareasPredeterminadas;
+    }
+
+    public void setTareasPredeterminadas(ArrayList<TareaPredeterminada> tareasPredeterminadas) {
+        this.tareasPredeterminadas = tareasPredeterminadas;
     }
     
     public int getCategoriaId() {

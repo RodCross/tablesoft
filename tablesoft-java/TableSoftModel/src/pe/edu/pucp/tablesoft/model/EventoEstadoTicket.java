@@ -13,10 +13,8 @@ public class EventoEstadoTicket {
     private Agente agenteResponsable;
     private EstadoTicket estadoTo;
 
-    // Si o si debe tener un agente responsable
-    // pero que entra como una referencia
-    public EventoEstadoTicket(Agente agenteResponsable) {
-        this.agenteResponsable = agenteResponsable;
+    public EventoEstadoTicket() {
+        
     }
 
     public EstadoTicket getEstadoTo() {

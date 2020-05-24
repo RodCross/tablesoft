@@ -6,6 +6,7 @@ public class Empleado extends Usuario {
     
     private int empleadoId;
     private ArrayList<Ticket> listaTickets;
+    private Biblioteca biblioteca;
 
     // Constructores
     
@@ -19,6 +20,14 @@ public class Empleado extends Usuario {
     }
     
     // Getters y setters
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
 
     public int getEmpleadoId() {
         return empleadoId;
@@ -46,8 +55,4 @@ public class Empleado extends Usuario {
             getDni() + " - " + getNombre() + " - " + getUsuarioEmail();
     }
     
-//    public ArrayList<Ticket> listarTickets() {
-//           
-//        return this.listaTickets;
-//    }
 }

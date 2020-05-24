@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TableSoft
 {
@@ -10,8 +11,11 @@ namespace TableSoft
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("TableSoft");
-            Console.ReadLine();
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            //Lanzamos el Formulario
+            Application.Run(new frmInicioEmpleado());
         }
     }
 }

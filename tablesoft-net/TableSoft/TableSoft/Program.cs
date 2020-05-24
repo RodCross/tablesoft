@@ -15,7 +15,8 @@ namespace TableSoft
             Application.SetCompatibleTextRenderingDefault(false);
 
             //Lanzamos el Formulario
-            Application.Run(new frmInicioEmpleado());
+            //Application.Run(new frmInicioEmpleado());
+            Application.Run(new frmInicioSesion());
         }
     }
 }

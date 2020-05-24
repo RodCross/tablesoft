@@ -39,6 +39,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnIngresar = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.button1);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTitulo);
             this.pnlTitulo.Location = new System.Drawing.Point(-1, -1);
@@ -127,13 +129,14 @@
             // 
             this.txtUsuaario.Location = new System.Drawing.Point(45, 67);
             this.txtUsuaario.Name = "txtUsuaario";
-            this.txtUsuaario.Size = new System.Drawing.Size(152, 20);
+            this.txtUsuaario.Size = new System.Drawing.Size(272, 20);
             this.txtUsuaario.TabIndex = 0;
             // 
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(45, 112);
             this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(152, 20);
             this.txtPassword.TabIndex = 3;
             // 
@@ -152,6 +155,7 @@
             // btnIngresar
             // 
             this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnIngresar.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.ForeColor = System.Drawing.Color.White;
             this.btnIngresar.Location = new System.Drawing.Point(45, 179);
             this.btnIngresar.Name = "btnIngresar";
@@ -159,6 +163,17 @@
             this.btnIngresar.TabIndex = 5;
             this.btnIngresar.Text = "Ingresar";
             this.btnIngresar.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(523, 36);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(110, 30);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "IniciarSesion";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmInicioSesion
             // 
@@ -193,5 +208,6 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TextBox txtPassword;
+        private System.Windows.Forms.Button button1;
     }
 }

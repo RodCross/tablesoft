@@ -40,15 +40,6 @@ public class Empleado extends Usuario {
     public void agregarTicket(Ticket ticket) {
         listaTickets.add(ticket);
     }
-
-    public String obtenerEstado(int id_ticket) {
-        for (Ticket ticket : listaTickets) {
-            if (id_ticket == ticket.getTicketId()) {
-                return ticket.getEstado();
-            }
-        }
-        return ""; // not found
-    }
     
     public String mostrarDatos() {
         return getEmpleadoId() + " - " + getCodigo() + " - " +

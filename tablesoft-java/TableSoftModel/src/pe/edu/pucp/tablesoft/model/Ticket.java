@@ -1,33 +1,82 @@
 package pe.edu.pucp.tablesoft.model;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Ticket {
     private int ticketId;
-    private String estado;
-    private String infoAdicional;
-    private String alumnoEmail;
+    private EstadoTicket estado;
+    
     private LocalDateTime fechaEnvio;
     private LocalDateTime fechaPrimeraRespuesta;
     private LocalDateTime fechaCierre;
-    private int activoFijoId;
+    
     private Empleado empleado;
     private Agente agente;
+    
+    private ActivoFijo activoFijo;
+    private Proveedor proveedor;    // Solo se llena cuando el ticket ha tenido un escalado externo
     private Urgencia urgencia;
-    private Proveedor proveedor;
     private Categoria categoria;
+    private Biblioteca biblioteca;
+    
+    private String infoAdicional;
+    private String alumnoEmail;
+
+    private ArrayList<Tarea> tareas;
+    private ArrayList<EventoEstadoTicket> historialEstadoTicket;
     
     public Ticket() {
-        
+        tareas = new ArrayList<>();
+        historialEstadoTicket = new ArrayList<>();
+    }
+
+    public Ticket(Empleado empleado) {
+        this.empleado = empleado;
+        tareas = new ArrayList<>();
+        historialEstadoTicket = new ArrayList<>();
+    }
+
+    public EstadoTicket getEstado() {
+        return estado;
+    }
+
+    public void setEstado(EstadoTicket estado) {
+        this.estado = estado;
+    }
+
+    public ActivoFijo getActivoFijo() {
+        return activoFijo;
+    }
+
+    public void setActivoFijo(ActivoFijo activoFijo) {
+        this.activoFijo = activoFijo;
+    }
+
+    public Biblioteca getBiblioteca() {
+        return biblioteca;
+    }
+
+    public void setBiblioteca(Biblioteca biblioteca) {
+        this.biblioteca = biblioteca;
+    }
+
+    public ArrayList<Tarea> getTareas() {
+        return tareas;
+    }
+
+    public void setTareas(ArrayList<Tarea> tareas) {
+        this.tareas = tareas;
+    }
+
+    public ArrayList<EventoEstadoTicket> getHistorialEstadoTicket() {
+        return historialEstadoTicket;
+    }
+
+    public void setHistorialEstadoTicket(ArrayList<EventoEstadoTicket> historialEstadoTicket) {
+        this.historialEstadoTicket = historialEstadoTicket;
     }
     
-    public Ticket(String estado, LocalDateTime fechaEnvio, Urgencia urgencia, Categoria categoria) {
-        this.estado = estado;
-        this.fechaEnvio = fechaEnvio;
-        this.urgencia = urgencia;
-        this.categoria = categoria;
-        this.activoFijoId = 0;
-    }
 
     public int getTicketId() {
         return ticketId;
@@ -35,14 +84,6 @@ public class Ticket {
 
     public void setTicketId(int ticketId) {
         this.ticketId = ticketId;
-    }
-
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
     }
 
     public String getInfoAdicional() {
@@ -83,14 +124,6 @@ public class Ticket {
 
     public void setFechaCierre(LocalDateTime fechaCierre) {
         this.fechaCierre = fechaCierre;
-    }
-
-    public int getActivoFijoId() {
-        return activoFijoId;
-    }
-
-    public void setActivoFijoId(int activoFijoId) {
-        this.activoFijoId = activoFijoId;
     }
 
     public Empleado getEmpleado() {
@@ -134,8 +167,9 @@ public class Ticket {
     }
     
     public String mostrarDatos() {
-        return getTicketId() + " - " + getEstado() + " - " +
-            getFechaEnvio() + " - " + getUrgencia().getUrgenciaId() + " - " +
-            getCategoria().getCategoriaId();
+//        return getTicketId() + " - " + getEstado() + " - " +
+//            getFechaEnvio() + " - " + getUrgencia().getUrgenciaId() + " - " +
+//            getCategoria().getCategoriaId();
+        return "";
     }
 }

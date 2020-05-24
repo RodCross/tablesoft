@@ -1,21 +1,19 @@
 package pe.edu.pucp.tablesoft.model;
 
-import java.util.ArrayList;
 
 public class Urgencia {
     private int urgenciaId;
     private String nombre;
     private int plazoMaximo;
-    private ArrayList<Ticket> listaTickets;
+    private Boolean activo;
 
     public Urgencia() {
-        this.listaTickets = new ArrayList<>();
+        
     }
 
     public Urgencia(String nombre, int plazoMaximo) {
         this.nombre = nombre;
         this.plazoMaximo = plazoMaximo;
-        this.listaTickets = new ArrayList<>();
     }
 
     public int getUrgenciaId() {
@@ -41,9 +39,13 @@ public class Urgencia {
     public void setPlazoMaximo(int plazoMaximo) {
         this.plazoMaximo = plazoMaximo;
     }
-    
-    public void agregarTicket(Ticket ticket) {
-        this.listaTickets.add(ticket);
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
     
     public String mostrarDatos() {

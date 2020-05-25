@@ -34,17 +34,17 @@
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblSistemaDeMesaDeAyuda = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
-            this.richTextBox4 = new System.Windows.Forms.RichTextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -103,136 +103,146 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Ayuda";
             // 
-            // label3
+            // textBox8
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label3.Location = new System.Drawing.Point(13, 153);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(148, 19);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "Gestion de Cuentas";
+            this.textBox8.Font = new System.Drawing.Font("Lato", 10F);
+            this.textBox8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox8.Location = new System.Drawing.Point(17, 515);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
+            this.textBox8.Size = new System.Drawing.Size(1149, 43);
+            this.textBox8.TabIndex = 56;
+            this.textBox8.Text = resources.GetString("textBox8.Text");
             // 
-            // richTextBox1
+            // textBox7
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Lato", 10F);
-            this.richTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.richTextBox1.Location = new System.Drawing.Point(17, 310);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(1149, 73);
-            this.richTextBox1.TabIndex = 5;
-            this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
+            this.textBox7.Font = new System.Drawing.Font("Lato", 10F);
+            this.textBox7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox7.Location = new System.Drawing.Point(17, 411);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
+            this.textBox7.Size = new System.Drawing.Size(1149, 43);
+            this.textBox7.TabIndex = 55;
+            this.textBox7.Text = resources.GetString("textBox7.Text");
             // 
-            // textBox1
+            // textBox6
             // 
-            this.textBox1.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.textBox1.Location = new System.Drawing.Point(17, 288);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1149, 23);
-            this.textBox1.TabIndex = 6;
-            this.textBox1.Text = "¿Como puedo crear un ticket?";
+            this.textBox6.Font = new System.Drawing.Font("Lato", 10F);
+            this.textBox6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox6.Location = new System.Drawing.Point(17, 306);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
+            this.textBox6.Size = new System.Drawing.Size(1149, 77);
+            this.textBox6.TabIndex = 54;
+            this.textBox6.Text = resources.GetString("textBox6.Text");
             // 
-            // textBox2
+            // textBox5
             // 
-            this.textBox2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.textBox2.Location = new System.Drawing.Point(17, 393);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(1149, 23);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.Text = "¿Cómo sé si mi ticket ha sido respondido?";
+            this.textBox5.Font = new System.Drawing.Font("Lato", 10F);
+            this.textBox5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox5.Location = new System.Drawing.Point(17, 203);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
+            this.textBox5.Size = new System.Drawing.Size(1149, 46);
+            this.textBox5.TabIndex = 53;
+            this.textBox5.Text = resources.GetString("textBox5.Text");
             // 
-            // richTextBox2
+            // textBox4
             // 
-            this.richTextBox2.Font = new System.Drawing.Font("Lato", 10F);
-            this.richTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.richTextBox2.Location = new System.Drawing.Point(17, 415);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(1149, 47);
-            this.richTextBox2.TabIndex = 7;
-            this.richTextBox2.Text = resources.GetString("richTextBox2.Text");
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label2.Location = new System.Drawing.Point(13, 256);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(142, 19);
-            this.label2.TabIndex = 9;
-            this.label2.Text = "Gestion de Tickets";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.textBox3.Location = new System.Drawing.Point(17, 184);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(1149, 23);
-            this.textBox3.TabIndex = 11;
-            this.textBox3.Text = "¿Como puedo crear una cuenta?";
-            // 
-            // richTextBox3
-            // 
-            this.richTextBox3.Font = new System.Drawing.Font("Lato", 10F);
-            this.richTextBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.richTextBox3.Location = new System.Drawing.Point(17, 206);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(1149, 45);
-            this.richTextBox3.TabIndex = 10;
-            this.richTextBox3.Text = "Si es un empleado nuevo del Sistema de Bibliotecas PUCP, comuniquese con el super" +
-    "visor de su área para hacerle saber que necesita una cuenta. Esta cuenta será cr" +
-    "eada a la mayor brevedad posible. ";
+            this.textBox4.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox4.Location = new System.Drawing.Point(17, 493);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
+            this.textBox4.Size = new System.Drawing.Size(1149, 23);
+            this.textBox4.TabIndex = 52;
+            this.textBox4.Text = "¿Cómo sé si mi ticket ha sido respondido?";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label4.Location = new System.Drawing.Point(13, 475);
+            this.label4.Location = new System.Drawing.Point(13, 471);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(178, 19);
-            this.label4.TabIndex = 12;
+            this.label4.TabIndex = 51;
             this.label4.Text = "Dudas sobre Categorias";
             // 
-            // textBox4
+            // textBox3
             // 
-            this.textBox4.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
-            this.textBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.textBox4.Location = new System.Drawing.Point(17, 497);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(1149, 23);
-            this.textBox4.TabIndex = 14;
-            this.textBox4.Text = "¿Cómo sé si mi ticket ha sido respondido?";
+            this.textBox3.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox3.Location = new System.Drawing.Point(17, 180);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
+            this.textBox3.Size = new System.Drawing.Size(1149, 23);
+            this.textBox3.TabIndex = 50;
+            this.textBox3.Text = "¿Como puedo crear una cuenta?";
             // 
-            // richTextBox4
+            // label2
             // 
-            this.richTextBox4.Font = new System.Drawing.Font("Lato", 10F);
-            this.richTextBox4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.richTextBox4.Location = new System.Drawing.Point(17, 519);
-            this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(1149, 47);
-            this.richTextBox4.TabIndex = 13;
-            this.richTextBox4.Text = resources.GetString("richTextBox4.Text");
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.label2.Location = new System.Drawing.Point(13, 252);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(142, 19);
+            this.label2.TabIndex = 49;
+            this.label2.Text = "Gestion de Tickets";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox2.Location = new System.Drawing.Point(17, 389);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(1149, 23);
+            this.textBox2.TabIndex = 48;
+            this.textBox2.Text = "¿Cómo sé si mi ticket ha sido respondido?";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.textBox1.Location = new System.Drawing.Point(17, 284);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.Size = new System.Drawing.Size(1149, 23);
+            this.textBox1.TabIndex = 47;
+            this.textBox1.Text = "¿Como puedo crear un ticket?";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.label3.Location = new System.Drawing.Point(13, 149);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 19);
+            this.label3.TabIndex = 46;
+            this.label3.Text = "Gestion de Cuentas";
             // 
             // frmAyuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1178, 654);
+            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.richTextBox4);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.richTextBox3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.richTextBox2);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlTitulo);
@@ -253,16 +263,16 @@
         private System.Windows.Forms.Label lblBibliotecasPUCP;
         private System.Windows.Forms.Label lblSistemaDeMesaDeAyuda;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.RichTextBox richTextBox4;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label3;
     }
 }

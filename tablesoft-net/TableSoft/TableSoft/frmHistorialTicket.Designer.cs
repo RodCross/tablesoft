@@ -42,7 +42,6 @@
             this.lblPreguntasFrecuentes = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblSistemaDeMesaDeAyuda = new System.Windows.Forms.Label();
-            this.lblVolver = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,6 +50,7 @@
             this.FechaDeCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button1 = new System.Windows.Forms.Button();
+            this.lnkVolver = new System.Windows.Forms.LinkLabel();
             this.pnl.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -144,17 +144,6 @@
             this.lblSistemaDeMesaDeAyuda.TabIndex = 1;
             this.lblSistemaDeMesaDeAyuda.Text = "Sistema de Mesa de Ayuda";
             // 
-            // lblVolver
-            // 
-            this.lblVolver.AutoSize = true;
-            this.lblVolver.Font = new System.Drawing.Font("Lato", 12.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.lblVolver.Location = new System.Drawing.Point(30, 160);
-            this.lblVolver.Name = "lblVolver";
-            this.lblVolver.Size = new System.Drawing.Size(74, 21);
-            this.lblVolver.TabIndex = 7;
-            this.lblVolver.Text = "< Volver";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -245,15 +234,27 @@
             this.button1.Text = "Seleccionar";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // lnkVolver
+            // 
+            this.lnkVolver.AutoSize = true;
+            this.lnkVolver.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lnkVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
+            this.lnkVolver.Location = new System.Drawing.Point(31, 165);
+            this.lnkVolver.Name = "lnkVolver";
+            this.lnkVolver.Size = new System.Drawing.Size(56, 16);
+            this.lnkVolver.TabIndex = 21;
+            this.lnkVolver.TabStop = true;
+            this.lnkVolver.Text = "< Volver";
+            // 
             // frmHistorialTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(871, 564);
+            this.Controls.Add(this.lnkVolver);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.lblVolver);
             this.Controls.Add(this.pnl);
             this.Controls.Add(this.pnlTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -279,7 +280,6 @@
         private System.Windows.Forms.Label lblPreguntasFrecuentes;
         private System.Windows.Forms.Label lblBibliotecasPUCP;
         private System.Windows.Forms.Label lblSistemaDeMesaDeAyuda;
-        private System.Windows.Forms.Label lblVolver;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
@@ -288,5 +288,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaDeApertura;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaDeCierre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.LinkLabel lnkVolver;
     }
 }

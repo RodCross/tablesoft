@@ -117,14 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="richTextBox1.Text" xml:space="preserve">
-    <value>Para crear un ticket, primero necesita iniciar sesión como usuario en la plataforma. La pantalla de inicio de sesión es la primera que aparece al ingresar a la página web de este Sistema de Mesa de Ayuda. Desde aquí, también puede hacer click en el botón "Inicio de Sesión", ubicado en la esquina superior derecha de esta página. Una vez iniciada la sesión, diríjase a la pantalla "Mis Tickets", en donde podrá escoger crear un nuevo ticket o ver sus tickets ya creados. Elija la primera. A continuación, verá un formulario donde puede llenar los datos y la información sobre el problema o la solicitud que tenga. Le pedimos que sea lo más detallado posible al llenar el formulario.</value>
+  <data name="textBox8.Text" xml:space="preserve">
+    <value>Si usted presenta alguna duda sobre las categorías de un ticket, no dude en preguntarle a algunos de sus compañeros. Si le quedan mayores dudas, puede revisar el siguiente video, que esperemos pueda solucionar las preguntas que tiene. https://www.youtube.com/watch?v=PqxC0CSCZYT</value>
   </data>
-  <data name="richTextBox2.Text" xml:space="preserve">
+  <data name="textBox7.Text" xml:space="preserve">
     <value>Una vez enviado su ticket, cualquier respuesta o novedad sobre su resolución será informada mediante un correo electrónico dirigido a la dirección vinculada a su cuenta y que cuenta con un link hacia el ticket en cuestión.</value>
   </data>
-  <data name="richTextBox4.Text" xml:space="preserve">
-    <value>Si usted presenta alguna duda sobre las categorías de un ticket, no dude en preguntarle a algunos de sus compañeros. Si le quedan mayores dudas, puede revisar el siguiente video, que esperemos pueda solucionar las preguntas que tiene. https://www.youtube.com/watch?v=PqxC0CSCZYT</value>
+  <data name="textBox6.Text" xml:space="preserve">
+    <value>Para crear un ticket, primero necesita iniciar sesión como usuario en la plataforma. La pantalla de inicio de sesión es la primera que aparece al ingresar a la página web de este Sistema de Mesa de Ayuda. Desde aquí, también puede hacer click en el botón "Inicio de Sesión", ubicado en la esquina superior derecha de esta página. Una vez iniciada la sesión, diríjase a la pantalla "Mis Tickets", en donde podrá escoger crear un nuevo ticket o ver sus tickets ya creados. Elija la primera. A continuación, verá un formulario donde puede llenar los datos y la información sobre el problema o la solicitud que tenga. Le pedimos que sea lo más detallado posible al llenar el formulario.</value>
+  </data>
+  <data name="textBox5.Text" xml:space="preserve">
+    <value>Si es un empleado nuevo del Sistema de Bibliotecas PUCP, comuniquese con el supervisor de su área para hacerle saber que necesita una cuenta. Esta cuenta será creada a la mayor brevedad posible, dependiendo de la disponibilidad del administrador del sistema. </value>
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -16,7 +16,7 @@ namespace TableSoft
 
             //Lanzamos el Formulario
             //Application.Run(new frmInicioEmpleado());
-            Application.Run(new frmInicioSesion());
+            Application.Run(new frmHistorialTicket());
         }
     }
 }

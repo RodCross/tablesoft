@@ -10,13 +10,11 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmInicioEmpleado : Form
+    public partial class frmHistorialTicket : Form
     {
-        public frmInicioEmpleado()
+        public frmHistorialTicket()
         {
             InitializeComponent();
         }
-
-       
     }
 }

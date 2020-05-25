@@ -29,17 +29,17 @@
         private void InitializeComponent()
         {
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblPreguntasFrecuentes = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnIngresar = new System.Windows.Forms.Button();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtUsuaario = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -47,13 +47,24 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.button1);
+            this.pnlTitulo.Controls.Add(this.lblPreguntasFrecuentes);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTitulo);
             this.pnlTitulo.Location = new System.Drawing.Point(-1, -1);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(803, 90);
             this.pnlTitulo.TabIndex = 0;
+            // 
+            // lblPreguntasFrecuentes
+            // 
+            this.lblPreguntasFrecuentes.AutoSize = true;
+            this.lblPreguntasFrecuentes.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPreguntasFrecuentes.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblPreguntasFrecuentes.Location = new System.Drawing.Point(619, 50);
+            this.lblPreguntasFrecuentes.Name = "lblPreguntasFrecuentes";
+            this.lblPreguntasFrecuentes.Size = new System.Drawing.Size(170, 16);
+            this.lblPreguntasFrecuentes.TabIndex = 4;
+            this.lblPreguntasFrecuentes.Text = "Preguntas Frecuentes (FAQ)";
             // 
             // lblBibliotecasPUCP
             // 
@@ -100,8 +111,40 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(23, 154);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(747, 280);
+            this.panel1.Size = new System.Drawing.Size(372, 280);
             this.panel1.TabIndex = 2;
+            // 
+            // btnIngresar
+            // 
+            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnIngresar.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresar.ForeColor = System.Drawing.Color.White;
+            this.btnIngresar.Location = new System.Drawing.Point(45, 182);
+            this.btnIngresar.Name = "btnIngresar";
+            this.btnIngresar.Size = new System.Drawing.Size(151, 37);
+            this.btnIngresar.TabIndex = 5;
+            this.btnIngresar.Text = "Ingresar";
+            this.btnIngresar.UseVisualStyleBackColor = false;
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
+            this.linkLabel1.Location = new System.Drawing.Point(49, 144);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(131, 13);
+            this.linkLabel1.TabIndex = 4;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "¿Olvidaste tu contraseña?";
+            // 
+            // txtPassword
+            // 
+            this.txtPassword.Location = new System.Drawing.Point(45, 112);
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '*';
+            this.txtPassword.Size = new System.Drawing.Size(152, 20);
+            this.txtPassword.TabIndex = 3;
             // 
             // lblContraseña
             // 
@@ -119,61 +162,18 @@
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblEmail.Location = new System.Drawing.Point(41, 44);
+            this.lblEmail.Location = new System.Drawing.Point(41, 33);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(146, 19);
+            this.lblEmail.Size = new System.Drawing.Size(153, 19);
             this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "Correo Electrónico";
+            this.lblEmail.Text = "Correo Electrónico: ";
             // 
             // txtUsuaario
             // 
-            this.txtUsuaario.Location = new System.Drawing.Point(45, 67);
+            this.txtUsuaario.Location = new System.Drawing.Point(45, 56);
             this.txtUsuaario.Name = "txtUsuaario";
             this.txtUsuaario.Size = new System.Drawing.Size(272, 20);
             this.txtUsuaario.TabIndex = 0;
-            // 
-            // txtPassword
-            // 
-            this.txtPassword.Location = new System.Drawing.Point(45, 112);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(152, 20);
-            this.txtPassword.TabIndex = 3;
-            // 
-            // linkLabel1
-            // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel1.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.linkLabel1.Location = new System.Drawing.Point(49, 144);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(131, 13);
-            this.linkLabel1.TabIndex = 4;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "¿Olvidaste tu contraseña?";
-            // 
-            // btnIngresar
-            // 
-            this.btnIngresar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.btnIngresar.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIngresar.ForeColor = System.Drawing.Color.White;
-            this.btnIngresar.Location = new System.Drawing.Point(45, 179);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(151, 37);
-            this.btnIngresar.TabIndex = 5;
-            this.btnIngresar.Text = "Ingresar";
-            this.btnIngresar.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(523, 36);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(110, 30);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "IniciarSesion";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // frmInicioSesion
             // 
@@ -208,6 +208,6 @@
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lblPreguntasFrecuentes;
     }
 }

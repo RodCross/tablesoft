@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioSesion));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblPreguntasFrecuentes = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
@@ -184,6 +185,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pnlTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInicioSesion";
             this.Text = "frmInicioSesion";
             this.pnlTitulo.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrearNuevoTicket));
             this.lnkVolver = new System.Windows.Forms.LinkLabel();
             this.lblCrearTicket = new System.Windows.Forms.Label();
             this.pnl = new System.Windows.Forms.Panel();
@@ -416,6 +417,7 @@
             this.Controls.Add(this.pnlCaracteristicas);
             this.Controls.Add(this.lblCampoObligatorio);
             this.Controls.Add(this.lblCaracterísticas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCrearNuevoTicket";
             this.Text = "Crear nuevo ticket";
             this.pnl.ResumeLayout(false);

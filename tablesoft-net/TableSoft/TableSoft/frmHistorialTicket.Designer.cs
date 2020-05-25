@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistorialTicket));
             this.pnl = new System.Windows.Forms.Panel();
             this.lblMiCuenta = new System.Windows.Forms.Label();
             this.lblMisTickets = new System.Windows.Forms.Label();
@@ -255,6 +256,7 @@
             this.Controls.Add(this.lblVolver);
             this.Controls.Add(this.pnl);
             this.Controls.Add(this.pnlTitulo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmHistorialTicket";
             this.Text = "frmHistorialTicket";
             this.pnl.ResumeLayout(false);

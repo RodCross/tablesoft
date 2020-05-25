@@ -35,6 +35,9 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tslogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -122,9 +125,6 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\tsicon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="images\InicioEmpleadoAbrir.png" />
   </ItemGroup>
   <ItemGroup>
@@ -141,6 +141,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="images\ExitMouseEnter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="tslogo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

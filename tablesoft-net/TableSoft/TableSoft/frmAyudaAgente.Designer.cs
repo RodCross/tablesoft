@@ -43,13 +43,13 @@
             this.lblFAQ = new System.Windows.Forms.Label();
             this.lblTituloCuentas = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
+            this.lblGestionarTickets = new System.Windows.Forms.Label();
             this.lblMiCuenta = new System.Windows.Forms.Label();
             this.lblMisEquipos = new System.Windows.Forms.Label();
             this.lblLogout = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
-            this.lblGestionarTickets = new System.Windows.Forms.Label();
             this.pnlOpciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -216,6 +216,17 @@
             this.pnlOpciones.Size = new System.Drawing.Size(1064, 51);
             this.pnlOpciones.TabIndex = 0;
             // 
+            // lblGestionarTickets
+            // 
+            this.lblGestionarTickets.AutoSize = true;
+            this.lblGestionarTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionarTickets.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblGestionarTickets.Location = new System.Drawing.Point(730, 14);
+            this.lblGestionarTickets.Name = "lblGestionarTickets";
+            this.lblGestionarTickets.Size = new System.Drawing.Size(153, 23);
+            this.lblGestionarTickets.TabIndex = 0;
+            this.lblGestionarTickets.Text = "Gestionar tickets";
+            // 
             // lblMiCuenta
             // 
             this.lblMiCuenta.AutoSize = true;
@@ -282,17 +293,6 @@
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
             // 
-            // lblGestionarTickets
-            // 
-            this.lblGestionarTickets.AutoSize = true;
-            this.lblGestionarTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGestionarTickets.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblGestionarTickets.Location = new System.Drawing.Point(730, 14);
-            this.lblGestionarTickets.Name = "lblGestionarTickets";
-            this.lblGestionarTickets.Size = new System.Drawing.Size(153, 23);
-            this.lblGestionarTickets.TabIndex = 0;
-            this.lblGestionarTickets.Text = "Gestionar tickets";
-            // 
             // frmAyudaAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,7 +313,10 @@
             this.Controls.Add(this.lblTituloCuentas);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAyudaAgente";
             this.Text = "Preguntas frecuentes";
             this.pnlOpciones.ResumeLayout(false);

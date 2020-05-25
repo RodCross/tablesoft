@@ -249,7 +249,10 @@
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmListaTicketsAgente";
             this.Text = "Lista de tickets";
             this.pnlOpciones.ResumeLayout(false);

@@ -263,7 +263,10 @@
             this.Controls.Add(this.lblFAQ);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.lblTituloCuentas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAyuda";
             this.Text = "Preguntas frecuentes";
             this.pnlTitulo.ResumeLayout(false);

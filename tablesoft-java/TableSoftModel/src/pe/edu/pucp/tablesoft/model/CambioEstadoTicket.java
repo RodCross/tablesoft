@@ -7,7 +7,7 @@ import java.time.LocalDateTime;
  */
 
 public class CambioEstadoTicket {
-    private int eventoEstadoTicketId;
+    private int cambioEstadoTicketId;
     private LocalDateTime fechaCambioEstado;
     private String comentario;
     private Agente agenteResponsable;
@@ -29,12 +29,12 @@ public class CambioEstadoTicket {
         this.estadoTo = estadoTo;
     }
 
-    public int getEventoEstadoTicketId() {
-        return eventoEstadoTicketId;
+    public int getCambioEstadoTicketId() {
+        return cambioEstadoTicketId;
     }
 
-    public void setEventoEstadoTicketId(int eventoEstadoTicketId) {
-        this.eventoEstadoTicketId = eventoEstadoTicketId;
+    public void setCambioEstadoTicketId(int cambioEstadoTicketId) {
+        this.cambioEstadoTicketId = cambioEstadoTicketId;
     }
 
     public LocalDateTime getFechaCambioEstado() {

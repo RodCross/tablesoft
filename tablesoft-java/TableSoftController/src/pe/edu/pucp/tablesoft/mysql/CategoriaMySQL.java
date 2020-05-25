@@ -3,7 +3,6 @@ package pe.edu.pucp.tablesoft.mysql;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;

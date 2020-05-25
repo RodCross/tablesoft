@@ -11,5 +11,5 @@ public interface CambioEstadoTicketDAO {
     // Solo puede insertar - no actualiza, de ticket solo interesa el id
     int insertar(CambioEstadoTicket cambioEstado, Ticket ticket);
     // Solo tiene sentido listar por ticket (solo interesa el id)
-    ArrayList<CambioEstadoTicket> listar(Ticket ticket);
+    ArrayList<CambioEstadoTicket> listarxTicket(Ticket ticket);
 }

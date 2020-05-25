@@ -17,9 +17,19 @@ namespace TableSoft
             InitializeComponent();
         }
 
-        private void lblLogout_Click(object sender, EventArgs e)
+        private void btnVolver_Click(object sender, EventArgs e)
         {
+            this.Close();
+        }
 
+        private void btnEnviar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
         }
     }
 }

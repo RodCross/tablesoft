@@ -17,6 +17,26 @@ namespace TableSoft
             InitializeComponent();
         }
 
-       
+        private void lklFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmAyuda frm = new frmAyuda();
+            frm.ShowDialog();
+        }
+
+        private void lklLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            frmCrearNuevoTicket frm = new frmCrearNuevoTicket();
+            frm.ShowDialog();
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
     }
 }

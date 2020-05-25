@@ -51,18 +51,10 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblCampoObligatorio = new System.Windows.Forms.Label();
             this.lblCaracteristicas = new System.Windows.Forms.Label();
-            this.pnlOpciones = new System.Windows.Forms.Panel();
-            this.lblMiCuenta = new System.Windows.Forms.Label();
-            this.lblMisTickets = new System.Windows.Forms.Label();
-            this.lblLogout = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblFAQ = new System.Windows.Forms.Label();
-            this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
-            this.lblTituloSistema = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.pnlInfo.SuspendLayout();
             this.pnlCaracteristicas.SuspendLayout();
-            this.pnlOpciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,8 +62,8 @@
             // 
             this.lblAbrir.AutoSize = true;
             this.lblAbrir.Font = new System.Drawing.Font("Lato Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAbrir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblAbrir.Location = new System.Drawing.Point(30, 175);
+            this.lblAbrir.ForeColor = System.Drawing.Color.White;
+            this.lblAbrir.Location = new System.Drawing.Point(30, 23);
             this.lblAbrir.Name = "lblAbrir";
             this.lblAbrir.Size = new System.Drawing.Size(212, 25);
             this.lblAbrir.TabIndex = 0;
@@ -84,19 +76,20 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(910, 669);
+            this.btnEnviar.Location = new System.Drawing.Point(910, 539);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(119, 33);
             this.btnEnviar.TabIndex = 8;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
+            this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
             // 
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
             this.lblInfo.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblInfo.Location = new System.Drawing.Point(34, 218);
+            this.lblInfo.Location = new System.Drawing.Point(34, 88);
             this.lblInfo.Name = "lblInfo";
             this.lblInfo.Size = new System.Drawing.Size(115, 23);
             this.lblInfo.TabIndex = 0;
@@ -109,7 +102,7 @@
             this.pnlInfo.Controls.Add(this.lblDescripcion);
             this.pnlInfo.Controls.Add(this.txtAsunto);
             this.pnlInfo.Controls.Add(this.lblAsunto);
-            this.pnlInfo.Location = new System.Drawing.Point(35, 257);
+            this.pnlInfo.Location = new System.Drawing.Point(35, 127);
             this.pnlInfo.Name = "pnlInfo";
             this.pnlInfo.Size = new System.Drawing.Size(638, 394);
             this.pnlInfo.TabIndex = 0;
@@ -168,7 +161,7 @@
             this.pnlCaracteristicas.Controls.Add(this.cboCategoria);
             this.pnlCaracteristicas.Controls.Add(this.cboUrgencia);
             this.pnlCaracteristicas.Controls.Add(this.lblCategoria);
-            this.pnlCaracteristicas.Location = new System.Drawing.Point(696, 257);
+            this.pnlCaracteristicas.Location = new System.Drawing.Point(696, 127);
             this.pnlCaracteristicas.Name = "pnlCaracteristicas";
             this.pnlCaracteristicas.Size = new System.Drawing.Size(333, 394);
             this.pnlCaracteristicas.TabIndex = 0;
@@ -284,7 +277,7 @@
             this.lblCampoObligatorio.AutoSize = true;
             this.lblCampoObligatorio.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCampoObligatorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCampoObligatorio.Location = new System.Drawing.Point(36, 659);
+            this.lblCampoObligatorio.Location = new System.Drawing.Point(36, 529);
             this.lblCampoObligatorio.Name = "lblCampoObligatorio";
             this.lblCampoObligatorio.Size = new System.Drawing.Size(103, 13);
             this.lblCampoObligatorio.TabIndex = 0;
@@ -295,103 +288,22 @@
             this.lblCaracteristicas.AutoSize = true;
             this.lblCaracteristicas.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaracteristicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCaracteristicas.Location = new System.Drawing.Point(695, 218);
+            this.lblCaracteristicas.Location = new System.Drawing.Point(695, 88);
             this.lblCaracteristicas.Name = "lblCaracteristicas";
             this.lblCaracteristicas.Size = new System.Drawing.Size(137, 23);
             this.lblCaracteristicas.TabIndex = 0;
             this.lblCaracteristicas.Text = "Características";
             // 
-            // pnlOpciones
-            // 
-            this.pnlOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
-            this.pnlOpciones.Controls.Add(this.lblMiCuenta);
-            this.pnlOpciones.Controls.Add(this.lblMisTickets);
-            this.pnlOpciones.Controls.Add(this.lblLogout);
-            this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlOpciones.Location = new System.Drawing.Point(0, 106);
-            this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(1064, 51);
-            this.pnlOpciones.TabIndex = 0;
-            // 
-            // lblMiCuenta
-            // 
-            this.lblMiCuenta.AutoSize = true;
-            this.lblMiCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiCuenta.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMiCuenta.Location = new System.Drawing.Point(652, 14);
-            this.lblMiCuenta.Name = "lblMiCuenta";
-            this.lblMiCuenta.Size = new System.Drawing.Size(95, 23);
-            this.lblMiCuenta.TabIndex = 0;
-            this.lblMiCuenta.Text = "Mi cuenta";
-            // 
-            // lblMisTickets
-            // 
-            this.lblMisTickets.AutoSize = true;
-            this.lblMisTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMisTickets.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMisTickets.Location = new System.Drawing.Point(780, 14);
-            this.lblMisTickets.Name = "lblMisTickets";
-            this.lblMisTickets.Size = new System.Drawing.Size(100, 23);
-            this.lblMisTickets.TabIndex = 0;
-            this.lblMisTickets.Text = "Mis tickets";
-            // 
-            // lblLogout
-            // 
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogout.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblLogout.Location = new System.Drawing.Point(905, 14);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(124, 23);
-            this.lblLogout.TabIndex = 0;
-            this.lblLogout.Text = "Cerrar sesión";
-            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
-            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblFAQ);
-            this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
-            this.pnlTitulo.Controls.Add(this.lblTituloSistema);
+            this.pnlTitulo.Controls.Add(this.lblAbrir);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1064, 106);
+            this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
             this.pnlTitulo.TabIndex = 0;
-            // 
-            // lblFAQ
-            // 
-            this.lblFAQ.AutoSize = true;
-            this.lblFAQ.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFAQ.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFAQ.Location = new System.Drawing.Point(898, 70);
-            this.lblFAQ.Name = "lblFAQ";
-            this.lblFAQ.Size = new System.Drawing.Size(131, 16);
-            this.lblFAQ.TabIndex = 0;
-            this.lblFAQ.Text = "Preguntas frecuentes";
-            this.lblFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblBibliotecasPUCP
-            // 
-            this.lblBibliotecasPUCP.AutoSize = true;
-            this.lblBibliotecasPUCP.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBibliotecasPUCP.ForeColor = System.Drawing.Color.White;
-            this.lblBibliotecasPUCP.Location = new System.Drawing.Point(25, 64);
-            this.lblBibliotecasPUCP.Name = "lblBibliotecasPUCP";
-            this.lblBibliotecasPUCP.Size = new System.Drawing.Size(158, 23);
-            this.lblBibliotecasPUCP.TabIndex = 0;
-            this.lblBibliotecasPUCP.Text = "Bibliotecas PUCP";
-            // 
-            // lblTituloSistema
-            // 
-            this.lblTituloSistema.AutoSize = true;
-            this.lblTituloSistema.Font = new System.Drawing.Font("Lato Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloSistema.ForeColor = System.Drawing.Color.White;
-            this.lblTituloSistema.Location = new System.Drawing.Point(23, 17);
-            this.lblTituloSistema.Name = "lblTituloSistema";
-            this.lblTituloSistema.Size = new System.Drawing.Size(344, 33);
-            this.lblTituloSistema.TabIndex = 0;
-            this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // btnVolver
             // 
@@ -400,29 +312,28 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(761, 669);
+            this.btnVolver.Location = new System.Drawing.Point(761, 539);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmCrearNuevoTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 721);
+            this.ClientSize = new System.Drawing.Size(1064, 600);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
-            this.Controls.Add(this.lblAbrir);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.lblInfo);
             this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pnlCaracteristicas);
             this.Controls.Add(this.lblCampoObligatorio);
             this.Controls.Add(this.lblCaracteristicas);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -432,8 +343,6 @@
             this.pnlInfo.PerformLayout();
             this.pnlCaracteristicas.ResumeLayout(false);
             this.pnlCaracteristicas.PerformLayout();
-            this.pnlOpciones.ResumeLayout(false);
-            this.pnlOpciones.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);
@@ -464,14 +373,7 @@
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblCampoObligatorio;
         private System.Windows.Forms.Label lblCaracteristicas;
-        private System.Windows.Forms.Panel pnlOpciones;
-        private System.Windows.Forms.Label lblMiCuenta;
-        private System.Windows.Forms.Label lblMisTickets;
-        private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Label lblBibliotecasPUCP;
-        private System.Windows.Forms.Label lblTituloSistema;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label lblFAQ;
     }
 }

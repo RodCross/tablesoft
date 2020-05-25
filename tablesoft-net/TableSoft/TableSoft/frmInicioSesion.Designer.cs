@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioSesion));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblFAQ = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.lblTituloLogin = new System.Windows.Forms.Label();
@@ -42,6 +41,7 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
+            this.lklFAQ = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -50,32 +50,15 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblFAQ);
+            this.pnlTitulo.Controls.Add(this.lklFAQ);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(884, 106);
-            this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lblFAQ
-            // 
-            this.lblFAQ.AutoSize = true;
-            this.lblFAQ.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFAQ.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFAQ.Location = new System.Drawing.Point(719, 70);
-            this.lblFAQ.Name = "lblFAQ";
-            this.lblFAQ.Size = new System.Drawing.Size(140, 17);
-            this.lblFAQ.TabIndex = 0;
-            this.lblFAQ.Text = "Preguntas frecuentes";
-            this.lblFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblFAQ.Click += new System.EventHandler(this.lblFAQ_Click);
-            this.lblFAQ.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblFAQ_MouseDown);
-            this.lblFAQ.MouseEnter += new System.EventHandler(this.lblFAQ_MouseEnter);
-            this.lblFAQ.MouseLeave += new System.EventHandler(this.lblFAQ_MouseLeave);
-            this.lblFAQ.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblFAQ_MouseUp);
             // 
             // lblBibliotecasPUCP
             // 
@@ -107,7 +90,7 @@
             this.lblTituloLogin.Location = new System.Drawing.Point(402, 129);
             this.lblTituloLogin.Name = "lblTituloLogin";
             this.lblTituloLogin.Size = new System.Drawing.Size(81, 23);
-            this.lblTituloLogin.TabIndex = 1;
+            this.lblTituloLogin.TabIndex = 0;
             this.lblTituloLogin.Text = "Ingresar";
             // 
             // pnlLogin
@@ -206,6 +189,22 @@
             this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
             this.picExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseUp);
             // 
+            // lklFAQ
+            // 
+            this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
+            this.lklFAQ.AutoSize = true;
+            this.lklFAQ.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklFAQ.LinkColor = System.Drawing.Color.White;
+            this.lklFAQ.Location = new System.Drawing.Point(717, 70);
+            this.lklFAQ.Name = "lklFAQ";
+            this.lklFAQ.Size = new System.Drawing.Size(140, 17);
+            this.lklFAQ.TabIndex = 0;
+            this.lklFAQ.TabStop = true;
+            this.lklFAQ.Text = "Preguntas frecuentes";
+            this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
+            // 
             // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,7 +244,7 @@
         private System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.LinkLabel lklForgot;
         private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblFAQ;
         private System.Windows.Forms.PictureBox picExit;
+        private System.Windows.Forms.LinkLabel lklFAQ;
     }
 }

@@ -55,18 +55,6 @@
     <Compile Include="frmAyuda.Designer.cs">
       <DependentUpon>frmAyuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAyudaAgente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAyudaAgente.Designer.cs">
-      <DependentUpon>frmAyudaAgente.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAyudaEmpleado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAyudaEmpleado.Designer.cs">
-      <DependentUpon>frmAyudaEmpleado.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmCrearNuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -112,12 +100,6 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAyuda.resx">
       <DependentUpon>frmAyuda.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAyudaAgente.resx">
-      <DependentUpon>frmAyudaAgente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAyudaEmpleado.resx">
-      <DependentUpon>frmAyudaEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>

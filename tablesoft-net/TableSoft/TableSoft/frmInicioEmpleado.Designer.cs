@@ -42,13 +42,13 @@
             this.lblDetalleAbrir = new System.Windows.Forms.Label();
             this.btnAbrir = new System.Windows.Forms.Button();
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lklFAQ = new System.Windows.Forms.LinkLabel();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
-            this.lblMiCuenta = new System.Windows.Forms.Label();
-            this.lblMisTickets = new System.Windows.Forms.Label();
-            this.lblLogout = new System.Windows.Forms.Label();
-            this.lblFAQ = new System.Windows.Forms.Label();
+            this.lklCuenta = new System.Windows.Forms.LinkLabel();
+            this.lklTickets = new System.Windows.Forms.LinkLabel();
+            this.lklLogout = new System.Windows.Forms.LinkLabel();
             this.pnlExt.SuspendLayout();
             this.pnlInt.SuspendLayout();
             this.pnlDer.SuspendLayout();
@@ -63,10 +63,10 @@
             // 
             this.pnlExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
             this.pnlExt.Controls.Add(this.pnlInt);
-            this.pnlExt.Location = new System.Drawing.Point(29, 185);
+            this.pnlExt.Location = new System.Drawing.Point(28, 185);
             this.pnlExt.Name = "pnlExt";
             this.pnlExt.Size = new System.Drawing.Size(829, 352);
-            this.pnlExt.TabIndex = 2;
+            this.pnlExt.TabIndex = 0;
             // 
             // pnlInt
             // 
@@ -88,7 +88,7 @@
             this.pnlDer.Location = new System.Drawing.Point(388, 3);
             this.pnlDer.Name = "pnlDer";
             this.pnlDer.Size = new System.Drawing.Size(379, 294);
-            this.pnlDer.TabIndex = 10;
+            this.pnlDer.TabIndex = 1;
             // 
             // picEstado
             // 
@@ -110,7 +110,7 @@
             this.btnEstado.Location = new System.Drawing.Point(32, 229);
             this.btnEstado.Name = "btnEstado";
             this.btnEstado.Size = new System.Drawing.Size(316, 44);
-            this.btnEstado.TabIndex = 1;
+            this.btnEstado.TabIndex = 0;
             this.btnEstado.Text = "Ver estado de mis tickets";
             this.btnEstado.UseVisualStyleBackColor = false;
             // 
@@ -148,7 +148,7 @@
             this.pnlIzq.Location = new System.Drawing.Point(3, 3);
             this.pnlIzq.Name = "pnlIzq";
             this.pnlIzq.Size = new System.Drawing.Size(379, 294);
-            this.pnlIzq.TabIndex = 9;
+            this.pnlIzq.TabIndex = 0;
             // 
             // picAbrir
             // 
@@ -196,18 +196,37 @@
             this.btnAbrir.TabIndex = 0;
             this.btnAbrir.Text = "Abrir nuevo ticket";
             this.btnAbrir.UseVisualStyleBackColor = false;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblFAQ);
+            this.pnlTitulo.Controls.Add(this.lklFAQ);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(884, 106);
-            this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.TabIndex = 1;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
+            // 
+            // lklFAQ
+            // 
+            this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
+            this.lklFAQ.AutoSize = true;
+            this.lklFAQ.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklFAQ.LinkColor = System.Drawing.Color.White;
+            this.lklFAQ.Location = new System.Drawing.Point(717, 70);
+            this.lklFAQ.Name = "lklFAQ";
+            this.lklFAQ.Size = new System.Drawing.Size(140, 17);
+            this.lklFAQ.TabIndex = 0;
+            this.lklFAQ.TabStop = true;
+            this.lklFAQ.Text = "Preguntas frecuentes";
+            this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
+            this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);
             // 
             // lblBibliotecasPUCP
             // 
@@ -234,59 +253,62 @@
             // pnlOpciones
             // 
             this.pnlOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
-            this.pnlOpciones.Controls.Add(this.lblMiCuenta);
-            this.pnlOpciones.Controls.Add(this.lblMisTickets);
-            this.pnlOpciones.Controls.Add(this.lblLogout);
+            this.pnlOpciones.Controls.Add(this.lklCuenta);
+            this.pnlOpciones.Controls.Add(this.lklTickets);
+            this.pnlOpciones.Controls.Add(this.lklLogout);
             this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlOpciones.Location = new System.Drawing.Point(0, 106);
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(884, 51);
-            this.pnlOpciones.TabIndex = 0;
+            this.pnlOpciones.TabIndex = 2;
             // 
-            // lblMiCuenta
+            // lklCuenta
             // 
-            this.lblMiCuenta.AutoSize = true;
-            this.lblMiCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiCuenta.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMiCuenta.Location = new System.Drawing.Point(481, 14);
-            this.lblMiCuenta.Name = "lblMiCuenta";
-            this.lblMiCuenta.Size = new System.Drawing.Size(95, 23);
-            this.lblMiCuenta.TabIndex = 0;
-            this.lblMiCuenta.Text = "Mi cuenta";
+            this.lklCuenta.ActiveLinkColor = System.Drawing.Color.Yellow;
+            this.lklCuenta.AutoSize = true;
+            this.lklCuenta.Enabled = false;
+            this.lklCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lklCuenta.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklCuenta.LinkColor = System.Drawing.Color.White;
+            this.lklCuenta.Location = new System.Drawing.Point(462, 14);
+            this.lklCuenta.Name = "lklCuenta";
+            this.lklCuenta.Size = new System.Drawing.Size(95, 23);
+            this.lklCuenta.TabIndex = 0;
+            this.lklCuenta.TabStop = true;
+            this.lklCuenta.Text = "Mi cuenta";
+            this.lklCuenta.VisitedLinkColor = System.Drawing.Color.White;
             // 
-            // lblMisTickets
+            // lklTickets
             // 
-            this.lblMisTickets.AutoSize = true;
-            this.lblMisTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMisTickets.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMisTickets.Location = new System.Drawing.Point(609, 14);
-            this.lblMisTickets.Name = "lblMisTickets";
-            this.lblMisTickets.Size = new System.Drawing.Size(100, 23);
-            this.lblMisTickets.TabIndex = 0;
-            this.lblMisTickets.Text = "Mis tickets";
+            this.lklTickets.ActiveLinkColor = System.Drawing.Color.Yellow;
+            this.lklTickets.AutoSize = true;
+            this.lklTickets.Enabled = false;
+            this.lklTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lklTickets.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklTickets.LinkColor = System.Drawing.Color.White;
+            this.lklTickets.Location = new System.Drawing.Point(595, 14);
+            this.lklTickets.Name = "lklTickets";
+            this.lklTickets.Size = new System.Drawing.Size(100, 23);
+            this.lklTickets.TabIndex = 1;
+            this.lklTickets.TabStop = true;
+            this.lklTickets.Text = "Mis tickets";
+            this.lklTickets.VisitedLinkColor = System.Drawing.Color.White;
             // 
-            // lblLogout
+            // lklLogout
             // 
-            this.lblLogout.AutoSize = true;
-            this.lblLogout.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogout.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblLogout.Location = new System.Drawing.Point(734, 14);
-            this.lblLogout.Name = "lblLogout";
-            this.lblLogout.Size = new System.Drawing.Size(124, 23);
-            this.lblLogout.TabIndex = 0;
-            this.lblLogout.Text = "Cerrar sesión";
-            // 
-            // lblFAQ
-            // 
-            this.lblFAQ.AutoSize = true;
-            this.lblFAQ.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFAQ.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFAQ.Location = new System.Drawing.Point(727, 70);
-            this.lblFAQ.Name = "lblFAQ";
-            this.lblFAQ.Size = new System.Drawing.Size(131, 16);
-            this.lblFAQ.TabIndex = 0;
-            this.lblFAQ.Text = "Preguntas frecuentes";
-            this.lblFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lklLogout.ActiveLinkColor = System.Drawing.Color.Yellow;
+            this.lklLogout.AutoSize = true;
+            this.lklLogout.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
+            this.lklLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklLogout.LinkColor = System.Drawing.Color.White;
+            this.lklLogout.Location = new System.Drawing.Point(733, 14);
+            this.lklLogout.Name = "lklLogout";
+            this.lklLogout.Size = new System.Drawing.Size(124, 23);
+            this.lklLogout.TabIndex = 2;
+            this.lklLogout.TabStop = true;
+            this.lklLogout.Text = "Cerrar sesión";
+            this.lklLogout.VisitedLinkColor = System.Drawing.Color.White;
+            this.lklLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklLogout_LinkClicked);
             // 
             // frmInicioEmpleado
             // 
@@ -297,7 +319,7 @@
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.pnlExt);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -333,12 +355,12 @@
         private System.Windows.Forms.Label lblBibliotecasPUCP;
         private System.Windows.Forms.Label lblTituloSistema;
         private System.Windows.Forms.Panel pnlOpciones;
-        private System.Windows.Forms.Label lblMiCuenta;
-        private System.Windows.Forms.Label lblMisTickets;
-        private System.Windows.Forms.Label lblLogout;
         private System.Windows.Forms.Panel pnlDer;
         private System.Windows.Forms.Panel pnlIzq;
         private System.Windows.Forms.PictureBox picAbrir;
-        private System.Windows.Forms.Label lblFAQ;
+        private System.Windows.Forms.LinkLabel lklLogout;
+        private System.Windows.Forms.LinkLabel lklCuenta;
+        private System.Windows.Forms.LinkLabel lklTickets;
+        private System.Windows.Forms.LinkLabel lklFAQ;
     }
 }

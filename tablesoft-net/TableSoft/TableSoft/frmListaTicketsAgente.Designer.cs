@@ -249,7 +249,7 @@
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

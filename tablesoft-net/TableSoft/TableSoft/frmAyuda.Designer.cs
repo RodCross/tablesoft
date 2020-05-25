@@ -70,6 +70,7 @@
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1064, 106);
             this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // lblBibliotecasPUCP
             // 
@@ -250,7 +251,7 @@
             this.Controls.Add(this.lblFAQ);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.lblTituloCuentas);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;

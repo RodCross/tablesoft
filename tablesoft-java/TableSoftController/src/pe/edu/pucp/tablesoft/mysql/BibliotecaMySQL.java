@@ -31,11 +31,10 @@ public class BibliotecaMySQL implements BibliotecaDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_biblioteca(?,?,?,?)}");
+                    "{CALL insertar_biblioteca(?,?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_NOMBRE", biblioteca.getNombre());
             cs.setString("_ABREVIATURA", biblioteca.getAbreviatura());
-            cs.setBoolean("_ACTIVO", biblioteca.getActivo());
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             biblioteca.setBibliotecaId(rpta);
@@ -59,11 +58,10 @@ public class BibliotecaMySQL implements BibliotecaDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_biblioteca(?,?,?,?)}");
+                    "{CALL actualizar_biblioteca(?,?,?)}");
             cs.setInt("_ID", biblioteca.getBibliotecaId());
             cs.setString("_NOMBRE", biblioteca.getNombre());
             cs.setString("_ABREVIATURA", biblioteca.getAbreviatura());
-            cs.setBoolean("_ACTIVO", biblioteca.getActivo());
             rpta=cs.executeUpdate();
             con.close();
         } catch(SQLException | ClassNotFoundException ex) {

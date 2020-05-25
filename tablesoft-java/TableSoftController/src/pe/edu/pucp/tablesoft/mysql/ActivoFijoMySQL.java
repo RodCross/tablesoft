@@ -31,11 +31,10 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_activo_fijo(?,?,?,?)}");
+                    "{CALL insertar_activo_fijo(?,?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_NOMBRE", activoFijo.getNombre());
             cs.setString("_DESCRIPCION", activoFijo.getDescripcion());
-            cs.setBoolean("_ACTIVO", activoFijo.getActivo());
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             activoFijo.setActivoFijoId(rpta);
@@ -59,11 +58,10 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_activo_fijo(?,?,?,?)}");
+                    "{CALL actualizar_activo_fijo(?,?,?)}");
             cs.setInt("_ID", activoFijo.getActivoFijoId());
             cs.setString("_NOMBRE", activoFijo.getNombre());
             cs.setString("_ABREVIATURA", activoFijo.getDescripcion());
-            cs.setBoolean("_ACTIVO", activoFijo.getActivo());
             rpta=cs.executeUpdate();
             con.close();
         } catch(SQLException | ClassNotFoundException ex) {

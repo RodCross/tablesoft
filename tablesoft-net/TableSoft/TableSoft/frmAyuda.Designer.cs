@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAyuda));
             this.lblTituloCuentas = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblLogin = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.lblFAQ = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblLogin);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -72,18 +70,6 @@
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1064, 106);
             this.pnlTitulo.TabIndex = 0;
-            // 
-            // lblLogin
-            // 
-            this.lblLogin.AutoSize = true;
-            this.lblLogin.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblLogin.Location = new System.Drawing.Point(947, 70);
-            this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(82, 16);
-            this.lblLogin.TabIndex = 0;
-            this.lblLogin.Text = "Iniciar sesión";
-            this.lblLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblBibliotecasPUCP
             // 
@@ -243,6 +229,7 @@
             this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmAyuda
             // 
@@ -279,7 +266,6 @@
         #endregion
         private System.Windows.Forms.Label lblTituloCuentas;
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Label lblLogin;
         private System.Windows.Forms.Label lblBibliotecasPUCP;
         private System.Windows.Forms.Label lblTituloSistema;
         private System.Windows.Forms.Label lblFAQ;

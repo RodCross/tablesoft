@@ -41,8 +41,10 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
+            this.picExit = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             this.pnlLogin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -56,18 +58,24 @@
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(884, 106);
             this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // lblFAQ
             // 
             this.lblFAQ.AutoSize = true;
-            this.lblFAQ.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFAQ.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFAQ.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblFAQ.Location = new System.Drawing.Point(727, 70);
+            this.lblFAQ.Location = new System.Drawing.Point(719, 70);
             this.lblFAQ.Name = "lblFAQ";
-            this.lblFAQ.Size = new System.Drawing.Size(131, 16);
+            this.lblFAQ.Size = new System.Drawing.Size(140, 17);
             this.lblFAQ.TabIndex = 0;
             this.lblFAQ.Text = "Preguntas frecuentes";
             this.lblFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblFAQ.Click += new System.EventHandler(this.lblFAQ_Click);
+            this.lblFAQ.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblFAQ_MouseDown);
+            this.lblFAQ.MouseEnter += new System.EventHandler(this.lblFAQ_MouseEnter);
+            this.lblFAQ.MouseLeave += new System.EventHandler(this.lblFAQ_MouseLeave);
+            this.lblFAQ.MouseUp += new System.Windows.Forms.MouseEventHandler(this.lblFAQ_MouseUp);
             // 
             // lblBibliotecasPUCP
             // 
@@ -96,7 +104,7 @@
             this.lblTituloLogin.AutoSize = true;
             this.lblTituloLogin.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloLogin.Location = new System.Drawing.Point(38, 129);
+            this.lblTituloLogin.Location = new System.Drawing.Point(402, 129);
             this.lblTituloLogin.Name = "lblTituloLogin";
             this.lblTituloLogin.Size = new System.Drawing.Size(81, 23);
             this.lblTituloLogin.TabIndex = 1;
@@ -112,7 +120,7 @@
             this.pnlLogin.Controls.Add(this.lblContraseña);
             this.pnlLogin.Controls.Add(this.lblEmail);
             this.pnlLogin.ForeColor = System.Drawing.Color.White;
-            this.pnlLogin.Location = new System.Drawing.Point(38, 172);
+            this.pnlLogin.Location = new System.Drawing.Point(237, 172);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(410, 353);
             this.pnlLogin.TabIndex = 0;
@@ -182,16 +190,33 @@
             this.lblEmail.TabIndex = 1;
             this.lblEmail.Text = "Email";
             // 
+            // picExit
+            // 
+            this.picExit.Image = global::TableSoft.Properties.Resources.Exit;
+            this.picExit.Location = new System.Drawing.Point(817, 494);
+            this.picExit.Margin = new System.Windows.Forms.Padding(6);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(52, 52);
+            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExit.TabIndex = 2;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
+            this.picExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseDown);
+            this.picExit.MouseEnter += new System.EventHandler(this.picExit_MouseEnter);
+            this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
+            this.picExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseUp);
+            // 
             // frmInicioSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.ClientSize = new System.Drawing.Size(884, 561);
+            this.Controls.Add(this.picExit);
             this.Controls.Add(this.pnlLogin);
             this.Controls.Add(this.lblTituloLogin);
             this.Controls.Add(this.pnlTitulo);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -201,6 +226,7 @@
             this.pnlTitulo.PerformLayout();
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,5 +246,6 @@
         private System.Windows.Forms.LinkLabel lklForgot;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label lblFAQ;
+        private System.Windows.Forms.PictureBox picExit;
     }
 }

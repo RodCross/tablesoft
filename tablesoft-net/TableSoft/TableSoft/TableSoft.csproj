@@ -138,5 +138,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="images\tsicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\InicioEmpleadoAbrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\InicioEmpleadoVer.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

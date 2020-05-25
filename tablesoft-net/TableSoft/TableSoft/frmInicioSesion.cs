@@ -17,6 +17,16 @@ namespace TableSoft
             InitializeComponent();
         }
 
-       
+        private void btnLogin_Click(object sender, EventArgs e)
+        {
+            frmInicioEmpleado frm = new frmInicioEmpleado
+            {
+                Location = this.Location,
+                StartPosition = FormStartPosition.Manual
+            };
+            frm.FormClosing += delegate { this.Show(); };
+            frm.Show();
+            this.Hide();
+        }
     }
 }

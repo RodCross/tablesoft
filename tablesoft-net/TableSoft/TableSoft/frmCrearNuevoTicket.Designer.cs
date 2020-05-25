@@ -29,442 +29,449 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCrearNuevoTicket));
-            this.lnkVolver = new System.Windows.Forms.LinkLabel();
-            this.lblCrearTicket = new System.Windows.Forms.Label();
-            this.pnl = new System.Windows.Forms.Panel();
-            this.lblMiCuenta = new System.Windows.Forms.Label();
-            this.lblMisTickets = new System.Windows.Forms.Label();
-            this.lblCerrarSesion = new System.Windows.Forms.Label();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblPreguntasFrecuentes = new System.Windows.Forms.Label();
-            this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
-            this.lblSistemaDeMesaDeAyuda = new System.Windows.Forms.Label();
+            this.lblAbrir = new System.Windows.Forms.Label();
             this.btnEnviar = new System.Windows.Forms.Button();
-            this.lblInformacionTicket = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.rtxtDescripcion = new System.Windows.Forms.RichTextBox();
+            this.lblInfo = new System.Windows.Forms.Label();
+            this.pnlInfo = new System.Windows.Forms.Panel();
+            this.rtfDescripcion = new System.Windows.Forms.RichTextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.txtAsunto = new System.Windows.Forms.TextBox();
             this.lblAsunto = new System.Windows.Forms.Label();
             this.pnlCaracteristicas = new System.Windows.Forms.Panel();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.lblCategoriaTicket = new System.Windows.Forms.Label();
-            this.lblNumeroActivoFijo = new System.Windows.Forms.Label();
-            this.lblReportado = new System.Windows.Forms.Label();
-            this.txtNumeroActivoFijo = new System.Windows.Forms.TextBox();
-            this.cboCategoriaTicket = new System.Windows.Forms.ComboBox();
-            this.lblUrgenciaTicket = new System.Windows.Forms.Label();
-            this.cboUrgenciaTicket = new System.Windows.Forms.ComboBox();
-            this.cboBiblioteca = new System.Windows.Forms.ComboBox();
             this.lblBiblioteca = new System.Windows.Forms.Label();
+            this.lblActivoFijo = new System.Windows.Forms.Label();
+            this.lblEstDoc = new System.Windows.Forms.Label();
+            this.txtActivoFijo = new System.Windows.Forms.TextBox();
+            this.cboBiblioteca = new System.Windows.Forms.ComboBox();
+            this.lblUrgencia = new System.Windows.Forms.Label();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.cboUrgencia = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.lblCampoObligatorio = new System.Windows.Forms.Label();
-            this.lblCaracterísticas = new System.Windows.Forms.Label();
-            this.pnl.SuspendLayout();
-            this.pnlTitulo.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.lblCaracteristicas = new System.Windows.Forms.Label();
+            this.pnlOpciones = new System.Windows.Forms.Panel();
+            this.lblMiCuenta = new System.Windows.Forms.Label();
+            this.lblMisTickets = new System.Windows.Forms.Label();
+            this.lblLogout = new System.Windows.Forms.Label();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblFAQ = new System.Windows.Forms.Label();
+            this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
+            this.lblTituloSistema = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.pnlInfo.SuspendLayout();
             this.pnlCaracteristicas.SuspendLayout();
+            this.pnlOpciones.SuspendLayout();
+            this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lnkVolver
+            // lblAbrir
             // 
-            this.lnkVolver.AutoSize = true;
-            this.lnkVolver.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lnkVolver.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.lnkVolver.Location = new System.Drawing.Point(19, 160);
-            this.lnkVolver.Name = "lnkVolver";
-            this.lnkVolver.Size = new System.Drawing.Size(56, 16);
-            this.lnkVolver.TabIndex = 20;
-            this.lnkVolver.TabStop = true;
-            this.lnkVolver.Text = "< Volver";
-            // 
-            // lblCrearTicket
-            // 
-            this.lblCrearTicket.AutoSize = true;
-            this.lblCrearTicket.Font = new System.Drawing.Font("Lato", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCrearTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCrearTicket.Location = new System.Drawing.Point(17, 185);
-            this.lblCrearTicket.Name = "lblCrearTicket";
-            this.lblCrearTicket.Size = new System.Drawing.Size(219, 25);
-            this.lblCrearTicket.TabIndex = 19;
-            this.lblCrearTicket.Text = "Crear un nuevo Ticket";
-            // 
-            // pnl
-            // 
-            this.pnl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
-            this.pnl.Controls.Add(this.lblMiCuenta);
-            this.pnl.Controls.Add(this.lblMisTickets);
-            this.pnl.Controls.Add(this.lblCerrarSesion);
-            this.pnl.Location = new System.Drawing.Point(-10, 95);
-            this.pnl.Name = "pnl";
-            this.pnl.Size = new System.Drawing.Size(1223, 51);
-            this.pnl.TabIndex = 18;
-            // 
-            // lblMiCuenta
-            // 
-            this.lblMiCuenta.AutoSize = true;
-            this.lblMiCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMiCuenta.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMiCuenta.Location = new System.Drawing.Point(775, 15);
-            this.lblMiCuenta.Name = "lblMiCuenta";
-            this.lblMiCuenta.Size = new System.Drawing.Size(99, 23);
-            this.lblMiCuenta.TabIndex = 6;
-            this.lblMiCuenta.Text = "Mi Cuenta";
-            // 
-            // lblMisTickets
-            // 
-            this.lblMisTickets.AutoSize = true;
-            this.lblMisTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMisTickets.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblMisTickets.Location = new System.Drawing.Point(894, 15);
-            this.lblMisTickets.Name = "lblMisTickets";
-            this.lblMisTickets.Size = new System.Drawing.Size(104, 23);
-            this.lblMisTickets.TabIndex = 5;
-            this.lblMisTickets.Text = "Mis Tickets";
-            // 
-            // lblCerrarSesion
-            // 
-            this.lblCerrarSesion.AutoSize = true;
-            this.lblCerrarSesion.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCerrarSesion.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblCerrarSesion.Location = new System.Drawing.Point(1020, 15);
-            this.lblCerrarSesion.Name = "lblCerrarSesion";
-            this.lblCerrarSesion.Size = new System.Drawing.Size(126, 23);
-            this.lblCerrarSesion.TabIndex = 4;
-            this.lblCerrarSesion.Text = "Cerrar Sesion";
-            // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblPreguntasFrecuentes);
-            this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
-            this.pnlTitulo.Controls.Add(this.lblSistemaDeMesaDeAyuda);
-            this.pnlTitulo.Location = new System.Drawing.Point(-10, -1);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1223, 100);
-            this.pnlTitulo.TabIndex = 17;
-            // 
-            // lblPreguntasFrecuentes
-            // 
-            this.lblPreguntasFrecuentes.AutoSize = true;
-            this.lblPreguntasFrecuentes.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPreguntasFrecuentes.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPreguntasFrecuentes.Location = new System.Drawing.Point(1082, 38);
-            this.lblPreguntasFrecuentes.Name = "lblPreguntasFrecuentes";
-            this.lblPreguntasFrecuentes.Size = new System.Drawing.Size(64, 23);
-            this.lblPreguntasFrecuentes.TabIndex = 3;
-            this.lblPreguntasFrecuentes.Text = "Ayuda";
-            // 
-            // lblBibliotecasPUCP
-            // 
-            this.lblBibliotecasPUCP.AutoSize = true;
-            this.lblBibliotecasPUCP.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBibliotecasPUCP.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblBibliotecasPUCP.Location = new System.Drawing.Point(14, 58);
-            this.lblBibliotecasPUCP.Name = "lblBibliotecasPUCP";
-            this.lblBibliotecasPUCP.Size = new System.Drawing.Size(158, 23);
-            this.lblBibliotecasPUCP.TabIndex = 2;
-            this.lblBibliotecasPUCP.Text = "Bibliotecas PUCP";
-            // 
-            // lblSistemaDeMesaDeAyuda
-            // 
-            this.lblSistemaDeMesaDeAyuda.AutoSize = true;
-            this.lblSistemaDeMesaDeAyuda.Font = new System.Drawing.Font("Lato", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSistemaDeMesaDeAyuda.ForeColor = System.Drawing.Color.White;
-            this.lblSistemaDeMesaDeAyuda.Location = new System.Drawing.Point(12, 16);
-            this.lblSistemaDeMesaDeAyuda.Name = "lblSistemaDeMesaDeAyuda";
-            this.lblSistemaDeMesaDeAyuda.Size = new System.Drawing.Size(328, 33);
-            this.lblSistemaDeMesaDeAyuda.TabIndex = 1;
-            this.lblSistemaDeMesaDeAyuda.Text = "Sistema de Mesa de Ayuda";
+            this.lblAbrir.AutoSize = true;
+            this.lblAbrir.Font = new System.Drawing.Font("Lato Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbrir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblAbrir.Location = new System.Drawing.Point(30, 175);
+            this.lblAbrir.Name = "lblAbrir";
+            this.lblAbrir.Size = new System.Drawing.Size(212, 25);
+            this.lblAbrir.TabIndex = 0;
+            this.lblAbrir.Text = "Abrir un nuevo ticket";
             // 
             // btnEnviar
             // 
-            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
+            this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.btnEnviar.FlatAppearance.BorderSize = 0;
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(1026, 550);
+            this.btnEnviar.Location = new System.Drawing.Point(910, 669);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(119, 33);
-            this.btnEnviar.TabIndex = 16;
-            this.btnEnviar.TabStop = false;
+            this.btnEnviar.TabIndex = 8;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
             // 
-            // lblInformacionTicket
+            // lblInfo
             // 
-            this.lblInformacionTicket.AutoSize = true;
-            this.lblInformacionTicket.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInformacionTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblInformacionTicket.Location = new System.Drawing.Point(604, 221);
-            this.lblInformacionTicket.Name = "lblInformacionTicket";
-            this.lblInformacionTicket.Size = new System.Drawing.Size(200, 23);
-            this.lblInformacionTicket.TabIndex = 15;
-            this.lblInformacionTicket.Text = "Información del Ticket";
+            this.lblInfo.AutoSize = true;
+            this.lblInfo.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblInfo.Location = new System.Drawing.Point(34, 218);
+            this.lblInfo.Name = "lblInfo";
+            this.lblInfo.Size = new System.Drawing.Size(115, 23);
+            this.lblInfo.TabIndex = 0;
+            this.lblInfo.Text = "Información";
             // 
-            // panel1
+            // pnlInfo
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.rtxtDescripcion);
-            this.panel1.Controls.Add(this.lblDescripcion);
-            this.panel1.Controls.Add(this.txtAsunto);
-            this.panel1.Controls.Add(this.lblAsunto);
-            this.panel1.Location = new System.Drawing.Point(608, 247);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(537, 287);
-            this.panel1.TabIndex = 14;
+            this.pnlInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlInfo.Controls.Add(this.rtfDescripcion);
+            this.pnlInfo.Controls.Add(this.lblDescripcion);
+            this.pnlInfo.Controls.Add(this.txtAsunto);
+            this.pnlInfo.Controls.Add(this.lblAsunto);
+            this.pnlInfo.Location = new System.Drawing.Point(35, 257);
+            this.pnlInfo.Name = "pnlInfo";
+            this.pnlInfo.Size = new System.Drawing.Size(638, 394);
+            this.pnlInfo.TabIndex = 0;
             // 
-            // rtxtDescripcion
+            // rtfDescripcion
             // 
-            this.rtxtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtxtDescripcion.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtxtDescripcion.Location = new System.Drawing.Point(34, 107);
-            this.rtxtDescripcion.Name = "rtxtDescripcion";
-            this.rtxtDescripcion.Size = new System.Drawing.Size(480, 160);
-            this.rtxtDescripcion.TabIndex = 12;
-            this.rtxtDescripcion.Text = "";
+            this.rtfDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtfDescripcion.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtfDescripcion.Location = new System.Drawing.Point(20, 104);
+            this.rtfDescripcion.Name = "rtfDescripcion";
+            this.rtfDescripcion.Size = new System.Drawing.Size(593, 271);
+            this.rtfDescripcion.TabIndex = 1;
+            this.rtfDescripcion.Text = "";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(31, 77);
+            this.lblDescripcion.Location = new System.Drawing.Point(17, 78);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(259, 18);
-            this.lblDescripcion.TabIndex = 10;
-            this.lblDescripcion.Text = "Describe aquí el problema/situación * :";
+            this.lblDescripcion.Size = new System.Drawing.Size(198, 18);
+            this.lblDescripcion.TabIndex = 0;
+            this.lblDescripcion.Text = "Descripción de la situación *";
             // 
             // txtAsunto
             // 
             this.txtAsunto.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAsunto.Location = new System.Drawing.Point(105, 33);
+            this.txtAsunto.Location = new System.Drawing.Point(20, 38);
             this.txtAsunto.Name = "txtAsunto";
             this.txtAsunto.Size = new System.Drawing.Size(409, 23);
-            this.txtAsunto.TabIndex = 9;
+            this.txtAsunto.TabIndex = 0;
             // 
             // lblAsunto
             // 
             this.lblAsunto.AutoSize = true;
-            this.lblAsunto.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsunto.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAsunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblAsunto.Location = new System.Drawing.Point(28, 32);
+            this.lblAsunto.Location = new System.Drawing.Point(17, 12);
             this.lblAsunto.Name = "lblAsunto";
-            this.lblAsunto.Size = new System.Drawing.Size(71, 18);
+            this.lblAsunto.Size = new System.Drawing.Size(68, 18);
             this.lblAsunto.TabIndex = 0;
-            this.lblAsunto.Text = "Asunto * :";
+            this.lblAsunto.Text = "Asunto *";
             // 
             // pnlCaracteristicas
             // 
             this.pnlCaracteristicas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlCaracteristicas.Controls.Add(this.txtEmail);
             this.pnlCaracteristicas.Controls.Add(this.lblEmail);
-            this.pnlCaracteristicas.Controls.Add(this.lblCategoriaTicket);
-            this.pnlCaracteristicas.Controls.Add(this.lblNumeroActivoFijo);
-            this.pnlCaracteristicas.Controls.Add(this.lblReportado);
-            this.pnlCaracteristicas.Controls.Add(this.txtNumeroActivoFijo);
-            this.pnlCaracteristicas.Controls.Add(this.cboCategoriaTicket);
-            this.pnlCaracteristicas.Controls.Add(this.lblUrgenciaTicket);
-            this.pnlCaracteristicas.Controls.Add(this.cboUrgenciaTicket);
-            this.pnlCaracteristicas.Controls.Add(this.cboBiblioteca);
             this.pnlCaracteristicas.Controls.Add(this.lblBiblioteca);
-            this.pnlCaracteristicas.Location = new System.Drawing.Point(22, 247);
+            this.pnlCaracteristicas.Controls.Add(this.lblActivoFijo);
+            this.pnlCaracteristicas.Controls.Add(this.lblEstDoc);
+            this.pnlCaracteristicas.Controls.Add(this.txtActivoFijo);
+            this.pnlCaracteristicas.Controls.Add(this.cboBiblioteca);
+            this.pnlCaracteristicas.Controls.Add(this.lblUrgencia);
+            this.pnlCaracteristicas.Controls.Add(this.cboCategoria);
+            this.pnlCaracteristicas.Controls.Add(this.cboUrgencia);
+            this.pnlCaracteristicas.Controls.Add(this.lblCategoria);
+            this.pnlCaracteristicas.Location = new System.Drawing.Point(696, 257);
             this.pnlCaracteristicas.Name = "pnlCaracteristicas";
-            this.pnlCaracteristicas.Size = new System.Drawing.Size(554, 287);
-            this.pnlCaracteristicas.TabIndex = 13;
+            this.pnlCaracteristicas.Size = new System.Drawing.Size(333, 394);
+            this.pnlCaracteristicas.TabIndex = 0;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(308, 230);
+            this.txtEmail.Location = new System.Drawing.Point(20, 352);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(226, 23);
-            this.txtEmail.TabIndex = 9;
+            this.txtEmail.Size = new System.Drawing.Size(288, 23);
+            this.txtEmail.TabIndex = 6;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblEmail.Location = new System.Drawing.Point(23, 231);
+            this.lblEmail.Location = new System.Drawing.Point(17, 326);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(280, 18);
-            this.lblEmail.TabIndex = 11;
-            this.lblEmail.Text = "E-mail del estudiante/docente (opcional) :";
-            // 
-            // lblCategoriaTicket
-            // 
-            this.lblCategoriaTicket.AutoSize = true;
-            this.lblCategoriaTicket.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoriaTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCategoriaTicket.Location = new System.Drawing.Point(23, 32);
-            this.lblCategoriaTicket.Name = "lblCategoriaTicket";
-            this.lblCategoriaTicket.Size = new System.Drawing.Size(158, 18);
-            this.lblCategoriaTicket.TabIndex = 0;
-            this.lblCategoriaTicket.Text = "Categoria del Ticket * :";
-            // 
-            // lblNumeroActivoFijo
-            // 
-            this.lblNumeroActivoFijo.AutoSize = true;
-            this.lblNumeroActivoFijo.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroActivoFijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblNumeroActivoFijo.Location = new System.Drawing.Point(23, 149);
-            this.lblNumeroActivoFijo.Name = "lblNumeroActivoFijo";
-            this.lblNumeroActivoFijo.Size = new System.Drawing.Size(360, 18);
-            this.lblNumeroActivoFijo.TabIndex = 10;
-            this.lblNumeroActivoFijo.Text = "Numero de Activo fijo de equipo reportado (opcional) :";
-            // 
-            // lblReportado
-            // 
-            this.lblReportado.AutoSize = true;
-            this.lblReportado.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblReportado.Location = new System.Drawing.Point(22, 190);
-            this.lblReportado.Name = "lblReportado";
-            this.lblReportado.Size = new System.Drawing.Size(304, 23);
-            this.lblReportado.TabIndex = 4;
-            this.lblReportado.Text = "Reportado por estudiante/docente";
-            // 
-            // txtNumeroActivoFijo
-            // 
-            this.txtNumeroActivoFijo.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNumeroActivoFijo.Location = new System.Drawing.Point(389, 148);
-            this.txtNumeroActivoFijo.Name = "txtNumeroActivoFijo";
-            this.txtNumeroActivoFijo.Size = new System.Drawing.Size(145, 23);
-            this.txtNumeroActivoFijo.TabIndex = 8;
-            // 
-            // cboCategoriaTicket
-            // 
-            this.cboCategoriaTicket.FormattingEnabled = true;
-            this.cboCategoriaTicket.Location = new System.Drawing.Point(189, 33);
-            this.cboCategoriaTicket.Name = "cboCategoriaTicket";
-            this.cboCategoriaTicket.Size = new System.Drawing.Size(146, 21);
-            this.cboCategoriaTicket.TabIndex = 5;
-            // 
-            // lblUrgenciaTicket
-            // 
-            this.lblUrgenciaTicket.AutoSize = true;
-            this.lblUrgenciaTicket.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUrgenciaTicket.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblUrgenciaTicket.Location = new System.Drawing.Point(23, 69);
-            this.lblUrgenciaTicket.Name = "lblUrgenciaTicket";
-            this.lblUrgenciaTicket.Size = new System.Drawing.Size(152, 18);
-            this.lblUrgenciaTicket.TabIndex = 1;
-            this.lblUrgenciaTicket.Text = "Urgencia del Ticket * :";
-            // 
-            // cboUrgenciaTicket
-            // 
-            this.cboUrgenciaTicket.FormattingEnabled = true;
-            this.cboUrgenciaTicket.Location = new System.Drawing.Point(189, 70);
-            this.cboUrgenciaTicket.Name = "cboUrgenciaTicket";
-            this.cboUrgenciaTicket.Size = new System.Drawing.Size(146, 21);
-            this.cboUrgenciaTicket.TabIndex = 6;
-            // 
-            // cboBiblioteca
-            // 
-            this.cboBiblioteca.FormattingEnabled = true;
-            this.cboBiblioteca.Location = new System.Drawing.Point(189, 108);
-            this.cboBiblioteca.Name = "cboBiblioteca";
-            this.cboBiblioteca.Size = new System.Drawing.Size(146, 21);
-            this.cboBiblioteca.TabIndex = 7;
+            this.lblEmail.Size = new System.Drawing.Size(143, 18);
+            this.lblEmail.TabIndex = 0;
+            this.lblEmail.Text = "Tu email (opcional) :";
             // 
             // lblBiblioteca
             // 
             this.lblBiblioteca.AutoSize = true;
-            this.lblBiblioteca.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBiblioteca.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBiblioteca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblBiblioteca.Location = new System.Drawing.Point(23, 107);
+            this.lblBiblioteca.Location = new System.Drawing.Point(17, 12);
             this.lblBiblioteca.Name = "lblBiblioteca";
-            this.lblBiblioteca.Size = new System.Drawing.Size(91, 18);
-            this.lblBiblioteca.TabIndex = 2;
-            this.lblBiblioteca.Text = "Biblioteca * :";
+            this.lblBiblioteca.Size = new System.Drawing.Size(86, 18);
+            this.lblBiblioteca.TabIndex = 0;
+            this.lblBiblioteca.Text = "Biblioteca *";
+            // 
+            // lblActivoFijo
+            // 
+            this.lblActivoFijo.AutoSize = true;
+            this.lblActivoFijo.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivoFijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblActivoFijo.Location = new System.Drawing.Point(17, 210);
+            this.lblActivoFijo.Name = "lblActivoFijo";
+            this.lblActivoFijo.Size = new System.Drawing.Size(257, 18);
+            this.lblActivoFijo.TabIndex = 0;
+            this.lblActivoFijo.Text = "N.° de activo fijo de equipo (opcional)";
+            // 
+            // lblEstDoc
+            // 
+            this.lblEstDoc.AutoSize = true;
+            this.lblEstDoc.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstDoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblEstDoc.Location = new System.Drawing.Point(16, 293);
+            this.lblEstDoc.Name = "lblEstDoc";
+            this.lblEstDoc.Size = new System.Drawing.Size(210, 19);
+            this.lblEstDoc.TabIndex = 0;
+            this.lblEstDoc.Text = "¿Eres estudiante o docente?";
+            // 
+            // txtActivoFijo
+            // 
+            this.txtActivoFijo.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivoFijo.Location = new System.Drawing.Point(20, 236);
+            this.txtActivoFijo.Name = "txtActivoFijo";
+            this.txtActivoFijo.Size = new System.Drawing.Size(288, 23);
+            this.txtActivoFijo.TabIndex = 5;
+            // 
+            // cboBiblioteca
+            // 
+            this.cboBiblioteca.FormattingEnabled = true;
+            this.cboBiblioteca.Location = new System.Drawing.Point(20, 38);
+            this.cboBiblioteca.Name = "cboBiblioteca";
+            this.cboBiblioteca.Size = new System.Drawing.Size(288, 21);
+            this.cboBiblioteca.TabIndex = 2;
+            // 
+            // lblUrgencia
+            // 
+            this.lblUrgencia.AutoSize = true;
+            this.lblUrgencia.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUrgencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblUrgencia.Location = new System.Drawing.Point(17, 144);
+            this.lblUrgencia.Name = "lblUrgencia";
+            this.lblUrgencia.Size = new System.Drawing.Size(78, 18);
+            this.lblUrgencia.TabIndex = 0;
+            this.lblUrgencia.Text = "Urgencia *";
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(20, 104);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(288, 21);
+            this.cboCategoria.TabIndex = 3;
+            // 
+            // cboUrgencia
+            // 
+            this.cboUrgencia.FormattingEnabled = true;
+            this.cboUrgencia.Location = new System.Drawing.Point(20, 170);
+            this.cboUrgencia.Name = "cboUrgencia";
+            this.cboUrgencia.Size = new System.Drawing.Size(288, 21);
+            this.cboUrgencia.TabIndex = 4;
+            // 
+            // lblCategoria
+            // 
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblCategoria.Location = new System.Drawing.Point(17, 78);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(84, 18);
+            this.lblCategoria.TabIndex = 0;
+            this.lblCategoria.Text = "Categoría *";
             // 
             // lblCampoObligatorio
             // 
             this.lblCampoObligatorio.AutoSize = true;
             this.lblCampoObligatorio.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCampoObligatorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(129)))), ((int)(((byte)(144)))), ((int)(((byte)(165)))));
-            this.lblCampoObligatorio.Location = new System.Drawing.Point(19, 540);
+            this.lblCampoObligatorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblCampoObligatorio.Location = new System.Drawing.Point(36, 659);
             this.lblCampoObligatorio.Name = "lblCampoObligatorio";
-            this.lblCampoObligatorio.Size = new System.Drawing.Size(106, 13);
-            this.lblCampoObligatorio.TabIndex = 12;
-            this.lblCampoObligatorio.Text = "* Campo Obligatorio";
+            this.lblCampoObligatorio.Size = new System.Drawing.Size(103, 13);
+            this.lblCampoObligatorio.TabIndex = 0;
+            this.lblCampoObligatorio.Text = "* Campo obligatorio";
             // 
-            // lblCaracterísticas
+            // lblCaracteristicas
             // 
-            this.lblCaracterísticas.AutoSize = true;
-            this.lblCaracterísticas.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCaracterísticas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCaracterísticas.Location = new System.Drawing.Point(18, 221);
-            this.lblCaracterísticas.Name = "lblCaracterísticas";
-            this.lblCaracterísticas.Size = new System.Drawing.Size(137, 23);
-            this.lblCaracterísticas.TabIndex = 11;
-            this.lblCaracterísticas.Text = "Características";
+            this.lblCaracteristicas.AutoSize = true;
+            this.lblCaracteristicas.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaracteristicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblCaracteristicas.Location = new System.Drawing.Point(695, 218);
+            this.lblCaracteristicas.Name = "lblCaracteristicas";
+            this.lblCaracteristicas.Size = new System.Drawing.Size(137, 23);
+            this.lblCaracteristicas.TabIndex = 0;
+            this.lblCaracteristicas.Text = "Características";
+            // 
+            // pnlOpciones
+            // 
+            this.pnlOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
+            this.pnlOpciones.Controls.Add(this.lblMiCuenta);
+            this.pnlOpciones.Controls.Add(this.lblMisTickets);
+            this.pnlOpciones.Controls.Add(this.lblLogout);
+            this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlOpciones.Location = new System.Drawing.Point(0, 106);
+            this.pnlOpciones.Name = "pnlOpciones";
+            this.pnlOpciones.Size = new System.Drawing.Size(1064, 51);
+            this.pnlOpciones.TabIndex = 0;
+            // 
+            // lblMiCuenta
+            // 
+            this.lblMiCuenta.AutoSize = true;
+            this.lblMiCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMiCuenta.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblMiCuenta.Location = new System.Drawing.Point(652, 14);
+            this.lblMiCuenta.Name = "lblMiCuenta";
+            this.lblMiCuenta.Size = new System.Drawing.Size(95, 23);
+            this.lblMiCuenta.TabIndex = 0;
+            this.lblMiCuenta.Text = "Mi cuenta";
+            // 
+            // lblMisTickets
+            // 
+            this.lblMisTickets.AutoSize = true;
+            this.lblMisTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMisTickets.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblMisTickets.Location = new System.Drawing.Point(780, 14);
+            this.lblMisTickets.Name = "lblMisTickets";
+            this.lblMisTickets.Size = new System.Drawing.Size(100, 23);
+            this.lblMisTickets.TabIndex = 0;
+            this.lblMisTickets.Text = "Mis tickets";
+            // 
+            // lblLogout
+            // 
+            this.lblLogout.AutoSize = true;
+            this.lblLogout.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogout.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblLogout.Location = new System.Drawing.Point(905, 14);
+            this.lblLogout.Name = "lblLogout";
+            this.lblLogout.Size = new System.Drawing.Size(124, 23);
+            this.lblLogout.TabIndex = 0;
+            this.lblLogout.Text = "Cerrar sesión";
+            this.lblLogout.Click += new System.EventHandler(this.lblLogout_Click);
+            // 
+            // pnlTitulo
+            // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.lblFAQ);
+            this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
+            this.pnlTitulo.Controls.Add(this.lblTituloSistema);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1064, 106);
+            this.pnlTitulo.TabIndex = 0;
+            // 
+            // lblFAQ
+            // 
+            this.lblFAQ.AutoSize = true;
+            this.lblFAQ.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFAQ.ForeColor = System.Drawing.SystemColors.Control;
+            this.lblFAQ.Location = new System.Drawing.Point(898, 70);
+            this.lblFAQ.Name = "lblFAQ";
+            this.lblFAQ.Size = new System.Drawing.Size(131, 16);
+            this.lblFAQ.TabIndex = 0;
+            this.lblFAQ.Text = "Preguntas frecuentes";
+            this.lblFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblBibliotecasPUCP
+            // 
+            this.lblBibliotecasPUCP.AutoSize = true;
+            this.lblBibliotecasPUCP.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBibliotecasPUCP.ForeColor = System.Drawing.Color.White;
+            this.lblBibliotecasPUCP.Location = new System.Drawing.Point(25, 64);
+            this.lblBibliotecasPUCP.Name = "lblBibliotecasPUCP";
+            this.lblBibliotecasPUCP.Size = new System.Drawing.Size(158, 23);
+            this.lblBibliotecasPUCP.TabIndex = 0;
+            this.lblBibliotecasPUCP.Text = "Bibliotecas PUCP";
+            // 
+            // lblTituloSistema
+            // 
+            this.lblTituloSistema.AutoSize = true;
+            this.lblTituloSistema.Font = new System.Drawing.Font("Lato Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloSistema.ForeColor = System.Drawing.Color.White;
+            this.lblTituloSistema.Location = new System.Drawing.Point(23, 17);
+            this.lblTituloSistema.Name = "lblTituloSistema";
+            this.lblTituloSistema.Size = new System.Drawing.Size(344, 33);
+            this.lblTituloSistema.TabIndex = 0;
+            this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(761, 669);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
+            this.btnVolver.TabIndex = 7;
+            this.btnVolver.Text = "< Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
             // 
             // frmCrearNuevoTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1168, 594);
-            this.Controls.Add(this.lnkVolver);
-            this.Controls.Add(this.lblCrearTicket);
-            this.Controls.Add(this.pnl);
+            this.ClientSize = new System.Drawing.Size(1064, 721);
+            this.Controls.Add(this.btnVolver);
+            this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
+            this.Controls.Add(this.lblAbrir);
             this.Controls.Add(this.btnEnviar);
-            this.Controls.Add(this.lblInformacionTicket);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.lblInfo);
+            this.Controls.Add(this.pnlInfo);
             this.Controls.Add(this.pnlCaracteristicas);
             this.Controls.Add(this.lblCampoObligatorio);
-            this.Controls.Add(this.lblCaracterísticas);
+            this.Controls.Add(this.lblCaracteristicas);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCrearNuevoTicket";
-            this.Text = "Crear nuevo ticket";
-            this.pnl.ResumeLayout(false);
-            this.pnl.PerformLayout();
-            this.pnlTitulo.ResumeLayout(false);
-            this.pnlTitulo.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.Text = "Abrir un nuevo ticket";
+            this.pnlInfo.ResumeLayout(false);
+            this.pnlInfo.PerformLayout();
             this.pnlCaracteristicas.ResumeLayout(false);
             this.pnlCaracteristicas.PerformLayout();
+            this.pnlOpciones.ResumeLayout(false);
+            this.pnlOpciones.PerformLayout();
+            this.pnlTitulo.ResumeLayout(false);
+            this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.LinkLabel lnkVolver;
-        private System.Windows.Forms.Label lblCrearTicket;
-        private System.Windows.Forms.Panel pnl;
-        private System.Windows.Forms.Label lblMiCuenta;
-        private System.Windows.Forms.Label lblMisTickets;
-        private System.Windows.Forms.Label lblCerrarSesion;
-        private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Label lblPreguntasFrecuentes;
-        private System.Windows.Forms.Label lblBibliotecasPUCP;
-        private System.Windows.Forms.Label lblSistemaDeMesaDeAyuda;
+        private System.Windows.Forms.Label lblAbrir;
         private System.Windows.Forms.Button btnEnviar;
-        private System.Windows.Forms.Label lblInformacionTicket;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RichTextBox rtxtDescripcion;
+        private System.Windows.Forms.Label lblInfo;
+        private System.Windows.Forms.Panel pnlInfo;
+        private System.Windows.Forms.RichTextBox rtfDescripcion;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.TextBox txtAsunto;
         private System.Windows.Forms.Label lblAsunto;
         private System.Windows.Forms.Panel pnlCaracteristicas;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;
-        private System.Windows.Forms.Label lblCategoriaTicket;
-        private System.Windows.Forms.Label lblNumeroActivoFijo;
-        private System.Windows.Forms.Label lblReportado;
-        private System.Windows.Forms.TextBox txtNumeroActivoFijo;
-        private System.Windows.Forms.ComboBox cboCategoriaTicket;
-        private System.Windows.Forms.Label lblUrgenciaTicket;
-        private System.Windows.Forms.ComboBox cboUrgenciaTicket;
-        private System.Windows.Forms.ComboBox cboBiblioteca;
         private System.Windows.Forms.Label lblBiblioteca;
+        private System.Windows.Forms.Label lblActivoFijo;
+        private System.Windows.Forms.Label lblEstDoc;
+        private System.Windows.Forms.TextBox txtActivoFijo;
+        private System.Windows.Forms.ComboBox cboBiblioteca;
+        private System.Windows.Forms.Label lblUrgencia;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.ComboBox cboUrgencia;
+        private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblCampoObligatorio;
-        private System.Windows.Forms.Label lblCaracterísticas;
+        private System.Windows.Forms.Label lblCaracteristicas;
+        private System.Windows.Forms.Panel pnlOpciones;
+        private System.Windows.Forms.Label lblMiCuenta;
+        private System.Windows.Forms.Label lblMisTickets;
+        private System.Windows.Forms.Label lblLogout;
+        private System.Windows.Forms.Panel pnlTitulo;
+        private System.Windows.Forms.Label lblBibliotecasPUCP;
+        private System.Windows.Forms.Label lblTituloSistema;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lblFAQ;
     }
 }

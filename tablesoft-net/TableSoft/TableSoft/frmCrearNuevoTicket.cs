@@ -16,5 +16,10 @@ namespace TableSoft
         {
             InitializeComponent();
         }
+
+        private void lblLogout_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

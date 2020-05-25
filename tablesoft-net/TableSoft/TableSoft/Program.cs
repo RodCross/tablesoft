@@ -20,9 +20,9 @@ namespace TableSoft
             //Application.Run(new frmCrearNuevoTicket());
             //Application.Run(new frmListaTicketEmpleado());
             //Application.Run(new frmAyuda());
-            //Application.Run(new frmAyudaEmpleado());
+            Application.Run(new frmAyudaEmpleado());
             //Application.Run(new frmAyudaAgente());
-            Application.Run(new frmListaTicketsAgente());
+            //Application.Run(new frmListaTicketsAgente());
         }
     }
 }

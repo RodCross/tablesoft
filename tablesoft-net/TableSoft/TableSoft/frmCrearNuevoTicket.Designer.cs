@@ -417,7 +417,7 @@
             this.Controls.Add(this.lblCampoObligatorio);
             this.Controls.Add(this.lblCaracterísticas);
             this.Name = "frmCrearNuevoTicket";
-            this.Text = "frmCrearNuevoTicket";
+            this.Text = "Crear nuevo ticket";
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);

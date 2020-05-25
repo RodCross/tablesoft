@@ -48,11 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmHistorialTicket.cs">
+    <Compile Include="frmCrearNuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHistorialTicket.Designer.cs">
-      <DependentUpon>frmHistorialTicket.cs</DependentUpon>
+    <Compile Include="frmCrearNuevoTicket.Designer.cs">
+      <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInicioEmpleado.cs">
       <SubType>Form</SubType>
@@ -78,8 +78,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmHistorialTicket.resx">
-      <DependentUpon>frmHistorialTicket.cs</DependentUpon>
+    <EmbeddedResource Include="frmCrearNuevoTicket.resx">
+      <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicioEmpleado.resx">
       <DependentUpon>frmInicioEmpleado.cs</DependentUpon>

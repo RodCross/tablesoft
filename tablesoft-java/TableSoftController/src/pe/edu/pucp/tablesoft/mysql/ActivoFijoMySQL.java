@@ -9,6 +9,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.ActivoFijoDAO;
@@ -39,7 +40,7 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
             rpta = cs.getInt("_ID");
             activoFijo.setActivoFijoId(rpta);
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return rpta;
@@ -65,7 +66,7 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
             cs.setBoolean("_ACTIVO", activoFijo.getActivo());
             rpta=cs.executeUpdate();
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return rpta;
@@ -88,7 +89,7 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
             cs.setInt("_ID", activoFijo.getActivoFijoId());
             rpta = cs.executeUpdate();
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return rpta;
@@ -121,7 +122,7 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
             }
             // No olvidarse de cerrar las conexiones
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         // Devolviendo los activosFijos

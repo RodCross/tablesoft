@@ -9,6 +9,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
@@ -39,7 +40,7 @@ public class BibliotecaMySQL implements BibliotecaDAO {
             rpta = cs.getInt("_ID");
             biblioteca.setBibliotecaId(rpta);
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return rpta;
@@ -65,7 +66,7 @@ public class BibliotecaMySQL implements BibliotecaDAO {
             cs.setBoolean("_ACTIVO", biblioteca.getActivo());
             rpta=cs.executeUpdate();
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return rpta;
@@ -88,7 +89,7 @@ public class BibliotecaMySQL implements BibliotecaDAO {
             cs.setInt("_ID", biblioteca.getBibliotecaId());
             rpta = cs.executeUpdate();
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return rpta;
@@ -121,7 +122,7 @@ public class BibliotecaMySQL implements BibliotecaDAO {
             }
             // No olvidarse de cerrar las conexiones
             con.close();
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         // Devolviendo las bibliotecas

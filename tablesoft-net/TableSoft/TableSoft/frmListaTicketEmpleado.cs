@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmHistorialTicketEmpleado : Form
+    public partial class frmListaTicketEmpleado : Form
     {
-        public frmHistorialTicketEmpleado()
+        public frmListaTicketEmpleado()
         {
             InitializeComponent();
         }

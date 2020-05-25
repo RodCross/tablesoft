@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmHistorialTicketEmpleado
+    partial class frmListaTicketEmpleado
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmHistorialTicketEmpleado));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaTicketEmpleado));
             this.pnl = new System.Windows.Forms.Panel();
             this.lblMiCuenta = new System.Windows.Forms.Label();
             this.lblMisTickets = new System.Windows.Forms.Label();
@@ -246,7 +246,7 @@
             this.lnkVolver.TabStop = true;
             this.lnkVolver.Text = "< Volver";
             // 
-            // frmHistorialTicketEmpleado
+            // frmListaTicketEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,8 +258,8 @@
             this.Controls.Add(this.pnl);
             this.Controls.Add(this.pnlTitulo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmHistorialTicketEmpleado";
-            this.Text = "frmHistorialTicketEmpleado";
+            this.Name = "frmListaTicketEmpleado";
+            this.Text = "frmListaTicketEmpleado";
             this.pnl.ResumeLayout(false);
             this.pnl.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);

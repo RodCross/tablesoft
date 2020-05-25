@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmHistorialTicketsAgente
+    partial class frmListaTicketsAgente
     {
         /// <summary>
         /// Required designer variable.

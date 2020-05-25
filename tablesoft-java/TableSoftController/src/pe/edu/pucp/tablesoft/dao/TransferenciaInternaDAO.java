@@ -11,5 +11,5 @@ public interface TransferenciaInternaDAO {
     // Solo puede insertar - no actualiza, de ticket solo interesa el id
     int insertar(TransferenciaInterna transferenciaInterna, Ticket ticket);
     // Solo tiene sentido listar por ticket (solo interesa el id)
-    ArrayList<TransferenciaInterna> listar(Ticket ticket);
+    ArrayList<TransferenciaInterna> listarxTicket(Ticket ticket);
 }

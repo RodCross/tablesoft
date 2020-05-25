@@ -12,4 +12,5 @@ public interface EstadoTicketDAO {
     int actualizar(EstadoTicket estadoTicket);
     int eliminar(EstadoTicket estadoTicket);
     ArrayList<EstadoTicket> listar();
+    EstadoTicket buscar(int estadoTicketId);
 }

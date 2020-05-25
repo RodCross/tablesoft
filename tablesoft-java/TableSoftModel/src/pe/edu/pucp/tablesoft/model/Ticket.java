@@ -38,19 +38,11 @@ public class Ticket {
         urgencia = new Urgencia();
         categoria = new Categoria();
         biblioteca = new Biblioteca();
-    }
-
-    public Ticket(Empleado empleado) {
-        this.empleado = empleado;
-        listaTareas = new ArrayList<>();
-        historialEstado = new ArrayList<>();
-        historialTransferencia = new ArrayList();
-        comentarios = new ArrayList();
+        proveedor = new Proveedor();
+        activoFijo = new ActivoFijo();
         
-        estado = new EstadoTicket();
-        urgencia = new Urgencia();
-        categoria = new Categoria();
-        biblioteca = new Biblioteca();
+        empleado = new Empleado();
+        agente = new Agente();
     }
 
     public ArrayList<Comentario> getComentarios() {

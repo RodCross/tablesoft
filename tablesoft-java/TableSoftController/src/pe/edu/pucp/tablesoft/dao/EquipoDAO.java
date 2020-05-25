@@ -10,8 +10,10 @@ import pe.edu.pucp.tablesoft.model.Equipo;
 
 
 public interface EquipoDAO {
-    int insertar(Equipo equipo);
-    int actualizar(Equipo equipo);
-    int eliminar(int idEquipo);
-    ArrayList<Equipo> listar();
+    int insertar(Equipo equipo);    // Insert y update solo consideran sus atributos propios
+    int actualizar(Equipo equipo);  
+    int eliminar(Equipo equipo);     
+    ArrayList<Equipo> listar();     // Solo lista los equipos con su lista de Categorias
+                                    // Usa CategoriaDAO.listarxEquipo(Equipo) para llenar la lista de Categorias
+                                    // No llena su lista de agentes
 }

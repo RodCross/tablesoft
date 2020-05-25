@@ -10,8 +10,9 @@ import pe.edu.pucp.tablesoft.model.Urgencia;
 
 
 public interface UrgenciaDAO {
+    // Metodos normales
     int insertar(Urgencia urgencia);
     int actualizar(Urgencia urgencia);
-    int eliminar(int idUrgencia);
+    int eliminar(Urgencia urgencia);
     ArrayList<Urgencia> listar();
 }

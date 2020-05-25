@@ -10,8 +10,9 @@ import pe.edu.pucp.tablesoft.model.Proveedor;
 
 
 public interface ProveedorDAO {
+    // Metodos normales
     int insertar(Proveedor proveedor);
     int actualizar(Proveedor proveedor);
-    int eliminar(int idProveedor);
+    int eliminar(Proveedor proveedor);
     ArrayList<Proveedor> listar();
 }

@@ -18,10 +18,11 @@ namespace TableSoft
             //Application.Run(new frmInicioSesion());
             //Application.Run(new frmInicioEmpleado());
             //Application.Run(new frmCrearNuevoTicket());
-            //Application.Run(new frmHistorialTicket());
+            //Application.Run(new frmHistorialTicketEmpleado());
             //Application.Run(new frmAyuda());
             //Application.Run(new frmAyudaEmpleado());
             //Application.Run(new frmAyudaAgente());
+            Application.Run(new frmHistorialTicketsAgente());
         }
     }
 }

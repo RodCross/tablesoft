@@ -73,11 +73,17 @@
     <Compile Include="frmCrearNuevoTicket.Designer.cs">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHistorialTicket.cs">
+    <Compile Include="frmHistorialTicketEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHistorialTicket.Designer.cs">
-      <DependentUpon>frmHistorialTicket.cs</DependentUpon>
+    <Compile Include="frmHistorialTicketEmpleado.Designer.cs">
+      <DependentUpon>frmHistorialTicketEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmHistorialTicketsAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorialTicketsAgente.Designer.cs">
+      <DependentUpon>frmHistorialTicketsAgente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInicioEmpleado.cs">
       <SubType>Form</SubType>
@@ -115,8 +121,11 @@
     <EmbeddedResource Include="frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHistorialTicket.resx">
-      <DependentUpon>frmHistorialTicket.cs</DependentUpon>
+    <EmbeddedResource Include="frmHistorialTicketEmpleado.resx">
+      <DependentUpon>frmHistorialTicketEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorialTicketsAgente.resx">
+      <DependentUpon>frmHistorialTicketsAgente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicioEmpleado.resx">
       <DependentUpon>frmInicioEmpleado.cs</DependentUpon>

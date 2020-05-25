@@ -111,7 +111,7 @@
             this.panel1.ForeColor = System.Drawing.Color.White;
             this.panel1.Location = new System.Drawing.Point(23, 154);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(357, 280);
+            this.panel1.Size = new System.Drawing.Size(372, 280);
             this.panel1.TabIndex = 2;
             // 
             // btnIngresar
@@ -164,9 +164,9 @@
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblEmail.Location = new System.Drawing.Point(41, 33);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(146, 19);
+            this.lblEmail.Size = new System.Drawing.Size(153, 19);
             this.lblEmail.TabIndex = 1;
-            this.lblEmail.Text = "Correo Electrónico";
+            this.lblEmail.Text = "Correo Electrónico: ";
             // 
             // txtUsuaario
             // 

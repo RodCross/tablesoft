@@ -54,6 +54,12 @@
     <Compile Include="frmCrearNuevoTicket.Designer.cs">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistorialTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorialTicket.Designer.cs">
+      <DependentUpon>frmHistorialTicket.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicioEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorialTicket.resx">
+      <DependentUpon>frmHistorialTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicioEmpleado.resx">
       <DependentUpon>frmInicioEmpleado.cs</DependentUpon>

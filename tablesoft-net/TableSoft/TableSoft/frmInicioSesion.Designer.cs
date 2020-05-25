@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioSesion));
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lklFAQ = new System.Windows.Forms.LinkLabel();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.lblTituloLogin = new System.Windows.Forms.Label();
@@ -41,7 +42,6 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
-            this.lklFAQ = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -59,6 +59,22 @@
             this.pnlTitulo.Size = new System.Drawing.Size(884, 106);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
+            // 
+            // lklFAQ
+            // 
+            this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
+            this.lklFAQ.AutoSize = true;
+            this.lklFAQ.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
+            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklFAQ.LinkColor = System.Drawing.Color.White;
+            this.lklFAQ.Location = new System.Drawing.Point(717, 70);
+            this.lklFAQ.Name = "lklFAQ";
+            this.lklFAQ.Size = new System.Drawing.Size(140, 17);
+            this.lklFAQ.TabIndex = 0;
+            this.lklFAQ.TabStop = true;
+            this.lklFAQ.Text = "Preguntas frecuentes";
+            this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
             // 
             // lblBibliotecasPUCP
             // 
@@ -87,11 +103,11 @@
             this.lblTituloLogin.AutoSize = true;
             this.lblTituloLogin.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloLogin.Location = new System.Drawing.Point(402, 129);
+            this.lblTituloLogin.Location = new System.Drawing.Point(332, 129);
             this.lblTituloLogin.Name = "lblTituloLogin";
-            this.lblTituloLogin.Size = new System.Drawing.Size(81, 23);
+            this.lblTituloLogin.Size = new System.Drawing.Size(220, 23);
             this.lblTituloLogin.TabIndex = 0;
-            this.lblTituloLogin.Text = "Ingresar";
+            this.lblTituloLogin.Text = "Inicia sesión en Tablesoft";
             // 
             // pnlLogin
             // 
@@ -188,22 +204,6 @@
             this.picExit.MouseEnter += new System.EventHandler(this.picExit_MouseEnter);
             this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
             this.picExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseUp);
-            // 
-            // lklFAQ
-            // 
-            this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
-            this.lklFAQ.AutoSize = true;
-            this.lklFAQ.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
-            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(717, 70);
-            this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(140, 17);
-            this.lklFAQ.TabIndex = 0;
-            this.lklFAQ.TabStop = true;
-            this.lklFAQ.Text = "Preguntas frecuentes";
-            this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
             // 
             // frmInicioSesion
             // 

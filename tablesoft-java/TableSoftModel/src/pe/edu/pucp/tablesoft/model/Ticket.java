@@ -230,7 +230,11 @@ public class Ticket {
         this.historialTransferencia.add(cambioCategoria);
     }
     
-    public void mandarComentario(Comentario com){
+    public void mandarComentario(String comentario, Persona autor){
+        Comentario com = new Comentario();
+        com.setTexto(comentario);
+        com.setFecha(LocalDateTime.now());
+        com.setAutor(autor);
         this.comentarios.add(com);
     }
     

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnl = new System.Windows.Forms.Panel();
             this.lblMiCuenta = new System.Windows.Forms.Label();
             this.lblMisTickets = new System.Windows.Forms.Label();
@@ -44,12 +44,12 @@
             this.lblVolver = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDeApertura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaDeCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnl.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -115,11 +115,11 @@
             this.lblPreguntasFrecuentes.AutoSize = true;
             this.lblPreguntasFrecuentes.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreguntasFrecuentes.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPreguntasFrecuentes.Location = new System.Drawing.Point(614, 42);
+            this.lblPreguntasFrecuentes.Location = new System.Drawing.Point(799, 58);
             this.lblPreguntasFrecuentes.Name = "lblPreguntasFrecuentes";
-            this.lblPreguntasFrecuentes.Size = new System.Drawing.Size(249, 23);
+            this.lblPreguntasFrecuentes.Size = new System.Drawing.Size(64, 23);
             this.lblPreguntasFrecuentes.TabIndex = 3;
-            this.lblPreguntasFrecuentes.Text = "Preguntas Frecuentes (FAQ)";
+            this.lblPreguntasFrecuentes.Text = "Ayuda";
             // 
             // lblBibliotecasPUCP
             // 
@@ -183,6 +183,55 @@
             this.dataGridView1.Size = new System.Drawing.Size(783, 268);
             this.dataGridView1.TabIndex = 9;
             // 
+            // Asunto
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Asunto.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Asunto.HeaderText = "Asunto";
+            this.Asunto.Name = "Asunto";
+            this.Asunto.ReadOnly = true;
+            this.Asunto.Width = 240;
+            // 
+            // ID
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ID.FillWeight = 50F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            // 
+            // FechaDeApertura
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaDeApertura.DefaultCellStyle = dataGridViewCellStyle3;
+            this.FechaDeApertura.HeaderText = "Fecha de Apertura";
+            this.FechaDeApertura.Name = "FechaDeApertura";
+            this.FechaDeApertura.ReadOnly = true;
+            this.FechaDeApertura.Width = 150;
+            // 
+            // FechaDeCierre
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaDeCierre.DefaultCellStyle = dataGridViewCellStyle4;
+            this.FechaDeCierre.HeaderText = "Fecha de Cierre";
+            this.FechaDeCierre.Name = "FechaDeCierre";
+            this.FechaDeCierre.ReadOnly = true;
+            this.FechaDeCierre.Width = 150;
+            // 
+            // Estado
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.SystemColors.ButtonFace;
@@ -194,55 +243,6 @@
             this.button1.TabIndex = 10;
             this.button1.Text = "Seleccionar";
             this.button1.UseVisualStyleBackColor = false;
-            // 
-            // Asunto
-            // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Asunto.DefaultCellStyle = dataGridViewCellStyle11;
-            this.Asunto.HeaderText = "Asunto";
-            this.Asunto.Name = "Asunto";
-            this.Asunto.ReadOnly = true;
-            this.Asunto.Width = 240;
-            // 
-            // ID
-            // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle12;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            // 
-            // FechaDeApertura
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaDeApertura.DefaultCellStyle = dataGridViewCellStyle13;
-            this.FechaDeApertura.HeaderText = "Fecha de Apertura";
-            this.FechaDeApertura.Name = "FechaDeApertura";
-            this.FechaDeApertura.ReadOnly = true;
-            this.FechaDeApertura.Width = 150;
-            // 
-            // FechaDeCierre
-            // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaDeCierre.DefaultCellStyle = dataGridViewCellStyle14;
-            this.FechaDeCierre.HeaderText = "Fecha de Cierre";
-            this.FechaDeCierre.Name = "FechaDeCierre";
-            this.FechaDeCierre.ReadOnly = true;
-            this.FechaDeCierre.Width = 150;
-            // 
-            // Estado
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Estado.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
             // 
             // frmHistorialTicket
             // 

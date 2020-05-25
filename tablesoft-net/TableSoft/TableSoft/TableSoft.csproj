@@ -48,6 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="formAyuda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="formAyuda.Designer.cs">
+      <DependentUpon>formAyuda.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCrearNuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -84,6 +90,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="formAyuda.resx">
+      <DependentUpon>formAyuda.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </EmbeddedResource>

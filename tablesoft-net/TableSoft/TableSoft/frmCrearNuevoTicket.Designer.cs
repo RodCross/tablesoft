@@ -148,11 +148,11 @@
             this.lblPreguntasFrecuentes.AutoSize = true;
             this.lblPreguntasFrecuentes.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPreguntasFrecuentes.ForeColor = System.Drawing.SystemColors.Control;
-            this.lblPreguntasFrecuentes.Location = new System.Drawing.Point(894, 39);
+            this.lblPreguntasFrecuentes.Location = new System.Drawing.Point(1082, 38);
             this.lblPreguntasFrecuentes.Name = "lblPreguntasFrecuentes";
-            this.lblPreguntasFrecuentes.Size = new System.Drawing.Size(249, 23);
+            this.lblPreguntasFrecuentes.Size = new System.Drawing.Size(64, 23);
             this.lblPreguntasFrecuentes.TabIndex = 3;
-            this.lblPreguntasFrecuentes.Text = "Preguntas Frecuentes (FAQ)";
+            this.lblPreguntasFrecuentes.Text = "Ayuda";
             // 
             // lblBibliotecasPUCP
             // 

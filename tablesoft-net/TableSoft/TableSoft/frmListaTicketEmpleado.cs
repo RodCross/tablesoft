@@ -16,5 +16,15 @@ namespace TableSoft
         {
             InitializeComponent();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

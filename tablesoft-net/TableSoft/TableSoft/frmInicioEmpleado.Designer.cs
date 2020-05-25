@@ -113,6 +113,7 @@
             this.btnEstado.TabIndex = 0;
             this.btnEstado.Text = "Ver estado de mis tickets";
             this.btnEstado.UseVisualStyleBackColor = false;
+            this.btnEstado.Click += new System.EventHandler(this.btnEstado_Click);
             // 
             // lblEstado
             // 

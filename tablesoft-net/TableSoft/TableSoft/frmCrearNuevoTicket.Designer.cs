@@ -76,10 +76,10 @@
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEnviar.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(910, 539);
+            this.btnEnviar.Location = new System.Drawing.Point(910, 545);
             this.btnEnviar.Name = "btnEnviar";
             this.btnEnviar.Size = new System.Drawing.Size(119, 33);
-            this.btnEnviar.TabIndex = 8;
+            this.btnEnviar.TabIndex = 3;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
             this.btnEnviar.Click += new System.EventHandler(this.btnEnviar_Click);
@@ -164,7 +164,7 @@
             this.pnlCaracteristicas.Location = new System.Drawing.Point(696, 127);
             this.pnlCaracteristicas.Name = "pnlCaracteristicas";
             this.pnlCaracteristicas.Size = new System.Drawing.Size(333, 394);
-            this.pnlCaracteristicas.TabIndex = 0;
+            this.pnlCaracteristicas.TabIndex = 1;
             // 
             // txtEmail
             // 
@@ -172,7 +172,7 @@
             this.txtEmail.Location = new System.Drawing.Point(20, 352);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(288, 23);
-            this.txtEmail.TabIndex = 6;
+            this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
             // 
@@ -224,7 +224,7 @@
             this.txtActivoFijo.Location = new System.Drawing.Point(20, 236);
             this.txtActivoFijo.Name = "txtActivoFijo";
             this.txtActivoFijo.Size = new System.Drawing.Size(288, 23);
-            this.txtActivoFijo.TabIndex = 5;
+            this.txtActivoFijo.TabIndex = 3;
             // 
             // cboBiblioteca
             // 
@@ -232,7 +232,7 @@
             this.cboBiblioteca.Location = new System.Drawing.Point(20, 38);
             this.cboBiblioteca.Name = "cboBiblioteca";
             this.cboBiblioteca.Size = new System.Drawing.Size(288, 21);
-            this.cboBiblioteca.TabIndex = 2;
+            this.cboBiblioteca.TabIndex = 0;
             // 
             // lblUrgencia
             // 
@@ -251,7 +251,7 @@
             this.cboCategoria.Location = new System.Drawing.Point(20, 104);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(288, 21);
-            this.cboCategoria.TabIndex = 3;
+            this.cboCategoria.TabIndex = 1;
             // 
             // cboUrgencia
             // 
@@ -259,7 +259,7 @@
             this.cboUrgencia.Location = new System.Drawing.Point(20, 170);
             this.cboUrgencia.Name = "cboUrgencia";
             this.cboUrgencia.Size = new System.Drawing.Size(288, 21);
-            this.cboUrgencia.TabIndex = 4;
+            this.cboUrgencia.TabIndex = 2;
             // 
             // lblCategoria
             // 
@@ -302,7 +302,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
-            this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.TabIndex = 4;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // btnVolver
@@ -312,10 +312,10 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(761, 539);
+            this.btnVolver.Location = new System.Drawing.Point(760, 545);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 7;
+            this.btnVolver.TabIndex = 2;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);

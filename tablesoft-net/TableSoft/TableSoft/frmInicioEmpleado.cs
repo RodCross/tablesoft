@@ -38,5 +38,11 @@ namespace TableSoft
         {
             Movimiento.MoverVentana(Handle, e.Button);
         }
+
+        private void btnEstado_Click(object sender, EventArgs e)
+        {
+            frmListaTicketEmpleado frm = new frmListaTicketEmpleado();
+            frm.ShowDialog();
+        }
     }
 }

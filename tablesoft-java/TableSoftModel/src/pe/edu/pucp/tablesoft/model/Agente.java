@@ -6,10 +6,12 @@ public class Agente extends Persona {
     private int agenteId;
     private String agenteEmail;
     private ArrayList<Ticket> listaTickets;
+    private Equipo equipo;
     private Rol rol;
     
     // Constructores
     public Agente() {
+        equipo = new Equipo();
         rol = new Rol();
         listaTickets = new ArrayList();
     }
@@ -27,6 +29,14 @@ public class Agente extends Persona {
 
     public void setRol(Rol rol) {
         this.rol = rol;
+    }
+
+    public Equipo getEquipo() {
+        return equipo;
+    }
+
+    public void setEquipo(Equipo equipo) {
+        this.equipo = equipo;
     }
     
     public int getAgenteId() {

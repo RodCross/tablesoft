@@ -16,5 +16,10 @@ namespace TableSoft
         {
             InitializeComponent();
         }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
     }
 }

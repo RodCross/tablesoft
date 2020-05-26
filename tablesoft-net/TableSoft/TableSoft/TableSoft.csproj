@@ -96,6 +96,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="temp\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -145,5 +146,6 @@
   <ItemGroup>
     <Content Include="tslogo.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

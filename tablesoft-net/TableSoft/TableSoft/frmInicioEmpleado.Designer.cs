@@ -105,7 +105,7 @@
             // 
             this.btnEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.btnEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEstado.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstado.ForeColor = System.Drawing.Color.White;
             this.btnEstado.Location = new System.Drawing.Point(32, 229);
             this.btnEstado.Name = "btnEstado";
@@ -118,18 +118,18 @@
             // lblEstado
             // 
             this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(121)))), ((int)(((byte)(53)))));
-            this.lblEstado.Location = new System.Drawing.Point(97, 15);
+            this.lblEstado.Location = new System.Drawing.Point(91, 14);
             this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(185, 29);
+            this.lblEstado.Size = new System.Drawing.Size(196, 32);
             this.lblEstado.TabIndex = 0;
             this.lblEstado.Text = "Estado de ticket";
             this.lblEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDetalleEstado
             // 
-            this.lblDetalleEstado.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetalleEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblDetalleEstado.Location = new System.Drawing.Point(146, 99);
             this.lblDetalleEstado.Name = "lblDetalleEstado";
@@ -164,18 +164,18 @@
             // lblAbrir
             // 
             this.lblAbrir.AutoSize = true;
-            this.lblAbrir.Font = new System.Drawing.Font("Lato", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbrir.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAbrir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.lblAbrir.Location = new System.Drawing.Point(114, 15);
+            this.lblAbrir.Location = new System.Drawing.Point(109, 14);
             this.lblAbrir.Name = "lblAbrir";
-            this.lblAbrir.Size = new System.Drawing.Size(151, 29);
+            this.lblAbrir.Size = new System.Drawing.Size(160, 32);
             this.lblAbrir.TabIndex = 0;
             this.lblAbrir.Text = "Nuevo ticket";
             this.lblAbrir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblDetalleAbrir
             // 
-            this.lblDetalleAbrir.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleAbrir.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDetalleAbrir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblDetalleAbrir.Location = new System.Drawing.Point(145, 99);
             this.lblDetalleAbrir.Name = "lblDetalleAbrir";
@@ -189,7 +189,7 @@
             // 
             this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAbrir.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrir.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrir.ForeColor = System.Drawing.Color.White;
             this.btnAbrir.Location = new System.Drawing.Point(31, 229);
             this.btnAbrir.Name = "btnAbrir";
@@ -216,12 +216,12 @@
             // 
             this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
             this.lklFAQ.AutoSize = true;
-            this.lklFAQ.Font = new System.Drawing.Font("Lato", 10F, System.Drawing.FontStyle.Bold);
-            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold);
+            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(717, 70);
+            this.lklFAQ.Location = new System.Drawing.Point(719, 68);
             this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(140, 17);
+            this.lklFAQ.Size = new System.Drawing.Size(138, 17);
             this.lklFAQ.TabIndex = 0;
             this.lklFAQ.TabStop = true;
             this.lklFAQ.Text = "Preguntas frecuentes";
@@ -232,22 +232,22 @@
             // lblBibliotecasPUCP
             // 
             this.lblBibliotecasPUCP.AutoSize = true;
-            this.lblBibliotecasPUCP.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBibliotecasPUCP.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.5F);
             this.lblBibliotecasPUCP.ForeColor = System.Drawing.Color.White;
-            this.lblBibliotecasPUCP.Location = new System.Drawing.Point(25, 64);
+            this.lblBibliotecasPUCP.Location = new System.Drawing.Point(24, 59);
             this.lblBibliotecasPUCP.Name = "lblBibliotecasPUCP";
-            this.lblBibliotecasPUCP.Size = new System.Drawing.Size(158, 23);
+            this.lblBibliotecasPUCP.Size = new System.Drawing.Size(159, 26);
             this.lblBibliotecasPUCP.TabIndex = 0;
             this.lblBibliotecasPUCP.Text = "Bibliotecas PUCP";
             // 
             // lblTituloSistema
             // 
             this.lblTituloSistema.AutoSize = true;
-            this.lblTituloSistema.Font = new System.Drawing.Font("Lato Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloSistema.Font = new System.Drawing.Font("Microsoft PhagsPa", 19.25F, System.Drawing.FontStyle.Bold);
             this.lblTituloSistema.ForeColor = System.Drawing.Color.White;
             this.lblTituloSistema.Location = new System.Drawing.Point(23, 17);
             this.lblTituloSistema.Name = "lblTituloSistema";
-            this.lblTituloSistema.Size = new System.Drawing.Size(344, 33);
+            this.lblTituloSistema.Size = new System.Drawing.Size(340, 34);
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
             // 
@@ -268,12 +268,12 @@
             this.lklCuenta.ActiveLinkColor = System.Drawing.Color.Yellow;
             this.lklCuenta.AutoSize = true;
             this.lklCuenta.Enabled = false;
-            this.lklCuenta.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lklCuenta.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklCuenta.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklCuenta.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklCuenta.LinkColor = System.Drawing.Color.White;
-            this.lklCuenta.Location = new System.Drawing.Point(462, 14);
+            this.lklCuenta.Location = new System.Drawing.Point(458, 14);
             this.lklCuenta.Name = "lklCuenta";
-            this.lklCuenta.Size = new System.Drawing.Size(95, 23);
+            this.lklCuenta.Size = new System.Drawing.Size(100, 25);
             this.lklCuenta.TabIndex = 0;
             this.lklCuenta.TabStop = true;
             this.lklCuenta.Text = "Mi cuenta";
@@ -284,12 +284,12 @@
             this.lklTickets.ActiveLinkColor = System.Drawing.Color.Yellow;
             this.lklTickets.AutoSize = true;
             this.lklTickets.Enabled = false;
-            this.lklTickets.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lklTickets.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklTickets.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklTickets.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklTickets.LinkColor = System.Drawing.Color.White;
-            this.lklTickets.Location = new System.Drawing.Point(595, 14);
+            this.lklTickets.Location = new System.Drawing.Point(591, 14);
             this.lklTickets.Name = "lklTickets";
-            this.lklTickets.Size = new System.Drawing.Size(100, 23);
+            this.lklTickets.Size = new System.Drawing.Size(105, 25);
             this.lklTickets.TabIndex = 1;
             this.lklTickets.TabStop = true;
             this.lklTickets.Text = "Mis tickets";
@@ -299,12 +299,12 @@
             // 
             this.lklLogout.ActiveLinkColor = System.Drawing.Color.Yellow;
             this.lklLogout.AutoSize = true;
-            this.lklLogout.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold);
-            this.lklLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
+            this.lklLogout.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lklLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklLogout.LinkColor = System.Drawing.Color.White;
-            this.lklLogout.Location = new System.Drawing.Point(733, 14);
+            this.lklLogout.Location = new System.Drawing.Point(729, 14);
             this.lklLogout.Name = "lklLogout";
-            this.lklLogout.Size = new System.Drawing.Size(124, 23);
+            this.lklLogout.Size = new System.Drawing.Size(128, 25);
             this.lklLogout.TabIndex = 2;
             this.lklLogout.TabStop = true;
             this.lklLogout.Text = "Cerrar sesión";

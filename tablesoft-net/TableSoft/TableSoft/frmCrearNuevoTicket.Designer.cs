@@ -61,11 +61,11 @@
             // lblAbrir
             // 
             this.lblAbrir.AutoSize = true;
-            this.lblAbrir.Font = new System.Drawing.Font("Lato Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAbrir.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblAbrir.ForeColor = System.Drawing.Color.White;
             this.lblAbrir.Location = new System.Drawing.Point(30, 23);
             this.lblAbrir.Name = "lblAbrir";
-            this.lblAbrir.Size = new System.Drawing.Size(212, 25);
+            this.lblAbrir.Size = new System.Drawing.Size(222, 27);
             this.lblAbrir.TabIndex = 0;
             this.lblAbrir.Text = "Abrir un nuevo ticket";
             // 
@@ -74,7 +74,7 @@
             this.btnEnviar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.btnEnviar.FlatAppearance.BorderSize = 0;
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEnviar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold);
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
             this.btnEnviar.Location = new System.Drawing.Point(910, 545);
             this.btnEnviar.Name = "btnEnviar";
@@ -87,11 +87,11 @@
             // lblInfo
             // 
             this.lblInfo.AutoSize = true;
-            this.lblInfo.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfo.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblInfo.Location = new System.Drawing.Point(34, 88);
             this.lblInfo.Name = "lblInfo";
-            this.lblInfo.Size = new System.Drawing.Size(115, 23);
+            this.lblInfo.Size = new System.Drawing.Size(122, 25);
             this.lblInfo.TabIndex = 0;
             this.lblInfo.Text = "Información";
             // 
@@ -111,39 +111,39 @@
             // 
             this.rtfDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtfDescripcion.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtfDescripcion.Location = new System.Drawing.Point(20, 104);
+            this.rtfDescripcion.Location = new System.Drawing.Point(20, 101);
             this.rtfDescripcion.Name = "rtfDescripcion";
-            this.rtfDescripcion.Size = new System.Drawing.Size(593, 271);
+            this.rtfDescripcion.Size = new System.Drawing.Size(593, 276);
             this.rtfDescripcion.TabIndex = 1;
             this.rtfDescripcion.Text = "";
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescripcion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblDescripcion.Location = new System.Drawing.Point(17, 78);
+            this.lblDescripcion.Location = new System.Drawing.Point(18, 75);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(198, 18);
+            this.lblDescripcion.Size = new System.Drawing.Size(205, 20);
             this.lblDescripcion.TabIndex = 0;
             this.lblDescripcion.Text = "Descripción de la situación *";
             // 
             // txtAsunto
             // 
-            this.txtAsunto.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAsunto.Location = new System.Drawing.Point(20, 38);
+            this.txtAsunto.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAsunto.Location = new System.Drawing.Point(20, 35);
             this.txtAsunto.Name = "txtAsunto";
-            this.txtAsunto.Size = new System.Drawing.Size(409, 23);
+            this.txtAsunto.Size = new System.Drawing.Size(409, 28);
             this.txtAsunto.TabIndex = 0;
             // 
             // lblAsunto
             // 
             this.lblAsunto.AutoSize = true;
-            this.lblAsunto.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsunto.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAsunto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblAsunto.Location = new System.Drawing.Point(17, 12);
+            this.lblAsunto.Location = new System.Drawing.Point(18, 9);
             this.lblAsunto.Name = "lblAsunto";
-            this.lblAsunto.Size = new System.Drawing.Size(68, 18);
+            this.lblAsunto.Size = new System.Drawing.Size(71, 20);
             this.lblAsunto.TabIndex = 0;
             this.lblAsunto.Text = "Asunto *";
             // 
@@ -168,129 +168,132 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(20, 352);
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(20, 349);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(288, 23);
+            this.txtEmail.Size = new System.Drawing.Size(288, 28);
             this.txtEmail.TabIndex = 4;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold);
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblEmail.Location = new System.Drawing.Point(17, 326);
+            this.lblEmail.Location = new System.Drawing.Point(18, 323);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(143, 18);
+            this.lblEmail.Size = new System.Drawing.Size(152, 20);
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Tu email (opcional) :";
             // 
             // lblBiblioteca
             // 
             this.lblBiblioteca.AutoSize = true;
-            this.lblBiblioteca.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBiblioteca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblBiblioteca.Location = new System.Drawing.Point(17, 12);
+            this.lblBiblioteca.Location = new System.Drawing.Point(18, 9);
             this.lblBiblioteca.Name = "lblBiblioteca";
-            this.lblBiblioteca.Size = new System.Drawing.Size(86, 18);
+            this.lblBiblioteca.Size = new System.Drawing.Size(89, 20);
             this.lblBiblioteca.TabIndex = 0;
             this.lblBiblioteca.Text = "Biblioteca *";
             // 
             // lblActivoFijo
             // 
             this.lblActivoFijo.AutoSize = true;
-            this.lblActivoFijo.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActivoFijo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblActivoFijo.Location = new System.Drawing.Point(17, 210);
+            this.lblActivoFijo.Location = new System.Drawing.Point(18, 207);
             this.lblActivoFijo.Name = "lblActivoFijo";
-            this.lblActivoFijo.Size = new System.Drawing.Size(257, 18);
+            this.lblActivoFijo.Size = new System.Drawing.Size(273, 20);
             this.lblActivoFijo.TabIndex = 0;
             this.lblActivoFijo.Text = "N.° de activo fijo de equipo (opcional)";
             // 
             // lblEstDoc
             // 
             this.lblEstDoc.AutoSize = true;
-            this.lblEstDoc.Font = new System.Drawing.Font("Lato Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstDoc.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstDoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblEstDoc.Location = new System.Drawing.Point(16, 293);
+            this.lblEstDoc.Location = new System.Drawing.Point(17, 288);
             this.lblEstDoc.Name = "lblEstDoc";
-            this.lblEstDoc.Size = new System.Drawing.Size(210, 19);
+            this.lblEstDoc.Size = new System.Drawing.Size(229, 22);
             this.lblEstDoc.TabIndex = 0;
             this.lblEstDoc.Text = "¿Eres estudiante o docente?";
             // 
             // txtActivoFijo
             // 
-            this.txtActivoFijo.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtActivoFijo.Location = new System.Drawing.Point(20, 236);
+            this.txtActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivoFijo.Location = new System.Drawing.Point(20, 233);
             this.txtActivoFijo.Name = "txtActivoFijo";
-            this.txtActivoFijo.Size = new System.Drawing.Size(288, 23);
+            this.txtActivoFijo.Size = new System.Drawing.Size(288, 28);
             this.txtActivoFijo.TabIndex = 3;
             // 
             // cboBiblioteca
             // 
+            this.cboBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBiblioteca.FormattingEnabled = true;
-            this.cboBiblioteca.Location = new System.Drawing.Point(20, 38);
+            this.cboBiblioteca.Location = new System.Drawing.Point(20, 35);
             this.cboBiblioteca.Name = "cboBiblioteca";
-            this.cboBiblioteca.Size = new System.Drawing.Size(288, 21);
+            this.cboBiblioteca.Size = new System.Drawing.Size(288, 29);
             this.cboBiblioteca.TabIndex = 0;
             // 
             // lblUrgencia
             // 
             this.lblUrgencia.AutoSize = true;
-            this.lblUrgencia.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUrgencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblUrgencia.Location = new System.Drawing.Point(17, 144);
+            this.lblUrgencia.Location = new System.Drawing.Point(18, 141);
             this.lblUrgencia.Name = "lblUrgencia";
-            this.lblUrgencia.Size = new System.Drawing.Size(78, 18);
+            this.lblUrgencia.Size = new System.Drawing.Size(82, 20);
             this.lblUrgencia.TabIndex = 0;
             this.lblUrgencia.Text = "Urgencia *";
             // 
             // cboCategoria
             // 
+            this.cboCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(20, 104);
+            this.cboCategoria.Location = new System.Drawing.Point(20, 101);
             this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(288, 21);
+            this.cboCategoria.Size = new System.Drawing.Size(288, 29);
             this.cboCategoria.TabIndex = 1;
             // 
             // cboUrgencia
             // 
+            this.cboUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUrgencia.FormattingEnabled = true;
-            this.cboUrgencia.Location = new System.Drawing.Point(20, 170);
+            this.cboUrgencia.Location = new System.Drawing.Point(20, 167);
             this.cboUrgencia.Name = "cboUrgencia";
-            this.cboUrgencia.Size = new System.Drawing.Size(288, 21);
+            this.cboUrgencia.Size = new System.Drawing.Size(288, 29);
             this.cboUrgencia.TabIndex = 2;
             // 
             // lblCategoria
             // 
             this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Lato", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCategoria.Location = new System.Drawing.Point(17, 78);
+            this.lblCategoria.Location = new System.Drawing.Point(18, 75);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(84, 18);
+            this.lblCategoria.Size = new System.Drawing.Size(87, 20);
             this.lblCategoria.TabIndex = 0;
             this.lblCategoria.Text = "Categoría *";
             // 
             // lblCampoObligatorio
             // 
             this.lblCampoObligatorio.AutoSize = true;
-            this.lblCampoObligatorio.Font = new System.Drawing.Font("Lato", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCampoObligatorio.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCampoObligatorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblCampoObligatorio.Location = new System.Drawing.Point(36, 529);
             this.lblCampoObligatorio.Name = "lblCampoObligatorio";
-            this.lblCampoObligatorio.Size = new System.Drawing.Size(103, 13);
+            this.lblCampoObligatorio.Size = new System.Drawing.Size(128, 17);
             this.lblCampoObligatorio.TabIndex = 0;
             this.lblCampoObligatorio.Text = "* Campo obligatorio";
             // 
             // lblCaracteristicas
             // 
             this.lblCaracteristicas.AutoSize = true;
-            this.lblCaracteristicas.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCaracteristicas.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCaracteristicas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblCaracteristicas.Location = new System.Drawing.Point(695, 88);
             this.lblCaracteristicas.Name = "lblCaracteristicas";
-            this.lblCaracteristicas.Size = new System.Drawing.Size(137, 23);
+            this.lblCaracteristicas.Size = new System.Drawing.Size(138, 25);
             this.lblCaracteristicas.TabIndex = 0;
             this.lblCaracteristicas.Text = "Características";
             // 
@@ -310,7 +313,7 @@
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Lato", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Location = new System.Drawing.Point(760, 545);
             this.btnVolver.Name = "btnVolver";

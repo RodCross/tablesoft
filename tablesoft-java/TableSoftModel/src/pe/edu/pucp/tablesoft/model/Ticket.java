@@ -219,6 +219,7 @@ public class Ticket {
         TransferenciaInterna cambioCategoria = new TransferenciaInterna(categoria, getAgente());
         cambioCategoria.setFecha(LocalDateTime.now());
         cambioCategoria.setComentario(comentario);
+        this.setAgente(new Agente());
         this.historialTransferencia.add(cambioCategoria);
     }
     

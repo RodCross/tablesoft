@@ -10,6 +10,10 @@ public class Persona {
         
     }
 
+    public Persona(String codigo) {
+        this.codigo = codigo;
+    }
+
     public Persona(String codigo, String dni, String nombre, String personaEmail) {
         this.codigo = codigo;
         this.dni = dni;

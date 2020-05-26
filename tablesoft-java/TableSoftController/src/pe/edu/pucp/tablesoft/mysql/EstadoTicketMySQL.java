@@ -126,7 +126,7 @@ public class EstadoTicketMySQL implements EstadoTicketDAO {
             CallableStatement cs = con.prepareCall(
                     "{CALL buscar_estado_ticket(?)}");
             
-            cs.setInt("_ESTADO_ID", estadoTicketId);
+            cs.setInt("_ID", estadoTicketId);
             ResultSet rs = cs.executeQuery();
 
             while(rs.next()){

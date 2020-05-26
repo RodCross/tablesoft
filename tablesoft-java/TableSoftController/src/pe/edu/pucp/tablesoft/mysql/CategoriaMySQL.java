@@ -161,4 +161,30 @@ public class CategoriaMySQL implements CategoriaDAO{
         }
         return categorias;
     } 
+
+    @Override
+    public int eliminarDeEquipo(Categoria categoria, Equipo equipo) {
+        Connection con;
+        int rpta = 0;
+        try {
+            //Registrar el JAR de conexión
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+
+            CallableStatement cs = con.prepareCall(
+                    "{CALL eliminar_categoria_equipo(?,?)}");
+            cs.setInt("_ID_CATEGORIA", categoria.getCategoriaId());
+            cs.setInt("_ID_EQUIPO", equipo.getEquipoId());
+            
+            cs.executeUpdate();
+            con.close();
+
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        }
+        return rpta;
+    }
 }

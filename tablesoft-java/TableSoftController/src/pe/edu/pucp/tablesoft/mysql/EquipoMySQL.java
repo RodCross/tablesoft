@@ -3,22 +3,21 @@ package pe.edu.pucp.tablesoft.mysql;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
+import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
-import pe.edu.pucp.tablesoft.model.Agente;
-import pe.edu.pucp.tablesoft.model.Categoria;
 import pe.edu.pucp.tablesoft.model.Equipo;
-import pe.edu.pucp.tablesoft.model.Supervisor;
 
 
 public class EquipoMySQL implements EquipoDAO{
- 
+    Connection con;
     @Override
     public int insertar(Equipo equipo) {
-        Connection con;
         int rpta = 0;
         try {
             //Registrar el JAR de conexión
@@ -28,14 +27,18 @@ public class EquipoMySQL implements EquipoDAO{
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{call insertar_equipo(?)}");
+                    "{call insertar_equipo(?,?,?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
+            cs.setString("_NOMBRE", equipo.getNombre());
+            cs.setString("_DESCRIPCION", equipo.getDescripcion());
+            cs.setTimestamp("_FECHA_CREACION", Timestamp.valueOf(LocalDateTime.now()));
+            
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             con.close();
             equipo.setEquipoId(rpta);
 
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return rpta;
@@ -43,13 +46,34 @@ public class EquipoMySQL implements EquipoDAO{
 
     @Override
     public int actualizar(Equipo equipo) {
-        // No puede actualizar el identificador
-        throw new UnsupportedOperationException("No se puede actualizar.");
+        int rpta = 0;
+        try {
+            //Registrar el JAR de conexión
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+
+            CallableStatement cs = con.prepareCall(
+                    "{call actualizar_equipo(?,?,?,?)}");
+            cs.setInt("_ID", equipo.getEquipoId());
+            cs.setString("_NOMBRE", equipo.getNombre());
+            cs.setString("_DESCRIPCION", equipo.getDescripcion());
+            cs.setTimestamp("_FECHA", Timestamp.valueOf(equipo.getFechaCreacion()));
+            
+            cs.executeUpdate();
+            rpta = cs.getInt("_ID");
+            con.close();
+
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        }
+        return rpta;
     }
 
     @Override
-    public int eliminar(int idEquipo) {
-        Connection con;
+    public int eliminar(Equipo equipo) {
         int rpta = 0;
         try {
             //Registrar el JAR de conexión
@@ -60,12 +84,13 @@ public class EquipoMySQL implements EquipoDAO{
 
             CallableStatement cs = con.prepareCall(
                     "{call eliminar_equipo(?)}");
-            cs.setInt("_ID", idEquipo);
+            cs.setInt("_ID", equipo.getEquipoId());
+            
             cs.executeUpdate();
 
             con.close();
 
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
             rpta = -1;
         }
@@ -75,10 +100,8 @@ public class EquipoMySQL implements EquipoDAO{
     @Override
     public ArrayList<Equipo> listar() {
         // Devuelve una lista de los Equipos en la BD
-        // Cada equipo estara lleno con su respectiva lista de categorias,
-        // agentes y supervisor.
+        // Cada equipo estara lleno solo con su lista de categorias
         ArrayList<Equipo> equipos = new ArrayList<>();
-        Connection con;
         try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -88,70 +111,65 @@ public class EquipoMySQL implements EquipoDAO{
             
             
             CallableStatement cs = con.prepareCall(
-                    "{call listar_equipo_agentes()}");
+                    "{call listar_equipo()}");
             ResultSet rs=cs.executeQuery();
             
-            int equipo_id_anterior = 0, equipo_id_actual;
-            Equipo equipo = new Equipo();
-            while(rs.next()) {
-                equipo_id_actual = rs.getInt("equipo_id");
-                if(equipo_id_actual != equipo_id_anterior){
-                    equipo = new Equipo();
-                    equipos.add(equipo);
-                    equipo.setEquipoId(equipo_id_actual);
-                }
-                try{
-                    String rol = rs.getString("rol");
-                    if("SUPERVISOR".equals(rol)){
-                        Supervisor sup = new Supervisor();
-                        sup.setAgenteEmail(rs.getString("agente_email"));
-                        sup.setAgenteId(rs.getInt("agente_id"));
-                        sup.setCodigo(rs.getString("codigo"));
-                        sup.setDni(rs.getString("dni"));
-                        sup.setUsuarioEmail(rs.getString("usuario_email"));
-                        sup.setNombre(rs.getString("nombre"));
-                        sup.setEquipo(equipo);
-                        equipo.asignarSupervisor(sup);
-                    }
-                    if("AGENTE".equals(rol)){
-                        Agente ag = new Agente();
-                        ag.setAgenteEmail(rs.getString("agente_email"));
-                        ag.setAgenteId(rs.getInt("agente_id"));
-                        ag.setCodigo(rs.getString("codigo"));
-                        ag.setEquipo(equipo);
-                        ag.setDni(rs.getString("dni"));
-                        ag.setUsuarioEmail(rs.getString("usuario_email"));
-                        ag.setNombre(rs.getString("nombre"));
-                        equipo.agregarAgente(ag);
-                    }
-                    
-                } catch(Exception ex){
-                    System.out.println(ex.getMessage());
-                }
-                equipo_id_anterior = equipo_id_actual;
+            CategoriaDAO daoCategoria = new CategoriaMySQL();
+            while(rs.next()){
+                Equipo equipo = new Equipo();
+                
+                equipo.setEquipoId(rs.getInt("equipo_id"));
+                equipo.setDescripcion(rs.getString("descripcion"));
+                equipo.setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                equipo.setNombre(rs.getString("nombre"));
+                equipo.setActivo(true);
+                
+                equipo.setListaCategorias(daoCategoria.listarxEquipo(equipo));
+                equipos.add(equipo);
             }
             
-            for(Equipo e : equipos) {
-                // Para cada equipo buscamos sus categorias
-                String sql;
-                sql = "SELECT * FROM CATEGORIA WHERE equipo_id = " + e.getEquipoId();
-                PreparedStatement ps;
-                ps = con.prepareStatement(sql);
-                rs = ps.executeQuery();
-                while(rs.next()) {
-                    Categoria cat = new Categoria();
-                    cat.setCategoriaId(rs.getInt("categoria_id"));
-                    cat.setNombre(rs.getString("nombre"));
-                    cat.setEquipo(e);
-                    e.agregarCategoria(cat);
-                }
-            }
             con.close();
             
-        } catch(Exception ex) {
+        } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
         return equipos;
+    }
+
+    @Override
+    public Equipo buscar(int equipoId) {
+        Equipo equipo = new Equipo();
+        try {
+            //Registrar el JAR de conexión
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            
+            CallableStatement cs = con.prepareCall(
+                    "{call buscar_equipo(?)}");
+            cs.setInt("_ID", equipoId);
+            ResultSet rs=cs.executeQuery();
+            
+            CategoriaDAO daoCategoria = new CategoriaMySQL();
+            while(rs.next()){
+                
+                equipo.setEquipoId(rs.getInt("equipo_id"));
+                equipo.setDescripcion(rs.getString("descripcion"));
+                equipo.setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                equipo.setNombre(rs.getString("nombre"));
+                equipo.setActivo(true);
+                
+                equipo.setListaCategorias(daoCategoria.listarxEquipo(equipo));
+            }
+            
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return equipo;
     }
     
 }

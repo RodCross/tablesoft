@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAyuda));
             this.lblTituloCuentas = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
-            this.lblTituloSistema = new System.Windows.Forms.Label();
             this.lblFAQ = new System.Windows.Forms.Label();
             this.lblPregCuentas = new System.Windows.Forms.Label();
             this.lblResCuentas = new System.Windows.Forms.Label();
@@ -45,6 +43,8 @@
             this.lblPregCat = new System.Windows.Forms.Label();
             this.lblTituloCat = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
+            this.lblTituloSistema = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,28 +71,6 @@
             this.pnlTitulo.Size = new System.Drawing.Size(1064, 106);
             this.pnlTitulo.TabIndex = 0;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lblBibliotecasPUCP
-            // 
-            this.lblBibliotecasPUCP.AutoSize = true;
-            this.lblBibliotecasPUCP.Font = new System.Drawing.Font("Lato", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBibliotecasPUCP.ForeColor = System.Drawing.Color.White;
-            this.lblBibliotecasPUCP.Location = new System.Drawing.Point(25, 64);
-            this.lblBibliotecasPUCP.Name = "lblBibliotecasPUCP";
-            this.lblBibliotecasPUCP.Size = new System.Drawing.Size(158, 23);
-            this.lblBibliotecasPUCP.TabIndex = 0;
-            this.lblBibliotecasPUCP.Text = "Bibliotecas PUCP";
-            // 
-            // lblTituloSistema
-            // 
-            this.lblTituloSistema.AutoSize = true;
-            this.lblTituloSistema.Font = new System.Drawing.Font("Lato Black", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloSistema.ForeColor = System.Drawing.Color.White;
-            this.lblTituloSistema.Location = new System.Drawing.Point(23, 17);
-            this.lblTituloSistema.Name = "lblTituloSistema";
-            this.lblTituloSistema.Size = new System.Drawing.Size(344, 33);
-            this.lblTituloSistema.TabIndex = 0;
-            this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
             // 
             // lblFAQ
             // 
@@ -232,6 +210,28 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
+            // lblBibliotecasPUCP
+            // 
+            this.lblBibliotecasPUCP.AutoSize = true;
+            this.lblBibliotecasPUCP.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBibliotecasPUCP.ForeColor = System.Drawing.Color.White;
+            this.lblBibliotecasPUCP.Location = new System.Drawing.Point(24, 59);
+            this.lblBibliotecasPUCP.Name = "lblBibliotecasPUCP";
+            this.lblBibliotecasPUCP.Size = new System.Drawing.Size(159, 26);
+            this.lblBibliotecasPUCP.TabIndex = 1;
+            this.lblBibliotecasPUCP.Text = "Bibliotecas PUCP";
+            // 
+            // lblTituloSistema
+            // 
+            this.lblTituloSistema.AutoSize = true;
+            this.lblTituloSistema.Font = new System.Drawing.Font("Microsoft PhagsPa", 19.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloSistema.ForeColor = System.Drawing.Color.White;
+            this.lblTituloSistema.Location = new System.Drawing.Point(23, 17);
+            this.lblTituloSistema.Name = "lblTituloSistema";
+            this.lblTituloSistema.Size = new System.Drawing.Size(340, 34);
+            this.lblTituloSistema.TabIndex = 2;
+            this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
+            // 
             // frmAyuda
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,8 +267,6 @@
         #endregion
         private System.Windows.Forms.Label lblTituloCuentas;
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Label lblBibliotecasPUCP;
-        private System.Windows.Forms.Label lblTituloSistema;
         private System.Windows.Forms.Label lblFAQ;
         private System.Windows.Forms.Label lblPregCuentas;
         private System.Windows.Forms.Label lblResCuentas;
@@ -281,5 +279,7 @@
         private System.Windows.Forms.Label lblPregCat;
         private System.Windows.Forms.Label lblTituloCat;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lblBibliotecasPUCP;
+        private System.Windows.Forms.Label lblTituloSistema;
     }
 }

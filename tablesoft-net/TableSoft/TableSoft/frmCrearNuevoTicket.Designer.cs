@@ -110,7 +110,7 @@
             // rtfDescripcion
             // 
             this.rtfDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtfDescripcion.Font = new System.Drawing.Font("Lato", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtfDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtfDescripcion.Location = new System.Drawing.Point(20, 101);
             this.rtfDescripcion.Name = "rtfDescripcion";
             this.rtfDescripcion.Size = new System.Drawing.Size(593, 276);
@@ -168,7 +168,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.Location = new System.Drawing.Point(20, 349);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(288, 28);
@@ -220,7 +220,7 @@
             // 
             // txtActivoFijo
             // 
-            this.txtActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtActivoFijo.Location = new System.Drawing.Point(20, 233);
             this.txtActivoFijo.Name = "txtActivoFijo";
             this.txtActivoFijo.Size = new System.Drawing.Size(288, 28);
@@ -228,7 +228,7 @@
             // 
             // cboBiblioteca
             // 
-            this.cboBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBiblioteca.FormattingEnabled = true;
             this.cboBiblioteca.Location = new System.Drawing.Point(20, 35);
             this.cboBiblioteca.Name = "cboBiblioteca";
@@ -248,7 +248,7 @@
             // 
             // cboCategoria
             // 
-            this.cboCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCategoria.FormattingEnabled = true;
             this.cboCategoria.Location = new System.Drawing.Point(20, 101);
             this.cboCategoria.Name = "cboCategoria";
@@ -257,7 +257,7 @@
             // 
             // cboUrgencia
             // 
-            this.cboUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboUrgencia.FormattingEnabled = true;
             this.cboUrgencia.Location = new System.Drawing.Point(20, 167);
             this.cboUrgencia.Name = "cboUrgencia";

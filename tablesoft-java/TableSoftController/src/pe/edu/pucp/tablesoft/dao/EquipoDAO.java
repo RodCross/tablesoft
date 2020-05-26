@@ -16,4 +16,5 @@ public interface EquipoDAO {
     ArrayList<Equipo> listar();     // Solo lista los equipos con su lista de Categorias
                                     // Usa CategoriaDAO.listarxEquipo(Equipo) para llenar la lista de Categorias
                                     // No llena su lista de agentes
+    Equipo buscar(int equipoId);
 }

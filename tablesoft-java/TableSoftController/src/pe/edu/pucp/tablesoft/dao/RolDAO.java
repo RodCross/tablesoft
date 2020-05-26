@@ -12,4 +12,5 @@ public interface RolDAO {
     int actualizar(Rol rol);
     int eliminar(Rol rol);
     ArrayList<Rol> listar();
+    Rol buscar(int rolId);
 }

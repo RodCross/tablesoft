@@ -16,6 +16,7 @@ namespace TableSoft
         BindingList<Usuario> usuarios = new BindingList<Usuario>();
         Usuario user1 = new Usuario("a20167474@pucp.edu.pe", "abcd1234", "Empleado");
         Usuario user2 = new Usuario("f.verastegui@pucp.edu.pe", "abcd1234", "Agente");
+        Usuario user3 = new Usuario("admin", "admin", "Agente");
 
         public frmInicioSesion()
         {
@@ -23,6 +24,7 @@ namespace TableSoft
             LimpiarCampos();
             usuarios.Add(user1);
             usuarios.Add(user2);
+            usuarios.Add(user3);
         }
 
         private void btnLogin_Click(object sender, EventArgs e)

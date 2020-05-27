@@ -106,11 +106,11 @@
             this.lblTituloLogin.AutoSize = true;
             this.lblTituloLogin.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTituloLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloLogin.Location = new System.Drawing.Point(326, 128);
+            this.lblTituloLogin.Location = new System.Drawing.Point(329, 128);
             this.lblTituloLogin.Name = "lblTituloLogin";
-            this.lblTituloLogin.Size = new System.Drawing.Size(233, 25);
+            this.lblTituloLogin.Size = new System.Drawing.Size(227, 25);
             this.lblTituloLogin.TabIndex = 0;
-            this.lblTituloLogin.Text = "Inicia sesión en Tablesoft";
+            this.lblTituloLogin.Text = "Inicia sesión en Yanapay";
             this.lblTituloLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlLogin

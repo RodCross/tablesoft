@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmEscalarTicketAgente : Form
+    public partial class frmGeneradorReportes : Form
     {
-        public frmEscalarTicketAgente()
+        public frmGeneradorReportes()
         {
             InitializeComponent();
-        }
-
-        private void frmEscalarTicketAgente_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

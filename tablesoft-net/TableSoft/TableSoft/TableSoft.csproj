@@ -76,6 +76,12 @@
     <Compile Include="frmEscalarTicketAgente.Designer.cs">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGeneradorReportes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGeneradorReportes.Designer.cs">
+      <DependentUpon>frmGeneradorReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEscalarTicketAgente.resx">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGeneradorReportes.resx">
+      <DependentUpon>frmGeneradorReportes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarCategoria.resx">
       <DependentUpon>frmGestionarCategoria.cs</DependentUpon>

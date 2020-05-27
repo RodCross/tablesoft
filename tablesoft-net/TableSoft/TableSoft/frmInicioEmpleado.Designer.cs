@@ -46,7 +46,6 @@
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
-            this.lklCuenta = new System.Windows.Forms.LinkLabel();
             this.lklTickets = new System.Windows.Forms.LinkLabel();
             this.lklLogout = new System.Windows.Forms.LinkLabel();
             this.pnlExt.SuspendLayout();
@@ -254,7 +253,6 @@
             // pnlOpciones
             // 
             this.pnlOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
-            this.pnlOpciones.Controls.Add(this.lklCuenta);
             this.pnlOpciones.Controls.Add(this.lklTickets);
             this.pnlOpciones.Controls.Add(this.lklLogout);
             this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Top;
@@ -262,22 +260,6 @@
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(884, 51);
             this.pnlOpciones.TabIndex = 2;
-            // 
-            // lklCuenta
-            // 
-            this.lklCuenta.ActiveLinkColor = System.Drawing.Color.Yellow;
-            this.lklCuenta.AutoSize = true;
-            this.lklCuenta.Enabled = false;
-            this.lklCuenta.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklCuenta.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lklCuenta.LinkColor = System.Drawing.Color.White;
-            this.lklCuenta.Location = new System.Drawing.Point(458, 14);
-            this.lklCuenta.Name = "lklCuenta";
-            this.lklCuenta.Size = new System.Drawing.Size(100, 25);
-            this.lklCuenta.TabIndex = 0;
-            this.lklCuenta.TabStop = true;
-            this.lklCuenta.Text = "Mi cuenta";
-            this.lklCuenta.VisitedLinkColor = System.Drawing.Color.White;
             // 
             // lklTickets
             // 
@@ -360,7 +342,6 @@
         private System.Windows.Forms.Panel pnlIzq;
         private System.Windows.Forms.PictureBox picAbrir;
         private System.Windows.Forms.LinkLabel lklLogout;
-        private System.Windows.Forms.LinkLabel lklCuenta;
         private System.Windows.Forms.LinkLabel lklTickets;
         private System.Windows.Forms.LinkLabel lklFAQ;
     }

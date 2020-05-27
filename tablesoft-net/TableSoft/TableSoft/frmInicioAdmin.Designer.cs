@@ -32,15 +32,12 @@
             this.pnlExt = new System.Windows.Forms.Panel();
             this.pnlInt = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picReporte = new System.Windows.Forms.PictureBox();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.lblGenerarReportes = new System.Windows.Forms.Label();
             this.pnlDer = new System.Windows.Forms.Panel();
-            this.picEstado = new System.Windows.Forms.PictureBox();
             this.btnGestionar = new System.Windows.Forms.Button();
             this.lblGestionarTickets = new System.Windows.Forms.Label();
             this.pnlIzq = new System.Windows.Forms.Panel();
-            this.picAbrir = new System.Windows.Forms.PictureBox();
             this.lblAbrir = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
             this.pnlOpciones = new System.Windows.Forms.Panel();
@@ -51,21 +48,24 @@
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.picGestionar = new System.Windows.Forms.PictureBox();
             this.btnGestionarSistema = new System.Windows.Forms.Button();
             this.lblGestionarSistema = new System.Windows.Forms.Label();
+            this.picGestionar = new System.Windows.Forms.PictureBox();
+            this.picReporte = new System.Windows.Forms.PictureBox();
+            this.picEstado = new System.Windows.Forms.PictureBox();
+            this.picAbrir = new System.Windows.Forms.PictureBox();
             this.pnlExt.SuspendLayout();
             this.pnlInt.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReporte)).BeginInit();
             this.pnlDer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
             this.pnlIzq.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).BeginInit();
             this.pnlOpciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGestionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReporte)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlExt
@@ -99,17 +99,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(314, 294);
             this.panel1.TabIndex = 9;
-            // 
-            // picReporte
-            // 
-            this.picReporte.Image = ((System.Drawing.Image)(resources.GetObject("picReporte.Image")));
-            this.picReporte.InitialImage = global::TableSoft.Properties.Resources.InicioSupervisorReporte;
-            this.picReporte.Location = new System.Drawing.Point(110, 57);
-            this.picReporte.Name = "picReporte";
-            this.picReporte.Size = new System.Drawing.Size(110, 149);
-            this.picReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReporte.TabIndex = 8;
-            this.picReporte.TabStop = false;
             // 
             // btnGenerar
             // 
@@ -147,17 +136,6 @@
             this.pnlDer.Size = new System.Drawing.Size(313, 294);
             this.pnlDer.TabIndex = 1;
             // 
-            // picEstado
-            // 
-            this.picEstado.Image = ((System.Drawing.Image)(resources.GetObject("picEstado.Image")));
-            this.picEstado.InitialImage = ((System.Drawing.Image)(resources.GetObject("picEstado.InitialImage")));
-            this.picEstado.Location = new System.Drawing.Point(105, 57);
-            this.picEstado.Name = "picEstado";
-            this.picEstado.Size = new System.Drawing.Size(110, 149);
-            this.picEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEstado.TabIndex = 8;
-            this.picEstado.TabStop = false;
-            // 
             // btnGestionar
             // 
             this.btnGestionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
@@ -193,16 +171,6 @@
             this.pnlIzq.Name = "pnlIzq";
             this.pnlIzq.Size = new System.Drawing.Size(308, 294);
             this.pnlIzq.TabIndex = 0;
-            // 
-            // picAbrir
-            // 
-            this.picAbrir.Image = ((System.Drawing.Image)(resources.GetObject("picAbrir.Image")));
-            this.picAbrir.Location = new System.Drawing.Point(110, 67);
-            this.picAbrir.Name = "picAbrir";
-            this.picAbrir.Size = new System.Drawing.Size(96, 124);
-            this.picAbrir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAbrir.TabIndex = 3;
-            this.picAbrir.TabStop = false;
             // 
             // lblAbrir
             // 
@@ -332,17 +300,6 @@
             this.panel2.Size = new System.Drawing.Size(314, 294);
             this.panel2.TabIndex = 10;
             // 
-            // picGestionar
-            // 
-            this.picGestionar.Image = ((System.Drawing.Image)(resources.GetObject("picGestionar.Image")));
-            this.picGestionar.InitialImage = global::TableSoft.Properties.Resources.InicioAdministradorSistema;
-            this.picGestionar.Location = new System.Drawing.Point(110, 57);
-            this.picGestionar.Name = "picGestionar";
-            this.picGestionar.Size = new System.Drawing.Size(110, 149);
-            this.picGestionar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picGestionar.TabIndex = 8;
-            this.picGestionar.TabStop = false;
-            // 
             // btnGestionarSistema
             // 
             this.btnGestionarSistema.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
@@ -368,11 +325,54 @@
             this.lblGestionarSistema.Text = "Gestionar Sistema";
             this.lblGestionarSistema.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // picGestionar
+            // 
+            this.picGestionar.Image = ((System.Drawing.Image)(resources.GetObject("picGestionar.Image")));
+            this.picGestionar.InitialImage = global::TableSoft.Properties.Resources.InicioAdministradorSistema;
+            this.picGestionar.Location = new System.Drawing.Point(110, 57);
+            this.picGestionar.Name = "picGestionar";
+            this.picGestionar.Size = new System.Drawing.Size(110, 149);
+            this.picGestionar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGestionar.TabIndex = 8;
+            this.picGestionar.TabStop = false;
+            // 
+            // picReporte
+            // 
+            this.picReporte.Image = ((System.Drawing.Image)(resources.GetObject("picReporte.Image")));
+            this.picReporte.InitialImage = global::TableSoft.Properties.Resources.InicioSupervisorReporte;
+            this.picReporte.Location = new System.Drawing.Point(110, 57);
+            this.picReporte.Name = "picReporte";
+            this.picReporte.Size = new System.Drawing.Size(110, 149);
+            this.picReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picReporte.TabIndex = 8;
+            this.picReporte.TabStop = false;
+            // 
+            // picEstado
+            // 
+            this.picEstado.Image = ((System.Drawing.Image)(resources.GetObject("picEstado.Image")));
+            this.picEstado.InitialImage = ((System.Drawing.Image)(resources.GetObject("picEstado.InitialImage")));
+            this.picEstado.Location = new System.Drawing.Point(105, 57);
+            this.picEstado.Name = "picEstado";
+            this.picEstado.Size = new System.Drawing.Size(110, 149);
+            this.picEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEstado.TabIndex = 8;
+            this.picEstado.TabStop = false;
+            // 
+            // picAbrir
+            // 
+            this.picAbrir.Image = ((System.Drawing.Image)(resources.GetObject("picAbrir.Image")));
+            this.picAbrir.Location = new System.Drawing.Point(110, 67);
+            this.picAbrir.Name = "picAbrir";
+            this.picAbrir.Size = new System.Drawing.Size(96, 124);
+            this.picAbrir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAbrir.TabIndex = 3;
+            this.picAbrir.TabStop = false;
+            // 
             // frmInicioAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 730);
+            this.ClientSize = new System.Drawing.Size(1386, 560);
             this.Controls.Add(this.pnlExt);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
@@ -383,13 +383,10 @@
             this.pnlInt.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReporte)).EndInit();
             this.pnlDer.ResumeLayout(false);
             this.pnlDer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
             this.pnlIzq.ResumeLayout(false);
             this.pnlIzq.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).EndInit();
             this.pnlOpciones.ResumeLayout(false);
             this.pnlOpciones.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
@@ -397,6 +394,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picGestionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picReporte)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).EndInit();
             this.ResumeLayout(false);
 
         }

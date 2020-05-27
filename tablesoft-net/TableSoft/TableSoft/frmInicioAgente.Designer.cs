@@ -313,6 +313,7 @@
             this.Controls.Add(this.pnlExt);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInicioAgente";
             this.Text = "frmInicioAgente";
             this.pnlOpciones.ResumeLayout(false);

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioAdministrador));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblAbrir = new System.Windows.Forms.Label();
             this.btnGestionarEmpleado = new System.Windows.Forms.Button();
@@ -171,6 +172,7 @@
             this.Controls.Add(this.btnGestionarEmpleado);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInicioAdministrador";
             this.Text = "frmGestionarAdministrador";
             this.pnlTitulo.ResumeLayout(false);

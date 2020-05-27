@@ -9,6 +9,9 @@ public class EstadoTarea {
 
     public EstadoTarea() {
     }
+    public EstadoTarea(int id){
+        this.estadoId = id;
+    }
 
     public int getEstadoId() {
         return estadoId;

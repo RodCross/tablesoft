@@ -210,7 +210,6 @@ public class Ticket {
     }
     
     public void agregarTarea(Tarea tarea){
-        tarea.setFechaCreacion(LocalDateTime.now());
         this.listaTareas.add(tarea);
     }
     

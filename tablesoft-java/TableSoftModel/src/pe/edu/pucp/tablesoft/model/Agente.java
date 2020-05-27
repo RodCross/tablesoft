@@ -22,6 +22,10 @@ public class Agente extends Persona {
         listaTickets = new ArrayList<>();
     }
     
+    public Agente(int agenteId){
+        this.agenteId = agenteId;
+    }
+    
     // Getter y setter
     public Rol getRol() {
         return rol;

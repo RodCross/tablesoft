@@ -5,12 +5,21 @@ import java.time.LocalDateTime;
 
 public class Tarea {
     private int tareaId;
-    private LocalDateTime fechaCreacion;
     private String descripcion;
     private EstadoTarea estado;
+    private Agente agente;
 
     public Tarea() {
         estado = new EstadoTarea();
+        agente = new Agente();
+    }
+
+    public Agente getAgente() {
+        return agente;
+    }
+
+    public void setAgente(Agente agente) {
+        this.agente = agente;
     }
 
     public int getTareaId() {
@@ -19,14 +28,6 @@ public class Tarea {
 
     public void setTareaId(int tareaId) {
         this.tareaId = tareaId;
-    }
-
-    public LocalDateTime getFechaCreacion() {
-        return fechaCreacion;
-    }
-
-    public void setFechaCreacion(LocalDateTime fechaCreacion) {
-        this.fechaCreacion = fechaCreacion;
     }
 
     public String getDescripcion() {

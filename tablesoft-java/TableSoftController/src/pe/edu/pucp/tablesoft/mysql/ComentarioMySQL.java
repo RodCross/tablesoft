@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
@@ -32,7 +33,7 @@ public class ComentarioMySQL implements ComentarioDAO {
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());
-            cs.setTimestamp("_FECHA", Timestamp.valueOf(comentario.getFecha()));
+            cs.setTimestamp("_FECHA", Timestamp.valueOf(LocalDateTime.now()));
             cs.setString("_TEXTO", comentario.getTexto());
             cs.setString("_PERSONA_ID", autor.getCodigo());
                        

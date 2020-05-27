@@ -66,6 +66,7 @@
             // 
             this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
             this.lklFAQ.AutoSize = true;
+            this.lklFAQ.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklFAQ.LinkColor = System.Drawing.Color.White;
@@ -163,6 +164,7 @@
             // btnLogin
             // 
             this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
@@ -221,6 +223,7 @@
             // 
             // picExit
             // 
+            this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picExit.Image = global::TableSoft.Properties.Resources.Exit;
             this.picExit.Location = new System.Drawing.Point(817, 494);
             this.picExit.Margin = new System.Windows.Forms.Padding(6);

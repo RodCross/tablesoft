@@ -46,6 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblGestionarSistema = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlCaracteristicas.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -55,9 +56,9 @@
             // btnGestionarEmpleado
             // 
             this.btnGestionarEmpleado.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarEmpleado.Location = new System.Drawing.Point(27, 23);
+            this.btnGestionarEmpleado.Location = new System.Drawing.Point(15, 23);
             this.btnGestionarEmpleado.Name = "btnGestionarEmpleado";
-            this.btnGestionarEmpleado.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarEmpleado.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarEmpleado.TabIndex = 6;
             this.btnGestionarEmpleado.Text = "Gestionar Empleados";
             this.btnGestionarEmpleado.UseVisualStyleBackColor = true;
@@ -65,9 +66,9 @@
             // btnGestionarAgentes
             // 
             this.btnGestionarAgentes.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarAgentes.Location = new System.Drawing.Point(27, 82);
+            this.btnGestionarAgentes.Location = new System.Drawing.Point(15, 82);
             this.btnGestionarAgentes.Name = "btnGestionarAgentes";
-            this.btnGestionarAgentes.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarAgentes.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarAgentes.TabIndex = 7;
             this.btnGestionarAgentes.Text = "Gestionar Agentes";
             this.btnGestionarAgentes.UseVisualStyleBackColor = true;
@@ -75,9 +76,9 @@
             // btnGestionarCategorias
             // 
             this.btnGestionarCategorias.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarCategorias.Location = new System.Drawing.Point(30, 23);
+            this.btnGestionarCategorias.Location = new System.Drawing.Point(16, 23);
             this.btnGestionarCategorias.Name = "btnGestionarCategorias";
-            this.btnGestionarCategorias.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarCategorias.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarCategorias.TabIndex = 8;
             this.btnGestionarCategorias.Text = "Gestionar Categorias";
             this.btnGestionarCategorias.UseVisualStyleBackColor = true;
@@ -86,9 +87,9 @@
             // btnGestionarProveedores
             // 
             this.btnGestionarProveedores.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarProveedores.Location = new System.Drawing.Point(30, 23);
+            this.btnGestionarProveedores.Location = new System.Drawing.Point(17, 23);
             this.btnGestionarProveedores.Name = "btnGestionarProveedores";
-            this.btnGestionarProveedores.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarProveedores.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarProveedores.TabIndex = 9;
             this.btnGestionarProveedores.Text = "Gestionar Proveedores";
             this.btnGestionarProveedores.UseVisualStyleBackColor = true;
@@ -96,9 +97,9 @@
             // btnGestionarBibliotecas
             // 
             this.btnGestionarBibliotecas.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarBibliotecas.Location = new System.Drawing.Point(30, 142);
+            this.btnGestionarBibliotecas.Location = new System.Drawing.Point(17, 142);
             this.btnGestionarBibliotecas.Name = "btnGestionarBibliotecas";
-            this.btnGestionarBibliotecas.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarBibliotecas.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarBibliotecas.TabIndex = 11;
             this.btnGestionarBibliotecas.Text = "Gestionar Bibliotecas";
             this.btnGestionarBibliotecas.UseVisualStyleBackColor = true;
@@ -106,9 +107,9 @@
             // btnGestionarUrgencias
             // 
             this.btnGestionarUrgencias.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarUrgencias.Location = new System.Drawing.Point(30, 82);
+            this.btnGestionarUrgencias.Location = new System.Drawing.Point(16, 82);
             this.btnGestionarUrgencias.Name = "btnGestionarUrgencias";
-            this.btnGestionarUrgencias.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarUrgencias.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarUrgencias.TabIndex = 12;
             this.btnGestionarUrgencias.Text = "Gestionar Urgencias";
             this.btnGestionarUrgencias.UseVisualStyleBackColor = true;
@@ -116,9 +117,9 @@
             // btnGestionarActivosFijos
             // 
             this.btnGestionarActivosFijos.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarActivosFijos.Location = new System.Drawing.Point(30, 82);
+            this.btnGestionarActivosFijos.Location = new System.Drawing.Point(17, 82);
             this.btnGestionarActivosFijos.Name = "btnGestionarActivosFijos";
-            this.btnGestionarActivosFijos.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarActivosFijos.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarActivosFijos.TabIndex = 13;
             this.btnGestionarActivosFijos.Text = "Gestionar Activos Fijos";
             this.btnGestionarActivosFijos.UseVisualStyleBackColor = true;
@@ -126,11 +127,11 @@
             // btnGestionarEstadosTicket
             // 
             this.btnGestionarEstadosTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarEstadosTicket.Location = new System.Drawing.Point(30, 142);
+            this.btnGestionarEstadosTicket.Location = new System.Drawing.Point(16, 142);
             this.btnGestionarEstadosTicket.Name = "btnGestionarEstadosTicket";
-            this.btnGestionarEstadosTicket.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarEstadosTicket.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarEstadosTicket.TabIndex = 14;
-            this.btnGestionarEstadosTicket.Text = "Gestionar Estados de Ticket";
+            this.btnGestionarEstadosTicket.Text = "Gestionar Equipos de Trabajo";
             this.btnGestionarEstadosTicket.UseVisualStyleBackColor = true;
             // 
             // pnlCaracteristicas
@@ -147,9 +148,9 @@
             // btnGestionarSupervisores
             // 
             this.btnGestionarSupervisores.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarSupervisores.Location = new System.Drawing.Point(27, 142);
+            this.btnGestionarSupervisores.Location = new System.Drawing.Point(15, 142);
             this.btnGestionarSupervisores.Name = "btnGestionarSupervisores";
-            this.btnGestionarSupervisores.Size = new System.Drawing.Size(207, 38);
+            this.btnGestionarSupervisores.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarSupervisores.TabIndex = 8;
             this.btnGestionarSupervisores.Text = "Gestionar Supervisores";
             this.btnGestionarSupervisores.UseVisualStyleBackColor = true;
@@ -179,12 +180,13 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.btnGestionarCategorias);
             this.panel1.Controls.Add(this.btnGestionarUrgencias);
             this.panel1.Controls.Add(this.btnGestionarEstadosTicket);
             this.panel1.Location = new System.Drawing.Point(369, 143);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(263, 200);
+            this.panel1.Size = new System.Drawing.Size(263, 257);
             this.panel1.TabIndex = 18;
             // 
             // lblAdministrarOtros
@@ -230,11 +232,21 @@
             this.lblGestionarSistema.TabIndex = 0;
             this.lblGestionarSistema.Text = "Gestionar Sistema";
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
+            this.button1.Location = new System.Drawing.Point(16, 199);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(231, 38);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Gestionar Estados de Ticket";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
             // frmInicioAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(974, 358);
+            this.ClientSize = new System.Drawing.Size(974, 412);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.lblAdministrarOtros);
             this.Controls.Add(this.panel2);
@@ -274,5 +286,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblGestionarSistema;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -13,7 +13,8 @@ namespace TableSoft
 {
     public partial class frmInfoTicketAgente : Form
     {
-        String defaultRespuesta = "Escribe tu respuesta aquí.";
+        String defaultRespuesta = "Escribe aquí tu comentario.";
+
         public frmInfoTicketAgente()
         {
             InitializeComponent();

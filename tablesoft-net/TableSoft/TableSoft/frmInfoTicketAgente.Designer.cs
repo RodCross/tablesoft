@@ -32,6 +32,9 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblInfoTicket = new System.Windows.Forms.Label();
+            this.btnCambiarUrgencia = new System.Windows.Forms.Button();
+            this.btnCambiarEstado = new System.Windows.Forms.Button();
+            this.btnEscalar = new System.Windows.Forms.Button();
             this.lblTituloId = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.lblCreacion = new System.Windows.Forms.Label();
@@ -48,9 +51,7 @@
             this.pnlMensajes = new System.Windows.Forms.Panel();
             this.pnlRespuesta = new System.Windows.Forms.Panel();
             this.btnResponder = new System.Windows.Forms.Button();
-            this.btnAdjuntar = new System.Windows.Forms.Button();
             this.rtfRespuesta = new System.Windows.Forms.RichTextBox();
-            this.lblAdjuntar = new System.Windows.Forms.Label();
             this.pnlMsgAgente = new System.Windows.Forms.Panel();
             this.lblFechaAgente = new System.Windows.Forms.Label();
             this.lblMsgAgente = new System.Windows.Forms.Label();
@@ -82,12 +83,12 @@
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.SystemColors.Control;
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
             this.btnVolver.Location = new System.Drawing.Point(910, 19);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
@@ -106,6 +107,54 @@
             this.lblInfoTicket.Size = new System.Drawing.Size(230, 27);
             this.lblInfoTicket.TabIndex = 0;
             this.lblInfoTicket.Text = "Información del ticket";
+            // 
+            // btnCambiarUrgencia
+            // 
+            this.btnCambiarUrgencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCambiarUrgencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarUrgencia.FlatAppearance.BorderSize = 0;
+            this.btnCambiarUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarUrgencia.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarUrgencia.Location = new System.Drawing.Point(83, 376);
+            this.btnCambiarUrgencia.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.btnCambiarUrgencia.Name = "btnCambiarUrgencia";
+            this.btnCambiarUrgencia.Size = new System.Drawing.Size(165, 33);
+            this.btnCambiarUrgencia.TabIndex = 4;
+            this.btnCambiarUrgencia.Text = "Cambiar categoría";
+            this.btnCambiarUrgencia.UseVisualStyleBackColor = false;
+            // 
+            // btnCambiarEstado
+            // 
+            this.btnCambiarEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCambiarEstado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarEstado.FlatAppearance.BorderSize = 0;
+            this.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarEstado.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarEstado.Location = new System.Drawing.Point(459, 376);
+            this.btnCambiarEstado.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.btnCambiarEstado.Name = "btnCambiarEstado";
+            this.btnCambiarEstado.Size = new System.Drawing.Size(165, 33);
+            this.btnCambiarEstado.TabIndex = 3;
+            this.btnCambiarEstado.Text = "Cambiar estado";
+            this.btnCambiarEstado.UseVisualStyleBackColor = false;
+            // 
+            // btnEscalar
+            // 
+            this.btnEscalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnEscalar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEscalar.FlatAppearance.BorderSize = 0;
+            this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEscalar.ForeColor = System.Drawing.Color.White;
+            this.btnEscalar.Location = new System.Drawing.Point(294, 376);
+            this.btnEscalar.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.btnEscalar.Name = "btnEscalar";
+            this.btnEscalar.Size = new System.Drawing.Size(119, 33);
+            this.btnEscalar.TabIndex = 2;
+            this.btnEscalar.Text = "Escalar";
+            this.btnEscalar.UseVisualStyleBackColor = false;
             // 
             // lblTituloId
             // 
@@ -207,9 +256,9 @@
             this.lblBiblioteca.Location = new System.Drawing.Point(19, 368);
             this.lblBiblioteca.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblBiblioteca.Name = "lblBiblioteca";
-            this.lblBiblioteca.Size = new System.Drawing.Size(253, 20);
+            this.lblBiblioteca.Size = new System.Drawing.Size(257, 20);
             this.lblBiblioteca.TabIndex = 14;
-            this.lblBiblioteca.Text = "Complejo de innovación académica";
+            this.lblBiblioteca.Text = "Complejo de Innovación Académica";
             // 
             // lblTituloBiblioteca
             // 
@@ -278,14 +327,15 @@
             // 
             // pnlRespuesta
             // 
+            this.pnlRespuesta.Controls.Add(this.btnCambiarUrgencia);
             this.pnlRespuesta.Controls.Add(this.btnResponder);
-            this.pnlRespuesta.Controls.Add(this.btnAdjuntar);
             this.pnlRespuesta.Controls.Add(this.rtfRespuesta);
-            this.pnlRespuesta.Controls.Add(this.lblAdjuntar);
+            this.pnlRespuesta.Controls.Add(this.btnCambiarEstado);
+            this.pnlRespuesta.Controls.Add(this.btnEscalar);
             this.pnlRespuesta.Location = new System.Drawing.Point(3, 459);
             this.pnlRespuesta.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.pnlRespuesta.Name = "pnlRespuesta";
-            this.pnlRespuesta.Size = new System.Drawing.Size(706, 356);
+            this.pnlRespuesta.Size = new System.Drawing.Size(706, 453);
             this.pnlRespuesta.TabIndex = 21;
             // 
             // btnResponder
@@ -295,7 +345,7 @@
             this.btnResponder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResponder.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResponder.ForeColor = System.Drawing.Color.White;
-            this.btnResponder.Location = new System.Drawing.Point(176, 279);
+            this.btnResponder.Location = new System.Drawing.Point(178, 273);
             this.btnResponder.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnResponder.Name = "btnResponder";
             this.btnResponder.Size = new System.Drawing.Size(351, 50);
@@ -304,43 +354,16 @@
             this.btnResponder.UseVisualStyleBackColor = false;
             this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
             // 
-            // btnAdjuntar
-            // 
-            this.btnAdjuntar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.btnAdjuntar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAdjuntar.FlatAppearance.BorderSize = 0;
-            this.btnAdjuntar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdjuntar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdjuntar.ForeColor = System.Drawing.Color.White;
-            this.btnAdjuntar.Location = new System.Drawing.Point(565, 202);
-            this.btnAdjuntar.Margin = new System.Windows.Forms.Padding(3, 20, 3, 3);
-            this.btnAdjuntar.Name = "btnAdjuntar";
-            this.btnAdjuntar.Size = new System.Drawing.Size(119, 33);
-            this.btnAdjuntar.TabIndex = 23;
-            this.btnAdjuntar.Text = "Adjuntar";
-            this.btnAdjuntar.UseVisualStyleBackColor = false;
-            // 
             // rtfRespuesta
             // 
             this.rtfRespuesta.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtfRespuesta.Location = new System.Drawing.Point(21, 5);
+            this.rtfRespuesta.Location = new System.Drawing.Point(21, 22);
             this.rtfRespuesta.Name = "rtfRespuesta";
-            this.rtfRespuesta.Size = new System.Drawing.Size(663, 173);
+            this.rtfRespuesta.Size = new System.Drawing.Size(663, 198);
             this.rtfRespuesta.TabIndex = 22;
             this.rtfRespuesta.Text = "";
             this.rtfRespuesta.Enter += new System.EventHandler(this.rtfRespuesta_Enter);
             this.rtfRespuesta.Leave += new System.EventHandler(this.rtfRespuesta_Leave);
-            // 
-            // lblAdjuntar
-            // 
-            this.lblAdjuntar.AutoSize = true;
-            this.lblAdjuntar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblAdjuntar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblAdjuntar.Location = new System.Drawing.Point(17, 207);
-            this.lblAdjuntar.Name = "lblAdjuntar";
-            this.lblAdjuntar.Size = new System.Drawing.Size(229, 22);
-            this.lblAdjuntar.TabIndex = 17;
-            this.lblAdjuntar.Text = "Adjuntar archivo (opcional)";
             // 
             // pnlMsgAgente
             // 
@@ -458,7 +481,6 @@
             this.pnlDatos.PerformLayout();
             this.pnlMensajes.ResumeLayout(false);
             this.pnlRespuesta.ResumeLayout(false);
-            this.pnlRespuesta.PerformLayout();
             this.pnlMsgAgente.ResumeLayout(false);
             this.pnlMsgUsuario.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -493,10 +515,11 @@
         private System.Windows.Forms.Label lblFechaAgente;
         private System.Windows.Forms.Label lblNombreAgente;
         private System.Windows.Forms.RichTextBox rtfRespuesta;
-        private System.Windows.Forms.Button btnAdjuntar;
-        private System.Windows.Forms.Label lblAdjuntar;
         private System.Windows.Forms.Panel pnlRespuesta;
         private System.Windows.Forms.Button btnResponder;
         private System.Windows.Forms.Label lblFechaUsuario;
+        private System.Windows.Forms.Button btnCambiarUrgencia;
+        private System.Windows.Forms.Button btnCambiarEstado;
+        private System.Windows.Forms.Button btnEscalar;
     }
 }

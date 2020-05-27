@@ -1,6 +1,5 @@
 package pe.edu.pucp.tablesoft.model;
 
-import java.time.LocalDateTime;
 
 
 public class Tarea {

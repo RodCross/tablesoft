@@ -46,7 +46,7 @@
             this.lblTituloActFij = new System.Windows.Forms.Label();
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.pnlMensajes = new System.Windows.Forms.Panel();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlRespuesta = new System.Windows.Forms.Panel();
             this.btnResponder = new System.Windows.Forms.Button();
             this.btnAdjuntar = new System.Windows.Forms.Button();
             this.rtfRespuesta = new System.Windows.Forms.RichTextBox();
@@ -63,7 +63,7 @@
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlMensajes.SuspendLayout();
-            this.panel5.SuspendLayout();
+            this.pnlRespuesta.SuspendLayout();
             this.pnlMsgAgente.SuspendLayout();
             this.pnlMsgUsuario.SuspendLayout();
             this.SuspendLayout();
@@ -267,7 +267,7 @@
             // pnlMensajes
             // 
             this.pnlMensajes.AutoScroll = true;
-            this.pnlMensajes.Controls.Add(this.panel5);
+            this.pnlMensajes.Controls.Add(this.pnlRespuesta);
             this.pnlMensajes.Controls.Add(this.pnlMsgAgente);
             this.pnlMensajes.Controls.Add(this.pnlMsgUsuario);
             this.pnlMensajes.Controls.Add(this.lblAsunto);
@@ -276,17 +276,17 @@
             this.pnlMensajes.Size = new System.Drawing.Size(732, 512);
             this.pnlMensajes.TabIndex = 18;
             // 
-            // panel5
+            // pnlRespuesta
             // 
-            this.panel5.Controls.Add(this.btnResponder);
-            this.panel5.Controls.Add(this.btnAdjuntar);
-            this.panel5.Controls.Add(this.rtfRespuesta);
-            this.panel5.Controls.Add(this.lblAdjuntar);
-            this.panel5.Location = new System.Drawing.Point(3, 459);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(702, 356);
-            this.panel5.TabIndex = 21;
+            this.pnlRespuesta.Controls.Add(this.btnResponder);
+            this.pnlRespuesta.Controls.Add(this.btnAdjuntar);
+            this.pnlRespuesta.Controls.Add(this.rtfRespuesta);
+            this.pnlRespuesta.Controls.Add(this.lblAdjuntar);
+            this.pnlRespuesta.Location = new System.Drawing.Point(3, 459);
+            this.pnlRespuesta.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
+            this.pnlRespuesta.Name = "pnlRespuesta";
+            this.pnlRespuesta.Size = new System.Drawing.Size(706, 356);
+            this.pnlRespuesta.TabIndex = 21;
             // 
             // btnResponder
             // 
@@ -350,7 +350,7 @@
             this.pnlMsgAgente.Location = new System.Drawing.Point(3, 267);
             this.pnlMsgAgente.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.pnlMsgAgente.Name = "pnlMsgAgente";
-            this.pnlMsgAgente.Size = new System.Drawing.Size(702, 186);
+            this.pnlMsgAgente.Size = new System.Drawing.Size(706, 186);
             this.pnlMsgAgente.TabIndex = 20;
             // 
             // lblFechaAgente
@@ -394,7 +394,7 @@
             this.pnlMsgUsuario.Location = new System.Drawing.Point(3, 98);
             this.pnlMsgUsuario.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.pnlMsgUsuario.Name = "pnlMsgUsuario";
-            this.pnlMsgUsuario.Size = new System.Drawing.Size(702, 163);
+            this.pnlMsgUsuario.Size = new System.Drawing.Size(706, 163);
             this.pnlMsgUsuario.TabIndex = 19;
             // 
             // lblFechaUsuario
@@ -457,8 +457,8 @@
             this.pnlDatos.ResumeLayout(false);
             this.pnlDatos.PerformLayout();
             this.pnlMensajes.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
+            this.pnlRespuesta.ResumeLayout(false);
+            this.pnlRespuesta.PerformLayout();
             this.pnlMsgAgente.ResumeLayout(false);
             this.pnlMsgUsuario.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -495,7 +495,7 @@
         private System.Windows.Forms.RichTextBox rtfRespuesta;
         private System.Windows.Forms.Button btnAdjuntar;
         private System.Windows.Forms.Label lblAdjuntar;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel pnlRespuesta;
         private System.Windows.Forms.Button btnResponder;
         private System.Windows.Forms.Label lblFechaUsuario;
     }

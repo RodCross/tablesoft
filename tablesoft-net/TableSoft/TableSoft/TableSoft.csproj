@@ -70,6 +70,12 @@
     <Compile Include="frmInicioAgente.Designer.cs">
       <DependentUpon>frmInicioAgente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInicioSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSupervisor.Designer.cs">
+      <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmListaTicketEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <EmbeddedResource Include="frmInicioAgente.resx">
       <DependentUpon>frmInicioAgente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioSupervisor.resx">
+      <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmListaTicketEmpleado.resx">
       <DependentUpon>frmListaTicketEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -162,6 +171,7 @@
     <None Include="images\ExitMouseEnter.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="images\InicioSupervisorReporte.png" />
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup />

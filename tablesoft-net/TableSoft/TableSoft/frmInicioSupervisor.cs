@@ -10,12 +10,11 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmInicioAgente : Form
+    public partial class frmInicioSupervisor : Form
     {
-
-        private void frmInicioAgente_Load(object sender, EventArgs e)
+        public frmInicioSupervisor()
         {
-
+            InitializeComponent();
         }
     }
 }

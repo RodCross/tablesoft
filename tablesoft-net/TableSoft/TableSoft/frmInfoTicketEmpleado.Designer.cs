@@ -29,17 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInfoTicketEmpleado));
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.lblInfoTicket = new System.Windows.Forms.Label();
-            this.pnlDatos = new System.Windows.Forms.Panel();
             this.pnlMensajes = new System.Windows.Forms.Panel();
             this.pnlRespuesta = new System.Windows.Forms.Panel();
-            this.btnCambiarUrgencia = new System.Windows.Forms.Button();
             this.btnResponder = new System.Windows.Forms.Button();
             this.rtfRespuesta = new System.Windows.Forms.RichTextBox();
-            this.btnCambiarEstado = new System.Windows.Forms.Button();
-            this.btnEscalar = new System.Windows.Forms.Button();
             this.pnlMsgAgente = new System.Windows.Forms.Panel();
             this.lblFechaAgente = new System.Windows.Forms.Label();
             this.lblMsgAgente = new System.Windows.Forms.Label();
@@ -49,8 +42,8 @@
             this.lblMsgUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblAsunto = new System.Windows.Forms.Label();
-            this.lblTituloId = new System.Windows.Forms.Label();
             this.lblActFij = new System.Windows.Forms.Label();
+            this.lblTituloId = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.lblTituloActFij = new System.Windows.Forms.Label();
             this.lblTituloCreacion = new System.Windows.Forms.Label();
@@ -61,87 +54,17 @@
             this.lblEstado = new System.Windows.Forms.Label();
             this.lblUltMod = new System.Windows.Forms.Label();
             this.lblTituloEstado = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pnlTitulo.SuspendLayout();
-            this.pnlDatos.SuspendLayout();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblInfoTicket = new System.Windows.Forms.Label();
+            this.pnlDatos = new System.Windows.Forms.Panel();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
             this.pnlMensajes.SuspendLayout();
             this.pnlRespuesta.SuspendLayout();
             this.pnlMsgAgente.SuspendLayout();
             this.pnlMsgUsuario.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.pnlDatos.SuspendLayout();
+            this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.btnVolver);
-            this.pnlTitulo.Controls.Add(this.lblInfoTicket);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
-            this.pnlTitulo.TabIndex = 5;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(910, 19);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            // 
-            // lblInfoTicket
-            // 
-            this.lblInfoTicket.AutoSize = true;
-            this.lblInfoTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInfoTicket.ForeColor = System.Drawing.Color.White;
-            this.lblInfoTicket.Location = new System.Drawing.Point(30, 22);
-            this.lblInfoTicket.Name = "lblInfoTicket";
-            this.lblInfoTicket.Size = new System.Drawing.Size(230, 27);
-            this.lblInfoTicket.TabIndex = 0;
-            this.lblInfoTicket.Text = "Información del ticket";
-            // 
-            // pnlDatos
-            // 
-            this.pnlDatos.Controls.Add(this.pnlMensajes);
-            this.pnlDatos.Controls.Add(this.lblTituloId);
-            this.pnlDatos.Controls.Add(this.lblActFij);
-            this.pnlDatos.Controls.Add(this.lblId);
-            this.pnlDatos.Controls.Add(this.lblTituloActFij);
-            this.pnlDatos.Controls.Add(this.lblTituloCreacion);
-            this.pnlDatos.Controls.Add(this.lblBiblioteca);
-            this.pnlDatos.Controls.Add(this.lblCreacion);
-            this.pnlDatos.Controls.Add(this.lblTituloBiblioteca);
-            this.pnlDatos.Controls.Add(this.lblTituloUltMod);
-            this.pnlDatos.Controls.Add(this.lblEstado);
-            this.pnlDatos.Controls.Add(this.lblUltMod);
-            this.pnlDatos.Controls.Add(this.lblTituloEstado);
-            this.pnlDatos.Location = new System.Drawing.Point(12, 76);
-            this.pnlDatos.Name = "pnlDatos";
-            this.pnlDatos.Size = new System.Drawing.Size(302, 512);
-            this.pnlDatos.TabIndex = 18;
             // 
             // pnlMensajes
             // 
@@ -150,39 +73,20 @@
             this.pnlMensajes.Controls.Add(this.pnlMsgAgente);
             this.pnlMensajes.Controls.Add(this.pnlMsgUsuario);
             this.pnlMensajes.Controls.Add(this.lblAsunto);
-            this.pnlMensajes.Location = new System.Drawing.Point(320, 76);
+            this.pnlMensajes.Location = new System.Drawing.Point(320, 82);
             this.pnlMensajes.Name = "pnlMensajes";
             this.pnlMensajes.Size = new System.Drawing.Size(732, 512);
-            this.pnlMensajes.TabIndex = 19;
+            this.pnlMensajes.TabIndex = 21;
             // 
             // pnlRespuesta
             // 
-            this.pnlRespuesta.Controls.Add(this.btnCambiarUrgencia);
             this.pnlRespuesta.Controls.Add(this.btnResponder);
             this.pnlRespuesta.Controls.Add(this.rtfRespuesta);
-            this.pnlRespuesta.Controls.Add(this.btnCambiarEstado);
-            this.pnlRespuesta.Controls.Add(this.btnEscalar);
             this.pnlRespuesta.Location = new System.Drawing.Point(3, 459);
             this.pnlRespuesta.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.pnlRespuesta.Name = "pnlRespuesta";
-            this.pnlRespuesta.Size = new System.Drawing.Size(706, 453);
+            this.pnlRespuesta.Size = new System.Drawing.Size(706, 362);
             this.pnlRespuesta.TabIndex = 21;
-            // 
-            // btnCambiarUrgencia
-            // 
-            this.btnCambiarUrgencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnCambiarUrgencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarUrgencia.FlatAppearance.BorderSize = 0;
-            this.btnCambiarUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarUrgencia.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarUrgencia.Location = new System.Drawing.Point(83, 376);
-            this.btnCambiarUrgencia.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.btnCambiarUrgencia.Name = "btnCambiarUrgencia";
-            this.btnCambiarUrgencia.Size = new System.Drawing.Size(165, 33);
-            this.btnCambiarUrgencia.TabIndex = 4;
-            this.btnCambiarUrgencia.Text = "Cambiar categoría";
-            this.btnCambiarUrgencia.UseVisualStyleBackColor = false;
             // 
             // btnResponder
             // 
@@ -191,13 +95,14 @@
             this.btnResponder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResponder.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResponder.ForeColor = System.Drawing.Color.White;
-            this.btnResponder.Location = new System.Drawing.Point(178, 273);
+            this.btnResponder.Location = new System.Drawing.Point(227, 273);
             this.btnResponder.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnResponder.Name = "btnResponder";
-            this.btnResponder.Size = new System.Drawing.Size(351, 50);
+            this.btnResponder.Size = new System.Drawing.Size(252, 45);
             this.btnResponder.TabIndex = 25;
             this.btnResponder.Text = "Responder";
             this.btnResponder.UseVisualStyleBackColor = false;
+            this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // rtfRespuesta
             // 
@@ -207,38 +112,6 @@
             this.rtfRespuesta.Size = new System.Drawing.Size(663, 198);
             this.rtfRespuesta.TabIndex = 22;
             this.rtfRespuesta.Text = "";
-            // 
-            // btnCambiarEstado
-            // 
-            this.btnCambiarEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnCambiarEstado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarEstado.FlatAppearance.BorderSize = 0;
-            this.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarEstado.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarEstado.Location = new System.Drawing.Point(459, 376);
-            this.btnCambiarEstado.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.btnCambiarEstado.Name = "btnCambiarEstado";
-            this.btnCambiarEstado.Size = new System.Drawing.Size(165, 33);
-            this.btnCambiarEstado.TabIndex = 3;
-            this.btnCambiarEstado.Text = "Cambiar estado";
-            this.btnCambiarEstado.UseVisualStyleBackColor = false;
-            // 
-            // btnEscalar
-            // 
-            this.btnEscalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnEscalar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEscalar.FlatAppearance.BorderSize = 0;
-            this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEscalar.ForeColor = System.Drawing.Color.White;
-            this.btnEscalar.Location = new System.Drawing.Point(294, 376);
-            this.btnEscalar.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.btnEscalar.Name = "btnEscalar";
-            this.btnEscalar.Size = new System.Drawing.Size(119, 33);
-            this.btnEscalar.TabIndex = 2;
-            this.btnEscalar.Text = "Escalar";
-            this.btnEscalar.UseVisualStyleBackColor = false;
             // 
             // pnlMsgAgente
             // 
@@ -338,17 +211,6 @@
             this.lblAsunto.TabIndex = 17;
             this.lblAsunto.Text = "Falla en las impresoras del Complejo de Innovación Académica";
             // 
-            // lblTituloId
-            // 
-            this.lblTituloId.AutoSize = true;
-            this.lblTituloId.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblTituloId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloId.Location = new System.Drawing.Point(19, 20);
-            this.lblTituloId.Name = "lblTituloId";
-            this.lblTituloId.Size = new System.Drawing.Size(109, 22);
-            this.lblTituloId.TabIndex = 5;
-            this.lblTituloId.Text = "ID del ticket";
-            // 
             // lblActFij
             // 
             this.lblActFij.AutoSize = true;
@@ -360,6 +222,17 @@
             this.lblActFij.Size = new System.Drawing.Size(90, 20);
             this.lblActFij.TabIndex = 16;
             this.lblActFij.Text = "201511448";
+            // 
+            // lblTituloId
+            // 
+            this.lblTituloId.AutoSize = true;
+            this.lblTituloId.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblTituloId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblTituloId.Location = new System.Drawing.Point(19, 20);
+            this.lblTituloId.Name = "lblTituloId";
+            this.lblTituloId.Size = new System.Drawing.Size(109, 22);
+            this.lblTituloId.TabIndex = 5;
+            this.lblTituloId.Text = "ID del ticket";
             // 
             // lblId
             // 
@@ -476,185 +349,104 @@
             this.lblTituloEstado.TabIndex = 11;
             this.lblTituloEstado.Text = "Estado";
             // 
-            // panel1
+            // btnVolver
             // 
-            this.panel1.AutoScroll = true;
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Location = new System.Drawing.Point(320, 76);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(732, 512);
-            this.panel1.TabIndex = 19;
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(910, 19);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // panel2
+            // lblInfoTicket
             // 
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.richTextBox1);
-            this.panel2.Location = new System.Drawing.Point(3, 459);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(706, 288);
-            this.panel2.TabIndex = 21;
+            this.lblInfoTicket.AutoSize = true;
+            this.lblInfoTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInfoTicket.ForeColor = System.Drawing.Color.White;
+            this.lblInfoTicket.Location = new System.Drawing.Point(30, 22);
+            this.lblInfoTicket.Name = "lblInfoTicket";
+            this.lblInfoTicket.Size = new System.Drawing.Size(230, 27);
+            this.lblInfoTicket.TabIndex = 0;
+            this.lblInfoTicket.Text = "Información del ticket";
             // 
-            // button2
+            // pnlDatos
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(199, 227);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(320, 40);
-            this.button2.TabIndex = 25;
-            this.button2.Text = "Responder";
-            this.button2.UseVisualStyleBackColor = false;
+            this.pnlDatos.Controls.Add(this.lblTituloId);
+            this.pnlDatos.Controls.Add(this.lblActFij);
+            this.pnlDatos.Controls.Add(this.lblId);
+            this.pnlDatos.Controls.Add(this.lblTituloActFij);
+            this.pnlDatos.Controls.Add(this.lblTituloCreacion);
+            this.pnlDatos.Controls.Add(this.lblBiblioteca);
+            this.pnlDatos.Controls.Add(this.lblCreacion);
+            this.pnlDatos.Controls.Add(this.lblTituloBiblioteca);
+            this.pnlDatos.Controls.Add(this.lblTituloUltMod);
+            this.pnlDatos.Controls.Add(this.lblEstado);
+            this.pnlDatos.Controls.Add(this.lblUltMod);
+            this.pnlDatos.Controls.Add(this.lblTituloEstado);
+            this.pnlDatos.Location = new System.Drawing.Point(12, 82);
+            this.pnlDatos.Name = "pnlDatos";
+            this.pnlDatos.Size = new System.Drawing.Size(302, 512);
+            this.pnlDatos.TabIndex = 20;
             // 
-            // richTextBox1
+            // pnlTitulo
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox1.Location = new System.Drawing.Point(21, 22);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(663, 198);
-            this.richTextBox1.TabIndex = 22;
-            this.richTextBox1.Text = "";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Location = new System.Drawing.Point(3, 267);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(706, 186);
-            this.panel3.TabIndex = 20;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label1.Location = new System.Drawing.Point(18, 28);
-            this.label1.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(654, 20);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "2020/06/20 - 12:51";
-            // 
-            // label2
-            // 
-            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label2.Location = new System.Drawing.Point(18, 53);
-            this.label2.Margin = new System.Windows.Forms.Padding(18, 0, 18, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(666, 123);
-            this.label2.TabIndex = 18;
-            this.label2.Text = resources.GetString("label2.Text");
-            // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(17, 3);
-            this.label3.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(654, 20);
-            this.label3.TabIndex = 17;
-            this.label3.Text = "VERASTEGUI SANCHEZ, FERNANDO GUILLERMO";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Controls.Add(this.label6);
-            this.panel4.Location = new System.Drawing.Point(3, 98);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(706, 163);
-            this.panel4.TabIndex = 19;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Gray;
-            this.label4.Location = new System.Drawing.Point(18, 28);
-            this.label4.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(654, 20);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "2020/06/18 - 16:20";
-            // 
-            // label5
-            // 
-            this.label5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(18, 53);
-            this.label5.Margin = new System.Windows.Forms.Padding(18, 0, 18, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(666, 101);
-            this.label5.TabIndex = 18;
-            this.label5.Text = resources.GetString("label5.Text");
-            // 
-            // label6
-            // 
-            this.label6.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label6.Location = new System.Drawing.Point(17, 3);
-            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(654, 22);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "ROLDAN HUAYLLASCO, STEFANO";
-            // 
-            // label7
-            // 
-            this.label7.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label7.Location = new System.Drawing.Point(19, 20);
-            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 25);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(655, 50);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Falla en las impresoras del Complejo de Innovación Académica";
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.btnVolver);
+            this.pnlTitulo.Controls.Add(this.lblInfoTicket);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
+            this.pnlTitulo.TabIndex = 19;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // frmInfoTicketEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 600);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlMensajes);
             this.Controls.Add(this.pnlDatos);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInfoTicketEmpleado";
             this.Text = "frmInfoTicketEmpleado";
-            this.pnlTitulo.ResumeLayout(false);
-            this.pnlTitulo.PerformLayout();
-            this.pnlDatos.ResumeLayout(false);
-            this.pnlDatos.PerformLayout();
             this.pnlMensajes.ResumeLayout(false);
             this.pnlRespuesta.ResumeLayout(false);
             this.pnlMsgAgente.ResumeLayout(false);
             this.pnlMsgUsuario.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
+            this.pnlDatos.ResumeLayout(false);
+            this.pnlDatos.PerformLayout();
+            this.pnlTitulo.ResumeLayout(false);
+            this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label lblInfoTicket;
-        private System.Windows.Forms.Panel pnlDatos;
-        private System.Windows.Forms.Label lblTituloId;
+        private System.Windows.Forms.Panel pnlMensajes;
+        private System.Windows.Forms.Panel pnlRespuesta;
+        private System.Windows.Forms.Button btnResponder;
+        private System.Windows.Forms.RichTextBox rtfRespuesta;
+        private System.Windows.Forms.Panel pnlMsgAgente;
+        private System.Windows.Forms.Label lblFechaAgente;
+        private System.Windows.Forms.Label lblMsgAgente;
+        private System.Windows.Forms.Label lblNombreAgente;
+        private System.Windows.Forms.Panel pnlMsgUsuario;
+        private System.Windows.Forms.Label lblFechaUsuario;
+        private System.Windows.Forms.Label lblMsgUsuario;
+        private System.Windows.Forms.Label lblNombreUsuario;
+        private System.Windows.Forms.Label lblAsunto;
         private System.Windows.Forms.Label lblActFij;
+        private System.Windows.Forms.Label lblTituloId;
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Label lblTituloActFij;
         private System.Windows.Forms.Label lblTituloCreacion;
@@ -665,34 +457,9 @@
         private System.Windows.Forms.Label lblEstado;
         private System.Windows.Forms.Label lblUltMod;
         private System.Windows.Forms.Label lblTituloEstado;
-        private System.Windows.Forms.Panel pnlMensajes;
-        private System.Windows.Forms.Panel pnlRespuesta;
-        private System.Windows.Forms.Button btnCambiarUrgencia;
-        private System.Windows.Forms.Button btnResponder;
-        private System.Windows.Forms.RichTextBox rtfRespuesta;
-        private System.Windows.Forms.Button btnCambiarEstado;
-        private System.Windows.Forms.Button btnEscalar;
-        private System.Windows.Forms.Panel pnlMsgAgente;
-        private System.Windows.Forms.Label lblFechaAgente;
-        private System.Windows.Forms.Label lblMsgAgente;
-        private System.Windows.Forms.Label lblNombreAgente;
-        private System.Windows.Forms.Panel pnlMsgUsuario;
-        private System.Windows.Forms.Label lblFechaUsuario;
-        private System.Windows.Forms.Label lblMsgUsuario;
-        private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Label lblAsunto;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Label lblInfoTicket;
+        private System.Windows.Forms.Panel pnlDatos;
+        private System.Windows.Forms.Panel pnlTitulo;
     }
 }

@@ -12,9 +12,48 @@ namespace TableSoft
 {
     public partial class frmInfoTicketEmpleado : Form
     {
+        String defaultRespuesta = "Escribe aquí tu comentario.";
+
         public frmInfoTicketEmpleado()
         {
             InitializeComponent();
+        }
+
+        private void MostrarDefaultRespuesta()
+        {
+            rtfRespuesta.ForeColor = Color.Gray;
+            rtfRespuesta.Text = defaultRespuesta;
+        }
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnResponder_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void rtfRespuesta_Enter(object sender, EventArgs e)
+        {
+            if (rtfRespuesta.Text == defaultRespuesta)
+            {
+                rtfRespuesta.Text = "";
+                rtfRespuesta.ForeColor = Color.Black;
+            }
+        }
+
+        private void rtfRespuesta_Leave(object sender, EventArgs e)
+        {
+            if (rtfRespuesta.Text == "")
+            {
+                MostrarDefaultRespuesta();
+            }
         }
     }
 }

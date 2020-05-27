@@ -177,7 +177,7 @@ public class Ticket {
         return proveedor;
     }
 
-    private void setProveedor(Proveedor proveedor) {
+    public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
 

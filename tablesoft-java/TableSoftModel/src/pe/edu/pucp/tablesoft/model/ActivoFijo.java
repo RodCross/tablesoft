@@ -8,7 +8,6 @@ public class ActivoFijo {
     private Boolean activo;
     
     public ActivoFijo(){
-        
     }
 
     public int getActivoFijoId() {

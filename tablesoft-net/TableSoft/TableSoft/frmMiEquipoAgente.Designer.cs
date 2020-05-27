@@ -35,7 +35,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMiEquipoAgente));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblHistorial = new System.Windows.Forms.Label();
+            this.lblTicketsEspera = new System.Windows.Forms.Label();
             this.dgvGestionar = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,23 +52,23 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblHistorial);
+            this.pnlTitulo.Controls.Add(this.lblTicketsEspera);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1048, 70);
             this.pnlTitulo.TabIndex = 4;
             // 
-            // lblHistorial
+            // lblTicketsEspera
             // 
-            this.lblHistorial.AutoSize = true;
-            this.lblHistorial.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblHistorial.ForeColor = System.Drawing.Color.White;
-            this.lblHistorial.Location = new System.Drawing.Point(30, 23);
-            this.lblHistorial.Name = "lblHistorial";
-            this.lblHistorial.Size = new System.Drawing.Size(195, 27);
-            this.lblHistorial.TabIndex = 0;
-            this.lblHistorial.Text = "Historial de tickets";
+            this.lblTicketsEspera.AutoSize = true;
+            this.lblTicketsEspera.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblTicketsEspera.ForeColor = System.Drawing.Color.White;
+            this.lblTicketsEspera.Location = new System.Drawing.Point(30, 23);
+            this.lblTicketsEspera.Name = "lblTicketsEspera";
+            this.lblTicketsEspera.Size = new System.Drawing.Size(179, 27);
+            this.lblTicketsEspera.TabIndex = 0;
+            this.lblTicketsEspera.Text = "Tickets en espera";
             // 
             // dgvGestionar
             // 
@@ -198,7 +198,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Label lblHistorial;
+        private System.Windows.Forms.Label lblTicketsEspera;
         private System.Windows.Forms.DataGridView dgvGestionar;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnSeleccionar;

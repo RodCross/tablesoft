@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblListaCategoria = new System.Windows.Forms.Label();
             this.dgvGestionar = new System.Windows.Forms.DataGridView();
@@ -48,7 +48,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(540, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(561, 70);
             this.pnlTitulo.TabIndex = 6;
             // 
             // lblListaCategoria
@@ -72,7 +72,7 @@
             this.dgvGestionar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Categoria});
-            this.dgvGestionar.Location = new System.Drawing.Point(21, 91);
+            this.dgvGestionar.Location = new System.Drawing.Point(35, 89);
             this.dgvGestionar.Name = "dgvGestionar";
             this.dgvGestionar.ReadOnly = true;
             this.dgvGestionar.Size = new System.Drawing.Size(493, 333);
@@ -80,9 +80,9 @@
             // 
             // ID
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
             this.ID.FillWeight = 50F;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
@@ -103,7 +103,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(395, 457);
+            this.btnSeleccionar.Location = new System.Drawing.Point(409, 445);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
             this.btnSeleccionar.TabIndex = 12;
@@ -117,7 +117,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(250, 457);
+            this.btnNuevo.Location = new System.Drawing.Point(264, 445);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(119, 33);
             this.btnNuevo.TabIndex = 11;
@@ -131,7 +131,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(103, 457);
+            this.btnVolver.Location = new System.Drawing.Point(117, 445);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 10;
@@ -142,7 +142,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 522);
+            this.ClientSize = new System.Drawing.Size(561, 498);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);

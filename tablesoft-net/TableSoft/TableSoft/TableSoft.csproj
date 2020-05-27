@@ -172,6 +172,12 @@
     <Compile Include="frmReasignarCategoriaTicketAgente.Designer.cs">
       <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeleccionarActivoFijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarActivoFijo.Designer.cs">
+      <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeleccionarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -263,6 +269,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReasignarCategoriaTicketAgente.resx">
       <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarActivoFijo.resx">
+      <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarCategoria.resx">
       <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>

@@ -33,7 +33,6 @@
             this.btnGestionarAgentes = new System.Windows.Forms.Button();
             this.btnGestionarCategorias = new System.Windows.Forms.Button();
             this.btnGestionarProveedores = new System.Windows.Forms.Button();
-            this.btnGestionarTareas = new System.Windows.Forms.Button();
             this.btnGestionarBibliotecas = new System.Windows.Forms.Button();
             this.btnGestionarUrgencias = new System.Windows.Forms.Button();
             this.btnGestionarActivosFijos = new System.Windows.Forms.Button();
@@ -50,7 +49,7 @@
             this.btnGestionarSupervisores = new System.Windows.Forms.Button();
             this.lblAdministrarNegocio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAdministrarOtros = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlOpciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
@@ -100,16 +99,6 @@
             this.btnGestionarProveedores.Text = "Gestionar Proveedores";
             this.btnGestionarProveedores.UseVisualStyleBackColor = true;
             // 
-            // btnGestionarTareas
-            // 
-            this.btnGestionarTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarTareas.Location = new System.Drawing.Point(30, 142);
-            this.btnGestionarTareas.Name = "btnGestionarTareas";
-            this.btnGestionarTareas.Size = new System.Drawing.Size(207, 38);
-            this.btnGestionarTareas.TabIndex = 10;
-            this.btnGestionarTareas.Text = "Gestionar Tareas";
-            this.btnGestionarTareas.UseVisualStyleBackColor = true;
-            // 
             // btnGestionarBibliotecas
             // 
             this.btnGestionarBibliotecas.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
@@ -143,7 +132,7 @@
             // btnGestionarEstadosTicket
             // 
             this.btnGestionarEstadosTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.btnGestionarEstadosTicket.Location = new System.Drawing.Point(30, 203);
+            this.btnGestionarEstadosTicket.Location = new System.Drawing.Point(30, 142);
             this.btnGestionarEstadosTicket.Name = "btnGestionarEstadosTicket";
             this.btnGestionarEstadosTicket.Size = new System.Drawing.Size(207, 38);
             this.btnGestionarEstadosTicket.TabIndex = 14;
@@ -158,7 +147,7 @@
             this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlOpciones.Location = new System.Drawing.Point(0, 106);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(981, 51);
+            this.pnlOpciones.Size = new System.Drawing.Size(974, 51);
             this.pnlOpciones.TabIndex = 16;
             // 
             // lklLogout
@@ -185,7 +174,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(981, 106);
+            this.pnlTitulo.Size = new System.Drawing.Size(974, 106);
             this.pnlTitulo.TabIndex = 15;
             // 
             // lklFAQ
@@ -289,24 +278,23 @@
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.btnGestionarCategorias);
-            this.panel1.Controls.Add(this.btnGestionarTareas);
             this.panel1.Controls.Add(this.btnGestionarUrgencias);
             this.panel1.Controls.Add(this.btnGestionarEstadosTicket);
             this.panel1.Location = new System.Drawing.Point(363, 233);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(263, 260);
+            this.panel1.Size = new System.Drawing.Size(263, 200);
             this.panel1.TabIndex = 18;
             // 
-            // label1
+            // lblAdministrarOtros
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label1.Location = new System.Drawing.Point(680, 190);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(202, 25);
-            this.label1.TabIndex = 21;
-            this.label1.Text = "Administrar Personas";
+            this.lblAdministrarOtros.AutoSize = true;
+            this.lblAdministrarOtros.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdministrarOtros.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblAdministrarOtros.Location = new System.Drawing.Point(680, 190);
+            this.lblAdministrarOtros.Name = "lblAdministrarOtros";
+            this.lblAdministrarOtros.Size = new System.Drawing.Size(171, 25);
+            this.lblAdministrarOtros.TabIndex = 21;
+            this.lblAdministrarOtros.Text = "Administrar Otros";
             // 
             // panel2
             // 
@@ -323,8 +311,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 513);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(974, 449);
+            this.Controls.Add(this.lblAdministrarOtros);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblAdministrarNegocio);
@@ -353,7 +341,6 @@
         private System.Windows.Forms.Button btnGestionarAgentes;
         private System.Windows.Forms.Button btnGestionarCategorias;
         private System.Windows.Forms.Button btnGestionarProveedores;
-        private System.Windows.Forms.Button btnGestionarTareas;
         private System.Windows.Forms.Button btnGestionarBibliotecas;
         private System.Windows.Forms.Button btnGestionarUrgencias;
         private System.Windows.Forms.Button btnGestionarActivosFijos;
@@ -370,7 +357,7 @@
         private System.Windows.Forms.Button btnGestionarSupervisores;
         private System.Windows.Forms.Label lblAdministrarNegocio;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAdministrarOtros;
         private System.Windows.Forms.Panel panel2;
     }
 }

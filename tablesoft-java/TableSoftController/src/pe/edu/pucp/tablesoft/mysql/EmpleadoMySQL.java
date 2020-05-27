@@ -9,94 +9,189 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
+import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
+import pe.edu.pucp.tablesoft.model.Biblioteca;
 import pe.edu.pucp.tablesoft.model.Empleado;
 
 
 public class EmpleadoMySQL implements EmpleadoDAO{
-
+    Connection con;
     @Override
     public int insertar(Empleado empleado) {
-        int res = 0;
-        try {
+        int rpta = 0;
+        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
-                DBManager.user, DBManager.password);
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{CALL insertar_empleado(?,?,?,?,?)}");
+            CallableStatement cs = con.prepareCall(
+                    "{CALL insertar_empleado(?,?,?,?,?,?)}");
             
-            cs.registerOutParameter(1, java.sql.Types.INTEGER);
-            cs.setString(2, empleado.getCodigo());
-            cs.setString(3, empleado.getDni());
-            cs.setString(4, empleado.getNombre());
-            cs.setString(5, empleado.getUsuarioEmail());
-            cs.executeUpdate();
+            cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
+            cs.setString("_CODIGO", empleado.getCodigo());
+            cs.setString("_NOMBRE", empleado.getNombre());
+            cs.setString("_DNI", empleado.getDni());
+            cs.setString("_PERSONA_EMAIL", empleado.getPersonaEmail());
+            cs.setInt("_BIBLIOTECA_ID", empleado.getBiblioteca().getBibliotecaId());
             
-            res = cs.getInt(1);
-            empleado.setEmpleadoId(res);
+            cs.execute();
+            rpta = cs.getInt("_ID");
+            empleado.setEmpleadoId(rpta);
             con.close();
-        } catch(Exception ex) {
+            
+        } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
         }
-        return res;
+        return rpta;
     }
 
     @Override
     public int actualizar(Empleado empleado) {
-        // No se puede actualizar ningun campo de empleado
-        throw new UnsupportedOperationException("No se puede actualizar.");
+        int rpta = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL actualizar_empleado(?,?,?,?,?,?)}");
+            
+            cs.setInt("_ID", empleado.getEmpleadoId());
+            cs.setString("_CODIGO", empleado.getCodigo());
+            cs.setString("_NOMBRE", empleado.getNombre());
+            cs.setString("_DNI", empleado.getDni());
+            cs.setString("_PERSONA_EMAIL", empleado.getPersonaEmail());
+            cs.setInt("_BIBLIOTECA_ID", empleado.getBiblioteca().getBibliotecaId());
+            
+            cs.execute();
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        }
+        return rpta;
     }
 
     @Override
-    public int eliminar(int idEmpleado) {
-        int res = 0;
-        try {
+    public int eliminar(Empleado empleado) {
+        int rpta = 0;
+        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
-                DBManager.user, DBManager.password);
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
-            CallableStatement cs = con.prepareCall("{CALL eliminar_empleado(?)}");
-            
-            cs.setInt(1, idEmpleado);
-            
-            cs.executeUpdate();
-            res = 1;
+            CallableStatement cs = con.prepareCall(
+                    "{CALL actualizar_empleado(?)}");
+            cs.setInt("_ID", empleado.getEmpleadoId());
+            cs.execute();
             con.close();
-        } catch(Exception ex) {
+            
+        } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
+            rpta = -1;
         }
-        return res;
+        return rpta;
     }
 
     @Override
     public ArrayList<Empleado> listar() {
         ArrayList<Empleado> empleados = new ArrayList<>();
-        try {
+        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection(DBManager.urlMySQL, 
-                DBManager.user, DBManager.password);
-            //Ejecutar una sentencia
-            CallableStatement cs = con.prepareCall("{CALL listar_empleado()}");
-            ResultSet rs=cs.executeQuery();
-            //Recorrer todas las filas que devuelve la ejecucion sentencia
-            while(rs.next()) {
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL listar_empleado()}");
+            
+            ResultSet rs = cs.executeQuery();
+            
+            BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
+            while(rs.next()){
                 Empleado empleado = new Empleado();
+                
                 empleado.setEmpleadoId(rs.getInt("empleado_id"));
                 empleado.setCodigo(rs.getString("codigo"));
                 empleado.setDni(rs.getString("dni"));
+                empleado.setPersonaEmail(rs.getString("persona_email"));
+                empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
-                empleado.setUsuarioEmail(rs.getString("usuario_email"));
+                empleado.setBiblioteca(daoBiblioteca.buscar(rs.getInt("biblioteca_id")));
                 empleados.add(empleado);
             }
-            //cerrar conexion
             con.close();
-        } catch(Exception ex) {
+            
+        } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
         }
-        //Devolviendo los empleados
         return empleados;
+    }
+
+    @Override
+    public ArrayList<Empleado> listarxBiblioteca(Biblioteca biblioteca) {
+        ArrayList<Empleado> empleados = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL listar_empleado_biblioteca(?)}");
+            cs.setInt("_ID", biblioteca.getBibliotecaId());
+            
+            ResultSet rs = cs.executeQuery();
+            
+            BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
+            while(rs.next()){
+                Empleado empleado = new Empleado();
+                
+                empleado.setEmpleadoId(rs.getInt("empleado_id"));
+                empleado.setCodigo(rs.getString("codigo"));
+                empleado.setDni(rs.getString("dni"));
+                empleado.setPersonaEmail(rs.getString("persona_email"));
+                empleado.setActivo(rs.getBoolean("activo"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setBiblioteca(biblioteca);
+                empleados.add(empleado);
+            }
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        return empleados;
+    }
+
+    @Override
+    public Empleado buscar(int empleadoId) {
+        Empleado empleado = new Empleado();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL buscar_empleado(?)}");
+            cs.setInt("_ID", empleadoId);
+            
+            ResultSet rs = cs.executeQuery();
+            
+            BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
+            while(rs.next()){
+                
+                empleado.setEmpleadoId(rs.getInt("empleado_id"));
+                empleado.setCodigo(rs.getString("codigo"));
+                empleado.setDni(rs.getString("dni"));
+                empleado.setPersonaEmail(rs.getString("persona_email"));
+                empleado.setActivo(rs.getBoolean("activo"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setBiblioteca(daoBiblioteca.buscar(rs.getInt("biblioteca_id")));
+            }
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        return empleado;
     }
 
 }

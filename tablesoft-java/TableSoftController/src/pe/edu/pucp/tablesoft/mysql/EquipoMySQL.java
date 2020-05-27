@@ -100,8 +100,7 @@ public class EquipoMySQL implements EquipoDAO{
 
     @Override
     public ArrayList<Equipo> listar() {
-        // Devuelve una lista de los Equipos en la BD
-        // Cada equipo estara lleno solo con su lista de categorias
+        
         ArrayList<Equipo> equipos = new ArrayList<>();
         try {
             //Registrar el JAR de conexión
@@ -115,7 +114,6 @@ public class EquipoMySQL implements EquipoDAO{
                     "{call listar_equipo()}");
             ResultSet rs=cs.executeQuery();
             
-            CategoriaDAO daoCategoria = new CategoriaMySQL();
             while(rs.next()){
                 Equipo equipo = new Equipo();
                 
@@ -125,7 +123,6 @@ public class EquipoMySQL implements EquipoDAO{
                 equipo.setNombre(rs.getString("nombre"));
                 equipo.setActivo(true);
                 
-                equipo.setListaCategorias(daoCategoria.listarxEquipo(equipo));
                 equipos.add(equipo);
             }
             
@@ -153,7 +150,7 @@ public class EquipoMySQL implements EquipoDAO{
             cs.setInt("_ID", equipoId);
             ResultSet rs=cs.executeQuery();
             
-            CategoriaDAO daoCategoria = new CategoriaMySQL();
+            //CategoriaDAO daoCategoria = new CategoriaMySQL();
             while(rs.next()){
                 
                 equipo.setEquipoId(rs.getInt("equipo_id"));
@@ -162,7 +159,7 @@ public class EquipoMySQL implements EquipoDAO{
                 equipo.setNombre(rs.getString("nombre"));
                 equipo.setActivo(true);
                 
-                equipo.setListaCategorias(daoCategoria.listarxEquipo(equipo));
+                //equipo.setListaCategorias(daoCategoria.listarxEquipo(equipo));
             }
             
             con.close();

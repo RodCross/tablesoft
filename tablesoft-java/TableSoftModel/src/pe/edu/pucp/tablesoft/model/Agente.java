@@ -8,6 +8,7 @@ public class Agente extends Persona {
     private ArrayList<Ticket> listaTickets;
     private Equipo equipo;
     private Rol rol;
+    private Boolean activo;
     
     // Constructores
     public Agente() {
@@ -24,6 +25,14 @@ public class Agente extends Persona {
     
     public Agente(int agenteId){
         this.agenteId = agenteId;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
     
     // Getter y setter

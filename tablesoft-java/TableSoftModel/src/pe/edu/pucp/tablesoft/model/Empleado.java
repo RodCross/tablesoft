@@ -7,6 +7,7 @@ public class Empleado extends Persona {
     private int empleadoId;
     private ArrayList<Ticket> listaTickets;
     private Biblioteca biblioteca;
+    private Boolean activo;
 
     // Constructores
     
@@ -18,6 +19,14 @@ public class Empleado extends Persona {
     public Empleado(String codigo, String dni, String nombre, String usuarioEmail) {
         super(codigo, dni, nombre, usuarioEmail);
         this.listaTickets = new ArrayList<>();
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
     
     // Getters y setters

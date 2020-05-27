@@ -76,6 +76,12 @@
     <Compile Include="frmEscalarTicketAgente.Designer.cs">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarCategoria.Designer.cs">
+      <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionarSistemaAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEscalarTicketAgente.resx">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarCategoria.resx">
+      <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>

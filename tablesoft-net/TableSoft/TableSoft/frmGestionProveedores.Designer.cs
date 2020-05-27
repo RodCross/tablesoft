@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpbDatosGenerales = new System.Windows.Forms.GroupBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -49,35 +49,35 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
+            this.gpbDatosGenerales.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // gpbDatosGenerales
             // 
-            this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.lblDireccion);
-            this.groupBox1.Controls.Add(this.txtEmail);
-            this.groupBox1.Controls.Add(this.lblEmail);
-            this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.lblTelefono);
-            this.groupBox1.Controls.Add(this.cboPais);
-            this.groupBox1.Controls.Add(this.lblPais);
-            this.groupBox1.Controls.Add(this.txtRazonSocial);
-            this.groupBox1.Controls.Add(this.lblRazonSocial);
-            this.groupBox1.Controls.Add(this.lblIDProveedor);
-            this.groupBox1.Controls.Add(this.txtRUC);
-            this.groupBox1.Controls.Add(this.txtIDProveedor);
-            this.groupBox1.Controls.Add(this.lblRUC);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.groupBox1.Location = new System.Drawing.Point(35, 94);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(694, 338);
-            this.groupBox1.TabIndex = 6;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Datos Generales";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gpbDatosGenerales.Controls.Add(this.txtDireccion);
+            this.gpbDatosGenerales.Controls.Add(this.lblDireccion);
+            this.gpbDatosGenerales.Controls.Add(this.txtEmail);
+            this.gpbDatosGenerales.Controls.Add(this.lblEmail);
+            this.gpbDatosGenerales.Controls.Add(this.txtTelefono);
+            this.gpbDatosGenerales.Controls.Add(this.lblTelefono);
+            this.gpbDatosGenerales.Controls.Add(this.cboPais);
+            this.gpbDatosGenerales.Controls.Add(this.lblPais);
+            this.gpbDatosGenerales.Controls.Add(this.txtRazonSocial);
+            this.gpbDatosGenerales.Controls.Add(this.lblRazonSocial);
+            this.gpbDatosGenerales.Controls.Add(this.lblIDProveedor);
+            this.gpbDatosGenerales.Controls.Add(this.txtRUC);
+            this.gpbDatosGenerales.Controls.Add(this.txtIDProveedor);
+            this.gpbDatosGenerales.Controls.Add(this.lblRUC);
+            this.gpbDatosGenerales.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gpbDatosGenerales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.gpbDatosGenerales.Location = new System.Drawing.Point(35, 94);
+            this.gpbDatosGenerales.Name = "gpbDatosGenerales";
+            this.gpbDatosGenerales.Size = new System.Drawing.Size(694, 338);
+            this.gpbDatosGenerales.TabIndex = 6;
+            this.gpbDatosGenerales.TabStop = false;
+            this.gpbDatosGenerales.Text = "Datos Generales";
+            this.gpbDatosGenerales.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtDireccion
             // 
@@ -301,12 +301,12 @@
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.pnlTitulo);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gpbDatosGenerales);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionProveedores";
             this.Text = "frmGestionProveedores";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.gpbDatosGenerales.ResumeLayout(false);
+            this.gpbDatosGenerales.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);
@@ -315,7 +315,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpbDatosGenerales;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label lblEmail;

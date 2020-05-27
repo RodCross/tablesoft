@@ -155,7 +155,7 @@
             this.btnGestionarEstadosTicket.Text = "Gestionar Estados de Ticket";
             this.btnGestionarEstadosTicket.UseVisualStyleBackColor = true;
             // 
-            // frmGestionarAdministrador
+            // frmInicioAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -170,7 +170,8 @@
             this.Controls.Add(this.btnGestionarAgentes);
             this.Controls.Add(this.btnGestionarEmpleado);
             this.Controls.Add(this.pnlTitulo);
-            this.Name = "frmGestionarAdministrador";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmInicioAdministrador";
             this.Text = "frmGestionarAdministrador";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();

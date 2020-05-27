@@ -64,6 +64,12 @@
     <Compile Include="frmCrearNuevoTicket.Designer.cs">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmInicioAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioAdministrador.Designer.cs">
+      <DependentUpon>frmInicioAdministrador.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicioAgente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioAdministrador.resx">
+      <DependentUpon>frmInicioAdministrador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInicioAgente.resx">
       <DependentUpon>frmInicioAgente.cs</DependentUpon>

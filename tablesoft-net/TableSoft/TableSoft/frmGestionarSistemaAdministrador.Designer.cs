@@ -38,15 +38,14 @@
             this.btnGestionarActivosFijos = new System.Windows.Forms.Button();
             this.btnGestionarEstadosTicket = new System.Windows.Forms.Button();
             this.pnlCaracteristicas = new System.Windows.Forms.Panel();
-            this.btnGestionarSupervisores = new System.Windows.Forms.Button();
             this.lblAdministrarPersonas = new System.Windows.Forms.Label();
             this.lblAdministrarNegocio = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblAdministrarOtros = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblGestionarSistema = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.pnlCaracteristicas.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -137,23 +136,12 @@
             // pnlCaracteristicas
             // 
             this.pnlCaracteristicas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pnlCaracteristicas.Controls.Add(this.btnGestionarSupervisores);
             this.pnlCaracteristicas.Controls.Add(this.btnGestionarEmpleado);
             this.pnlCaracteristicas.Controls.Add(this.btnGestionarAgentes);
             this.pnlCaracteristicas.Location = new System.Drawing.Point(35, 143);
             this.pnlCaracteristicas.Name = "pnlCaracteristicas";
-            this.pnlCaracteristicas.Size = new System.Drawing.Size(263, 200);
+            this.pnlCaracteristicas.Size = new System.Drawing.Size(263, 143);
             this.pnlCaracteristicas.TabIndex = 17;
-            // 
-            // btnGestionarSupervisores
-            // 
-            this.btnGestionarSupervisores.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarSupervisores.Location = new System.Drawing.Point(15, 142);
-            this.btnGestionarSupervisores.Name = "btnGestionarSupervisores";
-            this.btnGestionarSupervisores.Size = new System.Drawing.Size(231, 38);
-            this.btnGestionarSupervisores.TabIndex = 8;
-            this.btnGestionarSupervisores.Text = "Gestionar Supervisores";
-            this.btnGestionarSupervisores.UseVisualStyleBackColor = true;
             // 
             // lblAdministrarPersonas
             // 
@@ -188,6 +176,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(263, 257);
             this.panel1.TabIndex = 18;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
+            this.button1.Location = new System.Drawing.Point(16, 199);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(231, 38);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Gestionar Estados de Ticket";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // lblAdministrarOtros
             // 
@@ -232,16 +230,6 @@
             this.lblGestionarSistema.TabIndex = 0;
             this.lblGestionarSistema.Text = "Gestionar Sistema";
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F);
-            this.button1.Location = new System.Drawing.Point(16, 199);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 38);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Gestionar Estados de Ticket";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // frmInicioAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,7 +267,6 @@
         private System.Windows.Forms.Button btnGestionarEstadosTicket;
         private System.Windows.Forms.Panel pnlCaracteristicas;
         private System.Windows.Forms.Label lblAdministrarPersonas;
-        private System.Windows.Forms.Button btnGestionarSupervisores;
         private System.Windows.Forms.Label lblAdministrarNegocio;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lblAdministrarOtros;

@@ -12,4 +12,5 @@ public interface BibliotecaDAO {
     int actualizar(Biblioteca biblioteca);
     int eliminar(Biblioteca biblioteca);
     ArrayList<Biblioteca> listar();
+    Biblioteca buscar(int bibliotecaId);
 }

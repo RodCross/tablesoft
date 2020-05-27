@@ -127,5 +127,39 @@ public class BibliotecaMySQL implements BibliotecaDAO {
         // Devolviendo las bibliotecas
         return bibliotecas;
     }
+
+    @Override
+    public Biblioteca buscar(int bibliotecaId) {
+        Biblioteca biblioteca = new Biblioteca();
+        try {
+            // Registrar el jar de conexion
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            Connection con;
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            // executeQuery se usa para listados
+            // executeUpdate se usa para insert, update, delete
+            CallableStatement cs = con.prepareCall(
+                    "{CALL buscar_biblioteca(?)}");
+            cs.setInt("_ID", bibliotecaId);
+            ResultSet rs=cs.executeQuery();
+            // Recorrer todas las filas que devuelve la ejecucion sentencia
+            while(rs.next()) {
+                
+                biblioteca.setBibliotecaId(rs.getInt("biblioteca_id"));
+                biblioteca.setNombre(rs.getString("nombre"));
+                biblioteca.setAbreviatura(rs.getString("abreviatura"));
+                biblioteca.setActivo(rs.getBoolean("activo"));
+            }
+            // No olvidarse de cerrar las conexiones
+            con.close();
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        // Devolviendo las bibliotecas
+        return biblioteca;
+    }
     
 }

@@ -130,7 +130,36 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
 
     @Override
     public ActivoFijo buscar(int activoFijoId) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ActivoFijo activoFijo = new ActivoFijo();
+        try {
+            // Registrar el jar de conexion
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            Connection con;
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            // executeQuery se usa para listados
+            // executeUpdate se usa para insert, update, delete
+            CallableStatement cs = con.prepareCall(
+                    "{CALL buscar_activo_fijo(?)}");
+            cs.setInt("_ID", activoFijoId);
+            ResultSet rs=cs.executeQuery();
+            // Recorrer todas las filas que devuelve la ejecucion sentencia
+            while(rs.next()) {
+                
+                activoFijo.setActivoFijoId(rs.getInt("proveedor_id"));
+                activoFijo.setNombre(rs.getString("nombre"));
+                activoFijo.setDescripcion(rs.getString("descripcion"));
+                activoFijo.setActivo(rs.getBoolean("activo"));
+            }
+            // No olvidarse de cerrar las conexiones
+            con.close();
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        // Devolviendo los activosFijos
+        return activoFijo;
     }
     
 }

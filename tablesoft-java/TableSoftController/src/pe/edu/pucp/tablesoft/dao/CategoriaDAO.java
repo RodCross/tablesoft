@@ -17,4 +17,5 @@ public interface CategoriaDAO {
     ArrayList<Categoria> listar();                          // Listar
     ArrayList<Categoria> listarxEquipo(Equipo equipo);      // Sí considera la lista de tareasPred y las trae al Java
     int eliminarDeEquipo(Categoria categoria, Equipo equipo);
+    Categoria buscar(int categoriaId);
 }

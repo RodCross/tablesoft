@@ -12,6 +12,7 @@ public class TransferenciaTicket {
     private Agente agenteResponsable;
 
     public TransferenciaTicket() {
+        agenteResponsable = new Agente();
     }
 
     public TransferenciaTicket(Agente agenteResponsable) {

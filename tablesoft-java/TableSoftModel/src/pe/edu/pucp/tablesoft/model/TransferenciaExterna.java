@@ -10,6 +10,10 @@ public class TransferenciaExterna extends TransferenciaTicket{
         super(agenteResponsable);
         this.proveedorTo = proveedorTo;
     }
+    public TransferenciaExterna(){
+        super();
+        proveedorTo = new Proveedor();
+    }
 
     public Proveedor getProveedorTo() {
         return proveedorTo;

@@ -9,6 +9,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
+import pe.edu.pucp.tablesoft.dao.EstadoTareaDAO;
 import pe.edu.pucp.tablesoft.dao.TareaDAO;
 import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.EstadoTarea;
@@ -109,14 +110,15 @@ public class TareaMySQL implements TareaDAO {
             
             cs.setInt("_ID", ticket.getTicketId());
             ResultSet rs = cs.executeQuery();
-
+            
+            EstadoTareaDAO daoEstadoTarea = new EstadoTareaMySQL();
             while(rs.next()){
                 Tarea tarea = new Tarea();
                 
                 tarea.setTareaId(rs.getInt("tarea_id"));
                 tarea.setAgente(new Agente(rs.getInt("agente_id")));
                 tarea.setDescripcion(rs.getString("descripcion"));
-                tarea.setEstado(new EstadoTarea(rs.getInt("estado_id")));
+                tarea.setEstado(daoEstadoTarea.buscar(rs.getInt("estado_id")));
                 
                 tareas.add(tarea);
             }

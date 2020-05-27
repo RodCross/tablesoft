@@ -12,4 +12,5 @@ public interface EstadoTareaDAO {
     int actualizar(EstadoTarea estadoTarea);
     int eliminar(EstadoTarea estadoTarea);
     ArrayList<EstadoTarea> listar();
+    EstadoTarea buscar(int estadoTareaId);
 }

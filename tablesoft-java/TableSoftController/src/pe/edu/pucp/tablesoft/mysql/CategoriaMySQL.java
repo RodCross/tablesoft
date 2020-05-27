@@ -14,10 +14,9 @@ import pe.edu.pucp.tablesoft.model.Equipo;
 
 
 public class CategoriaMySQL implements CategoriaDAO{
-
+    Connection con;
     @Override
     public int insertar(Categoria categoria) {
-        Connection con;
         int rpta = 0;
         try {
            //Registrar el JAR de conexión
@@ -47,7 +46,6 @@ public class CategoriaMySQL implements CategoriaDAO{
 
     @Override
     public int actualizar(Categoria categoria) {
-        Connection con;
         int rpta = 0;
         try {
             //Registrar el JAR de conexión
@@ -74,7 +72,6 @@ public class CategoriaMySQL implements CategoriaDAO{
 
     @Override
     public int eliminar(Categoria categoria) {
-        Connection con;
         int rpta = 0;
         try {
             //Registrar el JAR de conexión
@@ -99,7 +96,6 @@ public class CategoriaMySQL implements CategoriaDAO{
     @Override
     public ArrayList<Categoria> listar() {
         ArrayList<Categoria> categorias = new ArrayList<>();
-        Connection con;
         try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -132,7 +128,6 @@ public class CategoriaMySQL implements CategoriaDAO{
     @Override
     public ArrayList<Categoria> listarxEquipo(Equipo equipo) {
         ArrayList<Categoria> categorias = new ArrayList<>();
-        Connection con;
         try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -165,7 +160,6 @@ public class CategoriaMySQL implements CategoriaDAO{
 
     @Override
     public int eliminarDeEquipo(Categoria categoria, Equipo equipo) {
-        Connection con;
         int rpta = 0;
         try {
             //Registrar el JAR de conexión
@@ -187,5 +181,38 @@ public class CategoriaMySQL implements CategoriaDAO{
             rpta = -1;
         }
         return rpta;
+    }
+
+    @Override
+    public Categoria buscar(int categoriaId) {
+        Categoria categoria = new Categoria();
+        try {
+            //Registrar el JAR de conexión
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{call buscar_categoria(?)}");
+            cs.setInt("_ID", categoriaId);
+            ResultSet rs=cs.executeQuery();
+            
+            //TareaPredeterminadaDAO daoTareasPred = new TareaPredeterminadaMySQL();
+            while(rs.next()) {
+                
+                categoria.setCategoriaId(rs.getInt("categoria_id"));
+                categoria.setNombre(rs.getString("nombre"));
+                categoria.setDescripcion(rs.getString("descripcion"));
+                //categoria.setTareasPredeterminadas(daoTareasPred.listarxCategoria(categoria));
+                
+            }
+
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return categoria;
     }
 }

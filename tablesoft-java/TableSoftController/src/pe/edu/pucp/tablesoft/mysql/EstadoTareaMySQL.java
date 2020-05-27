@@ -119,4 +119,33 @@ public class EstadoTareaMySQL implements EstadoTareaDAO {
         return estados;
     }
 
+    @Override
+    public EstadoTarea buscar(int estadoTareaId) {
+        EstadoTarea estado = new EstadoTarea();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL buscar_estado_tarea(?)}");
+            cs.setInt("_ID", estadoTareaId);
+            
+            ResultSet rs = cs.executeQuery();
+
+            while(rs.next()){
+                
+                
+                estado.setEstadoId(rs.getInt("estado_id"));
+                estado.setNombre(rs.getString("nombre"));
+                estado.setDescripcion(rs.getString("descripcion"));
+                estado.setActivo(rs.getBoolean("activo"));
+            }
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        return estado;
+    }
+
 }

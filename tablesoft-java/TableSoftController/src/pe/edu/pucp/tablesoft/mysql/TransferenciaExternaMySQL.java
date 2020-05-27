@@ -9,78 +9,75 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
-import pe.edu.pucp.tablesoft.dao.CambioEstadoTicketDAO;
-import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
+import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
+import pe.edu.pucp.tablesoft.dao.TransferenciaExternaDAO;
 import pe.edu.pucp.tablesoft.model.Agente;
-import pe.edu.pucp.tablesoft.model.CambioEstadoTicket;
-import pe.edu.pucp.tablesoft.model.EstadoTicket;
+import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Ticket;
+import pe.edu.pucp.tablesoft.model.TransferenciaExterna;
 
 /*
  * @author migue
  */
-public class CambioEstadoTicketMySQL implements CambioEstadoTicketDAO{
-    
+public class TransferenciaExternaMySQL implements TransferenciaExternaDAO{
     Connection con;
-    
     @Override
-    public int insertar(CambioEstadoTicket cambioEstado, Ticket ticket) {
+    public int insertar(TransferenciaExterna transferenciaExterna, Ticket ticket) {
         int rpta = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_cambio_estado_ticket(?,?,?,?,?,?)}");
+                    "{CALL insertar_transferencia_externa(?,?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());
-            cs.setTimestamp("_FECHA_CAMBIO_ESTADO", Timestamp.valueOf(LocalDateTime.now()));
-            cs.setString("_COMENTARIO", cambioEstado.getComentario());
-            cs.setInt("_AGENTE_ID", cambioEstado.getAgenteResponsable().getAgenteId());
-            cs.setInt("_ESTADO_ID_TO", cambioEstado.getEstadoTo().getEstadoId());
+            cs.setTimestamp("_FECHA_TRANSFERENCIA", Timestamp.valueOf(LocalDateTime.now()));
+            cs.setInt("_AGENTE_ID", transferenciaExterna.getAgenteResponsable().getAgenteId());
+            cs.setString("_COMENTARIO", transferenciaExterna.getComentario());
+            cs.setInt("_PROVEEDOR_ID", transferenciaExterna.getProveedorTo().getProveedorId());
             
             cs.execute();
             rpta = cs.getInt("_ID");
-            cambioEstado.setCambioEstadoTicketId(rpta);
+            transferenciaExterna.setTransferenciaId(rpta);
             con.close();
             
         } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
         }
-        return rpta;
+        return rpta; 
     }
 
     @Override
-    public ArrayList<CambioEstadoTicket> listarxTicket(Ticket ticket) {
-        ArrayList<CambioEstadoTicket> historial = new ArrayList<>();
+    public ArrayList<TransferenciaExterna> listarxTicket(Ticket ticket) {
+        ArrayList<TransferenciaExterna> historial = new ArrayList<>();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL listar_cambio_estado_ticket(?)}");
+                    "{CALL listar_transferencia_externa(?)}");
             
             cs.setInt("_ID", ticket.getTicketId());
             
             ResultSet rs = cs.executeQuery();
             
-            EstadoTicketDAO daoEstado = new EstadoTicketMySQL();
+            ProveedorDAO daoProveedor = new ProveedorMySQL();
             while(rs.next()){
-                EstadoTicket estadoTo;
+                Proveedor proveedorTo;
                 Agente agenteResponsable;
-                CambioEstadoTicket cambio = new CambioEstadoTicket();
+                TransferenciaExterna transfer = new TransferenciaExterna();
                 
                 agenteResponsable = new Agente(rs.getInt("agente_id"));
-                estadoTo = daoEstado.buscar(rs.getInt("estado_id"));
+                proveedorTo = daoProveedor.buscar(rs.getInt("proveedor_id_to"));
                 
-                cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
-                cambio.setAgenteResponsable(agenteResponsable);
-                cambio.setEstadoTo(estadoTo);
-                
-                cambio.setComentario(rs.getString("comentario"));
-                cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());
-                historial.add(cambio);
+                transfer.setAgenteResponsable(agenteResponsable);
+                transfer.setProveedorTo(proveedorTo);
+                transfer.setTransferenciaId(rs.getInt("transferencia_id"));
+                transfer.setComentario(rs.getString("comentario"));
+                transfer.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+                historial.add(transfer);
             }
             con.close();
             
@@ -89,5 +86,5 @@ public class CambioEstadoTicketMySQL implements CambioEstadoTicketDAO{
         }
         return historial;
     }
-
+    
 }

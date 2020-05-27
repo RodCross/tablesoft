@@ -10,6 +10,10 @@ public class TransferenciaInterna extends TransferenciaTicket {
         super(agenteResponsable);
         this.categoriaTo = categoriaTo;
     }
+    public TransferenciaInterna(){
+        super();
+        categoriaTo = new Categoria();
+    }
 
     public Categoria getCategoriaTo() {
         return categoriaTo;

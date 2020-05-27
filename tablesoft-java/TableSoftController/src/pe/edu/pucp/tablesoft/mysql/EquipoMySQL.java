@@ -9,7 +9,6 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
-import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
 import pe.edu.pucp.tablesoft.model.Equipo;
 
@@ -150,7 +149,6 @@ public class EquipoMySQL implements EquipoDAO{
             cs.setInt("_ID", equipoId);
             ResultSet rs=cs.executeQuery();
             
-            //CategoriaDAO daoCategoria = new CategoriaMySQL();
             while(rs.next()){
                 
                 equipo.setEquipoId(rs.getInt("equipo_id"));
@@ -159,7 +157,6 @@ public class EquipoMySQL implements EquipoDAO{
                 equipo.setNombre(rs.getString("nombre"));
                 equipo.setActivo(true);
                 
-                //equipo.setListaCategorias(daoCategoria.listarxEquipo(equipo));
             }
             
             con.close();

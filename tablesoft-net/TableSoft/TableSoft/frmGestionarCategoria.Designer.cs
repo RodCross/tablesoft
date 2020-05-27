@@ -39,6 +39,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnTareas = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -173,11 +174,26 @@
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             // 
+            // btnTareas
+            // 
+            this.btnTareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnTareas.FlatAppearance.BorderSize = 0;
+            this.btnTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTareas.ForeColor = System.Drawing.Color.White;
+            this.btnTareas.Location = new System.Drawing.Point(58, 238);
+            this.btnTareas.Name = "btnTareas";
+            this.btnTareas.Size = new System.Drawing.Size(102, 33);
+            this.btnTareas.TabIndex = 18;
+            this.btnTareas.Text = "Tareas";
+            this.btnTareas.UseVisualStyleBackColor = false;
+            // 
             // frmGestionarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(644, 289);
+            this.Controls.Add(this.btnTareas);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnGuardar);
@@ -208,5 +224,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnTareas;
     }
 }

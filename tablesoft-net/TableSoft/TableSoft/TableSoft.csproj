@@ -82,6 +82,12 @@
     <Compile Include="frmGestionarSistemaAdministrador.Designer.cs">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionProveedores.Designer.cs">
+      <DependentUpon>frmGestionProveedores.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInfoTicketAgente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +142,12 @@
     <Compile Include="frmMiEquipoAgente.Designer.cs">
       <DependentUpon>frmMiEquipoAgente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeleccionarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarProveedor.Designer.cs">
+      <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movimiento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -165,6 +177,9 @@
     <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionProveedores.resx">
+      <DependentUpon>frmGestionProveedores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInfoTicketAgente.resx">
       <DependentUpon>frmInfoTicketAgente.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMiEquipoAgente.resx">
       <DependentUpon>frmMiEquipoAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarProveedor.resx">
+      <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

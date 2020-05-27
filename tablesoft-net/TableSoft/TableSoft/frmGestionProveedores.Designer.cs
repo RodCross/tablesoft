@@ -91,7 +91,7 @@
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDireccion.Location = new System.Drawing.Point(76, 161);
+            this.lblDireccion.Location = new System.Drawing.Point(69, 161);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(78, 21);
             this.lblDireccion.TabIndex = 14;
@@ -177,7 +177,7 @@
             // 
             this.lblIDProveedor.AutoSize = true;
             this.lblIDProveedor.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDProveedor.Location = new System.Drawing.Point(51, 28);
+            this.lblIDProveedor.Location = new System.Drawing.Point(43, 28);
             this.lblIDProveedor.Name = "lblIDProveedor";
             this.lblIDProveedor.Size = new System.Drawing.Size(104, 21);
             this.lblIDProveedor.TabIndex = 1;

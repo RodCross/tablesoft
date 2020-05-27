@@ -32,7 +32,7 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblInfoTicket = new System.Windows.Forms.Label();
-            this.btnCambiarUrgencia = new System.Windows.Forms.Button();
+            this.btnCambiarCategoria = new System.Windows.Forms.Button();
             this.btnCambiarEstado = new System.Windows.Forms.Button();
             this.btnEscalar = new System.Windows.Forms.Button();
             this.lblTituloId = new System.Windows.Forms.Label();
@@ -108,21 +108,22 @@
             this.lblInfoTicket.TabIndex = 0;
             this.lblInfoTicket.Text = "Información del ticket";
             // 
-            // btnCambiarUrgencia
+            // btnCambiarCategoria
             // 
-            this.btnCambiarUrgencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnCambiarUrgencia.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarUrgencia.FlatAppearance.BorderSize = 0;
-            this.btnCambiarUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarUrgencia.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarUrgencia.Location = new System.Drawing.Point(83, 376);
-            this.btnCambiarUrgencia.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.btnCambiarUrgencia.Name = "btnCambiarUrgencia";
-            this.btnCambiarUrgencia.Size = new System.Drawing.Size(165, 33);
-            this.btnCambiarUrgencia.TabIndex = 4;
-            this.btnCambiarUrgencia.Text = "Cambiar categoría";
-            this.btnCambiarUrgencia.UseVisualStyleBackColor = false;
+            this.btnCambiarCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCambiarCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCambiarCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCambiarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCambiarCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCambiarCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnCambiarCategoria.Location = new System.Drawing.Point(83, 376);
+            this.btnCambiarCategoria.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.btnCambiarCategoria.Name = "btnCambiarCategoria";
+            this.btnCambiarCategoria.Size = new System.Drawing.Size(165, 33);
+            this.btnCambiarCategoria.TabIndex = 4;
+            this.btnCambiarCategoria.Text = "Cambiar categoría";
+            this.btnCambiarCategoria.UseVisualStyleBackColor = false;
+            this.btnCambiarCategoria.Click += new System.EventHandler(this.btnCambiarCategoria_Click);
             // 
             // btnCambiarEstado
             // 
@@ -139,6 +140,7 @@
             this.btnCambiarEstado.TabIndex = 3;
             this.btnCambiarEstado.Text = "Cambiar estado";
             this.btnCambiarEstado.UseVisualStyleBackColor = false;
+            this.btnCambiarEstado.Click += new System.EventHandler(this.btnCambiarEstado_Click);
             // 
             // btnEscalar
             // 
@@ -155,6 +157,7 @@
             this.btnEscalar.TabIndex = 2;
             this.btnEscalar.Text = "Escalar";
             this.btnEscalar.UseVisualStyleBackColor = false;
+            this.btnEscalar.Click += new System.EventHandler(this.btnEscalar_Click);
             // 
             // lblTituloId
             // 
@@ -327,7 +330,7 @@
             // 
             // pnlRespuesta
             // 
-            this.pnlRespuesta.Controls.Add(this.btnCambiarUrgencia);
+            this.pnlRespuesta.Controls.Add(this.btnCambiarCategoria);
             this.pnlRespuesta.Controls.Add(this.btnResponder);
             this.pnlRespuesta.Controls.Add(this.rtfRespuesta);
             this.pnlRespuesta.Controls.Add(this.btnCambiarEstado);
@@ -345,10 +348,10 @@
             this.btnResponder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResponder.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResponder.ForeColor = System.Drawing.Color.White;
-            this.btnResponder.Location = new System.Drawing.Point(178, 273);
+            this.btnResponder.Location = new System.Drawing.Point(227, 273);
             this.btnResponder.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnResponder.Name = "btnResponder";
-            this.btnResponder.Size = new System.Drawing.Size(351, 50);
+            this.btnResponder.Size = new System.Drawing.Size(252, 45);
             this.btnResponder.TabIndex = 25;
             this.btnResponder.Text = "Responder";
             this.btnResponder.UseVisualStyleBackColor = false;
@@ -518,7 +521,7 @@
         private System.Windows.Forms.Panel pnlRespuesta;
         private System.Windows.Forms.Button btnResponder;
         private System.Windows.Forms.Label lblFechaUsuario;
-        private System.Windows.Forms.Button btnCambiarUrgencia;
+        private System.Windows.Forms.Button btnCambiarCategoria;
         private System.Windows.Forms.Button btnCambiarEstado;
         private System.Windows.Forms.Button btnEscalar;
     }

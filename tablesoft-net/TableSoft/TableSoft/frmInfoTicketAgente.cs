@@ -58,5 +58,23 @@ namespace TableSoft
                 MostrarDefaultRespuesta();
             }
         }
+
+        private void btnEscalar_Click(object sender, EventArgs e)
+        {
+            frmEscalarTicketAgente frm = new frmEscalarTicketAgente();
+            frm.ShowDialog();
+        }
+
+        private void btnCambiarEstado_Click(object sender, EventArgs e)
+        {
+            frmActualizarEstadoTicketAgente frm = new frmActualizarEstadoTicketAgente();
+            frm.ShowDialog();
+        }
+
+        private void btnCambiarCategoria_Click(object sender, EventArgs e)
+        {
+            frmReasignarCategoriaTicketAgente frm = new frmReasignarCategoriaTicketAgente();
+            frm.ShowDialog();
+        }
     }
 }

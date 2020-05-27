@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmGestionarAdministrador
+    partial class frmInicioAdministrador
     {
         /// <summary>
         /// Required designer variable.

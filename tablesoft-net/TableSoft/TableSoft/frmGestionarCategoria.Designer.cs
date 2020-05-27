@@ -40,6 +40,8 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnTareas = new System.Windows.Forms.Button();
+            this.Equipo = new System.Windows.Forms.Label();
+            this.cmbEquipo = new System.Windows.Forms.ComboBox();
             this.pnlTitulo.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -67,6 +69,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.cmbEquipo);
+            this.groupBox1.Controls.Add(this.Equipo);
             this.groupBox1.Controls.Add(this.lblIDCategoria);
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Controls.Add(this.txtIDCategoria);
@@ -75,7 +79,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.groupBox1.Location = new System.Drawing.Point(35, 100);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(557, 123);
+            this.groupBox1.Size = new System.Drawing.Size(557, 169);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Generales";
@@ -125,7 +129,7 @@
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Location = new System.Drawing.Point(166, 238);
+            this.btnBorrar.Location = new System.Drawing.Point(166, 288);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(102, 33);
             this.btnBorrar.TabIndex = 17;
@@ -139,7 +143,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(274, 238);
+            this.btnActualizar.Location = new System.Drawing.Point(274, 288);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 16;
@@ -153,7 +157,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(382, 238);
+            this.btnGuardar.Location = new System.Drawing.Point(382, 288);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 15;
@@ -167,7 +171,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(490, 238);
+            this.btnCancelar.Location = new System.Drawing.Point(490, 288);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 33);
             this.btnCancelar.TabIndex = 14;
@@ -181,18 +185,36 @@
             this.btnTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTareas.ForeColor = System.Drawing.Color.White;
-            this.btnTareas.Location = new System.Drawing.Point(58, 238);
+            this.btnTareas.Location = new System.Drawing.Point(58, 288);
             this.btnTareas.Name = "btnTareas";
             this.btnTareas.Size = new System.Drawing.Size(102, 33);
             this.btnTareas.TabIndex = 18;
             this.btnTareas.Text = "Tareas";
             this.btnTareas.UseVisualStyleBackColor = false;
             // 
+            // Equipo
+            // 
+            this.Equipo.AutoSize = true;
+            this.Equipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.Equipo.Location = new System.Drawing.Point(89, 113);
+            this.Equipo.Name = "Equipo";
+            this.Equipo.Size = new System.Drawing.Size(61, 21);
+            this.Equipo.TabIndex = 5;
+            this.Equipo.Text = "Equipo:";
+            // 
+            // cmbEquipo
+            // 
+            this.cmbEquipo.FormattingEnabled = true;
+            this.cmbEquipo.Location = new System.Drawing.Point(161, 113);
+            this.cmbEquipo.Name = "cmbEquipo";
+            this.cmbEquipo.Size = new System.Drawing.Size(200, 25);
+            this.cmbEquipo.TabIndex = 6;
+            // 
             // frmGestionarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(644, 289);
+            this.ClientSize = new System.Drawing.Size(644, 348);
             this.Controls.Add(this.btnTareas);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.btnActualizar);
@@ -225,5 +247,7 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnTareas;
+        private System.Windows.Forms.ComboBox cmbEquipo;
+        private System.Windows.Forms.Label Equipo;
     }
 }

@@ -211,7 +211,7 @@
             this.btnReasignar.Name = "btnReasignar";
             this.btnReasignar.Size = new System.Drawing.Size(119, 33);
             this.btnReasignar.TabIndex = 12;
-            this.btnReasignar.Text = "Reasignar";
+            this.btnReasignar.Text = "Escalar";
             this.btnReasignar.UseVisualStyleBackColor = false;
             // 
             // frmEscalarTicketAgente

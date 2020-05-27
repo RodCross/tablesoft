@@ -70,6 +70,12 @@
     <Compile Include="frmCrearNuevoTicket.Designer.cs">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmEscalarTicketAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEscalarTicketAgente.Designer.cs">
+      <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionarSistemaAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +152,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEscalarTicketAgente.resx">
+      <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>

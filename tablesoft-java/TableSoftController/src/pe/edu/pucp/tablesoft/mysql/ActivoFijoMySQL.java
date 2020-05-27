@@ -38,6 +38,7 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             activoFijo.setActivoFijoId(rpta);
+            activoFijo.setActivo(true);
             con.close();
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());

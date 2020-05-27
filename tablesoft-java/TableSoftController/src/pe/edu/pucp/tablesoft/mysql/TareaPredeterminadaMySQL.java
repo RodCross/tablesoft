@@ -41,6 +41,7 @@ public class TareaPredeterminadaMySQL implements TareaPredeterminadaDAO {
            cs.executeUpdate();
            rpta = cs.getInt("_ID");
            tareaPred.setTareaPredeterminadaId(rpta);
+           tareaPred.setActivo(true);
            con.close();
            
         } catch(SQLException | ClassNotFoundException ex) {

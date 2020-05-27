@@ -6,11 +6,29 @@ public class Proveedor {
     private String razonSocial;
     private String direccion;
     private String pais;
+    private String ciudad;
     private String telefono;
     private String email;
+    private Boolean activo;
 
     public Proveedor() {
         
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public Boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(Boolean activo) {
+        this.activo = activo;
     }
 
     public int getProveedorId() {

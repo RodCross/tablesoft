@@ -38,6 +38,7 @@ public class BibliotecaMySQL implements BibliotecaDAO {
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
             biblioteca.setBibliotecaId(rpta);
+            biblioteca.setActivo(true);
             con.close();
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());

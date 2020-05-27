@@ -7,32 +7,32 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
-import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
-import pe.edu.pucp.tablesoft.model.EstadoTicket;
+import pe.edu.pucp.tablesoft.dao.RolDAO;
+import pe.edu.pucp.tablesoft.model.Rol;
 
 /*
  * @author migue
  */
-public class EstadoTicketMySQL implements EstadoTicketDAO {
+public class RolMySQL implements RolDAO{
     Connection con;
     @Override
-    public int insertar(EstadoTicket estadoTicket) {
+    public int insertar(Rol rol) {
         int rpta = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_estado_ticket(?,?,?)}");
+                    "{CALL insertar_rol(?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
-            cs.setString("_NOMBRE", estadoTicket.getNombre());
-            cs.setString("_DESCRIPCION", estadoTicket.getDescripcion());
+            cs.setString("_NOMBRE", rol.getNombre());
+            cs.setString("_DESCRIPCION", rol.getDescripcion());
                         
             cs.execute();
             rpta = cs.getInt("_ID");
-            estadoTicket.setEstadoId(rpta);
-            estadoTicket.setActivo(true);
+            rol.setRolId(rpta);
+            rol.setActivo(true);
             con.close();
             
         } catch(SQLException | ClassNotFoundException ex){
@@ -42,107 +42,108 @@ public class EstadoTicketMySQL implements EstadoTicketDAO {
     }
 
     @Override
-    public int actualizar(EstadoTicket estadoTicket) {
+    public int actualizar(Rol rol) {
         int rpta = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_estado_ticket(?,?,?)}");
+                    "{CALL actualizar_rol(?,?,?)}");
             
-            cs.setInt("_ID", estadoTicket.getEstadoId());
-            cs.setString("_NOMBRE", estadoTicket.getNombre());
-            cs.setString("_DESCRIPCION", estadoTicket.getDescripcion());
-            
-            cs.executeUpdate();
+            cs.setInt("_ID", rol.getRolId());
+            cs.setString("_NOMBRE", rol.getNombre());
+            cs.setString("_DESCRIPCION", rol.getDescripcion());
+                        
+            cs.execute();
             con.close();
             
         } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
-            rpta = -1;
         }
         return rpta;
-    }
+}
 
     @Override
-    public int eliminar(EstadoTicket estadoTicket) {
+    public int eliminar(Rol rol) {
         int rpta = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL eliminar_estado_ticket(?)}");
+                    "{CALL eliminar_rol(?)}");
             
-            cs.setInt("_ID", estadoTicket.getEstadoId());
-            
-            cs.executeUpdate();
+            cs.setInt("_ID", rol.getRolId());
+                        
+            cs.execute();
+            rpta = cs.getInt("_ID");
+            rol.setRolId(rpta);
             con.close();
             
         } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
-            rpta = -1;
         }
         return rpta;
     }
 
     @Override
-    public ArrayList<EstadoTicket> listar() {
-        ArrayList<EstadoTicket> estados = new ArrayList<>();
+    public ArrayList<Rol> listar() {
+        ArrayList<Rol> roles = new ArrayList<>();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL listar_estado_ticket()}");
-            
+                    "{CALL listar_rol()}");
+                        
             ResultSet rs = cs.executeQuery();
-
+            
             while(rs.next()){
-                EstadoTicket estado = new EstadoTicket();
+                Rol rol = new Rol();
                 
-                estado.setEstadoId(rs.getInt("estado_id"));
-                estado.setNombre(rs.getString("nombre"));
-                estado.setDescripcion(rs.getString("descripcion"));
-                estado.setActivo(rs.getBoolean("activo"));
-                estados.add(estado);
+                rol.setRolId(rs.getInt("rol_id"));
+                rol.setNombre(rs.getString("nombre"));
+                rol.setDescripcion(rs.getString("descripcion"));
+                rol.setActivo(rs.getBoolean("activo"));
+                
+                roles.add(rol);
             }
             con.close();
             
         } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
         }
-        return estados;
+        return roles;
     }
 
     @Override
-    public EstadoTicket buscar(int estadoTicketId) {
-        EstadoTicket estado = new EstadoTicket();
-        
+    public Rol buscar(int rolId) {
+        Rol rol = new Rol();
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL buscar_estado_ticket(?)}");
-            
-            cs.setInt("_ID", estadoTicketId);
+                    "{CALL buscar_rol(?)}");
+            cs.setInt("_ID", rolId);
+                        
             ResultSet rs = cs.executeQuery();
-
+            
             while(rs.next()){
-                estado.setEstadoId(rs.getInt("estado_id"));
-                estado.setNombre(rs.getString("nombre"));
-                estado.setDescripcion(rs.getString("descripcion"));
-                estado.setActivo(rs.getBoolean("activo"));
+                
+                rol.setRolId(rs.getInt("rol_id"));
+                rol.setNombre(rs.getString("nombre"));
+                rol.setDescripcion(rs.getString("descripcion"));
+                rol.setActivo(rs.getBoolean("activo"));
+                
             }
             con.close();
             
         } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
         }
-        
-        return estado;
+        return rol;
     }
-    
+
 }

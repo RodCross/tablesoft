@@ -36,6 +36,7 @@ public class CategoriaMySQL implements CategoriaDAO{
            cs.executeUpdate();
            rpta = cs.getInt("_ID");
            categoria.setCategoriaId(rpta);
+           categoria.setActivo(true);
            con.close();
            
         } catch(SQLException | ClassNotFoundException ex) {

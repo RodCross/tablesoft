@@ -37,6 +37,7 @@ public class EquipoMySQL implements EquipoDAO{
             rpta = cs.getInt("_ID");
             con.close();
             equipo.setEquipoId(rpta);
+            equipo.setActivo(true);
 
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());

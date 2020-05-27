@@ -33,18 +33,6 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.lblInfoTicket = new System.Windows.Forms.Label();
             this.pnlDatos = new System.Windows.Forms.Panel();
-            this.lblTituloId = new System.Windows.Forms.Label();
-            this.lblActFij = new System.Windows.Forms.Label();
-            this.lblId = new System.Windows.Forms.Label();
-            this.lblTituloActFij = new System.Windows.Forms.Label();
-            this.lblTituloCreacion = new System.Windows.Forms.Label();
-            this.lblBiblioteca = new System.Windows.Forms.Label();
-            this.lblCreacion = new System.Windows.Forms.Label();
-            this.lblTituloBiblioteca = new System.Windows.Forms.Label();
-            this.lblTituloUltMod = new System.Windows.Forms.Label();
-            this.lblEstado = new System.Windows.Forms.Label();
-            this.lblUltMod = new System.Windows.Forms.Label();
-            this.lblTituloEstado = new System.Windows.Forms.Label();
             this.pnlMensajes = new System.Windows.Forms.Panel();
             this.pnlRespuesta = new System.Windows.Forms.Panel();
             this.btnCambiarUrgencia = new System.Windows.Forms.Button();
@@ -61,13 +49,22 @@
             this.lblMsgUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblAsunto = new System.Windows.Forms.Label();
+            this.lblTituloId = new System.Windows.Forms.Label();
+            this.lblActFij = new System.Windows.Forms.Label();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblTituloActFij = new System.Windows.Forms.Label();
+            this.lblTituloCreacion = new System.Windows.Forms.Label();
+            this.lblBiblioteca = new System.Windows.Forms.Label();
+            this.lblCreacion = new System.Windows.Forms.Label();
+            this.lblTituloBiblioteca = new System.Windows.Forms.Label();
+            this.lblTituloUltMod = new System.Windows.Forms.Label();
+            this.lblEstado = new System.Windows.Forms.Label();
+            this.lblUltMod = new System.Windows.Forms.Label();
+            this.lblTituloEstado = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -145,144 +142,6 @@
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(302, 512);
             this.pnlDatos.TabIndex = 18;
-            // 
-            // lblTituloId
-            // 
-            this.lblTituloId.AutoSize = true;
-            this.lblTituloId.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblTituloId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloId.Location = new System.Drawing.Point(19, 20);
-            this.lblTituloId.Name = "lblTituloId";
-            this.lblTituloId.Size = new System.Drawing.Size(109, 22);
-            this.lblTituloId.TabIndex = 5;
-            this.lblTituloId.Text = "ID del ticket";
-            // 
-            // lblActFij
-            // 
-            this.lblActFij.AutoSize = true;
-            this.lblActFij.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActFij.ForeColor = System.Drawing.Color.Black;
-            this.lblActFij.Location = new System.Drawing.Point(19, 447);
-            this.lblActFij.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
-            this.lblActFij.Name = "lblActFij";
-            this.lblActFij.Size = new System.Drawing.Size(90, 20);
-            this.lblActFij.TabIndex = 16;
-            this.lblActFij.Text = "201511448";
-            // 
-            // lblId
-            // 
-            this.lblId.AutoSize = true;
-            this.lblId.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.ForeColor = System.Drawing.Color.Black;
-            this.lblId.Location = new System.Drawing.Point(19, 52);
-            this.lblId.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
-            this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(94, 20);
-            this.lblId.TabIndex = 6;
-            this.lblId.Text = "# 19258321";
-            // 
-            // lblTituloActFij
-            // 
-            this.lblTituloActFij.AutoSize = true;
-            this.lblTituloActFij.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblTituloActFij.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloActFij.Location = new System.Drawing.Point(19, 415);
-            this.lblTituloActFij.Name = "lblTituloActFij";
-            this.lblTituloActFij.Size = new System.Drawing.Size(93, 22);
-            this.lblTituloActFij.TabIndex = 15;
-            this.lblTituloActFij.Text = "Activo fijo";
-            // 
-            // lblTituloCreacion
-            // 
-            this.lblTituloCreacion.AutoSize = true;
-            this.lblTituloCreacion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblTituloCreacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloCreacion.Location = new System.Drawing.Point(19, 99);
-            this.lblTituloCreacion.Name = "lblTituloCreacion";
-            this.lblTituloCreacion.Size = new System.Drawing.Size(79, 22);
-            this.lblTituloCreacion.TabIndex = 7;
-            this.lblTituloCreacion.Text = "Creación";
-            // 
-            // lblBiblioteca
-            // 
-            this.lblBiblioteca.AutoSize = true;
-            this.lblBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBiblioteca.ForeColor = System.Drawing.Color.Black;
-            this.lblBiblioteca.Location = new System.Drawing.Point(19, 368);
-            this.lblBiblioteca.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
-            this.lblBiblioteca.Name = "lblBiblioteca";
-            this.lblBiblioteca.Size = new System.Drawing.Size(257, 20);
-            this.lblBiblioteca.TabIndex = 14;
-            this.lblBiblioteca.Text = "Complejo de Innovación Académica";
-            // 
-            // lblCreacion
-            // 
-            this.lblCreacion.AutoSize = true;
-            this.lblCreacion.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCreacion.ForeColor = System.Drawing.Color.Black;
-            this.lblCreacion.Location = new System.Drawing.Point(19, 131);
-            this.lblCreacion.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
-            this.lblCreacion.Name = "lblCreacion";
-            this.lblCreacion.Size = new System.Drawing.Size(149, 20);
-            this.lblCreacion.TabIndex = 8;
-            this.lblCreacion.Text = "2020/06/18 - 16:20";
-            // 
-            // lblTituloBiblioteca
-            // 
-            this.lblTituloBiblioteca.AutoSize = true;
-            this.lblTituloBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblTituloBiblioteca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloBiblioteca.Location = new System.Drawing.Point(19, 336);
-            this.lblTituloBiblioteca.Name = "lblTituloBiblioteca";
-            this.lblTituloBiblioteca.Size = new System.Drawing.Size(90, 22);
-            this.lblTituloBiblioteca.TabIndex = 13;
-            this.lblTituloBiblioteca.Text = "Biblioteca";
-            // 
-            // lblTituloUltMod
-            // 
-            this.lblTituloUltMod.AutoSize = true;
-            this.lblTituloUltMod.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblTituloUltMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloUltMod.Location = new System.Drawing.Point(19, 178);
-            this.lblTituloUltMod.Name = "lblTituloUltMod";
-            this.lblTituloUltMod.Size = new System.Drawing.Size(173, 22);
-            this.lblTituloUltMod.TabIndex = 9;
-            this.lblTituloUltMod.Text = "Última modificación";
-            // 
-            // lblEstado
-            // 
-            this.lblEstado.AutoSize = true;
-            this.lblEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstado.ForeColor = System.Drawing.Color.Black;
-            this.lblEstado.Location = new System.Drawing.Point(19, 289);
-            this.lblEstado.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
-            this.lblEstado.Name = "lblEstado";
-            this.lblEstado.Size = new System.Drawing.Size(62, 20);
-            this.lblEstado.TabIndex = 12;
-            this.lblEstado.Text = "Abierto";
-            // 
-            // lblUltMod
-            // 
-            this.lblUltMod.AutoSize = true;
-            this.lblUltMod.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUltMod.ForeColor = System.Drawing.Color.Black;
-            this.lblUltMod.Location = new System.Drawing.Point(19, 210);
-            this.lblUltMod.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
-            this.lblUltMod.Name = "lblUltMod";
-            this.lblUltMod.Size = new System.Drawing.Size(149, 20);
-            this.lblUltMod.TabIndex = 10;
-            this.lblUltMod.Text = "2020/06/20 - 12:51";
-            // 
-            // lblTituloEstado
-            // 
-            this.lblTituloEstado.AutoSize = true;
-            this.lblTituloEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
-            this.lblTituloEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloEstado.Location = new System.Drawing.Point(19, 257);
-            this.lblTituloEstado.Name = "lblTituloEstado";
-            this.lblTituloEstado.Size = new System.Drawing.Size(63, 22);
-            this.lblTituloEstado.TabIndex = 11;
-            this.lblTituloEstado.Text = "Estado";
             // 
             // pnlMensajes
             // 
@@ -479,6 +338,144 @@
             this.lblAsunto.TabIndex = 17;
             this.lblAsunto.Text = "Falla en las impresoras del Complejo de Innovación Académica";
             // 
+            // lblTituloId
+            // 
+            this.lblTituloId.AutoSize = true;
+            this.lblTituloId.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblTituloId.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblTituloId.Location = new System.Drawing.Point(19, 20);
+            this.lblTituloId.Name = "lblTituloId";
+            this.lblTituloId.Size = new System.Drawing.Size(109, 22);
+            this.lblTituloId.TabIndex = 5;
+            this.lblTituloId.Text = "ID del ticket";
+            // 
+            // lblActFij
+            // 
+            this.lblActFij.AutoSize = true;
+            this.lblActFij.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActFij.ForeColor = System.Drawing.Color.Black;
+            this.lblActFij.Location = new System.Drawing.Point(19, 447);
+            this.lblActFij.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.lblActFij.Name = "lblActFij";
+            this.lblActFij.Size = new System.Drawing.Size(90, 20);
+            this.lblActFij.TabIndex = 16;
+            this.lblActFij.Text = "201511448";
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.ForeColor = System.Drawing.Color.Black;
+            this.lblId.Location = new System.Drawing.Point(19, 52);
+            this.lblId.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(94, 20);
+            this.lblId.TabIndex = 6;
+            this.lblId.Text = "# 19258321";
+            // 
+            // lblTituloActFij
+            // 
+            this.lblTituloActFij.AutoSize = true;
+            this.lblTituloActFij.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblTituloActFij.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblTituloActFij.Location = new System.Drawing.Point(19, 415);
+            this.lblTituloActFij.Name = "lblTituloActFij";
+            this.lblTituloActFij.Size = new System.Drawing.Size(93, 22);
+            this.lblTituloActFij.TabIndex = 15;
+            this.lblTituloActFij.Text = "Activo fijo";
+            // 
+            // lblTituloCreacion
+            // 
+            this.lblTituloCreacion.AutoSize = true;
+            this.lblTituloCreacion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblTituloCreacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblTituloCreacion.Location = new System.Drawing.Point(19, 99);
+            this.lblTituloCreacion.Name = "lblTituloCreacion";
+            this.lblTituloCreacion.Size = new System.Drawing.Size(79, 22);
+            this.lblTituloCreacion.TabIndex = 7;
+            this.lblTituloCreacion.Text = "Creación";
+            // 
+            // lblBiblioteca
+            // 
+            this.lblBiblioteca.AutoSize = true;
+            this.lblBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBiblioteca.ForeColor = System.Drawing.Color.Black;
+            this.lblBiblioteca.Location = new System.Drawing.Point(19, 368);
+            this.lblBiblioteca.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.lblBiblioteca.Name = "lblBiblioteca";
+            this.lblBiblioteca.Size = new System.Drawing.Size(257, 20);
+            this.lblBiblioteca.TabIndex = 14;
+            this.lblBiblioteca.Text = "Complejo de Innovación Académica";
+            // 
+            // lblCreacion
+            // 
+            this.lblCreacion.AutoSize = true;
+            this.lblCreacion.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCreacion.ForeColor = System.Drawing.Color.Black;
+            this.lblCreacion.Location = new System.Drawing.Point(19, 131);
+            this.lblCreacion.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.lblCreacion.Name = "lblCreacion";
+            this.lblCreacion.Size = new System.Drawing.Size(149, 20);
+            this.lblCreacion.TabIndex = 8;
+            this.lblCreacion.Text = "2020/06/18 - 16:20";
+            // 
+            // lblTituloBiblioteca
+            // 
+            this.lblTituloBiblioteca.AutoSize = true;
+            this.lblTituloBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblTituloBiblioteca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblTituloBiblioteca.Location = new System.Drawing.Point(19, 336);
+            this.lblTituloBiblioteca.Name = "lblTituloBiblioteca";
+            this.lblTituloBiblioteca.Size = new System.Drawing.Size(90, 22);
+            this.lblTituloBiblioteca.TabIndex = 13;
+            this.lblTituloBiblioteca.Text = "Biblioteca";
+            // 
+            // lblTituloUltMod
+            // 
+            this.lblTituloUltMod.AutoSize = true;
+            this.lblTituloUltMod.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblTituloUltMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblTituloUltMod.Location = new System.Drawing.Point(19, 178);
+            this.lblTituloUltMod.Name = "lblTituloUltMod";
+            this.lblTituloUltMod.Size = new System.Drawing.Size(173, 22);
+            this.lblTituloUltMod.TabIndex = 9;
+            this.lblTituloUltMod.Text = "Última modificación";
+            // 
+            // lblEstado
+            // 
+            this.lblEstado.AutoSize = true;
+            this.lblEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEstado.ForeColor = System.Drawing.Color.Black;
+            this.lblEstado.Location = new System.Drawing.Point(19, 289);
+            this.lblEstado.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.lblEstado.Name = "lblEstado";
+            this.lblEstado.Size = new System.Drawing.Size(62, 20);
+            this.lblEstado.TabIndex = 12;
+            this.lblEstado.Text = "Abierto";
+            // 
+            // lblUltMod
+            // 
+            this.lblUltMod.AutoSize = true;
+            this.lblUltMod.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUltMod.ForeColor = System.Drawing.Color.Black;
+            this.lblUltMod.Location = new System.Drawing.Point(19, 210);
+            this.lblUltMod.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.lblUltMod.Name = "lblUltMod";
+            this.lblUltMod.Size = new System.Drawing.Size(149, 20);
+            this.lblUltMod.TabIndex = 10;
+            this.lblUltMod.Text = "2020/06/20 - 12:51";
+            // 
+            // lblTituloEstado
+            // 
+            this.lblTituloEstado.AutoSize = true;
+            this.lblTituloEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.lblTituloEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblTituloEstado.Location = new System.Drawing.Point(19, 257);
+            this.lblTituloEstado.Name = "lblTituloEstado";
+            this.lblTituloEstado.Size = new System.Drawing.Size(63, 22);
+            this.lblTituloEstado.TabIndex = 11;
+            this.lblTituloEstado.Text = "Estado";
+            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -493,44 +490,25 @@
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.richTextBox1);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button4);
             this.panel2.Location = new System.Drawing.Point(3, 459);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(706, 453);
+            this.panel2.Size = new System.Drawing.Size(706, 288);
             this.panel2.TabIndex = 21;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(83, 376);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Cambiar categoría";
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
             this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(178, 273);
+            this.button2.Location = new System.Drawing.Point(199, 227);
             this.button2.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(351, 50);
+            this.button2.Size = new System.Drawing.Size(320, 40);
             this.button2.TabIndex = 25;
             this.button2.Text = "Responder";
             this.button2.UseVisualStyleBackColor = false;
@@ -543,38 +521,6 @@
             this.richTextBox1.Size = new System.Drawing.Size(663, 198);
             this.richTextBox1.TabIndex = 22;
             this.richTextBox1.Text = "";
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(459, 376);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 33);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Cambiar estado";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(294, 376);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(119, 33);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Escalar";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -737,11 +683,8 @@
         private System.Windows.Forms.Label lblAsunto;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

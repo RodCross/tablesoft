@@ -94,11 +94,11 @@
     <Compile Include="frmGestionarActivoFijo.Designer.cs">
       <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarAgentes.cs">
+    <Compile Include="frmGestionarAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarAgentes.Designer.cs">
-      <DependentUpon>frmGestionarAgentes.cs</DependentUpon>
+    <Compile Include="frmGestionarAgente.Designer.cs">
+      <DependentUpon>frmGestionarAgente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarBiblioteca.cs">
       <SubType>Form</SubType>
@@ -112,11 +112,17 @@
     <Compile Include="frmGestionarCategoria.Designer.cs">
       <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarEmpleados.cs">
+    <Compile Include="frmGestionarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarEmpleados.Designer.cs">
-      <DependentUpon>frmGestionarEmpleados.cs</DependentUpon>
+    <Compile Include="frmGestionarEmpleado.Designer.cs">
+      <DependentUpon>frmGestionarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarEquipo.Designer.cs">
+      <DependentUpon>frmGestionarEquipo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarEstado.cs">
       <SubType>Form</SubType>
@@ -148,11 +154,11 @@
     <Compile Include="frmGestionarUrgencia.Designer.cs">
       <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarProveedores.cs">
+    <Compile Include="frmGestionarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarProveedores.Designer.cs">
-      <DependentUpon>frmGestionarProveedores.cs</DependentUpon>
+    <Compile Include="frmGestionarProveedor.Designer.cs">
+      <DependentUpon>frmGestionarProveedor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInfoTicketAgente.cs">
       <SubType>Form</SubType>
@@ -250,6 +256,18 @@
     <Compile Include="frmSeleccionarAgente.Designer.cs">
       <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeleccionarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarEquipo.Designer.cs">
+      <DependentUpon>frmSeleccionarEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarEstado.Designer.cs">
+      <DependentUpon>frmSeleccionarEstado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeleccionarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -309,8 +327,8 @@
     <EmbeddedResource Include="frmGestionarActivoFijo.resx">
       <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarAgentes.resx">
-      <DependentUpon>frmGestionarAgentes.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarAgente.resx">
+      <DependentUpon>frmGestionarAgente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarBiblioteca.resx">
       <DependentUpon>frmGestionarBiblioteca.cs</DependentUpon>
@@ -318,8 +336,11 @@
     <EmbeddedResource Include="frmGestionarCategoria.resx">
       <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarEmpleados.resx">
-      <DependentUpon>frmGestionarEmpleados.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarEmpleado.resx">
+      <DependentUpon>frmGestionarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarEquipo.resx">
+      <DependentUpon>frmGestionarEquipo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarEstado.resx">
       <DependentUpon>frmGestionarEstado.cs</DependentUpon>
@@ -336,8 +357,8 @@
     <EmbeddedResource Include="frmGestionarUrgencia.resx">
       <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarProveedores.resx">
-      <DependentUpon>frmGestionarProveedores.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarProveedor.resx">
+      <DependentUpon>frmGestionarProveedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfoTicketAgente.resx">
       <DependentUpon>frmInfoTicketAgente.cs</DependentUpon>
@@ -386,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarAgente.resx">
       <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarEquipo.resx">
+      <DependentUpon>frmSeleccionarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarEstado.resx">
+      <DependentUpon>frmSeleccionarEstado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarProveedor.resx">
       <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>

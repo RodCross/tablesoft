@@ -16,5 +16,22 @@ namespace TableSoft
         {
             InitializeComponent();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmGestionarBiblioteca frm = new frmGestionarBiblioteca();
+            frm.ShowDialog();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            frmGestionarBiblioteca frm = new frmGestionarBiblioteca(1);
+            frm.ShowDialog();
+        }
     }
 }

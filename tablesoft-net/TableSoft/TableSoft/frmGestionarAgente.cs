@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmGestionarEmpleados : Form
+    public partial class frmGestionarAgente : Form
     {
-        public frmGestionarEmpleados()
+        public frmGestionarAgente()
         {
             InitializeComponent();
         }

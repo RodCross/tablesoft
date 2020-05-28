@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmGestionarAgentes
+    partial class frmGestionarAgente
     {
         /// <summary>
         /// Required designer variable.

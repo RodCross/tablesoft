@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmGestionarProveedores
+    partial class frmGestionarProveedor
     {
         /// <summary>
         /// Required designer variable.

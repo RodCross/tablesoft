@@ -66,6 +66,7 @@
             this.btnGestionarEmpleado.TabIndex = 0;
             this.btnGestionarEmpleado.Text = "Gestionar empleados";
             this.btnGestionarEmpleado.UseVisualStyleBackColor = false;
+            this.btnGestionarEmpleado.Click += new System.EventHandler(this.btnGestionarEmpleado_Click);
             // 
             // btnGestionarAgentes
             // 
@@ -80,6 +81,7 @@
             this.btnGestionarAgentes.TabIndex = 1;
             this.btnGestionarAgentes.Text = "Gestionar agentes";
             this.btnGestionarAgentes.UseVisualStyleBackColor = false;
+            this.btnGestionarAgentes.Click += new System.EventHandler(this.btnGestionarAgentes_Click);
             // 
             // btnGestionarCategorias
             // 
@@ -94,6 +96,7 @@
             this.btnGestionarCategorias.TabIndex = 0;
             this.btnGestionarCategorias.Text = "Gestionar categorias";
             this.btnGestionarCategorias.UseVisualStyleBackColor = false;
+            this.btnGestionarCategorias.Click += new System.EventHandler(this.btnGestionarCategorias_Click);
             // 
             // btnGestionarProveedores
             // 
@@ -108,6 +111,7 @@
             this.btnGestionarProveedores.TabIndex = 0;
             this.btnGestionarProveedores.Text = "Gestionar proveedores";
             this.btnGestionarProveedores.UseVisualStyleBackColor = false;
+            this.btnGestionarProveedores.Click += new System.EventHandler(this.btnGestionarProveedores_Click);
             // 
             // btnGestionarBibliotecas
             // 
@@ -122,6 +126,7 @@
             this.btnGestionarBibliotecas.TabIndex = 2;
             this.btnGestionarBibliotecas.Text = "Gestionar bibliotecas";
             this.btnGestionarBibliotecas.UseVisualStyleBackColor = false;
+            this.btnGestionarBibliotecas.Click += new System.EventHandler(this.btnGestionarBibliotecas_Click);
             // 
             // btnGestionarUrgencias
             // 
@@ -136,6 +141,7 @@
             this.btnGestionarUrgencias.TabIndex = 1;
             this.btnGestionarUrgencias.Text = "Gestionar urgencias";
             this.btnGestionarUrgencias.UseVisualStyleBackColor = false;
+            this.btnGestionarUrgencias.Click += new System.EventHandler(this.btnGestionarUrgencias_Click);
             // 
             // btnGestionarActivosFijos
             // 
@@ -150,6 +156,7 @@
             this.btnGestionarActivosFijos.TabIndex = 1;
             this.btnGestionarActivosFijos.Text = "Gestionar activos fijos";
             this.btnGestionarActivosFijos.UseVisualStyleBackColor = false;
+            this.btnGestionarActivosFijos.Click += new System.EventHandler(this.btnGestionarActivosFijos_Click);
             // 
             // btnGestionarEquiposTrabajo
             // 
@@ -164,6 +171,7 @@
             this.btnGestionarEquiposTrabajo.TabIndex = 2;
             this.btnGestionarEquiposTrabajo.Text = "Gestionar equipos de trabajo";
             this.btnGestionarEquiposTrabajo.UseVisualStyleBackColor = false;
+            this.btnGestionarEquiposTrabajo.Click += new System.EventHandler(this.btnGestionarEquiposTrabajo_Click);
             // 
             // pnlPersonas
             // 
@@ -224,6 +232,7 @@
             this.btnGestionarEstadosTicket.TabIndex = 3;
             this.btnGestionarEstadosTicket.Text = "Gestionar estados de ticket";
             this.btnGestionarEstadosTicket.UseVisualStyleBackColor = false;
+            this.btnGestionarEstadosTicket.Click += new System.EventHandler(this.btnGestionarEstadosTicket_Click);
             // 
             // lblAdministrarOtros
             // 

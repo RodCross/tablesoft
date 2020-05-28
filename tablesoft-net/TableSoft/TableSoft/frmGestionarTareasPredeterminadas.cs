@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmGestionarTareas : Form
+    public partial class frmGestionarTareasPredeterminadas : Form
     {
-        public frmGestionarTareas()
+        public frmGestionarTareasPredeterminadas()
         {
             InitializeComponent();
         }

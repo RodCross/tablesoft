@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmSeleccionarTarea : Form
+    public partial class frmSeleccionarTareaPredeterminada : Form
     {
-        public frmSeleccionarTarea()
+        public frmSeleccionarTareaPredeterminada()
         {
             InitializeComponent();
         }

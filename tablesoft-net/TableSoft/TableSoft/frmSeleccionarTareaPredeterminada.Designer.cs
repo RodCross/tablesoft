@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmSeleccionarTarea
+    partial class frmSeleccionarTareaPredeterminada
     {
         /// <summary>
         /// Required designer variable.

@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmGestionarTareas
+    partial class frmGestionarTareasPredeterminadas
     {
         /// <summary>
         /// Required designer variable.

@@ -52,7 +52,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(764, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(522, 70);
             this.pnlTitulo.TabIndex = 9;
             // 
             // lblDatosUrgencia
@@ -78,7 +78,7 @@
             this.gpbDatosGenerales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.gpbDatosGenerales.Location = new System.Drawing.Point(35, 103);
             this.gpbDatosGenerales.Name = "gpbDatosGenerales";
-            this.gpbDatosGenerales.Size = new System.Drawing.Size(694, 166);
+            this.gpbDatosGenerales.Size = new System.Drawing.Size(449, 166);
             this.gpbDatosGenerales.TabIndex = 8;
             this.gpbDatosGenerales.TabStop = false;
             this.gpbDatosGenerales.Text = "Datos Generales";
@@ -88,7 +88,7 @@
             this.txtPlazoMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPlazoMaximo.Location = new System.Drawing.Point(161, 114);
             this.txtPlazoMaximo.Name = "txtPlazoMaximo";
-            this.txtPlazoMaximo.Size = new System.Drawing.Size(381, 26);
+            this.txtPlazoMaximo.Size = new System.Drawing.Size(188, 26);
             this.txtPlazoMaximo.TabIndex = 6;
             // 
             // lblPlazoMaximo
@@ -116,7 +116,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(161, 68);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(188, 26);
+            this.txtNombre.Size = new System.Drawing.Size(276, 26);
             this.txtNombre.TabIndex = 4;
             // 
             // txtIDUrgencia
@@ -146,7 +146,7 @@
             this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBorrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Location = new System.Drawing.Point(303, 287);
+            this.btnBorrar.Location = new System.Drawing.Point(46, 287);
             this.btnBorrar.Name = "btnBorrar";
             this.btnBorrar.Size = new System.Drawing.Size(102, 33);
             this.btnBorrar.TabIndex = 17;
@@ -160,7 +160,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(411, 287);
+            this.btnActualizar.Location = new System.Drawing.Point(154, 287);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 16;
@@ -174,7 +174,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(519, 287);
+            this.btnGuardar.Location = new System.Drawing.Point(262, 287);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 15;
@@ -188,7 +188,7 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(627, 287);
+            this.btnCancelar.Location = new System.Drawing.Point(370, 287);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 33);
             this.btnCancelar.TabIndex = 14;
@@ -199,7 +199,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(764, 337);
+            this.ClientSize = new System.Drawing.Size(522, 337);
             this.Controls.Add(this.btnBorrar);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.btnActualizar);

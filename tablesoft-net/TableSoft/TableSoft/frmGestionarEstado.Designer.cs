@@ -125,11 +125,11 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblNombre.Location = new System.Drawing.Point(59, 151);
+            this.lblNombre.Location = new System.Drawing.Point(47, 151);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(59, 21);
+            this.lblNombre.Size = new System.Drawing.Size(71, 21);
             this.lblNombre.TabIndex = 28;
-            this.lblNombre.Text = "Estado:";
+            this.lblNombre.Text = "Nombre:";
             // 
             // lblIDEmpleado
             // 

@@ -46,7 +46,6 @@
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
-            this.lklTickets = new System.Windows.Forms.LinkLabel();
             this.lklLogout = new System.Windows.Forms.LinkLabel();
             this.pnlExt.SuspendLayout();
             this.pnlInt.SuspendLayout();
@@ -253,29 +252,12 @@
             // pnlOpciones
             // 
             this.pnlOpciones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
-            this.pnlOpciones.Controls.Add(this.lklTickets);
             this.pnlOpciones.Controls.Add(this.lklLogout);
             this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlOpciones.Location = new System.Drawing.Point(0, 106);
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(884, 51);
             this.pnlOpciones.TabIndex = 2;
-            // 
-            // lklTickets
-            // 
-            this.lklTickets.ActiveLinkColor = System.Drawing.Color.Yellow;
-            this.lklTickets.AutoSize = true;
-            this.lklTickets.Enabled = false;
-            this.lklTickets.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklTickets.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lklTickets.LinkColor = System.Drawing.Color.White;
-            this.lklTickets.Location = new System.Drawing.Point(591, 14);
-            this.lklTickets.Name = "lklTickets";
-            this.lklTickets.Size = new System.Drawing.Size(105, 25);
-            this.lklTickets.TabIndex = 1;
-            this.lklTickets.TabStop = true;
-            this.lklTickets.Text = "Mis tickets";
-            this.lklTickets.VisitedLinkColor = System.Drawing.Color.White;
             // 
             // lklLogout
             // 
@@ -342,7 +324,6 @@
         private System.Windows.Forms.Panel pnlIzq;
         private System.Windows.Forms.PictureBox picAbrir;
         private System.Windows.Forms.LinkLabel lklLogout;
-        private System.Windows.Forms.LinkLabel lklTickets;
         private System.Windows.Forms.LinkLabel lklFAQ;
     }
 }

@@ -130,7 +130,7 @@
             this.btnGestionarEstadosTicket.Name = "btnGestionarEstadosTicket";
             this.btnGestionarEstadosTicket.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarEstadosTicket.TabIndex = 14;
-            this.btnGestionarEstadosTicket.Text = "Gestionar Equipos de Trabajo";
+            this.btnGestionarEstadosTicket.Text = "Gestionar Equipos de trabajo";
             this.btnGestionarEstadosTicket.UseVisualStyleBackColor = true;
             // 
             // pnlCaracteristicas

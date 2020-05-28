@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmGestionProveedores
+    partial class frmGestionarProveedores
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.gpbDatosGenerales = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.lblEmail = new System.Windows.Forms.Label();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.cboPais = new System.Windows.Forms.ComboBox();
             this.lblPais = new System.Windows.Forms.Label();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.lblRazonSocial = new System.Windows.Forms.Label();
@@ -49,19 +49,23 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnBorrar = new System.Windows.Forms.Button();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.gpbDatosGenerales.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
             // gpbDatosGenerales
             // 
+            this.gpbDatosGenerales.Controls.Add(this.textBox2);
+            this.gpbDatosGenerales.Controls.Add(this.label1);
+            this.gpbDatosGenerales.Controls.Add(this.textBox1);
             this.gpbDatosGenerales.Controls.Add(this.txtDireccion);
             this.gpbDatosGenerales.Controls.Add(this.lblDireccion);
             this.gpbDatosGenerales.Controls.Add(this.txtEmail);
             this.gpbDatosGenerales.Controls.Add(this.lblEmail);
             this.gpbDatosGenerales.Controls.Add(this.txtTelefono);
             this.gpbDatosGenerales.Controls.Add(this.lblTelefono);
-            this.gpbDatosGenerales.Controls.Add(this.cboPais);
             this.gpbDatosGenerales.Controls.Add(this.lblPais);
             this.gpbDatosGenerales.Controls.Add(this.txtRazonSocial);
             this.gpbDatosGenerales.Controls.Add(this.lblRazonSocial);
@@ -73,11 +77,18 @@
             this.gpbDatosGenerales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.gpbDatosGenerales.Location = new System.Drawing.Point(35, 94);
             this.gpbDatosGenerales.Name = "gpbDatosGenerales";
-            this.gpbDatosGenerales.Size = new System.Drawing.Size(694, 338);
+            this.gpbDatosGenerales.Size = new System.Drawing.Size(694, 351);
             this.gpbDatosGenerales.TabIndex = 6;
             this.gpbDatosGenerales.TabStop = false;
             this.gpbDatosGenerales.Text = "Datos Generales";
             this.gpbDatosGenerales.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(161, 199);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(244, 24);
+            this.textBox1.TabIndex = 16;
             // 
             // txtDireccion
             // 
@@ -100,7 +111,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(161, 297);
+            this.txtEmail.Location = new System.Drawing.Point(161, 319);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(290, 26);
             this.txtEmail.TabIndex = 12;
@@ -109,7 +120,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmail.Location = new System.Drawing.Point(92, 299);
+            this.lblEmail.Location = new System.Drawing.Point(92, 323);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(51, 21);
             this.lblEmail.TabIndex = 11;
@@ -118,7 +129,7 @@
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(161, 251);
+            this.txtTelefono.Location = new System.Drawing.Point(161, 278);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(244, 26);
             this.txtTelefono.TabIndex = 10;
@@ -127,31 +138,22 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblTelefono.Location = new System.Drawing.Point(74, 253);
+            this.lblTelefono.Location = new System.Drawing.Point(74, 278);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(73, 21);
             this.lblTelefono.TabIndex = 9;
             this.lblTelefono.Text = "Teléfono:";
             this.lblTelefono.Click += new System.EventHandler(this.lblTelefono_Click);
             // 
-            // cboPais
-            // 
-            this.cboPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboPais.FormattingEnabled = true;
-            this.cboPais.Location = new System.Drawing.Point(161, 205);
-            this.cboPais.Name = "cboPais";
-            this.cboPais.Size = new System.Drawing.Size(244, 28);
-            this.cboPais.TabIndex = 8;
-            // 
             // lblPais
             // 
             this.lblPais.AutoSize = true;
             this.lblPais.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblPais.Location = new System.Drawing.Point(106, 207);
+            this.lblPais.Location = new System.Drawing.Point(84, 199);
             this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(41, 21);
+            this.lblPais.Size = new System.Drawing.Size(66, 21);
             this.lblPais.TabIndex = 7;
-            this.lblPais.Text = "País:";
+            this.lblPais.Text = "Ciudad: ";
             this.lblPais.Click += new System.EventHandler(this.lblPais_Click);
             // 
             // txtRazonSocial
@@ -291,7 +293,24 @@
             this.btnBorrar.Text = "Borrar";
             this.btnBorrar.UseVisualStyleBackColor = false;
             // 
-            // frmGestionProveedores
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(161, 235);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(244, 24);
+            this.textBox2.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.label1.Location = new System.Drawing.Point(106, 236);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 21);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "País:";
+            // 
+            // frmGestionarProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -303,7 +322,7 @@
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.gpbDatosGenerales);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmGestionProveedores";
+            this.Name = "frmGestionarProveedores";
             this.Text = "frmGestionProveedores";
             this.gpbDatosGenerales.ResumeLayout(false);
             this.gpbDatosGenerales.PerformLayout();
@@ -321,7 +340,6 @@
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.ComboBox cboPais;
         private System.Windows.Forms.Label lblPais;
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label lblRazonSocial;
@@ -336,5 +354,8 @@
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label1;
     }
 }

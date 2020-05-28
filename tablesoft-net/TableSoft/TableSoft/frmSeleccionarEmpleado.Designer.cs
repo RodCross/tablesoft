@@ -40,10 +40,8 @@
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Biblioteca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailPersonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EmailAgente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTicketsEspera = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).BeginInit();
@@ -57,10 +55,10 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(1129, 453);
+            this.btnSeleccionar.Location = new System.Drawing.Point(1118, 492);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
-            this.btnSeleccionar.TabIndex = 14;
+            this.btnSeleccionar.TabIndex = 19;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
             // 
@@ -71,10 +69,10 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(982, 453);
+            this.btnNuevo.Location = new System.Drawing.Point(965, 492);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(119, 33);
-            this.btnNuevo.TabIndex = 13;
+            this.btnNuevo.TabIndex = 18;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             // 
@@ -85,10 +83,10 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(826, 453);
+            this.btnVolver.Location = new System.Drawing.Point(815, 492);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 11;
+            this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             // 
@@ -104,15 +102,13 @@
             this.Nombre,
             this.Codigo,
             this.DNI,
-            this.Rol,
-            this.Equipo,
-            this.EmailPersonal,
-            this.EmailAgente});
-            this.dgvGestionar.Location = new System.Drawing.Point(12, 76);
+            this.Biblioteca,
+            this.EmailPersonal});
+            this.dgvGestionar.Location = new System.Drawing.Point(35, 96);
             this.dgvGestionar.Name = "dgvGestionar";
             this.dgvGestionar.ReadOnly = true;
-            this.dgvGestionar.Size = new System.Drawing.Size(1236, 362);
-            this.dgvGestionar.TabIndex = 12;
+            this.dgvGestionar.Size = new System.Drawing.Size(1202, 376);
+            this.dgvGestionar.TabIndex = 17;
             // 
             // ID
             // 
@@ -130,7 +126,7 @@
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 350;
+            this.Nombre.Width = 400;
             // 
             // Codigo
             // 
@@ -140,6 +136,7 @@
             this.Codigo.HeaderText = "Codigo";
             this.Codigo.Name = "Codigo";
             this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 150;
             // 
             // DNI
             // 
@@ -149,21 +146,17 @@
             this.DNI.HeaderText = "DNI";
             this.DNI.Name = "DNI";
             this.DNI.ReadOnly = true;
+            this.DNI.Width = 150;
             // 
-            // Rol
+            // Biblioteca
             // 
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.Rol.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            // 
-            // Equipo
-            // 
-            this.Equipo.HeaderText = "Equipo";
-            this.Equipo.Name = "Equipo";
-            this.Equipo.ReadOnly = true;
+            this.Biblioteca.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Biblioteca.HeaderText = "Biblioteca";
+            this.Biblioteca.Name = "Biblioteca";
+            this.Biblioteca.ReadOnly = true;
+            this.Biblioteca.Width = 200;
             // 
             // EmailPersonal
             // 
@@ -172,13 +165,6 @@
             this.EmailPersonal.ReadOnly = true;
             this.EmailPersonal.Width = 230;
             // 
-            // EmailAgente
-            // 
-            this.EmailAgente.HeaderText = "Email Agente";
-            this.EmailAgente.Name = "EmailAgente";
-            this.EmailAgente.ReadOnly = true;
-            this.EmailAgente.Width = 170;
-            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
@@ -186,8 +172,8 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1258, 70);
-            this.pnlTitulo.TabIndex = 10;
+            this.pnlTitulo.Size = new System.Drawing.Size(1266, 70);
+            this.pnlTitulo.TabIndex = 15;
             // 
             // lblTicketsEspera
             // 
@@ -200,19 +186,19 @@
             this.lblTicketsEspera.TabIndex = 0;
             this.lblTicketsEspera.Text = "Lista de Empleados";
             // 
-            // frmSeleccionarEmpleado
+            // frmSeleccionarAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1258, 501);
+            this.ClientSize = new System.Drawing.Size(1266, 543);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvGestionar);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "frmSeleccionarEmpleado";
-            this.Text = "frmSeleccionarEmpleado";
+            this.Name = "frmSeleccionarAgente";
+            this.Text = "frmSeleccionarAgente";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
@@ -232,9 +218,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Equipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Biblioteca;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmailPersonal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmailAgente;
     }
 }

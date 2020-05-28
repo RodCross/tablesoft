@@ -118,12 +118,6 @@
     <Compile Include="frmGestionarEmpleados.Designer.cs">
       <DependentUpon>frmGestionarEmpleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarEstado.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmGestionarEstado.Designer.cs">
-      <DependentUpon>frmGestionarEstado.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmGestionarSistemaAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,11 +136,11 @@
     <Compile Include="frmGestionarUrgencia.Designer.cs">
       <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionProveedores.cs">
+    <Compile Include="frmGestionarProveedores.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionProveedores.Designer.cs">
-      <DependentUpon>frmGestionProveedores.cs</DependentUpon>
+    <Compile Include="frmGestionarProveedores.Designer.cs">
+      <DependentUpon>frmGestionarProveedores.cs</DependentUpon>
     </Compile>
     <Compile Include="frmInfoTicketAgente.cs">
       <SubType>Form</SubType>
@@ -309,9 +303,6 @@
     <EmbeddedResource Include="frmGestionarEmpleados.resx">
       <DependentUpon>frmGestionarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarEstado.resx">
-      <DependentUpon>frmGestionarEstado.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,8 +312,8 @@
     <EmbeddedResource Include="frmGestionarUrgencia.resx">
       <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionProveedores.resx">
-      <DependentUpon>frmGestionProveedores.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarProveedores.resx">
+      <DependentUpon>frmGestionarProveedores.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfoTicketAgente.resx">
       <DependentUpon>frmInfoTicketAgente.cs</DependentUpon>

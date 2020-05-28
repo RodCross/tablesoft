@@ -61,6 +61,7 @@
             this.lblMsgUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblAsunto = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlMensajes.SuspendLayout();
@@ -330,6 +331,7 @@
             // 
             // pnlRespuesta
             // 
+            this.pnlRespuesta.Controls.Add(this.button1);
             this.pnlRespuesta.Controls.Add(this.btnCambiarCategoria);
             this.pnlRespuesta.Controls.Add(this.btnResponder);
             this.pnlRespuesta.Controls.Add(this.rtfRespuesta);
@@ -466,6 +468,22 @@
             this.lblAsunto.TabIndex = 0;
             this.lblAsunto.Text = "Falla en las impresoras del Complejo de Innovación Académica";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(507, 296);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(165, 33);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Ver Tareas";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // frmInfoTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -524,5 +542,6 @@
         private System.Windows.Forms.Button btnCambiarCategoria;
         private System.Windows.Forms.Button btnCambiarEstado;
         private System.Windows.Forms.Button btnEscalar;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -76,7 +76,7 @@
             this.pnlMensajes.Location = new System.Drawing.Point(320, 82);
             this.pnlMensajes.Name = "pnlMensajes";
             this.pnlMensajes.Size = new System.Drawing.Size(732, 512);
-            this.pnlMensajes.TabIndex = 21;
+            this.pnlMensajes.TabIndex = 2;
             // 
             // pnlRespuesta
             // 
@@ -86,7 +86,7 @@
             this.pnlRespuesta.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.pnlRespuesta.Name = "pnlRespuesta";
             this.pnlRespuesta.Size = new System.Drawing.Size(706, 362);
-            this.pnlRespuesta.TabIndex = 21;
+            this.pnlRespuesta.TabIndex = 3;
             // 
             // btnResponder
             // 
@@ -99,7 +99,7 @@
             this.btnResponder.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnResponder.Name = "btnResponder";
             this.btnResponder.Size = new System.Drawing.Size(252, 45);
-            this.btnResponder.TabIndex = 25;
+            this.btnResponder.TabIndex = 1;
             this.btnResponder.Text = "Responder";
             this.btnResponder.UseVisualStyleBackColor = false;
             this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
@@ -110,8 +110,10 @@
             this.rtfRespuesta.Location = new System.Drawing.Point(21, 22);
             this.rtfRespuesta.Name = "rtfRespuesta";
             this.rtfRespuesta.Size = new System.Drawing.Size(663, 198);
-            this.rtfRespuesta.TabIndex = 22;
+            this.rtfRespuesta.TabIndex = 1;
             this.rtfRespuesta.Text = "";
+            this.rtfRespuesta.Enter += new System.EventHandler(this.rtfRespuesta_Enter);
+            this.rtfRespuesta.Leave += new System.EventHandler(this.rtfRespuesta_Leave);
             // 
             // pnlMsgAgente
             // 
@@ -122,7 +124,7 @@
             this.pnlMsgAgente.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.pnlMsgAgente.Name = "pnlMsgAgente";
             this.pnlMsgAgente.Size = new System.Drawing.Size(706, 186);
-            this.pnlMsgAgente.TabIndex = 20;
+            this.pnlMsgAgente.TabIndex = 2;
             // 
             // lblFechaAgente
             // 
@@ -132,7 +134,7 @@
             this.lblFechaAgente.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lblFechaAgente.Name = "lblFechaAgente";
             this.lblFechaAgente.Size = new System.Drawing.Size(654, 20);
-            this.lblFechaAgente.TabIndex = 19;
+            this.lblFechaAgente.TabIndex = 1;
             this.lblFechaAgente.Text = "2020/06/20 - 12:51";
             // 
             // lblMsgAgente
@@ -143,7 +145,7 @@
             this.lblMsgAgente.Margin = new System.Windows.Forms.Padding(18, 0, 18, 0);
             this.lblMsgAgente.Name = "lblMsgAgente";
             this.lblMsgAgente.Size = new System.Drawing.Size(666, 123);
-            this.lblMsgAgente.TabIndex = 18;
+            this.lblMsgAgente.TabIndex = 2;
             this.lblMsgAgente.Text = resources.GetString("lblMsgAgente.Text");
             // 
             // lblNombreAgente
@@ -154,7 +156,7 @@
             this.lblNombreAgente.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lblNombreAgente.Name = "lblNombreAgente";
             this.lblNombreAgente.Size = new System.Drawing.Size(654, 20);
-            this.lblNombreAgente.TabIndex = 17;
+            this.lblNombreAgente.TabIndex = 0;
             this.lblNombreAgente.Text = "VERASTEGUI SANCHEZ, FERNANDO GUILLERMO";
             // 
             // pnlMsgUsuario
@@ -166,7 +168,7 @@
             this.pnlMsgUsuario.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.pnlMsgUsuario.Name = "pnlMsgUsuario";
             this.pnlMsgUsuario.Size = new System.Drawing.Size(706, 163);
-            this.pnlMsgUsuario.TabIndex = 19;
+            this.pnlMsgUsuario.TabIndex = 1;
             // 
             // lblFechaUsuario
             // 
@@ -176,7 +178,7 @@
             this.lblFechaUsuario.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lblFechaUsuario.Name = "lblFechaUsuario";
             this.lblFechaUsuario.Size = new System.Drawing.Size(654, 20);
-            this.lblFechaUsuario.TabIndex = 20;
+            this.lblFechaUsuario.TabIndex = 1;
             this.lblFechaUsuario.Text = "2020/06/18 - 16:20";
             // 
             // lblMsgUsuario
@@ -186,7 +188,7 @@
             this.lblMsgUsuario.Margin = new System.Windows.Forms.Padding(18, 0, 18, 0);
             this.lblMsgUsuario.Name = "lblMsgUsuario";
             this.lblMsgUsuario.Size = new System.Drawing.Size(666, 101);
-            this.lblMsgUsuario.TabIndex = 18;
+            this.lblMsgUsuario.TabIndex = 2;
             this.lblMsgUsuario.Text = resources.GetString("lblMsgUsuario.Text");
             // 
             // lblNombreUsuario
@@ -197,7 +199,7 @@
             this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(3, 0, 3, 10);
             this.lblNombreUsuario.Name = "lblNombreUsuario";
             this.lblNombreUsuario.Size = new System.Drawing.Size(654, 22);
-            this.lblNombreUsuario.TabIndex = 17;
+            this.lblNombreUsuario.TabIndex = 0;
             this.lblNombreUsuario.Text = "ROLDAN HUAYLLASCO, STEFANO";
             // 
             // lblAsunto
@@ -208,7 +210,7 @@
             this.lblAsunto.Margin = new System.Windows.Forms.Padding(3, 0, 3, 25);
             this.lblAsunto.Name = "lblAsunto";
             this.lblAsunto.Size = new System.Drawing.Size(655, 50);
-            this.lblAsunto.TabIndex = 17;
+            this.lblAsunto.TabIndex = 0;
             this.lblAsunto.Text = "Falla en las impresoras del Complejo de Innovación Académica";
             // 
             // lblActFij
@@ -220,7 +222,7 @@
             this.lblActFij.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblActFij.Name = "lblActFij";
             this.lblActFij.Size = new System.Drawing.Size(90, 20);
-            this.lblActFij.TabIndex = 16;
+            this.lblActFij.TabIndex = 11;
             this.lblActFij.Text = "201511448";
             // 
             // lblTituloId
@@ -231,7 +233,7 @@
             this.lblTituloId.Location = new System.Drawing.Point(19, 20);
             this.lblTituloId.Name = "lblTituloId";
             this.lblTituloId.Size = new System.Drawing.Size(109, 22);
-            this.lblTituloId.TabIndex = 5;
+            this.lblTituloId.TabIndex = 0;
             this.lblTituloId.Text = "ID del ticket";
             // 
             // lblId
@@ -243,7 +245,7 @@
             this.lblId.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(94, 20);
-            this.lblId.TabIndex = 6;
+            this.lblId.TabIndex = 1;
             this.lblId.Text = "# 19258321";
             // 
             // lblTituloActFij
@@ -254,7 +256,7 @@
             this.lblTituloActFij.Location = new System.Drawing.Point(19, 415);
             this.lblTituloActFij.Name = "lblTituloActFij";
             this.lblTituloActFij.Size = new System.Drawing.Size(93, 22);
-            this.lblTituloActFij.TabIndex = 15;
+            this.lblTituloActFij.TabIndex = 10;
             this.lblTituloActFij.Text = "Activo fijo";
             // 
             // lblTituloCreacion
@@ -265,7 +267,7 @@
             this.lblTituloCreacion.Location = new System.Drawing.Point(19, 99);
             this.lblTituloCreacion.Name = "lblTituloCreacion";
             this.lblTituloCreacion.Size = new System.Drawing.Size(79, 22);
-            this.lblTituloCreacion.TabIndex = 7;
+            this.lblTituloCreacion.TabIndex = 2;
             this.lblTituloCreacion.Text = "Creación";
             // 
             // lblBiblioteca
@@ -277,7 +279,7 @@
             this.lblBiblioteca.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblBiblioteca.Name = "lblBiblioteca";
             this.lblBiblioteca.Size = new System.Drawing.Size(257, 20);
-            this.lblBiblioteca.TabIndex = 14;
+            this.lblBiblioteca.TabIndex = 9;
             this.lblBiblioteca.Text = "Complejo de Innovación Académica";
             // 
             // lblCreacion
@@ -289,7 +291,7 @@
             this.lblCreacion.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblCreacion.Name = "lblCreacion";
             this.lblCreacion.Size = new System.Drawing.Size(149, 20);
-            this.lblCreacion.TabIndex = 8;
+            this.lblCreacion.TabIndex = 3;
             this.lblCreacion.Text = "2020/06/18 - 16:20";
             // 
             // lblTituloBiblioteca
@@ -300,7 +302,7 @@
             this.lblTituloBiblioteca.Location = new System.Drawing.Point(19, 336);
             this.lblTituloBiblioteca.Name = "lblTituloBiblioteca";
             this.lblTituloBiblioteca.Size = new System.Drawing.Size(90, 22);
-            this.lblTituloBiblioteca.TabIndex = 13;
+            this.lblTituloBiblioteca.TabIndex = 8;
             this.lblTituloBiblioteca.Text = "Biblioteca";
             // 
             // lblTituloUltMod
@@ -311,7 +313,7 @@
             this.lblTituloUltMod.Location = new System.Drawing.Point(19, 178);
             this.lblTituloUltMod.Name = "lblTituloUltMod";
             this.lblTituloUltMod.Size = new System.Drawing.Size(173, 22);
-            this.lblTituloUltMod.TabIndex = 9;
+            this.lblTituloUltMod.TabIndex = 4;
             this.lblTituloUltMod.Text = "Última modificación";
             // 
             // lblEstado
@@ -323,7 +325,7 @@
             this.lblEstado.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(62, 20);
-            this.lblEstado.TabIndex = 12;
+            this.lblEstado.TabIndex = 7;
             this.lblEstado.Text = "Abierto";
             // 
             // lblUltMod
@@ -335,7 +337,7 @@
             this.lblUltMod.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblUltMod.Name = "lblUltMod";
             this.lblUltMod.Size = new System.Drawing.Size(149, 20);
-            this.lblUltMod.TabIndex = 10;
+            this.lblUltMod.TabIndex = 5;
             this.lblUltMod.Text = "2020/06/20 - 12:51";
             // 
             // lblTituloEstado
@@ -346,7 +348,7 @@
             this.lblTituloEstado.Location = new System.Drawing.Point(19, 257);
             this.lblTituloEstado.Name = "lblTituloEstado";
             this.lblTituloEstado.Size = new System.Drawing.Size(63, 22);
-            this.lblTituloEstado.TabIndex = 11;
+            this.lblTituloEstado.TabIndex = 6;
             this.lblTituloEstado.Text = "Estado";
             // 
             // btnVolver
@@ -393,7 +395,7 @@
             this.pnlDatos.Location = new System.Drawing.Point(12, 82);
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(302, 512);
-            this.pnlDatos.TabIndex = 20;
+            this.pnlDatos.TabIndex = 1;
             // 
             // pnlTitulo
             // 
@@ -404,7 +406,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
-            this.pnlTitulo.TabIndex = 19;
+            this.pnlTitulo.TabIndex = 0;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // frmInfoTicketEmpleado
@@ -416,6 +418,7 @@
             this.Controls.Add(this.pnlDatos);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInfoTicketEmpleado";
             this.Text = "frmInfoTicketEmpleado";
             this.pnlMensajes.ResumeLayout(false);

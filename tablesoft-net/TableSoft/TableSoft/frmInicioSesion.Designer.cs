@@ -128,7 +128,7 @@
             this.pnlLogin.ForeColor = System.Drawing.Color.White;
             this.pnlLogin.Location = new System.Drawing.Point(237, 172);
             this.pnlLogin.Name = "pnlLogin";
-            this.pnlLogin.Size = new System.Drawing.Size(410, 353);
+            this.pnlLogin.Size = new System.Drawing.Size(410, 364);
             this.pnlLogin.TabIndex = 0;
             // 
             // txtErrPassword
@@ -163,7 +163,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnLogin.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -225,7 +225,7 @@
             // 
             this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picExit.Image = global::TableSoft.Properties.Resources.Exit;
-            this.picExit.Location = new System.Drawing.Point(817, 494);
+            this.picExit.Location = new System.Drawing.Point(805, 484);
             this.picExit.Margin = new System.Windows.Forms.Padding(6);
             this.picExit.Name = "picExit";
             this.picExit.Size = new System.Drawing.Size(52, 52);
@@ -243,7 +243,7 @@
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.picExit);
             this.Controls.Add(this.pnlLogin);

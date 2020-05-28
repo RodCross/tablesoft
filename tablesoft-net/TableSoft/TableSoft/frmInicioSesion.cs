@@ -16,7 +16,7 @@ namespace TableSoft
         BindingList<Usuario> usuarios = new BindingList<Usuario>();
         Usuario user1 = new Usuario("a20167474@pucp.edu.pe", "abcd1234", "Empleado");
         Usuario user2 = new Usuario("f.verastegui@pucp.edu.pe", "abcd1234", "Agente");
-        Usuario user3 = new Usuario("admin", "admin", "Agente");
+        Usuario user3 = new Usuario("a", "a", "Admin");
 
         public frmInicioSesion()
         {
@@ -25,6 +25,44 @@ namespace TableSoft
             usuarios.Add(user1);
             usuarios.Add(user2);
             usuarios.Add(user3);
+        }
+
+        private void AbrirInicioEmpleado()
+        {
+            frmInicioEmpleado frm = new frmInicioEmpleado
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            // Mostrar pagina inicial al cerrar sesion
+            frm.FormClosing += delegate
+            {
+                this.Show();
+                LimpiarCampos();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void AbrirInicioAgente()
+        {
+            frmInicioAgente frm = new frmInicioAgente
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            // Mostrar pagina inicial al cerrar sesion
+            frm.FormClosing += delegate
+            {
+                this.Show();
+                LimpiarCampos();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -58,21 +96,15 @@ namespace TableSoft
                 {
                     if (txtEmail.Text == usuario.Email && txtPassword.Text == usuario.Password)
                     {
-                        frmInicioEmpleado frm = new frmInicioEmpleado
+                        // Llevar a inicio en funcion del rol
+                        if (usuario.Rol == "Empleado")
                         {
-                            StartPosition = FormStartPosition.Manual,
-                            Location = this.Location
-                        };
-
-                        // Mostrar pagina inicial al cerrar sesion
-                        frm.FormClosing += delegate
+                            AbrirInicioEmpleado();
+                        }
+                        else if (usuario.Rol == "Agente")
                         {
-                            this.Show();
-                            LimpiarCampos();
-                        };
-
-                        frm.Show();
-                        this.Hide();
+                            AbrirInicioAgente();
+                        }
                         login = true;
                         break;
                     }

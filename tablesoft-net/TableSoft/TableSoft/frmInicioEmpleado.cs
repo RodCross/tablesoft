@@ -41,7 +41,7 @@ namespace TableSoft
 
         private void btnEstado_Click(object sender, EventArgs e)
         {
-            frmListaTicketEmpleado frm = new frmListaTicketEmpleado();
+            frmListaTicketsEmpleado frm = new frmListaTicketsEmpleado();
             frm.ShowDialog();
         }
     }

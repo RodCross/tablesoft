@@ -178,11 +178,11 @@
     <Compile Include="frmInicioSupervisor.Designer.cs">
       <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaTicketEmpleado.cs">
+    <Compile Include="frmListaTicketsEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaTicketEmpleado.Designer.cs">
-      <DependentUpon>frmListaTicketEmpleado.cs</DependentUpon>
+    <Compile Include="frmListaTicketsEmpleado.Designer.cs">
+      <DependentUpon>frmListaTicketsEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmListaTicketsAgente.cs">
       <SubType>Form</SubType>
@@ -339,8 +339,8 @@
     <EmbeddedResource Include="frmInicioSupervisor.resx">
       <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaTicketEmpleado.resx">
-      <DependentUpon>frmListaTicketEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="frmListaTicketsEmpleado.resx">
+      <DependentUpon>frmListaTicketsEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmListaTicketsAgente.resx">
       <DependentUpon>frmListaTicketsAgente.cs</DependentUpon>

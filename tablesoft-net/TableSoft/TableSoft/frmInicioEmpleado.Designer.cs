@@ -101,7 +101,8 @@
             // 
             // btnEstado
             // 
-            this.btnEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnEstado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEstado.ForeColor = System.Drawing.Color.White;
@@ -185,7 +186,8 @@
             // 
             // btnAbrir
             // 
-            this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnAbrir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnAbrir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAbrir.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAbrir.ForeColor = System.Drawing.Color.White;
@@ -269,7 +271,7 @@
             this.lklLogout.Location = new System.Drawing.Point(729, 14);
             this.lklLogout.Name = "lklLogout";
             this.lklLogout.Size = new System.Drawing.Size(128, 25);
-            this.lklLogout.TabIndex = 2;
+            this.lklLogout.TabIndex = 0;
             this.lklLogout.TabStop = true;
             this.lklLogout.Text = "Cerrar sesión";
             this.lklLogout.VisitedLinkColor = System.Drawing.Color.White;
@@ -279,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);

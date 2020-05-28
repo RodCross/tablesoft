@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmListaTicketEmpleado : Form
+    public partial class frmListaTicketsEmpleado : Form
     {
-        public frmListaTicketEmpleado()
+        public frmListaTicketsEmpleado()
         {
             InitializeComponent();
         }
@@ -24,7 +24,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmInfoTicketEmpleado frm = new frmInfoTicketEmpleado();
+            frm.ShowDialog();
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

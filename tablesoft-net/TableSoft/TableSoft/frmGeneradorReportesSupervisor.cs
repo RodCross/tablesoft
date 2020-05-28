@@ -16,5 +16,25 @@ namespace TableSoft
         {
             InitializeComponent();
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Se ha generado el reporte con los parámetros seleccionados.",
+                "Reporte generado exitosamente",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
+        }
     }
 }

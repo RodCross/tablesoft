@@ -117,6 +117,7 @@ namespace TableSoft
             txtPassword.Text = "";
             txtErrEmail.Text = "";
             txtErrPassword.Text = "";
+            txtEmail.Select();
         }
 
         // Eventos

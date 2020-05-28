@@ -28,160 +28,144 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeneradorReportesAdministrador));
             this.btnVolver = new System.Windows.Forms.Button();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.cboEquipo = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.chkPorcentajeDemRes = new System.Windows.Forms.CheckBox();
-            this.chkTicketsEscalados = new System.Windows.Forms.CheckBox();
-            this.chkTicketsDemorados = new System.Windows.Forms.CheckBox();
-            this.chkTicketsResueltos = new System.Windows.Forms.CheckBox();
             this.lblUrgencia = new System.Windows.Forms.Label();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblEquipo = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblReportes = new System.Windows.Forms.Label();
-            this.groupBox1.SuspendLayout();
+            this.grpIndicadores = new System.Windows.Forms.GroupBox();
+            this.chkPorcentajeEscRes = new System.Windows.Forms.CheckBox();
+            this.chkPorcentajeDemRes = new System.Windows.Forms.CheckBox();
+            this.chkTicketsEscalados = new System.Windows.Forms.CheckBox();
+            this.chkTicketsDemorados = new System.Windows.Forms.CheckBox();
+            this.chkTicketsResueltos = new System.Windows.Forms.CheckBox();
+            this.cboEquipo = new System.Windows.Forms.ComboBox();
+            this.cboUrgencia = new System.Windows.Forms.ComboBox();
+            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
+            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaFin = new System.Windows.Forms.Label();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.btnGenerar = new System.Windows.Forms.Button();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
             this.pnlTitulo.SuspendLayout();
+            this.grpIndicadores.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(297, 422);
+            this.btnVolver.Location = new System.Drawing.Point(97, 571);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(106, 33);
-            this.btnVolver.TabIndex = 48;
+            this.btnVolver.TabIndex = 20;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // dtpFechaFin
+            // lblUrgencia
             // 
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(562, 198);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(192, 20);
-            this.dtpFechaFin.TabIndex = 47;
+            this.lblUrgencia.AutoSize = true;
+            this.lblUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUrgencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblUrgencia.Location = new System.Drawing.Point(92, 137);
+            this.lblUrgencia.Name = "lblUrgencia";
+            this.lblUrgencia.Size = new System.Drawing.Size(72, 21);
+            this.lblUrgencia.TabIndex = 24;
+            this.lblUrgencia.Text = "Urgencia";
+            this.lblUrgencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // dtpFechaInicio
+            // lblCategoria
             // 
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(166, 197);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(192, 20);
-            this.dtpFechaInicio.TabIndex = 46;
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblCategoria.Location = new System.Drawing.Point(87, 103);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(77, 21);
+            this.lblCategoria.TabIndex = 23;
+            this.lblCategoria.Text = "Categoría";
+            this.lblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblFechaFin
+            // lblEquipo
             // 
-            this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaFin.Location = new System.Drawing.Point(437, 197);
-            this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(96, 21);
-            this.lblFechaFin.TabIndex = 45;
-            this.lblFechaFin.Text = "Fecha de fin:";
+            this.lblEquipo.AutoSize = true;
+            this.lblEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblEquipo.Location = new System.Drawing.Point(105, 171);
+            this.lblEquipo.Name = "lblEquipo";
+            this.lblEquipo.Size = new System.Drawing.Size(58, 21);
+            this.lblEquipo.TabIndex = 25;
+            this.lblEquipo.Text = "Equipo";
+            this.lblEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblFechaInicio
+            // pnlTitulo
             // 
-            this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(21, 197);
-            this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(115, 21);
-            this.lblFechaInicio.TabIndex = 44;
-            this.lblFechaInicio.Text = "Fecha de inicio:";
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.lblReportes);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(444, 70);
+            this.pnlTitulo.TabIndex = 22;
             // 
-            // btnGuardar
+            // lblReportes
             // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(427, 422);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(106, 33);
-            this.btnGuardar.TabIndex = 43;
-            this.btnGuardar.Text = "Generar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.lblReportes.AutoSize = true;
+            this.lblReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReportes.ForeColor = System.Drawing.Color.White;
+            this.lblReportes.Location = new System.Drawing.Point(24, 22);
+            this.lblReportes.Name = "lblReportes";
+            this.lblReportes.Size = new System.Drawing.Size(267, 27);
+            this.lblReportes.TabIndex = 0;
+            this.lblReportes.Text = "Generar reporte de tickets";
             // 
-            // cboEquipo
+            // grpIndicadores
             // 
-            this.cboEquipo.FormattingEnabled = true;
-            this.cboEquipo.Location = new System.Drawing.Point(166, 161);
-            this.cboEquipo.Name = "cboEquipo";
-            this.cboEquipo.Size = new System.Drawing.Size(192, 21);
-            this.cboEquipo.TabIndex = 42;
+            this.grpIndicadores.Controls.Add(this.chkPorcentajeEscRes);
+            this.grpIndicadores.Controls.Add(this.chkPorcentajeDemRes);
+            this.grpIndicadores.Controls.Add(this.chkTicketsEscalados);
+            this.grpIndicadores.Controls.Add(this.chkTicketsDemorados);
+            this.grpIndicadores.Controls.Add(this.chkTicketsResueltos);
+            this.grpIndicadores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpIndicadores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.grpIndicadores.Location = new System.Drawing.Point(38, 311);
+            this.grpIndicadores.Name = "grpIndicadores";
+            this.grpIndicadores.Size = new System.Drawing.Size(369, 223);
+            this.grpIndicadores.TabIndex = 19;
+            this.grpIndicadores.TabStop = false;
+            this.grpIndicadores.Text = "Indicadores";
             // 
-            // comboBox2
+            // chkPorcentajeEscRes
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(166, 128);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(192, 21);
-            this.comboBox2.TabIndex = 41;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(166, 93);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 21);
-            this.comboBox1.TabIndex = 40;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.chkPorcentajeDemRes);
-            this.groupBox1.Controls.Add(this.chkTicketsEscalados);
-            this.groupBox1.Controls.Add(this.chkTicketsDemorados);
-            this.groupBox1.Controls.Add(this.chkTicketsResueltos);
-            this.groupBox1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.groupBox1.Location = new System.Drawing.Point(25, 237);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(770, 158);
-            this.groupBox1.TabIndex = 39;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Indicadores:";
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(422, 76);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(267, 21);
-            this.checkBox2.TabIndex = 19;
-            this.checkBox2.Text = "Porcentaje de tickets escalados/resueltos";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkPorcentajeEscRes.AutoSize = true;
+            this.chkPorcentajeEscRes.Location = new System.Drawing.Point(28, 179);
+            this.chkPorcentajeEscRes.Name = "chkPorcentajeEscRes";
+            this.chkPorcentajeEscRes.Size = new System.Drawing.Size(267, 21);
+            this.chkPorcentajeEscRes.TabIndex = 4;
+            this.chkPorcentajeEscRes.Text = "Porcentaje de tickets escalados/resueltos";
+            this.chkPorcentajeEscRes.UseVisualStyleBackColor = true;
             // 
             // chkPorcentajeDemRes
             // 
             this.chkPorcentajeDemRes.AutoSize = true;
-            this.chkPorcentajeDemRes.Location = new System.Drawing.Point(422, 39);
+            this.chkPorcentajeDemRes.Location = new System.Drawing.Point(28, 143);
             this.chkPorcentajeDemRes.Name = "chkPorcentajeDemRes";
             this.chkPorcentajeDemRes.Size = new System.Drawing.Size(277, 21);
-            this.chkPorcentajeDemRes.TabIndex = 18;
+            this.chkPorcentajeDemRes.TabIndex = 3;
             this.chkPorcentajeDemRes.Text = "Porcentaje de tickets demorados/resueltos";
             this.chkPorcentajeDemRes.UseVisualStyleBackColor = true;
             // 
             // chkTicketsEscalados
             // 
             this.chkTicketsEscalados.AutoSize = true;
-            this.chkTicketsEscalados.Location = new System.Drawing.Point(36, 113);
+            this.chkTicketsEscalados.Location = new System.Drawing.Point(28, 107);
             this.chkTicketsEscalados.Name = "chkTicketsEscalados";
             this.chkTicketsEscalados.Size = new System.Drawing.Size(200, 21);
             this.chkTicketsEscalados.TabIndex = 2;
@@ -191,7 +175,7 @@
             // chkTicketsDemorados
             // 
             this.chkTicketsDemorados.AutoSize = true;
-            this.chkTicketsDemorados.Location = new System.Drawing.Point(36, 76);
+            this.chkTicketsDemorados.Location = new System.Drawing.Point(28, 71);
             this.chkTicketsDemorados.Name = "chkTicketsDemorados";
             this.chkTicketsDemorados.Size = new System.Drawing.Size(210, 21);
             this.chkTicketsDemorados.TabIndex = 1;
@@ -201,93 +185,126 @@
             // chkTicketsResueltos
             // 
             this.chkTicketsResueltos.AutoSize = true;
-            this.chkTicketsResueltos.Location = new System.Drawing.Point(36, 39);
+            this.chkTicketsResueltos.Location = new System.Drawing.Point(28, 35);
             this.chkTicketsResueltos.Name = "chkTicketsResueltos";
             this.chkTicketsResueltos.Size = new System.Drawing.Size(195, 21);
             this.chkTicketsResueltos.TabIndex = 0;
             this.chkTicketsResueltos.Text = "Cantidad de tickets resueltos";
             this.chkTicketsResueltos.UseVisualStyleBackColor = true;
             // 
-            // lblUrgencia
+            // cboEquipo
             // 
-            this.lblUrgencia.AutoSize = true;
-            this.lblUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUrgencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblUrgencia.Location = new System.Drawing.Point(61, 128);
-            this.lblUrgencia.Name = "lblUrgencia";
-            this.lblUrgencia.Size = new System.Drawing.Size(75, 21);
-            this.lblUrgencia.TabIndex = 38;
-            this.lblUrgencia.Text = "Urgencia:";
+            this.cboEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEquipo.FormattingEnabled = true;
+            this.cboEquipo.Location = new System.Drawing.Point(185, 171);
+            this.cboEquipo.Name = "cboEquipo";
+            this.cboEquipo.Size = new System.Drawing.Size(192, 25);
+            this.cboEquipo.TabIndex = 16;
             // 
-            // lblCategoria
+            // cboUrgencia
             // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCategoria.Location = new System.Drawing.Point(56, 93);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(80, 21);
-            this.lblCategoria.TabIndex = 37;
-            this.lblCategoria.Text = "Categoría:";
+            this.cboUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboUrgencia.FormattingEnabled = true;
+            this.cboUrgencia.Location = new System.Drawing.Point(185, 137);
+            this.cboUrgencia.Name = "cboUrgencia";
+            this.cboUrgencia.Size = new System.Drawing.Size(192, 25);
+            this.cboUrgencia.TabIndex = 15;
             // 
-            // lblEquipo
+            // dtpFechaFin
             // 
-            this.lblEquipo.AutoSize = true;
-            this.lblEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblEquipo.Location = new System.Drawing.Point(74, 161);
-            this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(61, 21);
-            this.lblEquipo.TabIndex = 36;
-            this.lblEquipo.Text = "Equipo:";
+            this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFin.Location = new System.Drawing.Point(185, 239);
+            this.dtpFechaFin.Name = "dtpFechaFin";
+            this.dtpFechaFin.Size = new System.Drawing.Size(192, 24);
+            this.dtpFechaFin.TabIndex = 18;
             // 
-            // pnlTitulo
+            // dtpFechaInicio
             // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblReportes);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(814, 70);
-            this.pnlTitulo.TabIndex = 35;
+            this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaInicio.Location = new System.Drawing.Point(185, 205);
+            this.dtpFechaInicio.Name = "dtpFechaInicio";
+            this.dtpFechaInicio.Size = new System.Drawing.Size(192, 24);
+            this.dtpFechaInicio.TabIndex = 17;
             // 
-            // lblReportes
+            // lblFechaFin
             // 
-            this.lblReportes.AutoSize = true;
-            this.lblReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblReportes.ForeColor = System.Drawing.Color.White;
-            this.lblReportes.Location = new System.Drawing.Point(30, 23);
-            this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(194, 27);
-            this.lblReportes.TabIndex = 0;
-            this.lblReportes.Text = "Reporte de Tickets";
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblFechaFin.Location = new System.Drawing.Point(71, 239);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(93, 21);
+            this.lblFechaFin.TabIndex = 27;
+            this.lblFechaFin.Text = "Fecha de fin";
+            this.lblFechaFin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblFechaInicio.Location = new System.Drawing.Point(52, 205);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(112, 21);
+            this.lblFechaInicio.TabIndex = 26;
+            this.lblFechaInicio.Text = "Fecha de inicio";
+            this.lblFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnGenerar
+            // 
+            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerar.FlatAppearance.BorderSize = 0;
+            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.ForeColor = System.Drawing.Color.White;
+            this.btnGenerar.Location = new System.Drawing.Point(242, 571);
+            this.btnGenerar.Name = "btnGenerar";
+            this.btnGenerar.Size = new System.Drawing.Size(106, 33);
+            this.btnGenerar.TabIndex = 21;
+            this.btnGenerar.Text = "Generar";
+            this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
+            // 
+            // cboCategoria
+            // 
+            this.cboCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(185, 103);
+            this.cboCategoria.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(192, 25);
+            this.cboCategoria.TabIndex = 14;
             // 
             // frmGeneradorReportesAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 477);
+            this.ClientSize = new System.Drawing.Size(444, 640);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.dtpFechaFin);
-            this.Controls.Add(this.dtpFechaInicio);
-            this.Controls.Add(this.lblFechaFin);
-            this.Controls.Add(this.lblFechaInicio);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.cboEquipo);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblUrgencia);
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblEquipo);
             this.Controls.Add(this.pnlTitulo);
+            this.Controls.Add(this.grpIndicadores);
+            this.Controls.Add(this.cboEquipo);
+            this.Controls.Add(this.cboUrgencia);
+            this.Controls.Add(this.dtpFechaFin);
+            this.Controls.Add(this.dtpFechaInicio);
+            this.Controls.Add(this.lblFechaFin);
+            this.Controls.Add(this.lblFechaInicio);
+            this.Controls.Add(this.btnGenerar);
+            this.Controls.Add(this.cboCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGeneradorReportesAdministrador";
             this.Text = "frmGeneradorReportesAdministrador";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
+            this.grpIndicadores.ResumeLayout(false);
+            this.grpIndicadores.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -296,24 +313,24 @@
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.DateTimePicker dtpFechaFin;
-        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
-        private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.Label lblFechaInicio;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.ComboBox cboEquipo;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox chkPorcentajeDemRes;
-        private System.Windows.Forms.CheckBox chkTicketsEscalados;
-        private System.Windows.Forms.CheckBox chkTicketsDemorados;
-        private System.Windows.Forms.CheckBox chkTicketsResueltos;
         private System.Windows.Forms.Label lblUrgencia;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblReportes;
+        private System.Windows.Forms.GroupBox grpIndicadores;
+        private System.Windows.Forms.CheckBox chkPorcentajeEscRes;
+        private System.Windows.Forms.CheckBox chkPorcentajeDemRes;
+        private System.Windows.Forms.CheckBox chkTicketsEscalados;
+        private System.Windows.Forms.CheckBox chkTicketsDemorados;
+        private System.Windows.Forms.CheckBox chkTicketsResueltos;
+        private System.Windows.Forms.ComboBox cboEquipo;
+        private System.Windows.Forms.ComboBox cboUrgencia;
+        private System.Windows.Forms.DateTimePicker dtpFechaFin;
+        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
+        private System.Windows.Forms.Label lblFechaFin;
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.Button btnGenerar;
+        private System.Windows.Forms.ComboBox cboCategoria;
     }
 }

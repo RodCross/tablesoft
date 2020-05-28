@@ -149,7 +149,7 @@
             // 
             // picGestionar
             // 
-            this.picGestionar.Image = ((System.Drawing.Image)(resources.GetObject("picGestionar.Image")));
+            this.picGestionar.Image = global::TableSoft.Properties.Resources.InicioEmpleadoVer;
             this.picGestionar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picGestionar.InitialImage")));
             this.picGestionar.Location = new System.Drawing.Point(20, 57);
             this.picGestionar.Name = "picGestionar";
@@ -211,7 +211,7 @@
             // 
             // picAtender
             // 
-            this.picAtender.Image = ((System.Drawing.Image)(resources.GetObject("picAtender.Image")));
+            this.picAtender.Image = global::TableSoft.Properties.Resources.InicioEmpleadoAbrir;
             this.picAtender.Location = new System.Drawing.Point(31, 69);
             this.picAtender.Name = "picAtender";
             this.picAtender.Size = new System.Drawing.Size(96, 124);

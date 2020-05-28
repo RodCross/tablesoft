@@ -37,31 +37,31 @@
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.pnlExt = new System.Windows.Forms.Panel();
             this.pnlInt = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.picReporte = new System.Windows.Forms.PictureBox();
+            this.pnlDer = new System.Windows.Forms.Panel();
             this.btnGenerar = new System.Windows.Forms.Button();
             this.lblGenerarReportes = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pnlDer = new System.Windows.Forms.Panel();
-            this.picEstado = new System.Windows.Forms.PictureBox();
+            this.lblDetalleGenerar = new System.Windows.Forms.Label();
+            this.pnlMed = new System.Windows.Forms.Panel();
             this.btnGestionar = new System.Windows.Forms.Button();
             this.lblGestionarTickets = new System.Windows.Forms.Label();
-            this.lblDetalleEstado = new System.Windows.Forms.Label();
+            this.lblDetalleGestionar = new System.Windows.Forms.Label();
             this.pnlIzq = new System.Windows.Forms.Panel();
-            this.picAbrir = new System.Windows.Forms.PictureBox();
-            this.lblAbrir = new System.Windows.Forms.Label();
-            this.lblDetalleAbrir = new System.Windows.Forms.Label();
+            this.lblAtender = new System.Windows.Forms.Label();
+            this.lblDetalleAtender = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
+            this.picGenerar = new System.Windows.Forms.PictureBox();
+            this.picGestionar = new System.Windows.Forms.PictureBox();
+            this.picAtender = new System.Windows.Forms.PictureBox();
             this.pnlOpciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlExt.SuspendLayout();
             this.pnlInt.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReporte)).BeginInit();
             this.pnlDer.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).BeginInit();
+            this.pnlMed.SuspendLayout();
             this.pnlIzq.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGenerar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGestionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtender)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlOpciones
@@ -72,7 +72,7 @@
             this.pnlOpciones.Location = new System.Drawing.Point(0, 106);
             this.pnlOpciones.Name = "pnlOpciones";
             this.pnlOpciones.Size = new System.Drawing.Size(1274, 51);
-            this.pnlOpciones.TabIndex = 6;
+            this.pnlOpciones.TabIndex = 2;
             // 
             // lklLogout
             // 
@@ -81,13 +81,14 @@
             this.lklLogout.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklLogout.LinkColor = System.Drawing.Color.White;
-            this.lklLogout.Location = new System.Drawing.Point(1120, 13);
+            this.lklLogout.Location = new System.Drawing.Point(1118, 13);
             this.lklLogout.Name = "lklLogout";
             this.lklLogout.Size = new System.Drawing.Size(128, 25);
-            this.lklLogout.TabIndex = 2;
+            this.lklLogout.TabIndex = 0;
             this.lklLogout.TabStop = true;
             this.lklLogout.Text = "Cerrar sesión";
             this.lklLogout.VisitedLinkColor = System.Drawing.Color.White;
+            this.lklLogout.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklLogout_LinkClicked);
             // 
             // pnlTitulo
             // 
@@ -99,7 +100,8 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1274, 106);
-            this.pnlTitulo.TabIndex = 5;
+            this.pnlTitulo.TabIndex = 1;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // lklFAQ
             // 
@@ -108,7 +110,7 @@
             this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold);
             this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(1110, 65);
+            this.lklFAQ.Location = new System.Drawing.Point(1108, 65);
             this.lklFAQ.Name = "lklFAQ";
             this.lklFAQ.Size = new System.Drawing.Size(138, 17);
             this.lklFAQ.TabIndex = 0;
@@ -116,6 +118,7 @@
             this.lklFAQ.Text = "Preguntas frecuentes";
             this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
+            this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);
             // 
             // lblBibliotecasPUCP
             // 
@@ -145,46 +148,36 @@
             this.pnlExt.Controls.Add(this.pnlInt);
             this.pnlExt.Location = new System.Drawing.Point(28, 185);
             this.pnlExt.Name = "pnlExt";
-            this.pnlExt.Size = new System.Drawing.Size(1220, 352);
-            this.pnlExt.TabIndex = 7;
+            this.pnlExt.Size = new System.Drawing.Size(1218, 352);
+            this.pnlExt.TabIndex = 0;
             // 
             // pnlInt
             // 
             this.pnlInt.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pnlInt.Controls.Add(this.panel1);
             this.pnlInt.Controls.Add(this.pnlDer);
+            this.pnlInt.Controls.Add(this.pnlMed);
             this.pnlInt.Controls.Add(this.pnlIzq);
             this.pnlInt.Location = new System.Drawing.Point(29, 26);
             this.pnlInt.Name = "pnlInt";
             this.pnlInt.Size = new System.Drawing.Size(1156, 300);
             this.pnlInt.TabIndex = 0;
             // 
-            // panel1
+            // pnlDer
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.Controls.Add(this.picReporte);
-            this.panel1.Controls.Add(this.btnGenerar);
-            this.panel1.Controls.Add(this.lblGenerarReportes);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(773, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(379, 294);
-            this.panel1.TabIndex = 9;
-            // 
-            // picReporte
-            // 
-            this.picReporte.Image = ((System.Drawing.Image)(resources.GetObject("picReporte.Image")));
-            this.picReporte.InitialImage = global::TableSoft.Properties.Resources.InicioSupervisorReporte;
-            this.picReporte.Location = new System.Drawing.Point(20, 57);
-            this.picReporte.Name = "picReporte";
-            this.picReporte.Size = new System.Drawing.Size(110, 149);
-            this.picReporte.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picReporte.TabIndex = 8;
-            this.picReporte.TabStop = false;
+            this.pnlDer.BackColor = System.Drawing.Color.Transparent;
+            this.pnlDer.Controls.Add(this.picGenerar);
+            this.pnlDer.Controls.Add(this.btnGenerar);
+            this.pnlDer.Controls.Add(this.lblGenerarReportes);
+            this.pnlDer.Controls.Add(this.lblDetalleGenerar);
+            this.pnlDer.Location = new System.Drawing.Point(773, 3);
+            this.pnlDer.Name = "pnlDer";
+            this.pnlDer.Size = new System.Drawing.Size(379, 294);
+            this.pnlDer.TabIndex = 2;
             // 
             // btnGenerar
             // 
-            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
@@ -194,12 +187,13 @@
             this.btnGenerar.TabIndex = 0;
             this.btnGenerar.Text = "Generar reporte de mi equipo";
             this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // lblGenerarReportes
             // 
             this.lblGenerarReportes.AutoSize = true;
             this.lblGenerarReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGenerarReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(171)))), ((int)(((byte)(40)))), ((int)(((byte)(29)))));
+            this.lblGenerarReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.lblGenerarReportes.Location = new System.Drawing.Point(85, 14);
             this.lblGenerarReportes.Name = "lblGenerarReportes";
             this.lblGenerarReportes.Size = new System.Drawing.Size(209, 32);
@@ -207,43 +201,33 @@
             this.lblGenerarReportes.Text = "Generar reportes";
             this.lblGenerarReportes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label2
+            // lblDetalleGenerar
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.label2.Location = new System.Drawing.Point(146, 99);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(202, 63);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Genera a detalle un reporte de los tickets atentidos de mi equipo";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDetalleGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleGenerar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblDetalleGenerar.Location = new System.Drawing.Point(146, 99);
+            this.lblDetalleGenerar.Name = "lblDetalleGenerar";
+            this.lblDetalleGenerar.Size = new System.Drawing.Size(202, 63);
+            this.lblDetalleGenerar.TabIndex = 0;
+            this.lblDetalleGenerar.Text = "Genera a detalle un reporte de los tickets atendidos de mi equipo";
+            this.lblDetalleGenerar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pnlDer
+            // pnlMed
             // 
-            this.pnlDer.BackColor = System.Drawing.Color.Transparent;
-            this.pnlDer.Controls.Add(this.picEstado);
-            this.pnlDer.Controls.Add(this.btnGestionar);
-            this.pnlDer.Controls.Add(this.lblGestionarTickets);
-            this.pnlDer.Controls.Add(this.lblDetalleEstado);
-            this.pnlDer.Location = new System.Drawing.Point(388, 3);
-            this.pnlDer.Name = "pnlDer";
-            this.pnlDer.Size = new System.Drawing.Size(379, 294);
-            this.pnlDer.TabIndex = 1;
-            // 
-            // picEstado
-            // 
-            this.picEstado.Image = ((System.Drawing.Image)(resources.GetObject("picEstado.Image")));
-            this.picEstado.InitialImage = ((System.Drawing.Image)(resources.GetObject("picEstado.InitialImage")));
-            this.picEstado.Location = new System.Drawing.Point(20, 57);
-            this.picEstado.Name = "picEstado";
-            this.picEstado.Size = new System.Drawing.Size(110, 149);
-            this.picEstado.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEstado.TabIndex = 8;
-            this.picEstado.TabStop = false;
+            this.pnlMed.BackColor = System.Drawing.Color.Transparent;
+            this.pnlMed.Controls.Add(this.picGestionar);
+            this.pnlMed.Controls.Add(this.btnGestionar);
+            this.pnlMed.Controls.Add(this.lblGestionarTickets);
+            this.pnlMed.Controls.Add(this.lblDetalleGestionar);
+            this.pnlMed.Location = new System.Drawing.Point(388, 3);
+            this.pnlMed.Name = "pnlMed";
+            this.pnlMed.Size = new System.Drawing.Size(379, 294);
+            this.pnlMed.TabIndex = 1;
             // 
             // btnGestionar
             // 
-            this.btnGestionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnGestionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionar.ForeColor = System.Drawing.Color.White;
@@ -253,6 +237,7 @@
             this.btnGestionar.TabIndex = 0;
             this.btnGestionar.Text = "Gestionar mis tickets";
             this.btnGestionar.UseVisualStyleBackColor = false;
+            this.btnGestionar.Click += new System.EventHandler(this.btnGestionar_Click);
             // 
             // lblGestionarTickets
             // 
@@ -266,66 +251,57 @@
             this.lblGestionarTickets.Text = "Gestionar tickets";
             this.lblGestionarTickets.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblDetalleEstado
+            // lblDetalleGestionar
             // 
-            this.lblDetalleEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblDetalleEstado.Location = new System.Drawing.Point(146, 99);
-            this.lblDetalleEstado.Name = "lblDetalleEstado";
-            this.lblDetalleEstado.Size = new System.Drawing.Size(202, 63);
-            this.lblDetalleEstado.TabIndex = 0;
-            this.lblDetalleEstado.Text = "Administra los archivos del historial de todos tus tickets de soporte, actuales y" +
+            this.lblDetalleGestionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleGestionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblDetalleGestionar.Location = new System.Drawing.Point(146, 99);
+            this.lblDetalleGestionar.Name = "lblDetalleGestionar";
+            this.lblDetalleGestionar.Size = new System.Drawing.Size(202, 63);
+            this.lblDetalleGestionar.TabIndex = 0;
+            this.lblDetalleGestionar.Text = "Administra los archivos del historial de todos tus tickets de soporte, actuales y" +
     " pasadas.";
-            this.lblDetalleEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDetalleGestionar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlIzq
             // 
             this.pnlIzq.BackColor = System.Drawing.Color.Transparent;
-            this.pnlIzq.Controls.Add(this.picAbrir);
-            this.pnlIzq.Controls.Add(this.lblAbrir);
-            this.pnlIzq.Controls.Add(this.lblDetalleAbrir);
+            this.pnlIzq.Controls.Add(this.picAtender);
+            this.pnlIzq.Controls.Add(this.lblAtender);
+            this.pnlIzq.Controls.Add(this.lblDetalleAtender);
             this.pnlIzq.Controls.Add(this.btnAtender);
             this.pnlIzq.Location = new System.Drawing.Point(3, 3);
             this.pnlIzq.Name = "pnlIzq";
             this.pnlIzq.Size = new System.Drawing.Size(379, 294);
             this.pnlIzq.TabIndex = 0;
             // 
-            // picAbrir
+            // lblAtender
             // 
-            this.picAbrir.Image = ((System.Drawing.Image)(resources.GetObject("picAbrir.Image")));
-            this.picAbrir.Location = new System.Drawing.Point(31, 69);
-            this.picAbrir.Name = "picAbrir";
-            this.picAbrir.Size = new System.Drawing.Size(96, 124);
-            this.picAbrir.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAbrir.TabIndex = 3;
-            this.picAbrir.TabStop = false;
+            this.lblAtender.AutoSize = true;
+            this.lblAtender.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAtender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
+            this.lblAtender.Location = new System.Drawing.Point(81, 14);
+            this.lblAtender.Name = "lblAtender";
+            this.lblAtender.Size = new System.Drawing.Size(216, 32);
+            this.lblAtender.TabIndex = 0;
+            this.lblAtender.Text = "Tickets de equipo";
+            this.lblAtender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblAbrir
+            // lblDetalleAtender
             // 
-            this.lblAbrir.AutoSize = true;
-            this.lblAbrir.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAbrir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.lblAbrir.Location = new System.Drawing.Point(81, 14);
-            this.lblAbrir.Name = "lblAbrir";
-            this.lblAbrir.Size = new System.Drawing.Size(216, 32);
-            this.lblAbrir.TabIndex = 0;
-            this.lblAbrir.Text = "Tickets de equipo";
-            this.lblAbrir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblDetalleAbrir
-            // 
-            this.lblDetalleAbrir.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDetalleAbrir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblDetalleAbrir.Location = new System.Drawing.Point(145, 99);
-            this.lblDetalleAbrir.Name = "lblDetalleAbrir";
-            this.lblDetalleAbrir.Size = new System.Drawing.Size(202, 63);
-            this.lblDetalleAbrir.TabIndex = 0;
-            this.lblDetalleAbrir.Text = "Revisa aquí los nuevos tickets de tu equipo esperados a ser atentidos";
-            this.lblDetalleAbrir.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblDetalleAtender.Font = new System.Drawing.Font("Microsoft PhagsPa", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDetalleAtender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblDetalleAtender.Location = new System.Drawing.Point(145, 99);
+            this.lblDetalleAtender.Name = "lblDetalleAtender";
+            this.lblDetalleAtender.Size = new System.Drawing.Size(202, 63);
+            this.lblDetalleAtender.TabIndex = 0;
+            this.lblDetalleAtender.Text = "Revisa aquí los nuevos tickets de tu equipo esperados a ser atentidos";
+            this.lblDetalleAtender.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // btnAtender
             // 
-            this.btnAtender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnAtender.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnAtender.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAtender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtender.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtender.ForeColor = System.Drawing.Color.White;
@@ -335,6 +311,39 @@
             this.btnAtender.TabIndex = 0;
             this.btnAtender.Text = "Atender nuevo ticket";
             this.btnAtender.UseVisualStyleBackColor = false;
+            this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
+            // 
+            // picGenerar
+            // 
+            this.picGenerar.Image = global::TableSoft.Properties.Resources.InicioSupervisorReporte;
+            this.picGenerar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picGenerar.InitialImage")));
+            this.picGenerar.Location = new System.Drawing.Point(20, 57);
+            this.picGenerar.Name = "picGenerar";
+            this.picGenerar.Size = new System.Drawing.Size(110, 149);
+            this.picGenerar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGenerar.TabIndex = 9;
+            this.picGenerar.TabStop = false;
+            // 
+            // picGestionar
+            // 
+            this.picGestionar.Image = global::TableSoft.Properties.Resources.InicioEmpleadoVer;
+            this.picGestionar.InitialImage = ((System.Drawing.Image)(resources.GetObject("picGestionar.InitialImage")));
+            this.picGestionar.Location = new System.Drawing.Point(20, 57);
+            this.picGestionar.Name = "picGestionar";
+            this.picGestionar.Size = new System.Drawing.Size(110, 149);
+            this.picGestionar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picGestionar.TabIndex = 8;
+            this.picGestionar.TabStop = false;
+            // 
+            // picAtender
+            // 
+            this.picAtender.Image = global::TableSoft.Properties.Resources.InicioEmpleadoAbrir;
+            this.picAtender.Location = new System.Drawing.Point(31, 69);
+            this.picAtender.Name = "picAtender";
+            this.picAtender.Size = new System.Drawing.Size(96, 124);
+            this.picAtender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAtender.TabIndex = 3;
+            this.picAtender.TabStop = false;
             // 
             // frmInicioSupervisor
             // 
@@ -345,6 +354,7 @@
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInicioSupervisor";
             this.Text = "frmInicioSupervisor";
             this.pnlOpciones.ResumeLayout(false);
@@ -353,15 +363,15 @@
             this.pnlTitulo.PerformLayout();
             this.pnlExt.ResumeLayout(false);
             this.pnlInt.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picReporte)).EndInit();
             this.pnlDer.ResumeLayout(false);
             this.pnlDer.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEstado)).EndInit();
+            this.pnlMed.ResumeLayout(false);
+            this.pnlMed.PerformLayout();
             this.pnlIzq.ResumeLayout(false);
             this.pnlIzq.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAbrir)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGenerar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picGestionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAtender)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -376,20 +386,20 @@
         private System.Windows.Forms.Label lblTituloSistema;
         private System.Windows.Forms.Panel pnlExt;
         private System.Windows.Forms.Panel pnlInt;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox picReporte;
+        private System.Windows.Forms.Panel pnlDer;
         private System.Windows.Forms.Button btnGenerar;
         private System.Windows.Forms.Label lblGenerarReportes;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Panel pnlDer;
-        private System.Windows.Forms.PictureBox picEstado;
+        private System.Windows.Forms.Label lblDetalleGenerar;
+        private System.Windows.Forms.Panel pnlMed;
+        private System.Windows.Forms.PictureBox picGestionar;
         private System.Windows.Forms.Button btnGestionar;
         private System.Windows.Forms.Label lblGestionarTickets;
-        private System.Windows.Forms.Label lblDetalleEstado;
+        private System.Windows.Forms.Label lblDetalleGestionar;
         private System.Windows.Forms.Panel pnlIzq;
-        private System.Windows.Forms.PictureBox picAbrir;
-        private System.Windows.Forms.Label lblAbrir;
-        private System.Windows.Forms.Label lblDetalleAbrir;
+        private System.Windows.Forms.PictureBox picAtender;
+        private System.Windows.Forms.Label lblAtender;
+        private System.Windows.Forms.Label lblDetalleAtender;
         private System.Windows.Forms.Button btnAtender;
+        private System.Windows.Forms.PictureBox picGenerar;
     }
 }

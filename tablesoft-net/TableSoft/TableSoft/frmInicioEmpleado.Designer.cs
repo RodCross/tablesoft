@@ -90,7 +90,7 @@
             // 
             // picEstado
             // 
-            this.picEstado.Image = ((System.Drawing.Image)(resources.GetObject("picEstado.Image")));
+            this.picEstado.Image = global::TableSoft.Properties.Resources.InicioEmpleadoVer;
             this.picEstado.InitialImage = ((System.Drawing.Image)(resources.GetObject("picEstado.InitialImage")));
             this.picEstado.Location = new System.Drawing.Point(20, 57);
             this.picEstado.Name = "picEstado";
@@ -152,7 +152,7 @@
             // 
             // picAbrir
             // 
-            this.picAbrir.Image = ((System.Drawing.Image)(resources.GetObject("picAbrir.Image")));
+            this.picAbrir.Image = global::TableSoft.Properties.Resources.InicioEmpleadoAbrir;
             this.picAbrir.Location = new System.Drawing.Point(31, 69);
             this.picAbrir.Name = "picAbrir";
             this.picAbrir.Size = new System.Drawing.Size(96, 124);

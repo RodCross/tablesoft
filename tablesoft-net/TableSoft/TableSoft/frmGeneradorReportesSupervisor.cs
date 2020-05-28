@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmGeneradorReportes : Form
+    public partial class frmGeneradorReportesSupervisor : Form
     {
-        public frmGeneradorReportes()
+        public frmGeneradorReportesSupervisor()
         {
             InitializeComponent();
         }

@@ -36,8 +36,6 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.dgvGestionar = new System.Windows.Forms.DataGridView();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblTicketsEspera = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,6 +44,8 @@
             this.Equipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailPersonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailAgente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblTicketsEspera = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -114,27 +114,6 @@
             this.dgvGestionar.Size = new System.Drawing.Size(1236, 362);
             this.dgvGestionar.TabIndex = 12;
             // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblTicketsEspera);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1258, 70);
-            this.pnlTitulo.TabIndex = 10;
-            // 
-            // lblTicketsEspera
-            // 
-            this.lblTicketsEspera.AutoSize = true;
-            this.lblTicketsEspera.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblTicketsEspera.ForeColor = System.Drawing.Color.White;
-            this.lblTicketsEspera.Location = new System.Drawing.Point(30, 23);
-            this.lblTicketsEspera.Name = "lblTicketsEspera";
-            this.lblTicketsEspera.Size = new System.Drawing.Size(199, 27);
-            this.lblTicketsEspera.TabIndex = 0;
-            this.lblTicketsEspera.Text = "Lista de Empleados";
-            // 
             // ID
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -200,6 +179,27 @@
             this.EmailAgente.ReadOnly = true;
             this.EmailAgente.Width = 170;
             // 
+            // pnlTitulo
+            // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.lblTicketsEspera);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1258, 70);
+            this.pnlTitulo.TabIndex = 10;
+            // 
+            // lblTicketsEspera
+            // 
+            this.lblTicketsEspera.AutoSize = true;
+            this.lblTicketsEspera.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblTicketsEspera.ForeColor = System.Drawing.Color.White;
+            this.lblTicketsEspera.Location = new System.Drawing.Point(30, 23);
+            this.lblTicketsEspera.Name = "lblTicketsEspera";
+            this.lblTicketsEspera.Size = new System.Drawing.Size(199, 27);
+            this.lblTicketsEspera.TabIndex = 0;
+            this.lblTicketsEspera.Text = "Lista de Empleados";
+            // 
             // frmSeleccionarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -210,6 +210,7 @@
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvGestionar);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSeleccionarEmpleado";
             this.Text = "frmSeleccionarEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).EndInit();

@@ -35,6 +35,9 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblDatosEmpleado = new System.Windows.Forms.Label();
             this.gpbDatosGenerales = new System.Windows.Forms.GroupBox();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.lblDNI = new System.Windows.Forms.Label();
             this.txtEmailPersonal = new System.Windows.Forms.TextBox();
             this.lblEmailPersonal = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -44,9 +47,6 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtIDEmpleado = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.lblDNI = new System.Windows.Forms.Label();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.pnlTitulo.SuspendLayout();
             this.gpbDatosGenerales.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +151,32 @@
             this.gpbDatosGenerales.TabStop = false;
             this.gpbDatosGenerales.Text = "Datos Generales";
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(161, 78);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(501, 26);
+            this.txtNombre.TabIndex = 15;
+            // 
+            // txtDNI
+            // 
+            this.txtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDNI.Location = new System.Drawing.Point(161, 179);
+            this.txtDNI.Name = "txtDNI";
+            this.txtDNI.Size = new System.Drawing.Size(151, 26);
+            this.txtDNI.TabIndex = 14;
+            // 
+            // lblDNI
+            // 
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblDNI.Location = new System.Drawing.Point(103, 179);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(40, 21);
+            this.lblDNI.TabIndex = 13;
+            this.lblDNI.Text = "DNI:";
+            // 
             // txtEmailPersonal
             // 
             this.txtEmailPersonal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -236,32 +262,6 @@
             this.lblCodigo.TabIndex = 3;
             this.lblCodigo.Text = "Código:";
             // 
-            // lblDNI
-            // 
-            this.lblDNI.AutoSize = true;
-            this.lblDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDNI.Location = new System.Drawing.Point(103, 179);
-            this.lblDNI.Name = "lblDNI";
-            this.lblDNI.Size = new System.Drawing.Size(40, 21);
-            this.lblDNI.TabIndex = 13;
-            this.lblDNI.Text = "DNI:";
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(161, 179);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(151, 26);
-            this.txtDNI.TabIndex = 14;
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(161, 78);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(501, 26);
-            this.txtNombre.TabIndex = 15;
-            // 
             // frmGestionarEmpleados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,6 +273,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.gpbDatosGenerales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionarEmpleados";
             this.Text = "frmGestionarEmpleados";
             this.pnlTitulo.ResumeLayout(false);

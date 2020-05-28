@@ -35,6 +35,11 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblDatosAgente = new System.Windows.Forms.Label();
             this.gpbDatosGenerales = new System.Windows.Forms.GroupBox();
+            this.txtEmailAgente = new System.Windows.Forms.TextBox();
+            this.lblEmailAgente = new System.Windows.Forms.Label();
+            this.cboRol = new System.Windows.Forms.ComboBox();
+            this.lblRol = new System.Windows.Forms.Label();
+            this.cboEquipo = new System.Windows.Forms.ComboBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtDNI = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
@@ -46,11 +51,6 @@
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.txtIDAgente = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
-            this.cboEquipo = new System.Windows.Forms.ComboBox();
-            this.lblRol = new System.Windows.Forms.Label();
-            this.cboRol = new System.Windows.Forms.ComboBox();
-            this.lblEmailAgente = new System.Windows.Forms.Label();
-            this.txtEmailAgente = new System.Windows.Forms.TextBox();
             this.pnlTitulo.SuspendLayout();
             this.gpbDatosGenerales.SuspendLayout();
             this.SuspendLayout();
@@ -159,6 +159,52 @@
             this.gpbDatosGenerales.TabStop = false;
             this.gpbDatosGenerales.Text = "Datos Generales";
             // 
+            // txtEmailAgente
+            // 
+            this.txtEmailAgente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmailAgente.Location = new System.Drawing.Point(151, 290);
+            this.txtEmailAgente.Name = "txtEmailAgente";
+            this.txtEmailAgente.Size = new System.Drawing.Size(303, 26);
+            this.txtEmailAgente.TabIndex = 20;
+            // 
+            // lblEmailAgente
+            // 
+            this.lblEmailAgente.AutoSize = true;
+            this.lblEmailAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblEmailAgente.Location = new System.Drawing.Point(18, 292);
+            this.lblEmailAgente.Name = "lblEmailAgente";
+            this.lblEmailAgente.Size = new System.Drawing.Size(104, 21);
+            this.lblEmailAgente.TabIndex = 19;
+            this.lblEmailAgente.Text = "Email Agente:";
+            // 
+            // cboRol
+            // 
+            this.cboRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRol.FormattingEnabled = true;
+            this.cboRol.Location = new System.Drawing.Point(151, 168);
+            this.cboRol.Name = "cboRol";
+            this.cboRol.Size = new System.Drawing.Size(151, 28);
+            this.cboRol.TabIndex = 18;
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblRol.Location = new System.Drawing.Point(86, 175);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(36, 21);
+            this.lblRol.TabIndex = 17;
+            this.lblRol.Text = "Rol:";
+            // 
+            // cboEquipo
+            // 
+            this.cboEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboEquipo.FormattingEnabled = true;
+            this.cboEquipo.Location = new System.Drawing.Point(151, 209);
+            this.cboEquipo.Name = "cboEquipo";
+            this.cboEquipo.Size = new System.Drawing.Size(151, 28);
+            this.cboEquipo.TabIndex = 16;
+            // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -261,52 +307,6 @@
             this.lblCodigo.TabIndex = 3;
             this.lblCodigo.Text = "Código:";
             // 
-            // cboEquipo
-            // 
-            this.cboEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboEquipo.FormattingEnabled = true;
-            this.cboEquipo.Location = new System.Drawing.Point(151, 209);
-            this.cboEquipo.Name = "cboEquipo";
-            this.cboEquipo.Size = new System.Drawing.Size(151, 28);
-            this.cboEquipo.TabIndex = 16;
-            // 
-            // lblRol
-            // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblRol.Location = new System.Drawing.Point(86, 175);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(36, 21);
-            this.lblRol.TabIndex = 17;
-            this.lblRol.Text = "Rol:";
-            // 
-            // cboRol
-            // 
-            this.cboRol.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboRol.FormattingEnabled = true;
-            this.cboRol.Location = new System.Drawing.Point(151, 168);
-            this.cboRol.Name = "cboRol";
-            this.cboRol.Size = new System.Drawing.Size(151, 28);
-            this.cboRol.TabIndex = 18;
-            // 
-            // lblEmailAgente
-            // 
-            this.lblEmailAgente.AutoSize = true;
-            this.lblEmailAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailAgente.Location = new System.Drawing.Point(18, 292);
-            this.lblEmailAgente.Name = "lblEmailAgente";
-            this.lblEmailAgente.Size = new System.Drawing.Size(104, 21);
-            this.lblEmailAgente.TabIndex = 19;
-            this.lblEmailAgente.Text = "Email Agente:";
-            // 
-            // txtEmailAgente
-            // 
-            this.txtEmailAgente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailAgente.Location = new System.Drawing.Point(151, 290);
-            this.txtEmailAgente.Name = "txtEmailAgente";
-            this.txtEmailAgente.Size = new System.Drawing.Size(303, 26);
-            this.txtEmailAgente.TabIndex = 20;
-            // 
             // frmGestionarAgentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -318,6 +318,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.gpbDatosGenerales);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmGestionarAgentes";
             this.Text = "frmGestionarAgentes";
             this.pnlTitulo.ResumeLayout(false);

@@ -224,6 +224,7 @@
             this.Controls.Add(this.lblIngresarComentario);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmEscalarTicketAgente";
             this.Text = "frmEscalarTicketAgente";
             this.Load += new System.EventHandler(this.frmEscalarTicketAgente_Load);

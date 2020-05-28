@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmGeneradorReportes
+    partial class frmGeneradorReportesSupervisor
     {
         /// <summary>
         /// Required designer variable.
@@ -262,7 +262,7 @@
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             // 
-            // frmGeneradorReportes
+            // frmGeneradorReportesSupervisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -281,8 +281,9 @@
             this.Controls.Add(this.lblCategoria);
             this.Controls.Add(this.lblAgente);
             this.Controls.Add(this.pnlTitulo);
-            this.Name = "frmGeneradorReportes";
-            this.Text = "frmGeneradorReportes";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Name = "frmGeneradorReportesSupervisor";
+            this.Text = "frmGeneradorReportesSupervisor";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);

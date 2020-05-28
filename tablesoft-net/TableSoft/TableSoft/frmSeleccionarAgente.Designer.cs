@@ -36,14 +36,14 @@
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.dgvGestionar = new System.Windows.Forms.DataGridView();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblTicketsEspera = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Biblioteca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailPersonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblTicketsEspera = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(1095, 459);
+            this.btnSeleccionar.Location = new System.Drawing.Point(1118, 492);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
             this.btnSeleccionar.TabIndex = 19;
@@ -69,7 +69,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(942, 459);
+            this.btnNuevo.Location = new System.Drawing.Point(965, 492);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(119, 33);
             this.btnNuevo.TabIndex = 18;
@@ -83,7 +83,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(792, 459);
+            this.btnVolver.Location = new System.Drawing.Point(815, 492);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 16;
@@ -104,32 +104,11 @@
             this.DNI,
             this.Biblioteca,
             this.EmailPersonal});
-            this.dgvGestionar.Location = new System.Drawing.Point(12, 76);
+            this.dgvGestionar.Location = new System.Drawing.Point(35, 96);
             this.dgvGestionar.Name = "dgvGestionar";
             this.dgvGestionar.ReadOnly = true;
             this.dgvGestionar.Size = new System.Drawing.Size(1202, 376);
             this.dgvGestionar.TabIndex = 17;
-            // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblTicketsEspera);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1229, 70);
-            this.pnlTitulo.TabIndex = 15;
-            // 
-            // lblTicketsEspera
-            // 
-            this.lblTicketsEspera.AutoSize = true;
-            this.lblTicketsEspera.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblTicketsEspera.ForeColor = System.Drawing.Color.White;
-            this.lblTicketsEspera.Location = new System.Drawing.Point(30, 23);
-            this.lblTicketsEspera.Name = "lblTicketsEspera";
-            this.lblTicketsEspera.Size = new System.Drawing.Size(199, 27);
-            this.lblTicketsEspera.TabIndex = 0;
-            this.lblTicketsEspera.Text = "Lista de Empleados";
             // 
             // ID
             // 
@@ -186,16 +165,38 @@
             this.EmailPersonal.ReadOnly = true;
             this.EmailPersonal.Width = 230;
             // 
+            // pnlTitulo
+            // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.lblTicketsEspera);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1266, 70);
+            this.pnlTitulo.TabIndex = 15;
+            // 
+            // lblTicketsEspera
+            // 
+            this.lblTicketsEspera.AutoSize = true;
+            this.lblTicketsEspera.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblTicketsEspera.ForeColor = System.Drawing.Color.White;
+            this.lblTicketsEspera.Location = new System.Drawing.Point(30, 23);
+            this.lblTicketsEspera.Name = "lblTicketsEspera";
+            this.lblTicketsEspera.Size = new System.Drawing.Size(199, 27);
+            this.lblTicketsEspera.TabIndex = 0;
+            this.lblTicketsEspera.Text = "Lista de Empleados";
+            // 
             // frmSeleccionarAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 504);
+            this.ClientSize = new System.Drawing.Size(1266, 543);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.dgvGestionar);
             this.Controls.Add(this.pnlTitulo);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmSeleccionarAgente";
             this.Text = "frmSeleccionarAgente";
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).EndInit();

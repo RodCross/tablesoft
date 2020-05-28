@@ -130,11 +130,17 @@
     <Compile Include="frmGestionarSistemaAdministrador.Designer.cs">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarTareas.cs">
+    <Compile Include="frmGestionarTareasPredeterminadas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarTareas.Designer.cs">
-      <DependentUpon>frmGestionarTareas.cs</DependentUpon>
+    <Compile Include="frmGestionarTareasPredeterminadas.Designer.cs">
+      <DependentUpon>frmGestionarTareasPredeterminadas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarTareasTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarTareasTicket.Designer.cs">
+      <DependentUpon>frmGestionarTareasTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarUrgencia.cs">
       <SubType>Form</SubType>
@@ -250,11 +256,17 @@
     <Compile Include="frmSeleccionarProveedor.Designer.cs">
       <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarTarea.cs">
+    <Compile Include="frmSeleccionarTareaPredeterminada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarTarea.Designer.cs">
-      <DependentUpon>frmSeleccionarTarea.cs</DependentUpon>
+    <Compile Include="frmSeleccionarTareaPredeterminada.Designer.cs">
+      <DependentUpon>frmSeleccionarTareaPredeterminada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarTareasTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarTareasTicket.Designer.cs">
+      <DependentUpon>frmSeleccionarTareasTicket.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSeleccionarUrgencia.cs">
       <SubType>Form</SubType>
@@ -315,8 +327,11 @@
     <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarTareas.resx">
-      <DependentUpon>frmGestionarTareas.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarTareasPredeterminadas.resx">
+      <DependentUpon>frmGestionarTareasPredeterminadas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarTareasTicket.resx">
+      <DependentUpon>frmGestionarTareasTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarUrgencia.resx">
       <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
@@ -375,8 +390,11 @@
     <EmbeddedResource Include="frmSeleccionarProveedor.resx">
       <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarTarea.resx">
-      <DependentUpon>frmSeleccionarTarea.cs</DependentUpon>
+    <EmbeddedResource Include="frmSeleccionarTareaPredeterminada.resx">
+      <DependentUpon>frmSeleccionarTareaPredeterminada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarTareasTicket.resx">
+      <DependentUpon>frmSeleccionarTareasTicket.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarUrgencia.resx">
       <DependentUpon>frmSeleccionarUrgencia.cs</DependentUpon>

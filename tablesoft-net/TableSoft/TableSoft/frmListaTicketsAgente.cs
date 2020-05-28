@@ -21,5 +21,15 @@ namespace TableSoft
         {
             Movimiento.MoverVentana(Handle, e.Button);
         }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

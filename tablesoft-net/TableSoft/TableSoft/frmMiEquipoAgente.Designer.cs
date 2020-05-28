@@ -36,7 +36,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMiEquipoAgente));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTicketsEspera = new System.Windows.Forms.Label();
-            this.dgvGestionar = new System.Windows.Forms.DataGridView();
+            this.dgvTicketsEspera = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ubicacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,7 +46,7 @@
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTicketsEspera)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -57,38 +57,39 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
-            this.pnlTitulo.TabIndex = 4;
+            this.pnlTitulo.TabIndex = 3;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // lblTicketsEspera
             // 
             this.lblTicketsEspera.AutoSize = true;
             this.lblTicketsEspera.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblTicketsEspera.ForeColor = System.Drawing.Color.White;
-            this.lblTicketsEspera.Location = new System.Drawing.Point(30, 23);
+            this.lblTicketsEspera.Location = new System.Drawing.Point(30, 22);
             this.lblTicketsEspera.Name = "lblTicketsEspera";
             this.lblTicketsEspera.Size = new System.Drawing.Size(179, 27);
             this.lblTicketsEspera.TabIndex = 0;
             this.lblTicketsEspera.Text = "Tickets en espera";
             // 
-            // dgvGestionar
+            // dgvTicketsEspera
             // 
-            this.dgvGestionar.AllowUserToAddRows = false;
-            this.dgvGestionar.AllowUserToDeleteRows = false;
-            this.dgvGestionar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.dgvGestionar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgvGestionar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvGestionar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvTicketsEspera.AllowUserToAddRows = false;
+            this.dgvTicketsEspera.AllowUserToDeleteRows = false;
+            this.dgvTicketsEspera.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.dgvTicketsEspera.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvTicketsEspera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTicketsEspera.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Asunto,
             this.Ubicacion,
             this.Empleado,
             this.FechaApertura,
             this.Categoria});
-            this.dgvGestionar.Location = new System.Drawing.Point(35, 92);
-            this.dgvGestionar.Name = "dgvGestionar";
-            this.dgvGestionar.ReadOnly = true;
-            this.dgvGestionar.Size = new System.Drawing.Size(994, 436);
-            this.dgvGestionar.TabIndex = 1;
+            this.dgvTicketsEspera.Location = new System.Drawing.Point(35, 92);
+            this.dgvTicketsEspera.Name = "dgvTicketsEspera";
+            this.dgvTicketsEspera.ReadOnly = true;
+            this.dgvTicketsEspera.Size = new System.Drawing.Size(994, 436);
+            this.dgvTicketsEspera.TabIndex = 0;
             // 
             // ID
             // 
@@ -113,7 +114,7 @@
             // 
             // Ubicacion
             // 
-            this.Ubicacion.HeaderText = "Ubicacion";
+            this.Ubicacion.HeaderText = "Ubicación";
             this.Ubicacion.Name = "Ubicacion";
             this.Ubicacion.ReadOnly = true;
             // 
@@ -142,14 +143,15 @@
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
             this.Categoria.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.HeaderText = "Categoría";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
             this.Categoria.Width = 150;
             // 
             // btnVolver
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVolver.FlatAppearance.BorderSize = 0;
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -157,13 +159,15 @@
             this.btnVolver.Location = new System.Drawing.Point(760, 545);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 5;
+            this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionar.FlatAppearance.BorderSize = 0;
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -171,9 +175,10 @@
             this.btnSeleccionar.Location = new System.Drawing.Point(910, 545);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
-            this.btnSeleccionar.TabIndex = 6;
+            this.btnSeleccionar.TabIndex = 2;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // frmMiEquipoAgente
             // 
@@ -182,7 +187,7 @@
             this.ClientSize = new System.Drawing.Size(1064, 600);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnSeleccionar);
-            this.Controls.Add(this.dgvGestionar);
+            this.Controls.Add(this.dgvTicketsEspera);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -190,7 +195,7 @@
             this.Text = "frmMiEquipoAgente";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTicketsEspera)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -199,7 +204,7 @@
 
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblTicketsEspera;
-        private System.Windows.Forms.DataGridView dgvGestionar;
+        private System.Windows.Forms.DataGridView dgvTicketsEspera;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnSeleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;

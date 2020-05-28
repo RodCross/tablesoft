@@ -21,8 +21,9 @@ public class Categoria {
         tareasPredeterminadas = new ArrayList<>();
     }
     
-    public Categoria(String nombre) {
+    public Categoria(String nombre, String descripcion) {
         this.nombre = nombre;  
+        this.descripcion = descripcion;
         tareasPredeterminadas = new ArrayList<>();
     }
 

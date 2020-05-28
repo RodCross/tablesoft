@@ -6,6 +6,7 @@
 package pe.edu.pucp.tablesoft.dao;
 
 import java.util.ArrayList;
+import pe.edu.pucp.tablesoft.model.Categoria;
 import pe.edu.pucp.tablesoft.model.Equipo;
 
 
@@ -16,4 +17,5 @@ public interface EquipoDAO {
     ArrayList<Equipo> listar();     // Solo lista los equipos con sus atributos
                                     // No llena su lista de agentes ni lista de categorias
     Equipo buscar(int equipoId);
+    int agregarCategoria(Equipo equipo, Categoria categoria);
 }

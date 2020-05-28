@@ -107,13 +107,13 @@ public class CategoriaMySQL implements CategoriaDAO{
                     "{call listar_categoria()}");
             ResultSet rs=cs.executeQuery();
             
-            TareaPredeterminadaDAO daoTareasPred = new TareaPredeterminadaMySQL();
+            //TareaPredeterminadaDAO daoTareasPred = new TareaPredeterminadaMySQL();
             while(rs.next()) {
                 Categoria categoria = new Categoria();
                 categoria.setCategoriaId(rs.getInt("categoria_id"));
                 categoria.setNombre(rs.getString("nombre"));
                 categoria.setDescripcion(rs.getString("descripcion"));
-                categoria.setTareasPredeterminadas(daoTareasPred.listarxCategoria(categoria));
+                //categoria.setTareasPredeterminadas(daoTareasPred.listarxCategoria(categoria));
                 categorias.add(categoria);
             }
 
@@ -140,13 +140,13 @@ public class CategoriaMySQL implements CategoriaDAO{
             cs.setInt("_EQUIPO_ID", equipo.getEquipoId());
             ResultSet rs=cs.executeQuery();
             
-            TareaPredeterminadaDAO daoTareasPred = new TareaPredeterminadaMySQL();
+            //TareaPredeterminadaDAO daoTareasPred = new TareaPredeterminadaMySQL();
             while(rs.next()) {
                 Categoria categoria = new Categoria();
                 categoria.setCategoriaId(rs.getInt("categoria_id"));
                 categoria.setNombre(rs.getString("nombre"));
                 categoria.setDescripcion(rs.getString("descripcion"));
-                categoria.setTareasPredeterminadas(daoTareasPred.listarxCategoria(categoria));
+                //categoria.setTareasPredeterminadas(daoTareasPred.listarxCategoria(categoria));
                 categorias.add(categoria);
             }
 

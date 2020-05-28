@@ -421,7 +421,7 @@ public class TicketMySQL implements TicketDAO{
                 
                 Ticket ticket = new Ticket();
                 ticket.setTicketId(rs.getInt("ticket_id"));
-                ticket.setEstado(daoEstadoTicket.buscar(rs.getInt("estado_id")));
+                ticket.setEstado(estado);
                 ticket.setInfoAdicional(rs.getString("info_adicional"));
                 ticket.setAlumnoEmail(rs.getString("alumno_email"));
                 ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());

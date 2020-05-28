@@ -14,6 +14,9 @@ public class Proveedor {
     public Proveedor() {
         
     }
+    public Proveedor(String razonSocial){
+        this.razonSocial = razonSocial;
+    }
 
     public String getCiudad() {
         return ciudad;
@@ -88,6 +91,6 @@ public class Proveedor {
     }
     
     public String mostrarDatos() {
-        return getProveedorId() + " - " + ruc + " - " + razonSocial;
+        return getProveedorId() + " - " + ruc + " - " + razonSocial + pais;
     }
 }

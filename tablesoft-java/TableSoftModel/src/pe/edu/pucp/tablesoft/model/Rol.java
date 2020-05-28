@@ -9,6 +9,14 @@ public class Rol {
     private String descripcion;
     private Boolean activo;
 
+    public Rol(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
+    public Rol() {
+    }
+
     public int getRolId() {
         return rolId;
     }

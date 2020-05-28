@@ -119,4 +119,8 @@ public class Equipo {
         }
         return listaFiltrada;
     }
+    
+    public String mostrarDatos(){
+        return this.getEquipoId() + " - "+  this.getNombre() + " - " + this.getDescripcion();
+    }
 }

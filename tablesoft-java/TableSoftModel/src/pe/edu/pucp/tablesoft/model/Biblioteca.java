@@ -12,6 +12,12 @@ public class Biblioteca {
     public Biblioteca() {
     }
 
+    public Biblioteca(String nombre, String abreviatura) {
+        this.nombre = nombre;
+        this.abreviatura = abreviatura;
+    }
+    
+
     public int getBibliotecaId() {
         return bibliotecaId;
     }
@@ -42,6 +48,10 @@ public class Biblioteca {
 
     public void setActivo(Boolean activo) {
         this.activo = activo;
+    }
+    
+    public String mostrarDatos(){
+        return this.getBibliotecaId() + " - " + this.getAbreviatura() + " - " + this.getNombre();
     }
     
 }

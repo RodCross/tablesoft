@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
+import pe.edu.pucp.tablesoft.model.Categoria;
 import pe.edu.pucp.tablesoft.model.Equipo;
 
 
@@ -27,10 +28,13 @@ public class EquipoMySQL implements EquipoDAO{
 
             CallableStatement cs = con.prepareCall(
                     "{call insertar_equipo(?,?,?,?)}");
+            
+            LocalDateTime temp = LocalDateTime.now();
+            
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_NOMBRE", equipo.getNombre());
             cs.setString("_DESCRIPCION", equipo.getDescripcion());
-            cs.setTimestamp("_FECHA_CREACION", Timestamp.valueOf(LocalDateTime.now()));
+            cs.setTimestamp("_FECHA_CREACION", Timestamp.valueOf(temp));
             
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
@@ -165,6 +169,32 @@ public class EquipoMySQL implements EquipoDAO{
             System.out.println(ex.getMessage());
         }
         return equipo;
+    }
+
+    @Override
+    public int agregarCategoria(Equipo equipo, Categoria categoria) {
+        int rpta = 0;
+        try {
+            //Registrar el JAR de conexión
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            //Establecer la conexion
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+
+            CallableStatement cs = con.prepareCall(
+                    "{call insertar_categoria_equipo(?,?)}");
+            cs.setInt("_EQUIPO_ID", equipo.getEquipoId());
+            cs.setInt("_CATEGORIA_ID", categoria.getCategoriaId());
+            
+            cs.executeUpdate();
+
+            con.close();
+
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        }
+        return rpta;
     }
     
 }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.temp;
 
 namespace TableSoft
 {
@@ -18,6 +19,17 @@ namespace TableSoft
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
             btnEliminar.Visible = false;
+        }
+
+        public frmGestionarUrgencia(Urgencia urg)
+        {
+            InitializeComponent();
+            txtIDUrgencia.Text = urg.UrgenciaId.ToString();
+            txtNombre.Text = urg.Nombre;
+            txtPlazoMaximo.Text = urg.PlazoMaximo.ToString();
+            btnActualizar.Visible = true;
+            btnEliminar.Visible = true;
+            btnGuardar.Visible = false;
         }
 
         public frmGestionarUrgencia(int i)
@@ -60,6 +72,7 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            
             MessageBox.Show(
                 "Se ha actualizado el registro.",
                 "Actualización exitosa",

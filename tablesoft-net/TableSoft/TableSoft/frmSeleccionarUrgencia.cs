@@ -7,14 +7,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.temp;
 
 namespace TableSoft
 {
     public partial class frmSeleccionarUrgencia : Form
     {
+
+        BindingList<Urgencia> urgencias = new BindingList<Urgencia>();
+        Urgencia urg1 = new Urgencia(1, "Emergencia", 2);
+        Urgencia urg2 = new Urgencia(2, "Incidente", 24);
+        Urgencia urg3 = new Urgencia(3, "Consulta", 72);
+
         public frmSeleccionarUrgencia()
         {
             InitializeComponent();
+            urgencias.Add(urg1);
+            urgencias.Add(urg2);
+            urgencias.Add(urg3);
+            dgvLista.DataSource = urgencias;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +46,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarUrgencia frm = new frmGestionarUrgencia(1);
+            Urgencia urg = (Urgencia) dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarUrgencia frm = new frmGestionarUrgencia(urg);
             frm.ShowDialog();
         }
     }

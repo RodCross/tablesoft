@@ -16,5 +16,20 @@ namespace TableSoft
         {
             InitializeComponent();
         }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Se ha actualizado correctamente el estado del ticket.",
+                "Actualización de estado exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
+        }
     }
 }

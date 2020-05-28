@@ -39,7 +39,11 @@ namespace TableSoft
 
         private void btnResponder_Click(object sender, EventArgs e)
         {
-            this.Close();
+            MessageBox.Show(
+                "La respuesta se ha registrado correctamente.",
+                "Registro exitoso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
         }
 
         private void rtfRespuesta_Enter(object sender, EventArgs e)

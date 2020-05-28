@@ -24,6 +24,11 @@ namespace TableSoft
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
+            MessageBox.Show(
+                "Ticket correctamente creado y enviado.",
+                "Envío exitoso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
             this.Close();
         }
 

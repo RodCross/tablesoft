@@ -16,7 +16,10 @@ namespace TableSoft
         BindingList<Usuario> usuarios = new BindingList<Usuario>();
         Usuario user1 = new Usuario("a20167474@pucp.edu.pe", "abcd1234", "Empleado");
         Usuario user2 = new Usuario("f.verastegui@pucp.edu.pe", "abcd1234", "Agente");
-        Usuario user3 = new Usuario("a", "a", "Admin");
+        Usuario user3 = new Usuario("e", "e", "Empleado");
+        Usuario user4 = new Usuario("a", "a", "Agente");
+        Usuario user5 = new Usuario("s", "s", "Supervisor");
+        Usuario user6 = new Usuario("admin", "admin", "Administrador");
 
         public frmInicioSesion()
         {
@@ -25,8 +28,12 @@ namespace TableSoft
             usuarios.Add(user1);
             usuarios.Add(user2);
             usuarios.Add(user3);
+            usuarios.Add(user4);
+            usuarios.Add(user5);
+            usuarios.Add(user6);
         }
 
+        // Inicios de sesion
         private void AbrirInicioEmpleado()
         {
             frmInicioEmpleado frm = new frmInicioEmpleado
@@ -65,6 +72,54 @@ namespace TableSoft
             this.Hide();
         }
 
+        private void AbrirInicioSupervisor()
+        {
+            frmInicioSupervisor frm = new frmInicioSupervisor
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            // Mostrar pagina inicial al cerrar sesion
+            frm.FormClosing += delegate
+            {
+                this.Show();
+                LimpiarCampos();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void AbrirInicioAdmin()
+        {
+            frmInicioAdmin frm = new frmInicioAdmin
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            // Mostrar pagina inicial al cerrar sesion
+            frm.FormClosing += delegate
+            {
+                this.Show();
+                LimpiarCampos();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
+
+        // Para dejar los campos en blanco
+        private void LimpiarCampos()
+        {
+            txtEmail.Text = "";
+            txtPassword.Text = "";
+            txtErrEmail.Text = "";
+            txtErrPassword.Text = "";
+        }
+
+        // Eventos
         private void btnLogin_Click(object sender, EventArgs e)
         {
             // Validacion email
@@ -105,6 +160,15 @@ namespace TableSoft
                         {
                             AbrirInicioAgente();
                         }
+                        else if (usuario.Rol == "Supervisor")
+                        {
+                            AbrirInicioSupervisor();
+                        }
+                        else if (usuario.Rol == "Administrador")
+                        {
+                            AbrirInicioAdmin();
+                        }
+
                         login = true;
                         break;
                     }
@@ -115,14 +179,6 @@ namespace TableSoft
                     txtErrPassword.Text = "";
                 }
             }
-        }
-
-        private void LimpiarCampos()
-        {
-            txtEmail.Text = "";
-            txtPassword.Text = "";
-            txtErrEmail.Text = "";
-            txtErrPassword.Text = "";
         }
 
         private void picExit_MouseDown(object sender, MouseEventArgs e)

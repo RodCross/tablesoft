@@ -30,16 +30,17 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActualizarEstadoTicketAgente));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblActualizarEstado = new System.Windows.Forms.Label();
-            this.dgvHistorial = new System.Windows.Forms.DataGridView();
+            this.dgvActualizar = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblIngresarComentario = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnActualizar = new System.Windows.Forms.Button();
+            this.lblActualizarEstado = new System.Windows.Forms.Label();
+            this.rtfComentario = new System.Windows.Forms.RichTextBox();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActualizar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -49,34 +50,25 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(516, 57);
-            this.pnlTitulo.TabIndex = 6;
+            this.pnlTitulo.Size = new System.Drawing.Size(540, 57);
+            this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
-            // lblActualizarEstado
+            // dgvActualizar
             // 
-            this.lblActualizarEstado.AutoSize = true;
-            this.lblActualizarEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblActualizarEstado.ForeColor = System.Drawing.Color.White;
-            this.lblActualizarEstado.Location = new System.Drawing.Point(16, 19);
-            this.lblActualizarEstado.Name = "lblActualizarEstado";
-            this.lblActualizarEstado.Size = new System.Drawing.Size(142, 21);
-            this.lblActualizarEstado.TabIndex = 0;
-            this.lblActualizarEstado.Text = "Actualizar estado";
-            // 
-            // dgvHistorial
-            // 
-            this.dgvHistorial.AllowUserToAddRows = false;
-            this.dgvHistorial.AllowUserToDeleteRows = false;
-            this.dgvHistorial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvActualizar.AllowUserToAddRows = false;
+            this.dgvActualizar.AllowUserToDeleteRows = false;
+            this.dgvActualizar.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.dgvActualizar.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dgvActualizar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvActualizar.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre});
-            this.dgvHistorial.Location = new System.Drawing.Point(12, 63);
-            this.dgvHistorial.Name = "dgvHistorial";
-            this.dgvHistorial.ReadOnly = true;
-            this.dgvHistorial.Size = new System.Drawing.Size(495, 162);
-            this.dgvHistorial.TabIndex = 1;
+            this.dgvActualizar.Location = new System.Drawing.Point(20, 70);
+            this.dgvActualizar.Name = "dgvActualizar";
+            this.dgvActualizar.ReadOnly = true;
+            this.dgvActualizar.Size = new System.Drawing.Size(500, 162);
+            this.dgvActualizar.TabIndex = 1;
             // 
             // ID
             // 
@@ -103,50 +95,66 @@
             this.lblIngresarComentario.AutoSize = true;
             this.lblIngresarComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
             this.lblIngresarComentario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblIngresarComentario.Location = new System.Drawing.Point(16, 241);
+            this.lblIngresarComentario.Location = new System.Drawing.Point(21, 247);
             this.lblIngresarComentario.Name = "lblIngresarComentario";
-            this.lblIngresarComentario.Size = new System.Drawing.Size(234, 18);
-            this.lblIngresarComentario.TabIndex = 7;
-            this.lblIngresarComentario.Text = "Ingrese comentario del escalado: ";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(13, 263);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(491, 97);
-            this.textBox1.TabIndex = 8;
+            this.lblIngresarComentario.Size = new System.Drawing.Size(302, 18);
+            this.lblIngresarComentario.TabIndex = 4;
+            this.lblIngresarComentario.Text = "Ingresa un comentario acerca del escalado: ";
             // 
             // btnActualizar
             // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(385, 380);
+            this.btnActualizar.Location = new System.Drawing.Point(401, 408);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(119, 33);
-            this.btnActualizar.TabIndex = 9;
+            this.btnActualizar.TabIndex = 3;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // lblActualizarEstado
+            // 
+            this.lblActualizarEstado.AutoSize = true;
+            this.lblActualizarEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblActualizarEstado.ForeColor = System.Drawing.Color.White;
+            this.lblActualizarEstado.Location = new System.Drawing.Point(19, 16);
+            this.lblActualizarEstado.Name = "lblActualizarEstado";
+            this.lblActualizarEstado.Size = new System.Drawing.Size(164, 25);
+            this.lblActualizarEstado.TabIndex = 0;
+            this.lblActualizarEstado.Text = "Actualizar estado";
+            // 
+            // rtfComentario
+            // 
+            this.rtfComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtfComentario.Location = new System.Drawing.Point(20, 279);
+            this.rtfComentario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.rtfComentario.Name = "rtfComentario";
+            this.rtfComentario.Size = new System.Drawing.Size(500, 106);
+            this.rtfComentario.TabIndex = 2;
+            this.rtfComentario.Text = "";
             // 
             // frmActualizarEstadoTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 430);
+            this.ClientSize = new System.Drawing.Size(540, 460);
+            this.Controls.Add(this.rtfComentario);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.lblIngresarComentario);
-            this.Controls.Add(this.dgvHistorial);
+            this.Controls.Add(this.dgvActualizar);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmActualizarEstadoTicketAgente";
             this.Text = "frmActualizarEstadoTicketAgente";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvActualizar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -155,12 +163,12 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Label lblActualizarEstado;
-        private System.Windows.Forms.DataGridView dgvHistorial;
+        private System.Windows.Forms.DataGridView dgvActualizar;
         private System.Windows.Forms.Label lblIngresarComentario;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.Label lblActualizarEstado;
+        private System.Windows.Forms.RichTextBox rtfComentario;
     }
 }

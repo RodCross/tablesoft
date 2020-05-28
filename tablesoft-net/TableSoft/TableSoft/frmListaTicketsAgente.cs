@@ -29,7 +29,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            frmInfoTicketAgente frm = new frmInfoTicketAgente();
+            frm.ShowDialog();
         }
     }
 }

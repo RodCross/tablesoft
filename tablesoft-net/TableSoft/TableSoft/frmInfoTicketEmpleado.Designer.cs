@@ -73,7 +73,7 @@
             this.pnlMensajes.Controls.Add(this.pnlMsgAgente);
             this.pnlMensajes.Controls.Add(this.pnlMsgUsuario);
             this.pnlMensajes.Controls.Add(this.lblAsunto);
-            this.pnlMensajes.Location = new System.Drawing.Point(320, 82);
+            this.pnlMensajes.Location = new System.Drawing.Point(320, 76);
             this.pnlMensajes.Name = "pnlMensajes";
             this.pnlMensajes.Size = new System.Drawing.Size(732, 512);
             this.pnlMensajes.TabIndex = 2;
@@ -392,7 +392,7 @@
             this.pnlDatos.Controls.Add(this.lblEstado);
             this.pnlDatos.Controls.Add(this.lblUltMod);
             this.pnlDatos.Controls.Add(this.lblTituloEstado);
-            this.pnlDatos.Location = new System.Drawing.Point(12, 82);
+            this.pnlDatos.Location = new System.Drawing.Point(12, 76);
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(302, 512);
             this.pnlDatos.TabIndex = 1;

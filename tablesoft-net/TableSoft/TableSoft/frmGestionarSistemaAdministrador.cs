@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmInicioAdministrador : Form
+    public partial class frmGestionarSistemaAdministrador : Form
     {
-        public frmInicioAdministrador()
+        public frmGestionarSistemaAdministrador()
         {
             InitializeComponent();
-        }
-
-        private void lblAbrir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGestionarCategorias_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

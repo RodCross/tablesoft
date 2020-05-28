@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmInicioAdministrador
+    partial class frmGestionarSistemaAdministrador
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioAdministrador));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarSistemaAdministrador));
             this.btnGestionarEmpleado = new System.Windows.Forms.Button();
             this.btnGestionarAgentes = new System.Windows.Forms.Button();
             this.btnGestionarCategorias = new System.Windows.Forms.Button();
@@ -81,7 +81,6 @@
             this.btnGestionarCategorias.TabIndex = 8;
             this.btnGestionarCategorias.Text = "Gestionar Categorias";
             this.btnGestionarCategorias.UseVisualStyleBackColor = true;
-            this.btnGestionarCategorias.Click += new System.EventHandler(this.btnGestionarCategorias_Click);
             // 
             // btnGestionarProveedores
             // 

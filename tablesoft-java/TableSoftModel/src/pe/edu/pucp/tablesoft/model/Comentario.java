@@ -12,6 +12,20 @@ public class Comentario {
     private String texto;
 
     public Comentario() {
+        autor = new Persona();
+    }
+
+    public Comentario(Persona autor, String texto) {
+        this.autor = autor;
+        this.texto = texto;
+    }
+    public Comentario(Agente agente, String texto){
+        this.autor = (Persona)agente;
+        this.texto = texto;
+    }
+    public Comentario(Empleado empleado, String texto){
+        this.autor = (Persona)empleado;
+        this.texto = texto;
     }
 
     public int getComentarioId() {
@@ -45,5 +59,7 @@ public class Comentario {
     public void setTexto(String texto) {
         this.texto = texto;
     }
-    
+    public String mostrarDatos(){
+        return this.getComentarioId() + " - " + this.getAutor().getCodigo() + " - " + this.getTexto();
+    }
 }

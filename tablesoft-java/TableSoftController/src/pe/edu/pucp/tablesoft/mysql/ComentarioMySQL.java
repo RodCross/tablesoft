@@ -22,7 +22,7 @@ public class ComentarioMySQL implements ComentarioDAO {
     Connection con;
     
     @Override
-    public int insertar(Comentario comentario, Persona autor, Ticket ticket) {
+    public int insertar(Comentario comentario, Ticket ticket) {
         int rpta = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -35,7 +35,7 @@ public class ComentarioMySQL implements ComentarioDAO {
             cs.setInt("_TICKET_ID", ticket.getTicketId());
             cs.setTimestamp("_FECHA", Timestamp.valueOf(LocalDateTime.now()));
             cs.setString("_TEXTO", comentario.getTexto());
-            cs.setString("_PERSONA_ID", autor.getCodigo());
+            cs.setString("_PERSONA_ID", comentario.getAutor().getCodigo());
                        
             cs.execute();
             rpta = cs.getInt("_ID");

@@ -13,6 +13,7 @@ import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
+import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
@@ -23,6 +24,7 @@ import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
 import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.Biblioteca;
 import pe.edu.pucp.tablesoft.model.Categoria;
+import pe.edu.pucp.tablesoft.model.Comentario;
 import pe.edu.pucp.tablesoft.model.Empleado;
 import pe.edu.pucp.tablesoft.model.Equipo;
 import pe.edu.pucp.tablesoft.model.EstadoTicket;
@@ -33,6 +35,7 @@ import pe.edu.pucp.tablesoft.model.Urgencia;
 import pe.edu.pucp.tablesoft.mysql.AgenteMySQL;
 import pe.edu.pucp.tablesoft.mysql.BibliotecaMySQL;
 import pe.edu.pucp.tablesoft.mysql.CategoriaMySQL;
+import pe.edu.pucp.tablesoft.mysql.ComentarioMySQL;
 import pe.edu.pucp.tablesoft.mysql.EmpleadoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EquipoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
@@ -55,7 +58,7 @@ public class Principal {
         RolDAO rolDao = new RolMySQL();
         BibliotecaDAO bibliotecaDao = new BibliotecaMySQL();
         EstadoTicketDAO estadoTicketDao = new EstadoTicketMySQL();
-        
+        ComentarioDAO comentarioDao = new ComentarioMySQL();
 
         
         // EQUIPOS
@@ -116,19 +119,6 @@ public class Principal {
         for(Categoria c: categorias){
             System.out.println(c.mostrarDatos());
         }
-        
-        // Listar categorias por equipo
-//        ArrayList<Equipo> equipos = equipoDao.listar();
-//        ArrayList<Categoria> categorias;
-//        System.out.println("\nEquipos registrados y sus categorias:\n");
-//        for(Equipo e : equipos){
-//            System.out.println(e.mostrarDatos());
-//            System.out.println("Categorias asociadas:");
-//            categorias = categoriaDao.listarxEquipo(e);
-//            for(Categoria c : categorias){
-//                System.out.println("\t" + c.mostrarDatos());
-//            }
-//        }
         
         
         // PROVEEDOR
@@ -272,13 +262,6 @@ public class Principal {
         ticketDao.insertar(ticket1);
         ticketDao.insertar(ticket2);
         
-//        // Listamos los tickets
-//        ArrayList<Ticket> tickets = ticketDao.listar();
-//        System.out.println("\nTickets\n");
-//        for (Ticket t : tickets) {
-//            System.out.println(t.mostrarDatos());
-//        }
-        
         // Asignar agentes
         ticket1.setAgente(agente1);
         ticket2.setAgente(agente2);
@@ -297,6 +280,19 @@ public class Principal {
         // Solucionar ticket 1
         ticket1.actualizarEstado(estado2, "Se arreglo el problema");
         ticketDao.actualizar(ticket1);
+        
+        // Mandar mensajes
+        Comentario mensaje1 = new Comentario(empleado1, "El problema es que hay chispas electricas en el equipo");
+        comentarioDao.insertar(mensaje1, ticket2);
+        Comentario mensaje2 = new Comentario(agente1, "Eso suena muy serio, lo revisare, pero probablemente deba revisarlo el proveedor");
+        comentarioDao.insertar(mensaje2, ticket2);
+        
+        // Listar mensajes
+        ArrayList<Comentario>comments = comentarioDao.listarxTicket(ticket2);
+        System.out.println("\nMensajes\n");
+        for (Comentario c : comments) {
+            System.out.println("Ticket 2 - " + c.mostrarDatos());
+        }
         
         // Escalar ticket 2
         ticket2.escalar(proveedor2, "El proveedor deberia revisar el cableado");

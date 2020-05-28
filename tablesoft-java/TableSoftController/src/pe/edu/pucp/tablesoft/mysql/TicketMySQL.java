@@ -17,6 +17,7 @@ import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CambioEstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
+import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.TicketDAO;
 import pe.edu.pucp.tablesoft.dao.TransferenciaExternaDAO;
@@ -25,6 +26,7 @@ import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
 import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.CambioEstadoTicket;
 import pe.edu.pucp.tablesoft.model.Categoria;
+import pe.edu.pucp.tablesoft.model.Comentario;
 import pe.edu.pucp.tablesoft.model.Empleado;
 import pe.edu.pucp.tablesoft.model.Equipo;
 import pe.edu.pucp.tablesoft.model.EstadoTicket;
@@ -105,6 +107,7 @@ public class TicketMySQL implements TicketDAO{
                     daoCambioEstado.insertar(cambioEstado, ticket);
                 }
             }
+            
             
             CallableStatement cs = con.prepareCall(
                 "{CALL actualizar_ticket(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}"

@@ -24,6 +24,11 @@ public class Equipo {
         this.listaAgentes = new ArrayList<>();
         this.listaCategorias = new ArrayList<>();
     }
+
+    public Equipo(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
     
     // Getters y setters
 

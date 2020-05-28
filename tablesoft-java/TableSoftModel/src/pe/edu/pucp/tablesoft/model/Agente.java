@@ -21,6 +21,8 @@ public class Agente extends Persona {
         super(codigo, dni, nombre, usuarioEmail);
         this.agenteEmail = agenteEmail;
         listaTickets = new ArrayList<>();
+        equipo = new Equipo();
+        rol = new Rol();
     }
     
     public Agente(int agenteId){
@@ -94,6 +96,6 @@ public class Agente extends Persona {
     
     public String mostrarDatos() {
         return getAgenteId() + " - " + getCodigo() + " - " +
-            getDni() + " - " + getNombre() + " - " + getPersonaEmail();
+            getDni() + " - " + getNombre() + " - " + getAgenteEmail();
     }
 }

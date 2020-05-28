@@ -6,30 +6,38 @@
 
 package pe.edu.pucp.tablesoft.main;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
+import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
+import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
+import pe.edu.pucp.tablesoft.dao.RolDAO;
 import pe.edu.pucp.tablesoft.dao.TicketDAO;
 import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
-import pe.edu.pucp.tablesoft.model.Administrador;
 import pe.edu.pucp.tablesoft.model.Agente;
+import pe.edu.pucp.tablesoft.model.Biblioteca;
 import pe.edu.pucp.tablesoft.model.Categoria;
 import pe.edu.pucp.tablesoft.model.Empleado;
 import pe.edu.pucp.tablesoft.model.Equipo;
+import pe.edu.pucp.tablesoft.model.EstadoTicket;
 import pe.edu.pucp.tablesoft.model.Proveedor;
-import pe.edu.pucp.tablesoft.model.Supervisor;
+import pe.edu.pucp.tablesoft.model.Rol;
 import pe.edu.pucp.tablesoft.model.Ticket;
 import pe.edu.pucp.tablesoft.model.Urgencia;
 import pe.edu.pucp.tablesoft.mysql.AgenteMySQL;
+import pe.edu.pucp.tablesoft.mysql.BibliotecaMySQL;
 import pe.edu.pucp.tablesoft.mysql.CategoriaMySQL;
 import pe.edu.pucp.tablesoft.mysql.EmpleadoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EquipoMySQL;
+import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.ProveedorMySQL;
+import pe.edu.pucp.tablesoft.mysql.RolMySQL;
 import pe.edu.pucp.tablesoft.mysql.TicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.UrgenciaMySQL;
 
@@ -44,102 +52,105 @@ public class Principal {
         AgenteDAO agenteDao = new AgenteMySQL();
         EmpleadoDAO empleadoDao =  new EmpleadoMySQL();
         TicketDAO ticketDao = new TicketMySQL();
+        RolDAO rolDao = new RolMySQL();
+        BibliotecaDAO bibliotecaDao = new BibliotecaMySQL();
+        EstadoTicketDAO estadoTicketDao = new EstadoTicketMySQL();
         
+
         
         // EQUIPOS
         // Crear equipos
-        Equipo equipo1 = new Equipo();
-        Equipo equipo2 = new Equipo();
+        Equipo equipo1 = new Equipo("Equipo BD","Equipo especializado en BD");
+        Equipo equipo2 = new Equipo("Equipo Equipos","Equipo especializado en equipos electronicos");
         
         // Insertar equipos
         equipoDao.insertar(equipo1);
         equipoDao.insertar(equipo2);
+        
+        // Listar equipos
+        ArrayList<Equipo> equipos = equipoDao.listar();
+        System.out.println("Equipos:\n");
+        for(Equipo e : equipos){
+            System.out.println(e.mostrarDatos());
+        }
         
         
         // URGENCIAS    
         // Crear urgencias
         Urgencia urgencia1 = new Urgencia("EMERGENCIA", 2);
         Urgencia urgencia2 = new Urgencia("INCIDENTE", 24);
-        Urgencia urgencia3 = new Urgencia("SOLICITUD", 72);
-        Urgencia urgencia4 = new Urgencia("CONSULTA", 72);
+        Urgencia urgencia3 = new Urgencia("CONSULTA", 72);
         
         // Insertar urgencias
         urgenciaDao.insertar(urgencia1);
         urgenciaDao.insertar(urgencia2);
         urgenciaDao.insertar(urgencia3);
-        urgenciaDao.insertar(urgencia4);
         
         // Listar urgencias
         ArrayList<Urgencia> urgencias = urgenciaDao.listar();
-        System.out.println("Urgencias:\n");
+        System.out.println("\nUrgencias:\n");
         for (Urgencia u : urgencias) {
             System.out.println(u.mostrarDatos());
         }
-        
+
         
         // CATEGORIAS     
         // Crear categorias
-        Categoria categoria1 = new Categoria("BASES DE DATOS EN LINEA");
-        Categoria categoria2 = new Categoria("EQUIPOS DE AUTOPRESTAMO");
-        Categoria categoria3 = new Categoria("EQUIPOS DE INVENTARIO");
-        Categoria categoria4 = new Categoria("PAGINA WEB DEL SB");
-        Categoria categoria5 = new Categoria("RED INFORMATICA");
-        Categoria categoria6 = new Categoria("REPOSITORIO DE TESIS PUCP");
-        Categoria categoria7 = new Categoria("SOFTWARE DE OFICINA");
-        Categoria categoria8 = new Categoria("TELEFONO IP");
+        Categoria categoria1 = new Categoria("BASES DE DATOS EN LINEA", "SOBRE BASES DE DATOS EN INTERNET");
+        Categoria categoria2 = new Categoria("EQUIPOS DE AUTOPRESTAMO", "SOBRE EL ASPECTO ELECTRONICO");
+        Categoria categoria3 = new Categoria("EQUIPOS DE INVENTARIO", "SOBRE LOS EQUIPOS DE INVENTARIOS");
         
         // Insertar categorias
         categoriaDao.insertar(categoria1);
         categoriaDao.insertar(categoria2);
         categoriaDao.insertar(categoria3);
-        categoriaDao.insertar(categoria4);
-        categoriaDao.insertar(categoria5);
-        categoriaDao.insertar(categoria6);
-        categoriaDao.insertar(categoria7);
-        categoriaDao.insertar(categoria8);
         
-        // Enlazar cada categoria con un equipo en especifico
-        categoria1.setEquipo(equipo1);
-        categoria2.setEquipo(equipo1);
-        categoria3.setEquipo(equipo2);
-        categoria4.setEquipo(equipo1);
-        categoria5.setEquipo(equipo2);
-        categoria6.setEquipo(equipo2);
-        categoria7.setEquipo(equipo2);
-        categoria8.setEquipo(equipo1);
-        
-        // Actualizar categorias
-        categoriaDao.actualizar(categoria1);
-        categoriaDao.actualizar(categoria2);
-        categoriaDao.actualizar(categoria3);
-        categoriaDao.actualizar(categoria4);
-        categoriaDao.actualizar(categoria5);
-        categoriaDao.actualizar(categoria6);
-        categoriaDao.actualizar(categoria7);
-        categoriaDao.actualizar(categoria8);
+        // Enlazar cada equipo con categorias
+        equipoDao.agregarCategoria(equipo1, categoria1);
+        equipoDao.agregarCategoria(equipo1, categoria2);
+        equipoDao.agregarCategoria(equipo2, categoria3);
         
         // Listar categorias
         ArrayList<Categoria> categorias = categoriaDao.listar();
         System.out.println("\nCategorias:\n");
-        for (Categoria c : categorias) {
+        for(Categoria c: categorias){
             System.out.println(c.mostrarDatos());
         }
+        
+        // Listar categorias por equipo
+//        ArrayList<Equipo> equipos = equipoDao.listar();
+//        ArrayList<Categoria> categorias;
+//        System.out.println("\nEquipos registrados y sus categorias:\n");
+//        for(Equipo e : equipos){
+//            System.out.println(e.mostrarDatos());
+//            System.out.println("Categorias asociadas:");
+//            categorias = categoriaDao.listarxEquipo(e);
+//            for(Categoria c : categorias){
+//                System.out.println("\t" + c.mostrarDatos());
+//            }
+//        }
         
         
         // PROVEEDOR
         // Crear proveedores
         Proveedor proveedor1 = new Proveedor("MIKCORP S.A.");
+        proveedor1.setCiudad("LIMA");
+        proveedor1.setDireccion("CALLE LOS ALAMOS 213");
+        proveedor1.setPais("PERU");
+        proveedor1.setEmail("mikcorp@mail.com");
+        proveedor1.setRuc("34567890120");
+        proveedor1.setTelefono("1239");
         Proveedor proveedor2 = new Proveedor("FERCORP S.A.");
-        Proveedor proveedor3 = new Proveedor("RODCORP S.A.");
-        Proveedor proveedor4 = new Proveedor("CESCORP S.A.");
-        Proveedor proveedor5 = new Proveedor("TEFCORP S.A.");
+        proveedor2.setCiudad("LIMA");
+        proveedor2.setDireccion("AV JAVIER PRADO 2193");
+        proveedor2.setEmail("fercord@mail.com");
+        proveedor2.setPais("PERU");
+        proveedor2.setRuc("12345678912");
+        proveedor2.setTelefono("6789");
         
         // Insertar proveedores
         proveedorDao.insertar(proveedor1);
         proveedorDao.insertar(proveedor2);
-        proveedorDao.insertar(proveedor3);
-        proveedorDao.insertar(proveedor4);
-        proveedorDao.insertar(proveedor5);
         
         // Listar proveedores
         ArrayList<Proveedor> proveedores = proveedorDao.listar();
@@ -147,58 +158,81 @@ public class Principal {
         for (Proveedor p : proveedores) {
             System.out.println(p.mostrarDatos());
         }
+
         
+        // ROL
+        Rol rol1 = new Rol("AGENTE", "AGENTE NORMAL");
+        Rol rol2 = new Rol("SUPERVISOR", "LIDER DE UN EQUIPO");
+
+        // Insertar roles
+        rolDao.insertar(rol1);
+        rolDao.insertar(rol2);
+        
+        // Listar roles
+        ArrayList <Rol> roles = rolDao.listar();
+        System.out.println("\nRoles:\n");
+        for (Rol r : roles) {
+            System.out.println(r.mostrarDatos());
+        }
         
         // AGENTE
-        // Crear agentes (pueden tambien ser supervisores o administradores)
         Agente agente1 = new Agente("20167474", "70221842", "ROLDAN HUAYLLASCO, STEFANO", "a20167474@pucp.edu.pe", "srh@pucp.edu.pe");
+        agente1.setRol(rol1);
         Agente agente2 = new Agente("20170824", "77456687", "VERASTEGUI SANCHEZ, FERNANDO GUILLERMO", "f.verastegui@pucp.edu.pe", "fgvs@pucp.edu.pe");
+        agente2.setRol(rol1);
         Agente agente3 = new Agente("20170910", "74488960", "ROSALES KAM, JUAN FRANCISCO", "juan.rosales@pucp.edu.pe", "jfrk@pucp.edu.pe");
+        agente3.setRol(rol2);
         Agente agente4 = new Agente("20170569", "76947569", "CARBAJAL SERRANO, CESAR ADRIAN", "a20170569@pucp.edu.pe", "cacs@pucp.edu.pe");
-        Agente supervisor1 = new Supervisor("20171051", "71927484", "SILVA LUNA, MIGUEL ANTERO", "a20171051@pucp.edu.pe", "masl@pucp.edu.pe");
-        Agente supervisor2 = new Supervisor("20170516", "74484890", "CRUZ LEAN, RODRIGO ALONSO", "racruz@pucp.edu.pe", "racl@pucp.edu.pe");
-        Agente administrador = new Administrador("20112728", "45687889", "PAZ ESPINOZA, FREDDY ALBERTO", "fpaz@pucp.edu.pe", "fape@pucp.edu.pe");
+        agente4.setRol(rol1);
         
         // Insertar agentes
         agenteDao.insertar(agente1);
         agenteDao.insertar(agente2);
         agenteDao.insertar(agente3);
         agenteDao.insertar(agente4);
-        agenteDao.insertar(supervisor1);
-        agenteDao.insertar(supervisor2);
-        agenteDao.insertar(administrador);
         
         // Asignar equipos a los agentes
         agente1.setEquipo(equipo1);
         agente2.setEquipo(equipo1);
-        supervisor1.setEquipo(equipo1);
         agente3.setEquipo(equipo2);
         agente4.setEquipo(equipo2);
-        supervisor2.setEquipo(equipo2);
-        administrador.setEquipo(equipo1);
         
         // Actualizar agentes con nuevos valores
         agenteDao.actualizar(agente1);
         agenteDao.actualizar(agente2);
         agenteDao.actualizar(agente3);
         agenteDao.actualizar(agente4);
-        agenteDao.actualizar(supervisor1);
-        agenteDao.actualizar(supervisor2);
-        agenteDao.actualizar(administrador);
         
         // Listar agentes
         ArrayList<Agente> agentes = agenteDao.listar();
         System.out.println("\nAgentes:\n");
         for (Agente a : agentes) {
-            System.out.println(a.mostrarDatos());
+            System.out.println(a.mostrarDatos()+ " - " + a.getRol().getNombre() + " - " + a.getEquipo().getNombre()) ;
         }
         
+        // BIBLIOTECAS
+        Biblioteca bib1 = new Biblioteca("COMPLEJO DE INNOVACIÓN ACADÉMICA", "CIA");
+        Biblioteca bib2 = new Biblioteca("BIBLIOTECA DE CIENCIAS SOCIALES", "BCS");
+        
+        // Insertar bibliotecas
+        bibliotecaDao.insertar(bib1);
+        bibliotecaDao.insertar(bib2);
+        
+        // Listar bibliotecas
+        ArrayList<Biblioteca> bibliotecas = bibliotecaDao.listar();
+        System.out.println("\nBibliotecas:\n");
+        for (Biblioteca b : bibliotecas) {
+            System.out.println(b.mostrarDatos());
+        }
         
         // EMPLEADO
         // Crear empleados
         Empleado empleado1 = new Empleado("20175657", "79805979", "GELDRES QUIROZ, JUAN AYMAR", "aymar.geldres@pucp.edu.pe");
+        empleado1.setBiblioteca(bib1);
         Empleado empleado2 = new Empleado("20176969", "70487898", "CERVANTES DIAZ, LEONARDO FABRIZIO", "a20176969@pucp.edu.pe");
+        empleado2.setBiblioteca(bib1);
         Empleado empleado3 = new Empleado("20174200", "78979999", "CANASA MAYTA, PAUL RODRIGO", "paul.canasa@pucp.edu.pe");
+        empleado3.setBiblioteca(bib2);
         
         // Insertar empleados
         empleadoDao.insertar(empleado1);
@@ -207,69 +241,78 @@ public class Principal {
         
         // Listar empleados
         ArrayList<Empleado> empleados = empleadoDao.listar();
-        System.out.println("\nEmpleados:\n");
+        System.out.println("\nEmpleado:\n");
         for (Empleado e : empleados) {
+            System.out.println(e.mostrarDatos() + " - " + e.getBiblioteca().getAbreviatura());
+        }
+        
+        // ESTADOS DE TICKET
+        // Crear estados de ticket
+        EstadoTicket estado1 = new EstadoTicket("ACTIVO", "El ticket acaba de ser enviado");
+        EstadoTicket estado2 = new EstadoTicket("CERRADO", "El ticket ya ha sido solucionado");
+        EstadoTicket estado3 = new EstadoTicket("ESCALADO", "El ticket ha sido transferido a un proveedor");
+        
+        // Insertar
+        estadoTicketDao.insertar(estado1);
+        estadoTicketDao.insertar(estado2);
+        estadoTicketDao.insertar(estado3);
+        
+        // Listar estados
+        ArrayList<EstadoTicket> estadosTicket = estadoTicketDao.listar();
+        System.out.println("\nEstados de ticket:\n");
+        for (EstadoTicket e : estadosTicket) {
             System.out.println(e.mostrarDatos());
         }
         
-        
         // TICKET
-        // Crear tickets
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
-        LocalDateTime fecha1 = LocalDateTime.parse("14-05-2020 18:15:30", formatter);
-        LocalDateTime fecha2 = LocalDateTime.parse("15-05-2020 08:39:02", formatter);
-        LocalDateTime fecha3 = LocalDateTime.parse("13-05-2020 16:09:47", formatter);
-        LocalDateTime fechaPrim = LocalDateTime.parse("15-05-2020 10:01:58", formatter);
-        LocalDateTime fechaCierre = LocalDateTime.parse("15-05-2020 11:05:00", formatter);
+        // Crear y enviar tickets
+        Ticket ticket1 = new Ticket(estado1, empleado1, urgencia1, categoria1, bib1);
+        Ticket ticket2 = new Ticket(estado1, empleado2, urgencia2, categoria2, bib1);
         
-        Ticket ticket1 = new Ticket("ACTIVO", fecha1, urgencia2, categoria3);
-        Ticket ticket2 = new Ticket("ACTIVO", fecha2, urgencia1, categoria4);
-        Ticket ticket3 = new Ticket("ACTIVO", fecha3, urgencia3, categoria7);
-        
-        // Insertar tickets
         ticketDao.insertar(ticket1);
         ticketDao.insertar(ticket2);
-        ticketDao.insertar(ticket3);
+        
+//        // Listamos los tickets
+//        ArrayList<Ticket> tickets = ticketDao.listar();
+//        System.out.println("\nTickets\n");
+//        for (Ticket t : tickets) {
+//            System.out.println(t.mostrarDatos());
+//        }
         
         // Asignar agentes
         ticket1.setAgente(agente1);
         ticket2.setAgente(agente2);
-        ticket3.setAgente(agente4);
         
-        // Asignar proveedores
-        ticket1.setProveedor(proveedor1);
-        ticket2.setProveedor(proveedor3);
-        ticket3.setProveedor(proveedor4);
-        
-        // Asignar empleados
-        ticket1.setEmpleado(empleado1);
-        ticket2.setEmpleado(empleado2);
-        ticket3.setEmpleado(empleado3);
-       
-        // Asignar algunos campos faltantes (no todos son necesarios)
-        ticket1.setInfoAdicional("El inventario se encuentra en mal estado.");
-        ticket2.setInfoAdicional("URGENTE! No funciona la pagina web del SB...");
-        ticket3.setInfoAdicional("Problemas con el software");
-        ticket2.setAlumnoEmail("alumno@gmail.com");
-        ticket2.setFechaPrimeraRespuesta(fechaPrim);
-        ticket2.setFechaCierre(fechaCierre);
-        ticket1.setActivoFijoId(201500018);
-        
-        
-        // Actualizar con nuevos valores
+        // Actualizamos
         ticketDao.actualizar(ticket1);
         ticketDao.actualizar(ticket2);
-        ticketDao.actualizar(ticket3);
         
-        // Listar tickets
-        ArrayList<Ticket> tickets = ticketDao.listar();
+        // Listamos los tickets
+        ArrayList<Ticket>tickets = ticketDao.listar();
         System.out.println("\nTickets\n");
         for (Ticket t : tickets) {
             System.out.println(t.mostrarDatos());
         }
         
-        /* Los metodos para eliminar se pueden probar luego de ver el comportamiento
-         * de los metodos para insertar, actualizar y listar dentro de la base de datos.
+        // Solucionar ticket 1
+        ticket1.actualizarEstado(estado2, "Se arreglo el problema");
+        ticketDao.actualizar(ticket1);
+        
+        // Escalar ticket 2
+        ticket2.escalar(proveedor2, "El proveedor deberia revisar el cableado");
+        ticket2.actualizarEstado(estado3, "El problema era muy grave, fue escalado");
+        ticketDao.actualizar(ticket2);
+        
+        // Listamos los tickets
+        tickets = ticketDao.listar();
+        System.out.println("\nTickets\n");
+        for (Ticket t : tickets) {
+            System.out.println(t.mostrarDatos());
+        }
+        
+        /* Los metodos para eliminar en las clases con campo activo los ponen en 0
+         * Es requisto que se deje un registro permanente en base de datos
+        
          */
     }
 }

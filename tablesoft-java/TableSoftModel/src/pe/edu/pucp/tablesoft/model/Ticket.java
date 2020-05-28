@@ -45,6 +45,24 @@ public class Ticket {
         agente = new Agente();
     }
 
+    public Ticket(EstadoTicket estado, Empleado empleado, Urgencia urgencia, Categoria categoria, Biblioteca biblioteca) {
+        this.estado = estado;
+        this.empleado = empleado;
+        this.urgencia = urgencia;
+        this.categoria = categoria;
+        this.biblioteca = biblioteca;
+        
+        listaTareas = new ArrayList<>();
+        historialEstado = new ArrayList<>();
+        historialTransferencia = new ArrayList();
+        comentarios = new ArrayList();
+
+        proveedor = new Proveedor();
+        activoFijo = new ActivoFijo();
+        
+        agente = new Agente();
+    }
+
     public ArrayList<Comentario> getComentarios() {
         return comentarios;
     }
@@ -231,6 +249,10 @@ public class Ticket {
     }
     
     public String mostrarDatos() {
-        return "";
+        return this.getTicketId() + " - " + this.getEstado().getNombre() + 
+                " - Empleado: " + this.getAgente().getAgenteId() + " - Agente: " + this.getAgente().getAgenteId() +
+                " - " + this.getBiblioteca().getAbreviatura() + " - " +
+                this.getUrgencia().getNombre() + " - " + this.getCategoria().getNombre() + 
+                " - Fecha envio: " + this.getFechaEnvio();
     }
 }

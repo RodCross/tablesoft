@@ -48,5 +48,7 @@ public class EstadoTicket {
     public void setActivo(Boolean activo) {
         this.activo = activo;
     }
-    
+    public String mostrarDatos(){
+        return this.getEstadoId() + " - " + this.getNombre() + " - " + this.getDescripcion();
+    }
 }

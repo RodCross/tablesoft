@@ -141,7 +141,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             
             ResultSet rs = cs.executeQuery();
             
-            BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
+            //BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
             while(rs.next()){
                 Empleado empleado = new Empleado();
                 

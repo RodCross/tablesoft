@@ -49,4 +49,7 @@ public class Rol {
         this.activo = activo;
     }
     
+    public String mostrarDatos(){
+        return this.getRolId() + " - "+ this.getNombre() + " - " + this.getDescripcion();
+    }
 }

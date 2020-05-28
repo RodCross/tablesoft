@@ -63,7 +63,7 @@ public class TicketMySQL implements TicketDAO{
             
             out = cs.getInt("_ID");
             ticket.setTicketId(out);
-            
+            ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());
             con.close();
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
@@ -86,16 +86,19 @@ public class TicketMySQL implements TicketDAO{
             
             TransferenciaExternaDAO daoExterna = new TransferenciaExternaMySQL();
             TransferenciaInternaDAO daoInterna = new TransferenciaInternaMySQL();
-            for (TransferenciaTicket transfer : ticket.getHistorialTransferencia()){
-                if(transfer.getTransferenciaId() == 0){
-                    if(transfer instanceof TransferenciaExterna){
-                        daoExterna.insertar((TransferenciaExterna)transfer, ticket);
-                    }
-                    if(transfer instanceof TransferenciaInterna){
-                        daoInterna.insertar((TransferenciaInterna)transfer, ticket);
+            if(ticket.getHistorialTransferencia() != null){
+                for (TransferenciaTicket transfer : ticket.getHistorialTransferencia()){
+                    if(transfer.getTransferenciaId() == 0){
+                        if(transfer instanceof TransferenciaExterna){
+                            daoExterna.insertar((TransferenciaExterna)transfer, ticket);
+                        }
+                        if(transfer instanceof TransferenciaInterna){
+                            daoInterna.insertar((TransferenciaInterna)transfer, ticket);
+                        }
                     }
                 }
             }
+            
             CambioEstadoTicketDAO daoCambioEstado = new CambioEstadoTicketMySQL();
             for (CambioEstadoTicket cambioEstado : ticket.getHistorialEstado()){
                 if(cambioEstado.getCambioEstadoTicketId() == 0){
@@ -104,7 +107,7 @@ public class TicketMySQL implements TicketDAO{
             }
             
             CallableStatement cs = con.prepareCall(
-                "{CALL actualizar_ticket(?,?,?,?,?,?,?,?,?,?,?,?,?)}"
+                "{CALL actualizar_ticket(?,?,?,?,?,?,?,?,?,?,?,?,?,?)}"
             );
             cs.setInt("_ID", ticket.getTicketId());
             cs.setInt("_ESTADO_ID", ticket.getEstado().getEstadoId());

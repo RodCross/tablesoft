@@ -61,7 +61,7 @@
             this.lblMsgUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblAsunto = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnVerTareas = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlMensajes.SuspendLayout();
@@ -117,11 +117,11 @@
             this.btnCambiarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarCategoria.Location = new System.Drawing.Point(83, 376);
+            this.btnCambiarCategoria.Location = new System.Drawing.Point(175, 371);
             this.btnCambiarCategoria.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnCambiarCategoria.Name = "btnCambiarCategoria";
             this.btnCambiarCategoria.Size = new System.Drawing.Size(165, 33);
-            this.btnCambiarCategoria.TabIndex = 2;
+            this.btnCambiarCategoria.TabIndex = 3;
             this.btnCambiarCategoria.Text = "Cambiar categoría";
             this.btnCambiarCategoria.UseVisualStyleBackColor = false;
             this.btnCambiarCategoria.Click += new System.EventHandler(this.btnCambiarCategoria_Click);
@@ -134,7 +134,7 @@
             this.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarEstado.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarEstado.Location = new System.Drawing.Point(459, 376);
+            this.btnCambiarEstado.Location = new System.Drawing.Point(367, 371);
             this.btnCambiarEstado.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnCambiarEstado.Name = "btnCambiarEstado";
             this.btnCambiarEstado.Size = new System.Drawing.Size(165, 33);
@@ -151,11 +151,11 @@
             this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEscalar.ForeColor = System.Drawing.Color.White;
-            this.btnEscalar.Location = new System.Drawing.Point(294, 376);
+            this.btnEscalar.Location = new System.Drawing.Point(559, 371);
             this.btnEscalar.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnEscalar.Name = "btnEscalar";
             this.btnEscalar.Size = new System.Drawing.Size(119, 33);
-            this.btnEscalar.TabIndex = 3;
+            this.btnEscalar.TabIndex = 5;
             this.btnEscalar.Text = "Escalar";
             this.btnEscalar.UseVisualStyleBackColor = false;
             this.btnEscalar.Click += new System.EventHandler(this.btnEscalar_Click);
@@ -331,7 +331,7 @@
             // 
             // pnlRespuesta
             // 
-            this.pnlRespuesta.Controls.Add(this.button1);
+            this.pnlRespuesta.Controls.Add(this.btnVerTareas);
             this.pnlRespuesta.Controls.Add(this.btnCambiarCategoria);
             this.pnlRespuesta.Controls.Add(this.btnResponder);
             this.pnlRespuesta.Controls.Add(this.rtfRespuesta);
@@ -468,21 +468,22 @@
             this.lblAsunto.TabIndex = 0;
             this.lblAsunto.Text = "Falla en las impresoras del Complejo de Innovación Académica";
             // 
-            // button1
+            // btnVerTareas
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(507, 296);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(165, 33);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Ver Tareas";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnVerTareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVerTareas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerTareas.FlatAppearance.BorderSize = 0;
+            this.btnVerTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTareas.ForeColor = System.Drawing.Color.White;
+            this.btnVerTareas.Location = new System.Drawing.Point(29, 371);
+            this.btnVerTareas.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.btnVerTareas.Name = "btnVerTareas";
+            this.btnVerTareas.Size = new System.Drawing.Size(119, 33);
+            this.btnVerTareas.TabIndex = 2;
+            this.btnVerTareas.Text = "Ver tareas";
+            this.btnVerTareas.UseVisualStyleBackColor = false;
+            this.btnVerTareas.Click += new System.EventHandler(this.btnVerTareas_Click);
             // 
             // frmInfoTicketAgente
             // 
@@ -542,6 +543,6 @@
         private System.Windows.Forms.Button btnCambiarCategoria;
         private System.Windows.Forms.Button btnCambiarEstado;
         private System.Windows.Forms.Button btnEscalar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnVerTareas;
     }
 }

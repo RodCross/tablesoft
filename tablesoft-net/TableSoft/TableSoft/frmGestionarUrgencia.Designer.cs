@@ -28,32 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlTitulo = new System.Windows.Forms.Panel();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarUrgencia));
             this.lblDatosUrgencia = new System.Windows.Forms.Label();
-            this.gpbDatosGenerales = new System.Windows.Forms.GroupBox();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
             this.txtPlazoMaximo = new System.Windows.Forms.TextBox();
             this.lblPlazoMaximo = new System.Windows.Forms.Label();
             this.lblIDUrgencia = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIDUrgencia = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.btnBorrar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
-            this.gpbDatosGenerales.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblDatosUrgencia);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(522, 70);
-            this.pnlTitulo.TabIndex = 9;
             // 
             // lblDatosUrgencia
             // 
@@ -62,175 +51,184 @@
             this.lblDatosUrgencia.ForeColor = System.Drawing.Color.White;
             this.lblDatosUrgencia.Location = new System.Drawing.Point(30, 23);
             this.lblDatosUrgencia.Name = "lblDatosUrgencia";
-            this.lblDatosUrgencia.Size = new System.Drawing.Size(161, 27);
+            this.lblDatosUrgencia.Size = new System.Drawing.Size(212, 27);
             this.lblDatosUrgencia.TabIndex = 0;
-            this.lblDatosUrgencia.Text = "Datos Urgencia";
+            this.lblDatosUrgencia.Text = "Datos de la urgencia";
             // 
-            // gpbDatosGenerales
+            // pnlTitulo
             // 
-            this.gpbDatosGenerales.Controls.Add(this.txtPlazoMaximo);
-            this.gpbDatosGenerales.Controls.Add(this.lblPlazoMaximo);
-            this.gpbDatosGenerales.Controls.Add(this.lblIDUrgencia);
-            this.gpbDatosGenerales.Controls.Add(this.txtNombre);
-            this.gpbDatosGenerales.Controls.Add(this.txtIDUrgencia);
-            this.gpbDatosGenerales.Controls.Add(this.lblNombre);
-            this.gpbDatosGenerales.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gpbDatosGenerales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.gpbDatosGenerales.Location = new System.Drawing.Point(35, 103);
-            this.gpbDatosGenerales.Name = "gpbDatosGenerales";
-            this.gpbDatosGenerales.Size = new System.Drawing.Size(449, 166);
-            this.gpbDatosGenerales.TabIndex = 8;
-            this.gpbDatosGenerales.TabStop = false;
-            this.gpbDatosGenerales.Text = "Datos Generales";
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.btnCancelar);
+            this.pnlTitulo.Controls.Add(this.lblDatosUrgencia);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(454, 70);
+            this.pnlTitulo.TabIndex = 5;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // txtPlazoMaximo
             // 
-            this.txtPlazoMaximo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPlazoMaximo.Location = new System.Drawing.Point(161, 114);
+            this.txtPlazoMaximo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPlazoMaximo.Location = new System.Drawing.Point(148, 178);
             this.txtPlazoMaximo.Name = "txtPlazoMaximo";
-            this.txtPlazoMaximo.Size = new System.Drawing.Size(188, 26);
-            this.txtPlazoMaximo.TabIndex = 6;
+            this.txtPlazoMaximo.Size = new System.Drawing.Size(204, 28);
+            this.txtPlazoMaximo.TabIndex = 2;
             // 
             // lblPlazoMaximo
             // 
             this.lblPlazoMaximo.AutoSize = true;
             this.lblPlazoMaximo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblPlazoMaximo.Location = new System.Drawing.Point(37, 116);
+            this.lblPlazoMaximo.Location = new System.Drawing.Point(24, 181);
             this.lblPlazoMaximo.Name = "lblPlazoMaximo";
-            this.lblPlazoMaximo.Size = new System.Drawing.Size(110, 21);
-            this.lblPlazoMaximo.TabIndex = 5;
-            this.lblPlazoMaximo.Text = "Plazo Maximo:";
+            this.lblPlazoMaximo.Size = new System.Drawing.Size(107, 21);
+            this.lblPlazoMaximo.TabIndex = 8;
+            this.lblPlazoMaximo.Text = "Plazo máximo";
+            this.lblPlazoMaximo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblIDUrgencia
             // 
             this.lblIDUrgencia.AutoSize = true;
             this.lblIDUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDUrgencia.Location = new System.Drawing.Point(53, 28);
+            this.lblIDUrgencia.Location = new System.Drawing.Point(106, 99);
             this.lblIDUrgencia.Name = "lblIDUrgencia";
-            this.lblIDUrgencia.Size = new System.Drawing.Size(94, 21);
-            this.lblIDUrgencia.TabIndex = 1;
-            this.lblIDUrgencia.Text = "ID Urgencia:";
+            this.lblIDUrgencia.Size = new System.Drawing.Size(25, 21);
+            this.lblIDUrgencia.TabIndex = 6;
+            this.lblIDUrgencia.Text = "ID";
+            this.lblIDUrgencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtNombre
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(161, 68);
+            this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.Location = new System.Drawing.Point(148, 137);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(276, 26);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.Size = new System.Drawing.Size(276, 28);
+            this.txtNombre.TabIndex = 1;
             // 
             // txtIDUrgencia
             // 
             this.txtIDUrgencia.Enabled = false;
-            this.txtIDUrgencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDUrgencia.Location = new System.Drawing.Point(161, 26);
+            this.txtIDUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDUrgencia.Location = new System.Drawing.Point(148, 96);
             this.txtIDUrgencia.Name = "txtIDUrgencia";
             this.txtIDUrgencia.ReadOnly = true;
-            this.txtIDUrgencia.Size = new System.Drawing.Size(67, 26);
-            this.txtIDUrgencia.TabIndex = 2;
+            this.txtIDUrgencia.Size = new System.Drawing.Size(204, 28);
+            this.txtIDUrgencia.TabIndex = 0;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblNombre.Location = new System.Drawing.Point(76, 70);
+            this.lblNombre.Location = new System.Drawing.Point(63, 140);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(71, 21);
-            this.lblNombre.TabIndex = 3;
-            this.lblNombre.Text = "Nombre:";
-            // 
-            // btnBorrar
-            // 
-            this.btnBorrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.btnBorrar.FlatAppearance.BorderSize = 0;
-            this.btnBorrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBorrar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBorrar.ForeColor = System.Drawing.Color.White;
-            this.btnBorrar.Location = new System.Drawing.Point(46, 287);
-            this.btnBorrar.Name = "btnBorrar";
-            this.btnBorrar.Size = new System.Drawing.Size(102, 33);
-            this.btnBorrar.TabIndex = 17;
-            this.btnBorrar.Text = "Borrar";
-            this.btnBorrar.UseVisualStyleBackColor = false;
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.btnActualizar.FlatAppearance.BorderSize = 0;
-            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(154, 287);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(102, 33);
-            this.btnActualizar.TabIndex = 16;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(262, 287);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(102, 33);
-            this.btnGuardar.TabIndex = 15;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.lblNombre.Size = new System.Drawing.Size(68, 21);
+            this.lblNombre.TabIndex = 7;
+            this.lblNombre.Text = "Nombre";
+            this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnCancelar
             // 
-            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(370, 287);
+            this.btnCancelar.Location = new System.Drawing.Point(322, 22);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 33);
-            this.btnCancelar.TabIndex = 14;
+            this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Location = new System.Drawing.Point(172, 248);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(102, 33);
+            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnActualizar
+            // 
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnActualizar.FlatAppearance.BorderSize = 0;
+            this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(322, 248);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(102, 33);
+            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = false;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.White;
+            this.btnGuardar.Location = new System.Drawing.Point(322, 248);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(102, 33);
+            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // frmGestionarUrgencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(522, 337);
-            this.Controls.Add(this.btnBorrar);
+            this.ClientSize = new System.Drawing.Size(454, 310);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.txtPlazoMaximo);
+            this.Controls.Add(this.lblPlazoMaximo);
+            this.Controls.Add(this.lblIDUrgencia);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.txtIDUrgencia);
+            this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.btnActualizar);
-            this.Controls.Add(this.gpbDatosGenerales);
             this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.btnCancelar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGestionarUrgencia";
             this.Text = "frmGestionarUrgencia";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            this.gpbDatosGenerales.ResumeLayout(false);
-            this.gpbDatosGenerales.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblDatosUrgencia;
-        private System.Windows.Forms.GroupBox gpbDatosGenerales;
+        private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.TextBox txtPlazoMaximo;
         private System.Windows.Forms.Label lblPlazoMaximo;
         private System.Windows.Forms.Label lblIDUrgencia;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtIDUrgencia;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnCancelar;
     }
 }

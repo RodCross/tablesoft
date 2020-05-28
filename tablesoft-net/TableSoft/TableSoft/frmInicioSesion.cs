@@ -9,6 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TableSoft.temp; // para clases temporales
 
+// PARA ACCEDER RAPIDAMENTE:
+// EMPLEADO -  usuario y pass: e
+// AGENTE -  usuario y pass: a
+// SUPERVISOR -  usuario y pass: s
+// ADMIN -  usuario y pass: admin
+
 namespace TableSoft
 {
     public partial class frmInicioSesion : Form
@@ -16,10 +22,12 @@ namespace TableSoft
         BindingList<Usuario> usuarios = new BindingList<Usuario>();
         Usuario user1 = new Usuario("a20167474@pucp.edu.pe", "abcd1234", "Empleado");
         Usuario user2 = new Usuario("f.verastegui@pucp.edu.pe", "abcd1234", "Agente");
-        Usuario user3 = new Usuario("e", "e", "Empleado");
-        Usuario user4 = new Usuario("a", "a", "Agente");
-        Usuario user5 = new Usuario("s", "s", "Supervisor");
-        Usuario user6 = new Usuario("admin", "admin", "Administrador");
+        Usuario user3 = new Usuario("cacs@pucp.edu.pe", "abcd1234", "Supervisor");
+        Usuario user4 = new Usuario("ms404@pucp.edu.pe", "abcd1234", "Administrador");
+        Usuario user5 = new Usuario("e", "e", "Empleado");
+        Usuario user6 = new Usuario("a", "a", "Agente");
+        Usuario user7 = new Usuario("s", "s", "Supervisor");
+        Usuario user8 = new Usuario("admin", "admin", "Administrador");
 
         public frmInicioSesion()
         {
@@ -31,6 +39,8 @@ namespace TableSoft
             usuarios.Add(user4);
             usuarios.Add(user5);
             usuarios.Add(user6);
+            usuarios.Add(user7);
+            usuarios.Add(user8);
         }
 
         // Inicios de sesion

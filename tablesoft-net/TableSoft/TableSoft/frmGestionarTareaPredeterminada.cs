@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TableSoft
 {
-    public partial class frmGestionarEquipo : Form
+    public partial class frmGestionarTareaPredeterminada : Form
     {
-        public frmGestionarEquipo()
+        public frmGestionarTareaPredeterminada()
         {
             InitializeComponent();
             btnGuardar.Visible = true;
@@ -20,7 +20,7 @@ namespace TableSoft
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarEquipo(int i)
+        public frmGestionarTareaPredeterminada(int i)
         {
             InitializeComponent();
             btnActualizar.Visible = true;

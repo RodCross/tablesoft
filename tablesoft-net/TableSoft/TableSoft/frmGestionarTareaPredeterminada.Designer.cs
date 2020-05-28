@@ -1,6 +1,6 @@
 ﻿namespace TableSoft
 {
-    partial class frmGestionarEstado
+    partial class frmGestionarTareaPredeterminada
     {
         /// <summary>
         /// Required designer variable.
@@ -28,64 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarEstado));
-            this.lblDatosEstado = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarTareaPredeterminada));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblIDEstado = new System.Windows.Forms.Label();
-            this.txtIDEstado = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblDatosTarea = new System.Windows.Forms.Label();
+            this.lblIDTarea = new System.Windows.Forms.Label();
+            this.txtDesc = new System.Windows.Forms.TextBox();
+            this.txtIDTarea = new System.Windows.Forms.TextBox();
+            this.lblDesc = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.lblDescripcion = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblDatosEstado
-            // 
-            this.lblDatosEstado.AutoSize = true;
-            this.lblDatosEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblDatosEstado.ForeColor = System.Drawing.Color.White;
-            this.lblDatosEstado.Location = new System.Drawing.Point(30, 22);
-            this.lblDatosEstado.Name = "lblDatosEstado";
-            this.lblDatosEstado.Size = new System.Drawing.Size(175, 27);
-            this.lblDatosEstado.TabIndex = 0;
-            this.lblDatosEstado.Text = "Datos del estado";
             // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
             this.pnlTitulo.Controls.Add(this.btnCancelar);
-            this.pnlTitulo.Controls.Add(this.lblDatosEstado);
+            this.pnlTitulo.Controls.Add(this.lblDatosTarea);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(700, 70);
-            this.pnlTitulo.TabIndex = 5;
+            this.pnlTitulo.TabIndex = 4;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lblIDEstado
-            // 
-            this.lblIDEstado.AutoSize = true;
-            this.lblIDEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDEstado.Location = new System.Drawing.Point(128, 93);
-            this.lblIDEstado.Name = "lblIDEstado";
-            this.lblIDEstado.Size = new System.Drawing.Size(25, 21);
-            this.lblIDEstado.TabIndex = 6;
-            this.lblIDEstado.Text = "ID";
-            // 
-            // txtIDEstado
-            // 
-            this.txtIDEstado.Enabled = false;
-            this.txtIDEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDEstado.Location = new System.Drawing.Point(170, 91);
-            this.txtIDEstado.Name = "txtIDEstado";
-            this.txtIDEstado.ReadOnly = true;
-            this.txtIDEstado.Size = new System.Drawing.Size(204, 28);
-            this.txtIDEstado.TabIndex = 0;
             // 
             // btnCancelar
             // 
@@ -103,6 +70,57 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblDatosTarea
+            // 
+            this.lblDatosTarea.AutoSize = true;
+            this.lblDatosTarea.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblDatosTarea.ForeColor = System.Drawing.Color.White;
+            this.lblDatosTarea.Location = new System.Drawing.Point(30, 22);
+            this.lblDatosTarea.Name = "lblDatosTarea";
+            this.lblDatosTarea.Size = new System.Drawing.Size(176, 27);
+            this.lblDatosTarea.TabIndex = 0;
+            this.lblDatosTarea.Text = "Datos de la tarea";
+            // 
+            // lblIDTarea
+            // 
+            this.lblIDTarea.AutoSize = true;
+            this.lblIDTarea.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIDTarea.Location = new System.Drawing.Point(128, 93);
+            this.lblIDTarea.Name = "lblIDTarea";
+            this.lblIDTarea.Size = new System.Drawing.Size(25, 21);
+            this.lblIDTarea.TabIndex = 5;
+            this.lblIDTarea.Text = "ID";
+            this.lblIDTarea.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(170, 146);
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(501, 28);
+            this.txtDesc.TabIndex = 1;
+            // 
+            // txtIDTarea
+            // 
+            this.txtIDTarea.Enabled = false;
+            this.txtIDTarea.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIDTarea.Location = new System.Drawing.Point(170, 90);
+            this.txtIDTarea.Name = "txtIDTarea";
+            this.txtIDTarea.ReadOnly = true;
+            this.txtIDTarea.Size = new System.Drawing.Size(204, 28);
+            this.txtIDTarea.TabIndex = 0;
+            // 
+            // lblDesc
+            // 
+            this.lblDesc.AutoSize = true;
+            this.lblDesc.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblDesc.Location = new System.Drawing.Point(62, 149);
+            this.lblDesc.Name = "lblDesc";
+            this.lblDesc.Size = new System.Drawing.Size(91, 21);
+            this.lblDesc.TabIndex = 6;
+            this.lblDesc.Text = "Descripción";
+            this.lblDesc.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
@@ -111,10 +129,10 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(419, 247);
+            this.btnEliminar.Location = new System.Drawing.Point(419, 214);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 33);
-            this.btnEliminar.TabIndex = 3;
+            this.btnEliminar.TabIndex = 2;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -127,10 +145,10 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(569, 247);
+            this.btnActualizar.Location = new System.Drawing.Point(569, 214);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
-            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.TabIndex = 3;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -143,69 +161,31 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(569, 247);
+            this.btnGuardar.Location = new System.Drawing.Point(569, 214);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
-            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.TabIndex = 2;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(170, 135);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(204, 28);
-            this.txtNombre.TabIndex = 1;
-            // 
-            // lblNombre
-            // 
-            this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblNombre.Location = new System.Drawing.Point(85, 137);
-            this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(68, 21);
-            this.lblNombre.TabIndex = 7;
-            this.lblNombre.Text = "Nombre";
-            // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(170, 179);
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(501, 28);
-            this.txtDescripcion.TabIndex = 2;
-            // 
-            // lblDescripcion
-            // 
-            this.lblDescripcion.AutoSize = true;
-            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDescripcion.Location = new System.Drawing.Point(62, 181);
-            this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(91, 21);
-            this.lblDescripcion.TabIndex = 8;
-            this.lblDescripcion.Text = "Descripción";
-            // 
-            // frmGestionarEstado
+            // frmGestionarTareaPredeterminada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 308);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.txtDescripcion);
-            this.Controls.Add(this.lblDescripcion);
+            this.ClientSize = new System.Drawing.Size(700, 275);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.lblIDEstado);
-            this.Controls.Add(this.txtIDEstado);
+            this.Controls.Add(this.lblIDTarea);
+            this.Controls.Add(this.txtDesc);
+            this.Controls.Add(this.txtIDTarea);
+            this.Controls.Add(this.lblDesc);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmGestionarEstado";
-            this.Text = "frmGestionarEstado";
+            this.Name = "frmGestionarTareaPredeterminada";
+            this.Text = "frmGestionarTareas";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);
@@ -214,17 +194,15 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblDatosEstado;
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.Label lblIDEstado;
-        private System.Windows.Forms.TextBox txtIDEstado;
+        private System.Windows.Forms.Label lblDatosTarea;
+        private System.Windows.Forms.Label lblIDTarea;
+        private System.Windows.Forms.TextBox txtDesc;
+        private System.Windows.Forms.TextBox txtIDTarea;
+        private System.Windows.Forms.Label lblDesc;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.Label lblDescripcion;
     }
 }

@@ -80,5 +80,11 @@ namespace TableSoft
             frmReasignarCategoriaTicketAgente frm = new frmReasignarCategoriaTicketAgente();
             frm.ShowDialog();
         }
+
+        private void btnVerTareas_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarTareasTicket frm = new frmSeleccionarTareasTicket();
+            frm.ShowDialog();
+        }
     }
 }

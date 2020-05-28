@@ -15,42 +15,57 @@ namespace TableSoft
         public frmGestionarProveedor()
         {
             InitializeComponent();
+            btnGuardar.Visible = true;
+            btnActualizar.Visible = false;
+            btnEliminar.Visible = false;
         }
 
-        private void lblID_Click(object sender, EventArgs e)
+        public frmGestionarProveedor(int i)
         {
-
+            InitializeComponent();
+            btnActualizar.Visible = true;
+            btnEliminar.Visible = true;
+            btnGuardar.Visible = false;
         }
 
-        private void lblPais_Click(object sender, EventArgs e)
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
-
-        }
-
-        private void lblRazonSocial_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblTelefono_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-
+            Movimiento.MoverVentana(Handle, e.Button);
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(
+                "Se ha guardado el registro.",
+                "Guardado exitoso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show(
+                "Se ha eliminado el registro.",
+                "Eliminación exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Se ha actualizado el registro.",
+                "Actualización exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
+        }
     }
 }

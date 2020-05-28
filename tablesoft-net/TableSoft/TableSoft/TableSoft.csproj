@@ -136,11 +136,11 @@
     <Compile Include="frmGestionarSistemaAdministrador.Designer.cs">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarTareasPredeterminadas.cs">
+    <Compile Include="frmGestionarTareaPredeterminada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarTareasPredeterminadas.Designer.cs">
-      <DependentUpon>frmGestionarTareasPredeterminadas.cs</DependentUpon>
+    <Compile Include="frmGestionarTareaPredeterminada.Designer.cs">
+      <DependentUpon>frmGestionarTareaPredeterminada.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarTareasTicket.cs">
       <SubType>Form</SubType>
@@ -348,8 +348,8 @@
     <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarTareasPredeterminadas.resx">
-      <DependentUpon>frmGestionarTareasPredeterminadas.cs</DependentUpon>
+    <EmbeddedResource Include="frmGestionarTareaPredeterminada.resx">
+      <DependentUpon>frmGestionarTareaPredeterminada.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarTareasTicket.resx">
       <DependentUpon>frmGestionarTareasTicket.cs</DependentUpon>

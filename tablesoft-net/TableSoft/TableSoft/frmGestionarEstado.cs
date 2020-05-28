@@ -15,6 +15,42 @@ namespace TableSoft
         public frmGestionarEstado()
         {
             InitializeComponent();
+            btnGuardar.Visible = true;
+            btnActualizar.Visible = false;
+            btnEliminar.Visible = false;
+        }
+
+        public frmGestionarEstado(int i)
+        {
+            InitializeComponent();
+            btnActualizar.Visible = true;
+            btnEliminar.Visible = true;
+            btnGuardar.Visible = false;
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Se ha guardado el registro.",
+                "Guardado exitoso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(
+                "Se ha eliminado el registro.",
+                "Eliminación exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -22,9 +58,14 @@ namespace TableSoft
             this.Close();
         }
 
-        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
-            Movimiento.MoverVentana(Handle, e.Button);
+            MessageBox.Show(
+                "Se ha actualizado el registro.",
+                "Actualización exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+            );
+            this.Close();
         }
     }
 }

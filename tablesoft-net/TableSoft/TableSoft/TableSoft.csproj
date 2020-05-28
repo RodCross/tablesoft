@@ -220,11 +220,11 @@
     <Compile Include="frmSeleccionarActivoFijo.Designer.cs">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarAgente.cs">
+    <Compile Include="frmSeleccionarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarAgente.Designer.cs">
-      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
+    <Compile Include="frmSeleccionarEmpleado.Designer.cs">
+      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSeleccionarBiblioteca.cs">
       <SubType>Form</SubType>
@@ -238,11 +238,11 @@
     <Compile Include="frmSeleccionarCategoria.Designer.cs">
       <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarEmpleado.cs">
+    <Compile Include="frmSeleccionarAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarEmpleado.Designer.cs">
-      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
+    <Compile Include="frmSeleccionarAgente.Designer.cs">
+      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSeleccionarProveedor.cs">
       <SubType>Form</SubType>
@@ -360,8 +360,8 @@
     <EmbeddedResource Include="frmSeleccionarActivoFijo.resx">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarAgente.resx">
-      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
+    <EmbeddedResource Include="frmSeleccionarEmpleado.resx">
+      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarBiblioteca.resx">
       <DependentUpon>frmSeleccionarBiblioteca.cs</DependentUpon>
@@ -369,8 +369,8 @@
     <EmbeddedResource Include="frmSeleccionarCategoria.resx">
       <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarEmpleado.resx">
-      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="frmSeleccionarAgente.resx">
+      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarProveedor.resx">
       <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>

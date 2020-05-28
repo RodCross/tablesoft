@@ -229,11 +229,11 @@
             // 
             // cboBiblioteca
             // 
-            this.cboBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBiblioteca.FormattingEnabled = true;
             this.cboBiblioteca.Location = new System.Drawing.Point(20, 35);
             this.cboBiblioteca.Name = "cboBiblioteca";
-            this.cboBiblioteca.Size = new System.Drawing.Size(288, 29);
+            this.cboBiblioteca.Size = new System.Drawing.Size(288, 25);
             this.cboBiblioteca.TabIndex = 0;
             // 
             // lblUrgencia

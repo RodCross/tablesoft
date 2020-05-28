@@ -300,6 +300,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="temp\Biblioteca.cs" />
+    <Compile Include="temp\Categoria.cs" />
+    <Compile Include="temp\Ticket.cs" />
+    <Compile Include="temp\Urgencia.cs" />
     <Compile Include="temp\Usuario.cs" />
   </ItemGroup>
   <ItemGroup>

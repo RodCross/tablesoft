@@ -33,12 +33,12 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblListaUrgencias = new System.Windows.Forms.Label();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PlazoMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNuevo = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +83,33 @@
             this.dgvLista.Size = new System.Drawing.Size(494, 332);
             this.dgvLista.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "UrgenciaId";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ID.FillWeight = 50F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "Nombre";
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 300;
+            // 
+            // PlazoMaximo
+            // 
+            this.PlazoMaximo.DataPropertyName = "PlazoMaximo";
+            this.PlazoMaximo.HeaderText = "Plazo máximo";
+            this.PlazoMaximo.Name = "PlazoMaximo";
+            this.PlazoMaximo.ReadOnly = true;
+            // 
             // btnNuevo
             // 
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
@@ -115,48 +142,21 @@
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // btnSeleccionar
+            // btnEditar
             // 
-            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionar.FlatAppearance.BorderSize = 0;
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(410, 449);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
-            this.btnSeleccionar.TabIndex = 3;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = false;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "UrgenciaId";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "Nombre";
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
-            // 
-            // PlazoMaximo
-            // 
-            this.PlazoMaximo.DataPropertyName = "PlazoMaximo";
-            this.PlazoMaximo.HeaderText = "Plazo máximo";
-            this.PlazoMaximo.Name = "PlazoMaximo";
-            this.PlazoMaximo.ReadOnly = true;
+            this.btnEditar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditar.FlatAppearance.BorderSize = 0;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(410, 449);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(119, 33);
+            this.btnEditar.TabIndex = 3;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // frmSeleccionarUrgencia
             // 
@@ -165,7 +165,7 @@
             this.ClientSize = new System.Drawing.Size(560, 504);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.btnSeleccionar);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -186,7 +186,7 @@
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Button btnSeleccionar;
+        private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn PlazoMaximo;

@@ -76,11 +76,17 @@
     <Compile Include="frmEscalarTicketAgente.Designer.cs">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGeneradorReportes.cs">
+    <Compile Include="frmGeneradorReportesAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGeneradorReportes.Designer.cs">
-      <DependentUpon>frmGeneradorReportes.cs</DependentUpon>
+    <Compile Include="frmGeneradorReportesAdministrador.Designer.cs">
+      <DependentUpon>frmGeneradorReportesAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGeneradorReportesSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGeneradorReportesSupervisor.Designer.cs">
+      <DependentUpon>frmGeneradorReportesSupervisor.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarActivoFijo.cs">
       <SubType>Form</SubType>
@@ -276,8 +282,11 @@
     <EmbeddedResource Include="frmEscalarTicketAgente.resx">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGeneradorReportes.resx">
-      <DependentUpon>frmGeneradorReportes.cs</DependentUpon>
+    <EmbeddedResource Include="frmGeneradorReportesAdministrador.resx">
+      <DependentUpon>frmGeneradorReportesAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGeneradorReportesSupervisor.resx">
+      <DependentUpon>frmGeneradorReportesSupervisor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarActivoFijo.resx">
       <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>

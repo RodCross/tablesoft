@@ -10,10 +10,10 @@ using System.Windows.Forms;
 using TableSoft.temp; // para clases temporales
 
 // PARA ACCEDER RAPIDAMENTE:
-// EMPLEADO -  usuario y pass: e
-// AGENTE -  usuario y pass: a
-// SUPERVISOR -  usuario y pass: s
-// ADMIN -  usuario y pass: admin
+// EMPLEADO      usuario y pass: e
+// AGENTE        usuario y pass: a
+// SUPERVISOR    usuario y pass: s
+// ADMIN         usuario y pass: admin
 
 namespace TableSoft
 {
@@ -125,8 +125,8 @@ namespace TableSoft
         {
             txtEmail.Text = "";
             txtPassword.Text = "";
-            txtErrEmail.Text = "";
-            txtErrPassword.Text = "";
+            lblErrEmail.Text = "";
+            lblErrPassword.Text = "";
             txtEmail.Select();
         }
 
@@ -136,21 +136,21 @@ namespace TableSoft
             // Validacion email
             if (txtEmail.Text == "")
             {
-                txtErrEmail.Text = "El campo del email no puede estar vacío.";
+                lblErrEmail.Text = "El campo del email no puede estar vacío.";
             }
             else
             {
-                txtErrEmail.Text = "";
+                lblErrEmail.Text = "";
             }
 
             // Validar password
             if (txtPassword.Text == "")
             {
-                txtErrPassword.Text = "El campo de la contraseña no puede estar vacío.";
+                lblErrPassword.Text = "El campo de la contraseña no puede estar vacío.";
             }
             else
             {
-                txtErrPassword.Text = "";
+                lblErrPassword.Text = "";
             }
 
             // Iniciar sesion
@@ -186,8 +186,8 @@ namespace TableSoft
                 }
                 if (!login)
                 {
-                    txtErrEmail.Text = "El email o la contraseña son incorrectos.";
-                    txtErrPassword.Text = "";
+                    lblErrEmail.Text = "El email o la contraseña son incorrectos.";
+                    lblErrPassword.Text = "";
                 }
             }
         }

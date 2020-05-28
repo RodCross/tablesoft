@@ -45,8 +45,8 @@
             this.lblAdministrarOtros = new System.Windows.Forms.Label();
             this.pnlOtros = new System.Windows.Forms.Panel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblReportes = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.lblGestionarSistema = new System.Windows.Forms.Label();
             this.pnlPersonas.SuspendLayout();
             this.pnlNegocio.SuspendLayout();
             this.pnlOtros.SuspendLayout();
@@ -261,24 +261,13 @@
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
             this.pnlTitulo.Controls.Add(this.btnVolver);
-            this.pnlTitulo.Controls.Add(this.lblReportes);
+            this.pnlTitulo.Controls.Add(this.lblGestionarSistema);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1000, 70);
             this.pnlTitulo.TabIndex = 3;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lblReportes
-            // 
-            this.lblReportes.AutoSize = true;
-            this.lblReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportes.ForeColor = System.Drawing.Color.White;
-            this.lblReportes.Location = new System.Drawing.Point(24, 22);
-            this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(267, 27);
-            this.lblReportes.TabIndex = 0;
-            this.lblReportes.Text = "Generar reporte de tickets";
             // 
             // btnVolver
             // 
@@ -295,6 +284,17 @@
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // lblGestionarSistema
+            // 
+            this.lblGestionarSistema.AutoSize = true;
+            this.lblGestionarSistema.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGestionarSistema.ForeColor = System.Drawing.Color.White;
+            this.lblGestionarSistema.Location = new System.Drawing.Point(24, 22);
+            this.lblGestionarSistema.Name = "lblGestionarSistema";
+            this.lblGestionarSistema.Size = new System.Drawing.Size(185, 27);
+            this.lblGestionarSistema.TabIndex = 0;
+            this.lblGestionarSistema.Text = "Gestionar sistema";
             // 
             // frmGestionarSistemaAdministrador
             // 
@@ -338,7 +338,7 @@
         private System.Windows.Forms.Panel pnlOtros;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Button btnGestionarEstadosTicket;
-        private System.Windows.Forms.Label lblReportes;
+        private System.Windows.Forms.Label lblGestionarSistema;
         private System.Windows.Forms.Button btnVolver;
     }
 }

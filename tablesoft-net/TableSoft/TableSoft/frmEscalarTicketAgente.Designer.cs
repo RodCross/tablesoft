@@ -32,11 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEscalarTicketAgente));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.dgvProveedores = new System.Windows.Forms.DataGridView();
-            this.lblIngresarComentario = new System.Windows.Forms.Label();
-            this.btnEscalar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.lblEscalarTicket = new System.Windows.Forms.Label();
-            this.rtfComentario = new System.Windows.Forms.RichTextBox();
+            this.dgvProveedores = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,6 +42,9 @@
             this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblIngresarComentario = new System.Windows.Forms.Label();
+            this.btnEscalar = new System.Windows.Forms.Button();
+            this.rtfComentario = new System.Windows.Forms.RichTextBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.btnCancelar);
             this.pnlTitulo.Controls.Add(this.lblEscalarTicket);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
@@ -58,6 +60,33 @@
             this.pnlTitulo.Size = new System.Drawing.Size(880, 57);
             this.pnlTitulo.TabIndex = 0;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.White;
+            this.btnCancelar.Location = new System.Drawing.Point(742, 14);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(119, 33);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // lblEscalarTicket
+            // 
+            this.lblEscalarTicket.AutoSize = true;
+            this.lblEscalarTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEscalarTicket.ForeColor = System.Drawing.Color.White;
+            this.lblEscalarTicket.Location = new System.Drawing.Point(19, 16);
+            this.lblEscalarTicket.Name = "lblEscalarTicket";
+            this.lblEscalarTicket.Size = new System.Drawing.Size(126, 25);
+            this.lblEscalarTicket.TabIndex = 0;
+            this.lblEscalarTicket.Text = "Escalar ticket";
             // 
             // dgvProveedores
             // 
@@ -80,54 +109,6 @@
             this.dgvProveedores.ReadOnly = true;
             this.dgvProveedores.Size = new System.Drawing.Size(841, 162);
             this.dgvProveedores.TabIndex = 1;
-            // 
-            // lblIngresarComentario
-            // 
-            this.lblIngresarComentario.AutoSize = true;
-            this.lblIngresarComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
-            this.lblIngresarComentario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblIngresarComentario.Location = new System.Drawing.Point(21, 247);
-            this.lblIngresarComentario.Name = "lblIngresarComentario";
-            this.lblIngresarComentario.Size = new System.Drawing.Size(298, 18);
-            this.lblIngresarComentario.TabIndex = 4;
-            this.lblIngresarComentario.Text = "Ingresa un comentario acerca del escalado:";
-            // 
-            // btnEscalar
-            // 
-            this.btnEscalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnEscalar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEscalar.FlatAppearance.BorderSize = 0;
-            this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
-            this.btnEscalar.ForeColor = System.Drawing.Color.White;
-            this.btnEscalar.Location = new System.Drawing.Point(742, 408);
-            this.btnEscalar.Name = "btnEscalar";
-            this.btnEscalar.Size = new System.Drawing.Size(119, 33);
-            this.btnEscalar.TabIndex = 3;
-            this.btnEscalar.Text = "Escalar";
-            this.btnEscalar.UseVisualStyleBackColor = false;
-            this.btnEscalar.Click += new System.EventHandler(this.btnEscalar_Click);
-            // 
-            // lblEscalarTicket
-            // 
-            this.lblEscalarTicket.AutoSize = true;
-            this.lblEscalarTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEscalarTicket.ForeColor = System.Drawing.Color.White;
-            this.lblEscalarTicket.Location = new System.Drawing.Point(19, 16);
-            this.lblEscalarTicket.Name = "lblEscalarTicket";
-            this.lblEscalarTicket.Size = new System.Drawing.Size(126, 25);
-            this.lblEscalarTicket.TabIndex = 0;
-            this.lblEscalarTicket.Text = "Escalar ticket";
-            // 
-            // rtfComentario
-            // 
-            this.rtfComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtfComentario.Location = new System.Drawing.Point(20, 279);
-            this.rtfComentario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
-            this.rtfComentario.Name = "rtfComentario";
-            this.rtfComentario.Size = new System.Drawing.Size(841, 106);
-            this.rtfComentario.TabIndex = 2;
-            this.rtfComentario.Text = "";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -181,6 +162,43 @@
             this.Email.ReadOnly = true;
             this.Email.Width = 115;
             // 
+            // lblIngresarComentario
+            // 
+            this.lblIngresarComentario.AutoSize = true;
+            this.lblIngresarComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
+            this.lblIngresarComentario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.lblIngresarComentario.Location = new System.Drawing.Point(21, 247);
+            this.lblIngresarComentario.Name = "lblIngresarComentario";
+            this.lblIngresarComentario.Size = new System.Drawing.Size(298, 18);
+            this.lblIngresarComentario.TabIndex = 4;
+            this.lblIngresarComentario.Text = "Ingresa un comentario acerca del escalado:";
+            // 
+            // btnEscalar
+            // 
+            this.btnEscalar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnEscalar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEscalar.FlatAppearance.BorderSize = 0;
+            this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEscalar.ForeColor = System.Drawing.Color.White;
+            this.btnEscalar.Location = new System.Drawing.Point(742, 408);
+            this.btnEscalar.Name = "btnEscalar";
+            this.btnEscalar.Size = new System.Drawing.Size(119, 33);
+            this.btnEscalar.TabIndex = 3;
+            this.btnEscalar.Text = "Escalar";
+            this.btnEscalar.UseVisualStyleBackColor = false;
+            this.btnEscalar.Click += new System.EventHandler(this.btnEscalar_Click);
+            // 
+            // rtfComentario
+            // 
+            this.rtfComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtfComentario.Location = new System.Drawing.Point(20, 279);
+            this.rtfComentario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
+            this.rtfComentario.Name = "rtfComentario";
+            this.rtfComentario.Size = new System.Drawing.Size(841, 106);
+            this.rtfComentario.TabIndex = 2;
+            this.rtfComentario.Text = "";
+            // 
             // frmEscalarTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,5 +237,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

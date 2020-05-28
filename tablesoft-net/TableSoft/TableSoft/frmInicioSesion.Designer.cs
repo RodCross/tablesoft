@@ -35,8 +35,6 @@
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.lblTituloLogin = new System.Windows.Forms.Label();
             this.pnlLogin = new System.Windows.Forms.Panel();
-            this.txtErrPassword = new System.Windows.Forms.TextBox();
-            this.txtErrEmail = new System.Windows.Forms.TextBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
             this.lklForgot = new System.Windows.Forms.LinkLabel();
@@ -44,6 +42,8 @@
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
+            this.lblErrEmail = new System.Windows.Forms.Label();
+            this.lblErrPassword = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -88,7 +88,7 @@
             this.lblBibliotecasPUCP.Location = new System.Drawing.Point(24, 59);
             this.lblBibliotecasPUCP.Name = "lblBibliotecasPUCP";
             this.lblBibliotecasPUCP.Size = new System.Drawing.Size(159, 26);
-            this.lblBibliotecasPUCP.TabIndex = 0;
+            this.lblBibliotecasPUCP.TabIndex = 2;
             this.lblBibliotecasPUCP.Text = "Bibliotecas PUCP";
             // 
             // lblTituloSistema
@@ -99,7 +99,7 @@
             this.lblTituloSistema.Location = new System.Drawing.Point(23, 17);
             this.lblTituloSistema.Name = "lblTituloSistema";
             this.lblTituloSistema.Size = new System.Drawing.Size(340, 34);
-            this.lblTituloSistema.TabIndex = 0;
+            this.lblTituloSistema.TabIndex = 1;
             this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
             // 
             // lblTituloLogin
@@ -110,48 +110,26 @@
             this.lblTituloLogin.Location = new System.Drawing.Point(329, 128);
             this.lblTituloLogin.Name = "lblTituloLogin";
             this.lblTituloLogin.Size = new System.Drawing.Size(227, 25);
-            this.lblTituloLogin.TabIndex = 0;
+            this.lblTituloLogin.TabIndex = 2;
             this.lblTituloLogin.Text = "Inicia sesión en Yanapay";
             this.lblTituloLogin.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // pnlLogin
             // 
             this.pnlLogin.BackColor = System.Drawing.Color.White;
-            this.pnlLogin.Controls.Add(this.txtErrPassword);
-            this.pnlLogin.Controls.Add(this.txtErrEmail);
             this.pnlLogin.Controls.Add(this.txtEmail);
             this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.lklForgot);
             this.pnlLogin.Controls.Add(this.txtPassword);
             this.pnlLogin.Controls.Add(this.lblContraseña);
             this.pnlLogin.Controls.Add(this.lblEmail);
+            this.pnlLogin.Controls.Add(this.lblErrEmail);
+            this.pnlLogin.Controls.Add(this.lblErrPassword);
             this.pnlLogin.ForeColor = System.Drawing.Color.White;
             this.pnlLogin.Location = new System.Drawing.Point(237, 172);
             this.pnlLogin.Name = "pnlLogin";
             this.pnlLogin.Size = new System.Drawing.Size(410, 364);
             this.pnlLogin.TabIndex = 0;
-            // 
-            // txtErrPassword
-            // 
-            this.txtErrPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtErrPassword.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtErrPassword.ForeColor = System.Drawing.Color.Red;
-            this.txtErrPassword.Location = new System.Drawing.Point(32, 178);
-            this.txtErrPassword.Margin = new System.Windows.Forms.Padding(1);
-            this.txtErrPassword.Name = "txtErrPassword";
-            this.txtErrPassword.Size = new System.Drawing.Size(349, 15);
-            this.txtErrPassword.TabIndex = 5;
-            // 
-            // txtErrEmail
-            // 
-            this.txtErrEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtErrEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtErrEmail.ForeColor = System.Drawing.Color.Red;
-            this.txtErrEmail.Location = new System.Drawing.Point(32, 95);
-            this.txtErrEmail.Margin = new System.Windows.Forms.Padding(1);
-            this.txtErrEmail.Name = "txtErrEmail";
-            this.txtErrEmail.Size = new System.Drawing.Size(349, 15);
-            this.txtErrEmail.TabIndex = 4;
             // 
             // txtEmail
             // 
@@ -205,7 +183,7 @@
             this.lblContraseña.Location = new System.Drawing.Point(28, 120);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(96, 21);
-            this.lblContraseña.TabIndex = 2;
+            this.lblContraseña.TabIndex = 6;
             this.lblContraseña.Text = "Contraseña";
             this.lblContraseña.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -217,7 +195,7 @@
             this.lblEmail.Location = new System.Drawing.Point(28, 37);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(53, 21);
-            this.lblEmail.TabIndex = 1;
+            this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -237,6 +215,28 @@
             this.picExit.MouseEnter += new System.EventHandler(this.picExit_MouseEnter);
             this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
             this.picExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseUp);
+            // 
+            // lblErrEmail
+            // 
+            this.lblErrEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.75F);
+            this.lblErrEmail.ForeColor = System.Drawing.Color.Red;
+            this.lblErrEmail.Location = new System.Drawing.Point(29, 92);
+            this.lblErrEmail.Name = "lblErrEmail";
+            this.lblErrEmail.Size = new System.Drawing.Size(352, 23);
+            this.lblErrEmail.TabIndex = 5;
+            this.lblErrEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblErrPassword
+            // 
+            this.lblErrPassword.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrPassword.Font = new System.Drawing.Font("Microsoft PhagsPa", 8.75F);
+            this.lblErrPassword.ForeColor = System.Drawing.Color.Red;
+            this.lblErrPassword.Location = new System.Drawing.Point(29, 175);
+            this.lblErrPassword.Name = "lblErrPassword";
+            this.lblErrPassword.Size = new System.Drawing.Size(352, 23);
+            this.lblErrPassword.TabIndex = 7;
+            this.lblErrPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // frmInicioSesion
             // 
@@ -280,7 +280,7 @@
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox picExit;
         private System.Windows.Forms.LinkLabel lklFAQ;
-        private System.Windows.Forms.TextBox txtErrPassword;
-        private System.Windows.Forms.TextBox txtErrEmail;
+        private System.Windows.Forms.Label lblErrEmail;
+        private System.Windows.Forms.Label lblErrPassword;
     }
 }

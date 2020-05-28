@@ -33,5 +33,10 @@ namespace TableSoft
             frmGestionarBiblioteca frm = new frmGestionarBiblioteca(1);
             frm.ShowDialog();
         }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
     }
 }

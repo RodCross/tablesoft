@@ -88,6 +88,12 @@
     <Compile Include="frmGestionarActivoFijo.Designer.cs">
       <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGestionarAgentes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarAgentes.Designer.cs">
+      <DependentUpon>frmGestionarAgentes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionarBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,12 @@
     </Compile>
     <Compile Include="frmGestionarCategoria.Designer.cs">
       <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmGestionarEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGestionarEmpleados.Designer.cs">
+      <DependentUpon>frmGestionarEmpleados.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionarSistemaAdministrador.cs">
       <SubType>Form</SubType>
@@ -196,6 +208,12 @@
     <Compile Include="frmSeleccionarActivoFijo.Designer.cs">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeleccionarAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarAgente.Designer.cs">
+      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeleccionarBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -207,6 +225,12 @@
     </Compile>
     <Compile Include="frmSeleccionarCategoria.Designer.cs">
       <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarEmpleado.Designer.cs">
+      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSeleccionarProveedor.cs">
       <SubType>Form</SubType>
@@ -252,11 +276,17 @@
     <EmbeddedResource Include="frmGestionarActivoFijo.resx">
       <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarAgentes.resx">
+      <DependentUpon>frmGestionarAgentes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarBiblioteca.resx">
       <DependentUpon>frmGestionarBiblioteca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarCategoria.resx">
       <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGestionarEmpleados.resx">
+      <DependentUpon>frmGestionarEmpleados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
@@ -306,11 +336,17 @@
     <EmbeddedResource Include="frmSeleccionarActivoFijo.resx">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarAgente.resx">
+      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarBiblioteca.resx">
       <DependentUpon>frmSeleccionarBiblioteca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarCategoria.resx">
       <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarEmpleado.resx">
+      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarProveedor.resx">
       <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>

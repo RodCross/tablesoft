@@ -37,6 +37,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             res = cs.getInt(1);
             empleado.setEmpleadoId(res);
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -62,8 +63,8 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             cs.setInt(1, idEmpleado);
             
             cs.executeUpdate();
-            res = 1;
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }

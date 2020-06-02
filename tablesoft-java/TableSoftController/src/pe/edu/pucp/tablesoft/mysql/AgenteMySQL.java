@@ -51,6 +51,7 @@ public class AgenteMySQL implements AgenteDAO{
             res = cs.getInt(1);
             agente.setAgenteId(res);
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -90,6 +91,7 @@ public class AgenteMySQL implements AgenteDAO{
             
             res = cs.executeUpdate();
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -109,8 +111,9 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setInt(1, agenteId);
             
             cs.executeUpdate();
-            res = 1;
+            
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }

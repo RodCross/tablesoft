@@ -14,7 +14,7 @@ public class UrgenciaMySQL implements UrgenciaDAO{
 
     @Override
     public int insertar(Urgencia urgencia) {
-        int rpta = 0;
+        int salida = 0;
         Connection con;
         try {             
             //Registrar el JAR de conexión
@@ -28,18 +28,18 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             cs.setString("_NOMBRE", urgencia.getNombre());
             cs.setInt("_TIEMPO", urgencia.getPlazoMaximo());
             cs.executeUpdate();
-            rpta = cs.getInt("_ID");
-            urgencia.setUrgenciaId(rpta);
+            salida = cs.getInt("_ID");
+            urgencia.setUrgenciaId(salida);
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return rpta;
+        return salida;
     }
 
     @Override
     public int actualizar(Urgencia urgencia) {
-        int rpta = 0;
+        int salida = 0;
         Connection con;
         try {             
             //Registrar el JAR de conexión
@@ -52,19 +52,20 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             cs.setInt(1, urgencia.getUrgenciaId());
             cs.setString(2, urgencia.getNombre());
             cs.setInt(3, urgencia.getPlazoMaximo());
-            rpta = cs.executeUpdate();
+            salida = cs.executeUpdate();
             
             con.close();
+            salida = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return rpta;
+        return salida;
     }
 
     @Override
     public int eliminar(int idUrgencia) {
         Connection con;
-        int rpta = 0;
+        int salida = 0;
         try {
             //Registrar el JAR de conexión
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -74,13 +75,13 @@ public class UrgenciaMySQL implements UrgenciaDAO{
             
             CallableStatement cs = con.prepareCall("{CALL eliminar_urgencia(?)}");
             cs.setInt(1, idUrgencia);
-            rpta = cs.executeUpdate();
+            salida = cs.executeUpdate();
             
             con.close();
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
-        return rpta;
+        return salida;
     }
 
     @Override

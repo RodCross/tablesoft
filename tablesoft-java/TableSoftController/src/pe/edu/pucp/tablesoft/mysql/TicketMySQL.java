@@ -52,6 +52,7 @@ public class TicketMySQL implements TicketDAO{
             ticket.setTicketId(out);
             
             con.close();
+            out = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -122,6 +123,7 @@ public class TicketMySQL implements TicketDAO{
             out = cs.executeUpdate();
             
             con.close();
+            out = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -148,6 +150,7 @@ public class TicketMySQL implements TicketDAO{
             out = cs.executeUpdate();
             
             con.close();
+            out = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }

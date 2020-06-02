@@ -32,8 +32,9 @@ public class UsuarioMySQL implements UsuarioDAO {
             cs.setString(4, usuario.getUsuarioEmail());
             
             cs.executeUpdate();
-            res = 1;
+            
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -55,9 +56,10 @@ public class UsuarioMySQL implements UsuarioDAO {
             cs.setString(3, usuario.getNombre());
             cs.setString(4, usuario.getUsuarioEmail());
             
-            cs.executeUpdate();
-            res = 1;
+            res = cs.executeUpdate();
+           
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -77,8 +79,9 @@ public class UsuarioMySQL implements UsuarioDAO {
             cs.setString(1, codigo);
             
             cs.executeUpdate();
-            res = 1;
+
             con.close();
+            res = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }

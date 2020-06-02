@@ -34,6 +34,7 @@ public class EquipoMySQL implements EquipoDAO{
             rpta = cs.getInt("_ID");
             con.close();
             equipo.setEquipoId(rpta);
+            rpta = 1;
 
         } catch(Exception ex) {
             System.out.println(ex.getMessage());

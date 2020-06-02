@@ -33,6 +33,7 @@ public class CategoriaMySQL implements CategoriaDAO{
            rpta = cs.getInt("_ID");
            categoria.setCategoriaId(rpta);
            con.close();
+           rpta = 1;
 
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
@@ -58,6 +59,7 @@ public class CategoriaMySQL implements CategoriaDAO{
             cs.setInt("_EQUIPO_ID", categoria.getEquipo().getEquipoId());
             cs.executeUpdate();
             con.close();
+
 
         } catch(Exception ex) {
             System.out.println(ex.getMessage());

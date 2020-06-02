@@ -30,6 +30,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             rpta = cs.getInt("_ID");
             proveedor.setProveedorId(rpta);
             con.close();
+            rpta = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -54,6 +55,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             cs.setString("_NOMBRE", proveedor.getNombre());
             rpta=cs.executeUpdate();
             con.close();
+            rpta = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -77,6 +79,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             cs.setInt("_ID", idProveedor);
             rpta = cs.executeUpdate();
             con.close();
+            rpta = 1;
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }
@@ -108,6 +111,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             }
             // No olvidarse de cerrar las conexiones
             con.close();
+            
         } catch(Exception ex) {
             System.out.println(ex.getMessage());
         }

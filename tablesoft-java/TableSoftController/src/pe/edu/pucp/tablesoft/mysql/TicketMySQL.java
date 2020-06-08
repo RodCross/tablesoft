@@ -115,7 +115,10 @@ public class TicketMySQL implements TicketDAO{
             cs.setInt("_ID", ticket.getTicketId());
             cs.setInt("_ESTADO_ID", ticket.getEstado().getEstadoId());
             
+            
             cs.setTimestamp("_FECHA_ENVIO", Timestamp.valueOf(ticket.getFechaEnvio()));
+            
+            
             if (ticket.getFechaPrimeraRespuesta() != null){
                 cs.setTimestamp("_FECHA_PRIMERA_RESPUESTA", Timestamp.valueOf(ticket.getFechaPrimeraRespuesta()));
             }
@@ -128,6 +131,7 @@ public class TicketMySQL implements TicketDAO{
             else{
                 cs.setTimestamp("_FECHA_CIERRE", null);
             }
+            
             
             int activoFijoId = ticket.getActivoFijo().getActivoFijoId();
             if (activoFijoId != 0) {

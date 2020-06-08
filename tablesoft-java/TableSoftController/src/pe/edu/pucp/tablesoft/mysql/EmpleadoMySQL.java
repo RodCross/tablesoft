@@ -83,7 +83,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_empleado(?)}");
+                    "{CALL eliminar_empleado(?)}");
             cs.setInt("_ID", empleado.getEmpleadoId());
             cs.execute();
             con.close();
@@ -117,6 +117,8 @@ public class EmpleadoMySQL implements EmpleadoDAO{
                 empleado.setPersonaEmail(rs.getString("persona_email"));
                 empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
+                
+                // Cambiar > agregar comando
                 empleado.setBiblioteca(daoBiblioteca.buscar(rs.getInt("biblioteca_id")));
                 empleados.add(empleado);
             }

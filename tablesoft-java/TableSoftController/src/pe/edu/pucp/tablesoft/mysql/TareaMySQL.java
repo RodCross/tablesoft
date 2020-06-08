@@ -118,6 +118,7 @@ public class TareaMySQL implements TareaDAO {
                 tarea.setTareaId(rs.getInt("tarea_id"));
                 tarea.setAgente(new Agente(rs.getInt("agente_id")));
                 tarea.setDescripcion(rs.getString("descripcion"));
+                // Cambiar
                 tarea.setEstado(daoEstadoTarea.buscar(rs.getInt("estado_id")));
                 
                 tareas.add(tarea);

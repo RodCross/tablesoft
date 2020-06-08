@@ -70,6 +70,7 @@ public class TransferenciaExternaMySQL implements TransferenciaExternaDAO{
                 TransferenciaExterna transfer = new TransferenciaExterna();
                 
                 agenteResponsable = new Agente(rs.getInt("agente_id"));
+                // Cambiar
                 proveedorTo = daoProveedor.buscar(rs.getInt("proveedor_id_to"));
                 
                 transfer.setAgenteResponsable(agenteResponsable);

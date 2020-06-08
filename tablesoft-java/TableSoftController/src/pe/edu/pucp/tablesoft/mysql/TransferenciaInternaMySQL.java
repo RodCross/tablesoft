@@ -71,6 +71,8 @@ public class TransferenciaInternaMySQL implements TransferenciaInternaDAO {
                 TransferenciaInterna transfer = new TransferenciaInterna();
                 
                 agenteResponsable = new Agente(rs.getInt("agente_id"));
+                
+                // Cambiar
                 categoriaTo = daoCategoria.buscar(rs.getInt("categoria_id_to"));
                 
                 transfer.setAgenteResponsable(agenteResponsable);

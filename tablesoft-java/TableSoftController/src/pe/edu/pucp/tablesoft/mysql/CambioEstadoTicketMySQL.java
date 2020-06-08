@@ -72,6 +72,8 @@ public class CambioEstadoTicketMySQL implements CambioEstadoTicketDAO{
                 CambioEstadoTicket cambio = new CambioEstadoTicket();
                 
                 agenteResponsable = new Agente(rs.getInt("agente_id"));
+                
+                // Cambiar
                 estadoTo = daoEstado.buscar(rs.getInt("estado_id"));
                 
                 cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));

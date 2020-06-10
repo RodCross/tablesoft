@@ -13,8 +13,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
-import pe.edu.pucp.tablesoft.dao.EquipoDAO;
-import pe.edu.pucp.tablesoft.dao.RolDAO;
 import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.Equipo;
 
@@ -93,8 +91,6 @@ public class AgenteMySQL implements AgenteDAO{
             
             ResultSet rs = cs.executeQuery();
             
-            EquipoDAO daoEquipo = new EquipoMySQL();
-            RolDAO daoRol = new RolMySQL();
             while(rs.next()){
                 Agente agente = new Agente();
                 
@@ -106,8 +102,17 @@ public class AgenteMySQL implements AgenteDAO{
                 agente.setActivo(rs.getBoolean("activo"));
                 agente.setNombre(rs.getString("nombre"));
                 
-                agente.setEquipo(daoEquipo.buscar(rs.getInt("equipo_id")));
-                agente.setRol(daoRol.buscar(rs.getInt("rol_id")));
+                agente.getEquipo().setEquipoId(rs.getInt("equipo_id"));
+                agente.getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
+                agente.getEquipo().setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                agente.getEquipo().setNombre(rs.getString("equipo_nombre"));
+                agente.getEquipo().setActivo(rs.getBoolean("equipo_activo"));
+                
+                agente.getRol().setRolId(rs.getInt("rol_id"));
+                agente.getRol().setNombre(rs.getString("rol_nombre"));
+                agente.getRol().setDescripcion(rs.getString("rol_descripcion"));
+                agente.getRol().setActivo(rs.getBoolean("rol_activo"));
+                
                 agentes.add(agente);
             }
             con.close();
@@ -153,7 +158,6 @@ public class AgenteMySQL implements AgenteDAO{
             ResultSet rs = cs.executeQuery();
             
             
-            RolDAO daoRol = new RolMySQL();
             while(rs.next()){
                 Agente agente = new Agente();
                 
@@ -165,8 +169,17 @@ public class AgenteMySQL implements AgenteDAO{
                 agente.setActivo(rs.getBoolean("activo"));
                 agente.setNombre(rs.getString("nombre"));
                 
-                agente.setEquipo(equipo);
-                agente.setRol(daoRol.buscar(rs.getInt("rol_id")));
+                agente.getEquipo().setEquipoId(rs.getInt("equipo_id"));
+                agente.getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
+                agente.getEquipo().setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                agente.getEquipo().setNombre(rs.getString("equipo_nombre"));
+                agente.getEquipo().setActivo(rs.getBoolean("equipo_activo"));
+                
+                agente.getRol().setRolId(rs.getInt("rol_id"));
+                agente.getRol().setNombre(rs.getString("rol_nombre"));
+                agente.getRol().setDescripcion(rs.getString("rol_descripcion"));
+                agente.getRol().setActivo(rs.getBoolean("rol_activo"));
+                
                 agentes.add(agente);
             }
             con.close();
@@ -190,8 +203,6 @@ public class AgenteMySQL implements AgenteDAO{
             
             ResultSet rs = cs.executeQuery();
             
-            EquipoDAO daoEquipo = new EquipoMySQL();
-            RolDAO daoRol = new RolMySQL();
             while(rs.next()){
                 
                 
@@ -203,8 +214,16 @@ public class AgenteMySQL implements AgenteDAO{
                 agente.setActivo(rs.getBoolean("activo"));
                 agente.setNombre(rs.getString("nombre"));
                 
-                agente.setEquipo(daoEquipo.buscar(rs.getInt("equipo_id")));
-                agente.setRol(daoRol.buscar(rs.getInt("rol_id")));
+                agente.getEquipo().setEquipoId(rs.getInt("equipo_id"));
+                agente.getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
+                agente.getEquipo().setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                agente.getEquipo().setNombre(rs.getString("equipo_nombre"));
+                agente.getEquipo().setActivo(rs.getBoolean("equipo_activo"));
+                
+                agente.getRol().setRolId(rs.getInt("rol_id"));
+                agente.getRol().setNombre(rs.getString("rol_nombre"));
+                agente.getRol().setDescripcion(rs.getString("rol_descripcion"));
+                agente.getRol().setActivo(rs.getBoolean("rol_activo"));
             }
             con.close();
             

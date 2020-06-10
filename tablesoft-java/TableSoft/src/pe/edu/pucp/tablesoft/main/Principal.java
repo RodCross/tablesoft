@@ -6,9 +6,6 @@
 
 package pe.edu.pucp.tablesoft.main;
 
-import java.sql.Timestamp;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
@@ -30,6 +27,7 @@ import pe.edu.pucp.tablesoft.model.Equipo;
 import pe.edu.pucp.tablesoft.model.EstadoTicket;
 import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Rol;
+import pe.edu.pucp.tablesoft.model.Tarea;
 import pe.edu.pucp.tablesoft.model.Ticket;
 import pe.edu.pucp.tablesoft.model.Urgencia;
 import pe.edu.pucp.tablesoft.mysql.AgenteMySQL;
@@ -119,7 +117,6 @@ public class Principal {
         for(Categoria c: categorias){
             System.out.println(c.mostrarDatos());
         }
-        
         
         // PROVEEDOR
         // Crear proveedores

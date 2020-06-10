@@ -20,9 +20,9 @@ public class EquipoMySQL implements EquipoDAO{
     public int insertar(Equipo equipo) {
         int rpta = 0;
         try {
-            //Registrar el JAR de conexión
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 
@@ -52,9 +52,9 @@ public class EquipoMySQL implements EquipoDAO{
     public int actualizar(Equipo equipo) {
         int rpta = 0;
         try {
-            //Registrar el JAR de conexión
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 
@@ -80,9 +80,9 @@ public class EquipoMySQL implements EquipoDAO{
     public int eliminar(Equipo equipo) {
         int rpta = 0;
         try {
-            //Registrar el JAR de conexión
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 
@@ -106,9 +106,9 @@ public class EquipoMySQL implements EquipoDAO{
         
         ArrayList<Equipo> equipos = new ArrayList<>();
         try {
-            //Registrar el JAR de conexión
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
@@ -141,9 +141,9 @@ public class EquipoMySQL implements EquipoDAO{
     public Equipo buscar(int equipoId) {
         Equipo equipo = new Equipo();
         try {
-            //Registrar el JAR de conexión
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
@@ -175,9 +175,9 @@ public class EquipoMySQL implements EquipoDAO{
     public int agregarCategoria(Equipo equipo, Categoria categoria) {
         int rpta = 0;
         try {
-            //Registrar el JAR de conexión
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 
@@ -188,6 +188,31 @@ public class EquipoMySQL implements EquipoDAO{
             
             cs.executeUpdate();
 
+            con.close();
+
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        }
+        return rpta;
+    }
+    
+    @Override
+    public int quitarCategoria(Equipo equipo, Categoria categoria) {
+        int rpta = 0;
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+
+            CallableStatement cs = con.prepareCall(
+                    "{CALL eliminar_categoria_equipo(?,?)}");
+            cs.setInt("_ID_CATEGORIA", categoria.getCategoriaId());
+            cs.setInt("_ID_EQUIPO", equipo.getEquipoId());
+            
+            cs.executeUpdate();
             con.close();
 
         } catch(SQLException | ClassNotFoundException ex) {

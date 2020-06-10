@@ -10,10 +10,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.CambioEstadoTicketDAO;
-import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
-import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.CambioEstadoTicket;
-import pe.edu.pucp.tablesoft.model.EstadoTicket;
 import pe.edu.pucp.tablesoft.model.Ticket;
 
 /*
@@ -64,21 +61,17 @@ public class CambioEstadoTicketMySQL implements CambioEstadoTicketDAO{
             cs.setInt("_ID", ticket.getTicketId());
             
             ResultSet rs = cs.executeQuery();
-            
-            EstadoTicketDAO daoEstado = new EstadoTicketMySQL();
+
             while(rs.next()){
-                EstadoTicket estadoTo;
-                Agente agenteResponsable;
                 CambioEstadoTicket cambio = new CambioEstadoTicket();
                 
-                agenteResponsable = new Agente(rs.getInt("agente_id"));
-                
-                // Cambiar
-                estadoTo = daoEstado.buscar(rs.getInt("estado_id"));
+                cambio.getEstadoTo().setEstadoId(rs.getInt("estado_id_to"));
+                cambio.getEstadoTo().setNombre(rs.getString("estado_nombre"));
+                cambio.getEstadoTo().setDescripcion(rs.getString("estado_descripcion"));
+                cambio.getEstadoTo().setActivo(rs.getBoolean("estado_activo"));
                 
                 cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
-                cambio.setAgenteResponsable(agenteResponsable);
-                cambio.setEstadoTo(estadoTo);
+                cambio.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
                 
                 cambio.setComentario(rs.getString("comentario"));
                 cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());

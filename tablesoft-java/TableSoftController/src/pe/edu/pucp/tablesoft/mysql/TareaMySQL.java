@@ -9,10 +9,8 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
-import pe.edu.pucp.tablesoft.dao.EstadoTareaDAO;
 import pe.edu.pucp.tablesoft.dao.TareaDAO;
 import pe.edu.pucp.tablesoft.model.Agente;
-import pe.edu.pucp.tablesoft.model.EstadoTarea;
 import pe.edu.pucp.tablesoft.model.Tarea;
 import pe.edu.pucp.tablesoft.model.Ticket;
 
@@ -23,11 +21,13 @@ public class TareaMySQL implements TareaDAO {
     
     Connection con;
     @Override
-    public int insertar(Tarea tarea, Agente agente, Ticket ticket) {
+    public int insertar(Tarea tarea, Ticket ticket) {
         int rpta = 0;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            tarea.setFechaCreacion(LocalDateTime.now());
             
             CallableStatement cs = con.prepareCall(
                     "{CALL insertar_tarea(?,?,?,?,?,?)}");
@@ -35,8 +35,9 @@ public class TareaMySQL implements TareaDAO {
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());            
             cs.setString("_DESCRIPCION", tarea.getDescripcion());
-            cs.setInt("_AGENTE_ID",agente.getAgenteId());
+            cs.setInt("_AGENTE_ID",tarea.getAgente().getAgenteId());
             cs.setInt("_ESTADO_ID", tarea.getEstado().getEstadoId());
+            cs.setTimestamp("_FECHA_CREACION", Timestamp.valueOf(tarea.getFechaCreacion()));
                        
             cs.execute();
             rpta = cs.getInt("_ID");
@@ -111,15 +112,18 @@ public class TareaMySQL implements TareaDAO {
             cs.setInt("_ID", ticket.getTicketId());
             ResultSet rs = cs.executeQuery();
             
-            EstadoTareaDAO daoEstadoTarea = new EstadoTareaMySQL();
             while(rs.next()){
                 Tarea tarea = new Tarea();
                 
                 tarea.setTareaId(rs.getInt("tarea_id"));
-                tarea.setAgente(new Agente(rs.getInt("agente_id")));
                 tarea.setDescripcion(rs.getString("descripcion"));
-                // Cambiar
-                tarea.setEstado(daoEstadoTarea.buscar(rs.getInt("estado_id")));
+                tarea.setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                tarea.getAgente().setAgenteId(rs.getInt("agente_id"));
+                
+                tarea.getEstado().setEstadoId(rs.getInt("estado_id"));
+                tarea.getEstado().setNombre(rs.getString("estado_nombre"));
+                tarea.getEstado().setDescripcion(rs.getString("estado_descripcion"));
+                tarea.getEstado().setActivo(rs.getBoolean("estado_activo"));
                 
                 tareas.add(tarea);
             }

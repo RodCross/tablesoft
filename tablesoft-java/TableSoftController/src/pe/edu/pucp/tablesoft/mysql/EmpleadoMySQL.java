@@ -12,7 +12,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
-import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.model.Biblioteca;
 import pe.edu.pucp.tablesoft.model.Empleado;
@@ -107,7 +106,6 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             
             ResultSet rs = cs.executeQuery();
             
-            BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
             while(rs.next()){
                 Empleado empleado = new Empleado();
                 
@@ -118,8 +116,11 @@ public class EmpleadoMySQL implements EmpleadoDAO{
                 empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
                 
-                // Cambiar > agregar comando
-                empleado.setBiblioteca(daoBiblioteca.buscar(rs.getInt("biblioteca_id")));
+                empleado.getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
+                empleado.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
+                empleado.getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
+                empleado.getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
+                
                 empleados.add(empleado);
             }
             con.close();
@@ -143,7 +144,6 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             
             ResultSet rs = cs.executeQuery();
             
-            //BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
             while(rs.next()){
                 Empleado empleado = new Empleado();
                 
@@ -153,7 +153,12 @@ public class EmpleadoMySQL implements EmpleadoDAO{
                 empleado.setPersonaEmail(rs.getString("persona_email"));
                 empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
-                empleado.setBiblioteca(biblioteca);
+                
+                empleado.getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
+                empleado.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
+                empleado.getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
+                empleado.getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
+                
                 empleados.add(empleado);
             }
             con.close();
@@ -177,7 +182,6 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             
             ResultSet rs = cs.executeQuery();
             
-            BibliotecaDAO daoBiblioteca = new BibliotecaMySQL();
             while(rs.next()){
                 
                 empleado.setEmpleadoId(rs.getInt("empleado_id"));
@@ -186,7 +190,10 @@ public class EmpleadoMySQL implements EmpleadoDAO{
                 empleado.setPersonaEmail(rs.getString("persona_email"));
                 empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
-                empleado.setBiblioteca(daoBiblioteca.buscar(rs.getInt("biblioteca_id")));
+                empleado.getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
+                empleado.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
+                empleado.getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
+                empleado.getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
             }
             con.close();
             

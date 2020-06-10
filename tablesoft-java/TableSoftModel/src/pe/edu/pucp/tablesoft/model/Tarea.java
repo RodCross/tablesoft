@@ -1,5 +1,7 @@
 package pe.edu.pucp.tablesoft.model;
 
+import java.time.LocalDateTime;
+
 
 
 public class Tarea {
@@ -7,10 +9,19 @@ public class Tarea {
     private String descripcion;
     private EstadoTarea estado;
     private Agente agente;
+    private LocalDateTime fechaCreacion;
 
     public Tarea() {
         estado = new EstadoTarea();
         agente = new Agente();
+    }
+
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public void setFechaCreacion(LocalDateTime fechaCreacion) {
+        this.fechaCreacion = fechaCreacion;
     }
 
     public Agente getAgente() {

@@ -18,4 +18,5 @@ public interface EquipoDAO {
                                     // No llena su lista de agentes ni lista de categorias
     Equipo buscar(int equipoId);
     int agregarCategoria(Equipo equipo, Categoria categoria);
+    int quitarCategoria(Equipo equipo, Categoria categoria);
 }

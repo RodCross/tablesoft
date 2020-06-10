@@ -19,6 +19,7 @@ public class CambioEstadoTicket {
     }
     public CambioEstadoTicket(){
         estadoTo = new EstadoTicket();
+        agenteResponsable = new Agente();
     }
 
     public EstadoTicket getEstadoTo() {

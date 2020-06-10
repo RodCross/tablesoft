@@ -18,10 +18,10 @@ public class ProveedorMySQL implements ProveedorDAO {
     public int insertar(Proveedor proveedor) {
         int rpta = 0;
         try {
-            //Registrar el JAR de conexión
+            
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 
@@ -52,10 +52,10 @@ public class ProveedorMySQL implements ProveedorDAO {
     public int actualizar(Proveedor proveedor) {
         int rpta = 0;
         try {
-            //Registrar el JAR de conexión
+            
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 
@@ -84,18 +84,18 @@ public class ProveedorMySQL implements ProveedorDAO {
     public ArrayList<Proveedor> listar() {
         ArrayList<Proveedor> proveedores=new ArrayList<>();
         try {
-            // Registrar el jar de conexion
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
-            // executeQuery se usa para listados
-            // executeUpdate se usa para insert, update, delete
+            
+            
             CallableStatement cs = con.prepareCall(
                     "{CALL listar_proveedor()}");
             ResultSet rs=cs.executeQuery();
-            // Recorrer todas las filas que devuelve la ejecucion sentencia
+            
             while(rs.next()) {
                 Proveedor proveedor = new Proveedor();
                 proveedor.setProveedorId(rs.getInt("proveedor_id"));
@@ -109,12 +109,12 @@ public class ProveedorMySQL implements ProveedorDAO {
                 proveedor.setActivo(rs.getBoolean("activo"));
                 proveedores.add(proveedor);
             }
-            // No olvidarse de cerrar las conexiones
+            
             con.close();
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
-        // Devolviendo los empleados
+        
         return proveedores;
     }
     
@@ -122,19 +122,18 @@ public class ProveedorMySQL implements ProveedorDAO {
     public Proveedor buscar(int proveedorId){
         Proveedor proveedor = new Proveedor();
         try {
-            // Registrar el jar de conexion
+            
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
             
-            // executeQuery se usa para listados
-            // executeUpdate se usa para insert, update, delete
+            
             CallableStatement cs = con.prepareCall(
                     "{CALL buscar_proveedor(?)}");
             cs.setInt("_ID", proveedorId);
             ResultSet rs=cs.executeQuery();
-            // Recorrer todas las filas que devuelve la ejecucion sentencia
+            
             while(rs.next()) {
                 proveedor.setProveedorId(rs.getInt("proveedor_id"));
                 proveedor.setCiudad(rs.getString("ciudad"));
@@ -146,12 +145,12 @@ public class ProveedorMySQL implements ProveedorDAO {
                 proveedor.setTelefono(rs.getString("telefono"));
                 proveedor.setActivo(rs.getBoolean("activo"));
             }
-            // No olvidarse de cerrar las conexiones
+            
             con.close();
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
         }
-        // Devolviendo los empleados
+        
         return proveedor;
     }
 
@@ -159,10 +158,10 @@ public class ProveedorMySQL implements ProveedorDAO {
     public int eliminar(Proveedor proveedor) {
         int rpta = 0;
         try {
-            //Registrar el JAR de conexión
+            
 
             Class.forName("com.mysql.cj.jdbc.Driver");
-            //Establecer la conexion
+            
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 

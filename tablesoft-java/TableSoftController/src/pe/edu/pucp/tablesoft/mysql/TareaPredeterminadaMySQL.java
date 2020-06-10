@@ -24,9 +24,9 @@ public class TareaPredeterminadaMySQL implements TareaPredeterminadaDAO {
         
         int rpta = 0;
         try {
-           //Registrar el JAR de conexión
+           
            Class.forName("com.mysql.cj.jdbc.Driver");
-           //Establecer la conexion
+           
            con = DriverManager.getConnection(DBManager.urlMySQL, 
                    DBManager.user, DBManager.password);
 
@@ -54,9 +54,9 @@ public class TareaPredeterminadaMySQL implements TareaPredeterminadaDAO {
     public int actualizar(TareaPredeterminada tareaPred) {
         int rpta = 0;
         try {
-           //Registrar el JAR de conexión
+           
            Class.forName("com.mysql.cj.jdbc.Driver");
-           //Establecer la conexion
+           
            con = DriverManager.getConnection(DBManager.urlMySQL, 
                    DBManager.user, DBManager.password);
 
@@ -81,9 +81,9 @@ public class TareaPredeterminadaMySQL implements TareaPredeterminadaDAO {
     public int eliminar(TareaPredeterminada tareaPred) {
         int rpta = 0;
         try {
-           //Registrar el JAR de conexión
+           
            Class.forName("com.mysql.cj.jdbc.Driver");
-           //Establecer la conexion
+           
            con = DriverManager.getConnection(DBManager.urlMySQL, 
                    DBManager.user, DBManager.password);
 
@@ -106,9 +106,9 @@ public class TareaPredeterminadaMySQL implements TareaPredeterminadaDAO {
     public ArrayList<TareaPredeterminada> listarxCategoria(Categoria categoria) {
         ArrayList<TareaPredeterminada> tareas = new ArrayList<>();
         try {
-           //Registrar el JAR de conexión
+           
            Class.forName("com.mysql.cj.jdbc.Driver");
-           //Establecer la conexion
+           
            con = DriverManager.getConnection(DBManager.urlMySQL, 
                    DBManager.user, DBManager.password);
 
@@ -124,8 +124,9 @@ public class TareaPredeterminadaMySQL implements TareaPredeterminadaDAO {
                
                tarea.setTareaPredeterminadaId(rs.getInt("tareas_predeterminadas_id"));
                tarea.setDescripcion(rs.getString("descripcion"));
-               tarea.setFechaCreacion(rs.getTimestamp("fecha").toLocalDateTime());
-               tarea.setActivo(true);
+               tarea.setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+               tarea.setActivo(rs.getBoolean("activo"));
+               tareas.add(tarea);
            }
            
            con.close();

@@ -9,10 +9,7 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
-import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.TransferenciaExternaDAO;
-import pe.edu.pucp.tablesoft.model.Agente;
-import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Ticket;
 import pe.edu.pucp.tablesoft.model.TransferenciaExterna;
 
@@ -28,12 +25,14 @@ public class TransferenciaExternaMySQL implements TransferenciaExternaDAO{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
+            transferenciaExterna.setFecha(LocalDateTime.now());
+            
             CallableStatement cs = con.prepareCall(
                     "{CALL insertar_transferencia_externa(?,?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());
-            cs.setTimestamp("_FECHA_TRANSFERENCIA", Timestamp.valueOf(LocalDateTime.now()));
+            cs.setTimestamp("_FECHA_TRANSFERENCIA", Timestamp.valueOf(transferenciaExterna.getFecha()));
             cs.setInt("_AGENTE_ID", transferenciaExterna.getAgenteResponsable().getAgenteId());
             cs.setString("_COMENTARIO", transferenciaExterna.getComentario());
             cs.setInt("_PROVEEDOR_ID", transferenciaExterna.getProveedorTo().getProveedorId());
@@ -63,21 +62,25 @@ public class TransferenciaExternaMySQL implements TransferenciaExternaDAO{
             
             ResultSet rs = cs.executeQuery();
             
-            ProveedorDAO daoProveedor = new ProveedorMySQL();
             while(rs.next()){
-                Proveedor proveedorTo;
-                Agente agenteResponsable;
                 TransferenciaExterna transfer = new TransferenciaExterna();
                 
-                agenteResponsable = new Agente(rs.getInt("agente_id"));
-                // Cambiar
-                proveedorTo = daoProveedor.buscar(rs.getInt("proveedor_id_to"));
-                
-                transfer.setAgenteResponsable(agenteResponsable);
-                transfer.setProveedorTo(proveedorTo);
                 transfer.setTransferenciaId(rs.getInt("transferencia_id"));
                 transfer.setComentario(rs.getString("comentario"));
                 transfer.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+                
+                transfer.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                transfer.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                
+                transfer.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
+                transfer.getProveedorTo().setRuc(rs.getString("ruc"));
+                transfer.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
+                transfer.getProveedorTo().setTelefono(rs.getString("telefono"));
+                transfer.getProveedorTo().setDireccion(rs.getString("direccion"));
+                transfer.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                transfer.getProveedorTo().setEmail(rs.getString("proveedor_email"));
+                transfer.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                
                 historial.add(transfer);
             }
             con.close();

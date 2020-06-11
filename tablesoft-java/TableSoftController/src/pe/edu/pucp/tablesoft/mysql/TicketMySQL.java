@@ -192,6 +192,7 @@ public class TicketMySQL implements TicketDAO{
             CategoriaDAO daoCategoria = new CategoriaMySQL();
             UrgenciaDAO daoUrgencia = new UrgenciaMySQL();
             EstadoTicketDAO daoEstadoTicket = new EstadoTicketMySQL();
+            
             while(rs.next()) {
                 
                 Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");

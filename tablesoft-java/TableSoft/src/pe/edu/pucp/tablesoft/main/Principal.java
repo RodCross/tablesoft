@@ -305,7 +305,6 @@ public class Principal {
         
         /* Los metodos para eliminar en las clases con campo activo los ponen en 0
          * Es requisto que se deje un registro permanente en base de datos
-        
          */
     }
 }

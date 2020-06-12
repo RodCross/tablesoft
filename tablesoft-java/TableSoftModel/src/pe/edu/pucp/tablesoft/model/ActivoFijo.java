@@ -10,6 +10,11 @@ public class ActivoFijo {
     public ActivoFijo(){
     }
 
+    public ActivoFijo(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
     public int getActivoFijoId() {
         return activoFijoId;
     }
@@ -42,4 +47,7 @@ public class ActivoFijo {
         this.activo = activo;
     }
     
+    public String mostrarDatos(){
+        return this.activoFijoId + " - " + this.getNombre() + " - " + this.getDescripcion();
+    }
 }

@@ -74,6 +74,6 @@ public class Categoria {
     }
     
     public String mostrarDatos() {
-        return getCategoriaId() + " - " + getNombre();
+        return getCategoriaId() + " - " + getNombre() + " - " + this.getDescripcion();
     }
 }

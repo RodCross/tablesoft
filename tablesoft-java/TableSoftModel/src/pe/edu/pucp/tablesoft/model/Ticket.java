@@ -5,6 +5,9 @@ import java.util.ArrayList;
 
 public class Ticket {
     private int ticketId;
+    
+    private String asunto;
+    private String descripcion;
     private EstadoTicket estado;
     
     private LocalDateTime fechaEnvio;
@@ -14,13 +17,13 @@ public class Ticket {
     private Empleado empleado;
     private Agente agente;
     
-    private ActivoFijo activoFijo;
-    private Proveedor proveedor;    // Solo se llena cuando el ticket ha tenido un escalado externo
     private Urgencia urgencia;
     private Categoria categoria;
     private Biblioteca biblioteca;
     
-    private String infoAdicional;
+    private ActivoFijo activoFijo;
+    private Proveedor proveedor;    // Solo se llena cuando el ticket ha tenido un escalado externo
+    
     private String alumnoEmail;
 
     private ArrayList<Tarea> listaTareas;
@@ -45,22 +48,30 @@ public class Ticket {
         agente = new Agente();
     }
 
-    public Ticket(EstadoTicket estado, Empleado empleado, Urgencia urgencia, Categoria categoria, Biblioteca biblioteca) {
+    public Ticket(String asunto, String descripcion,EstadoTicket estado, Empleado empleado, Urgencia urgencia, Categoria categoria, Biblioteca biblioteca) {
         this.estado = estado;
         this.empleado = empleado;
         this.urgencia = urgencia;
         this.categoria = categoria;
         this.biblioteca = biblioteca;
+        this.asunto = asunto;
+        this.descripcion = descripcion;
         
         listaTareas = new ArrayList<>();
         historialEstado = new ArrayList<>();
         historialTransferencia = new ArrayList();
         comentarios = new ArrayList();
-
-        proveedor = new Proveedor();
-        activoFijo = new ActivoFijo();
         
-        agente = new Agente();
+        this.proveedor = new Proveedor();
+        this.activoFijo = new ActivoFijo();
+    }
+    
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public ArrayList<Comentario> getComentarios() {
@@ -127,12 +138,12 @@ public class Ticket {
         this.ticketId = ticketId;
     }
 
-    public String getInfoAdicional() {
-        return infoAdicional;
+    public String getAsunto() {
+        return asunto;
     }
 
-    public void setInfoAdicional(String infoAdicional) {
-        this.infoAdicional = infoAdicional;
+    public void setAsunto(String asunto) {
+        this.asunto = asunto;
     }
 
     public String getAlumnoEmail() {

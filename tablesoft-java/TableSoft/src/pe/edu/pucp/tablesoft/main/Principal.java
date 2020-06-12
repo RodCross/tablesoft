@@ -7,35 +7,41 @@
 package pe.edu.pucp.tablesoft.main;
 
 import java.util.ArrayList;
+import pe.edu.pucp.tablesoft.dao.ActivoFijoDAO;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
+import pe.edu.pucp.tablesoft.dao.EstadoTareaDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.RolDAO;
 import pe.edu.pucp.tablesoft.dao.TicketDAO;
 import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
+import pe.edu.pucp.tablesoft.model.ActivoFijo;
 import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.Biblioteca;
 import pe.edu.pucp.tablesoft.model.Categoria;
 import pe.edu.pucp.tablesoft.model.Comentario;
 import pe.edu.pucp.tablesoft.model.Empleado;
 import pe.edu.pucp.tablesoft.model.Equipo;
+import pe.edu.pucp.tablesoft.model.EstadoTarea;
 import pe.edu.pucp.tablesoft.model.EstadoTicket;
 import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Rol;
 import pe.edu.pucp.tablesoft.model.Tarea;
 import pe.edu.pucp.tablesoft.model.Ticket;
 import pe.edu.pucp.tablesoft.model.Urgencia;
+import pe.edu.pucp.tablesoft.mysql.ActivoFijoMySQL;
 import pe.edu.pucp.tablesoft.mysql.AgenteMySQL;
 import pe.edu.pucp.tablesoft.mysql.BibliotecaMySQL;
 import pe.edu.pucp.tablesoft.mysql.CategoriaMySQL;
 import pe.edu.pucp.tablesoft.mysql.ComentarioMySQL;
 import pe.edu.pucp.tablesoft.mysql.EmpleadoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EquipoMySQL;
+import pe.edu.pucp.tablesoft.mysql.EstadoTareaMySQL;
 import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.ProveedorMySQL;
 import pe.edu.pucp.tablesoft.mysql.RolMySQL;
@@ -57,7 +63,8 @@ public class Principal {
         BibliotecaDAO bibliotecaDao = new BibliotecaMySQL();
         EstadoTicketDAO estadoTicketDao = new EstadoTicketMySQL();
         ComentarioDAO comentarioDao = new ComentarioMySQL();
-
+        EstadoTareaDAO estadoTareaDao = new EstadoTareaMySQL();
+        ActivoFijoDAO activoFijoDao = new ActivoFijoMySQL();
         
         // EQUIPOS
         // Crear equipos
@@ -97,9 +104,9 @@ public class Principal {
         
         // CATEGORIAS     
         // Crear categorias
-        Categoria categoria1 = new Categoria("BASES DE DATOS EN LINEA", "SOBRE BASES DE DATOS EN INTERNET");
-        Categoria categoria2 = new Categoria("EQUIPOS DE AUTOPRESTAMO", "SOBRE EL ASPECTO ELECTRONICO");
-        Categoria categoria3 = new Categoria("EQUIPOS DE INVENTARIO", "SOBRE LOS EQUIPOS DE INVENTARIOS");
+        Categoria categoria1 = new Categoria("BASES DE DATOS EN LINEA", "Sobre bases de datos en Internet");
+        Categoria categoria2 = new Categoria("EQUIPOS DE AUTOPRESTAMO", "Sobre el funcionamiento de los equipos de autoprestamo de las bibliotecas");
+        Categoria categoria3 = new Categoria("EQUIPOS DE INVENTARIO", "Sobre los equipos de inventario");
         
         // Insertar categorias
         categoriaDao.insertar(categoria1);
@@ -212,6 +219,20 @@ public class Principal {
             System.out.println(b.mostrarDatos());
         }
         
+        // ACTIVOS FIJOS
+        // Crear activo fijo
+        ActivoFijo activoFijo1 = new ActivoFijo("Equipo de Autoprestamo 1", "Es un equipo de autoprestamo, escanea libros");
+        
+        // Insertar activo fijo
+        activoFijoDao.insertar(activoFijo1);
+        
+        // Listar activos fijos
+        ArrayList<ActivoFijo> acts = activoFijoDao.listar();
+        System.out.println("\nActivos Fijos:\n");
+        for (ActivoFijo a : acts) {
+            System.out.println(a.mostrarDatos());
+        }
+        
         // EMPLEADO
         // Crear empleados
         Empleado empleado1 = new Empleado("20175657", "79805979", "GELDRES QUIROZ, JUAN AYMAR", "aymar.geldres@pucp.edu.pe");
@@ -233,6 +254,16 @@ public class Principal {
             System.out.println(e.mostrarDatos() + " - " + e.getBiblioteca().getAbreviatura());
         }
         
+        // ESTADOS DE TAREAS
+        EstadoTarea est1 = new EstadoTarea("PENDIENTE", "La tarea todavia no ha sido iniciada");
+        EstadoTarea est2 = new EstadoTarea("EN CURSO", "La tarea esta siendo llevada a cabo por el agente");
+        EstadoTarea est3 = new EstadoTarea("COMPLETADA", "La tarea ha sido completada");
+        
+        // Insertar
+        estadoTareaDao.insertar(est1);
+        estadoTareaDao.insertar(est2);
+        estadoTareaDao.insertar(est3);
+        
         // ESTADOS DE TICKET
         // Crear estados de ticket
         EstadoTicket estado1 = new EstadoTicket("ACTIVO", "El ticket acaba de ser enviado");
@@ -253,8 +284,12 @@ public class Principal {
         
         // TICKET
         // Crear y enviar tickets
-        Ticket ticket1 = new Ticket(estado1, empleado1, urgencia1, categoria1, bib1);
-        Ticket ticket2 = new Ticket(estado1, empleado2, urgencia2, categoria2, bib1);
+        Ticket ticket1 = new Ticket("Problema con la base de datos 1","No parece seleccionar todos los datos que corresponden al select, AYUDA!",
+                estado1, empleado1, urgencia1, categoria1, bib1);
+        Ticket ticket2 = new Ticket("Problema con el equipo de autoprestamo de la entrada",
+                "No esta escaneando bien los libros que entran y a veces se escucha sonidos de error, parece que es la conexion con el enchufe",
+                estado1, empleado2, urgencia2, categoria2, bib1);
+        ticket2.setActivoFijo(activoFijo1);
         
         ticketDao.insertar(ticket1);
         ticketDao.insertar(ticket2);

@@ -13,6 +13,11 @@ public class EstadoTarea {
         this.estadoId = id;
     }
 
+    public EstadoTarea(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+
     public int getEstadoId() {
         return estadoId;
     }

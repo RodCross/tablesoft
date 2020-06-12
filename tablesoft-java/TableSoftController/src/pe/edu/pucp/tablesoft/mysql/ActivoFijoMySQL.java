@@ -113,7 +113,7 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
             // Recorrer todas las filas que devuelve la ejecucion sentencia
             while(rs.next()) {
                 ActivoFijo activoFijo = new ActivoFijo();
-                activoFijo.setActivoFijoId(rs.getInt("proveedor_id"));
+                activoFijo.setActivoFijoId(rs.getInt("activo_fijo_id"));
                 activoFijo.setNombre(rs.getString("nombre"));
                 activoFijo.setDescripcion(rs.getString("descripcion"));
                 activoFijo.setActivo(rs.getBoolean("activo"));

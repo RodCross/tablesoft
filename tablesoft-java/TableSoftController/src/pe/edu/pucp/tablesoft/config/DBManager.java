@@ -11,4 +11,5 @@ public class DBManager {
                 "lp2-pixies.chjoagiapimg.us-east-1.rds.amazonaws.com:3306/dbpixies";
     public static String user = "admin";
     public static String password = "yosoyellobo";
+    public static String type = "mysql";
 }

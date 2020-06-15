@@ -226,7 +226,6 @@ public class Ticket {
         this.setEstado(estado);
         CambioEstadoTicket cambio = new CambioEstadoTicket(estado, getAgente() );
         cambio.setComentario(comentario);
-        //cambio.setFechaCambioEstado(LocalDateTime.now());
         historialEstado.add(cambio);
     }
     
@@ -234,7 +233,6 @@ public class Ticket {
         this.setProveedor(proveedor);
         TransferenciaExterna escalado = new TransferenciaExterna(proveedor, getAgente());
         escalado.setComentario(comentario);
-        //escalado.setFecha(LocalDateTime.now());
         this.historialTransferencia.add(escalado);
     }
     
@@ -245,7 +243,6 @@ public class Ticket {
     public void cambiarCategoria(Categoria categoria, String comentario){
         this.setCategoria(categoria);
         TransferenciaInterna cambioCategoria = new TransferenciaInterna(categoria, getAgente());
-        //cambioCategoria.setFecha(LocalDateTime.now());
         cambioCategoria.setComentario(comentario);
         this.setAgente(new Agente());
         this.historialTransferencia.add(cambioCategoria);
@@ -254,7 +251,6 @@ public class Ticket {
     public void mandarComentario(String comentario, Persona autor){
         Comentario com = new Comentario();
         com.setTexto(comentario);
-        //com.setFecha(LocalDateTime.now());
         com.setAutor(autor);
         this.comentarios.add(com);
     }

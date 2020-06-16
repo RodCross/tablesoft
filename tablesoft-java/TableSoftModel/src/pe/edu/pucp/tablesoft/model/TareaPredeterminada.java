@@ -12,6 +12,10 @@ public class TareaPredeterminada {
     public TareaPredeterminada() {
     }
 
+    public TareaPredeterminada(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
     public int getTareaPredeterminadaId() {
         return tareaPredeterminadaId;
     }

@@ -18,6 +18,7 @@ import pe.edu.pucp.tablesoft.dao.EstadoTareaDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.RolDAO;
+import pe.edu.pucp.tablesoft.dao.TareaPredeterminadaDAO;
 import pe.edu.pucp.tablesoft.dao.TicketDAO;
 import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
 import pe.edu.pucp.tablesoft.model.ActivoFijo;
@@ -32,6 +33,7 @@ import pe.edu.pucp.tablesoft.model.EstadoTicket;
 import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Rol;
 import pe.edu.pucp.tablesoft.model.Tarea;
+import pe.edu.pucp.tablesoft.model.TareaPredeterminada;
 import pe.edu.pucp.tablesoft.model.Ticket;
 import pe.edu.pucp.tablesoft.model.Urgencia;
 import pe.edu.pucp.tablesoft.mysql.ActivoFijoMySQL;
@@ -45,6 +47,7 @@ import pe.edu.pucp.tablesoft.mysql.EstadoTareaMySQL;
 import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.ProveedorMySQL;
 import pe.edu.pucp.tablesoft.mysql.RolMySQL;
+import pe.edu.pucp.tablesoft.mysql.TareaPredeterminadaMySQL;
 import pe.edu.pucp.tablesoft.mysql.TicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.UrgenciaMySQL;
 
@@ -65,6 +68,7 @@ public class Principal {
         ComentarioDAO comentarioDao = new ComentarioMySQL();
         EstadoTareaDAO estadoTareaDao = new EstadoTareaMySQL();
         ActivoFijoDAO activoFijoDao = new ActivoFijoMySQL();
+        TareaPredeterminadaDAO tareaPredeterminadaDao = new TareaPredeterminadaMySQL();
         
         // EQUIPOS
         // Crear equipos
@@ -108,10 +112,18 @@ public class Principal {
         Categoria categoria2 = new Categoria("EQUIPOS DE AUTOPRESTAMO", "Sobre el funcionamiento de los equipos de autoprestamo de las bibliotecas");
         Categoria categoria3 = new Categoria("EQUIPOS DE INVENTARIO", "Sobre los equipos de inventario");
         
+        // Tareas predeterminadas para categoria1
+        TareaPredeterminada tareaPred1 = new TareaPredeterminada("Revisar la conexion a internet");
+        TareaPredeterminada tareaPred2 = new TareaPredeterminada("Verificar los permisos del usuario");
+        
         // Insertar categorias
         categoriaDao.insertar(categoria1);
         categoriaDao.insertar(categoria2);
         categoriaDao.insertar(categoria3);
+        
+        // Insertar tareas predeterminadas
+        tareaPredeterminadaDao.insertar(tareaPred1, categoria1);
+        tareaPredeterminadaDao.insertar(tareaPred2, categoria1);
         
         // Enlazar cada equipo con categorias
         equipoDao.agregarCategoria(equipo1, categoria1);
@@ -123,6 +135,9 @@ public class Principal {
         System.out.println("\nCategorias:\n");
         for(Categoria c: categorias){
             System.out.println(c.mostrarDatos());
+            for(TareaPredeterminada t: c.getTareasPredeterminadas()){
+                System.out.println("\t- " + t.getDescripcion() + " - " + t.getFechaCreacion().toString());
+            }
         }
         
         // PROVEEDOR

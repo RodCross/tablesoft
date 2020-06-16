@@ -28,7 +28,7 @@ public class AgenteMySQL implements AgenteDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_agente(?,?,?,?,?,?,?)}");
+                    "{CALL insertar_agente(?,?,?,?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_CODIGO", agente.getCodigo());
@@ -37,6 +37,12 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setString("_PERSONA_EMAIL", agente.getPersonaEmail());
             cs.setString("_AGENTE_EMAIL", agente.getAgenteEmail());
             cs.setInt("_ROL_ID", agente.getRol().getRolId());
+            if(agente.getEquipo().getEquipoId()==0){
+                cs.setNull("_EQUIPO_ID", java.sql.Types.INTEGER);
+            }
+            else{
+                cs.setInt("_EQUIPO_ID", agente.getEquipo().getEquipoId());
+            }
             
             cs.execute();
             rpta = cs.getInt("_ID");

@@ -13,10 +13,6 @@ import pe.edu.pucp.tablesoft.config.DBController;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.model.Biblioteca;
 
-/**
- *
- * @author CARBAJAL
- */
 @WebService(serviceName = "BibliotecaWS")
 public class BibliotecaWS {
     

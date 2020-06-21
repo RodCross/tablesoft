@@ -13,17 +13,9 @@ import pe.edu.pucp.tablesoft.config.DBController;
 import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
 import pe.edu.pucp.tablesoft.model.Urgencia ;
 
-/**
- *
- * @author migue
- */
 @WebService(serviceName = "UrgenciaWS")
 public class UrgenciaWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    
     private UrgenciaDAO daoUrgencia;
     
     public UrgenciaWS(){

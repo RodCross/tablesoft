@@ -13,10 +13,6 @@ import pe.edu.pucp.tablesoft.config.DBController;
 import pe.edu.pucp.tablesoft.dao.ActivoFijoDAO;
 import pe.edu.pucp.tablesoft.model.ActivoFijo;
 
-/**
- *
- * @author CARBAJAL
- */
 @WebService(serviceName = "ActivoFijoWS")
 public class ActivoFijoWS {
 

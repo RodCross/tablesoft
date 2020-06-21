@@ -12,6 +12,7 @@ import javax.jws.WebParam;
 import pe.edu.pucp.tablesoft.config.DBController;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
 import pe.edu.pucp.tablesoft.model.Categoria;
+import pe.edu.pucp.tablesoft.model.Equipo;
 
 
 @WebService(serviceName = "CategoriaWS")
@@ -59,5 +60,15 @@ public class CategoriaWS {
     @WebMethod(operationName = "listarCategorias")
     public ArrayList<Categoria> listarCategorias(){
         return daoCategoria.listar();
+    }
+    
+    @WebMethod(operationName = "listarCategoriasDisponibles")
+    public ArrayList<Categoria> listarCategoriasDisponibles(){
+        return daoCategoria.listarDisponibles();
+    }
+    
+    @WebMethod(operationName = "listarCategoriasPorEquipo")
+    public ArrayList<Categoria> listarCategoriasPorEquipo(@WebParam(name = "objCategoria") Equipo equipo){
+        return daoCategoria.listarxEquipo(equipo);
     }
 }

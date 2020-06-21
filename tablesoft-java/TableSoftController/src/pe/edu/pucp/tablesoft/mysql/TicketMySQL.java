@@ -353,11 +353,15 @@ public class TicketMySQL implements TicketDAO{
                         tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
-                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
                         tick.getProveedor().setRuc(rs.getString("ruc"));
                         tick.getProveedor().setTelefono(rs.getString("telefono"));
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
+                        
+                        tick.getProveedor().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                        tick.getProveedor().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad_nombre"));
                     }
                 }
                 int activoFijoId = tick.getActivoFijo().getActivoFijoId();
@@ -399,8 +403,8 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
                     transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
                     transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
-                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
-                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("proveedor_telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("proveedor_direccion"));
                     transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
                     transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
                     
@@ -608,14 +612,18 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().setCiudad(rs.getString("ciudad"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
-                        tick.getProveedor().setPais(rs.getString("pais"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
                         tick.getProveedor().setRuc(rs.getString("ruc"));
                         tick.getProveedor().setTelefono(rs.getString("telefono"));
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
+                        
+                        tick.getProveedor().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                        tick.getProveedor().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad_nombre"));
                     }
                 }
                 int activoFijoId = tick.getActivoFijo().getActivoFijoId();
@@ -657,11 +665,15 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
                     transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
                     transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
-                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
-                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
-                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("proveedor_telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("proveedor_direccion"));
                     transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
                     transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferExt.getProveedorTo().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                    transferExt.getProveedorTo().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
                     transferencias.add(transferExt);
                 }
@@ -862,14 +874,18 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().setCiudad(rs.getString("ciudad"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
-                        tick.getProveedor().setPais(rs.getString("pais"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
                         tick.getProveedor().setRuc(rs.getString("ruc"));
                         tick.getProveedor().setTelefono(rs.getString("telefono"));
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
+                        
+                        tick.getProveedor().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                        tick.getProveedor().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad_nombre"));
                     }
                 }
                 int activoFijoId = tick.getActivoFijo().getActivoFijoId();
@@ -911,11 +927,15 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
                     transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
                     transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
-                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
-                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
-                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("proveedor_telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("proveedor_direccion"));
                     transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
                     transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferExt.getProveedorTo().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                    transferExt.getProveedorTo().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
                     transferencias.add(transferExt);
                 }
@@ -1116,14 +1136,18 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().setCiudad(rs.getString("ciudad"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
-                        tick.getProveedor().setPais(rs.getString("pais"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
                         tick.getProveedor().setRuc(rs.getString("ruc"));
                         tick.getProveedor().setTelefono(rs.getString("telefono"));
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
+                        
+                        tick.getProveedor().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                        tick.getProveedor().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad_nombre"));
                     }
                 }
                 int activoFijoId = tick.getActivoFijo().getActivoFijoId();
@@ -1165,11 +1189,15 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
                     transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
                     transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
-                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
-                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
-                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("proveedor_telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("proveedor_direccion"));
                     transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
                     transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferExt.getProveedorTo().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                    transferExt.getProveedorTo().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
                     transferencias.add(transferExt);
                 }
@@ -1371,14 +1399,18 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().setCiudad(rs.getString("ciudad"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
-                        tick.getProveedor().setPais(rs.getString("pais"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
                         tick.getProveedor().setRuc(rs.getString("ruc"));
                         tick.getProveedor().setTelefono(rs.getString("telefono"));
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
+                        
+                        tick.getProveedor().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                        tick.getProveedor().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad_nombre"));
                     }
                 }
                 int activoFijoId = tick.getActivoFijo().getActivoFijoId();
@@ -1420,11 +1452,15 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
                     transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
                     transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
-                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
-                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
-                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("proveedor_telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("proveedor_direccion"));
                     transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
                     transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferExt.getProveedorTo().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                    transferExt.getProveedorTo().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
                     transferencias.add(transferExt);
                 }

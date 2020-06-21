@@ -5,6 +5,7 @@ import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CambioEstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
+import pe.edu.pucp.tablesoft.dao.CiudadDAO;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
@@ -44,6 +45,7 @@ public abstract class DAOFactory {
     public abstract EquipoDAO getEquipoDAO();
     public abstract EstadoTicketDAO getEstadoTicketDAO();
     public abstract PaisDAO getPaisDAO();
+    public abstract CiudadDAO getCiudadDAO();
     public abstract ProveedorDAO getProveedorDAO();
     public abstract RolDAO getRolDAO();
     public abstract TareaDAO getTareaDAO();

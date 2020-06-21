@@ -5,6 +5,7 @@ import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CambioEstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
+import pe.edu.pucp.tablesoft.dao.CiudadDAO;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
@@ -117,6 +118,11 @@ public class MSSQLDAOFactory extends DAOFactory{
 
     @Override
     public PersonaDAO getPersonaDAO() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public CiudadDAO getCiudadDAO() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 

@@ -5,6 +5,7 @@ import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CambioEstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
+import pe.edu.pucp.tablesoft.dao.CiudadDAO;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
@@ -24,11 +25,13 @@ import pe.edu.pucp.tablesoft.mysql.AgenteMySQL;
 import pe.edu.pucp.tablesoft.mysql.BibliotecaMySQL;
 import pe.edu.pucp.tablesoft.mysql.CambioEstadoTicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.CategoriaMySQL;
+import pe.edu.pucp.tablesoft.mysql.CiudadMySQL;
 import pe.edu.pucp.tablesoft.mysql.ComentarioMySQL;
 import pe.edu.pucp.tablesoft.mysql.EmpleadoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EquipoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.PaisMySQL;
+import pe.edu.pucp.tablesoft.mysql.PersonaMySQL;
 import pe.edu.pucp.tablesoft.mysql.ProveedorMySQL;
 import pe.edu.pucp.tablesoft.mysql.RolMySQL;
 import pe.edu.pucp.tablesoft.mysql.TareaMySQL;
@@ -143,7 +146,12 @@ public class MySQLDAOFactory extends DAOFactory{
 
     @Override
     public PersonaDAO getPersonaDAO() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new PersonaMySQL();
+    }
+
+    @Override
+    public CiudadDAO getCiudadDAO() {
+        return new CiudadMySQL();
     }
     
     

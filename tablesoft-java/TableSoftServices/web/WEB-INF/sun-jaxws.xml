@@ -7,4 +7,8 @@
   <endpoint implementation="pe.edu.pucp.tablesoft.services.CategoriaWS" name="CategoriaWS" url-pattern="/CategoriaWS"/>
   <endpoint implementation="pe.edu.pucp.tablesoft.services.AgenteWS" name="AgenteWS" url-pattern="/AgenteWS"/>
   <endpoint implementation="pe.edu.pucp.tablesoft.services.EquipoWS" name="EquipoWS" url-pattern="/EquipoWS"/>
+  <endpoint implementation="pe.edu.pucp.tablesoft.services.TareaWS" name="TareaWS" url-pattern="/TareaWS"/>
+  <endpoint implementation="pe.edu.pucp.tablesoft.services.CiudadWS" name="CiudadWS" url-pattern="/CiudadWS"/>
+  <endpoint implementation="pe.edu.pucp.tablesoft.services.EstadoTicketWS" name="EstadoTicketWS" url-pattern="/EstadoTicketWS"/>
+  <endpoint implementation="pe.edu.pucp.tablesoft.services.ProveedorWS" name="ProveedorWS" url-pattern="/ProveedorWS"/>
 </endpoints>

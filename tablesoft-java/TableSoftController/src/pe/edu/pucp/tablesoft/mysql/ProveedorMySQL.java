@@ -31,7 +31,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             cs.setString("_RUC", proveedor.getRuc());
             cs.setString("_RAZON_SOCIAL", proveedor.getRazonSocial());
             cs.setString("_DIRECCION", proveedor.getDireccion());
-            cs.setInt("_CIUDAD", proveedor.getCiudad().getCiudadId());
+            cs.setInt("_CIUDAD_ID", proveedor.getCiudad().getCiudadId());
             cs.setString("_TELEFONO", proveedor.getTelefono());
             cs.setString("_EMAIL", proveedor.getEmail());
             
@@ -64,7 +64,7 @@ public class ProveedorMySQL implements ProveedorDAO {
             cs.setString("_RUC", proveedor.getRuc());
             cs.setString("_RAZON_SOCIAL", proveedor.getRazonSocial());
             cs.setString("_DIRECCION", proveedor.getDireccion());
-            cs.setInt("_CIUDAD", proveedor.getCiudad().getCiudadId());
+            cs.setInt("_CIUDAD_ID", proveedor.getCiudad().getCiudadId());
             cs.setString("_TELEFONO", proveedor.getTelefono());
             cs.setString("_EMAIL", proveedor.getEmail());
             

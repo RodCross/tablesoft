@@ -5,8 +5,13 @@
  */
 package pe.edu.pucp.tablesoft.mysql;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
+import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.PaisDAO;
 import pe.edu.pucp.tablesoft.model.Pais;
 
@@ -16,7 +21,32 @@ public class PaisMySQL implements PaisDAO{
 
     @Override
     public ArrayList<Pais> listar() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        ArrayList<Pais> paises = new ArrayList<>();
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL listar_pais()}");
+            ResultSet rs=cs.executeQuery();
+            
+            while(rs.next()) {
+                Pais pais = new Pais();
+                pais.setPaisId(rs.getInt("pais_id"));
+                pais.setNombre(rs.getString("nombre"));
+                
+                paises.add(pais);
+            }
+            
+            con.close();
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return paises;
     }
     
 }

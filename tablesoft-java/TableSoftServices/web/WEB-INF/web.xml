@@ -13,6 +13,16 @@
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>BibliotecaWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>ActivoFijoWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RolWS</servlet-name>
         <url-pattern>/RolWS</url-pattern>
@@ -20,6 +30,14 @@
     <servlet-mapping>
         <servlet-name>PaisWS</servlet-name>
         <url-pattern>/PaisWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BibliotecaWS</servlet-name>
+        <url-pattern>/BibliotecaWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ActivoFijoWS</servlet-name>
+        <url-pattern>/ActivoFijoWS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -5,9 +5,13 @@
  */
 package pe.edu.pucp.tablesoft.services;
 
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import pe.edu.pucp.tablesoft.config.DBController;
+import pe.edu.pucp.tablesoft.dao.PaisDAO;
+import pe.edu.pucp.tablesoft.model.Pais;
 
 /**
  *
@@ -15,12 +19,15 @@ import javax.jws.WebParam;
  */
 @WebService(serviceName = "PaisWS")
 public class PaisWS {
+    
+    private PaisDAO daoPais;
+    
+    public PaisWS(){
+        daoPais = DBController.controller.getPaisDAO();
+    }
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    @WebMethod(operationName = "listarPaises")
+    public ArrayList<Pais> listarRoles(@WebParam(name = "objRol") Pais pais){
+        return daoPais.listar();
     }
 }

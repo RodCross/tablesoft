@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.model.Comentario;
-import pe.edu.pucp.tablesoft.model.Persona;
 import pe.edu.pucp.tablesoft.model.Ticket;
 
 /*

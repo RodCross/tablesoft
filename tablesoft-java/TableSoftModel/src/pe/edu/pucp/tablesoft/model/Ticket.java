@@ -9,9 +9,10 @@ public class Ticket {
     private String asunto;
     private String descripcion;
     private EstadoTicket estado;
+    private Boolean retrasado;
     
     private LocalDateTime fechaEnvio;
-    private LocalDateTime fechaPrimeraRespuesta;
+    private LocalDateTime fechaCierreMaximo;
     private LocalDateTime fechaCierre;
     
     private Empleado empleado;
@@ -21,10 +22,10 @@ public class Ticket {
     private Categoria categoria;
     private Biblioteca biblioteca;
     
-    private ActivoFijo activoFijo;
+    private ActivoFijo activoFijo;  // Opcional
     private Proveedor proveedor;    // Solo se llena cuando el ticket ha tenido un escalado externo
     
-    private String alumnoEmail;
+    private String alumnoEmail;     // Opcional
 
     private ArrayList<Tarea> listaTareas;
     private ArrayList<CambioEstadoTicket> historialEstado;
@@ -65,6 +66,15 @@ public class Ticket {
         this.proveedor = new Proveedor();
         this.activoFijo = new ActivoFijo();
     }
+
+    public Boolean getRetrasado() {
+        return retrasado;
+    }
+
+    public void setRetrasado(Boolean retrasado) {
+        this.retrasado = retrasado;
+    }
+    
     
     public String getDescripcion() {
         return descripcion;
@@ -162,12 +172,12 @@ public class Ticket {
         this.fechaEnvio = fechaEnvio;
     }
 
-    public LocalDateTime getFechaPrimeraRespuesta() {
-        return fechaPrimeraRespuesta;
+    public LocalDateTime getFechaCierreMaximo() {
+        return fechaCierreMaximo;
     }
 
-    public void setFechaPrimeraRespuesta(LocalDateTime fechaPrimeraRespuesta) {
-        this.fechaPrimeraRespuesta = fechaPrimeraRespuesta;
+    public void setFechaCierreMaximo(LocalDateTime fechaCierreMaximo) {
+        this.fechaCierreMaximo = fechaCierreMaximo;
     }
 
     public LocalDateTime getFechaCierre() {

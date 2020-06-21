@@ -7,27 +7,21 @@ public class Empleado extends Persona {
     private int empleadoId;
     private ArrayList<Ticket> listaTickets;
     private Biblioteca biblioteca;
-    private Boolean activo;
 
     // Constructores
     
     public Empleado() {
+        super('E');
         biblioteca = new Biblioteca();
         this.listaTickets = new ArrayList<>();
     }
+
+    public Empleado(Biblioteca biblioteca, String codigo, String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String direccion, String telefono, String password, String personaEmail) {
+        super(codigo, dni, nombre, apellidoPaterno, apellidoMaterno, direccion, telefono, password, personaEmail, 'E');
+        this.biblioteca = biblioteca;
+    }
     
-    public Empleado(String codigo, String dni, String nombre, String usuarioEmail) {
-        super(codigo, dni, nombre, usuarioEmail);
-        this.listaTickets = new ArrayList<>();
-    }
-
-    public Boolean getActivo() {
-        return activo;
-    }
-
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
-    }
+    
     
     // Getters y setters
     public Biblioteca getBiblioteca() {

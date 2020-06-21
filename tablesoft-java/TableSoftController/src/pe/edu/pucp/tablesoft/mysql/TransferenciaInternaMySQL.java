@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
@@ -29,11 +28,10 @@ public class TransferenciaInternaMySQL implements TransferenciaInternaDAO {
             transferenciaInterna.setFecha(LocalDateTime.now());
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_transferencia_interna(?,?,?,?,?,?)}");
+                    "{CALL insertar_transferencia_interna(?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());
-            cs.setTimestamp("_FECHA_TRANSFERENCIA", Timestamp.valueOf(transferenciaInterna.getFecha()));
             cs.setInt("_AGENTE_ID", transferenciaInterna.getAgenteResponsable().getAgenteId());
             cs.setString("_COMENTARIO", transferenciaInterna.getComentario());
             cs.setInt("_CATEGORIA_ID", transferenciaInterna.getCategoriaTo().getCategoriaId());
@@ -72,6 +70,9 @@ public class TransferenciaInternaMySQL implements TransferenciaInternaDAO {
                 
                 transfer.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
                 transfer.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                transfer.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                transfer.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                transfer.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
                 
                 transfer.getCategoriaTo().setCategoriaId(rs.getInt("categoria_id_to"));
                 transfer.getCategoriaTo().setNombre(rs.getString("categoria_nombre"));

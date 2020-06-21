@@ -27,13 +27,19 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_empleado(?,?,?,?,?,?)}");
+                    "{CALL insertar_empleado(?,?,?,?,?,?,?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_CODIGO", empleado.getCodigo());
             cs.setString("_NOMBRE", empleado.getNombre());
+            cs.setString("_APELLIDO_PATERNO", empleado.getApellidoPaterno());
+            cs.setString("_APELLIDO_MATERNO", empleado.getApellidoMaterno());
+            cs.setString("_DIRECCION", empleado.getDireccion());
+            cs.setString("_TELEFONO", empleado.getTelefono());
+            cs.setString("_PASSWORD", empleado.getPassword());
             cs.setString("_DNI", empleado.getDni());
             cs.setString("_PERSONA_EMAIL", empleado.getPersonaEmail());
+            
             cs.setInt("_BIBLIOTECA_ID", empleado.getBiblioteca().getBibliotecaId());
             
             cs.execute();
@@ -60,8 +66,14 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             cs.setInt("_ID", empleado.getEmpleadoId());
             cs.setString("_CODIGO", empleado.getCodigo());
             cs.setString("_NOMBRE", empleado.getNombre());
+            cs.setString("_APELLIDO_PATERNO", empleado.getApellidoPaterno());
+            cs.setString("_APELLIDO_MATERNO", empleado.getApellidoMaterno());
+            cs.setString("_DIRECCION", empleado.getDireccion());
+            cs.setString("_TELEFONO", empleado.getTelefono());
+            cs.setString("_PASSWORD", empleado.getPassword());
             cs.setString("_DNI", empleado.getDni());
             cs.setString("_PERSONA_EMAIL", empleado.getPersonaEmail());
+            
             cs.setInt("_BIBLIOTECA_ID", empleado.getBiblioteca().getBibliotecaId());
             
             cs.execute();
@@ -115,6 +127,11 @@ public class EmpleadoMySQL implements EmpleadoDAO{
                 empleado.setPersonaEmail(rs.getString("persona_email"));
                 empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellidoPaterno(rs.getString("apellido_paterno"));
+                empleado.setApellidoMaterno(rs.getString("apellido_materno"));
+                empleado.setDireccion(rs.getString("direccion"));
+                empleado.setTelefono(rs.getString("telefono"));
+                empleado.setTipo(rs.getString("tipo").charAt(0));
                 
                 empleado.getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
                 empleado.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
@@ -153,6 +170,11 @@ public class EmpleadoMySQL implements EmpleadoDAO{
                 empleado.setPersonaEmail(rs.getString("persona_email"));
                 empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellidoPaterno(rs.getString("apellido_paterno"));
+                empleado.setApellidoMaterno(rs.getString("apellido_materno"));
+                empleado.setDireccion(rs.getString("direccion"));
+                empleado.setTelefono(rs.getString("telefono"));
+                empleado.setTipo(rs.getString("tipo").charAt(0));
                 
                 empleado.getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
                 empleado.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
@@ -190,6 +212,12 @@ public class EmpleadoMySQL implements EmpleadoDAO{
                 empleado.setPersonaEmail(rs.getString("persona_email"));
                 empleado.setActivo(rs.getBoolean("activo"));
                 empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellidoPaterno(rs.getString("apellido_paterno"));
+                empleado.setApellidoMaterno(rs.getString("apellido_materno"));
+                empleado.setDireccion(rs.getString("direccion"));
+                empleado.setTelefono(rs.getString("telefono"));
+                empleado.setTipo(rs.getString("tipo").charAt(0));
+                
                 empleado.getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
                 empleado.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
                 empleado.getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));

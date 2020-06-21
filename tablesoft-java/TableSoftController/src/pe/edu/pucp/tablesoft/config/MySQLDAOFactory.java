@@ -8,7 +8,6 @@ import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
-import pe.edu.pucp.tablesoft.dao.EstadoTareaDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.RolDAO;
@@ -26,7 +25,6 @@ import pe.edu.pucp.tablesoft.mysql.CategoriaMySQL;
 import pe.edu.pucp.tablesoft.mysql.ComentarioMySQL;
 import pe.edu.pucp.tablesoft.mysql.EmpleadoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EquipoMySQL;
-import pe.edu.pucp.tablesoft.mysql.EstadoTareaMySQL;
 import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.ProveedorMySQL;
 import pe.edu.pucp.tablesoft.mysql.RolMySQL;
@@ -88,11 +86,6 @@ public class MySQLDAOFactory extends DAOFactory{
     @Override
     public EquipoDAO getEquipoDAO() {
         return new EquipoMySQL();
-    }
-
-    @Override
-    public EstadoTareaDAO getEstadoTareaDAO() {
-        return new EstadoTareaMySQL();
     }
 
     @Override

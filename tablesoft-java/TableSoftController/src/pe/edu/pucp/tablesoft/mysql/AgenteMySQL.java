@@ -28,13 +28,19 @@ public class AgenteMySQL implements AgenteDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_agente(?,?,?,?,?,?,?,?)}");
+                    "{CALL insertar_agente(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_CODIGO", agente.getCodigo());
             cs.setString("_NOMBRE", agente.getNombre());
+            cs.setString("_APELLIDO_PATERNO", agente.getApellidoPaterno());
+            cs.setString("_APELLIDO_MATERNO", agente.getApellidoMaterno());
+            cs.setString("_DIRECCION", agente.getDireccion());
+            cs.setString("_TELEFONO", agente.getTelefono());
+            cs.setString("_PASSWORD", agente.getPassword());
             cs.setString("_DNI", agente.getDni());
             cs.setString("_PERSONA_EMAIL", agente.getPersonaEmail());
+            
             cs.setString("_AGENTE_EMAIL", agente.getAgenteEmail());
             cs.setInt("_ROL_ID", agente.getRol().getRolId());
             if(agente.getEquipo().getEquipoId()==0){
@@ -64,11 +70,16 @@ public class AgenteMySQL implements AgenteDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_agente(?,?,?,?,?,?,?,?)}");
+                    "{CALL actualizar_agente(?,?,?,?,?,?,?,?,?,?,?,?)}");
             
             cs.setInt("_ID", agente.getAgenteId());
             cs.setString("_CODIGO", agente.getCodigo());
             cs.setString("_NOMBRE", agente.getNombre());
+            cs.setString("_APELLIDO_PATERNO", agente.getApellidoPaterno());
+            cs.setString("_APELLIDO_MATERNO", agente.getApellidoMaterno());
+            cs.setString("_DIRECCION", agente.getDireccion());
+            cs.setString("_TELEFONO", agente.getTelefono());
+            cs.setString("_PASSWORD", agente.getPassword());
             cs.setString("_DNI", agente.getDni());
             cs.setString("_PERSONA_EMAIL", agente.getPersonaEmail());
             cs.setString("_AGENTE_EMAIL", agente.getAgenteEmail());
@@ -107,6 +118,11 @@ public class AgenteMySQL implements AgenteDAO{
                 agente.setAgenteEmail(rs.getString("agente_email"));
                 agente.setActivo(rs.getBoolean("activo"));
                 agente.setNombre(rs.getString("nombre"));
+                agente.setApellidoPaterno(rs.getString("apellido_paterno"));
+                agente.setApellidoMaterno(rs.getString("apellido_materno"));
+                agente.setDireccion(rs.getString("direccion"));
+                agente.setTelefono(rs.getString("telefono"));
+                agente.setTipo(rs.getString("tipo").charAt(0));
                 
                 agente.getEquipo().setEquipoId(rs.getInt("equipo_id"));
                 agente.getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
@@ -174,6 +190,11 @@ public class AgenteMySQL implements AgenteDAO{
                 agente.setAgenteEmail(rs.getString("agente_email"));
                 agente.setActivo(rs.getBoolean("activo"));
                 agente.setNombre(rs.getString("nombre"));
+                agente.setApellidoPaterno(rs.getString("apellido_paterno"));
+                agente.setApellidoMaterno(rs.getString("apellido_materno"));
+                agente.setDireccion(rs.getString("direccion"));
+                agente.setTelefono(rs.getString("telefono"));
+                agente.setTipo(rs.getString("tipo").charAt(0));
                 
                 agente.getEquipo().setEquipoId(rs.getInt("equipo_id"));
                 agente.getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
@@ -219,6 +240,11 @@ public class AgenteMySQL implements AgenteDAO{
                 agente.setAgenteEmail(rs.getString("agente_email"));
                 agente.setActivo(rs.getBoolean("activo"));
                 agente.setNombre(rs.getString("nombre"));
+                agente.setApellidoPaterno(rs.getString("apellido_paterno"));
+                agente.setApellidoMaterno(rs.getString("apellido_materno"));
+                agente.setDireccion(rs.getString("direccion"));
+                agente.setTelefono(rs.getString("telefono"));
+                agente.setTipo(rs.getString("tipo").charAt(0));
                 
                 agente.getEquipo().setEquipoId(rs.getInt("equipo_id"));
                 agente.getEquipo().setDescripcion(rs.getString("equipo_descripcion"));

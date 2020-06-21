@@ -68,7 +68,13 @@ public class TicketMySQL implements TicketDAO{
                 cs.setNull("_ACTIVO_FIJO_ID", java.sql.Types.INTEGER);
             }
             
-            cs.setString("_ALUMNO_EMAIL", ticket.getAlumnoEmail());
+            String alumno_email = ticket.getAlumnoEmail();
+            if("".equals(alumno_email)){
+                cs.setNull("_ALUMNO_EMAIL", java.sql.Types.VARCHAR);
+            }
+            else{
+                cs.setString("_ALUMNO_EMAIL", alumno_email);
+            }
             
             cs.execute();
             
@@ -100,10 +106,9 @@ public class TicketMySQL implements TicketDAO{
                     if(transfer.getTransferenciaId() == 0){
                         transfer.setFecha(LocalDateTime.now());
                         if(transfer instanceof TransferenciaExterna){
-                            CallableStatement cs1 = con.prepareCall("{CALL insertar_transferencia_externa(?,?,?,?,?,?)}");
+                            CallableStatement cs1 = con.prepareCall("{CALL insertar_transferencia_externa(?,?,?,?,?)}");
                             cs1.registerOutParameter("_ID", java.sql.Types.INTEGER);
                             cs1.setInt("_TICKET_ID", ticket.getTicketId());
-                            cs1.setTimestamp("_FECHA_TRANSFERENCIA", Timestamp.valueOf(transfer.getFecha()));
                             cs1.setInt("_AGENTE_ID", transfer.getAgenteResponsable().getAgenteId());
                             cs1.setString("_COMENTARIO", transfer.getComentario());
                             cs1.setInt("_PROVEEDOR_ID", ((TransferenciaExterna)transfer).getProveedorTo().getProveedorId());
@@ -111,10 +116,9 @@ public class TicketMySQL implements TicketDAO{
                             transfer.setTransferenciaId(cs1.getInt("_ID"));
                         }
                         if(transfer instanceof TransferenciaInterna){
-                            CallableStatement cs2 = con.prepareCall("{CALL insertar_transferencia_interna(?,?,?,?,?,?)}");
+                            CallableStatement cs2 = con.prepareCall("{CALL insertar_transferencia_interna(?,?,?,?,?)}");
                             cs2.registerOutParameter("_ID", java.sql.Types.INTEGER);
                             cs2.setInt("_TICKET_ID", ticket.getTicketId());
-                            cs2.setTimestamp("_FECHA_TRANSFERENCIA", Timestamp.valueOf(transfer.getFecha()));
                             cs2.setInt("_AGENTE_ID", transfer.getAgenteResponsable().getAgenteId());
                             cs2.setString("_COMENTARIO", transfer.getComentario());
                             cs2.setInt("_PROVEEDOR_ID", ((TransferenciaInterna)transfer).getCategoriaTo().getCategoriaId());
@@ -127,10 +131,9 @@ public class TicketMySQL implements TicketDAO{
             
             for (CambioEstadoTicket cambioEstado : ticket.getHistorialEstado()){
                 if(cambioEstado.getCambioEstadoTicketId() == 0){
-                    CallableStatement cs3 = con.prepareCall("{CALL insertar_cambio_estado_ticket(?,?,?,?,?,?)}");
+                    CallableStatement cs3 = con.prepareCall("{CALL insertar_cambio_estado_ticket(?,?,?,?,?)}");
                     cs3.registerOutParameter("_ID", java.sql.Types.INTEGER);
                     cs3.setInt("_TICKET_ID", ticket.getTicketId());
-                    cs3.setTimestamp("_FECHA_CAMBIO_ESTADO", Timestamp.valueOf(LocalDateTime.now()));
                     cs3.setString("_COMENTARIO", cambioEstado.getComentario());
                     cs3.setInt("_AGENTE_ID", cambioEstado.getAgenteResponsable().getAgenteId());
                     cs3.setInt("_ESTADO_ID_TO", cambioEstado.getEstadoTo().getEstadoId());
@@ -149,11 +152,11 @@ public class TicketMySQL implements TicketDAO{
             cs.setString("_DESCRIPCION", ticket.getDescripcion());
             cs.setInt("_ESTADO_ID", ticket.getEstado().getEstadoId());
             
-            if (ticket.getFechaPrimeraRespuesta() != null){
-                cs.setTimestamp("_FECHA_PRIMERA_RESPUESTA", Timestamp.valueOf(ticket.getFechaPrimeraRespuesta()));
+            if (ticket.getFechaCierreMaximo() != null){
+                cs.setTimestamp("_FECHA_CIERRE_MAXIMO", Timestamp.valueOf(ticket.getFechaCierreMaximo()));
             }
             else {
-                cs.setTimestamp("_FECHA_PRIMERA_RESPUESTA", null);
+                cs.setTimestamp("_FECHA_CIERRE_MAXIMO", null);
             }
             if (ticket.getFechaCierre() != null){
                 cs.setTimestamp("_FECHA_CIERRE", Timestamp.valueOf(ticket.getFechaCierre()));
@@ -192,7 +195,13 @@ public class TicketMySQL implements TicketDAO{
                 cs.setNull("_ACTIVO_FIJO_ID", java.sql.Types.INTEGER);
             }
             
-            cs.setString("_ALUMNO_EMAIL", ticket.getAlumnoEmail());
+            String alumno_email = ticket.getAlumnoEmail();
+            if("".equals(alumno_email)){
+                cs.setNull("_ALUMNO_EMAIL", java.sql.Types.VARCHAR);
+            }
+            else{
+                cs.setString("_ALUMNO_EMAIL", alumno_email);
+            }
             
             out = cs.executeUpdate();
             
@@ -222,7 +231,7 @@ public class TicketMySQL implements TicketDAO{
             while(rs.next()) {
                 
                 Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");
-                Timestamp fechaPrimeraRespuesta = rs.getTimestamp("fecha_primera_respuesta");
+                Timestamp fechaCierreMaximo = rs.getTimestamp("fecha_cierre_maximo");
                 Timestamp fechaCierre = rs.getTimestamp("fecha_cierre");
                 
                 Ticket ticket = new Ticket();
@@ -237,8 +246,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getEstado().setActivo(rs.getBoolean("estado_activo"));
                 
                 ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());
-                if (fechaPrimeraRespuesta != null) {
-                    ticket.setFechaPrimeraRespuesta(fechaPrimeraRespuesta.toLocalDateTime());
+                if (fechaCierreMaximo != null) {
+                    ticket.setFechaCierreMaximo(fechaCierreMaximo.toLocalDateTime());
                 }
                 if (fechaCierre != null) {
                     ticket.setFechaCierre(fechaCierre.toLocalDateTime());
@@ -275,6 +284,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getAgente().setAgenteId(rs.getInt("agente_id"));
                 
                 ticket.setAlumnoEmail(rs.getString("alumno_email"));
+                
+                ticket.setRetrasado(rs.getBoolean("retrasado"));
 
                 tickets.add(ticket);
             }
@@ -290,6 +301,12 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().setPersonaEmail(rs.getString("persona_email"));
                     tick.getEmpleado().setActivo(rs.getBoolean("activo"));
                     tick.getEmpleado().setNombre(rs.getString("nombre"));
+                    tick.getEmpleado().setApellidoPaterno(rs.getString("apellido_paterno"));
+                    tick.getEmpleado().setApellidoMaterno(rs.getString("apellido_materno"));
+                    tick.getEmpleado().setDireccion(rs.getString("direccion"));
+                    tick.getEmpleado().setTelefono(rs.getString("telefono"));
+                    tick.getEmpleado().setTipo(rs.getString("tipo").charAt(0));
+                    
                     tick.getEmpleado().getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
                     tick.getEmpleado().getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
@@ -308,6 +325,11 @@ public class TicketMySQL implements TicketDAO{
                         tick.getAgente().setAgenteEmail(rs.getString("agente_email"));
                         tick.getAgente().setActivo(rs.getBoolean("activo"));
                         tick.getAgente().setNombre(rs.getString("nombre"));
+                        tick.getAgente().setApellidoPaterno(rs.getString("apellido_paterno"));
+                        tick.getAgente().setApellidoMaterno(rs.getString("apellido_materno"));
+                        tick.getAgente().setDireccion(rs.getString("direccion"));
+                        tick.getAgente().setTelefono(rs.getString("telefono"));
+                        tick.getAgente().setTipo(rs.getString("tipo").charAt(0));
 
                         tick.getAgente().getEquipo().setEquipoId(rs.getInt("equipo_id"));
                         tick.getAgente().getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
@@ -338,6 +360,102 @@ public class TicketMySQL implements TicketDAO{
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
                     }
                 }
+                int activoFijoId = tick.getActivoFijo().getActivoFijoId();
+                if(activoFijoId != 0){
+                    cs = con.prepareCall("{CALL buscar_activo_fijo(?)}");
+                    cs.setInt("_ID", activoFijoId);
+                    rs=cs.executeQuery();
+
+                    while(rs.next()) {
+                        tick.getActivoFijo().setActivoFijoId(rs.getInt("proveedor_id"));
+                        tick.getActivoFijo().setNombre(rs.getString("nombre"));
+                        tick.getActivoFijo().setCodigo(rs.getString("codigo"));
+                        tick.getActivoFijo().setMarca(rs.getString("marca"));
+                        tick.getActivoFijo().setTipo(rs.getString("tipo"));
+                        tick.getActivoFijo().setActivo(rs.getBoolean("activo"));
+                    }
+                }
+                
+                // Listar historial de transferencias
+                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                
+                cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaExterna transferExt = new TransferenciaExterna();
+
+                    transferExt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferExt.setComentario(rs.getString("comentario"));
+                    transferExt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferExt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferExt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferExt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferExt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferExt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
+                    transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
+                    transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
+                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
+                    transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferencias.add(transferExt);
+                }
+                
+                cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaInterna transferInt = new TransferenciaInterna();
+
+                    transferInt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferInt.setComentario(rs.getString("comentario"));
+                    transferInt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferInt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferInt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferInt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferInt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferInt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferInt.getCategoriaTo().setCategoriaId(rs.getInt("categoria_id_to"));
+                    transferInt.getCategoriaTo().setNombre(rs.getString("categoria_nombre"));
+                    transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
+                    transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
+                    
+                    transferencias.add(transferInt);
+                }
+                tick.setHistorialTransferencia(transferencias);
+                
+                // Listar historial de cambios de estado
+                ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
+                cs = con.prepareCall("{CALL listar_cambio_estado_ticket(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    CambioEstadoTicket cambio = new CambioEstadoTicket();
+                
+                    cambio.getEstadoTo().setEstadoId(rs.getInt("estado_id_to"));
+                    cambio.getEstadoTo().setNombre(rs.getString("estado_nombre"));
+                    cambio.getEstadoTo().setDescripcion(rs.getString("estado_descripcion"));
+                    cambio.getEstadoTo().setActivo(rs.getBoolean("estado_activo"));
+
+                    cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
+                    cambio.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+
+                    cambio.setComentario(rs.getString("comentario"));
+                    cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());
+                    cambiosEstado.add(cambio);
+                }
+                tick.setHistorialEstado(cambiosEstado);
             }
             
             con.close();
@@ -367,7 +485,7 @@ public class TicketMySQL implements TicketDAO{
             while(rs.next()) {
                 
                 Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");
-                Timestamp fechaPrimeraRespuesta = rs.getTimestamp("fecha_primera_respuesta");
+                Timestamp fechaCierreMaximo = rs.getTimestamp("fecha_cierre_maximo");
                 Timestamp fechaCierre = rs.getTimestamp("fecha_cierre");
                 
                 Ticket ticket = new Ticket();
@@ -382,8 +500,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getEstado().setActivo(rs.getBoolean("estado_activo"));
                 
                 ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());
-                if (fechaPrimeraRespuesta != null) {
-                    ticket.setFechaPrimeraRespuesta(fechaPrimeraRespuesta.toLocalDateTime());
+                if (fechaCierreMaximo != null) {
+                    ticket.setFechaCierreMaximo(fechaCierreMaximo.toLocalDateTime());
                 }
                 if (fechaCierre != null) {
                     ticket.setFechaCierre(fechaCierre.toLocalDateTime());
@@ -420,6 +538,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getAgente().setAgenteId(rs.getInt("agente_id"));
                 
                 ticket.setAlumnoEmail(rs.getString("alumno_email"));
+                
+                ticket.setRetrasado(rs.getBoolean("retrasado"));
 
                 tickets.add(ticket);
             }
@@ -435,14 +555,48 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().setPersonaEmail(rs.getString("persona_email"));
                     tick.getEmpleado().setActivo(rs.getBoolean("activo"));
                     tick.getEmpleado().setNombre(rs.getString("nombre"));
+                    tick.getEmpleado().setApellidoPaterno(rs.getString("apellido_paterno"));
+                    tick.getEmpleado().setApellidoMaterno(rs.getString("apellido_materno"));
+                    tick.getEmpleado().setDireccion(rs.getString("direccion"));
+                    tick.getEmpleado().setTelefono(rs.getString("telefono"));
+                    tick.getEmpleado().setTipo(rs.getString("tipo").charAt(0));
+                    
                     tick.getEmpleado().getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
                     tick.getEmpleado().getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
                     tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
                 }
-                
-                tick.setAgente(agente);
-                
+                int agenteId = tick.getAgente().getAgenteId();
+                if(agenteId != 0){
+                    cs = con.prepareCall("{CALL buscar_agente(?)}");
+                    cs.setInt("_ID", agenteId);
+                    rs = cs.executeQuery();
+                    while(rs.next()){
+                        tick.getAgente().setAgenteId(rs.getInt("agente_id"));
+                        tick.getAgente().setCodigo(rs.getString("codigo"));
+                        tick.getAgente().setDni(rs.getString("dni"));
+                        tick.getAgente().setPersonaEmail(rs.getString("persona_email"));
+                        tick.getAgente().setAgenteEmail(rs.getString("agente_email"));
+                        tick.getAgente().setActivo(rs.getBoolean("activo"));
+                        tick.getAgente().setNombre(rs.getString("nombre"));
+                        tick.getAgente().setApellidoPaterno(rs.getString("apellido_paterno"));
+                        tick.getAgente().setApellidoMaterno(rs.getString("apellido_materno"));
+                        tick.getAgente().setDireccion(rs.getString("direccion"));
+                        tick.getAgente().setTelefono(rs.getString("telefono"));
+                        tick.getAgente().setTipo(rs.getString("tipo").charAt(0));
+
+                        tick.getAgente().getEquipo().setEquipoId(rs.getInt("equipo_id"));
+                        tick.getAgente().getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
+                        tick.getAgente().getEquipo().setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                        tick.getAgente().getEquipo().setNombre(rs.getString("equipo_nombre"));
+                        tick.getAgente().getEquipo().setActivo(rs.getBoolean("equipo_activo"));
+
+                        tick.getAgente().getRol().setRolId(rs.getInt("rol_id"));
+                        tick.getAgente().getRol().setNombre(rs.getString("rol_nombre"));
+                        tick.getAgente().getRol().setDescripcion(rs.getString("rol_descripcion"));
+                        tick.getAgente().getRol().setActivo(rs.getBoolean("rol_activo"));
+                    }
+                }
                 int proveedorId = tick.getProveedor().getProveedorId();
                 if(proveedorId != 0){
                     cs = con.prepareCall("{CALL buscar_proveedor(?)}");
@@ -460,6 +614,102 @@ public class TicketMySQL implements TicketDAO{
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
                     }
                 }
+                int activoFijoId = tick.getActivoFijo().getActivoFijoId();
+                if(activoFijoId != 0){
+                    cs = con.prepareCall("{CALL buscar_activo_fijo(?)}");
+                    cs.setInt("_ID", activoFijoId);
+                    rs=cs.executeQuery();
+
+                    while(rs.next()) {
+                        tick.getActivoFijo().setActivoFijoId(rs.getInt("proveedor_id"));
+                        tick.getActivoFijo().setNombre(rs.getString("nombre"));
+                        tick.getActivoFijo().setCodigo(rs.getString("codigo"));
+                        tick.getActivoFijo().setMarca(rs.getString("marca"));
+                        tick.getActivoFijo().setTipo(rs.getString("tipo"));
+                        tick.getActivoFijo().setActivo(rs.getBoolean("activo"));
+                    }
+                }
+                
+                // Listar historial de transferencias
+                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                
+                cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaExterna transferExt = new TransferenciaExterna();
+
+                    transferExt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferExt.setComentario(rs.getString("comentario"));
+                    transferExt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferExt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferExt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferExt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferExt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferExt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
+                    transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
+                    transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
+                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
+                    transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferencias.add(transferExt);
+                }
+                
+                cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaInterna transferInt = new TransferenciaInterna();
+
+                    transferInt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferInt.setComentario(rs.getString("comentario"));
+                    transferInt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferInt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferInt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferInt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferInt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferInt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferInt.getCategoriaTo().setCategoriaId(rs.getInt("categoria_id_to"));
+                    transferInt.getCategoriaTo().setNombre(rs.getString("categoria_nombre"));
+                    transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
+                    transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
+                    
+                    transferencias.add(transferInt);
+                }
+                tick.setHistorialTransferencia(transferencias);
+                
+                // Listar historial de cambios de estado
+                ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
+                cs = con.prepareCall("{CALL listar_cambio_estado_ticket(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    CambioEstadoTicket cambio = new CambioEstadoTicket();
+                
+                    cambio.getEstadoTo().setEstadoId(rs.getInt("estado_id_to"));
+                    cambio.getEstadoTo().setNombre(rs.getString("estado_nombre"));
+                    cambio.getEstadoTo().setDescripcion(rs.getString("estado_descripcion"));
+                    cambio.getEstadoTo().setActivo(rs.getBoolean("estado_activo"));
+
+                    cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
+                    cambio.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+
+                    cambio.setComentario(rs.getString("comentario"));
+                    cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());
+                    cambiosEstado.add(cambio);
+                }
+                tick.setHistorialEstado(cambiosEstado);
             }
             
             con.close();
@@ -489,7 +739,7 @@ public class TicketMySQL implements TicketDAO{
             while(rs.next()) {
                 
                 Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");
-                Timestamp fechaPrimeraRespuesta = rs.getTimestamp("fecha_primera_respuesta");
+                Timestamp fechaCierreMaximo = rs.getTimestamp("fecha_cierre_maximo");
                 Timestamp fechaCierre = rs.getTimestamp("fecha_cierre");
                 
                 Ticket ticket = new Ticket();
@@ -504,8 +754,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getEstado().setActivo(rs.getBoolean("estado_activo"));
                 
                 ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());
-                if (fechaPrimeraRespuesta != null) {
-                    ticket.setFechaPrimeraRespuesta(fechaPrimeraRespuesta.toLocalDateTime());
+                if (fechaCierreMaximo != null) {
+                    ticket.setFechaCierreMaximo(fechaCierreMaximo.toLocalDateTime());
                 }
                 if (fechaCierre != null) {
                     ticket.setFechaCierre(fechaCierre.toLocalDateTime());
@@ -542,13 +792,34 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getAgente().setAgenteId(rs.getInt("agente_id"));
                 
                 ticket.setAlumnoEmail(rs.getString("alumno_email"));
+                
+                ticket.setRetrasado(rs.getBoolean("retrasado"));
 
                 tickets.add(ticket);
             }
             
             for(Ticket tick : tickets){
-                tick.setEmpleado(empleado);
-                
+                cs = con.prepareCall("{CALL buscar_empleado(?)}");
+                cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
+                rs = cs.executeQuery();
+                while(rs.next()){
+                    tick.getEmpleado().setEmpleadoId(rs.getInt("empleado_id"));
+                    tick.getEmpleado().setCodigo(rs.getString("codigo"));
+                    tick.getEmpleado().setDni(rs.getString("dni"));
+                    tick.getEmpleado().setPersonaEmail(rs.getString("persona_email"));
+                    tick.getEmpleado().setActivo(rs.getBoolean("activo"));
+                    tick.getEmpleado().setNombre(rs.getString("nombre"));
+                    tick.getEmpleado().setApellidoPaterno(rs.getString("apellido_paterno"));
+                    tick.getEmpleado().setApellidoMaterno(rs.getString("apellido_materno"));
+                    tick.getEmpleado().setDireccion(rs.getString("direccion"));
+                    tick.getEmpleado().setTelefono(rs.getString("telefono"));
+                    tick.getEmpleado().setTipo(rs.getString("tipo").charAt(0));
+                    
+                    tick.getEmpleado().getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
+                    tick.getEmpleado().getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
+                    tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
+                    tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
+                }
                 int agenteId = tick.getAgente().getAgenteId();
                 if(agenteId != 0){
                     cs = con.prepareCall("{CALL buscar_agente(?)}");
@@ -562,6 +833,11 @@ public class TicketMySQL implements TicketDAO{
                         tick.getAgente().setAgenteEmail(rs.getString("agente_email"));
                         tick.getAgente().setActivo(rs.getBoolean("activo"));
                         tick.getAgente().setNombre(rs.getString("nombre"));
+                        tick.getAgente().setApellidoPaterno(rs.getString("apellido_paterno"));
+                        tick.getAgente().setApellidoMaterno(rs.getString("apellido_materno"));
+                        tick.getAgente().setDireccion(rs.getString("direccion"));
+                        tick.getAgente().setTelefono(rs.getString("telefono"));
+                        tick.getAgente().setTipo(rs.getString("tipo").charAt(0));
 
                         tick.getAgente().getEquipo().setEquipoId(rs.getInt("equipo_id"));
                         tick.getAgente().getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
@@ -592,6 +868,102 @@ public class TicketMySQL implements TicketDAO{
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
                     }
                 }
+                int activoFijoId = tick.getActivoFijo().getActivoFijoId();
+                if(activoFijoId != 0){
+                    cs = con.prepareCall("{CALL buscar_activo_fijo(?)}");
+                    cs.setInt("_ID", activoFijoId);
+                    rs=cs.executeQuery();
+
+                    while(rs.next()) {
+                        tick.getActivoFijo().setActivoFijoId(rs.getInt("proveedor_id"));
+                        tick.getActivoFijo().setNombre(rs.getString("nombre"));
+                        tick.getActivoFijo().setCodigo(rs.getString("codigo"));
+                        tick.getActivoFijo().setMarca(rs.getString("marca"));
+                        tick.getActivoFijo().setTipo(rs.getString("tipo"));
+                        tick.getActivoFijo().setActivo(rs.getBoolean("activo"));
+                    }
+                }
+                
+                // Listar historial de transferencias
+                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                
+                cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaExterna transferExt = new TransferenciaExterna();
+
+                    transferExt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferExt.setComentario(rs.getString("comentario"));
+                    transferExt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferExt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferExt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferExt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferExt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferExt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
+                    transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
+                    transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
+                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
+                    transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferencias.add(transferExt);
+                }
+                
+                cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaInterna transferInt = new TransferenciaInterna();
+
+                    transferInt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferInt.setComentario(rs.getString("comentario"));
+                    transferInt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferInt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferInt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferInt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferInt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferInt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferInt.getCategoriaTo().setCategoriaId(rs.getInt("categoria_id_to"));
+                    transferInt.getCategoriaTo().setNombre(rs.getString("categoria_nombre"));
+                    transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
+                    transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
+                    
+                    transferencias.add(transferInt);
+                }
+                tick.setHistorialTransferencia(transferencias);
+                
+                // Listar historial de cambios de estado
+                ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
+                cs = con.prepareCall("{CALL listar_cambio_estado_ticket(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    CambioEstadoTicket cambio = new CambioEstadoTicket();
+                
+                    cambio.getEstadoTo().setEstadoId(rs.getInt("estado_id_to"));
+                    cambio.getEstadoTo().setNombre(rs.getString("estado_nombre"));
+                    cambio.getEstadoTo().setDescripcion(rs.getString("estado_descripcion"));
+                    cambio.getEstadoTo().setActivo(rs.getBoolean("estado_activo"));
+
+                    cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
+                    cambio.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+
+                    cambio.setComentario(rs.getString("comentario"));
+                    cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());
+                    cambiosEstado.add(cambio);
+                }
+                tick.setHistorialEstado(cambiosEstado);
             }
             
             con.close();
@@ -621,7 +993,7 @@ public class TicketMySQL implements TicketDAO{
             while(rs.next()) {
                 
                 Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");
-                Timestamp fechaPrimeraRespuesta = rs.getTimestamp("fecha_primera_respuesta");
+                Timestamp fechaCierreMaximo = rs.getTimestamp("fecha_cierre_maximo");
                 Timestamp fechaCierre = rs.getTimestamp("fecha_cierre");
                 
                 Ticket ticket = new Ticket();
@@ -636,8 +1008,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getEstado().setActivo(rs.getBoolean("estado_activo"));
                 
                 ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());
-                if (fechaPrimeraRespuesta != null) {
-                    ticket.setFechaPrimeraRespuesta(fechaPrimeraRespuesta.toLocalDateTime());
+                if (fechaCierreMaximo != null) {
+                    ticket.setFechaCierreMaximo(fechaCierreMaximo.toLocalDateTime());
                 }
                 if (fechaCierre != null) {
                     ticket.setFechaCierre(fechaCierre.toLocalDateTime());
@@ -674,6 +1046,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getAgente().setAgenteId(rs.getInt("agente_id"));
                 
                 ticket.setAlumnoEmail(rs.getString("alumno_email"));
+                
+                ticket.setRetrasado(rs.getBoolean("retrasado"));
 
                 tickets.add(ticket);
             }
@@ -689,6 +1063,12 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().setPersonaEmail(rs.getString("persona_email"));
                     tick.getEmpleado().setActivo(rs.getBoolean("activo"));
                     tick.getEmpleado().setNombre(rs.getString("nombre"));
+                    tick.getEmpleado().setApellidoPaterno(rs.getString("apellido_paterno"));
+                    tick.getEmpleado().setApellidoMaterno(rs.getString("apellido_materno"));
+                    tick.getEmpleado().setDireccion(rs.getString("direccion"));
+                    tick.getEmpleado().setTelefono(rs.getString("telefono"));
+                    tick.getEmpleado().setTipo(rs.getString("tipo").charAt(0));
+                    
                     tick.getEmpleado().getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
                     tick.getEmpleado().getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
@@ -707,6 +1087,11 @@ public class TicketMySQL implements TicketDAO{
                         tick.getAgente().setAgenteEmail(rs.getString("agente_email"));
                         tick.getAgente().setActivo(rs.getBoolean("activo"));
                         tick.getAgente().setNombre(rs.getString("nombre"));
+                        tick.getAgente().setApellidoPaterno(rs.getString("apellido_paterno"));
+                        tick.getAgente().setApellidoMaterno(rs.getString("apellido_materno"));
+                        tick.getAgente().setDireccion(rs.getString("direccion"));
+                        tick.getAgente().setTelefono(rs.getString("telefono"));
+                        tick.getAgente().setTipo(rs.getString("tipo").charAt(0));
 
                         tick.getAgente().getEquipo().setEquipoId(rs.getInt("equipo_id"));
                         tick.getAgente().getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
@@ -737,6 +1122,102 @@ public class TicketMySQL implements TicketDAO{
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
                     }
                 }
+                int activoFijoId = tick.getActivoFijo().getActivoFijoId();
+                if(activoFijoId != 0){
+                    cs = con.prepareCall("{CALL buscar_activo_fijo(?)}");
+                    cs.setInt("_ID", activoFijoId);
+                    rs=cs.executeQuery();
+
+                    while(rs.next()) {
+                        tick.getActivoFijo().setActivoFijoId(rs.getInt("proveedor_id"));
+                        tick.getActivoFijo().setNombre(rs.getString("nombre"));
+                        tick.getActivoFijo().setCodigo(rs.getString("codigo"));
+                        tick.getActivoFijo().setMarca(rs.getString("marca"));
+                        tick.getActivoFijo().setTipo(rs.getString("tipo"));
+                        tick.getActivoFijo().setActivo(rs.getBoolean("activo"));
+                    }
+                }
+                
+                // Listar historial de transferencias
+                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                
+                cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaExterna transferExt = new TransferenciaExterna();
+
+                    transferExt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferExt.setComentario(rs.getString("comentario"));
+                    transferExt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferExt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferExt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferExt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferExt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferExt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
+                    transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
+                    transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
+                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
+                    transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferencias.add(transferExt);
+                }
+                
+                cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaInterna transferInt = new TransferenciaInterna();
+
+                    transferInt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferInt.setComentario(rs.getString("comentario"));
+                    transferInt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferInt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferInt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferInt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferInt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferInt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferInt.getCategoriaTo().setCategoriaId(rs.getInt("categoria_id_to"));
+                    transferInt.getCategoriaTo().setNombre(rs.getString("categoria_nombre"));
+                    transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
+                    transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
+                    
+                    transferencias.add(transferInt);
+                }
+                tick.setHistorialTransferencia(transferencias);
+                
+                // Listar historial de cambios de estado
+                ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
+                cs = con.prepareCall("{CALL listar_cambio_estado_ticket(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    CambioEstadoTicket cambio = new CambioEstadoTicket();
+                
+                    cambio.getEstadoTo().setEstadoId(rs.getInt("estado_id_to"));
+                    cambio.getEstadoTo().setNombre(rs.getString("estado_nombre"));
+                    cambio.getEstadoTo().setDescripcion(rs.getString("estado_descripcion"));
+                    cambio.getEstadoTo().setActivo(rs.getBoolean("estado_activo"));
+
+                    cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
+                    cambio.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+
+                    cambio.setComentario(rs.getString("comentario"));
+                    cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());
+                    cambiosEstado.add(cambio);
+                }
+                tick.setHistorialEstado(cambiosEstado);
             }
             
             con.close();
@@ -767,7 +1248,7 @@ public class TicketMySQL implements TicketDAO{
             while(rs.next()) {
                 
                 Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");
-                Timestamp fechaPrimeraRespuesta = rs.getTimestamp("fecha_primera_respuesta");
+                Timestamp fechaCierreMaximo = rs.getTimestamp("fecha_cierre_maximo");
                 Timestamp fechaCierre = rs.getTimestamp("fecha_cierre");
                 
                 Ticket ticket = new Ticket();
@@ -782,8 +1263,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getEstado().setActivo(rs.getBoolean("estado_activo"));
                 
                 ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());
-                if (fechaPrimeraRespuesta != null) {
-                    ticket.setFechaPrimeraRespuesta(fechaPrimeraRespuesta.toLocalDateTime());
+                if (fechaCierreMaximo != null) {
+                    ticket.setFechaCierreMaximo(fechaCierreMaximo.toLocalDateTime());
                 }
                 if (fechaCierre != null) {
                     ticket.setFechaCierre(fechaCierre.toLocalDateTime());
@@ -820,6 +1301,8 @@ public class TicketMySQL implements TicketDAO{
                 ticket.getAgente().setAgenteId(rs.getInt("agente_id"));
                 
                 ticket.setAlumnoEmail(rs.getString("alumno_email"));
+                
+                ticket.setRetrasado(rs.getBoolean("retrasado"));
 
                 tickets.add(ticket);
             }
@@ -835,6 +1318,12 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().setPersonaEmail(rs.getString("persona_email"));
                     tick.getEmpleado().setActivo(rs.getBoolean("activo"));
                     tick.getEmpleado().setNombre(rs.getString("nombre"));
+                    tick.getEmpleado().setApellidoPaterno(rs.getString("apellido_paterno"));
+                    tick.getEmpleado().setApellidoMaterno(rs.getString("apellido_materno"));
+                    tick.getEmpleado().setDireccion(rs.getString("direccion"));
+                    tick.getEmpleado().setTelefono(rs.getString("telefono"));
+                    tick.getEmpleado().setTipo(rs.getString("tipo").charAt(0));
+                    
                     tick.getEmpleado().getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
                     tick.getEmpleado().getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
@@ -853,6 +1342,11 @@ public class TicketMySQL implements TicketDAO{
                         tick.getAgente().setAgenteEmail(rs.getString("agente_email"));
                         tick.getAgente().setActivo(rs.getBoolean("activo"));
                         tick.getAgente().setNombre(rs.getString("nombre"));
+                        tick.getAgente().setApellidoPaterno(rs.getString("apellido_paterno"));
+                        tick.getAgente().setApellidoMaterno(rs.getString("apellido_materno"));
+                        tick.getAgente().setDireccion(rs.getString("direccion"));
+                        tick.getAgente().setTelefono(rs.getString("telefono"));
+                        tick.getAgente().setTipo(rs.getString("tipo").charAt(0));
 
                         tick.getAgente().getEquipo().setEquipoId(rs.getInt("equipo_id"));
                         tick.getAgente().getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
@@ -883,6 +1377,102 @@ public class TicketMySQL implements TicketDAO{
                         tick.getProveedor().setActivo(rs.getBoolean("activo"));
                     }
                 }
+                int activoFijoId = tick.getActivoFijo().getActivoFijoId();
+                if(activoFijoId != 0){
+                    cs = con.prepareCall("{CALL buscar_activo_fijo(?)}");
+                    cs.setInt("_ID", activoFijoId);
+                    rs=cs.executeQuery();
+
+                    while(rs.next()) {
+                        tick.getActivoFijo().setActivoFijoId(rs.getInt("proveedor_id"));
+                        tick.getActivoFijo().setNombre(rs.getString("nombre"));
+                        tick.getActivoFijo().setCodigo(rs.getString("codigo"));
+                        tick.getActivoFijo().setMarca(rs.getString("marca"));
+                        tick.getActivoFijo().setTipo(rs.getString("tipo"));
+                        tick.getActivoFijo().setActivo(rs.getBoolean("activo"));
+                    }
+                }
+                
+                // Listar historial de transferencias
+                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                
+                cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaExterna transferExt = new TransferenciaExterna();
+
+                    transferExt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferExt.setComentario(rs.getString("comentario"));
+                    transferExt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferExt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferExt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferExt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferExt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferExt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
+                    transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
+                    transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
+                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
+                    transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
+                    transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferencias.add(transferExt);
+                }
+                
+                cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaInterna transferInt = new TransferenciaInterna();
+
+                    transferInt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferInt.setComentario(rs.getString("comentario"));
+                    transferInt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferInt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferInt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferInt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferInt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferInt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferInt.getCategoriaTo().setCategoriaId(rs.getInt("categoria_id_to"));
+                    transferInt.getCategoriaTo().setNombre(rs.getString("categoria_nombre"));
+                    transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
+                    transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
+                    
+                    transferencias.add(transferInt);
+                }
+                tick.setHistorialTransferencia(transferencias);
+                
+                // Listar historial de cambios de estado
+                ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
+                cs = con.prepareCall("{CALL listar_cambio_estado_ticket(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    CambioEstadoTicket cambio = new CambioEstadoTicket();
+                
+                    cambio.getEstadoTo().setEstadoId(rs.getInt("estado_id_to"));
+                    cambio.getEstadoTo().setNombre(rs.getString("estado_nombre"));
+                    cambio.getEstadoTo().setDescripcion(rs.getString("estado_descripcion"));
+                    cambio.getEstadoTo().setActivo(rs.getBoolean("estado_activo"));
+
+                    cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
+                    cambio.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+
+                    cambio.setComentario(rs.getString("comentario"));
+                    cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());
+                    cambiosEstado.add(cambio);
+                }
+                tick.setHistorialEstado(cambiosEstado);
             }
             
             con.close();

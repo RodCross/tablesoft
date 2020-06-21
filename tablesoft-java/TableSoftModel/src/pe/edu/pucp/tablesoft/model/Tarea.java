@@ -7,13 +7,35 @@ import java.time.LocalDateTime;
 public class Tarea {
     private int tareaId;
     private String descripcion;
-    private EstadoTarea estado;
     private Agente agente;
     private LocalDateTime fechaCreacion;
+    private LocalDateTime fechaCompletado;
+    private Boolean completado;
 
     public Tarea() {
-        estado = new EstadoTarea();
         agente = new Agente();
+    }
+
+    public Tarea(String descripcion, Agente agente) {
+        this.descripcion = descripcion;
+        this.agente = agente;
+        this.completado = false;
+    }
+
+    public LocalDateTime getFechaCompletado() {
+        return fechaCompletado;
+    }
+
+    public void setFechaCompletado(LocalDateTime fechaCompletado) {
+        this.fechaCompletado = fechaCompletado;
+    }
+
+    public Boolean getCompletado() {
+        return completado;
+    }
+
+    public void setCompletado(Boolean completado) {
+        this.completado = completado;
     }
 
     public LocalDateTime getFechaCreacion() {
@@ -46,14 +68,6 @@ public class Tarea {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
-    }
-
-    public EstadoTarea getEstado() {
-        return estado;
-    }
-
-    public void setEstado(EstadoTarea estado) {
-        this.estado = estado;
     }
     
 }

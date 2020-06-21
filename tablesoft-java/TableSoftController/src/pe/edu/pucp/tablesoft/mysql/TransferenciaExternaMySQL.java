@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
@@ -28,11 +27,10 @@ public class TransferenciaExternaMySQL implements TransferenciaExternaDAO{
             transferenciaExterna.setFecha(LocalDateTime.now());
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_transferencia_externa(?,?,?,?,?,?)}");
+                    "{CALL insertar_transferencia_externa(?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());
-            cs.setTimestamp("_FECHA_TRANSFERENCIA", Timestamp.valueOf(transferenciaExterna.getFecha()));
             cs.setInt("_AGENTE_ID", transferenciaExterna.getAgenteResponsable().getAgenteId());
             cs.setString("_COMENTARIO", transferenciaExterna.getComentario());
             cs.setInt("_PROVEEDOR_ID", transferenciaExterna.getProveedorTo().getProveedorId());
@@ -71,6 +69,9 @@ public class TransferenciaExternaMySQL implements TransferenciaExternaDAO{
                 
                 transfer.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
                 transfer.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                transfer.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                transfer.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                transfer.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
                 
                 transfer.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
                 transfer.getProveedorTo().setRuc(rs.getString("ruc"));

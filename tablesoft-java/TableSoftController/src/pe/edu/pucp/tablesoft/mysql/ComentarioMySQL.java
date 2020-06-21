@@ -66,7 +66,11 @@ public class ComentarioMySQL implements ComentarioDAO {
                 Comentario comentario = new Comentario();
                 
                 comentario.setComentarioId(rs.getInt("comentario_id"));
-                comentario.setAutor(new Persona(rs.getString("codigo_persona")));
+                comentario.getAutor().setCodigo(rs.getString("autor_codigo"));
+                comentario.getAutor().setNombre(rs.getString("autor_nombre"));
+                comentario.getAutor().setApellidoPaterno(rs.getString("autor_apellido_paterno"));
+                comentario.getAutor().setApellidoMaterno(rs.getString("autor_apellido_materno"));
+                comentario.getAutor().setTipo(rs.getString("autor_tipo").charAt(0));
                 comentario.setFecha(rs.getTimestamp("fecha").toLocalDateTime());
                 comentario.setTexto(rs.getString("texto"));
                 

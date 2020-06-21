@@ -8,34 +8,23 @@ public class Agente extends Persona {
     private ArrayList<Ticket> listaTickets;
     private Equipo equipo;
     private Rol rol;
-    private Boolean activo;
     
     // Constructores
     public Agente() {
+        super('A');
         equipo = new Equipo();
         rol = new Rol();
         listaTickets = new ArrayList();
     }
 
-    public Agente(String codigo, String dni, String nombre, String usuarioEmail, String agenteEmail) {
-        super(codigo, dni, nombre, usuarioEmail);
+    public Agente(String agenteEmail, Equipo equipo, Rol rol, String codigo, String dni, String nombre, String apellidoPaterno, String apellidoMaterno, String direccion, String telefono, String password, String personaEmail) {
+        super(codigo, dni, nombre, apellidoPaterno, apellidoMaterno, direccion, telefono, password, personaEmail, 'A');
         this.agenteEmail = agenteEmail;
-        listaTickets = new ArrayList<>();
-        equipo = new Equipo();
-        rol = new Rol();
-    }
-    
-    public Agente(int agenteId){
-        this.agenteId = agenteId;
+        this.equipo = equipo;
+        this.rol = rol;
+        listaTickets = new ArrayList();
     }
 
-    public Boolean getActivo() {
-        return activo;
-    }
-
-    public void setActivo(Boolean activo) {
-        this.activo = activo;
-    }
     
     // Getter y setter
     public Rol getRol() {

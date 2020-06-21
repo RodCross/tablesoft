@@ -30,14 +30,13 @@ public class TareaMySQL implements TareaDAO {
             tarea.setFechaCreacion(LocalDateTime.now());
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_tarea(?,?,?,?,?,?)}");
+                    "{CALL insertar_tarea(?,?,?,?,?)}");
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());            
             cs.setString("_DESCRIPCION", tarea.getDescripcion());
             cs.setInt("_AGENTE_ID",tarea.getAgente().getAgenteId());
-            cs.setInt("_ESTADO_ID", tarea.getEstado().getEstadoId());
-            cs.setTimestamp("_FECHA_CREACION", Timestamp.valueOf(tarea.getFechaCreacion()));
+            cs.setBoolean("_COMPLETADO", tarea.getCompletado());
                        
             cs.execute();
             rpta = cs.getInt("_ID");
@@ -63,7 +62,7 @@ public class TareaMySQL implements TareaDAO {
             cs.setInt("_ID", tarea.getTareaId());
             cs.setInt("_AGENTE_ID", agente.getAgenteId());
             cs.setString("_DESCRIPCION", tarea.getDescripcion());
-            cs.setInt("_ESTADO_ID", tarea.getEstado().getEstadoId());
+            cs.setBoolean("_COMPLETADO", tarea.getCompletado());
                        
             cs.execute();
             rpta = cs.getInt("_ID");
@@ -118,12 +117,13 @@ public class TareaMySQL implements TareaDAO {
                 tarea.setTareaId(rs.getInt("tarea_id"));
                 tarea.setDescripcion(rs.getString("descripcion"));
                 tarea.setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                Timestamp fechaCompletado = rs.getTimestamp("fecha_completado");
+                if (fechaCompletado != null) {
+                    ticket.setFechaCierreMaximo(fechaCompletado.toLocalDateTime());
+                }
                 tarea.getAgente().setAgenteId(rs.getInt("agente_id"));
                 
-                tarea.getEstado().setEstadoId(rs.getInt("estado_id"));
-                tarea.getEstado().setNombre(rs.getString("estado_nombre"));
-                tarea.getEstado().setDescripcion(rs.getString("estado_descripcion"));
-                tarea.getEstado().setActivo(rs.getBoolean("estado_activo"));
+                tarea.setCompletado(rs.getBoolean("completado"));
                 
                 tareas.add(tarea);
             }

@@ -4,15 +4,19 @@ package pe.edu.pucp.tablesoft.model;
 public class ActivoFijo {
     private int activoFijoId;
     private String nombre;
-    private String descripcion;
+    private String codigo;
+    private String marca;
+    private String tipo;
     private Boolean activo;
     
     public ActivoFijo(){
     }
 
-    public ActivoFijo(String nombre, String descripcion) {
+    public ActivoFijo(String nombre, String codigo, String tipo, String marca) {
         this.nombre = nombre;
-        this.descripcion = descripcion;
+        this.codigo = codigo;
+        this.tipo = tipo;
+        this.marca = marca;
     }
 
     public int getActivoFijoId() {
@@ -23,6 +27,22 @@ public class ActivoFijo {
         this.activoFijoId = activoFijoId;
     }
 
+    public String getMarca() {
+        return marca;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
+    }
+
     public String getNombre() {
         return nombre;
     }
@@ -31,12 +51,12 @@ public class ActivoFijo {
         this.nombre = nombre;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public String getCodigo() {
+        return codigo;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public Boolean getActivo() {
@@ -48,6 +68,6 @@ public class ActivoFijo {
     }
     
     public String mostrarDatos(){
-        return this.activoFijoId + " - " + this.getNombre() + " - " + this.getDescripcion();
+        return this.activoFijoId + " - " + this.getNombre() + " - " + this.getCodigo();
     }
 }

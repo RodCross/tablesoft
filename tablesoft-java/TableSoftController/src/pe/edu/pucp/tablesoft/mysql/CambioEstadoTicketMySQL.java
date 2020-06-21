@@ -5,7 +5,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import pe.edu.pucp.tablesoft.config.DBManager;
@@ -28,11 +27,12 @@ public class CambioEstadoTicketMySQL implements CambioEstadoTicketDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_cambio_estado_ticket(?,?,?,?,?,?)}");
+                    "{CALL insertar_cambio_estado_ticket(?,?,?,?,?)}");
+            
+            cambioEstado.setFechaCambioEstado(LocalDateTime.now());
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setInt("_TICKET_ID", ticket.getTicketId());
-            cs.setTimestamp("_FECHA_CAMBIO_ESTADO", Timestamp.valueOf(LocalDateTime.now()));
             cs.setString("_COMENTARIO", cambioEstado.getComentario());
             cs.setInt("_AGENTE_ID", cambioEstado.getAgenteResponsable().getAgenteId());
             cs.setInt("_ESTADO_ID_TO", cambioEstado.getEstadoTo().getEstadoId());

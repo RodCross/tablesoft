@@ -26,13 +26,12 @@ public class ProveedorMySQL implements ProveedorDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{CALL insertar_proveedor(?,?,?,?,?,?,?,?)}");
+                    "{CALL insertar_proveedor(?,?,?,?,?,?,?)}");
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_RUC", proveedor.getRuc());
             cs.setString("_RAZON_SOCIAL", proveedor.getRazonSocial());
             cs.setString("_DIRECCION", proveedor.getDireccion());
-            cs.setString("_CIUDAD", proveedor.getCiudad());
-            cs.setString("_PAIS", proveedor.getPais());
+            cs.setInt("_CIUDAD", proveedor.getCiudad().getCiudadId());
             cs.setString("_TELEFONO", proveedor.getTelefono());
             cs.setString("_EMAIL", proveedor.getEmail());
             
@@ -60,13 +59,12 @@ public class ProveedorMySQL implements ProveedorDAO {
                     DBManager.user, DBManager.password);
 
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_proveedor(?,?,?,?,?,?,?,?)}");
+                    "{CALL actualizar_proveedor(?,?,?,?,?,?,?)}");
             cs.setInt("_ID", proveedor.getProveedorId());
             cs.setString("_RUC", proveedor.getRuc());
             cs.setString("_RAZON_SOCIAL", proveedor.getRazonSocial());
             cs.setString("_DIRECCION", proveedor.getDireccion());
-            cs.setString("_CIUDAD", proveedor.getCiudad());
-            cs.setString("_PAIS", proveedor.getPais());
+            cs.setInt("_CIUDAD", proveedor.getCiudad().getCiudadId());
             cs.setString("_TELEFONO", proveedor.getTelefono());
             cs.setString("_EMAIL", proveedor.getEmail());
             
@@ -99,14 +97,18 @@ public class ProveedorMySQL implements ProveedorDAO {
             while(rs.next()) {
                 Proveedor proveedor = new Proveedor();
                 proveedor.setProveedorId(rs.getInt("proveedor_id"));
-                proveedor.setCiudad(rs.getString("ciudad"));
                 proveedor.setDireccion(rs.getString("direccion"));
                 proveedor.setEmail(rs.getString("email"));
-                proveedor.setPais(rs.getString("pais"));
                 proveedor.setRazonSocial(rs.getString("razon_social"));
                 proveedor.setRuc(rs.getString("ruc"));
                 proveedor.setTelefono(rs.getString("telefono"));
                 proveedor.setActivo(rs.getBoolean("activo"));
+                
+                proveedor.getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                proveedor.getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                proveedor.getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                proveedor.getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                
                 proveedores.add(proveedor);
             }
             
@@ -136,14 +138,17 @@ public class ProveedorMySQL implements ProveedorDAO {
             
             while(rs.next()) {
                 proveedor.setProveedorId(rs.getInt("proveedor_id"));
-                proveedor.setCiudad(rs.getString("ciudad"));
                 proveedor.setDireccion(rs.getString("direccion"));
                 proveedor.setEmail(rs.getString("email"));
-                proveedor.setPais(rs.getString("pais"));
                 proveedor.setRazonSocial(rs.getString("razon_social"));
                 proveedor.setRuc(rs.getString("ruc"));
                 proveedor.setTelefono(rs.getString("telefono"));
                 proveedor.setActivo(rs.getBoolean("activo"));
+                                                
+                proveedor.getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                proveedor.getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                proveedor.getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                proveedor.getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
             }
             
             con.close();

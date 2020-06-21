@@ -350,10 +350,10 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().setCiudad(rs.getString("ciudad"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
-                        tick.getProveedor().setPais(rs.getString("pais"));
+                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
                         tick.getProveedor().setRuc(rs.getString("ruc"));
                         tick.getProveedor().setTelefono(rs.getString("telefono"));

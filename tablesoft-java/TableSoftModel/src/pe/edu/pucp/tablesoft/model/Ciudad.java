@@ -9,6 +9,7 @@ public class Ciudad {
     private Pais pais;
 
     public Ciudad() {
+        pais = new Pais();
     }
 
     public Ciudad(String nombre, Pais pais) {

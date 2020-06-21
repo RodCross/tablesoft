@@ -11,6 +11,7 @@ public class Proveedor {
     private Boolean activo;
 
     public Proveedor() {   
+        this.ciudad = new Ciudad();
     }
 
     public Proveedor(String ruc, String razonSocial, String direccion, String telefono, String email, Ciudad ciudad) {
@@ -19,6 +20,14 @@ public class Proveedor {
         this.direccion = direccion;
         this.telefono = telefono;
         this.email = email;
+        this.ciudad = ciudad;
+    }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
         this.ciudad = ciudad;
     }
     

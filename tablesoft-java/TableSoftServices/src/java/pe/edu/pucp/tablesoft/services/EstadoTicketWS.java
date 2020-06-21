@@ -37,7 +37,7 @@ public class EstadoTicketWS {
     }
     
     @WebMethod(operationName = "actualizarEstadoTicket")
-    public int actualizarBiblioteca(@WebParam(name = "objEstadoTicket") EstadoTicket estadoTicket) {
+    public int actualizarEstadoTicket(@WebParam(name = "objEstadoTicket") EstadoTicket estadoTicket) {
         int i = 0;
         try{
             i = daoEstadoTicket.actualizar(estadoTicket);
@@ -48,7 +48,7 @@ public class EstadoTicketWS {
     }
     
     @WebMethod(operationName = "eliminarEstadoTicket")
-    public int eliminarBiblioteca(@WebParam(name = "objEstadoTicket") EstadoTicket estadoTicket) {
+    public int eliminarEstadoTicket(@WebParam(name = "objEstadoTicket") EstadoTicket estadoTicket) {
         int i = 0;
         try{
             i = daoEstadoTicket.eliminar(estadoTicket);
@@ -59,7 +59,7 @@ public class EstadoTicketWS {
     }
     
     @WebMethod(operationName = "listarEstadosTicket")
-    public ArrayList<EstadoTicket> listarBibliotecas(){
+    public ArrayList<EstadoTicket> listarEstadosTicket(){
         return daoEstadoTicket.listar();
     }
 }

@@ -164,23 +164,35 @@ public class CategoriaMySQL implements CategoriaDAO{
                 categoria.setActivo(rs.getBoolean("activo"));
                 categorias.add(categoria);
             }
+
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return categorias;
+    }
+    
+    @Override public ArrayList<Categoria> listarDisponibles(){
+        ArrayList<Categoria> categorias = new ArrayList<>();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+           
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{call listar_categoria_disponibles()}");
+            ResultSet rs=cs.executeQuery();
             
             
-            for(Categoria cat : categorias){
-                cs = con.prepareCall("{call listar_tarea_predeterminada_categoria(?)}");
-                cs.setInt("_ID", cat.getCategoriaId());
-                rs = cs.executeQuery();
-                
-                while(rs.next()){
-                    TareaPredeterminada tarea = new TareaPredeterminada();
-                    
-                    tarea.setTareaPredeterminadaId(rs.getInt("tareas_predeterminadas_id"));
-                    tarea.setDescripcion(rs.getString("descripcion"));
-                    tarea.setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
-                    tarea.setActivo(rs.getBoolean("activo"));
-                    
-                    cat.agregarTareaPredeterminada(tarea);
-                }
+            while(rs.next()) {
+                Categoria categoria = new Categoria();
+                categoria.setCategoriaId(rs.getInt("categoria_id"));
+                categoria.setNombre(rs.getString("nombre"));
+                categoria.setDescripcion(rs.getString("descripcion"));
+                categoria.setActivo(rs.getBoolean("activo"));
+                categorias.add(categoria);
             }
 
             con.close();

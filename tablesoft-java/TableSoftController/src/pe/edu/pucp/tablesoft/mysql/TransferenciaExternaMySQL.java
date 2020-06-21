@@ -78,9 +78,13 @@ public class TransferenciaExternaMySQL implements TransferenciaExternaDAO{
                 transfer.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
                 transfer.getProveedorTo().setTelefono(rs.getString("telefono"));
                 transfer.getProveedorTo().setDireccion(rs.getString("direccion"));
-                transfer.getProveedorTo().setCiudad(rs.getString("ciudad"));
                 transfer.getProveedorTo().setEmail(rs.getString("proveedor_email"));
                 transfer.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                
+                transfer.getProveedorTo().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                transfer.getProveedorTo().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                transfer.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                transfer.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                 
                 historial.add(transfer);
             }

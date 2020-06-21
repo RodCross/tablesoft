@@ -401,9 +401,13 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
                     transferExt.getProveedorTo().setTelefono(rs.getString("telefono"));
                     transferExt.getProveedorTo().setDireccion(rs.getString("direccion"));
-                    transferExt.getProveedorTo().setCiudad(rs.getString("ciudad"));
                     transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
                     transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferExt.getProveedorTo().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                    transferExt.getProveedorTo().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
                     transferencias.add(transferExt);
                 }

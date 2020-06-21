@@ -10,6 +10,7 @@ import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.PaisDAO;
+import pe.edu.pucp.tablesoft.dao.PersonaDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.RolDAO;
 import pe.edu.pucp.tablesoft.dao.TareaDAO;
@@ -51,4 +52,5 @@ public abstract class DAOFactory {
     public abstract TransferenciaInternaDAO getTransferenciaInternaDAO();
     public abstract TransferenciaExternaDAO getTransferenciaExternaDAO();
     public abstract UrgenciaDAO getUrgenciaDAO();
+    public abstract PersonaDAO getPersonaDAO();
 }

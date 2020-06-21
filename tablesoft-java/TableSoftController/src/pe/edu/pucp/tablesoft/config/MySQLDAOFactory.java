@@ -10,6 +10,7 @@ import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.PaisDAO;
+import pe.edu.pucp.tablesoft.dao.PersonaDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.RolDAO;
 import pe.edu.pucp.tablesoft.dao.TareaDAO;
@@ -138,6 +139,11 @@ public class MySQLDAOFactory extends DAOFactory{
     @Override
     public PaisDAO getPaisDAO() {
         return new PaisMySQL();
+    }
+
+    @Override
+    public PersonaDAO getPersonaDAO() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
     

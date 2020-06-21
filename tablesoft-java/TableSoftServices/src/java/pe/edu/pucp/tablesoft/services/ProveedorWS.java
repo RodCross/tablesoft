@@ -39,7 +39,7 @@ public class ProveedorWS {
     }
     
     @WebMethod(operationName = "actualizarProveedor")
-    public int actualizarProveedor(@WebParam(name = "objActivoFijo") Proveedor proveedor) {
+    public int actualizarProveedor(@WebParam(name = "objProveedor") Proveedor proveedor) {
         int i = 0;
         try{
             i = daoProveedor.actualizar(proveedor);
@@ -49,19 +49,19 @@ public class ProveedorWS {
         return i;
     }
     
-    @WebMethod(operationName = "eliminarActivoFijo")
-    public int eliminarActivoFijo(@WebParam(name = "objActivoFijo")  ActivoFijo activoFijo) {
+    @WebMethod(operationName = "eliminarProveedor")
+    public int eliminarActivoFijo(@WebParam(name = "objProveedor")  Proveedor proveedor) {
         int i = 0;
         try{
-            i = daoActivoFijo.eliminar(activoFijo);
+            i = daoProveedor.eliminar(proveedor);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
         return i;
     }
     
-    @WebMethod(operationName = "listarActivosFijos")
-    public ArrayList<ActivoFijo> listarActivosFijos(){
-        return daoActivoFijo.listar();
+    @WebMethod(operationName = "listarProveedores")
+    public ArrayList<Proveedor> listarProveedores(){
+        return daoProveedor.listar();
     }
 }

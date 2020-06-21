@@ -5,26 +5,23 @@ public class Proveedor {
     private String ruc;
     private String razonSocial;
     private String direccion;
-    private String pais;
-    private String ciudad;
     private String telefono;
     private String email;
+    private Ciudad ciudad;
     private Boolean activo;
 
-    public Proveedor() {
-        
+    public Proveedor() {   
     }
-    public Proveedor(String razonSocial){
+
+    public Proveedor(String ruc, String razonSocial, String direccion, String telefono, String email, Ciudad ciudad) {
+        this.ruc = ruc;
         this.razonSocial = razonSocial;
-    }
-
-    public String getCiudad() {
-        return ciudad;
-    }
-
-    public void setCiudad(String ciudad) {
+        this.direccion = direccion;
+        this.telefono = telefono;
+        this.email = email;
         this.ciudad = ciudad;
     }
+    
 
     public Boolean getActivo() {
         return activo;
@@ -66,14 +63,6 @@ public class Proveedor {
         this.direccion = direccion;
     }
 
-    public String getPais() {
-        return pais;
-    }
-
-    public void setPais(String pais) {
-        this.pais = pais;
-    }
-
     public String getTelefono() {
         return telefono;
     }
@@ -91,6 +80,6 @@ public class Proveedor {
     }
     
     public String mostrarDatos() {
-        return getProveedorId() + " - " + ruc + " - " + razonSocial + pais;
+        return getProveedorId() + " - " + ruc + " - " + razonSocial;
     }
 }

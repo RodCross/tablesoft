@@ -22,8 +22,8 @@ public class ActivoFijoWS {
         daoActivoFijo = DBController.controller.getActivoFijoDAO();
     }
    
-    @WebMethod(operationName = "insertarArctivoFijo")
-    public int insertarArctivoFijo(@WebParam(name = "objActivoFijo") ActivoFijo activoFijo) {
+    @WebMethod(operationName = "insertarActivoFijo")
+    public int insertarActivoFijo(@WebParam(name = "objActivoFijo") ActivoFijo activoFijo) {
         int i = 0;
         try{
             i = daoActivoFijo.insertar(activoFijo);

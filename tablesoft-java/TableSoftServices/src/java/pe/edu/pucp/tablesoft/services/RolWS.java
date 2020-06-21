@@ -5,22 +5,59 @@
  */
 package pe.edu.pucp.tablesoft.services;
 
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
+import pe.edu.pucp.tablesoft.config.DBController;
+import pe.edu.pucp.tablesoft.dao.RolDAO;
+import pe.edu.pucp.tablesoft.model.Rol;
 
-/**
- *
- * @author Fer
- */
+
 @WebService(serviceName = "RolWS")
 public class RolWS {
 
-    /**
-     * This is a sample web service operation
-     */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    private RolDAO daoRol;
+    
+    public RolWS(){
+        daoRol = DBController.controller.getRolDAO();
+    }
+    
+    @WebMethod(operationName = "insertarRol")
+    public int insertarRol(@WebParam(name = "objRol") Rol rol){
+        int resultado = 0;
+        try{
+            resultado = daoRol.insertar(rol);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "actualizarRol")
+    public int actualizarRol(@WebParam(name = "objRol") Rol rol){
+        int resultado = 0;
+        try{
+            resultado = daoRol.actualizar(rol);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "eliminarRol")
+    public int eliminarRol(@WebParam(name = "objRol") Rol rol){
+        int resultado = 0;
+        try{
+            resultado = daoRol.eliminar(rol);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return resultado;
+    }
+    
+    @WebMethod(operationName = "listarRoles")
+    public ArrayList<Rol> listarRoles(@WebParam(name = "objRol") Rol rol){
+        return daoRol.listar();
     }
 }

@@ -22,7 +22,7 @@ public class BibliotecaWS {
     
     private BibliotecaDAO daoBiblioteca;
     
-     public BibliotecaWS(){
+    public BibliotecaWS(){
         daoBiblioteca = DBController.controller.getBibliotecaDAO();
     }
    

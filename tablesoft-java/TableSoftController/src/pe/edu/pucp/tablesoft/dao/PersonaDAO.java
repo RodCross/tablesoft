@@ -5,7 +5,9 @@
  */
 package pe.edu.pucp.tablesoft.dao;
 
+import pe.edu.pucp.tablesoft.model.Persona;
+
 
 public interface PersonaDAO {
-    
+    Persona verificarPersona(String email,String password);
 }

@@ -5,4 +5,6 @@
   <endpoint implementation="pe.edu.pucp.tablesoft.services.BibliotecaWS" name="BibliotecaWS" url-pattern="/BibliotecaWS"/>
   <endpoint implementation="pe.edu.pucp.tablesoft.services.ActivoFijoWS" name="ActivoFijoWS" url-pattern="/ActivoFijoWS"/>
   <endpoint implementation="pe.edu.pucp.tablesoft.services.CategoriaWS" name="CategoriaWS" url-pattern="/CategoriaWS"/>
+  <endpoint implementation="pe.edu.pucp.tablesoft.services.AgenteWS" name="AgenteWS" url-pattern="/AgenteWS"/>
+  <endpoint implementation="pe.edu.pucp.tablesoft.services.EquipoWS" name="EquipoWS" url-pattern="/EquipoWS"/>
 </endpoints>

@@ -28,6 +28,16 @@
         <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+        <servlet-name>AgenteWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>EquipoWS</servlet-name>
+        <servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RolWS</servlet-name>
         <url-pattern>/RolWS</url-pattern>
@@ -47,6 +57,14 @@
     <servlet-mapping>
         <servlet-name>CategoriaWS</servlet-name>
         <url-pattern>/CategoriaWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AgenteWS</servlet-name>
+        <url-pattern>/AgenteWS</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EquipoWS</servlet-name>
+        <url-pattern>/EquipoWS</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -40,6 +40,7 @@ public class PersonaMySQL implements PersonaDAO{
                 persona.setApellidoMaterno(rs.getString("apellido_materno"));
                 persona.setDireccion(rs.getString("direccion"));
                 persona.setTelefono(rs.getString("telefono"));
+                persona.setActivo(rs.getBoolean("activo"));
             }   
             
         }catch(Exception ex){

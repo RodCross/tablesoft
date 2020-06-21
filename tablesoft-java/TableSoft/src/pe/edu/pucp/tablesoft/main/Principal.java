@@ -7,6 +7,7 @@
 package pe.edu.pucp.tablesoft.main;
 
 import java.util.ArrayList;
+import pe.edu.pucp.tablesoft.config.DBController;
 import pe.edu.pucp.tablesoft.dao.ActivoFijoDAO;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
@@ -15,6 +16,7 @@ import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
 import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
+import pe.edu.pucp.tablesoft.dao.PersonaDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.RolDAO;
 import pe.edu.pucp.tablesoft.dao.TareaPredeterminadaDAO;
@@ -28,6 +30,7 @@ import pe.edu.pucp.tablesoft.model.Comentario;
 import pe.edu.pucp.tablesoft.model.Empleado;
 import pe.edu.pucp.tablesoft.model.Equipo;
 import pe.edu.pucp.tablesoft.model.EstadoTicket;
+import pe.edu.pucp.tablesoft.model.Persona;
 import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Rol;
 import pe.edu.pucp.tablesoft.model.Tarea;
@@ -42,6 +45,7 @@ import pe.edu.pucp.tablesoft.mysql.ComentarioMySQL;
 import pe.edu.pucp.tablesoft.mysql.EmpleadoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EquipoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
+import pe.edu.pucp.tablesoft.mysql.PersonaMySQL;
 import pe.edu.pucp.tablesoft.mysql.ProveedorMySQL;
 import pe.edu.pucp.tablesoft.mysql.RolMySQL;
 import pe.edu.pucp.tablesoft.mysql.TareaPredeterminadaMySQL;
@@ -65,7 +69,7 @@ public class Principal {
         ComentarioDAO comentarioDao = new ComentarioMySQL();
         ActivoFijoDAO activoFijoDao = new ActivoFijoMySQL();
         TareaPredeterminadaDAO tareaPredeterminadaDao = new TareaPredeterminadaMySQL();
-        
+        PersonaDAO personaDao=new PersonaMySQL();
 //        // EQUIPOS
 //        // Crear equipos
 //        Equipo equipo1 = new Equipo("Equipo BD","Equipo especializado en BD");
@@ -341,10 +345,10 @@ public class Principal {
 //        }
         
 
-        ActivoFijo activoFijo = new ActivoFijo("Impresora Epson L355", "23412","Impresora", "");
-        activoFijoDao.insertar(activoFijo);
-
-
+        //ActivoFijo activoFijo = new ActivoFijo("Impresora Epson L355", "23412","Impresora", "");
+        //activoFijoDao.insertar(activoFijo);
+        
+        //Persona persona=personaDao.verificarPersona("chino@hotmail.com", "Juan Francisco");
 
         /* Los metodos para eliminar en las clases con campo activo los ponen en 0
          * Es requisto que se deje un registro permanente en base de datos

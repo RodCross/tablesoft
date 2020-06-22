@@ -28,38 +28,38 @@ public class EmpleadoWS {
         daoEmpleado = DBController.controller.getEmpleadoDAO();
     }
    
-    @WebMethod(operationName = "insertarEmpleado")
-    public int insertarEmpleado(@WebParam(name = "objEmpleado") Empleado empleado) {
-        int i = 0;
-        try{
-            i = daoEmpleado.insertar(empleado);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
-    
-    @WebMethod(operationName = "actualizarEmpleado")
-    public int actualizarEmpleado(@WebParam(name = "objEmpleado") Empleado empleado) {
-        int i = 0;
-        try{
-            i = daoEmpleado.actualizar(empleado);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
-    
-    @WebMethod(operationName = "eliminarEmpleado")
-    public int eliminarEmpleado(@WebParam(name = "objEmpleado") Empleado empleado) {
-        int i = 0;
-        try{
-            i = daoEmpleado.eliminar(empleado);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
+//    @WebMethod(operationName = "insertarEmpleado")
+//    public int insertarEmpleado(@WebParam(name = "objEmpleado") Empleado empleado) {
+//        int i = 0;
+//        try{
+//            i = daoEmpleado.insertar(empleado);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
+//    
+//    @WebMethod(operationName = "actualizarEmpleado")
+//    public int actualizarEmpleado(@WebParam(name = "objEmpleado") Empleado empleado) {
+//        int i = 0;
+//        try{
+//            i = daoEmpleado.actualizar(empleado);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
+//    
+//    @WebMethod(operationName = "eliminarEmpleado")
+//    public int eliminarEmpleado(@WebParam(name = "objEmpleado") Empleado empleado) {
+//        int i = 0;
+//        try{
+//            i = daoEmpleado.eliminar(empleado);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
     
     @WebMethod(operationName = "listarEmpleados")
     public ArrayList<Empleado> listarEmpleados(){

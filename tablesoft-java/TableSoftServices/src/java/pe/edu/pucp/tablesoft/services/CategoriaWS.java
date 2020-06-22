@@ -24,38 +24,38 @@ public class CategoriaWS {
         daoCategoria = DBController.controller.getCategoriaDAO();
     }
    
-    @WebMethod(operationName = "insertarCategoria")
-    public int insertarCategoria(@WebParam(name = "objCategoria") Categoria categoria) {
-        int i = 0;
-        try{
-            i = daoCategoria.insertar(categoria);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
-    
-    @WebMethod(operationName = "actualizarCategoria")
-    public int actualizarCategoria(@WebParam(name = "objCategoria") Categoria categoria) {
-        int i = 0;
-        try{
-            i = daoCategoria.actualizar(categoria);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
-    
-    @WebMethod(operationName = "eliminarCategoria")
-    public int eliminarCategoria(@WebParam(name = "objCategoria") Categoria categoria) {
-        int i = 0;
-        try{
-            i = daoCategoria.eliminar(categoria);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
+//    @WebMethod(operationName = "insertarCategoria")
+//    public int insertarCategoria(@WebParam(name = "objCategoria") Categoria categoria) {
+//        int i = 0;
+//        try{
+//            i = daoCategoria.insertar(categoria);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
+//    
+//    @WebMethod(operationName = "actualizarCategoria")
+//    public int actualizarCategoria(@WebParam(name = "objCategoria") Categoria categoria) {
+//        int i = 0;
+//        try{
+//            i = daoCategoria.actualizar(categoria);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
+//    
+//    @WebMethod(operationName = "eliminarCategoria")
+//    public int eliminarCategoria(@WebParam(name = "objCategoria") Categoria categoria) {
+//        int i = 0;
+//        try{
+//            i = daoCategoria.eliminar(categoria);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
     
     @WebMethod(operationName = "listarCategorias")
     public ArrayList<Categoria> listarCategorias(){
@@ -68,7 +68,7 @@ public class CategoriaWS {
     }
     
     @WebMethod(operationName = "listarCategoriasPorEquipo")
-    public ArrayList<Categoria> listarCategoriasPorEquipo(@WebParam(name = "objCategoria") Equipo equipo){
+    public ArrayList<Categoria> listarCategoriasPorEquipo(@WebParam(name = "objEquipo") Equipo equipo){
         return daoCategoria.listarxEquipo(equipo);
     }
 }

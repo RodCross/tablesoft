@@ -23,38 +23,38 @@ public class AgenteWS {
         daoAgente = DBController.controller.getAgenteDAO();
     }
    
-//    @WebMethod(operationName = "insertarAgente")
-//    public int insertarAgente(@WebParam(name = "objAgente") Agente agente) {
-//        int i = 0;
-//        try{
-//            i = daoAgente.insertar(agente);
-//        }catch(Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        return i;
-//    }
-//    
-//    @WebMethod(operationName = "actualizarAgente")
-//    public int actualizarAgente(@WebParam(name = "objAgente") Agente agente) {
-//        int i = 0;
-//        try{
-//            i = daoAgente.actualizar(agente);
-//        }catch(Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        return i;
-//    }
-//    
-//    @WebMethod(operationName = "eliminarAgente")
-//    public int eliminarAgente(@WebParam(name = "objAgente") Agente agente) {
-//        int i = 0;
-//        try{
-//            i = daoAgente.eliminar(agente);
-//        }catch(Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        return i;
-//    }
+    @WebMethod(operationName = "insertarAgente")
+    public int insertarAgente(@WebParam(name = "objAgente") Agente agente) {
+        int i = 0;
+        try{
+            i = daoAgente.insertar(agente);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return i;
+    }
+    
+    @WebMethod(operationName = "actualizarAgente")
+    public int actualizarAgente(@WebParam(name = "objAgente") Agente agente) {
+        int i = 0;
+        try{
+            i = daoAgente.actualizar(agente);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return i;
+    }
+    
+    @WebMethod(operationName = "eliminarAgente")
+    public int eliminarAgente(@WebParam(name = "objAgente") Agente agente) {
+        int i = 0;
+        try{
+            i = daoAgente.eliminar(agente);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return i;
+    }
     
     @WebMethod(operationName = "listarAgentes")
     public ArrayList<Agente> listarAgentes(){

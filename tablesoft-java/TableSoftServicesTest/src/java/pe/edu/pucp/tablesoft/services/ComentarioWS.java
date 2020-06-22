@@ -30,16 +30,16 @@ public class ComentarioWS {
         daoComentario = DBController.controller.getComentarioDAO();
     }
    
-//    @WebMethod(operationName = "insertarComentario")
-//    public int insertarComentario(@WebParam(name = "objComentario") Comentario comentario, @WebParam(name = "objTicket") Ticket ticket) {
-//        int i = 0;
-//        try{
-//            i = daoComentario.insertar(comentario, ticket);
-//        }catch(Exception ex){
-//            System.out.println(ex.getMessage());
-//        }
-//        return i;
-//    }
+    @WebMethod(operationName = "insertarComentario")
+    public int insertarComentario(@WebParam(name = "objComentario") Comentario comentario, @WebParam(name = "objTicket") Ticket ticket) {
+        int i = 0;
+        try{
+            i = daoComentario.insertar(comentario, ticket);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return i;
+    }
     
     @WebMethod(operationName = "listarComentariosDeTicket")
     public ArrayList<Comentario> listarComentariosDeTicket(@WebParam(name = "objTicket") Ticket ticket) {

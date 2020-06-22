@@ -22,38 +22,38 @@ public class ActivoFijoWS {
         daoActivoFijo = DBController.controller.getActivoFijoDAO();
     }
    
-    @WebMethod(operationName = "insertarActivoFijo")
-    public int insertarActivoFijo(@WebParam(name = "objActivoFijo") ActivoFijo activoFijo) {
-        int i = 0;
-        try{
-            i = daoActivoFijo.insertar(activoFijo);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
-    
-    @WebMethod(operationName = "actualizarActivoFijo")
-    public int actualizarActivoFijo(@WebParam(name = "objActivoFijo") ActivoFijo activoFijo) {
-        int i = 0;
-        try{
-            i = daoActivoFijo.actualizar(activoFijo);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
-    
-    @WebMethod(operationName = "eliminarActivoFijo")
-    public int eliminarActivoFijo(@WebParam(name = "objActivoFijo")  ActivoFijo activoFijo) {
-        int i = 0;
-        try{
-            i = daoActivoFijo.eliminar(activoFijo);
-        }catch(Exception ex){
-            System.out.println(ex.getMessage());
-        }
-        return i;
-    }
+//    @WebMethod(operationName = "insertarActivoFijo")
+//    public int insertarActivoFijo(@WebParam(name = "objActivoFijo") ActivoFijo activoFijo) {
+//        int i = 0;
+//        try{
+//            i = daoActivoFijo.insertar(activoFijo);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
+//    
+//    @WebMethod(operationName = "actualizarActivoFijo")
+//    public int actualizarActivoFijo(@WebParam(name = "objActivoFijo") ActivoFijo activoFijo) {
+//        int i = 0;
+//        try{
+//            i = daoActivoFijo.actualizar(activoFijo);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
+//    
+//    @WebMethod(operationName = "eliminarActivoFijo")
+//    public int eliminarActivoFijo(@WebParam(name = "objActivoFijo")  ActivoFijo activoFijo) {
+//        int i = 0;
+//        try{
+//            i = daoActivoFijo.eliminar(activoFijo);
+//        }catch(Exception ex){
+//            System.out.println(ex.getMessage());
+//        }
+//        return i;
+//    }
     
     @WebMethod(operationName = "listarActivosFijos")
     public ArrayList<ActivoFijo> listarActivosFijos(){

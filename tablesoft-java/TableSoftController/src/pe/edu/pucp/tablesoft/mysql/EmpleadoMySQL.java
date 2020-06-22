@@ -230,5 +230,44 @@ public class EmpleadoMySQL implements EmpleadoDAO{
         }
         return empleado;
     }
+    @Override
+    public Empleado buscarxCodigo(String codigo) {
+        Empleado empleado = new Empleado();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL buscar_empleado_codigo(?)}");
+            cs.setString("_CODIGO", codigo);
+            
+            ResultSet rs = cs.executeQuery();
+            
+            while(rs.next()){
+                
+                empleado.setEmpleadoId(rs.getInt("empleado_id"));
+                empleado.setCodigo(rs.getString("codigo"));
+                empleado.setDni(rs.getString("dni"));
+                empleado.setPersonaEmail(rs.getString("persona_email"));
+                empleado.setActivo(rs.getBoolean("activo"));
+                empleado.setNombre(rs.getString("nombre"));
+                empleado.setApellidoPaterno(rs.getString("apellido_paterno"));
+                empleado.setApellidoMaterno(rs.getString("apellido_materno"));
+                empleado.setDireccion(rs.getString("direccion"));
+                empleado.setTelefono(rs.getString("telefono"));
+                empleado.setTipo(rs.getString("tipo").charAt(0));
+                
+                empleado.getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
+                empleado.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
+                empleado.getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
+                empleado.getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
+            }
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        return empleado;
+    }
 
 }

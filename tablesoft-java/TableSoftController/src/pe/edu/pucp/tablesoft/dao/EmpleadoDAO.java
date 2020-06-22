@@ -18,4 +18,5 @@ public interface EmpleadoDAO {
     ArrayList<Empleado> listar();                                   // Listar
     ArrayList<Empleado> listarxBiblioteca(Biblioteca biblioteca);   // Solo no considera la lista de tickets
     Empleado buscar(int empleadoId);
+    Empleado buscarxCodigo(String codigo);
 }

@@ -31,6 +31,7 @@ manifest.mf
 **/nbproject/*
 !**/nbproject/project.properties
 !**/nbproject/project.xml
+!**/nbproject/ant-deploy.xml
 *.so
 *.out
 *.swp

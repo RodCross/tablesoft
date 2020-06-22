@@ -12,6 +12,10 @@ public class ActivoFijo {
     public ActivoFijo(){
     }
 
+    public ActivoFijo(int activoFijoId) {
+        this.activoFijoId = activoFijoId;
+    }
+
     public ActivoFijo(String nombre, String codigo, String tipo, String marca) {
         this.nombre = nombre;
         this.codigo = codigo;

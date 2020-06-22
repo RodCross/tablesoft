@@ -27,6 +27,10 @@ public class Categoria {
         tareasPredeterminadas = new ArrayList<>();
     }
 
+    public Categoria(int categoriaId) {
+        this.categoriaId = categoriaId;
+    }
+
     public String getDescripcion() {
         return descripcion;
     }

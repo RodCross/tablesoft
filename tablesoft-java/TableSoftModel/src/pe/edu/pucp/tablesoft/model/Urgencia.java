@@ -11,6 +11,10 @@ public class Urgencia {
         
     }
 
+    public Urgencia(int urgenciaId) {
+        this.urgenciaId = urgenciaId;
+    }
+
     public Urgencia(String nombre, int plazoMaximo) {
         this.nombre = nombre;
         this.plazoMaximo = plazoMaximo;

@@ -20,6 +20,10 @@ public class Empleado extends Persona {
         super(codigo, dni, nombre, apellidoPaterno, apellidoMaterno, direccion, telefono, password, personaEmail, 'E');
         this.biblioteca = biblioteca;
     }
+
+    public Empleado(int empleadoId) {
+        this.empleadoId = empleadoId;
+    }
     
     
     

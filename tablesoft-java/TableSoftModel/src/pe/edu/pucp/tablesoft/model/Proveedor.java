@@ -14,6 +14,10 @@ public class Proveedor {
         this.ciudad = new Ciudad();
     }
 
+    public Proveedor(int proveedorId) {
+        this.proveedorId = proveedorId;
+    }
+
     public Proveedor(String ruc, String razonSocial, String direccion, String telefono, String email, Ciudad ciudad) {
         this.ruc = ruc;
         this.razonSocial = razonSocial;

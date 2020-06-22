@@ -216,7 +216,7 @@ public class TicketMySQL implements TicketDAO{
     @Override
     public ArrayList<Ticket> listar() {
         ArrayList<Ticket> tickets = new ArrayList<>();
-        
+        System.out.println("Listar tickets");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
@@ -289,7 +289,7 @@ public class TicketMySQL implements TicketDAO{
 
                 tickets.add(ticket);
             }
-            
+            System.out.println("Empieza for");
             for(Ticket tick : tickets){
                 cs = con.prepareCall("{CALL buscar_empleado(?)}");
                 cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
@@ -312,6 +312,7 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
                     tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
                 }
+                System.out.println("Buscar agente");
                 int agenteId = tick.getAgente().getAgenteId();
                 if(agenteId != 0){
                     cs = con.prepareCall("{CALL buscar_agente(?)}");
@@ -343,6 +344,7 @@ public class TicketMySQL implements TicketDAO{
                         tick.getAgente().getRol().setActivo(rs.getBoolean("rol_activo"));
                     }
                 }
+                System.out.println("Buscar proveedor");
                 int proveedorId = tick.getProveedor().getProveedorId();
                 if(proveedorId != 0){
                     cs = con.prepareCall("{CALL buscar_proveedor(?)}");
@@ -364,6 +366,7 @@ public class TicketMySQL implements TicketDAO{
                         tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad_nombre"));
                     }
                 }
+                System.out.println("Buscar activo fijo");
                 int activoFijoId = tick.getActivoFijo().getActivoFijoId();
                 if(activoFijoId != 0){
                     cs = con.prepareCall("{CALL buscar_activo_fijo(?)}");
@@ -441,7 +444,7 @@ public class TicketMySQL implements TicketDAO{
                     transferencias.add(transferInt);
                 }
                 tick.setHistorialTransferencia(transferencias);
-                
+                System.out.println("Cambios estado");
                 // Listar historial de cambios de estado
                 ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
                 cs = con.prepareCall("{CALL listar_cambio_estado_ticket(?)}");

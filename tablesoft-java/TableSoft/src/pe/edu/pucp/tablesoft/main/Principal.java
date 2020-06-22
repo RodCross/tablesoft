@@ -69,6 +69,7 @@ public class Principal {
         ActivoFijoDAO activoFijoDao = new ActivoFijoMySQL();
         TareaPredeterminadaDAO tareaPredeterminadaDao = new TareaPredeterminadaMySQL();
         PersonaDAO personaDao=new PersonaMySQL();
+        
         // EQUIPOS
         // Crear equipos
         Equipo equipo1 = new Equipo("Equipo BD","Equipo especializado en BD");
@@ -282,56 +283,56 @@ public class Principal {
         // TICKET
         // Crear y enviar tickets
         Ticket ticket1 = new Ticket("Problema con la base de datos 1","No parece seleccionar todos los datos que corresponden al select, AYUDA!",
-                estado1, empleado1, urgencia1, categoria1, bib1);
+                new EstadoTicket(1), new Empleado(1), new Urgencia(1), new Categoria(1), new Biblioteca(1));
         Ticket ticket2 = new Ticket("Problema con el equipo de autoprestamo de la entrada",
                 "No esta escaneando bien los libros que entran y a veces se escucha sonidos de error, parece que es la conexion con el enchufe",
-                estado1, empleado2, urgencia2, categoria2, bib1);
-        ticket2.setActivoFijo(activoFijo1);
+                new EstadoTicket(1), new Empleado(2), new Urgencia(2), new Categoria(2), new Biblioteca(1));
+        ticket2.setActivoFijo(new ActivoFijo(1));
         
         ticketDao.insertar(ticket1);
         ticketDao.insertar(ticket2);
-        
-        // Asignar agentes
-        ticket1.setAgente(agente1);
-        ticket2.setAgente(agente2);
-        
-        // Actualizamos
-        ticketDao.actualizar(ticket1);
-        ticketDao.actualizar(ticket2);
+//        
+//        // Asignar agentes
+//        ticket1.setAgente(new Agente(1));
+//        ticket2.setAgente(new Agente(2));
+//        
+//        // Actualizamos
+//        ticketDao.actualizar(ticket1);
+//        ticketDao.actualizar(ticket2);
+//        
+//        // Listamos los tickets
+//        ArrayList<Ticket>tickets = ticketDao.listar();
+//        System.out.println("\nTickets\n");
+//        for (Ticket t : tickets) {
+//            System.out.println(t.mostrarDatos());
+//        }
+//        
+//        // Solucionar ticket 1
+//        ticket1.actualizarEstado(new EstadoTicket(2), "Se arreglo el problema");
+//        ticketDao.actualizar(ticket1);
+//        
+//        // Mandar mensajes
+//        Comentario mensaje1 = new Comentario(new Empleado(1), "El problema es que hay chispas electricas en el equipo");
+//        comentarioDao.insertar(mensaje1, ticket2);
+//        Comentario mensaje2 = new Comentario(new Agente(1), "Eso suena muy serio, lo revisare, pero probablemente deba revisarlo el proveedor");
+//        comentarioDao.insertar(mensaje2, ticket2);
+//        
+//        // Listar mensajes
+//        ArrayList<Comentario>comments = comentarioDao.listarxTicket(ticket2);
+//        System.out.println("\nMensajes\n");
+//        for (Comentario c : comments) {
+//            System.out.println("Ticket 2 - " + c.mostrarDatos());
+//        }
+//        
+//        // Escalar ticket 2
+//        ticket2.escalar(new Proveedor(2), "El proveedor deberia revisar el cableado");
+//        ticket2.actualizarEstado(new EstadoTicket(3), "El problema era muy grave, fue escalado");
+//        ticketDao.actualizar(ticket2);
         
         // Listamos los tickets
-        ArrayList<Ticket>tickets = ticketDao.listar();
         System.out.println("\nTickets\n");
-        for (Ticket t : tickets) {
-            System.out.println(t.mostrarDatos());
-        }
-        
-        // Solucionar ticket 1
-        ticket1.actualizarEstado(estado2, "Se arreglo el problema");
-        ticketDao.actualizar(ticket1);
-        
-        // Mandar mensajes
-        Comentario mensaje1 = new Comentario(empleado1, "El problema es que hay chispas electricas en el equipo");
-        comentarioDao.insertar(mensaje1, ticket2);
-        Comentario mensaje2 = new Comentario(agente1, "Eso suena muy serio, lo revisare, pero probablemente deba revisarlo el proveedor");
-        comentarioDao.insertar(mensaje2, ticket2);
-        
-        // Listar mensajes
-        ArrayList<Comentario>comments = comentarioDao.listarxTicket(ticket2);
-        System.out.println("\nMensajes\n");
-        for (Comentario c : comments) {
-            System.out.println("Ticket 2 - " + c.mostrarDatos());
-        }
-        
-        // Escalar ticket 2
-        ticket2.escalar(proveedor2, "El proveedor deberia revisar el cableado");
-        ticket2.actualizarEstado(estado3, "El problema era muy grave, fue escalado");
-        ticketDao.actualizar(ticket2);
-        
-        // Listamos los tickets
-        tickets = ticketDao.listar();
-        System.out.println("\nTickets\n");
-        for (Ticket t : tickets) {
+        ArrayList<Ticket> tickets2 = ticketDao.listar();
+        for (Ticket t : tickets2) {
             System.out.println(t.mostrarDatos());
         }
         

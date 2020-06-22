@@ -12,6 +12,10 @@ public class Biblioteca {
     public Biblioteca() {
     }
 
+    public Biblioteca(int bibliotecaId) {
+        this.bibliotecaId = bibliotecaId;
+    }
+
     public Biblioteca(String nombre, String abreviatura) {
         this.nombre = nombre;
         this.abreviatura = abreviatura;

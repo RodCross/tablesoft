@@ -11,6 +11,10 @@ public class EstadoTicket {
         
     }
 
+    public EstadoTicket(int estadoId) {
+        this.estadoId = estadoId;
+    }
+
     public EstadoTicket(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;

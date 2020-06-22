@@ -176,15 +176,14 @@ public class Principal {
         // AGENTE
         Agente agente1 = new Agente("srh@pucp.edu.pe", equipo1, rol1, "20167474", "70221842", "Stefano", "Roldan", "Huayllasco",
                 "Calle Los Cedros 1231", "1231", "abcd1234", "a20167474@pucp.edu.pe");
-        Agente agente2 = new Agente("fgvs@pucp.edu.pe", equipo1, rol1, "20167474", "77456687", "Fernando", "Verastegui", "Sanchez",
+        Agente agente2 = new Agente("fgvs@pucp.edu.pe", equipo1, rol1, "20160074", "77456687", "Fernando", "Verastegui", "Sanchez",
                 "Calle Los Prietos 1231", "1532", "abcd1234", "f.verastegui@pucp.edu.pe");
         Agente agente3 = new Agente("jfrk@pucp.edu.pe", equipo2, rol2, "20170910", "74488960", "Juan Francisco", "Rosales", "Kam",
                 "Calle Los Nogales 1131", "1233", "abcd1234", "juan.rosales@pucp.edu.pe");
         Agente agente4 = new Agente("cacs@pucp.edu.pe", equipo2, rol1, "20170569", "76947569", "Cesar", "Carbajal", "Serrano",
                 "Calle Los Arboles 1431", "9913", "abcd1234", "a20170569@pucp.edu.pe");
         
-        
-        
+   
         // Insertar agentes
         agenteDao.insertar(agente1);
         agenteDao.insertar(agente2);
@@ -202,6 +201,7 @@ public class Principal {
         agenteDao.actualizar(agente2);
         agenteDao.actualizar(agente3);
         agenteDao.actualizar(agente4);
+        
         
         // Listar agentes
         ArrayList<Agente> agentes = agenteDao.listar();
@@ -293,8 +293,8 @@ public class Principal {
         ticketDao.insertar(ticket2);
         
         // Asignar agentes
-        ticket1.setAgente(new Agente(1));
-        ticket2.setAgente(new Agente(2));
+        ticket1.setAgente(agente1);
+        ticket2.setAgente(agente2);
         
         // Actualizamos
         ticketDao.actualizar(ticket1);
@@ -312,9 +312,9 @@ public class Principal {
         ticketDao.actualizar(ticket1);
         
         // Mandar mensajes
-        Comentario mensaje1 = new Comentario(new Empleado(1), "El problema es que hay chispas electricas en el equipo");
+        Comentario mensaje1 = new Comentario(empleado1, "El problema es que hay chispas electricas en el equipo");
         comentarioDao.insertar(mensaje1, ticket2);
-        Comentario mensaje2 = new Comentario(new Agente(1), "Eso suena muy serio, lo revisare, pero probablemente deba revisarlo el proveedor");
+        Comentario mensaje2 = new Comentario(agente1, "Eso suena muy serio, lo revisare, pero probablemente deba revisarlo el proveedor");
         comentarioDao.insertar(mensaje2, ticket2);
         
         // Listar mensajes
@@ -325,8 +325,8 @@ public class Principal {
         }
         
         // Escalar ticket 2
-        ticket2.escalar(new Proveedor(2), "El proveedor deberia revisar el cableado");
-        ticket2.actualizarEstado(new EstadoTicket(3), "El problema era muy grave, fue escalado");
+        ticket2.escalar(proveedor2, "El proveedor deberia revisar el cableado");
+        ticket2.actualizarEstado(estado3, "El problema era muy grave, fue escalado");
         ticketDao.actualizar(ticket2);
         
         // Listamos los tickets

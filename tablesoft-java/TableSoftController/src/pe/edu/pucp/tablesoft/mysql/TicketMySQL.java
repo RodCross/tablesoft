@@ -216,7 +216,6 @@ public class TicketMySQL implements TicketDAO{
     @Override
     public ArrayList<Ticket> listar() {
         ArrayList<Ticket> tickets = new ArrayList<>();
-        System.out.println("Listar tickets");
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(
@@ -352,7 +351,6 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
@@ -617,7 +615,6 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
@@ -882,7 +879,6 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
@@ -1147,7 +1143,6 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
@@ -1413,7 +1408,6 @@ public class TicketMySQL implements TicketDAO{
                     rs = cs.executeQuery();
                     while(rs.next()){
                         tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
-                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad"));
                         tick.getProveedor().setDireccion(rs.getString("direccion"));
                         tick.getProveedor().setEmail(rs.getString("email"));
                         tick.getProveedor().setRazonSocial(rs.getString("razon_social"));

@@ -27,7 +27,7 @@ public class PaisWS {
     }
 
     @WebMethod(operationName = "listarPaises")
-    public ArrayList<Pais> listarPaises(@WebParam(name = "objPais") Pais pais){
+    public ArrayList<Pais> listarPaises(){
         return daoPais.listar();
     }
 }

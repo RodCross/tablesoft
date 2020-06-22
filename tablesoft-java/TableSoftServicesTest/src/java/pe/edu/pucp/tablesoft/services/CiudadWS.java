@@ -5,10 +5,14 @@
  */
 package pe.edu.pucp.tablesoft.services;
 
+import java.util.ArrayList;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
-
+import pe.edu.pucp.tablesoft.config.DBController;
+import pe.edu.pucp.tablesoft.dao.CiudadDAO;
+import pe.edu.pucp.tablesoft.model.Ciudad;
+import pe.edu.pucp.tablesoft.model.Pais;
 /**
  *
  * @author migue
@@ -19,8 +23,14 @@ public class CiudadWS {
     /**
      * This is a sample web service operation
      */
-    @WebMethod(operationName = "hello")
-    public String hello(@WebParam(name = "name") String txt) {
-        return "Hello " + txt + " !";
+    private CiudadDAO daoCiudad;
+    
+    public CiudadWS(){
+        daoCiudad = DBController.controller.getCiudadDAO();
+    }
+
+    @WebMethod(operationName = "listarCiudadesDePais")
+    public ArrayList<Ciudad> listarCiudadesDePais(@WebParam(name = "objPais") Pais pais){
+        return daoCiudad.listarxPais(pais);
     }
 }

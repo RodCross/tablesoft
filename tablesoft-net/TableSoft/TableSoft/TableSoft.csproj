@@ -445,9 +445,6 @@
     <None Include="images\ExitMouseDown.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="images\ExitMouseMove.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="images\Exit.png" />
   </ItemGroup>
   <ItemGroup>

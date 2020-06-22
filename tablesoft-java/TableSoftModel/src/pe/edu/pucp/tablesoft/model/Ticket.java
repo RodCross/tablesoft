@@ -254,7 +254,6 @@ public class Ticket {
         this.setCategoria(categoria);
         TransferenciaInterna cambioCategoria = new TransferenciaInterna(categoria, getAgente());
         cambioCategoria.setComentario(comentario);
-        this.setAgente(new Agente());
         this.historialTransferencia.add(cambioCategoria);
     }
     

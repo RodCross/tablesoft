@@ -65,4 +65,9 @@ public class AgenteWS {
     public ArrayList<Agente> listarAgentesPorEquipo(@WebParam(name = "objAgente") Equipo equipo){
         return daoAgente.listarxEquipo(equipo);
     }
+    
+    @WebMethod(operationName = "buscarAgentePorCodigo")
+    public Agente buscarAgentePorCodigo(@WebParam(name = "codigo") String codigo){
+        return daoAgente.buscarxCodigo(codigo);
+    }
 }

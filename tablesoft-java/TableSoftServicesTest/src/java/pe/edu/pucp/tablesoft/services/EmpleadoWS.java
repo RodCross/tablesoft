@@ -68,6 +68,9 @@ public class EmpleadoWS {
         return daoEmpleado.listarxBiblioteca(biblioteca);
     }
     
-    
+    @WebMethod(operationName = "buscarEmpleadoPorCodigo")
+    public Empleado buscarEmpleadoPorCodigo(@WebParam(name = "codigo") String codigo){
+        return daoEmpleado.buscarxCodigo(codigo);
+    }
    
 }

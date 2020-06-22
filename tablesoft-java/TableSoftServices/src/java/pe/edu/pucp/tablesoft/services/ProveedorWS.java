@@ -50,7 +50,7 @@ public class ProveedorWS {
     }
     
     @WebMethod(operationName = "eliminarProveedor")
-    public int eliminarActivoFijo(@WebParam(name = "objProveedor")  Proveedor proveedor) {
+    public int eliminarProveedor(@WebParam(name = "objProveedor")  Proveedor proveedor) {
         int i = 0;
         try{
             i = daoProveedor.eliminar(proveedor);

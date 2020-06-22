@@ -79,7 +79,6 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setString("_APELLIDO_MATERNO", agente.getApellidoMaterno());
             cs.setString("_DIRECCION", agente.getDireccion());
             cs.setString("_TELEFONO", agente.getTelefono());
-            cs.setString("_PASSWORD", agente.getPassword());
             cs.setString("_DNI", agente.getDni());
             cs.setString("_PERSONA_EMAIL", agente.getPersonaEmail());
             cs.setString("_AGENTE_EMAIL", agente.getAgenteEmail());

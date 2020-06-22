@@ -12,6 +12,11 @@ public class Ciudad {
         pais = new Pais();
     }
 
+    public Ciudad(int ciudadId) {
+        this.ciudadId = ciudadId;
+        pais = new Pais();
+    }
+
     public Ciudad(String nombre, Pais pais) {
         this.nombre = nombre;
         this.pais = pais;

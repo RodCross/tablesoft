@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmReasignarCategoriaTicketAgente : Form
     {
+        private CategoriaWS.CategoriaWSClient categoriaDAO = new CategoriaWS.CategoriaWSClient();
+        private BindingList<CategoriaWS.categoria> categorias;
+
         public frmReasignarCategoriaTicketAgente()
         {
             InitializeComponent();
+            categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+            dgvCategoria.AutoGenerateColumns = false;
+            dgvCategoria.DataSource = categorias;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

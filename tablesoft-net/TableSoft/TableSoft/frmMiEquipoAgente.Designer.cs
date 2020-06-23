@@ -88,6 +88,8 @@
             this.dgvTicketsEspera.Location = new System.Drawing.Point(35, 92);
             this.dgvTicketsEspera.Name = "dgvTicketsEspera";
             this.dgvTicketsEspera.ReadOnly = true;
+            this.dgvTicketsEspera.RowHeadersVisible = false;
+            this.dgvTicketsEspera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTicketsEspera.Size = new System.Drawing.Size(994, 436);
             this.dgvTicketsEspera.TabIndex = 0;
             // 

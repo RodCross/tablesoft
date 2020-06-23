@@ -20,9 +20,17 @@ namespace TableSoft
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarProveedor(int i)
+        public frmGestionarProveedor(ProveedorWS.proveedor prov)
         {
             InitializeComponent();
+            txtIDProveedor.Text = prov.proveedorId.ToString();
+            txtRUC.Text = prov.ruc;
+            txtRazonSocial.Text = prov.razonSocial;
+            txtDireccion.Text = prov.direccion;
+            txtCiudad.Text = prov.ciudad.nombre;
+            txtPais.Text = prov.ciudad.pais.nombre;
+            txtTelefono.Text = prov.telefono;
+            txtEmail.Text = prov.email;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;

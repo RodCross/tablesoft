@@ -7,24 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TableSoft.temp;
 
 namespace TableSoft
 {
     public partial class frmSeleccionarUrgencia : Form
     {
-
-        BindingList<Urgencia> urgencias = new BindingList<Urgencia>();
-        Urgencia urg1 = new Urgencia(1, "Emergencia", 2);
-        Urgencia urg2 = new Urgencia(2, "Incidente", 24);
-        Urgencia urg3 = new Urgencia(3, "Consulta", 72);
+        private UrgenciaWS.UrgenciaWSClient urgenciaDAO = new UrgenciaWS.UrgenciaWSClient();
+        private BindingList<UrgenciaWS.urgencia> urgencias;
 
         public frmSeleccionarUrgencia()
         {
             InitializeComponent();
-            urgencias.Add(urg1);
-            urgencias.Add(urg2);
-            urgencias.Add(urg3);
+            urgencias = new BindingList<UrgenciaWS.urgencia>(urgenciaDAO.listarUrgencias().ToArray());
+            dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = urgencias;
         }
 
@@ -46,7 +41,7 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            Urgencia urg = (Urgencia) dgvLista.CurrentRow.DataBoundItem;
+            UrgenciaWS.urgencia urg = (UrgenciaWS.urgencia)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarUrgencia frm = new frmGestionarUrgencia(urg);
             frm.ShowDialog();
         }

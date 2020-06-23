@@ -12,14 +12,15 @@ namespace TableSoft
 {
     public partial class frmEscalarTicketAgente : Form
     {
+        private ProveedorWS.ProveedorWSClient proveedorDAO = new ProveedorWS.ProveedorWSClient();
+        private BindingList<ProveedorWS.proveedor> proveedores;
+
         public frmEscalarTicketAgente()
         {
             InitializeComponent();
-        }
-
-        private void frmEscalarTicketAgente_Load(object sender, EventArgs e)
-        {
-
+            proveedores = new BindingList<ProveedorWS.proveedor>(proveedorDAO.listarProveedores().ToArray());
+            dgvProveedores.AutoGenerateColumns = false;
+            dgvProveedores.DataSource = proveedores;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ActivoFijoWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/ActivoFijoWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="insertarActivoFijo">
+    <part name="parameters" element="tns:insertarActivoFijo" />
+  </message>
+  <message name="insertarActivoFijoResponse">
+    <part name="parameters" element="tns:insertarActivoFijoResponse" />
+  </message>
+  <message name="actualizarActivoFijo">
+    <part name="parameters" element="tns:actualizarActivoFijo" />
+  </message>
+  <message name="actualizarActivoFijoResponse">
+    <part name="parameters" element="tns:actualizarActivoFijoResponse" />
+  </message>
+  <message name="eliminarActivoFijo">
+    <part name="parameters" element="tns:eliminarActivoFijo" />
+  </message>
+  <message name="eliminarActivoFijoResponse">
+    <part name="parameters" element="tns:eliminarActivoFijoResponse" />
+  </message>
+  <message name="listarActivosFijos">
+    <part name="parameters" element="tns:listarActivosFijos" />
+  </message>
+  <message name="listarActivosFijosResponse">
+    <part name="parameters" element="tns:listarActivosFijosResponse" />
+  </message>
+  <portType name="ActivoFijoWS">
+    <operation name="insertarActivoFijo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest" message="tns:insertarActivoFijo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoResponse" message="tns:insertarActivoFijoResponse" />
+    </operation>
+    <operation name="actualizarActivoFijo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoRequest" message="tns:actualizarActivoFijo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoResponse" message="tns:actualizarActivoFijoResponse" />
+    </operation>
+    <operation name="eliminarActivoFijo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoRequest" message="tns:eliminarActivoFijo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoResponse" message="tns:eliminarActivoFijoResponse" />
+    </operation>
+    <operation name="listarActivosFijos">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest" message="tns:listarActivosFijos" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse" message="tns:listarActivosFijosResponse" />
+    </operation>
+  </portType>
+  <binding name="ActivoFijoWSPortBinding" type="tns:ActivoFijoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarActivoFijo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarActivoFijo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarActivoFijo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarActivosFijos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ActivoFijoWS">
+    <port name="ActivoFijoWSPort" binding="tns:ActivoFijoWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/ActivoFijoWS" />
+    </port>
+  </service>
+</definitions>

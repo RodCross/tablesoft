@@ -20,9 +20,12 @@ namespace TableSoft
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarTareasTicket(int i)
+        public frmGestionarTareasTicket(TareaWS.tarea tarea)
         {
             InitializeComponent();
+            txtIDTarea.Text = tarea.tareaId.ToString();
+            txtDescripcion.Text = tarea.descripcion;
+            chkCompletado.Checked = tarea.completado;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;

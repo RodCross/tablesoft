@@ -30,11 +30,19 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEscalarTicketAgente));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblEscalarTicket = new System.Windows.Forms.Label();
             this.dgvProveedores = new System.Windows.Forms.DataGridView();
+            this.lblIngresarComentario = new System.Windows.Forms.Label();
+            this.btnEscalar = new System.Windows.Forms.Button();
+            this.rtfComentario = new System.Windows.Forms.RichTextBox();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RUC = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +50,6 @@
             this.Ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblIngresarComentario = new System.Windows.Forms.Label();
-            this.btnEscalar = new System.Windows.Forms.Button();
-            this.rtfComentario = new System.Windows.Forms.RichTextBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +63,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(880, 57);
-            this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.TabIndex = 3;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // btnCancelar
@@ -72,7 +77,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(742, 14);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(119, 33);
-            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -85,7 +90,7 @@
             this.lblEscalarTicket.Location = new System.Drawing.Point(19, 16);
             this.lblEscalarTicket.Name = "lblEscalarTicket";
             this.lblEscalarTicket.Size = new System.Drawing.Size(126, 25);
-            this.lblEscalarTicket.TabIndex = 0;
+            this.lblEscalarTicket.TabIndex = 1;
             this.lblEscalarTicket.Text = "Escalar ticket";
             // 
             // dgvProveedores
@@ -107,60 +112,10 @@
             this.dgvProveedores.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.dgvProveedores.Name = "dgvProveedores";
             this.dgvProveedores.ReadOnly = true;
+            this.dgvProveedores.RowHeadersVisible = false;
+            this.dgvProveedores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvProveedores.Size = new System.Drawing.Size(841, 162);
-            this.dgvProveedores.TabIndex = 1;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewTextBoxColumn1.FillWeight = 50F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridViewTextBoxColumn2.HeaderText = "Razón social";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dataGridViewTextBoxColumn2.Width = 230;
-            // 
-            // RUC
-            // 
-            this.RUC.HeaderText = "RUC";
-            this.RUC.Name = "RUC";
-            this.RUC.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Dirección";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // Ciudad
-            // 
-            this.Ciudad.HeaderText = "Ciudad";
-            this.Ciudad.Name = "Ciudad";
-            this.Ciudad.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Teléfono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            this.Email.Width = 115;
+            this.dgvProveedores.TabIndex = 0;
             // 
             // lblIngresarComentario
             // 
@@ -184,7 +139,7 @@
             this.btnEscalar.Location = new System.Drawing.Point(742, 408);
             this.btnEscalar.Name = "btnEscalar";
             this.btnEscalar.Size = new System.Drawing.Size(119, 33);
-            this.btnEscalar.TabIndex = 3;
+            this.btnEscalar.TabIndex = 2;
             this.btnEscalar.Text = "Escalar";
             this.btnEscalar.UseVisualStyleBackColor = false;
             this.btnEscalar.Click += new System.EventHandler(this.btnEscalar_Click);
@@ -196,8 +151,83 @@
             this.rtfComentario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.rtfComentario.Name = "rtfComentario";
             this.rtfComentario.Size = new System.Drawing.Size(841, 106);
-            this.rtfComentario.TabIndex = 2;
+            this.rtfComentario.TabIndex = 1;
             this.rtfComentario.Text = "";
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "proveedorId";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridViewTextBoxColumn1.FillWeight = 50F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.Width = 50;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "razonSocial";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridViewTextBoxColumn2.HeaderText = "Razón social";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.dataGridViewTextBoxColumn2.Width = 175;
+            // 
+            // RUC
+            // 
+            this.RUC.DataPropertyName = "ruc";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RUC.DefaultCellStyle = dataGridViewCellStyle3;
+            this.RUC.HeaderText = "RUC";
+            this.RUC.Name = "RUC";
+            this.RUC.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.DataPropertyName = "direccion";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Direccion.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Direccion.HeaderText = "Dirección";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            this.Direccion.Width = 155;
+            // 
+            // Ciudad
+            // 
+            this.Ciudad.DataPropertyName = "nombreCiudad";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Ciudad.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Ciudad.HeaderText = "Ciudad";
+            this.Ciudad.Name = "Ciudad";
+            this.Ciudad.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.DataPropertyName = "telefono";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Telefono.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Telefono.HeaderText = "Teléfono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.DataPropertyName = "email";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Email.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 155;
             // 
             // frmEscalarTicketAgente
             // 
@@ -213,7 +243,6 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEscalarTicketAgente";
             this.Text = "frmEscalarTicketAgente";
-            this.Load += new System.EventHandler(this.frmEscalarTicketAgente_Load);
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProveedores)).EndInit();
@@ -230,6 +259,7 @@
         private System.Windows.Forms.Button btnEscalar;
         private System.Windows.Forms.Label lblEscalarTicket;
         private System.Windows.Forms.RichTextBox rtfComentario;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn RUC;
@@ -237,6 +267,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ciudad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.Button btnCancelar;
     }
 }

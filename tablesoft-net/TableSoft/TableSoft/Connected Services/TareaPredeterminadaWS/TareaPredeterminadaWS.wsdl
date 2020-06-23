@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="TareaPredeterminadaWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="listarEstadosTicket">
+    <part name="parameters" element="tns:listarEstadosTicket" />
+  </message>
+  <message name="listarEstadosTicketResponse">
+    <part name="parameters" element="tns:listarEstadosTicketResponse" />
+  </message>
+  <message name="actualizarTareaPredeterminada">
+    <part name="parameters" element="tns:actualizarTareaPredeterminada" />
+  </message>
+  <message name="actualizarTareaPredeterminadaResponse">
+    <part name="parameters" element="tns:actualizarTareaPredeterminadaResponse" />
+  </message>
+  <message name="insertarTareaPredeterminada">
+    <part name="parameters" element="tns:insertarTareaPredeterminada" />
+  </message>
+  <message name="insertarTareaPredeterminadaResponse">
+    <part name="parameters" element="tns:insertarTareaPredeterminadaResponse" />
+  </message>
+  <message name="eliminarTareaPredeterminada">
+    <part name="parameters" element="tns:eliminarTareaPredeterminada" />
+  </message>
+  <message name="eliminarTareaPredeterminadaResponse">
+    <part name="parameters" element="tns:eliminarTareaPredeterminadaResponse" />
+  </message>
+  <portType name="TareaPredeterminadaWS">
+    <operation name="listarEstadosTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketRequest" message="tns:listarEstadosTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketResponse" message="tns:listarEstadosTicketResponse" />
+    </operation>
+    <operation name="actualizarTareaPredeterminada">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaRequest" message="tns:actualizarTareaPredeterminada" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaResponse" message="tns:actualizarTareaPredeterminadaResponse" />
+    </operation>
+    <operation name="insertarTareaPredeterminada">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/insertarTareaPredeterminadaRequest" message="tns:insertarTareaPredeterminada" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/insertarTareaPredeterminadaResponse" message="tns:insertarTareaPredeterminadaResponse" />
+    </operation>
+    <operation name="eliminarTareaPredeterminada">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaRequest" message="tns:eliminarTareaPredeterminada" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaResponse" message="tns:eliminarTareaPredeterminadaResponse" />
+    </operation>
+  </portType>
+  <binding name="TareaPredeterminadaWSPortBinding" type="tns:TareaPredeterminadaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarEstadosTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarTareaPredeterminada">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarTareaPredeterminada">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarTareaPredeterminada">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="TareaPredeterminadaWS">
+    <port name="TareaPredeterminadaWSPort" binding="tns:TareaPredeterminadaWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS" />
+    </port>
+  </service>
+</definitions>

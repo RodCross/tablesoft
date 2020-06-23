@@ -105,6 +105,7 @@
             this.dgvHistorial.Location = new System.Drawing.Point(35, 92);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.ReadOnly = true;
+            this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(994, 436);
             this.dgvHistorial.TabIndex = 0;
             // 
@@ -126,7 +127,7 @@
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "Id";
+            this.ID.DataPropertyName = "ticketId";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ID.DefaultCellStyle = dataGridViewCellStyle1;
@@ -138,8 +139,8 @@
             // 
             // Asunto
             // 
-            this.Asunto.DataPropertyName = "Asunto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Asunto.DataPropertyName = "asunto";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.Asunto.DefaultCellStyle = dataGridViewCellStyle2;
             this.Asunto.HeaderText = "Asunto";
@@ -149,7 +150,7 @@
             // 
             // Empleado
             // 
-            this.Empleado.DataPropertyName = "Empleado";
+            this.Empleado.DataPropertyName = "nombreEmpleado";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.Empleado.DefaultCellStyle = dataGridViewCellStyle3;
@@ -160,18 +161,18 @@
             // 
             // FechaApertura
             // 
-            this.FechaApertura.DataPropertyName = "Apertura";
+            this.FechaApertura.DataPropertyName = "fechaEnvio";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.FechaApertura.DefaultCellStyle = dataGridViewCellStyle4;
-            this.FechaApertura.HeaderText = "Fecha de apertura";
+            this.FechaApertura.HeaderText = "Fecha de envío";
             this.FechaApertura.Name = "FechaApertura";
             this.FechaApertura.ReadOnly = true;
             this.FechaApertura.Width = 150;
             // 
             // FechaCierre
             // 
-            this.FechaCierre.DataPropertyName = "Cierre";
+            this.FechaCierre.DataPropertyName = "fechaCierre";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.FechaCierre.DefaultCellStyle = dataGridViewCellStyle5;
@@ -182,7 +183,7 @@
             // 
             // Estado
             // 
-            this.Estado.DataPropertyName = "Estado";
+            this.Estado.DataPropertyName = "nombreEstado";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.Estado.DefaultCellStyle = dataGridViewCellStyle6;

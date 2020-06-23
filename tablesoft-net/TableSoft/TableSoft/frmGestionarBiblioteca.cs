@@ -20,9 +20,12 @@ namespace TableSoft
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarBiblioteca(int i)
+        public frmGestionarBiblioteca(BibliotecaWS.biblioteca bibl)
         {
             InitializeComponent();
+            txtIDBib.Text = bibl.bibliotecaId.ToString();
+            txtNombre.Text = bibl.nombre;
+            txtAbrev.Text = bibl.abreviatura;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;

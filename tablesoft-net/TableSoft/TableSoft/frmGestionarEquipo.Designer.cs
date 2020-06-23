@@ -30,8 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarEquipo));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblDatosEquipo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.lblDatosEquipo = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblIDEquipo = new System.Windows.Forms.Label();
@@ -56,17 +56,6 @@
             this.pnlTitulo.TabIndex = 5;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
-            // lblDatosEquipo
-            // 
-            this.lblDatosEquipo.AutoSize = true;
-            this.lblDatosEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
-            this.lblDatosEquipo.ForeColor = System.Drawing.Color.White;
-            this.lblDatosEquipo.Location = new System.Drawing.Point(30, 22);
-            this.lblDatosEquipo.Name = "lblDatosEquipo";
-            this.lblDatosEquipo.Size = new System.Drawing.Size(179, 27);
-            this.lblDatosEquipo.TabIndex = 0;
-            this.lblDatosEquipo.Text = "Datos del equipo";
-            // 
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
@@ -83,12 +72,23 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
+            // lblDatosEquipo
+            // 
+            this.lblDatosEquipo.AutoSize = true;
+            this.lblDatosEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
+            this.lblDatosEquipo.ForeColor = System.Drawing.Color.White;
+            this.lblDatosEquipo.Location = new System.Drawing.Point(30, 22);
+            this.lblDatosEquipo.Name = "lblDatosEquipo";
+            this.lblDatosEquipo.Size = new System.Drawing.Size(179, 27);
+            this.lblDatosEquipo.TabIndex = 0;
+            this.lblDatosEquipo.Text = "Datos del equipo";
+            // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(170, 135);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(501, 28);
+            this.txtNombre.Size = new System.Drawing.Size(328, 28);
             this.txtNombre.TabIndex = 1;
             // 
             // lblNombre
@@ -116,7 +116,7 @@
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(170, 179);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(204, 28);
+            this.txtDescripcion.Size = new System.Drawing.Size(501, 28);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtIDEquipo

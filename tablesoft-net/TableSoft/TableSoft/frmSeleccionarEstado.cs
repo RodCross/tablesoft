@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmSeleccionarEstado : Form
     {
+        private EstadoTicketWS.EstadoTicketWSClient estadoDAO = new EstadoTicketWS.EstadoTicketWSClient();
+        private BindingList<EstadoTicketWS.estadoTicket> estados;
+
         public frmSeleccionarEstado()
         {
             InitializeComponent();
+            estados = new BindingList<EstadoTicketWS.estadoTicket>(estadoDAO.listarEstadosTicket().ToArray());
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = estados;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +41,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarEstado frm = new frmGestionarEstado(1);
+            EstadoTicketWS.estadoTicket et = (EstadoTicketWS.estadoTicket)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarEstado frm = new frmGestionarEstado(et);
             frm.ShowDialog();
         }
     }

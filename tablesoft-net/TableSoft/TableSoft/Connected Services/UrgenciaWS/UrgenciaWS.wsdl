@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="UrgenciaWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/UrgenciaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="eliminarUrgencia">
+    <part name="parameters" element="tns:eliminarUrgencia" />
+  </message>
+  <message name="eliminarUrgenciaResponse">
+    <part name="parameters" element="tns:eliminarUrgenciaResponse" />
+  </message>
+  <message name="listarUrgencias">
+    <part name="parameters" element="tns:listarUrgencias" />
+  </message>
+  <message name="listarUrgenciasResponse">
+    <part name="parameters" element="tns:listarUrgenciasResponse" />
+  </message>
+  <message name="insertarUrgencia">
+    <part name="parameters" element="tns:insertarUrgencia" />
+  </message>
+  <message name="insertarUrgenciaResponse">
+    <part name="parameters" element="tns:insertarUrgenciaResponse" />
+  </message>
+  <message name="actualizarUrgencia">
+    <part name="parameters" element="tns:actualizarUrgencia" />
+  </message>
+  <message name="actualizarUrgenciaResponse">
+    <part name="parameters" element="tns:actualizarUrgenciaResponse" />
+  </message>
+  <portType name="UrgenciaWS">
+    <operation name="eliminarUrgencia">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaRequest" message="tns:eliminarUrgencia" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaResponse" message="tns:eliminarUrgenciaResponse" />
+    </operation>
+    <operation name="listarUrgencias">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasRequest" message="tns:listarUrgencias" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasResponse" message="tns:listarUrgenciasResponse" />
+    </operation>
+    <operation name="insertarUrgencia">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/insertarUrgenciaRequest" message="tns:insertarUrgencia" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/insertarUrgenciaResponse" message="tns:insertarUrgenciaResponse" />
+    </operation>
+    <operation name="actualizarUrgencia">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaRequest" message="tns:actualizarUrgencia" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaResponse" message="tns:actualizarUrgenciaResponse" />
+    </operation>
+  </portType>
+  <binding name="UrgenciaWSPortBinding" type="tns:UrgenciaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarUrgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarUrgencias">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarUrgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarUrgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="UrgenciaWS">
+    <port name="UrgenciaWSPort" binding="tns:UrgenciaWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/UrgenciaWS" />
+    </port>
+  </service>
+</definitions>

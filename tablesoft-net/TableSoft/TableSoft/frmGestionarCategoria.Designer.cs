@@ -32,8 +32,7 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDatosCategoria = new System.Windows.Forms.Label();
-            this.cboEquipo = new System.Windows.Forms.ComboBox();
-            this.lblEquipo = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblIDCategoria = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtIDCategoria = new System.Windows.Forms.TextBox();
@@ -42,6 +41,7 @@
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnTareas = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,25 +84,16 @@
             this.lblDatosCategoria.TabIndex = 0;
             this.lblDatosCategoria.Text = "Datos de la categoría";
             // 
-            // cboEquipo
+            // lblDescripcion
             // 
-            this.cboEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboEquipo.FormattingEnabled = true;
-            this.cboEquipo.Location = new System.Drawing.Point(170, 178);
-            this.cboEquipo.Name = "cboEquipo";
-            this.cboEquipo.Size = new System.Drawing.Size(204, 29);
-            this.cboEquipo.TabIndex = 2;
-            // 
-            // lblEquipo
-            // 
-            this.lblEquipo.AutoSize = true;
-            this.lblEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEquipo.Location = new System.Drawing.Point(95, 181);
-            this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(58, 21);
-            this.lblEquipo.TabIndex = 9;
-            this.lblEquipo.Text = "Equipo";
-            this.lblEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblDescripcion.Location = new System.Drawing.Point(62, 181);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(91, 21);
+            this.lblDescripcion.TabIndex = 9;
+            this.lblDescripcion.Text = "Descripción";
+            this.lblDescripcion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblIDCategoria
             // 
@@ -120,7 +111,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(170, 134);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(501, 28);
+            this.txtNombre.Size = new System.Drawing.Size(316, 28);
             this.txtNombre.TabIndex = 1;
             // 
             // txtIDCategoria
@@ -208,15 +199,23 @@
             this.btnTareas.UseVisualStyleBackColor = false;
             this.btnTareas.Click += new System.EventHandler(this.btnTareas_Click);
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(170, 178);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(501, 28);
+            this.txtDescripcion.TabIndex = 10;
+            // 
             // frmGestionarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 308);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnTareas);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.cboEquipo);
-            this.Controls.Add(this.lblEquipo);
+            this.Controls.Add(this.lblDescripcion);
             this.Controls.Add(this.lblIDCategoria);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.txtIDCategoria);
@@ -238,8 +237,7 @@
         #endregion
 
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.ComboBox cboEquipo;
-        private System.Windows.Forms.Label lblEquipo;
+        private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblIDCategoria;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtIDCategoria;
@@ -250,5 +248,6 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnTareas;
+        private System.Windows.Forms.TextBox txtDescripcion;
     }
 }

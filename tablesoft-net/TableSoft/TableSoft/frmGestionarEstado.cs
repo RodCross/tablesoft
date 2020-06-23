@@ -20,9 +20,12 @@ namespace TableSoft
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarEstado(int i)
+        public frmGestionarEstado(EstadoTicketWS.estadoTicket et)
         {
             InitializeComponent();
+            txtIDEstado.Text = et.estadoId.ToString();
+            txtNombre.Text = et.nombre;
+            txtDescripcion.Text = et.descripcion;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;

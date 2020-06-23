@@ -7,26 +7,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TableSoft.temp; // para clases temporales
 
 namespace TableSoft
 {
     public partial class frmListaTicketsEmpleado : Form
     {
-        BindingList<Ticket> tickets = new BindingList<Ticket>();
-        Ticket t1 = new Ticket(
-            19258321,
-            "Falla en las impresoras del Complejo de Innovación Académica",
-            "ROLDAN HUAYLLASCO, STEFANO",
-            new DateTime(2020, 06, 18, 16, 20, 40),
-            new DateTime(2020, 06, 20, 12, 51, 00),
-            "Abierto"
-        );
+        private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
+        private BindingList<TicketWS.ticket> tickets;
 
         public frmListaTicketsEmpleado()
         {
             InitializeComponent();
-            tickets.Add(t1);
+            tickets = new BindingList<TicketWS.ticket>(ticketDAO.listarTickets().ToArray());
             dgvHistorial.AutoGenerateColumns = false;
             dgvHistorial.DataSource = tickets;
         }

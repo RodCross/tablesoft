@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarBiblioteca" type="tns:actualizarBiblioteca" />
+  <xs:element name="actualizarBibliotecaResponse" type="tns:actualizarBibliotecaResponse" />
+  <xs:element name="eliminarBiblioteca" type="tns:eliminarBiblioteca" />
+  <xs:element name="eliminarBibliotecaResponse" type="tns:eliminarBibliotecaResponse" />
+  <xs:element name="insertarBiblioteca" type="tns:insertarBiblioteca" />
+  <xs:element name="insertarBibliotecaResponse" type="tns:insertarBibliotecaResponse" />
+  <xs:element name="listarBibliotecas" type="tns:listarBibliotecas" />
+  <xs:element name="listarBibliotecasResponse" type="tns:listarBibliotecasResponse" />
+  <xs:complexType name="eliminarBiblioteca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objBiblioteca" type="tns:biblioteca" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="biblioteca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="abreviatura" type="xs:string" />
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="bibliotecaId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarBibliotecaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarBibliotecas">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarBibliotecasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:biblioteca" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarBiblioteca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objBiblioteca" type="tns:biblioteca" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarBibliotecaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarBiblioteca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objBiblioteca" type="tns:biblioteca" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarBibliotecaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

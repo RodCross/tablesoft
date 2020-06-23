@@ -80,6 +80,7 @@
             this.dgvHistorial.Location = new System.Drawing.Point(35, 92);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.ReadOnly = true;
+            this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(994, 436);
             this.dgvHistorial.TabIndex = 0;
             // 
@@ -123,7 +124,7 @@
             // 
             // dataGridViewTextBoxColumn1
             // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ticketId";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle1;
@@ -134,8 +135,8 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Asunto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "asunto";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridViewTextBoxColumn2.HeaderText = "Asunto";
@@ -145,18 +146,18 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Apertura";
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "fechaEnvio";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha de apertura";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Fecha de envío";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.ReadOnly = true;
             this.dataGridViewTextBoxColumn3.Width = 175;
             // 
             // dataGridViewTextBoxColumn4
             // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cierre";
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "fechaCierre";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.dataGridViewTextBoxColumn4.DefaultCellStyle = dataGridViewCellStyle4;
@@ -167,7 +168,7 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "Estado";
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "estado";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.dataGridViewTextBoxColumn5.DefaultCellStyle = dataGridViewCellStyle5;

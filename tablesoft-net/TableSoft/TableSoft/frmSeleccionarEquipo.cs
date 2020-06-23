@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmSeleccionarEquipo : Form
     {
+        private EquipoWS.EquipoWSClient equipoDAO = new EquipoWS.EquipoWSClient();
+        private BindingList<EquipoWS.equipo> equipos;
+
         public frmSeleccionarEquipo()
         {
             InitializeComponent();
+            equipos = new BindingList<EquipoWS.equipo>(equipoDAO.listarEquipos().ToArray());
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = equipos;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +41,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarEquipo frm = new frmGestionarEquipo(1);
+            EquipoWS.equipo equipo = (EquipoWS.equipo)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarEquipo frm = new frmGestionarEquipo(equipo);
             frm.ShowDialog();
         }
     }

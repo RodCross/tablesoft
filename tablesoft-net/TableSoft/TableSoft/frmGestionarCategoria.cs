@@ -21,9 +21,12 @@ namespace TableSoft
             btnTareas.Visible = false;
         }
 
-        public frmGestionarCategoria(int i)
+        public frmGestionarCategoria(CategoriaWS.categoria cat)
         {
             InitializeComponent();
+            txtIDCategoria.Text = cat.categoriaId.ToString();
+            txtNombre.Text = cat.nombre;
+            txtDescripcion.Text = cat.descripcion;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnTareas.Visible = true;

@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="AgenteWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/AgenteWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="eliminarAgente">
+    <part name="parameters" element="tns:eliminarAgente" />
+  </message>
+  <message name="eliminarAgenteResponse">
+    <part name="parameters" element="tns:eliminarAgenteResponse" />
+  </message>
+  <message name="insertarAgente">
+    <part name="parameters" element="tns:insertarAgente" />
+  </message>
+  <message name="insertarAgenteResponse">
+    <part name="parameters" element="tns:insertarAgenteResponse" />
+  </message>
+  <message name="actualizarAgente">
+    <part name="parameters" element="tns:actualizarAgente" />
+  </message>
+  <message name="actualizarAgenteResponse">
+    <part name="parameters" element="tns:actualizarAgenteResponse" />
+  </message>
+  <message name="listarAgentes">
+    <part name="parameters" element="tns:listarAgentes" />
+  </message>
+  <message name="listarAgentesResponse">
+    <part name="parameters" element="tns:listarAgentesResponse" />
+  </message>
+  <message name="listarAgentesPorEquipo">
+    <part name="parameters" element="tns:listarAgentesPorEquipo" />
+  </message>
+  <message name="listarAgentesPorEquipoResponse">
+    <part name="parameters" element="tns:listarAgentesPorEquipoResponse" />
+  </message>
+  <message name="buscarAgentePorCodigo">
+    <part name="parameters" element="tns:buscarAgentePorCodigo" />
+  </message>
+  <message name="buscarAgentePorCodigoResponse">
+    <part name="parameters" element="tns:buscarAgentePorCodigoResponse" />
+  </message>
+  <portType name="AgenteWS">
+    <operation name="eliminarAgente">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteRequest" message="tns:eliminarAgente" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteResponse" message="tns:eliminarAgenteResponse" />
+    </operation>
+    <operation name="insertarAgente">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteRequest" message="tns:insertarAgente" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteResponse" message="tns:insertarAgenteResponse" />
+    </operation>
+    <operation name="actualizarAgente">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteRequest" message="tns:actualizarAgente" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteResponse" message="tns:actualizarAgenteResponse" />
+    </operation>
+    <operation name="listarAgentes">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesRequest" message="tns:listarAgentes" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesResponse" message="tns:listarAgentesResponse" />
+    </operation>
+    <operation name="listarAgentesPorEquipo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorEquipoRequest" message="tns:listarAgentesPorEquipo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorEquipoResponse" message="tns:listarAgentesPorEquipoResponse" />
+    </operation>
+    <operation name="buscarAgentePorCodigo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/buscarAgentePorCodigoRequest" message="tns:buscarAgentePorCodigo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/buscarAgentePorCodigoResponse" message="tns:buscarAgentePorCodigoResponse" />
+    </operation>
+  </portType>
+  <binding name="AgenteWSPortBinding" type="tns:AgenteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarAgente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarAgente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarAgente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAgentes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAgentesPorEquipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarAgentePorCodigo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AgenteWS">
+    <port name="AgenteWSPort" binding="tns:AgenteWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/AgenteWS" />
+    </port>
+  </service>
+</definitions>

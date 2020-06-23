@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarActivoFijo" type="tns:actualizarActivoFijo" />
+  <xs:element name="actualizarActivoFijoResponse" type="tns:actualizarActivoFijoResponse" />
+  <xs:element name="eliminarActivoFijo" type="tns:eliminarActivoFijo" />
+  <xs:element name="eliminarActivoFijoResponse" type="tns:eliminarActivoFijoResponse" />
+  <xs:element name="insertarActivoFijo" type="tns:insertarActivoFijo" />
+  <xs:element name="insertarActivoFijoResponse" type="tns:insertarActivoFijoResponse" />
+  <xs:element name="listarActivosFijos" type="tns:listarActivosFijos" />
+  <xs:element name="listarActivosFijosResponse" type="tns:listarActivosFijosResponse" />
+  <xs:complexType name="eliminarActivoFijo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objActivoFijo" type="tns:activoFijo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="activoFijo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activoFijoId" type="xs:int" />
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="marca" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarActivoFijoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarActivosFijos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarActivosFijosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:activoFijo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarActivoFijo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objActivoFijo" type="tns:activoFijo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarActivoFijoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarActivoFijo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objActivoFijo" type="tns:activoFijo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarActivoFijoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -20,9 +20,12 @@ namespace TableSoft
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarEquipo(int i)
+        public frmGestionarEquipo(EquipoWS.equipo equipo)
         {
             InitializeComponent();
+            txtIDEquipo.Text = equipo.equipoId.ToString();
+            txtNombre.Text = equipo.nombre;
+            txtDescripcion.Text = equipo.descripcion;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;

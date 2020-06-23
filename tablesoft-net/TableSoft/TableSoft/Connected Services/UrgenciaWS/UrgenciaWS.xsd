@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarUrgencia" type="tns:actualizarUrgencia" />
+  <xs:element name="actualizarUrgenciaResponse" type="tns:actualizarUrgenciaResponse" />
+  <xs:element name="eliminarUrgencia" type="tns:eliminarUrgencia" />
+  <xs:element name="eliminarUrgenciaResponse" type="tns:eliminarUrgenciaResponse" />
+  <xs:element name="insertarUrgencia" type="tns:insertarUrgencia" />
+  <xs:element name="insertarUrgenciaResponse" type="tns:insertarUrgenciaResponse" />
+  <xs:element name="listarUrgencias" type="tns:listarUrgencias" />
+  <xs:element name="listarUrgenciasResponse" type="tns:listarUrgenciasResponse" />
+  <xs:complexType name="listarUrgencias">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarUrgenciasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:urgencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="urgencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="plazoMaximo" type="xs:int" />
+      <xs:element name="urgenciaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarUrgencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objUrgencia" type="tns:urgencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarUrgenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUrgencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objUrgencia" type="tns:urgencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUrgenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarUrgencia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objUrgencia" type="tns:urgencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarUrgenciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

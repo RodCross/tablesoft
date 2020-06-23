@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmSeleccionarProveedor : Form
     {
+        private ProveedorWS.ProveedorWSClient proveedorDAO = new ProveedorWS.ProveedorWSClient();
+        private BindingList<ProveedorWS.proveedor> proveedores;
+
         public frmSeleccionarProveedor()
         {
             InitializeComponent();
+            proveedores = new BindingList<ProveedorWS.proveedor>(proveedorDAO.listarProveedores().ToArray());
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = proveedores;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +41,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarProveedor frm = new frmGestionarProveedor(1);
+            ProveedorWS.proveedor prov = (ProveedorWS.proveedor)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarProveedor frm = new frmGestionarProveedor(prov);
             frm.ShowDialog();
         }
     }

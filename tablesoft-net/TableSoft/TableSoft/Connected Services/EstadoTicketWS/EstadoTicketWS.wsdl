@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="EstadoTicketWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/EstadoTicketWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="insertarEstadoTicket">
+    <part name="parameters" element="tns:insertarEstadoTicket" />
+  </message>
+  <message name="insertarEstadoTicketResponse">
+    <part name="parameters" element="tns:insertarEstadoTicketResponse" />
+  </message>
+  <message name="eliminarEstadoTicket">
+    <part name="parameters" element="tns:eliminarEstadoTicket" />
+  </message>
+  <message name="eliminarEstadoTicketResponse">
+    <part name="parameters" element="tns:eliminarEstadoTicketResponse" />
+  </message>
+  <message name="listarEstadosTicket">
+    <part name="parameters" element="tns:listarEstadosTicket" />
+  </message>
+  <message name="listarEstadosTicketResponse">
+    <part name="parameters" element="tns:listarEstadosTicketResponse" />
+  </message>
+  <message name="actualizarEstadoTicket">
+    <part name="parameters" element="tns:actualizarEstadoTicket" />
+  </message>
+  <message name="actualizarEstadoTicketResponse">
+    <part name="parameters" element="tns:actualizarEstadoTicketResponse" />
+  </message>
+  <portType name="EstadoTicketWS">
+    <operation name="insertarEstadoTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/insertarEstadoTicketRequest" message="tns:insertarEstadoTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/insertarEstadoTicketResponse" message="tns:insertarEstadoTicketResponse" />
+    </operation>
+    <operation name="eliminarEstadoTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketRequest" message="tns:eliminarEstadoTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketResponse" message="tns:eliminarEstadoTicketResponse" />
+    </operation>
+    <operation name="listarEstadosTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest" message="tns:listarEstadosTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse" message="tns:listarEstadosTicketResponse" />
+    </operation>
+    <operation name="actualizarEstadoTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketRequest" message="tns:actualizarEstadoTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketResponse" message="tns:actualizarEstadoTicketResponse" />
+    </operation>
+  </portType>
+  <binding name="EstadoTicketWSPortBinding" type="tns:EstadoTicketWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarEstadoTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEstadoTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEstadosTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarEstadoTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EstadoTicketWS">
+    <port name="EstadoTicketWSPort" binding="tns:EstadoTicketWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/EstadoTicketWS" />
+    </port>
+  </service>
+</definitions>

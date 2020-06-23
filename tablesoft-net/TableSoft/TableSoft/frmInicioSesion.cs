@@ -7,40 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TableSoft.temp; // para clases temporales
-
-// PARA ACCEDER RAPIDAMENTE:
-// EMPLEADO      usuario y pass: e
-// AGENTE        usuario y pass: a
-// SUPERVISOR    usuario y pass: s
-// ADMIN         usuario y pass: admin
+using TableSoft.CategoriaWS;
 
 namespace TableSoft
 {
     public partial class frmInicioSesion : Form
     {
-        BindingList<Usuario> usuarios = new BindingList<Usuario>();
-        Usuario user1 = new Usuario("a20167474@pucp.edu.pe", "abcd1234", "Empleado");
-        Usuario user2 = new Usuario("f.verastegui@pucp.edu.pe", "abcd1234", "Agente");
-        Usuario user3 = new Usuario("cacs@pucp.edu.pe", "abcd1234", "Supervisor");
-        Usuario user4 = new Usuario("ms404@pucp.edu.pe", "abcd1234", "Administrador");
-        Usuario user5 = new Usuario("e", "e", "Empleado");
-        Usuario user6 = new Usuario("a", "a", "Agente");
-        Usuario user7 = new Usuario("s", "s", "Supervisor");
-        Usuario user8 = new Usuario("admin", "admin", "Administrador");
+        private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
+        private AgenteWS.AgenteWSClient agenteDAO = new AgenteWS.AgenteWSClient();
+        private EmpleadoWS.EmpleadoWSClient empleadoDAO = new EmpleadoWS.EmpleadoWSClient();
+        public static AgenteWS.agente agenteLogueado;
+        public static EmpleadoWS.empleado empleadoLogueado;
+
 
         public frmInicioSesion()
         {
             InitializeComponent();
             LimpiarCampos();
-            usuarios.Add(user1);
-            usuarios.Add(user2);
-            usuarios.Add(user3);
-            usuarios.Add(user4);
-            usuarios.Add(user5);
-            usuarios.Add(user6);
-            usuarios.Add(user7);
-            usuarios.Add(user8);
         }
 
         // Inicios de sesion
@@ -155,36 +138,35 @@ namespace TableSoft
 
             // Iniciar sesion
             if (txtEmail.Text != "" && txtPassword.Text != "")
-            {
-                bool login = false;
+            { 
+                PersonaWS.persona user = personaDAO.verificarPersona(txtEmail.Text, txtPassword.Text);
 
-                foreach (Usuario usuario in usuarios)
+                if (user != null)
                 {
-                    if (txtEmail.Text == usuario.Email && txtPassword.Text == usuario.Password)
+                    // Llevar a inicio en funcion del rol
+                    if (user.tipo == 'E')
                     {
-                        // Llevar a inicio en funcion del rol
-                        if (usuario.Rol == "Empleado")
-                        {
-                            AbrirInicioEmpleado();
-                        }
-                        else if (usuario.Rol == "Agente")
+                        empleadoLogueado = empleadoDAO.buscarEmpleadoPorCodigo(user.codigo);
+                        AbrirInicioEmpleado();
+                    }
+                    else if (user.tipo == 'A')
+                    {
+                        agenteLogueado = agenteDAO.buscarAgentePorCodigo(user.codigo);
+                        if (agenteLogueado.rol.nombre.Contains("AGENTE"))
                         {
                             AbrirInicioAgente();
                         }
-                        else if (usuario.Rol == "Supervisor")
+                        else if (agenteLogueado.rol.nombre.Contains("SUPERVISOR"))
                         {
                             AbrirInicioSupervisor();
                         }
-                        else if (usuario.Rol == "Administrador")
+                        else if (agenteLogueado.rol.nombre.Contains("ADMIN"))
                         {
                             AbrirInicioAdmin();
                         }
-
-                        login = true;
-                        break;
                     }
                 }
-                if (!login)
+                else
                 {
                     lblErrEmail.Text = "El email o la contraseña son incorrectos.";
                     lblErrPassword.Text = "";
@@ -221,7 +203,7 @@ namespace TableSoft
         }
         private void picExit_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); 
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

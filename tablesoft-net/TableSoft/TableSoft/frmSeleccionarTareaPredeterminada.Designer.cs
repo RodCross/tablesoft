@@ -55,6 +55,8 @@
             this.dgvLista.Location = new System.Drawing.Point(35, 92);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
+            this.dgvLista.RowHeadersVisible = false;
+            this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(494, 332);
             this.dgvLista.TabIndex = 0;
             // 

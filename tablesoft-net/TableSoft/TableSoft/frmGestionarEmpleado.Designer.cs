@@ -197,7 +197,7 @@
             this.cboBiblioteca.FormattingEnabled = true;
             this.cboBiblioteca.Location = new System.Drawing.Point(170, 307);
             this.cboBiblioteca.Name = "cboBiblioteca";
-            this.cboBiblioteca.Size = new System.Drawing.Size(305, 29);
+            this.cboBiblioteca.Size = new System.Drawing.Size(501, 29);
             this.cboBiblioteca.TabIndex = 4;
             // 
             // lblBiblioteca

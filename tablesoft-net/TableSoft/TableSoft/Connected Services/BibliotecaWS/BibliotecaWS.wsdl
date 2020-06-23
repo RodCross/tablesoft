@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="BibliotecaWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/BibliotecaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="actualizarBiblioteca">
+    <part name="parameters" element="tns:actualizarBiblioteca" />
+  </message>
+  <message name="actualizarBibliotecaResponse">
+    <part name="parameters" element="tns:actualizarBibliotecaResponse" />
+  </message>
+  <message name="insertarBiblioteca">
+    <part name="parameters" element="tns:insertarBiblioteca" />
+  </message>
+  <message name="insertarBibliotecaResponse">
+    <part name="parameters" element="tns:insertarBibliotecaResponse" />
+  </message>
+  <message name="listarBibliotecas">
+    <part name="parameters" element="tns:listarBibliotecas" />
+  </message>
+  <message name="listarBibliotecasResponse">
+    <part name="parameters" element="tns:listarBibliotecasResponse" />
+  </message>
+  <message name="eliminarBiblioteca">
+    <part name="parameters" element="tns:eliminarBiblioteca" />
+  </message>
+  <message name="eliminarBibliotecaResponse">
+    <part name="parameters" element="tns:eliminarBibliotecaResponse" />
+  </message>
+  <portType name="BibliotecaWS">
+    <operation name="actualizarBiblioteca">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/actualizarBibliotecaRequest" message="tns:actualizarBiblioteca" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/actualizarBibliotecaResponse" message="tns:actualizarBibliotecaResponse" />
+    </operation>
+    <operation name="insertarBiblioteca">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/insertarBibliotecaRequest" message="tns:insertarBiblioteca" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/insertarBibliotecaResponse" message="tns:insertarBibliotecaResponse" />
+    </operation>
+    <operation name="listarBibliotecas">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/listarBibliotecasRequest" message="tns:listarBibliotecas" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/listarBibliotecasResponse" message="tns:listarBibliotecasResponse" />
+    </operation>
+    <operation name="eliminarBiblioteca">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaRequest" message="tns:eliminarBiblioteca" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaResponse" message="tns:eliminarBibliotecaResponse" />
+    </operation>
+  </portType>
+  <binding name="BibliotecaWSPortBinding" type="tns:BibliotecaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="actualizarBiblioteca">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarBiblioteca">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarBibliotecas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarBiblioteca">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="BibliotecaWS">
+    <port name="BibliotecaWSPort" binding="tns:BibliotecaWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/BibliotecaWS" />
+    </port>
+  </service>
+</definitions>

@@ -29,15 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionarCategoria));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblListaCategorias = new System.Windows.Forms.Label();
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
@@ -73,30 +76,15 @@
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
-            this.Categoria});
+            this.Categoria,
+            this.Descripcion});
             this.dgvLista.Location = new System.Drawing.Point(35, 92);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
+            this.dgvLista.RowHeadersVisible = false;
+            this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(494, 332);
             this.dgvLista.TabIndex = 0;
-            // 
-            // ID
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoría";
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 400;
             // 
             // btnNuevo
             // 
@@ -146,6 +134,40 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "categoriaId";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ID.FillWeight = 50F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // Categoria
+            // 
+            this.Categoria.DataPropertyName = "nombre";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Categoria.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Categoria.HeaderText = "Nombre";
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 215;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 225;
+            // 
             // frmSeleccionarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,5 +199,6 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
     }
 }

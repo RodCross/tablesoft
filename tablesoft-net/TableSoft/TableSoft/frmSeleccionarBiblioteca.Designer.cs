@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionarBiblioteca));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblListaBibliotecas = new System.Windows.Forms.Label();
             this.dgvGestionar = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Abreviatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnVolver = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Abreviatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).BeginInit();
             this.SuspendLayout();
@@ -79,32 +81,10 @@
             this.dgvGestionar.Location = new System.Drawing.Point(35, 92);
             this.dgvGestionar.Name = "dgvGestionar";
             this.dgvGestionar.ReadOnly = true;
+            this.dgvGestionar.RowHeadersVisible = false;
+            this.dgvGestionar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvGestionar.Size = new System.Drawing.Size(494, 332);
             this.dgvGestionar.TabIndex = 0;
-            // 
-            // ID
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 300;
-            // 
-            // Abreviatura
-            // 
-            this.Abreviatura.HeaderText = "Abreviatura";
-            this.Abreviatura.Name = "Abreviatura";
-            this.Abreviatura.ReadOnly = true;
             // 
             // btnNuevo
             // 
@@ -154,6 +134,40 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "bibliotecaId";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ID.FillWeight = 50F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 50;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 350;
+            // 
+            // Abreviatura
+            // 
+            this.Abreviatura.DataPropertyName = "abreviatura";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Abreviatura.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Abreviatura.HeaderText = "Abreviatura";
+            this.Abreviatura.Name = "Abreviatura";
+            this.Abreviatura.ReadOnly = true;
+            this.Abreviatura.Width = 90;
+            // 
             // frmSeleccionarBiblioteca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -180,11 +194,11 @@
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblListaBibliotecas;
         private System.Windows.Forms.DataGridView dgvGestionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Abreviatura;
         private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Abreviatura;
     }
 }

@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmSeleccionarBiblioteca : Form
     {
+        private BibliotecaWS.BibliotecaWSClient bibliotecaDAO = new BibliotecaWS.BibliotecaWSClient();
+        private BindingList<BibliotecaWS.biblioteca> bibliotecas;
+
         public frmSeleccionarBiblioteca()
         {
             InitializeComponent();
+            bibliotecas = new BindingList<BibliotecaWS.biblioteca>(bibliotecaDAO.listarBibliotecas().ToArray());
+            dgvGestionar.AutoGenerateColumns = false;
+            dgvGestionar.DataSource = bibliotecas;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -30,7 +36,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarBiblioteca frm = new frmGestionarBiblioteca(1);
+            BibliotecaWS.biblioteca bibl = (BibliotecaWS.biblioteca)dgvGestionar.CurrentRow.DataBoundItem;
+            frmGestionarBiblioteca frm = new frmGestionarBiblioteca(bibl);
             frm.ShowDialog();
         }
 

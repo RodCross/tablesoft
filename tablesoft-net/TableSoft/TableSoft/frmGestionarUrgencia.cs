@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TableSoft.temp;
 
 namespace TableSoft
 {
@@ -21,20 +20,12 @@ namespace TableSoft
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarUrgencia(Urgencia urg)
+        public frmGestionarUrgencia(UrgenciaWS.urgencia urg)
         {
             InitializeComponent();
-            txtIDUrgencia.Text = urg.UrgenciaId.ToString();
-            txtNombre.Text = urg.Nombre;
-            txtPlazoMaximo.Text = urg.PlazoMaximo.ToString();
-            btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
-            btnGuardar.Visible = false;
-        }
-
-        public frmGestionarUrgencia(int i)
-        {
-            InitializeComponent();
+            txtIDUrgencia.Text = urg.urgenciaId.ToString();
+            txtNombre.Text = urg.nombre;
+            txtPlazoMaximo.Text = urg.plazoMaximo.ToString();
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;

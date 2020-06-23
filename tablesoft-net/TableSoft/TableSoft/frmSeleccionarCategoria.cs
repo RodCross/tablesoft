@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmSeleccionarCategoria : Form
     {
+        private CategoriaWS.CategoriaWSClient categoriaDAO = new CategoriaWS.CategoriaWSClient();
+        private BindingList<CategoriaWS.categoria> categorias;
+
         public frmSeleccionarCategoria()
         {
             InitializeComponent();
+            categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = categorias;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +41,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarCategoria frm = new frmGestionarCategoria(1);
+            CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarCategoria frm = new frmGestionarCategoria(cat);
             frm.ShowDialog();
         }
     }

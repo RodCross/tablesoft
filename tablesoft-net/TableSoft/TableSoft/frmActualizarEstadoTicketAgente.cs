@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmActualizarEstadoTicketAgente : Form
     {
+        private EstadoTicketWS.EstadoTicketWSClient estadoDAO = new EstadoTicketWS.EstadoTicketWSClient();
+        private BindingList<EstadoTicketWS.estadoTicket> estados;
+
         public frmActualizarEstadoTicketAgente()
         {
             InitializeComponent();
+            estados = new BindingList<EstadoTicketWS.estadoTicket>(estadoDAO.listarEstadosTicket().ToArray());
+            dgvActualizar.AutoGenerateColumns = false;
+            dgvActualizar.DataSource = estados;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

@@ -94,7 +94,7 @@
             this.btnGestionarCategorias.Name = "btnGestionarCategorias";
             this.btnGestionarCategorias.Size = new System.Drawing.Size(231, 38);
             this.btnGestionarCategorias.TabIndex = 0;
-            this.btnGestionarCategorias.Text = "Gestionar categorias";
+            this.btnGestionarCategorias.Text = "Gestionar categorías";
             this.btnGestionarCategorias.UseVisualStyleBackColor = false;
             this.btnGestionarCategorias.Click += new System.EventHandler(this.btnGestionarCategorias_Click);
             // 

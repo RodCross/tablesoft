@@ -12,9 +12,15 @@ namespace TableSoft
 {
     public partial class frmSeleccionarEmpleado : Form
     {
+        private EmpleadoWS.EmpleadoWSClient empleadoDAO = new EmpleadoWS.EmpleadoWSClient();
+        private BindingList<EmpleadoWS.empleado> empleados;
+
         public frmSeleccionarEmpleado()
         {
             InitializeComponent();
+            empleados = new BindingList<EmpleadoWS.empleado>(empleadoDAO.listarEmpleados().ToArray());
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = empleados;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +41,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarEmpleado frm = new frmGestionarEmpleado(1);
+            EmpleadoWS.empleado emp = (EmpleadoWS.empleado)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarEmpleado frm = new frmGestionarEmpleado(emp);
             frm.ShowDialog();
         }
     }

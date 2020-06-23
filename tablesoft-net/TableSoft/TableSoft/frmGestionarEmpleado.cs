@@ -12,20 +12,38 @@ namespace TableSoft
 {
     public partial class frmGestionarEmpleado : Form
     {
+        private BibliotecaWS.BibliotecaWSClient bibliotecaDAO = new BibliotecaWS.BibliotecaWSClient();
+        private BindingList<BibliotecaWS.biblioteca> bibliotecas;
         public frmGestionarEmpleado()
         {
             InitializeComponent();
+            LlenarCboBiblioteca();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
             btnEliminar.Visible = false;
         }
 
-        public frmGestionarEmpleado(int i)
+        public frmGestionarEmpleado(EmpleadoWS.empleado emp)
         {
             InitializeComponent();
+            LlenarCboBiblioteca();
+            txtIDEmpleado.Text = emp.empleadoId.ToString();
+            txtNombre.Text = emp.nombre;
+            txtCodigo.Text = emp.codigo;
+            txtDNI.Text = emp.dni;
+            cboBiblioteca.SelectedValue = emp.biblioteca.bibliotecaId;
+            txtEmailPersonal.Text = emp.personaEmail;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;
+        }
+
+        private void LlenarCboBiblioteca()
+        {
+            cboBiblioteca.DataSource = bibliotecaDAO.listarBibliotecas();
+            cboBiblioteca.DisplayMember = "nombre";
+            cboBiblioteca.ValueMember = "bibliotecaId";
+            cboBiblioteca.SelectedIndex = -1;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

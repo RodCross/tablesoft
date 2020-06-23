@@ -312,4 +312,55 @@ public class AgenteMySQL implements AgenteDAO{
         }
         return agente;
     }
+
+    @Override
+    public ArrayList<Agente> listarxNombre(String nombre) {
+        ArrayList<Agente> agentes = new ArrayList<>();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL listar_agente_equipo(?)}");
+            cs.setString("_NOMBRE_AGENTE", nombre);
+            
+            ResultSet rs = cs.executeQuery();
+            
+            
+            while(rs.next()){
+                Agente agente = new Agente();
+                
+                agente.setAgenteId(rs.getInt("agente_id"));
+                agente.setCodigo(rs.getString("codigo"));
+                agente.setDni(rs.getString("dni"));
+                agente.setPersonaEmail(rs.getString("persona_email"));
+                agente.setAgenteEmail(rs.getString("agente_email"));
+                agente.setActivo(rs.getBoolean("activo"));
+                agente.setNombre(rs.getString("nombre"));
+                agente.setApellidoPaterno(rs.getString("apellido_paterno"));
+                agente.setApellidoMaterno(rs.getString("apellido_materno"));
+                agente.setDireccion(rs.getString("direccion"));
+                agente.setTelefono(rs.getString("telefono"));
+                agente.setTipo(rs.getString("tipo").charAt(0));
+                
+                agente.getEquipo().setEquipoId(rs.getInt("equipo_id"));
+                agente.getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
+                agente.getEquipo().setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                agente.getEquipo().setNombre(rs.getString("equipo_nombre"));
+                agente.getEquipo().setActivo(rs.getBoolean("equipo_activo"));
+                
+                agente.getRol().setRolId(rs.getInt("rol_id"));
+                agente.getRol().setNombre(rs.getString("rol_nombre"));
+                agente.getRol().setDescripcion(rs.getString("rol_descripcion"));
+                agente.getRol().setActivo(rs.getBoolean("rol_activo"));
+                
+                agentes.add(agente);
+            }
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        return agentes;
+    }
 }

@@ -72,5 +72,9 @@ public class EmpleadoWS {
     public Empleado buscarEmpleadoPorCodigo(@WebParam(name = "codigo") String codigo){
         return daoEmpleado.buscarxCodigo(codigo);
     }
-   
+
+        @WebMethod(operationName = "listarEmpleadosPorNombre")
+    public ArrayList<Empleado> listarEmpleadosPorNombre(@WebParam(name = "nombre") String nombre){
+        return daoEmpleado.listarxNombre(nombre);
+    }
 }

@@ -17,6 +17,7 @@ public interface AgenteDAO {
     int eliminar(Agente agente);                        // Cambia a inactivo                         
     ArrayList<Agente> listar();                         // Lista todos los agentes solo sin su lista de tickets
     ArrayList<Agente> listarxEquipo(Equipo equipo);     // Lista solo los agentes de ese equipo
+    ArrayList<Agente> listarxNombre(String nombre); 
     Agente buscar(int agenteId);                        // Devuelve un agente como en listar
     Agente buscarxCodigo(String codigo);
 }

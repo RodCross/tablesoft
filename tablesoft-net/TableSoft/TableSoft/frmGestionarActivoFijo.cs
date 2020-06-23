@@ -28,7 +28,7 @@ namespace TableSoft
             activoFijo = activo;
             InitializeComponent();
             txtIDActivoFijo.Text = activoFijo.activoFijoId.ToString();
-            txtCodigo.Text = activoFijo.nombre;
+            txtCodigo.Text = activoFijo.codigo;
             txtMarca.Text = activoFijo.marca;
             txtTipo.Text = activoFijo.tipo;
             txtNombre.Text = activoFijo.nombre;

@@ -12,9 +12,14 @@ namespace TableSoft
 {
     public partial class frmSeleccionarActivoFijo : Form
     {
+        private ActivoFijoWS.ActivoFijoWSClient activoFijoDAO = new ActivoFijoWS.ActivoFijoWSClient();
+        private BindingList<ActivoFijoWS.activoFijo> activosFijos;
         public frmSeleccionarActivoFijo()
         {
             InitializeComponent();
+            activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = activosFijos;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -30,13 +35,22 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarActivoFijo frm = new frmGestionarActivoFijo();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
+                dgvLista.DataSource = activosFijos;
+            }
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            frmGestionarActivoFijo frm = new frmGestionarActivoFijo();
-            frm.ShowDialog();
+            ActivoFijoWS.activoFijo activo = (ActivoFijoWS.activoFijo)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarActivoFijo frm = new frmGestionarActivoFijo(activo);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
+                dgvLista.DataSource = activosFijos;
+            }
         }
     }
 }

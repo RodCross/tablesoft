@@ -12,8 +12,13 @@ namespace TableSoft
 {
     public partial class frmSeleccionarTareaPredeterminada : Form
     {
-        public frmSeleccionarTareaPredeterminada()
+        private CategoriaWS.categoria categoria;
+        private TareaPredeterminadaWS.TareaPredeterminadaWSClient tareaPredeterminadaDAO = new TareaPredeterminadaWS.TareaPredeterminadaWSClient();
+        private BindingList<TareaPredeterminadaWS.tareaPredeterminada> tareasPredeterminadas;
+        public frmSeleccionarTareaPredeterminada(CategoriaWS.categoria cat)
         {
+            categoria = cat;
+            //tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
             InitializeComponent();
         }
 

@@ -103,7 +103,7 @@ namespace TableSoft
         {
             if(categoria.categoriaId > 0)
             {
-                frmSeleccionarTareaPredeterminada frm = new frmSeleccionarTareaPredeterminada();
+                frmSeleccionarTareaPredeterminada frm = new frmSeleccionarTareaPredeterminada(categoria);
                 frm.ShowDialog();
             }
             else
@@ -111,7 +111,8 @@ namespace TableSoft
                 MessageBox.Show(
                     "Esta categoria no ha sido registrada.",
                     "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning
+                );
             }
             
         }

@@ -27,7 +27,15 @@ namespace TableSoft
             categoria.nombre = cat.nombre;
             categoria.activo = cat.activo;
 
-            tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria).ToArray());
+            if(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria) == null)
+            {
+                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+            }
+            else
+            {
+                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
+
+            }
 
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = tareasPredeterminadas;

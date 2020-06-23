@@ -47,5 +47,10 @@ namespace TableSoft
             frmGestionarAgente frm = new frmGestionarAgente(age);
             frm.ShowDialog();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

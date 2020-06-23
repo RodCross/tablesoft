@@ -227,6 +227,7 @@ public class TicketMySQL implements TicketDAO{
             CallableStatement cs = con.prepareCall("{CALL listar_ticket()}");
             ResultSet rs = cs.executeQuery();            
             
+            
             while(rs.next()) {
                 
                 Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");
@@ -288,10 +289,12 @@ public class TicketMySQL implements TicketDAO{
 
                 tickets.add(ticket);
             }
+            rs.close();
 
+            
             for(Ticket tick : tickets){
                 cs = con.prepareCall("{CALL buscar_empleado(?)}");
-                cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
+                System.out.println(tick.getEmpleado().getEmpleadoId());
                 rs = cs.executeQuery();
                 while(rs.next()){
                     tick.getEmpleado().setEmpleadoId(rs.getInt("empleado_id"));
@@ -311,6 +314,7 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
                     tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
                 }
+                rs.close();
 
                 int agenteId = tick.getAgente().getAgenteId();
                 if(agenteId != 0){

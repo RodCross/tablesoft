@@ -266,7 +266,7 @@ public class Ticket {
     
     public String mostrarDatos() {
         return this.getTicketId() + " - " + this.getEstado().getNombre() + 
-                " - Empleado: " + this.getEmpleado().getEmpleadoId() + " - Agente: " + this.getAgente().getAgenteId() +
+                " - Empleado: " + this.getEmpleado().getEmpleadoId() + " "+ this.getEmpleado().getNombre() + " - Agente: " + this.getAgente().getAgenteId() +
                 " - " + this.getBiblioteca().getAbreviatura() + " - " +
                 this.getUrgencia().getNombre() + " - " + this.getCategoria().getNombre() + 
                 " - Fecha envio: " + this.getFechaEnvio();

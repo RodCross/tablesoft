@@ -340,12 +340,19 @@ public class Principal {
         // Pruebas individuales
         
         TareaPredeterminada tareaPred1 = new TareaPredeterminada();
-        tareaPred1.setTareaPredeterminadaId(5);
-        tareaPred1.setDescripcion("Prueba de actualizacion");
+        tareaPred1.setTareaPredeterminadaId(7);
+        tareaPred1.setDescripcion("Segunda prueba de actualizacion desde el Java");
         
-        int i = tareaPredeterminadaDao.eliminar(tareaPred1);
+        int i = tareaPredeterminadaDao.actualizar(tareaPred1);
         
         System.out.println(i);
+        
+//        // Listamos los tickets
+//        ArrayList<Ticket>tickets = ticketDao.listar();
+//        System.out.println("\nTickets\n");
+//        for (Ticket t : tickets) {
+//            System.out.println(t.mostrarDatos());
+//        }
 
 
         /* Los metodos para eliminar en las clases con campo activo los ponen en 0

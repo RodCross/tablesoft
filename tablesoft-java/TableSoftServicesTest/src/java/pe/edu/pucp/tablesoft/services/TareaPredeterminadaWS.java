@@ -61,7 +61,7 @@ public class TareaPredeterminadaWS {
         return i;
     }
     
-    @WebMethod(operationName = "listarEstadosTicket")
+    @WebMethod(operationName = "listarTareasPredeterminadasPorCategoria")
     public ArrayList<TareaPredeterminada> listarTareasPredeterminadasPorCategoria(@WebParam(name = "objCategoria") Categoria categoria){
         return daoTareaPredeterminada.listarxCategoria(categoria);
     }

@@ -7,14 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
     public partial class frmSeleccionarAgente : Form
     {
+        private AgenteWS.AgenteWSClient agenteDAO = new AgenteWS.AgenteWSClient();
+        private BindingList<AgenteWS.agente> agentes;
+
         public frmSeleccionarAgente()
         {
+            
             InitializeComponent();
+            agentes = new BindingList<AgenteWS.agente>(agenteDAO.listarAgentes().ToArray());
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = agentes;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -35,7 +43,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarAgente frm = new frmGestionarAgente(1);
+            AgenteWS.agente age = (AgenteWS.agente)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarAgente frm = new frmGestionarAgente(age);
             frm.ShowDialog();
         }
     }

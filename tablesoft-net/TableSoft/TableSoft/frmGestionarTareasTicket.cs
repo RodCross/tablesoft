@@ -12,8 +12,12 @@ namespace TableSoft
 {
     public partial class frmGestionarTareasTicket : Form
     {
+        private TareaWS.TareaWSClient tareaDAO = new TareaWS.TareaWSClient();
+        private TareaWS.tarea tarea;
+
         public frmGestionarTareasTicket()
         {
+            tarea = new TareaWS.tarea();
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
@@ -38,12 +42,26 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            // Validaciones
+            if(txtDescripcion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la descripcion.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+
+            tarea.descripcion = txtDescripcion.Text;
+
             MessageBox.Show(
                 "Se ha guardado el registro.",
                 "Guardado exitoso",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
             );
-            this.Close();
+            txtDescripcion.Text = tarea.tareaId.ToString();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

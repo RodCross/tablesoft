@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="09692e3e-a3ac-4caf-b6d0-8b02354731a2" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="45cadc18-edde-4bb6-aa6b-2788a549d1d8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +22,8 @@
     <MetadataSource Address="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="TareaPredeterminadaWS.wsdl" MetadataType="Wsdl" ID="68651180-01d9-4fb6-a300-0f1e95ee40bc" SourceId="1" SourceUrl="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?WSDL" />
-    <MetadataFile FileName="TareaPredeterminadaWS.xsd" MetadataType="Schema" ID="f99c0ecb-dafb-4654-a05b-479e64516e9d" SourceId="1" SourceUrl="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?xsd=1" />
+    <MetadataFile FileName="TareaPredeterminadaWS.wsdl" MetadataType="Wsdl" ID="64b7ee4a-db4a-4bb9-afe8-2504c8ab4460" SourceId="1" SourceUrl="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?WSDL" />
+    <MetadataFile FileName="TareaPredeterminadaWS.xsd" MetadataType="Schema" ID="ea301a1b-3a54-47b4-a682-d326c25213de" SourceId="1" SourceUrl="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?xsd=1" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

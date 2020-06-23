@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="listarEstadosTicket">
-    <part name="parameters" element="tns:listarEstadosTicket" />
+  <message name="listarTareasPredeterminadasPorCategoria">
+    <part name="parameters" element="tns:listarTareasPredeterminadasPorCategoria" />
   </message>
-  <message name="listarEstadosTicketResponse">
-    <part name="parameters" element="tns:listarEstadosTicketResponse" />
+  <message name="listarTareasPredeterminadasPorCategoriaResponse">
+    <part name="parameters" element="tns:listarTareasPredeterminadasPorCategoriaResponse" />
   </message>
   <message name="actualizarTareaPredeterminada">
     <part name="parameters" element="tns:actualizarTareaPredeterminada" />
@@ -30,9 +30,9 @@
     <part name="parameters" element="tns:eliminarTareaPredeterminadaResponse" />
   </message>
   <portType name="TareaPredeterminadaWS">
-    <operation name="listarEstadosTicket">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketRequest" message="tns:listarEstadosTicket" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketResponse" message="tns:listarEstadosTicketResponse" />
+    <operation name="listarTareasPredeterminadasPorCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaRequest" message="tns:listarTareasPredeterminadasPorCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaResponse" message="tns:listarTareasPredeterminadasPorCategoriaResponse" />
     </operation>
     <operation name="actualizarTareaPredeterminada">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaRequest" message="tns:actualizarTareaPredeterminada" />
@@ -49,7 +49,7 @@
   </portType>
   <binding name="TareaPredeterminadaWSPortBinding" type="tns:TareaPredeterminadaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarEstadosTicket">
+    <operation name="listarTareasPredeterminadasPorCategoria">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

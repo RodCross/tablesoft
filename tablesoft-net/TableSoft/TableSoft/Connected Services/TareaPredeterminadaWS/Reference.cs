@@ -16,17 +16,17 @@ namespace TableSoft.TareaPredeterminadaWS {
     public interface TareaPredeterminadaWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketRe" +
-            "quest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketRe" +
-            "sponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterm" +
+            "inadasPorCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterm" +
+            "inadasPorCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TareaPredeterminadaWS.listarEstadosTicketResponse listarEstadosTicket(TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest request);
+        TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse listarTareasPredeterminadasPorCategoria(TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketRe" +
-            "quest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarEstadosTicketRe" +
-            "sponse")]
-        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.listarEstadosTicketResponse> listarEstadosTicketAsync(TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterm" +
+            "inadasPorCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterm" +
+            "inadasPorCategoriaResponse")]
+        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse> listarTareasPredeterminadasPorCategoriaAsync(TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
@@ -279,17 +279,17 @@ namespace TableSoft.TareaPredeterminadaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEstadosTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEstadosTicketRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTareasPredeterminadasPorCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTareasPredeterminadasPorCategoriaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public TableSoft.TareaPredeterminadaWS.categoria objCategoria;
         
-        public listarEstadosTicketRequest() {
+        public listarTareasPredeterminadasPorCategoriaRequest() {
         }
         
-        public listarEstadosTicketRequest(TableSoft.TareaPredeterminadaWS.categoria objCategoria) {
+        public listarTareasPredeterminadasPorCategoriaRequest(TableSoft.TareaPredeterminadaWS.categoria objCategoria) {
             this.objCategoria = objCategoria;
         }
     }
@@ -297,17 +297,17 @@ namespace TableSoft.TareaPredeterminadaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEstadosTicketResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEstadosTicketResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTareasPredeterminadasPorCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTareasPredeterminadasPorCategoriaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public TableSoft.TareaPredeterminadaWS.tareaPredeterminada[] @return;
         
-        public listarEstadosTicketResponse() {
+        public listarTareasPredeterminadasPorCategoriaResponse() {
         }
         
-        public listarEstadosTicketResponse(TableSoft.TareaPredeterminadaWS.tareaPredeterminada[] @return) {
+        public listarTareasPredeterminadasPorCategoriaResponse(TableSoft.TareaPredeterminadaWS.tareaPredeterminada[] @return) {
             this.@return = @return;
         }
     }
@@ -453,26 +453,26 @@ namespace TableSoft.TareaPredeterminadaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TareaPredeterminadaWS.listarEstadosTicketResponse TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.listarEstadosTicket(TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest request) {
-            return base.Channel.listarEstadosTicket(request);
+        TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoria(TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest request) {
+            return base.Channel.listarTareasPredeterminadasPorCategoria(request);
         }
         
-        public TableSoft.TareaPredeterminadaWS.tareaPredeterminada[] listarEstadosTicket(TableSoft.TareaPredeterminadaWS.categoria objCategoria) {
-            TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest inValue = new TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest();
+        public TableSoft.TareaPredeterminadaWS.tareaPredeterminada[] listarTareasPredeterminadasPorCategoria(TableSoft.TareaPredeterminadaWS.categoria objCategoria) {
+            TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest inValue = new TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest();
             inValue.objCategoria = objCategoria;
-            TableSoft.TareaPredeterminadaWS.listarEstadosTicketResponse retVal = ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).listarEstadosTicket(inValue);
+            TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse retVal = ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).listarTareasPredeterminadasPorCategoria(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.listarEstadosTicketResponse> TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.listarEstadosTicketAsync(TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest request) {
-            return base.Channel.listarEstadosTicketAsync(request);
+        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse> TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaAsync(TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest request) {
+            return base.Channel.listarTareasPredeterminadasPorCategoriaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.listarEstadosTicketResponse> listarEstadosTicketAsync(TableSoft.TareaPredeterminadaWS.categoria objCategoria) {
-            TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest inValue = new TableSoft.TareaPredeterminadaWS.listarEstadosTicketRequest();
+        public System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse> listarTareasPredeterminadasPorCategoriaAsync(TableSoft.TareaPredeterminadaWS.categoria objCategoria) {
+            TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest inValue = new TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest();
             inValue.objCategoria = objCategoria;
-            return ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).listarEstadosTicketAsync(inValue);
+            return ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).listarTareasPredeterminadasPorCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

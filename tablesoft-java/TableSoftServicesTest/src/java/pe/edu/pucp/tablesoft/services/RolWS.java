@@ -57,7 +57,7 @@ public class RolWS {
     }
     
     @WebMethod(operationName = "listarRoles")
-    public ArrayList<Rol> listarRoles(@WebParam(name = "objRol") Rol rol){
+    public ArrayList<Rol> listarRoles(){
         return daoRol.listar();
     }
 }

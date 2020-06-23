@@ -18,7 +18,18 @@ namespace TableSoft
         public frmSeleccionarCategoria()
         {
             InitializeComponent();
-            categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+
+            var catgs = categoriaDAO.listarCategorias();
+
+            if(catgs == null)
+            {
+                categorias = new BindingList<CategoriaWS.categoria>();
+            }
+            else
+            {
+                categorias = new BindingList<CategoriaWS.categoria>(catgs);
+            }
+
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = categorias;
         }
@@ -38,7 +49,16 @@ namespace TableSoft
             frmGestionarCategoria frm = new frmGestionarCategoria();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+                var catgs = categoriaDAO.listarCategorias();
+
+                if (catgs == null)
+                {
+                    categorias = new BindingList<CategoriaWS.categoria>();
+                }
+                else
+                {
+                    categorias = new BindingList<CategoriaWS.categoria>(catgs);
+                }
                 dgvLista.DataSource = categorias;
             }
         }
@@ -49,7 +69,16 @@ namespace TableSoft
             frmGestionarCategoria frm = new frmGestionarCategoria(cat);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+                var catgs = categoriaDAO.listarCategorias();
+
+                if (catgs == null)
+                {
+                    categorias = new BindingList<CategoriaWS.categoria>();
+                }
+                else
+                {
+                    categorias = new BindingList<CategoriaWS.categoria>(catgs);
+                }
                 dgvLista.DataSource = categorias;
             }
         }

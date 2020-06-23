@@ -27,13 +27,15 @@ namespace TableSoft
             categoria.nombre = cat.nombre;
             categoria.activo = cat.activo;
 
-            if(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria) == null)
+            var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+            if (tareasPred == null)
             {
                 tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
             }
             else
             {
-                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
+                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
 
             }
 

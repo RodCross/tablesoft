@@ -12,14 +12,23 @@ namespace TableSoft
 {
     public partial class frmSeleccionarTareaPredeterminada : Form
     {
-        private CategoriaWS.categoria categoria;
-        private TareaPredeterminadaWS.TareaPredeterminadaWSClient tareaPredeterminadaDAO = new TareaPredeterminadaWS.TareaPredeterminadaWSClient();
+        private TareaPredeterminadaWS.categoria categoria;
+        private TareaPredeterminadaWS.tareaPredeterminada tareaSeleccionada;
+        private TareaPredeterminadaWS.TareaPredeterminadaWSClient tareaPredeterminadaDAO;
         private BindingList<TareaPredeterminadaWS.tareaPredeterminada> tareasPredeterminadas;
+
         public frmSeleccionarTareaPredeterminada(CategoriaWS.categoria cat)
         {
-            categoria = cat;
-            //tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
             InitializeComponent();
+            categoria = new TareaPredeterminadaWS.categoria();
+            tareaPredeterminadaDAO = new TareaPredeterminadaWS.TareaPredeterminadaWSClient();
+
+            categoria.categoriaId = cat.categoriaId;
+            categoria.nombre = cat.nombre;
+
+            tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = tareasPredeterminadas;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -34,14 +43,23 @@ namespace TableSoft
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada();
-            frm.ShowDialog();
+            frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(categoria);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
+                dgvLista.DataSource = tareasPredeterminadas;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(1);
-            frm.ShowDialog();
+            tareaSeleccionada = (TareaPredeterminadaWS.tareaPredeterminada)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(tareaSeleccionada);
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
+                dgvLista.DataSource = tareasPredeterminadas;
+            }
         }
     }
 }

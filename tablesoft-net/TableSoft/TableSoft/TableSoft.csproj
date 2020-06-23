@@ -765,7 +765,7 @@
     <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.insertarTareaPredeterminadaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.listarEstadosTicketResponse.datasource">
+    <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.tareaPredeterminada.datasource">

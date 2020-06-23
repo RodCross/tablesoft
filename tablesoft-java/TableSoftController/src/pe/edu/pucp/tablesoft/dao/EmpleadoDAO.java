@@ -17,6 +17,7 @@ public interface EmpleadoDAO {
     int eliminar(Empleado empleado);                // Cambia a inactivo               
     ArrayList<Empleado> listar();                                   // Listar
     ArrayList<Empleado> listarxBiblioteca(Biblioteca biblioteca);   // Solo no considera la lista de tickets
+    ArrayList<Empleado> listarxNombre(String nombre);
     Empleado buscar(int empleadoId);
     Empleado buscarxCodigo(String codigo);
 }

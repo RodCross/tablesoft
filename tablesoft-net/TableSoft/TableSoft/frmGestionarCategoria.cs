@@ -86,7 +86,8 @@ namespace TableSoft
         {
             // Validaciones
 
-
+            categoria.nombre = txtNombre.Text;
+            categoria.descripcion = txtDescripcion.Text;
             if (categoriaDAO.actualizarCategoria(categoria) > -1)
             {
                 MessageBox.Show(

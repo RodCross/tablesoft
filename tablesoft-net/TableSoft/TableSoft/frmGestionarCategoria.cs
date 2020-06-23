@@ -12,8 +12,11 @@ namespace TableSoft
 {
     public partial class frmGestionarCategoria : Form
     {
+        private CategoriaWS.CategoriaWSClient categoriaDAO = new CategoriaWS.CategoriaWSClient();
+        private CategoriaWS.categoria categoria;
         public frmGestionarCategoria()
         {
+            categoria = new CategoriaWS.categoria();
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
@@ -23,10 +26,11 @@ namespace TableSoft
 
         public frmGestionarCategoria(CategoriaWS.categoria cat)
         {
+            categoria = cat;
             InitializeComponent();
-            txtIDCategoria.Text = cat.categoriaId.ToString();
-            txtNombre.Text = cat.nombre;
-            txtDescripcion.Text = cat.descripcion;
+            txtIDCategoria.Text = categoria.categoriaId.ToString();
+            txtNombre.Text = categoria.nombre;
+            txtDescripcion.Text = categoria.descripcion;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnTareas.Visible = true;
@@ -40,22 +44,37 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha guardado el registro.",
-                "Guardado exitoso",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            // Validaciones
+
+            categoria.nombre = txtNombre.Text;
+            categoria.descripcion = txtDescripcion.Text;
+
+            if(categoriaDAO.insertarCategoria(categoria) > 0)
+            {
+                MessageBox.Show(
+                    "Se ha guardado el registro.",
+                    "Guardado exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            txtIDCategoria.Text = categoria.categoriaId.ToString();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha eliminado el registro.",
-                "Eliminación exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            // Validaciones
+
+
+            if (categoriaDAO.eliminarCategoria(categoria) > -1)
+            {
+                MessageBox.Show(
+                    "Se ha eliminado el registro.",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -65,18 +84,35 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha actualizado el registro.",
-                "Actualización exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            // Validaciones
+
+
+            if (categoriaDAO.actualizarCategoria(categoria) > -1)
+            {
+                MessageBox.Show(
+                    "Se ha actualizado el registro.",
+                    "Actualización exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnTareas_Click(object sender, EventArgs e)
         {
-            frmSeleccionarTareaPredeterminada frm = new frmSeleccionarTareaPredeterminada();
-            frm.ShowDialog();
+            if(categoria.categoriaId > 0)
+            {
+                frmSeleccionarTareaPredeterminada frm = new frmSeleccionarTareaPredeterminada();
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show(
+                    "Esta categoria no ha sido registrada.",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
     }
 }

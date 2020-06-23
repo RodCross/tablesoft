@@ -36,14 +36,22 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarCategoria frm = new frmGestionarCategoria();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+                dgvLista.DataSource = categorias;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarCategoria frm = new frmGestionarCategoria(cat);
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+                dgvLista.DataSource = categorias;
+            }
         }
     }
 }

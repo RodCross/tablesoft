@@ -35,7 +35,7 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmGestionarActivoFijo frm = new frmGestionarActivoFijo(1);
+            frmGestionarActivoFijo frm = new frmGestionarActivoFijo();
             frm.ShowDialog();
         }
     }

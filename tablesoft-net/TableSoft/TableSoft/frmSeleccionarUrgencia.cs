@@ -36,14 +36,22 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarUrgencia frm = new frmGestionarUrgencia();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                urgencias = new BindingList<UrgenciaWS.urgencia>(urgenciaDAO.listarUrgencias().ToArray());
+                dgvLista.DataSource = urgenciaDAO.listarUrgencias();
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             UrgenciaWS.urgencia urg = (UrgenciaWS.urgencia)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarUrgencia frm = new frmGestionarUrgencia(urg);
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                urgencias = new BindingList<UrgenciaWS.urgencia>(urgenciaDAO.listarUrgencias().ToArray());
+                dgvLista.DataSource = urgencias;
+            }
         }
     }
 }

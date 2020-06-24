@@ -47,32 +47,59 @@ namespace TableSoft
         {
             if (String.IsNullOrEmpty(txtCodigo.Text) || String.IsNullOrWhiteSpace(txtCodigo.Text))
             {
-                MessageBox.Show("No ha ingresado el código", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado el código", "Error de código", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (!Regex.IsMatch(txtCodigo.Text, @"^[0-9]+$"))
             {
-                MessageBox.Show("El código es un campo numérico", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El código es un campo numérico", "Error de código", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (txtCodigo.Text.Length > 5)
             {
-                MessageBox.Show("El código no debe tener más de 5 digitos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("El código no debe tener más de 5 digitos", "Error de código", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (String.IsNullOrEmpty(txtMarca.Text) || String.IsNullOrWhiteSpace(txtMarca.Text))
             {
-                MessageBox.Show("No ha ingresado la marca", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado la marca del activo fijo", "Error de marca", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Regex.Matches(txtMarca.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La marca del activo fijo debe contener al menos una letra",
+                    "Error de marca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
                 return;
             }
             if (String.IsNullOrEmpty(txtTipo.Text) || String.IsNullOrWhiteSpace(txtTipo.Text))
             {
-                MessageBox.Show("No ha ingresado el tipo", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado el tipo de activo fijo", "Error de tipo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Regex.Matches(txtTipo.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El tipo del activo fijo debe contener al menos una letra",
+                    "Error de tipo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
                 return;
             }
             if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
             {
-                MessageBox.Show("No ha ingresado el nombre", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("No ha ingresado el nombre del activo fijo", "Error de nombre", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre del activo fijo debe contener al menos una letra",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
                 return;
             }
             activoFijo.codigo = txtCodigo.Text;

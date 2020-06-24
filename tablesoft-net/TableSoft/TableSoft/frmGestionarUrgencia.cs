@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,8 +13,11 @@ namespace TableSoft
 {
     public partial class frmGestionarUrgencia : Form
     {
+        private UrgenciaWS.UrgenciaWSClient urgenciaDAO = new UrgenciaWS.UrgenciaWSClient();
+        private UrgenciaWS.urgencia urgencia;
         public frmGestionarUrgencia()
         {
+            urgencia = new UrgenciaWS.urgencia();
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
@@ -22,6 +26,7 @@ namespace TableSoft
 
         public frmGestionarUrgencia(UrgenciaWS.urgencia urg)
         {
+            urgencia = urg;
             InitializeComponent();
             txtIDUrgencia.Text = urg.urgenciaId.ToString();
             txtNombre.Text = urg.nombre;
@@ -38,22 +43,97 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha guardado el registro.",
-                "Guardado exitoso",
+            if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show(
+                    "No ha ingresado el nombre de la urgencia",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre de la urgencia debe contener al menos una letra",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (String.IsNullOrEmpty(txtPlazoMaximo.Text) || String.IsNullOrWhiteSpace(txtPlazoMaximo.Text))
+            {
+                MessageBox.Show("No ha ingresado el plazo máximo de la urgencia", "Error de plazo máximo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!Regex.IsMatch(txtPlazoMaximo.Text, @"^[0-9]+$"))
+            {
+                MessageBox.Show("El plazo máximo es un campo numérico", "Error de plazo máximo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            urgencia.nombre = txtNombre.Text;
+            urgencia.plazoMaximo = int.Parse(txtPlazoMaximo.Text);
+            if (MessageBox.Show("¿Desea crear el registro?", "Crear Urgencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (urgenciaDAO.insertarUrgencia(urgencia) > 0)
+                {
+                    MessageBox.Show(
+                    "Se ha creado el registro exitosamente",
+                    "Registro exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha creado el registro",
+                    "Registro no realizado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha creado el registro",
+                "Registro no realizado",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+                );
+            }
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha eliminado el registro.",
-                "Eliminación exitosa",
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Urgencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (urgenciaDAO.eliminarUrgencia(urgencia) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+                );
+            }
+
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -63,13 +143,65 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            
-            MessageBox.Show(
-                "Se ha actualizado el registro.",
-                "Actualización exitosa",
+
+            if (String.IsNullOrEmpty(txtNombre.Text) || String.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                MessageBox.Show(
+                    "No ha ingresado el nombre de la urgencia",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre de la urgencia debe contener al menos una letra",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (String.IsNullOrEmpty(txtPlazoMaximo.Text) || String.IsNullOrWhiteSpace(txtPlazoMaximo.Text))
+            {
+                MessageBox.Show("No ha ingresado el plazo máximo", "Error de plazo máximo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!Regex.IsMatch(txtPlazoMaximo.Text, @"^[0-9]+$"))
+            {
+                MessageBox.Show("El plazo máximo es un campo numérico", "Error de plazo máximo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            urgencia.nombre = txtNombre.Text;
+            urgencia.plazoMaximo = int.Parse(txtPlazoMaximo.Text);
+            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Urgencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (urgenciaDAO.actualizarUrgencia(urgencia) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha actualizado el registro exitosamente",
+                    "Actualización exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha realizado la actualización",
+                    "Actualización no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+                );
+            }
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

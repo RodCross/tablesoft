@@ -29,7 +29,7 @@ Connection con;
             
             CallableStatement cs = con.prepareCall(
                     "{CALL listar_ciudad_pais(?)}");
-            cs.setInt("ID", pais.getPaisId());
+            cs.setInt("_ID", pais.getPaisId());
             ResultSet rs=cs.executeQuery();
             
             while(rs.next()) {

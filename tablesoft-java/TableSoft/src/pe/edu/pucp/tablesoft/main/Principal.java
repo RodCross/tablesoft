@@ -12,6 +12,7 @@ import pe.edu.pucp.tablesoft.dao.ActivoFijoDAO;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
 import pe.edu.pucp.tablesoft.dao.BibliotecaDAO;
 import pe.edu.pucp.tablesoft.dao.CategoriaDAO;
+import pe.edu.pucp.tablesoft.dao.CiudadDAO;
 import pe.edu.pucp.tablesoft.dao.ComentarioDAO;
 import pe.edu.pucp.tablesoft.dao.EmpleadoDAO;
 import pe.edu.pucp.tablesoft.dao.EquipoDAO;
@@ -31,6 +32,7 @@ import pe.edu.pucp.tablesoft.model.Comentario;
 import pe.edu.pucp.tablesoft.model.Empleado;
 import pe.edu.pucp.tablesoft.model.Equipo;
 import pe.edu.pucp.tablesoft.model.EstadoTicket;
+import pe.edu.pucp.tablesoft.model.Pais;
 import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Rol;
 import pe.edu.pucp.tablesoft.model.TareaPredeterminada;
@@ -40,6 +42,7 @@ import pe.edu.pucp.tablesoft.mysql.ActivoFijoMySQL;
 import pe.edu.pucp.tablesoft.mysql.AgenteMySQL;
 import pe.edu.pucp.tablesoft.mysql.BibliotecaMySQL;
 import pe.edu.pucp.tablesoft.mysql.CategoriaMySQL;
+import pe.edu.pucp.tablesoft.mysql.CiudadMySQL;
 import pe.edu.pucp.tablesoft.mysql.ComentarioMySQL;
 import pe.edu.pucp.tablesoft.mysql.EmpleadoMySQL;
 import pe.edu.pucp.tablesoft.mysql.EquipoMySQL;
@@ -69,11 +72,12 @@ public class Principal {
         ActivoFijoDAO activoFijoDao = new ActivoFijoMySQL();
         TareaPredeterminadaDAO tareaPredeterminadaDao = new TareaPredeterminadaMySQL();
         PersonaDAO personaDao=new PersonaMySQL();
+        CiudadDAO ciudadDao = new CiudadMySQL();
         
 //        // EQUIPOS
 //        // Crear equipos
-        Equipo equipo1 = new Equipo("Equipo BD","Equipo especializado en BD");
-        Equipo equipo2 = new Equipo("Equipo Equipos","Equipo especializado en equipos electronicos");
+//        Equipo equipo1 = new Equipo("Equipo BD","Equipo especializado en BD");
+//        Equipo equipo2 = new Equipo("Equipo Equipos","Equipo especializado en equipos electronicos");
 //        
 //        // Insertar equipos
 //        equipoDao.insertar(equipo1);
@@ -159,10 +163,10 @@ public class Principal {
 //
 //        
         // ROL
-        Rol rol1 = new Rol("AGENTE", "AGENTE NORMAL");
-        Rol rol2 = new Rol("SUPERVISOR", "LIDER DE UN EQUIPO");
-        rol1.setRolId(1);
-        equipo2.setEquipoId(1);
+//        Rol rol1 = new Rol("AGENTE", "AGENTE NORMAL");
+//        Rol rol2 = new Rol("SUPERVISOR", "LIDER DE UN EQUIPO");
+//        rol1.setRolId(1);
+//        equipo2.setEquipoId(1);
 //
 //        // Insertar roles
 //        rolDao.insertar(rol1);
@@ -182,15 +186,15 @@ public class Principal {
 //                "Calle Los Prietos 1231", "1532", "abcd1234", "f.verastegui@pucp.edu.pe");
 //        Agente agente3 = new Agente("jfrk@pucp.edu.pe", equipo2, rol2, "20170910", "74488960", "Juan Francisco", "Rosales", "Kam",
 //                "Calle Los Nogales 1131", "1233", "abcd1234", "juan.rosales@pucp.edu.pe");
-        Agente agente4 = new Agente("cacs@pucp.edu.pe", equipo2, rol1, "20145469", "76947569", "Carlos", "Carbajal", "Serrano",
-                "Calle Los Arboles 1431", "9913", "abcd1234", "a20170569@pucp.edu.pe");
+//        Agente agente4 = new Agente("cacs@pucp.edu.pe", equipo2, rol1, "20145469", "76947569", "Carlos", "Carbajal", "Serrano",
+//                "Calle Los Arboles 1431", "9913", "abcd1234", "a20170569@pucp.edu.pe");
 //        
 //   
 //        // Insertar agentes
 //        agenteDao.insertar(agente1);
 //        agenteDao.insertar(agente2);
 //        agenteDao.insertar(agente3);
-        agenteDao.insertar(agente4);
+//        agenteDao.insertar(agente4);
 //        
 //        // Asignar equipos a los agentes
 //        agente1.setEquipo(equipo1);
@@ -341,13 +345,13 @@ public class Principal {
 
         // Pruebas individuales
         
-        TareaPredeterminada tareaPred1 = new TareaPredeterminada();
-        tareaPred1.setTareaPredeterminadaId(7);
-        tareaPred1.setDescripcion("Segunda prueba de actualizacion desde el Java");
-        
-        int i = tareaPredeterminadaDao.actualizar(tareaPred1);
-        
-        System.out.println(i);
+//        TareaPredeterminada tareaPred1 = new TareaPredeterminada();
+//        tareaPred1.setTareaPredeterminadaId(7);
+//        tareaPred1.setDescripcion("Segunda prueba de actualizacion desde el Java");
+//        
+//        int i = tareaPredeterminadaDao.actualizar(tareaPred1);
+//        
+//        System.out.println(i);
         
 //        // Listamos los tickets
 //        ArrayList<Ticket>tickets = ticketDao.listar();
@@ -355,6 +359,15 @@ public class Principal {
 //        for (Ticket t : tickets) {
 //            System.out.println(t.mostrarDatos());
 //        }
+
+        // Listar ciudades
+        Pais pais = new Pais();
+        pais.setPaisId(1);
+        ArrayList<Ciudad> ciudades = ciudadDao.listarxPais(pais);
+        System.out.println("Ciudades de " + pais.getPaisId());
+        for(Ciudad c:ciudades){
+            System.out.println(c.getNombre());
+        }
 
 
         /* Los metodos para eliminar en las clases con campo activo los ponen en 0

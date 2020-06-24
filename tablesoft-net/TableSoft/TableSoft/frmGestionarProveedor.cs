@@ -35,15 +35,18 @@ namespace TableSoft
             proveedor = prov;
             pais = new CiudadWS.pais();
             InitializeComponent();
-            cboPais.SelectedItem = -1;
+
             LlenarCboPais();
+
             txtIDProveedor.Text = proveedor.proveedorId.ToString();
             txtRUC.Text = proveedor.ruc;
             txtRazonSocial.Text = proveedor.razonSocial;
             txtDireccion.Text = proveedor.direccion;
-            cboCiudad.SelectedIndex = -1;
             txtTelefono.Text = proveedor.telefono;
             txtEmail.Text = proveedor.email;
+            cboPais.SelectedValue = proveedor.ciudad.pais.nombre;
+            cboCiudad.SelectedValue = proveedor.ciudad.nombre;
+
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;

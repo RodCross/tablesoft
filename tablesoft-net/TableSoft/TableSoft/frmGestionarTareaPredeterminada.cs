@@ -53,13 +53,32 @@ namespace TableSoft
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             tareaPredeterminada.descripcion = txtDesc.Text;
-            
-            if (tareaPredeterminadaDAO.insertarTareaPredeterminada(tareaPredeterminada,categoria) > 0)
+
+            if (MessageBox.Show("¿Desea crear el registro?", "Crear Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (tareaPredeterminadaDAO.insertarTareaPredeterminada(tareaPredeterminada, categoria) > 0)
+                {
+                    MessageBox.Show(
+                    "Se ha creado el registro exitosamente",
+                    "Registro exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha creado el registro",
+                    "Registro no realizado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
             {
                 MessageBox.Show(
-                    "Se ha guardado el registro.",
-                    "Guardado exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                "No se ha creado el registro",
+                "Registro no realizado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             txtIDTarea.Text = tareaPredeterminada.tareaPredeterminadaId.ToString();
@@ -68,12 +87,32 @@ namespace TableSoft
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (tareaPredeterminadaDAO.eliminarTareaPredeterminada(tareaPredeterminada) > -1)
+            
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha eliminado el registro.",
+                if (tareaPredeterminadaDAO.eliminarTareaPredeterminada(tareaPredeterminada) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
                     "Eliminación exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             this.DialogResult = DialogResult.OK;
@@ -88,12 +127,32 @@ namespace TableSoft
         {
             tareaPredeterminada.descripcion = txtDesc.Text;
 
-            if (tareaPredeterminadaDAO.actualizarTareaPredeterminada(tareaPredeterminada) > -1)
+            
+            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha actualizado el registro.",
+                if (tareaPredeterminadaDAO.actualizarTareaPredeterminada(tareaPredeterminada) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha actualizado el registro exitosamente",
                     "Actualización exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha realizado la actualización",
+                    "Actualización no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             txtIDTarea.Text = tareaPredeterminada.tareaPredeterminadaId.ToString();

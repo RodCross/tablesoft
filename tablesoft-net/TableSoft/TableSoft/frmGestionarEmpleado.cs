@@ -89,11 +89,30 @@ namespace TableSoft
             empleadoSel.telefono = txtTel.Text;
             empleadoSel.password = txtPass.Text;
 
-            if (empleadoDAO.insertarEmpleado(empleadoSel) > 0)
+            if (MessageBox.Show("¿Desea crear el registro?", "Crear Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (empleadoDAO.insertarEmpleado(empleadoSel) > 0)
+                {
+                    MessageBox.Show(
+                    "Se ha creado el registro exitosamente",
+                    "Registro exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha creado el registro",
+                    "Registro no realizado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
             {
                 MessageBox.Show(
-                "Se ha guardado el registro.",
-                "Guardado exitoso",
+                "No se ha creado el registro",
+                "Registro no realizado",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
@@ -103,13 +122,33 @@ namespace TableSoft
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int i = empleadoDAO.eliminarEmpleado(empleadoSel);
-
-            MessageBox.Show(
-                "Se ha eliminado el registro.",
-                "Eliminación exitosa",
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (empleadoDAO.eliminarEmpleado(empleadoSel) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+                );
+            }
 
             this.DialogResult = DialogResult.OK;
         }
@@ -143,12 +182,31 @@ namespace TableSoft
             empleadoSel.direccion = txtDireccion.Text;
             empleadoSel.telefono = txtTel.Text;
 
-            if (empleadoDAO.actualizarEmpleado(empleadoSel) == 0)
+            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha actualizado el registro.",
+                if (empleadoDAO.actualizarEmpleado(empleadoSel) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha actualizado el registro exitosamente",
                     "Actualización exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha realizado la actualización",
+                    "Actualización no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
 

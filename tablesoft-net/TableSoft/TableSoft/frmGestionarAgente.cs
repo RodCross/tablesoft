@@ -107,11 +107,31 @@ namespace TableSoft
             agenteSel.telefono = txtTel.Text;
             agenteSel.password = txtPass.Text;
 
-            if (agenteDAO.insertarAgente(agenteSel) > 0)
+            
+            if (MessageBox.Show("¿Desea crear el registro?", "Crear Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (agenteDAO.insertarAgente(agenteSel) > 0)
+                {
+                    MessageBox.Show(
+                    "Se ha creado el registro exitosamente",
+                    "Registro exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha creado el registro",
+                    "Registro no realizado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
             {
                 MessageBox.Show(
-                "Se ha guardado el registro.",
-                "Guardado exitoso",
+                "No se ha creado el registro",
+                "Registro no realizado",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
@@ -121,13 +141,34 @@ namespace TableSoft
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int i = agenteDAO.eliminarAgente(agenteSel);
 
-            MessageBox.Show(
-                "Se ha eliminado el registro.",
-                "Eliminación exitosa",
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (agenteDAO.eliminarAgente(agenteSel) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+                );
+            }
 
             this.DialogResult = DialogResult.OK;
         }
@@ -164,12 +205,31 @@ namespace TableSoft
             agenteSel.direccion = txtDireccion.Text;
             agenteSel.telefono = txtTel.Text;
 
-            if (agenteDAO.actualizarAgente(agenteSel) == 0)
+            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha actualizado el registro.",
+                if (agenteDAO.actualizarAgente(agenteSel) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha actualizado el registro exitosamente",
                     "Actualización exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha realizado la actualización",
+                    "Actualización no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
 

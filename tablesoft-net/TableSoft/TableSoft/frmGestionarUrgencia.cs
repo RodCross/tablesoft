@@ -100,6 +100,7 @@ namespace TableSoft
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
+            txtIDUrgencia.Text = urgencia.urgenciaId.ToString();
             this.DialogResult = DialogResult.OK;
         }
 

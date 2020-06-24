@@ -134,6 +134,7 @@ namespace TableSoft
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
+            txtIDActivoFijo.Text = activoFijo.activoFijoId.ToString();
             this.DialogResult = DialogResult.OK;
         }
 

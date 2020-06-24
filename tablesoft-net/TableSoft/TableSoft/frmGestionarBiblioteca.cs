@@ -43,7 +43,7 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if(txtNombre.Text == "")
+            if (txtNombre.Text == "")
             {
                 MessageBox.Show(
                     "Falta indicar el nombre de la biblioteca.",
@@ -81,12 +81,31 @@ namespace TableSoft
             }
             biblioteca.nombre = txtNombre.Text;
             biblioteca.abreviatura = txtAbrev.Text;
-            if(bibliotecaDAO.insertarBiblioteca(biblioteca) > 0)
+            if (MessageBox.Show("¿Desea crear el registro?", "Crear Biblioteca", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show (
-                    "Se ha guardado el registro.",
-                    "Guardado exitoso",
+                if (bibliotecaDAO.insertarBiblioteca(biblioteca) > 0)
+                {
+                    MessageBox.Show(
+                    "Se ha creado el registro exitosamente",
+                    "Registro exitoso",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha creado el registro",
+                    "Registro no realizado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha creado el registro",
+                "Registro no realizado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             txtIDBib.Text = biblioteca.bibliotecaId.ToString();
@@ -95,12 +114,31 @@ namespace TableSoft
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if(bibliotecaDAO.eliminarBiblioteca(biblioteca) > -1)
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Biblioteca", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha eliminado el registro.",
+                if (bibliotecaDAO.eliminarBiblioteca(biblioteca) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
                     "Eliminación exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             this.DialogResult = DialogResult.OK;
@@ -151,12 +189,31 @@ namespace TableSoft
             }
             biblioteca.nombre = txtNombre.Text;
             biblioteca.abreviatura = txtAbrev.Text;
-            if (bibliotecaDAO.actualizarBiblioteca(biblioteca) > -1)
+            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Biblioteca", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha actualizado el registro.",
+                if (bibliotecaDAO.actualizarBiblioteca(biblioteca) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha actualizado el registro exitosamente",
                     "Actualización exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha realizado la actualización",
+                    "Actualización no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             this.DialogResult = DialogResult.OK;

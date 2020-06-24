@@ -85,12 +85,31 @@ namespace TableSoft
             categoria.nombre = txtNombre.Text;
             categoria.descripcion = txtDescripcion.Text;
 
-            if(categoriaDAO.insertarCategoria(categoria) > 0)
+            if (MessageBox.Show("¿Desea crear el registro?", "Crear Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (categoriaDAO.insertarCategoria(categoria) > 0)
+                {
+                    MessageBox.Show(
+                    "Se ha creado el registro exitosamente",
+                    "Registro exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha creado el registro",
+                    "Registro no realizado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
             {
                 MessageBox.Show(
-                    "Se ha guardado el registro.",
-                    "Guardado exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                "No se ha creado el registro",
+                "Registro no realizado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             txtIDCategoria.Text = categoria.categoriaId.ToString();
@@ -102,12 +121,31 @@ namespace TableSoft
             // Validaciones
 
 
-            if (categoriaDAO.eliminarCategoria(categoria) > -1)
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha eliminado el registro.",
+                if (categoriaDAO.eliminarCategoria(categoria) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
                     "Eliminación exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             this.DialogResult = DialogResult.OK;
@@ -160,12 +198,31 @@ namespace TableSoft
 
             categoria.nombre = txtNombre.Text;
             categoria.descripcion = txtDescripcion.Text;
-            if (categoriaDAO.actualizarCategoria(categoria) > -1)
+            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (categoriaDAO.actualizarCategoria(categoria) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha actualizado el registro exitosamente",
+                    "Actualización exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha realizado la actualización",
+                    "Actualización no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
             {
                 MessageBox.Show(
-                    "Se ha actualizado el registro.",
-                    "Actualización exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             this.DialogResult = DialogResult.OK;

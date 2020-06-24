@@ -11,6 +11,8 @@
   <xs:element name="listarAgentes" type="tns:listarAgentes" />
   <xs:element name="listarAgentesPorEquipo" type="tns:listarAgentesPorEquipo" />
   <xs:element name="listarAgentesPorEquipoResponse" type="tns:listarAgentesPorEquipoResponse" />
+  <xs:element name="listarAgentesPorNombre" type="tns:listarAgentesPorNombre" />
+  <xs:element name="listarAgentesPorNombreResponse" type="tns:listarAgentesPorNombreResponse" />
   <xs:element name="listarAgentesResponse" type="tns:listarAgentesResponse" />
   <xs:complexType name="actualizarAgente">
     <xs:sequence>
@@ -244,6 +246,16 @@
   <xs:complexType name="buscarAgentePorCodigoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentesPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentesPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:agente" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarAgente">

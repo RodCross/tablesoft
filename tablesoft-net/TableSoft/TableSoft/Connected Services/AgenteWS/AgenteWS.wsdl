@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/AgenteWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="listarAgentesPorNombre">
+    <part name="parameters" element="tns:listarAgentesPorNombre" />
+  </message>
+  <message name="listarAgentesPorNombreResponse">
+    <part name="parameters" element="tns:listarAgentesPorNombreResponse" />
+  </message>
   <message name="eliminarAgente">
     <part name="parameters" element="tns:eliminarAgente" />
   </message>
@@ -42,6 +48,10 @@
     <part name="parameters" element="tns:buscarAgentePorCodigoResponse" />
   </message>
   <portType name="AgenteWS">
+    <operation name="listarAgentesPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorNombreRequest" message="tns:listarAgentesPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorNombreResponse" message="tns:listarAgentesPorNombreResponse" />
+    </operation>
     <operation name="eliminarAgente">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteRequest" message="tns:eliminarAgente" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteResponse" message="tns:eliminarAgenteResponse" />
@@ -69,6 +79,15 @@
   </portType>
   <binding name="AgenteWSPortBinding" type="tns:AgenteWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarAgentesPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarAgente">
       <soap:operation soapAction="" />
       <input>

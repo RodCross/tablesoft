@@ -559,6 +559,9 @@
     <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.listarAgentesPorEquipoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.listarAgentesPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.listarAgentesResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

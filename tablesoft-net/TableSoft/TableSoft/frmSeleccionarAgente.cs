@@ -16,8 +16,6 @@ namespace TableSoft
         private AgenteWS.AgenteWSClient agenteDAO = new AgenteWS.AgenteWSClient();
         private BindingList<AgenteWS.agente> agentes;
 
-        
-
         public frmSeleccionarAgente()
         {
             AgenteWS.agente[] arrAgentes = agenteDAO.listarAgentes().ToArray();
@@ -33,6 +31,14 @@ namespace TableSoft
             }
         }
 
+        private void dgvLista_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            AgenteWS.agente data = dgvLista.Rows[e.RowIndex].DataBoundItem as AgenteWS.agente;
+            dgvLista.Rows[e.RowIndex].Cells["Nombre"].Value = data.apellidoPaterno + " " + data.apellidoMaterno + ", " + data.nombre;
+            dgvLista.Rows[e.RowIndex].Cells["Rol"].Value = data.rol.nombre;
+            dgvLista.Rows[e.RowIndex].Cells["Equipo"].Value = data.equipo.nombre;
+        }
+
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             Movimiento.MoverVentana(Handle, e.Button);
@@ -46,7 +52,11 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarAgente frm = new frmGestionarAgente();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                agentes = new BindingList<AgenteWS.agente>(agenteDAO.listarAgentes());
+                dgvLista.DataSource = agentes;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
@@ -60,7 +70,16 @@ namespace TableSoft
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            
+            AgenteWS.agente[] nuevosAgentes = agenteDAO.listarAgentesPorNombre(txtBuscar.Text);
+            if (nuevosAgentes != null)
+            {
+                agentes = new BindingList<AgenteWS.agente>(nuevosAgentes);
+                dgvLista.DataSource = agentes;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
         }
     }
 }

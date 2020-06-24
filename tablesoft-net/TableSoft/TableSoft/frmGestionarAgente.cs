@@ -49,6 +49,9 @@ namespace TableSoft
             cboEquipo.SelectedValue = age.equipo.equipoId;
             txtEmailPersonal.Text = age.personaEmail;
             txtEmailAgente.Text = age.agenteEmail;
+            txtDireccion.Text = age.direccion;
+            txtTel.Text = age.telefono;
+            txtPass.Enabled = false;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;
@@ -114,8 +117,11 @@ namespace TableSoft
             agenteSel.rol.rolId = (int)cboRol.SelectedValue;
             agenteSel.personaEmail = txtEmailPersonal.Text;
             agenteSel.agenteEmail = txtEmailAgente.Text;
+            agenteSel.direccion = txtDireccion.Text;
+            agenteSel.telefono = txtTel.Text;
+            agenteSel.password = txtPass.Text;
 
-            if (agenteDAO.insertarAgente(agenteSel) >-1)
+            if (agenteDAO.insertarAgente(agenteSel) > 0)
             {
                 MessageBox.Show(
                 "Se ha guardado el registro.",
@@ -124,8 +130,7 @@ namespace TableSoft
                 );
             }
 
-                        
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

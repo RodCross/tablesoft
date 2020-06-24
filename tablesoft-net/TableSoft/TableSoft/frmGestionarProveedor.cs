@@ -82,7 +82,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.IsMatch(txtRUC.Text, @"[0-9]"))
+            if (!Regex.IsMatch(txtRUC.Text, @"[0-9]"))
             {
                 MessageBox.Show(
                     "El ruc del proveedor de contener solo numeros.",
@@ -230,7 +230,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.IsMatch(txtRUC.Text, @"[0-9]"))
+            if (!Regex.IsMatch(txtRUC.Text, @"[0-9]"))
             {
                 MessageBox.Show(
                     "El ruc del proveedor de contener solo numeros.",

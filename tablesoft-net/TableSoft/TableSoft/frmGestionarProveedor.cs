@@ -60,7 +60,7 @@ namespace TableSoft
         public void LlenarCboCiudad()
         {
             cboCiudad.DataSource = ciudadDAO.listarCiudadesDePais(pais);
-            cboCiudad.DisplayMember = "nombre_ciudad";
+            cboCiudad.DisplayMember = "nombre";
             cboCiudad.ValueMember = "ciudadId";
             cboCiudad.SelectedIndex = -1;
         }

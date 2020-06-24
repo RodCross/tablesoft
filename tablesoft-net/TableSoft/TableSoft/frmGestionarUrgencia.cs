@@ -73,27 +73,25 @@ namespace TableSoft
             }
             urgencia.nombre = txtNombre.Text;
             urgencia.plazoMaximo = int.Parse(txtPlazoMaximo.Text);
-            if (MessageBox.Show("¿Desea crear el registro?", "Crear Urgencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            if (urgenciaDAO.insertarUrgencia(urgencia) > 0)
             {
-                if (urgenciaDAO.insertarUrgencia(urgencia) > 0)
-                {
-                    MessageBox.Show(
-                    "Se ha creado el registro exitosamente",
-                    "Registro exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se ha creado el registro",
-                    "Registro no realizado",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                txtIDUrgencia.Text = urgencia.urgenciaId.ToString();
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show(
+                "Se ha creado el registro exitosamente",
+                "Registro exitoso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
             }
+            else
+            {
+                MessageBox.Show(
+                "No se ha creado el registro",
+                "Registro no realizado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            txtIDUrgencia.Text = urgencia.urgenciaId.ToString();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

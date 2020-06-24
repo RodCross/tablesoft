@@ -16,13 +16,21 @@ namespace TableSoft
         private AgenteWS.AgenteWSClient agenteDAO = new AgenteWS.AgenteWSClient();
         private BindingList<AgenteWS.agente> agentes;
 
+        
+
         public frmSeleccionarAgente()
         {
-            
+            AgenteWS.agente[] arrAgentes = agenteDAO.listarAgentes().ToArray();
             InitializeComponent();
-            agentes = new BindingList<AgenteWS.agente>(agenteDAO.listarAgentes().ToArray());
             dgvLista.AutoGenerateColumns = false;
-            dgvLista.DataSource = agentes;
+            if (arrAgentes != null){
+                agentes = new BindingList<AgenteWS.agente>(arrAgentes.ToArray());
+                dgvLista.DataSource = agentes;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -46,11 +54,13 @@ namespace TableSoft
             AgenteWS.agente age = (AgenteWS.agente)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarAgente frm = new frmGestionarAgente(age);
             frm.ShowDialog();
+            dgvLista.DataSource = agenteDAO.listarAgentes();
+
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
+            
         }
     }
 }

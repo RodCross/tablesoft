@@ -51,6 +51,10 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtPaterno = new System.Windows.Forms.TextBox();
+            this.lblPaterno = new System.Windows.Forms.Label();
+            this.txtMaterno = new System.Windows.Forms.TextBox();
+            this.lblMaterno = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -96,7 +100,7 @@
             // txtEmailAgente
             // 
             this.txtEmailAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailAgente.Location = new System.Drawing.Point(170, 360);
+            this.txtEmailAgente.Location = new System.Drawing.Point(170, 427);
             this.txtEmailAgente.Name = "txtEmailAgente";
             this.txtEmailAgente.Size = new System.Drawing.Size(305, 28);
             this.txtEmailAgente.TabIndex = 7;
@@ -105,7 +109,7 @@
             // 
             this.lblEmailAgente.AutoSize = true;
             this.lblEmailAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailAgente.Location = new System.Drawing.Point(48, 363);
+            this.lblEmailAgente.Location = new System.Drawing.Point(48, 430);
             this.lblEmailAgente.Name = "lblEmailAgente";
             this.lblEmailAgente.Size = new System.Drawing.Size(99, 21);
             this.lblEmailAgente.TabIndex = 40;
@@ -116,7 +120,7 @@
             // 
             this.cboRol.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRol.FormattingEnabled = true;
-            this.cboRol.Location = new System.Drawing.Point(170, 243);
+            this.cboRol.Location = new System.Drawing.Point(170, 310);
             this.cboRol.Name = "cboRol";
             this.cboRol.Size = new System.Drawing.Size(204, 29);
             this.cboRol.TabIndex = 4;
@@ -125,7 +129,7 @@
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblRol.Location = new System.Drawing.Point(114, 246);
+            this.lblRol.Location = new System.Drawing.Point(114, 313);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(33, 21);
             this.lblRol.TabIndex = 38;
@@ -136,7 +140,7 @@
             // 
             this.cboEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEquipo.FormattingEnabled = true;
-            this.cboEquipo.Location = new System.Drawing.Point(170, 284);
+            this.cboEquipo.Location = new System.Drawing.Point(170, 351);
             this.cboEquipo.Name = "cboEquipo";
             this.cboEquipo.Size = new System.Drawing.Size(204, 29);
             this.cboEquipo.TabIndex = 5;
@@ -146,13 +150,13 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(170, 130);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(501, 28);
+            this.txtNombre.Size = new System.Drawing.Size(305, 28);
             this.txtNombre.TabIndex = 1;
             // 
             // txtDNI
             // 
             this.txtDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(170, 202);
+            this.txtDNI.Location = new System.Drawing.Point(170, 269);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(204, 28);
             this.txtDNI.TabIndex = 3;
@@ -161,7 +165,7 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDNI.Location = new System.Drawing.Point(110, 205);
+            this.lblDNI.Location = new System.Drawing.Point(110, 272);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(37, 21);
             this.lblDNI.TabIndex = 34;
@@ -171,7 +175,7 @@
             // txtEmailPersonal
             // 
             this.txtEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailPersonal.Location = new System.Drawing.Point(170, 323);
+            this.txtEmailPersonal.Location = new System.Drawing.Point(170, 390);
             this.txtEmailPersonal.Name = "txtEmailPersonal";
             this.txtEmailPersonal.Size = new System.Drawing.Size(305, 28);
             this.txtEmailPersonal.TabIndex = 6;
@@ -180,7 +184,7 @@
             // 
             this.lblEmailPersonal.AutoSize = true;
             this.lblEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailPersonal.Location = new System.Drawing.Point(35, 326);
+            this.lblEmailPersonal.Location = new System.Drawing.Point(35, 393);
             this.lblEmailPersonal.Name = "lblEmailPersonal";
             this.lblEmailPersonal.Size = new System.Drawing.Size(112, 21);
             this.lblEmailPersonal.TabIndex = 32;
@@ -202,7 +206,7 @@
             // 
             this.lblEquipo.AutoSize = true;
             this.lblEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEquipo.Location = new System.Drawing.Point(89, 287);
+            this.lblEquipo.Location = new System.Drawing.Point(89, 354);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(58, 21);
             this.lblEquipo.TabIndex = 30;
@@ -223,7 +227,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(170, 165);
+            this.txtCodigo.Location = new System.Drawing.Point(170, 232);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 28);
             this.txtCodigo.TabIndex = 2;
@@ -242,7 +246,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblCodigo.Location = new System.Drawing.Point(87, 168);
+            this.lblCodigo.Location = new System.Drawing.Point(87, 235);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(60, 21);
             this.lblCodigo.TabIndex = 28;
@@ -257,7 +261,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(419, 419);
+            this.btnEliminar.Location = new System.Drawing.Point(419, 486);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 33);
             this.btnEliminar.TabIndex = 8;
@@ -273,7 +277,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(569, 419);
+            this.btnActualizar.Location = new System.Drawing.Point(569, 486);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 9;
@@ -289,7 +293,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(569, 419);
+            this.btnGuardar.Location = new System.Drawing.Point(569, 486);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 8;
@@ -297,11 +301,53 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtPaterno
+            // 
+            this.txtPaterno.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPaterno.Location = new System.Drawing.Point(170, 164);
+            this.txtPaterno.Name = "txtPaterno";
+            this.txtPaterno.Size = new System.Drawing.Size(305, 28);
+            this.txtPaterno.TabIndex = 41;
+            // 
+            // lblPaterno
+            // 
+            this.lblPaterno.AutoSize = true;
+            this.lblPaterno.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblPaterno.Location = new System.Drawing.Point(22, 167);
+            this.lblPaterno.Name = "lblPaterno";
+            this.lblPaterno.Size = new System.Drawing.Size(125, 21);
+            this.lblPaterno.TabIndex = 42;
+            this.lblPaterno.Text = "Apellido Paterno";
+            this.lblPaterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtMaterno
+            // 
+            this.txtMaterno.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaterno.Location = new System.Drawing.Point(170, 198);
+            this.txtMaterno.Name = "txtMaterno";
+            this.txtMaterno.Size = new System.Drawing.Size(305, 28);
+            this.txtMaterno.TabIndex = 43;
+            // 
+            // lblMaterno
+            // 
+            this.lblMaterno.AutoSize = true;
+            this.lblMaterno.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblMaterno.Location = new System.Drawing.Point(17, 201);
+            this.lblMaterno.Name = "lblMaterno";
+            this.lblMaterno.Size = new System.Drawing.Size(130, 21);
+            this.lblMaterno.TabIndex = 44;
+            this.lblMaterno.Text = "Apellido Materno";
+            this.lblMaterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmGestionarAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 480);
+            this.ClientSize = new System.Drawing.Size(700, 580);
+            this.Controls.Add(this.txtMaterno);
+            this.Controls.Add(this.lblMaterno);
+            this.Controls.Add(this.txtPaterno);
+            this.Controls.Add(this.lblPaterno);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.txtEmailAgente);
             this.Controls.Add(this.lblEmailAgente);
@@ -356,5 +402,9 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtPaterno;
+        private System.Windows.Forms.Label lblPaterno;
+        private System.Windows.Forms.TextBox txtMaterno;
+        private System.Windows.Forms.Label lblMaterno;
     }
 }

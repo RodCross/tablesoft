@@ -91,17 +91,9 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                txtIDUrgencia.Text = urgencia.urgenciaId.ToString();
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se ha creado el registro",
-                "Registro no realizado",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-            txtIDUrgencia.Text = urgencia.urgenciaId.ToString();
-            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -124,17 +116,8 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-
-            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -193,16 +176,8 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se ha realizado la actualización",
-                "Actualización no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-            this.DialogResult = DialogResult.OK;
         }
     }
 }

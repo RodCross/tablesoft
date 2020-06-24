@@ -125,17 +125,9 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                txtIDActivoFijo.Text = activoFijo.activoFijoId.ToString();
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se ha creado el registro",
-                "Registro no realizado",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-            txtIDActivoFijo.Text = activoFijo.activoFijoId.ToString();
-            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -159,17 +151,8 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-
-            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -199,7 +182,7 @@ namespace TableSoft
                 MessageBox.Show("No ha ingresado la marca", "Error de marca", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Regex.Matches(txtMarca.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtMarca.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show("La marca debe contener al menos una letra", "Error de marca", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -209,7 +192,7 @@ namespace TableSoft
                 MessageBox.Show("No ha ingresado el tipo", "Error de tipo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Regex.Matches(txtTipo.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtTipo.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show("El tipo debe contener al menos una letra", "Error de tipo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -219,7 +202,7 @@ namespace TableSoft
                 MessageBox.Show("No ha ingresado el nombre", "Error de nombre", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show("El nombre debe contener al menos una letra", "Error de nombre", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -249,16 +232,8 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se ha realizado la actualización",
-                "Actualización no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-            this.DialogResult = DialogResult.OK;
         }
 
         private void lblNombre_Click(object sender, EventArgs e)

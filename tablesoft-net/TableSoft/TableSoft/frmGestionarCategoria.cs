@@ -85,8 +85,6 @@ namespace TableSoft
             categoria.nombre = txtNombre.Text;
             categoria.descripcion = txtDescripcion.Text;
 
-            if (MessageBox.Show("¿Desea crear el registro?", "Crear Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
                 if (categoriaDAO.insertarCategoria(categoria) > 0)
                 {
                     MessageBox.Show(
@@ -105,7 +103,6 @@ namespace TableSoft
                 }
                 txtIDCategoria.Text = categoria.categoriaId.ToString();
                 this.DialogResult = DialogResult.OK;
-            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -182,8 +179,6 @@ namespace TableSoft
 
             categoria.nombre = txtNombre.Text;
             categoria.descripcion = txtDescripcion.Text;
-            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
                 if (categoriaDAO.actualizarCategoria(categoria) > -1)
                 {
                     MessageBox.Show(
@@ -201,7 +196,6 @@ namespace TableSoft
                     );
                 }
                 this.DialogResult = DialogResult.OK;
-            }
         }
 
         private void btnTareas_Click(object sender, EventArgs e)

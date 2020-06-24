@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TableSoft.AgenteWS;
@@ -52,9 +53,27 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            tareaPredeterminada.descripcion = txtDesc.Text;
+            // Validaciones
+            if(txtDesc.Text == "")
+            {
+                MessageBox.Show(
+                    "Debe indicar una descripción.",
+                    "Error de descripción",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDesc.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La descripcion debe contener al menos una letra.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
 
-            
+            tareaPredeterminada.descripcion = txtDesc.Text;
             if (tareaPredeterminadaDAO.insertarTareaPredeterminada(tareaPredeterminada, categoria) > 0)
             {
                 MessageBox.Show(
@@ -111,6 +130,26 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            // Validaciones
+            if (txtDesc.Text == "")
+            {
+                MessageBox.Show(
+                    "Debe indicar una descripción.",
+                    "Error de descripción",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDesc.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La descripcion debe contener al menos una letra.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+
             tareaPredeterminada.descripcion = txtDesc.Text;
 
             if (tareaPredeterminadaDAO.actualizarTareaPredeterminada(tareaPredeterminada) > -1)

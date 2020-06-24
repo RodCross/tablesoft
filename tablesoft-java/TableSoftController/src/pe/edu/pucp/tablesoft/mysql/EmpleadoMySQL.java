@@ -278,7 +278,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL listar_empleado_biblioteca(?)}");
+                    "{CALL listar_empleado_nombre(?)}");
             cs.setString("_NOMBRE_EMPLEADO", nombre);
             
             ResultSet rs = cs.executeQuery();

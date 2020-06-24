@@ -321,7 +321,7 @@ public class AgenteMySQL implements AgenteDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL listar_agente_equipo(?)}");
+                    "{CALL listar_agente_nombre(?)}");
             cs.setString("_NOMBRE_AGENTE", nombre);
             
             ResultSet rs = cs.executeQuery();

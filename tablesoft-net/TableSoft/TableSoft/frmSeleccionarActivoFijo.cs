@@ -38,7 +38,7 @@ namespace TableSoft
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
-                dgvLista.DataSource = activosFijos;
+                dgvLista.DataSource = activoFijoDAO.listarActivosFijos();
             }
         }
 

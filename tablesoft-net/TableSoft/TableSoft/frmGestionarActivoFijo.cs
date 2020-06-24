@@ -107,27 +107,26 @@ namespace TableSoft
             activoFijo.tipo = txtTipo.Text;
             activoFijo.nombre = txtNombre.Text;
 
-            if (MessageBox.Show("¿Desea crear el registro?", "Crear Activo Fijo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            if (activoFijoDAO.insertarActivoFijo(activoFijo) > 0)
             {
-                if (activoFijoDAO.insertarActivoFijo(activoFijo) > 0)
-                {
-                    MessageBox.Show(
-                    "Se ha creado el registro exitosamente",
-                    "Registro exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se ha creado el registro",
-                    "Registro no realizado",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                txtIDActivoFijo.Text = activoFijo.activoFijoId.ToString();
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show(
+                "Se ha creado el registro exitosamente",
+                "Registro exitoso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
             }
+            else
+            {
+                MessageBox.Show(
+                "No se ha creado el registro",
+                "Registro no realizado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            txtIDActivoFijo.Text = activoFijo.activoFijoId.ToString();
+            this.DialogResult = DialogResult.OK;
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)

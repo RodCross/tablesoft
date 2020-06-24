@@ -52,7 +52,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "El nombre de la biblioteca de contener al menos una letra.",
@@ -70,7 +70,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtAbrev.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtAbrev.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "La abreviatura de la biblioteca de contener al menos una letra.",
@@ -122,7 +122,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "El nombre de la biblioteca de contener al menos una letra.",
@@ -140,7 +140,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtAbrev.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtAbrev.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "La abreviatura de la biblioteca de contener al menos una letra.",

@@ -18,7 +18,15 @@ namespace TableSoft
         public frmSeleccionarEquipo()
         {
             InitializeComponent();
-            equipos = new BindingList<EquipoWS.equipo>(equipoDAO.listarEquipos().ToArray());
+            var equis = equipoDAO.listarEquipos();
+            if(equis == null)
+            {
+                equipos = new BindingList<EquipoWS.equipo>();
+            }
+            else
+            {
+                equipos = new BindingList<EquipoWS.equipo>(equis);
+            }
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = equipos;
         }
@@ -36,14 +44,40 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarEquipo frm = new frmGestionarEquipo();
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var equis = equipoDAO.listarEquipos();
+                if (equis == null)
+                {
+                    equipos = new BindingList<EquipoWS.equipo>();
+                }
+                else
+                {
+                    equipos = new BindingList<EquipoWS.equipo>(equis);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = equipos;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             EquipoWS.equipo equipo = (EquipoWS.equipo)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarEquipo frm = new frmGestionarEquipo(equipo);
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var equis = equipoDAO.listarEquipos();
+                if (equis == null)
+                {
+                    equipos = new BindingList<EquipoWS.equipo>();
+                }
+                else
+                {
+                    equipos = new BindingList<EquipoWS.equipo>(equis);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = equipos;
+            }
         }
     }
 }

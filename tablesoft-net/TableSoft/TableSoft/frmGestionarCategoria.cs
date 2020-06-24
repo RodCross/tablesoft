@@ -55,7 +55,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if( Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            if( Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "El nombre de la categoria de contener al menos una letra.",
@@ -73,7 +73,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtDescripcion.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtDescripcion.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "La descripcion de la categoria de contener al menos una letra.",
@@ -130,7 +130,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "El nombre de la categoria de contener al menos una letra.",
@@ -148,7 +148,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtDescripcion.Text, @"^[a-zA-Z]+$").Count == 0)
+            if (Regex.Matches(txtDescripcion.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "La descripcion de la categoria de contener al menos una letra.",

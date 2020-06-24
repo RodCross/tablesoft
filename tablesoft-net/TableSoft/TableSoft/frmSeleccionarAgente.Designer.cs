@@ -80,7 +80,7 @@
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(1232, 436);
-            this.dgvLista.TabIndex = 0;
+            this.dgvLista.TabIndex = 2;
             this.dgvLista.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLista_CellFormatting);
             // 
             // pnlTitulo
@@ -91,7 +91,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1300, 70);
-            this.pnlTitulo.TabIndex = 4;
+            this.pnlTitulo.TabIndex = 6;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // lblListaAgentes
@@ -116,7 +116,7 @@
             this.btnNuevo.Location = new System.Drawing.Point(987, 595);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(119, 33);
-            this.btnNuevo.TabIndex = 2;
+            this.btnNuevo.TabIndex = 4;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
@@ -132,7 +132,7 @@
             this.btnVolver.Location = new System.Drawing.Point(826, 595);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TabIndex = 3;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -148,7 +148,7 @@
             this.btnEditar.Location = new System.Drawing.Point(1148, 595);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(119, 33);
-            this.btnEditar.TabIndex = 3;
+            this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnSeleccionar_Click);
@@ -157,27 +157,33 @@
             // 
             this.lblIngresar.AutoSize = true;
             this.lblIngresar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
-            this.lblIngresar.Location = new System.Drawing.Point(35, 77);
+            this.lblIngresar.Location = new System.Drawing.Point(34, 78);
             this.lblIngresar.Name = "lblIngresar";
             this.lblIngresar.Size = new System.Drawing.Size(209, 18);
-            this.lblIngresar.TabIndex = 5;
+            this.lblIngresar.TabIndex = 7;
             this.lblIngresar.Text = "Ingrese el nombre del agente:";
             // 
             // txtBuscar
             // 
-            this.txtBuscar.Location = new System.Drawing.Point(38, 99);
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(35, 104);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(335, 20);
-            this.txtBuscar.TabIndex = 6;
+            this.txtBuscar.Size = new System.Drawing.Size(335, 26);
+            this.txtBuscar.TabIndex = 0;
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(393, 99);
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(396, 98);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(86, 23);
-            this.btnBuscar.TabIndex = 7;
+            this.btnBuscar.Size = new System.Drawing.Size(81, 35);
+            this.btnBuscar.TabIndex = 1;
             this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // Id

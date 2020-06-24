@@ -90,11 +90,41 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
+            if (txtNombre.Text == "" || txtPaterno.Text == "" || txtMaterno.Text == "" || txtCodigo.Text == "" || txtDNI.Text == "" || txtEmailAgente.Text == "" || txtEmailPersonal.Text == "" || -1 == (int)cboEquipo.SelectedValue || -1 == (int)cboRol.SelectedValue)
+            {
+                MessageBox.Show(
+                "Debe llenar todos los campos",
+                "Advertencia",
+                MessageBoxButtons.OK, MessageBoxIcon.Warning
+                );
+                return;
+            }
+
+            agenteSel = new AgenteWS.agente();
+            agenteSel.nombre = txtNombre.Text;
+            agenteSel.apellidoPaterno = txtPaterno.Text;
+            agenteSel.apellidoMaterno = txtMaterno.Text;
+            agenteSel.codigo = txtCodigo.Text;
+            agenteSel.dni = txtDNI.Text;
+
+            agenteSel.equipo = new AgenteWS.equipo();
+            agenteSel.rol = new AgenteWS.rol();
+
+            agenteSel.equipo.equipoId = (int)cboEquipo.SelectedValue;
+            agenteSel.rol.rolId = (int)cboRol.SelectedValue;
+            agenteSel.personaEmail = txtEmailPersonal.Text;
+            agenteSel.agenteEmail = txtEmailAgente.Text;
+
+            if (agenteDAO.insertarAgente(agenteSel) >-1)
+            {
+                MessageBox.Show(
                 "Se ha guardado el registro.",
                 "Guardado exitoso",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+                );
+            }
+
+                        
             this.Close();
         }
 
@@ -136,8 +166,7 @@ namespace TableSoft
             agenteSel.rol = new AgenteWS.rol();
 
             agenteSel.equipo.equipoId = (int)cboEquipo.SelectedValue;
-            agenteSel.equipo.equipoId = (int)cboEquipo.SelectedValue;
-
+            agenteSel.rol.rolId = (int)cboRol.SelectedValue;
             agenteSel.personaEmail = txtEmailPersonal.Text;
             agenteSel.agenteEmail = txtEmailAgente.Text;
 

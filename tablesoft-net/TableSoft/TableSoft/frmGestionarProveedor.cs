@@ -100,7 +100,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (txtDireccion.Text == "")
+            if (txtRazonSocial.Text == "")
             {
                 MessageBox.Show(
                     "Falta indicar la razon social del proveedor.",
@@ -109,7 +109,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            if (Regex.Matches(txtRazonSocial.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "La razon social del proveedor de contener al menos una letra.",
@@ -118,7 +118,25 @@ namespace TableSoft
                 );
                 return;
             }
-            if(cboPais.SelectedIndex < 0)
+            if (txtDireccion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la direccion del proveedor.",
+                    "Error de direccion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La direccion del proveedor de contener al menos una letra.",
+                    "Error de direccion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (cboPais.SelectedIndex < 0)
             {
                 MessageBox.Show(
                     "Falta seleccionar el pais del proveedor.",
@@ -163,7 +181,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtTelefono.Text, @"@").Count == 0)
+            if (Regex.Matches(txtEmail.Text, @"@").Count == 0)
             {
                 MessageBox.Show(
                     "El email del proveedor de contener un arroba.",
@@ -248,7 +266,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (txtDireccion.Text == "")
+            if (txtRazonSocial.Text == "")
             {
                 MessageBox.Show(
                     "Falta indicar la razon social del proveedor.",
@@ -257,11 +275,29 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            if (Regex.Matches(txtRazonSocial.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
                     "La razon social del proveedor de contener al menos una letra.",
                     "Error de razon social",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDireccion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la direccion del proveedor.",
+                    "Error de direccion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La direccion del proveedor de contener al menos una letra.",
+                    "Error de direccion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -311,7 +347,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtTelefono.Text, @"@").Count == 0)
+            if (Regex.Matches(txtEmail.Text, @"@").Count == 0)
             {
                 MessageBox.Show(
                     "El email del proveedor de contener un arroba.",

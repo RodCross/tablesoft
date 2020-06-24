@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,9 +13,18 @@ namespace TableSoft
 {
     public partial class frmGestionarProveedor : Form
     {
+        private ProveedorWS.ProveedorWSClient proveedorDAO = new ProveedorWS.ProveedorWSClient();
+        private ProveedorWS.proveedor proveedor;
+        private PaisWS.PaisWSClient paisDAO = new PaisWS.PaisWSClient();
+        private CiudadWS.pais pais;
+        private CiudadWS.CiudadWSClient ciudadDAO = new CiudadWS.CiudadWSClient();
         public frmGestionarProveedor()
         {
+            proveedor = new ProveedorWS.proveedor();
+            pais = new CiudadWS.pais();
             InitializeComponent();
+            cboPais.SelectedIndex = -1;
+            LlenarCboPais();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
             btnEliminar.Visible = false;
@@ -22,18 +32,37 @@ namespace TableSoft
 
         public frmGestionarProveedor(ProveedorWS.proveedor prov)
         {
+            proveedor = prov;
+            pais = new CiudadWS.pais();
             InitializeComponent();
-            txtIDProveedor.Text = prov.proveedorId.ToString();
-            txtRUC.Text = prov.ruc;
-            txtRazonSocial.Text = prov.razonSocial;
-            txtDireccion.Text = prov.direccion;
-            txtCiudad.Text = prov.ciudad.nombre;
-            txtPais.Text = prov.ciudad.pais.nombre;
-            txtTelefono.Text = prov.telefono;
-            txtEmail.Text = prov.email;
+            cboPais.SelectedItem = -1;
+            LlenarCboPais();
+            txtIDProveedor.Text = proveedor.proveedorId.ToString();
+            txtRUC.Text = proveedor.ruc;
+            txtRazonSocial.Text = proveedor.razonSocial;
+            txtDireccion.Text = proveedor.direccion;
+            cboCiudad.SelectedIndex = -1;
+            txtTelefono.Text = proveedor.telefono;
+            txtEmail.Text = proveedor.email;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;
+        }
+
+        private void LlenarCboPais()
+        {
+            cboPais.DataSource = paisDAO.listarPaises();
+            cboPais.DisplayMember = "nombre";
+            cboPais.ValueMember = "paisId";
+            cboPais.SelectedIndex = -1;
+        }
+
+        public void LlenarCboCiudad()
+        {
+            cboCiudad.DataSource = ciudadDAO.listarCiudadesDePais(pais);
+            cboCiudad.DisplayMember = "nombre_ciudad";
+            cboCiudad.ValueMember = "ciudadId";
+            cboCiudad.SelectedIndex = -1;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -43,21 +72,144 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha guardado el registro.",
-                "Guardado exitoso",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            if (txtRUC.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el ruc del proveedor.",
+                    "Error de ruc",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.IsMatch(txtRUC.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El ruc del proveedor de contener solo numeros.",
+                    "Error de ruc",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if(Regex.Matches(txtRUC.Text, @"[0-9]").Count != 11)
+            {
+                MessageBox.Show(
+                    "El ruc del proveedor de contener 11 digitos.",
+                    "Error de ruc",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDireccion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la razon social del proveedor.",
+                    "Error de razon social",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La razon social del proveedor de contener al menos una letra.",
+                    "Error de razon social",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if(cboPais.SelectedIndex < 0)
+            {
+                MessageBox.Show(
+                    "Falta seleccionar el pais del proveedor.",
+                    "Error de pais",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (cboCiudad.SelectedIndex < 0)
+            {
+                MessageBox.Show(
+                    "Falta seleccionar la ciudad del proveedor.",
+                    "Error de ciudad",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtTelefono.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el telefono del proveedor.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtTelefono.Text, @"[0-9]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El telefono del proveedor de contener al menos un numero.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtEmail.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el email del proveedor.",
+                    "Error de email",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtTelefono.Text, @"@").Count == 0)
+            {
+                MessageBox.Show(
+                    "El email del proveedor de contener un arroba.",
+                    "Error de email",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            proveedor.ruc = txtRUC.Text;
+            proveedor.razonSocial = txtRazonSocial.Text;
+            proveedor.direccion = txtDireccion.Text;
+            
+            CiudadWS.ciudad ciudadAux = new CiudadWS.ciudad();
+            ciudadAux = (CiudadWS.ciudad)cboCiudad.SelectedItem;
+            proveedor.ciudad.ciudadId = ciudadAux.ciudadId;
+            proveedor.ciudad.nombre = ciudadAux.nombre;
+
+            PaisWS.pais paisAux = new PaisWS.pais();
+            paisAux = (PaisWS.pais)cboPais.SelectedItem;
+
+            proveedor.ciudad.pais.paisId = paisAux.paisId;
+            proveedor.ciudad.pais.nombre = paisAux.nombre;
+
+            proveedor.telefono = txtTelefono.Text;
+            proveedor.email = txtEmail.Text;
+            if (proveedorDAO.insertarProveedor(proveedor) > 0)
+            {
+                MessageBox.Show(
+                    "Se ha guardado el registro.",
+                    "Guardado exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            txtIDProveedor.Text = proveedor.proveedorId.ToString();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha eliminado el registro.",
-                "Eliminación exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+            if (proveedorDAO.eliminarProveedor(proveedor) > -1)
+            {
+                MessageBox.Show(
+                    "Se ha eliminado el registro.",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
             this.Close();
         }
 
@@ -68,12 +220,142 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha actualizado el registro.",
-                "Actualización exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            if (txtRUC.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el ruc del proveedor.",
+                    "Error de ruc",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.IsMatch(txtRUC.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El ruc del proveedor de contener solo numeros.",
+                    "Error de ruc",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtRUC.Text, @"[0-9]").Count != 11)
+            {
+                MessageBox.Show(
+                    "El ruc del proveedor de contener 11 digitos.",
+                    "Error de ruc",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDireccion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la razon social del proveedor.",
+                    "Error de razon social",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La razon social del proveedor de contener al menos una letra.",
+                    "Error de razon social",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (cboPais.SelectedIndex < 0)
+            {
+                MessageBox.Show(
+                    "Falta seleccionar el pais del proveedor.",
+                    "Error de pais",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (cboCiudad.SelectedIndex < 0)
+            {
+                MessageBox.Show(
+                    "Falta seleccionar la ciudad del proveedor.",
+                    "Error de ciudad",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtTelefono.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el telefono del proveedor.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtTelefono.Text, @"[0-9]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El telefono del proveedor de contener al menos un numero.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtEmail.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el email del proveedor.",
+                    "Error de email",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtTelefono.Text, @"@").Count == 0)
+            {
+                MessageBox.Show(
+                    "El email del proveedor de contener un arroba.",
+                    "Error de email",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            proveedor.ruc = txtRUC.Text;
+            proveedor.razonSocial = txtRazonSocial.Text;
+            proveedor.direccion = txtDireccion.Text;
+
+            CiudadWS.ciudad ciudadAux = new CiudadWS.ciudad();
+            ciudadAux = (CiudadWS.ciudad)cboCiudad.SelectedItem;
+            proveedor.ciudad.ciudadId = ciudadAux.ciudadId;
+            proveedor.ciudad.nombre = ciudadAux.nombre;
+
+            PaisWS.pais paisAux = new PaisWS.pais();
+            paisAux = (PaisWS.pais)cboPais.SelectedItem;
+
+            proveedor.ciudad.pais.paisId = paisAux.paisId;
+            proveedor.ciudad.pais.nombre = paisAux.nombre;
+
+            proveedor.telefono = txtTelefono.Text;
+            proveedor.email = txtEmail.Text;
+            if (proveedorDAO.actualizarProveedor(proveedor) > -1)
+            {
+                MessageBox.Show(
+                    "Se ha actualizado el registro.",
+                    "Actualización exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            this.DialogResult = DialogResult.OK;
+        }
+
+        private void cboPais_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboPais.SelectedIndex != -1)
+            {
+                PaisWS.pais paisAux = (PaisWS.pais) cboPais.SelectedItem;
+                pais.paisId = paisAux.paisId;
+                pais.nombre = paisAux.nombre;
+                LlenarCboCiudad();
+            }
         }
     }
 }

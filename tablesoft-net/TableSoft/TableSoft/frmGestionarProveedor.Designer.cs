@@ -32,9 +32,7 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblDatosProveedor = new System.Windows.Forms.Label();
-            this.txtPais = new System.Windows.Forms.TextBox();
             this.lblPais = new System.Windows.Forms.Label();
-            this.txtCiudad = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -51,6 +49,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.cboPais = new System.Windows.Forms.ComboBox();
+            this.cboCiudad = new System.Windows.Forms.ComboBox();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +61,9 @@
             this.pnlTitulo.Controls.Add(this.lblDatosProveedor);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(700, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(933, 86);
             this.pnlTitulo.TabIndex = 10;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -74,9 +75,10 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(569, 21);
+            this.btnCancelar.Location = new System.Drawing.Point(759, 26);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(102, 33);
+            this.btnCancelar.Size = new System.Drawing.Size(136, 41);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -87,89 +89,81 @@
             this.lblDatosProveedor.AutoSize = true;
             this.lblDatosProveedor.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblDatosProveedor.ForeColor = System.Drawing.Color.White;
-            this.lblDatosProveedor.Location = new System.Drawing.Point(30, 22);
+            this.lblDatosProveedor.Location = new System.Drawing.Point(40, 27);
+            this.lblDatosProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDatosProveedor.Name = "lblDatosProveedor";
-            this.lblDatosProveedor.Size = new System.Drawing.Size(211, 27);
+            this.lblDatosProveedor.Size = new System.Drawing.Size(279, 36);
             this.lblDatosProveedor.TabIndex = 0;
             this.lblDatosProveedor.Text = "Datos del proveedor";
-            // 
-            // txtPais
-            // 
-            this.txtPais.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPais.Location = new System.Drawing.Point(170, 288);
-            this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(305, 28);
-            this.txtPais.TabIndex = 5;
             // 
             // lblPais
             // 
             this.lblPais.AutoSize = true;
             this.lblPais.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblPais.Location = new System.Drawing.Point(109, 291);
+            this.lblPais.Location = new System.Drawing.Point(148, 310);
+            this.lblPais.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPais.Name = "lblPais";
-            this.lblPais.Size = new System.Drawing.Size(38, 21);
+            this.lblPais.Size = new System.Drawing.Size(46, 26);
             this.lblPais.TabIndex = 16;
             this.lblPais.Text = "País";
-            // 
-            // txtCiudad
-            // 
-            this.txtCiudad.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCiudad.Location = new System.Drawing.Point(170, 249);
-            this.txtCiudad.Name = "txtCiudad";
-            this.txtCiudad.Size = new System.Drawing.Size(305, 28);
-            this.txtCiudad.TabIndex = 4;
             // 
             // txtDireccion
             // 
             this.txtDireccion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(170, 210);
+            this.txtDireccion.Location = new System.Drawing.Point(227, 258);
+            this.txtDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(511, 28);
+            this.txtDireccion.Size = new System.Drawing.Size(680, 33);
             this.txtDireccion.TabIndex = 3;
             // 
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDireccion.Location = new System.Drawing.Point(72, 213);
+            this.lblDireccion.Location = new System.Drawing.Point(96, 262);
+            this.lblDireccion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(75, 21);
+            this.lblDireccion.Size = new System.Drawing.Size(94, 26);
             this.lblDireccion.TabIndex = 14;
             this.lblDireccion.Text = "Dirección";
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(170, 366);
+            this.txtEmail.Location = new System.Drawing.Point(227, 450);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(305, 28);
+            this.txtEmail.Size = new System.Drawing.Size(405, 33);
             this.txtEmail.TabIndex = 7;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmail.Location = new System.Drawing.Point(99, 369);
+            this.lblEmail.Location = new System.Drawing.Point(132, 454);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 21);
+            this.lblEmail.Size = new System.Drawing.Size(59, 26);
             this.lblEmail.TabIndex = 18;
             this.lblEmail.Text = "Email";
             // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(170, 327);
+            this.txtTelefono.Location = new System.Drawing.Point(227, 402);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(305, 28);
+            this.txtTelefono.Size = new System.Drawing.Size(405, 33);
             this.txtTelefono.TabIndex = 6;
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblTelefono.Location = new System.Drawing.Point(77, 330);
+            this.lblTelefono.Location = new System.Drawing.Point(103, 406);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(70, 21);
+            this.lblTelefono.Size = new System.Drawing.Size(88, 26);
             this.lblTelefono.TabIndex = 17;
             this.lblTelefono.Text = "Teléfono";
             // 
@@ -177,27 +171,30 @@
             // 
             this.lblCiudad.AutoSize = true;
             this.lblCiudad.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblCiudad.Location = new System.Drawing.Point(88, 252);
+            this.lblCiudad.Location = new System.Drawing.Point(117, 357);
+            this.lblCiudad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(59, 21);
+            this.lblCiudad.Size = new System.Drawing.Size(74, 26);
             this.lblCiudad.TabIndex = 15;
             this.lblCiudad.Text = "Ciudad";
             // 
             // txtRazonSocial
             // 
             this.txtRazonSocial.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSocial.Location = new System.Drawing.Point(170, 171);
+            this.txtRazonSocial.Location = new System.Drawing.Point(227, 210);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(511, 28);
+            this.txtRazonSocial.Size = new System.Drawing.Size(680, 33);
             this.txtRazonSocial.TabIndex = 2;
             // 
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
             this.lblRazonSocial.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblRazonSocial.Location = new System.Drawing.Point(51, 174);
+            this.lblRazonSocial.Location = new System.Drawing.Point(68, 214);
+            this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(96, 21);
+            this.lblRazonSocial.Size = new System.Drawing.Size(120, 26);
             this.lblRazonSocial.TabIndex = 13;
             this.lblRazonSocial.Text = "Razón social";
             // 
@@ -205,37 +202,41 @@
             // 
             this.lblIDProveedor.AutoSize = true;
             this.lblIDProveedor.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDProveedor.Location = new System.Drawing.Point(122, 96);
+            this.lblIDProveedor.Location = new System.Drawing.Point(163, 118);
+            this.lblIDProveedor.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIDProveedor.Name = "lblIDProveedor";
-            this.lblIDProveedor.Size = new System.Drawing.Size(25, 21);
+            this.lblIDProveedor.Size = new System.Drawing.Size(31, 26);
             this.lblIDProveedor.TabIndex = 11;
             this.lblIDProveedor.Text = "ID";
             // 
             // txtRUC
             // 
             this.txtRUC.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRUC.Location = new System.Drawing.Point(170, 132);
+            this.txtRUC.Location = new System.Drawing.Point(227, 162);
+            this.txtRUC.Margin = new System.Windows.Forms.Padding(4);
             this.txtRUC.Name = "txtRUC";
-            this.txtRUC.Size = new System.Drawing.Size(204, 28);
+            this.txtRUC.Size = new System.Drawing.Size(271, 33);
             this.txtRUC.TabIndex = 1;
             // 
             // txtIDProveedor
             // 
             this.txtIDProveedor.Enabled = false;
             this.txtIDProveedor.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDProveedor.Location = new System.Drawing.Point(170, 93);
+            this.txtIDProveedor.Location = new System.Drawing.Point(227, 114);
+            this.txtIDProveedor.Margin = new System.Windows.Forms.Padding(4);
             this.txtIDProveedor.Name = "txtIDProveedor";
             this.txtIDProveedor.ReadOnly = true;
-            this.txtIDProveedor.Size = new System.Drawing.Size(204, 28);
+            this.txtIDProveedor.Size = new System.Drawing.Size(271, 33);
             this.txtIDProveedor.TabIndex = 0;
             // 
             // lblRUC
             // 
             this.lblRUC.AutoSize = true;
             this.lblRUC.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblRUC.Location = new System.Drawing.Point(106, 135);
+            this.lblRUC.Location = new System.Drawing.Point(141, 166);
+            this.lblRUC.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRUC.Name = "lblRUC";
-            this.lblRUC.Size = new System.Drawing.Size(41, 21);
+            this.lblRUC.Size = new System.Drawing.Size(50, 26);
             this.lblRUC.TabIndex = 12;
             this.lblRUC.Text = "RUC";
             // 
@@ -247,9 +248,10 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(419, 419);
+            this.btnEliminar.Location = new System.Drawing.Point(559, 516);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(102, 33);
+            this.btnEliminar.Size = new System.Drawing.Size(136, 41);
             this.btnEliminar.TabIndex = 8;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -263,9 +265,10 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(569, 419);
+            this.btnActualizar.Location = new System.Drawing.Point(759, 516);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(102, 33);
+            this.btnActualizar.Size = new System.Drawing.Size(136, 41);
             this.btnActualizar.TabIndex = 9;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -279,23 +282,41 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(569, 419);
+            this.btnGuardar.Location = new System.Drawing.Point(759, 516);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(102, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(136, 41);
             this.btnGuardar.TabIndex = 8;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // cboPais
+            // 
+            this.cboPais.FormattingEnabled = true;
+            this.cboPais.Location = new System.Drawing.Point(227, 315);
+            this.cboPais.Name = "cboPais";
+            this.cboPais.Size = new System.Drawing.Size(405, 24);
+            this.cboPais.TabIndex = 19;
+            this.cboPais.SelectedIndexChanged += new System.EventHandler(this.cboPais_SelectedIndexChanged);
+            // 
+            // cboCiudad
+            // 
+            this.cboCiudad.FormattingEnabled = true;
+            this.cboCiudad.Location = new System.Drawing.Point(227, 362);
+            this.cboCiudad.Name = "cboCiudad";
+            this.cboCiudad.Size = new System.Drawing.Size(405, 24);
+            this.cboCiudad.TabIndex = 20;
+            // 
             // frmGestionarProveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 480);
+            this.ClientSize = new System.Drawing.Size(933, 591);
+            this.Controls.Add(this.cboCiudad);
+            this.Controls.Add(this.cboPais);
             this.Controls.Add(this.btnEliminar);
-            this.Controls.Add(this.txtPais);
             this.Controls.Add(this.lblPais);
-            this.Controls.Add(this.txtCiudad);
             this.Controls.Add(this.txtDireccion);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.txtEmail);
@@ -314,6 +335,7 @@
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGestionarProveedor";
             this.Text = "frmGestionProveedores";
             this.pnlTitulo.ResumeLayout(false);
@@ -326,9 +348,7 @@
         #endregion
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblDatosProveedor;
-        private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.Label lblPais;
-        private System.Windows.Forms.TextBox txtCiudad;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtEmail;
@@ -346,5 +366,7 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox cboPais;
+        private System.Windows.Forms.ComboBox cboCiudad;
     }
 }

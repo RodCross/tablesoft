@@ -18,7 +18,15 @@ namespace TableSoft
         public frmSeleccionarProveedor()
         {
             InitializeComponent();
-            proveedores = new BindingList<ProveedorWS.proveedor>(proveedorDAO.listarProveedores().ToArray());
+            var provs = proveedorDAO.listarProveedores();
+            if (provs == null)
+            {
+                proveedores = new BindingList<ProveedorWS.proveedor>();
+            }
+            else
+            {
+                proveedores = new BindingList<ProveedorWS.proveedor>(provs);
+            }
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = proveedores;
         }
@@ -36,14 +44,40 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarProveedor frm = new frmGestionarProveedor();
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var provs = proveedorDAO.listarProveedores();
+                if (provs == null)
+                {
+                    proveedores = new BindingList<ProveedorWS.proveedor>();
+                }
+                else
+                {
+                    proveedores = new BindingList<ProveedorWS.proveedor>(provs);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = proveedores;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             ProveedorWS.proveedor prov = (ProveedorWS.proveedor)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarProveedor frm = new frmGestionarProveedor(prov);
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var provs = proveedorDAO.listarProveedores();
+                if (provs == null)
+                {
+                    proveedores = new BindingList<ProveedorWS.proveedor>();
+                }
+                else
+                {
+                    proveedores = new BindingList<ProveedorWS.proveedor>(provs);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = proveedores;
+            }
         }
     }
 }

@@ -55,7 +55,7 @@
             // 
             // btnGestionarEmpleado
             // 
-            this.btnGestionarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarEmpleado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarEmpleado.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -70,7 +70,7 @@
             // 
             // btnGestionarAgentes
             // 
-            this.btnGestionarAgentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarAgentes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarAgentes.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarAgentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarAgentes.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -85,7 +85,7 @@
             // 
             // btnGestionarCategorias
             // 
-            this.btnGestionarCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarCategorias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarCategorias.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,7 +100,7 @@
             // 
             // btnGestionarProveedores
             // 
-            this.btnGestionarProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarProveedores.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarProveedores.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarProveedores.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -115,7 +115,7 @@
             // 
             // btnGestionarBibliotecas
             // 
-            this.btnGestionarBibliotecas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarBibliotecas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarBibliotecas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarBibliotecas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarBibliotecas.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,7 +130,7 @@
             // 
             // btnGestionarUrgencias
             // 
-            this.btnGestionarUrgencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarUrgencias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarUrgencias.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarUrgencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarUrgencias.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -145,7 +145,7 @@
             // 
             // btnGestionarActivosFijos
             // 
-            this.btnGestionarActivosFijos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarActivosFijos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarActivosFijos.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarActivosFijos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarActivosFijos.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -160,7 +160,7 @@
             // 
             // btnGestionarEquiposTrabajo
             // 
-            this.btnGestionarEquiposTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarEquiposTrabajo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarEquiposTrabajo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarEquiposTrabajo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarEquiposTrabajo.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -221,7 +221,7 @@
             // 
             // btnGestionarEstadosTicket
             // 
-            this.btnGestionarEstadosTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnGestionarEstadosTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnGestionarEstadosTicket.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGestionarEstadosTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarEstadosTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -77,7 +77,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(569, 21);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 33);
-            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -90,7 +90,7 @@
             this.lblDatosProveedor.Location = new System.Drawing.Point(30, 22);
             this.lblDatosProveedor.Name = "lblDatosProveedor";
             this.lblDatosProveedor.Size = new System.Drawing.Size(211, 27);
-            this.lblDatosProveedor.TabIndex = 0;
+            this.lblDatosProveedor.TabIndex = 1;
             this.lblDatosProveedor.Text = "Datos del proveedor";
             // 
             // lblPais
@@ -100,7 +100,7 @@
             this.lblPais.Location = new System.Drawing.Point(111, 252);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(38, 21);
-            this.lblPais.TabIndex = 16;
+            this.lblPais.TabIndex = 15;
             this.lblPais.Text = "País";
             // 
             // txtDireccion
@@ -164,7 +164,7 @@
             this.lblCiudad.Location = new System.Drawing.Point(88, 290);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(59, 21);
-            this.lblCiudad.TabIndex = 15;
+            this.lblCiudad.TabIndex = 16;
             this.lblCiudad.Text = "Ciudad";
             // 
             // txtRazonSocial
@@ -276,10 +276,10 @@
             this.cboPais.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
             this.cboPais.FormattingEnabled = true;
             this.cboPais.Location = new System.Drawing.Point(170, 250);
-            this.cboPais.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboPais.Margin = new System.Windows.Forms.Padding(2);
             this.cboPais.Name = "cboPais";
             this.cboPais.Size = new System.Drawing.Size(305, 29);
-            this.cboPais.TabIndex = 19;
+            this.cboPais.TabIndex = 4;
             this.cboPais.SelectedIndexChanged += new System.EventHandler(this.cboPais_SelectedIndexChanged);
             // 
             // cboCiudad
@@ -287,10 +287,10 @@
             this.cboCiudad.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
             this.cboCiudad.FormattingEnabled = true;
             this.cboCiudad.Location = new System.Drawing.Point(170, 288);
-            this.cboCiudad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCiudad.Margin = new System.Windows.Forms.Padding(2);
             this.cboCiudad.Name = "cboCiudad";
             this.cboCiudad.Size = new System.Drawing.Size(305, 29);
-            this.cboCiudad.TabIndex = 20;
+            this.cboCiudad.TabIndex = 5;
             // 
             // frmGestionarProveedor
             // 

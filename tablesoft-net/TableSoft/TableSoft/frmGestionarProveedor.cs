@@ -21,7 +21,6 @@ namespace TableSoft
 
         public frmGestionarProveedor()
         {
-            proveedor = new ProveedorWS.proveedor();
             pais = new CiudadWS.pais();
             InitializeComponent();
             LlenarCboPais();
@@ -44,7 +43,7 @@ namespace TableSoft
             txtTelefono.Text = proveedor.telefono;
             txtEmail.Text = proveedor.email;
             cboPais.SelectedIndex = proveedor.ciudad.pais.paisId - 1;
-            cboCiudad.SelectedIndex = proveedor.ciudad.ciudadId - 1;
+            cboCiudad.SelectedValue = proveedor.ciudad.nombre;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;
@@ -62,7 +61,7 @@ namespace TableSoft
         {
             cboCiudad.DataSource = ciudadDAO.listarCiudadesDePais(pais);
             cboCiudad.DisplayMember = "nombre";
-            cboCiudad.ValueMember = "ciudadId";
+            cboCiudad.ValueMember = "nombre";
             cboCiudad.SelectedIndex = 0;
         }
 
@@ -190,18 +189,18 @@ namespace TableSoft
                 );
                 return;
             }
+            proveedor = new ProveedorWS.proveedor();
             proveedor.ruc = txtRUC.Text;
             proveedor.razonSocial = txtRazonSocial.Text;
             proveedor.direccion = txtDireccion.Text;
-            
-            CiudadWS.ciudad ciudadAux = new CiudadWS.ciudad();
-            ciudadAux = (CiudadWS.ciudad)cboCiudad.SelectedItem;
+
+            proveedor.ciudad = new ProveedorWS.ciudad();
+            CiudadWS.ciudad ciudadAux = (CiudadWS.ciudad)cboCiudad.SelectedItem;
             proveedor.ciudad.ciudadId = ciudadAux.ciudadId;
             proveedor.ciudad.nombre = ciudadAux.nombre;
 
-            PaisWS.pais paisAux = new PaisWS.pais();
-            paisAux = (PaisWS.pais)cboPais.SelectedItem;
-
+            proveedor.ciudad.pais = new ProveedorWS.pais();
+            PaisWS.pais paisAux = (PaisWS.pais)cboPais.SelectedItem;
             proveedor.ciudad.pais.paisId = paisAux.paisId;
             proveedor.ciudad.pais.nombre = paisAux.nombre;
 
@@ -229,7 +228,7 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -360,20 +359,17 @@ namespace TableSoft
             proveedor.razonSocial = txtRazonSocial.Text;
             proveedor.direccion = txtDireccion.Text;
 
-            CiudadWS.ciudad ciudadAux = new CiudadWS.ciudad();
-            ciudadAux = (CiudadWS.ciudad)cboCiudad.SelectedItem;
+            CiudadWS.ciudad ciudadAux = (CiudadWS.ciudad)cboCiudad.SelectedItem;
             proveedor.ciudad.ciudadId = ciudadAux.ciudadId;
             proveedor.ciudad.nombre = ciudadAux.nombre;
 
-            PaisWS.pais paisAux = new PaisWS.pais();
-            paisAux = (PaisWS.pais)cboPais.SelectedItem;
-
+            PaisWS.pais paisAux = (PaisWS.pais)cboPais.SelectedItem;
             proveedor.ciudad.pais.paisId = paisAux.paisId;
             proveedor.ciudad.pais.nombre = paisAux.nombre;
 
             proveedor.telefono = txtTelefono.Text;
             proveedor.email = txtEmail.Text;
-            if (proveedorDAO.actualizarProveedor(proveedor) > -1)
+            if (proveedorDAO.actualizarProveedor(proveedor) == 0)
             {
                 MessageBox.Show(
                     "Se ha actualizado el registro.",

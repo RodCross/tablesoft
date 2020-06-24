@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -45,7 +46,42 @@ namespace TableSoft
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             // Validaciones
-
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el nombre de la categoria.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if( Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre de la categoria de contener al menos una letra.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDescripcion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la descripcion de la categoria.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDescripcion.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "La descripcion de la categoria de contener al menos una letra.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
             categoria.nombre = txtNombre.Text;
             categoria.descripcion = txtDescripcion.Text;
 
@@ -85,6 +121,42 @@ namespace TableSoft
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             // Validaciones
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el nombre de la categoria.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre de la categoria de contener al menos una letra.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDescripcion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la descripcion de la categoria.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDescripcion.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "La descripcion de la categoria de contener al menos una letra.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
 
             categoria.nombre = txtNombre.Text;
             categoria.descripcion = txtDescripcion.Text;

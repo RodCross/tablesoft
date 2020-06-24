@@ -361,14 +361,11 @@ public class Principal {
 //        }
 
         // Listar ciudades
-        Pais pais = new Pais();
-        pais.setPaisId(1);
-        ArrayList<Ciudad> ciudades = ciudadDao.listarxPais(pais);
-        System.out.println("Ciudades de " + pais.getPaisId());
-        for(Ciudad c:ciudades){
-            System.out.println(c.getNombre());
-        }
+        Categoria cat1 = new Categoria();
+        cat1.setCategoriaId(4);
 
+        int i = categoriaDao.eliminar(cat1);
+        System.out.println(i);
 
         /* Los metodos para eliminar en las clases con campo activo los ponen en 0
          * Es requisto que se deje un registro permanente en base de datos

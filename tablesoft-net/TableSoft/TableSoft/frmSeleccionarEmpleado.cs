@@ -30,6 +30,7 @@ namespace TableSoft
                 dgvLista.DataSource = null;
             }
         }
+
         private void dgvLista_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             EmpleadoWS.empleado data = dgvLista.Rows[e.RowIndex].DataBoundItem as EmpleadoWS.empleado;

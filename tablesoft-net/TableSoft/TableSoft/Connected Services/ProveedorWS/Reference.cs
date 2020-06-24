@@ -185,9 +185,6 @@ namespace TableSoft.ProveedorWS {
                 this.RaisePropertyChanged("telefono");
             }
         }
-
-        // Para DGV
-        public string nombreCiudad { get => ciudad.nombre; }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         

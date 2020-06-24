@@ -14,17 +14,18 @@ namespace TableSoft
     public partial class frmGestionarProveedor : Form
     {
         private ProveedorWS.ProveedorWSClient proveedorDAO = new ProveedorWS.ProveedorWSClient();
-        private ProveedorWS.proveedor proveedor;
         private PaisWS.PaisWSClient paisDAO = new PaisWS.PaisWSClient();
-        private CiudadWS.pais pais;
         private CiudadWS.CiudadWSClient ciudadDAO = new CiudadWS.CiudadWSClient();
+        private ProveedorWS.proveedor proveedor;
+        private CiudadWS.pais pais;
+
         public frmGestionarProveedor()
         {
             proveedor = new ProveedorWS.proveedor();
             pais = new CiudadWS.pais();
             InitializeComponent();
-            cboPais.SelectedIndex = -1;
             LlenarCboPais();
+            cboCiudad.Enabled = false;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
             btnEliminar.Visible = false;
@@ -35,18 +36,15 @@ namespace TableSoft
             proveedor = prov;
             pais = new CiudadWS.pais();
             InitializeComponent();
-
             LlenarCboPais();
-
             txtIDProveedor.Text = proveedor.proveedorId.ToString();
             txtRUC.Text = proveedor.ruc;
             txtRazonSocial.Text = proveedor.razonSocial;
             txtDireccion.Text = proveedor.direccion;
             txtTelefono.Text = proveedor.telefono;
             txtEmail.Text = proveedor.email;
-            cboPais.SelectedValue = proveedor.ciudad.pais.nombre;
-            cboCiudad.SelectedValue = proveedor.ciudad.nombre;
-
+            cboPais.SelectedIndex = proveedor.ciudad.pais.paisId - 1;
+            cboCiudad.SelectedIndex = proveedor.ciudad.ciudadId - 1;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;
@@ -65,7 +63,7 @@ namespace TableSoft
             cboCiudad.DataSource = ciudadDAO.listarCiudadesDePais(pais);
             cboCiudad.DisplayMember = "nombre";
             cboCiudad.ValueMember = "ciudadId";
-            cboCiudad.SelectedIndex = -1;
+            cboCiudad.SelectedIndex = 0;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -354,10 +352,18 @@ namespace TableSoft
         {
             if (cboPais.SelectedIndex != -1)
             {
-                PaisWS.pais paisAux = (PaisWS.pais) cboPais.SelectedItem;
+                if (!cboCiudad.Enabled)
+                {
+                    cboCiudad.Enabled = true;
+                }
+                PaisWS.pais paisAux = (PaisWS.pais)cboPais.SelectedItem;
                 pais.paisId = paisAux.paisId;
                 pais.nombre = paisAux.nombre;
                 LlenarCboCiudad();
+            }
+            else
+            {
+                cboCiudad.SelectedIndex = -1;
             }
         }
     }

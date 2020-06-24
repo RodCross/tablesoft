@@ -36,6 +36,12 @@ namespace TableSoft
             Movimiento.MoverVentana(Handle, e.Button);
         }
 
+        private void dgvLista_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            ProveedorWS.proveedor data = dgvLista.Rows[e.RowIndex].DataBoundItem as ProveedorWS.proveedor;
+            dgvLista.Rows[e.RowIndex].Cells["Ciudad"].Value = data.ciudad.nombre;
+        }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();

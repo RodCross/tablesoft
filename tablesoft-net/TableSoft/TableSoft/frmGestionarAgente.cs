@@ -28,6 +28,8 @@ namespace TableSoft
             InitializeComponent();
             LlenarCboRoles();
             LlenarCboEquipos();
+            txtPass.Enabled = true;
+            picEye.Visible = true;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
             btnEliminar.Visible = false;
@@ -52,6 +54,7 @@ namespace TableSoft
             txtDireccion.Text = age.direccion;
             txtTel.Text = age.telefono;
             txtPass.Enabled = false;
+            picEye.Visible = false;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;
@@ -184,6 +187,36 @@ namespace TableSoft
                 );
             }
             this.Close();
+        }
+
+        private void picEye_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.EyeMouseDown;
+            txtPass.PasswordChar = '\0';
+        }
+
+        private void picEye_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.EyeMouseEnter;
+        }
+
+        private void picEye_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.Eye;
+        }
+
+        private void picEye_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.EyeMouseEnter;
+            txtPass.PasswordChar = '*';
         }
     }
 }

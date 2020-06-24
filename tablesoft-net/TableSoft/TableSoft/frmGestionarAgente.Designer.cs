@@ -61,7 +61,9 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
+            this.picEye = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -403,11 +405,27 @@
             this.lblPass.Text = "Contraseña";
             this.lblPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // picEye
+            // 
+            this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEye.Image = global::TableSoft.Properties.Resources.Eye;
+            this.picEye.Location = new System.Drawing.Point(642, 315);
+            this.picEye.Name = "picEye";
+            this.picEye.Size = new System.Drawing.Size(29, 28);
+            this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEye.TabIndex = 29;
+            this.picEye.TabStop = false;
+            this.picEye.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseDown);
+            this.picEye.MouseEnter += new System.EventHandler(this.picEye_MouseEnter);
+            this.picEye.MouseLeave += new System.EventHandler(this.picEye_MouseLeave);
+            this.picEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseUp);
+            // 
             // frmGestionarAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 674);
+            this.Controls.Add(this.picEye);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.lblPass);
             this.Controls.Add(this.txtTel);
@@ -444,6 +462,7 @@
             this.Text = "frmGestionarAgentes";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picEye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -482,5 +501,6 @@
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lblPass;
+        private System.Windows.Forms.PictureBox picEye;
     }
 }

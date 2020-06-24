@@ -963,6 +963,9 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="images\Eye.png" />
+    <None Include="images\EyeMouseDown.png" />
+    <None Include="images\EyeMouseEnter.png" />
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup>

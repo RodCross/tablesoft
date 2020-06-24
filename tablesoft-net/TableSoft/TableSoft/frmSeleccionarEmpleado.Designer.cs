@@ -36,17 +36,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionarEmpleado));
             this.dgvLista = new System.Windows.Forms.DataGridView();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblListaEmpleados = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnNuevo = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DNI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Biblioteca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.EmailPersonal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblListaEmpleados = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -59,7 +59,7 @@
             this.dgvLista.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
+            this.Id,
             this.Nombre,
             this.Codigo,
             this.DNI,
@@ -72,6 +72,72 @@
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvLista.Size = new System.Drawing.Size(1232, 436);
             this.dgvLista.TabIndex = 0;
+            this.dgvLista.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLista_CellFormatting);
+            // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "empleadoId";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Id.FillWeight = 50F;
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 50;
+            // 
+            // Nombre
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 400;
+            // 
+            // Codigo
+            // 
+            this.Codigo.DataPropertyName = "codigo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Codigo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Codigo.HeaderText = "Código";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Width = 125;
+            // 
+            // DNI
+            // 
+            this.DNI.DataPropertyName = "dni";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DNI.DefaultCellStyle = dataGridViewCellStyle4;
+            this.DNI.HeaderText = "DNI";
+            this.DNI.Name = "DNI";
+            this.DNI.ReadOnly = true;
+            this.DNI.Width = 125;
+            // 
+            // Biblioteca
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Biblioteca.DefaultCellStyle = dataGridViewCellStyle5;
+            this.Biblioteca.HeaderText = "Biblioteca";
+            this.Biblioteca.Name = "Biblioteca";
+            this.Biblioteca.ReadOnly = true;
+            this.Biblioteca.Width = 330;
+            // 
+            // EmailPersonal
+            // 
+            this.EmailPersonal.DataPropertyName = "personaEmail";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EmailPersonal.DefaultCellStyle = dataGridViewCellStyle6;
+            this.EmailPersonal.HeaderText = "Email personal";
+            this.EmailPersonal.Name = "EmailPersonal";
+            this.EmailPersonal.ReadOnly = true;
+            this.EmailPersonal.Width = 195;
             // 
             // pnlTitulo
             // 
@@ -143,73 +209,6 @@
             this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "empleadoId";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 50;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombreCompleto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 400;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "codigo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Codigo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Codigo.HeaderText = "Código";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Width = 125;
-            // 
-            // DNI
-            // 
-            this.DNI.DataPropertyName = "dni";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DNI.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DNI.HeaderText = "DNI";
-            this.DNI.Name = "DNI";
-            this.DNI.ReadOnly = true;
-            this.DNI.Width = 125;
-            // 
-            // Biblioteca
-            // 
-            this.Biblioteca.DataPropertyName = "nombreBiblioteca";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Biblioteca.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Biblioteca.HeaderText = "Biblioteca";
-            this.Biblioteca.Name = "Biblioteca";
-            this.Biblioteca.ReadOnly = true;
-            this.Biblioteca.Width = 330;
-            // 
-            // EmailPersonal
-            // 
-            this.EmailPersonal.DataPropertyName = "personaEmail";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EmailPersonal.DefaultCellStyle = dataGridViewCellStyle6;
-            this.EmailPersonal.HeaderText = "Email personal";
-            this.EmailPersonal.Name = "EmailPersonal";
-            this.EmailPersonal.ReadOnly = true;
-            this.EmailPersonal.Width = 195;
-            // 
             // frmSeleccionarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,7 +237,7 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnNuevo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn DNI;

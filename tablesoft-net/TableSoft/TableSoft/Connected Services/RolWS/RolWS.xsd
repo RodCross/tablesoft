@@ -47,9 +47,7 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarRoles">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objRol" type="tns:rol" />
-    </xs:sequence>
+    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarRolesResponse">
     <xs:sequence>

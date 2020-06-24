@@ -15,11 +15,7 @@ namespace TableSoft
     {
         private EquipoWS.EquipoWSClient equipoDAO = new EquipoWS.EquipoWSClient();
         private AgenteWS.AgenteWSClient agenteDAO = new AgenteWS.AgenteWSClient();
-        private BindingList<BibliotecaWS.biblioteca> equipos;
         private RolWS.RolWSClient rolDAO = new RolWS.RolWSClient();
-        private BindingList<RolWS.rol> roles;
-        private RolWS.rol rol;
-        private EquipoWS.equipo equipo;
         private AgenteWS.agente agenteSel;
 
 
@@ -60,10 +56,9 @@ namespace TableSoft
             btnGuardar.Visible = false;
         }
 
-
         private void LlenarCboRoles()
         {
-            cboRol.DataSource = rolDAO.listarRoles(rol);
+            cboRol.DataSource = rolDAO.listarRoles();
             cboRol.DisplayMember = "nombre";
             cboRol.ValueMember = "rolId";
             cboRol.SelectedIndex = -1;
@@ -77,18 +72,6 @@ namespace TableSoft
             cboEquipo.SelectedIndex = -1;
         }
 
-
-
-        public frmGestionarAgente(int i)
-        {
-            InitializeComponent();
-            btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
-            btnGuardar.Visible = false;
-        }
-
-
-
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             Movimiento.MoverVentana(Handle, e.Button);
@@ -96,10 +79,10 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" || txtPaterno.Text == "" || txtMaterno.Text == "" || txtCodigo.Text == "" || txtDNI.Text == "" || txtEmailAgente.Text == "" || txtEmailPersonal.Text == "" || -1 == (int)cboEquipo.SelectedValue || -1 == (int)cboRol.SelectedValue)
+            if (txtNombre.Text == "" || txtPaterno.Text == "" || txtMaterno.Text == "" || txtCodigo.Text == "" || txtDNI.Text == "" || txtEmailAgente.Text == "" || txtEmailPersonal.Text == "" || -1 == (int)cboEquipo.SelectedValue || -1 == (int)cboRol.SelectedValue || txtDireccion.Text == "" || txtTel.Text == "" || txtPass.Text == "")
             {
                 MessageBox.Show(
-                "Debe llenar todos los campos",
+                "Debe llenar todos los campos.",
                 "Advertencia",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning
                 );
@@ -145,7 +128,8 @@ namespace TableSoft
                 "Eliminación exitosa",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
             );
-            this.Close();
+
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -155,10 +139,10 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if(txtNombre.Text == ""|| txtPaterno.Text == "" || txtMaterno.Text == "" || txtCodigo.Text == "" || txtDNI.Text == "" || txtEmailAgente.Text == "" || txtEmailPersonal.Text == "")
+            if (txtNombre.Text == ""|| txtPaterno.Text == "" || txtMaterno.Text == "" || txtCodigo.Text == "" || txtDNI.Text == "" || txtEmailAgente.Text == "" || txtEmailPersonal.Text == "" || txtDireccion.Text == "" || txtTel.Text == "")
             {
                 MessageBox.Show(
-                "Debe llenar todos los campos",
+                "Debe llenar todos los campos.",
                 "Advertencia",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning
                 );
@@ -177,6 +161,8 @@ namespace TableSoft
             agenteSel.rol.rolId = (int)cboRol.SelectedValue;
             agenteSel.personaEmail = txtEmailPersonal.Text;
             agenteSel.agenteEmail = txtEmailAgente.Text;
+            agenteSel.direccion = txtDireccion.Text;
+            agenteSel.telefono = txtTel.Text;
 
             if (agenteDAO.actualizarAgente(agenteSel) == 0)
             {
@@ -186,7 +172,8 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
-            this.Close();
+
+            this.DialogResult = DialogResult.OK;
         }
 
         private void picEye_MouseDown(object sender, MouseEventArgs e)
@@ -216,7 +203,7 @@ namespace TableSoft
             PictureBox pic = (PictureBox)sender;
 
             pic.Image = Properties.Resources.EyeMouseEnter;
-            txtPass.PasswordChar = '*';
+            txtPass.PasswordChar = '•';
         }
     }
 }

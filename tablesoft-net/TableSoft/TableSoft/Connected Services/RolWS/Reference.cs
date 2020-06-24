@@ -182,15 +182,7 @@ namespace TableSoft.RolWS {
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarRoles", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarRolesRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.RolWS.rol objRol;
-        
         public listarRolesRequest() {
-        }
-        
-        public listarRolesRequest(TableSoft.RolWS.rol objRol) {
-            this.objRol = objRol;
         }
     }
     
@@ -339,9 +331,8 @@ namespace TableSoft.RolWS {
             return base.Channel.listarRoles(request);
         }
         
-        public TableSoft.RolWS.rol[] listarRoles(TableSoft.RolWS.rol objRol) {
+        public TableSoft.RolWS.rol[] listarRoles() {
             TableSoft.RolWS.listarRolesRequest inValue = new TableSoft.RolWS.listarRolesRequest();
-            inValue.objRol = objRol;
             TableSoft.RolWS.listarRolesResponse retVal = ((TableSoft.RolWS.RolWS)(this)).listarRoles(inValue);
             return retVal.@return;
         }
@@ -351,9 +342,8 @@ namespace TableSoft.RolWS {
             return base.Channel.listarRolesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> listarRolesAsync(TableSoft.RolWS.rol objRol) {
+        public System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> listarRolesAsync() {
             TableSoft.RolWS.listarRolesRequest inValue = new TableSoft.RolWS.listarRolesRequest();
-            inValue.objRol = objRol;
             return ((TableSoft.RolWS.RolWS)(this)).listarRolesAsync(inValue);
         }
         

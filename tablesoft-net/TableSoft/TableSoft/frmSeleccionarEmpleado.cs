@@ -17,10 +17,24 @@ namespace TableSoft
 
         public frmSeleccionarEmpleado()
         {
+            EmpleadoWS.empleado[] arrEmpleados = empleadoDAO.listarEmpleados();
             InitializeComponent();
-            empleados = new BindingList<EmpleadoWS.empleado>(empleadoDAO.listarEmpleados().ToArray());
             dgvLista.AutoGenerateColumns = false;
-            dgvLista.DataSource = empleados;
+            if (arrEmpleados != null)
+            {
+                empleados = new BindingList<EmpleadoWS.empleado>(arrEmpleados);
+                dgvLista.DataSource = empleados;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
+        }
+        private void dgvLista_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            EmpleadoWS.empleado data = dgvLista.Rows[e.RowIndex].DataBoundItem as EmpleadoWS.empleado;
+            dgvLista.Rows[e.RowIndex].Cells["Nombre"].Value = data.apellidoPaterno + " " + data.apellidoMaterno + ", " + data.nombre;
+            dgvLista.Rows[e.RowIndex].Cells["Biblioteca"].Value = data.biblioteca.nombre;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -36,14 +50,22 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarEmpleado frm = new frmGestionarEmpleado();
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                empleados = new BindingList<EmpleadoWS.empleado>(empleadoDAO.listarEmpleados());
+                dgvLista.DataSource = empleados;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             EmpleadoWS.empleado emp = (EmpleadoWS.empleado)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarEmpleado frm = new frmGestionarEmpleado(emp);
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                empleados = new BindingList<EmpleadoWS.empleado>(empleadoDAO.listarEmpleados());
+                dgvLista.DataSource = empleados;
+            }
         }
     }
 }

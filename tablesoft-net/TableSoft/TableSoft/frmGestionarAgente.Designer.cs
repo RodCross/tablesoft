@@ -117,7 +117,7 @@
             // 
             this.lblEmailAgente.AutoSize = true;
             this.lblEmailAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailAgente.Location = new System.Drawing.Point(48, 550);
+            this.lblEmailAgente.Location = new System.Drawing.Point(56, 550);
             this.lblEmailAgente.Name = "lblEmailAgente";
             this.lblEmailAgente.Size = new System.Drawing.Size(99, 21);
             this.lblEmailAgente.TabIndex = 28;
@@ -137,7 +137,7 @@
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblRol.Location = new System.Drawing.Point(114, 433);
+            this.lblRol.Location = new System.Drawing.Point(122, 433);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(33, 21);
             this.lblRol.TabIndex = 25;
@@ -173,7 +173,7 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDNI.Location = new System.Drawing.Point(110, 392);
+            this.lblDNI.Location = new System.Drawing.Point(118, 392);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(37, 21);
             this.lblDNI.TabIndex = 24;
@@ -192,7 +192,7 @@
             // 
             this.lblEmailPersonal.AutoSize = true;
             this.lblEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailPersonal.Location = new System.Drawing.Point(35, 513);
+            this.lblEmailPersonal.Location = new System.Drawing.Point(43, 513);
             this.lblEmailPersonal.Name = "lblEmailPersonal";
             this.lblEmailPersonal.Size = new System.Drawing.Size(112, 21);
             this.lblEmailPersonal.TabIndex = 27;
@@ -203,7 +203,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblNombre.Location = new System.Drawing.Point(79, 133);
+            this.lblNombre.Location = new System.Drawing.Point(87, 133);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 21);
             this.lblNombre.TabIndex = 17;
@@ -214,7 +214,7 @@
             // 
             this.lblEquipo.AutoSize = true;
             this.lblEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEquipo.Location = new System.Drawing.Point(89, 474);
+            this.lblEquipo.Location = new System.Drawing.Point(97, 474);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(58, 21);
             this.lblEquipo.TabIndex = 26;
@@ -225,7 +225,7 @@
             // 
             this.lblIDAgente.AutoSize = true;
             this.lblIDAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDAgente.Location = new System.Drawing.Point(122, 96);
+            this.lblIDAgente.Location = new System.Drawing.Point(130, 96);
             this.lblIDAgente.Name = "lblIDAgente";
             this.lblIDAgente.Size = new System.Drawing.Size(25, 21);
             this.lblIDAgente.TabIndex = 16;
@@ -254,7 +254,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblCodigo.Location = new System.Drawing.Point(87, 355);
+            this.lblCodigo.Location = new System.Drawing.Point(95, 355);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(60, 21);
             this.lblCodigo.TabIndex = 23;
@@ -321,7 +321,7 @@
             // 
             this.lblPaterno.AutoSize = true;
             this.lblPaterno.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblPaterno.Location = new System.Drawing.Point(22, 170);
+            this.lblPaterno.Location = new System.Drawing.Point(30, 170);
             this.lblPaterno.Name = "lblPaterno";
             this.lblPaterno.Size = new System.Drawing.Size(125, 21);
             this.lblPaterno.TabIndex = 18;
@@ -340,7 +340,7 @@
             // 
             this.lblMaterno.AutoSize = true;
             this.lblMaterno.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblMaterno.Location = new System.Drawing.Point(17, 207);
+            this.lblMaterno.Location = new System.Drawing.Point(25, 207);
             this.lblMaterno.Name = "lblMaterno";
             this.lblMaterno.Size = new System.Drawing.Size(130, 21);
             this.lblMaterno.TabIndex = 19;
@@ -359,7 +359,7 @@
             // 
             this.lblTel.AutoSize = true;
             this.lblTel.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblTel.Location = new System.Drawing.Point(77, 281);
+            this.lblTel.Location = new System.Drawing.Point(85, 281);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(70, 21);
             this.lblTel.TabIndex = 21;
@@ -378,7 +378,7 @@
             // 
             this.lblDireccion.AutoSize = true;
             this.lblDireccion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDireccion.Location = new System.Drawing.Point(72, 244);
+            this.lblDireccion.Location = new System.Drawing.Point(80, 244);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(75, 21);
             this.lblDireccion.TabIndex = 20;
@@ -390,7 +390,7 @@
             this.txtPass.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPass.Location = new System.Drawing.Point(170, 315);
             this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '*';
+            this.txtPass.PasswordChar = '•';
             this.txtPass.Size = new System.Drawing.Size(501, 28);
             this.txtPass.TabIndex = 6;
             // 
@@ -398,7 +398,7 @@
             // 
             this.lblPass.AutoSize = true;
             this.lblPass.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblPass.Location = new System.Drawing.Point(58, 318);
+            this.lblPass.Location = new System.Drawing.Point(66, 318);
             this.lblPass.Name = "lblPass";
             this.lblPass.Size = new System.Drawing.Size(89, 21);
             this.lblPass.TabIndex = 22;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -12,8 +13,11 @@ namespace TableSoft
 {
     public partial class frmGestionarEstado : Form
     {
+        private EstadoTicketWS.EstadoTicketWSClient estadoDAO = new EstadoTicketWS.EstadoTicketWSClient();
+        private EstadoTicketWS.estadoTicket estado;
         public frmGestionarEstado()
         {
+            estado = new EstadoTicketWS.estadoTicket();
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
@@ -22,10 +26,11 @@ namespace TableSoft
 
         public frmGestionarEstado(EstadoTicketWS.estadoTicket et)
         {
+            estado = et;
             InitializeComponent();
-            txtIDEstado.Text = et.estadoId.ToString();
-            txtNombre.Text = et.nombre;
-            txtDescripcion.Text = et.descripcion;
+            txtIDEstado.Text = estado.estadoId.ToString();
+            txtNombre.Text = estado.nombre;
+            txtDescripcion.Text = estado.descripcion;
             btnActualizar.Visible = true;
             btnEliminar.Visible = true;
             btnGuardar.Visible = false;
@@ -38,12 +43,53 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha guardado el registro.",
-                "Guardado exitoso",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el nombre del estado.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre del estado de contener al menos una letra.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDescripcion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la descripcion del estado.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDescripcion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La descripcion del estado de contener al menos una letra.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            estado.nombre = txtNombre.Text;
+            estado.descripcion = txtDescripcion.Text;
+            if (estadoDAO.insertarEstadoTicket(estado) > 0)
+            {
+                MessageBox.Show(
+                    "Se ha guardado el registro.",
+                    "Guardado exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -53,7 +99,7 @@ namespace TableSoft
                 "Eliminación exitosa",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
             );
-            this.Close();
+            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -63,12 +109,53 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha actualizado el registro.",
-                "Actualización exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el nombre del estado.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre del estado de contener al menos una letra.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDescripcion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la descripcion del estado.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDescripcion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La descripcion del estado de contener al menos una letra.",
+                    "Error de descripcion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            estado.nombre = txtNombre.Text;
+            estado.descripcion = txtDescripcion.Text;
+            if (estadoDAO.actualizarEstadoTicket(estado) > 0)
+            {
+                MessageBox.Show(
+                    "Se ha actualizado el registro.",
+                    "Actualización exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

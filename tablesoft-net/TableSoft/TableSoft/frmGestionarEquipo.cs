@@ -55,9 +55,8 @@ namespace TableSoft
             }
             if (Regex.Matches(txtNombre.Text, @"[a-zA-Z]").Count == 0)
             {
-                Console.WriteLine(Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count);
                 MessageBox.Show(
-                    "El nombre de la equipo de contener al menos una letra.",
+                    "El nombre del equipo de contener al menos una letra.",
                     "Error de nombre",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );

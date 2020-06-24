@@ -156,26 +156,25 @@ namespace TableSoft
             }
             urgencia.nombre = txtNombre.Text;
             urgencia.plazoMaximo = int.Parse(txtPlazoMaximo.Text);
-            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Urgencia", MessageBoxButtons.YesNo) == DialogResult.Yes)
+
+            if (urgenciaDAO.actualizarUrgencia(urgencia) > -1)
             {
-                if (urgenciaDAO.actualizarUrgencia(urgencia) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha actualizado el registro exitosamente",
-                    "Actualización exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se ha realizado la actualización",
-                    "Actualización no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                this.DialogResult = DialogResult.OK;
+                MessageBox.Show(
+                "Se ha actualizado el registro exitosamente",
+                "Actualización exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
             }
+            else
+            {
+                MessageBox.Show(
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+            this.DialogResult = DialogResult.OK;
+
         }
     }
 }

@@ -123,8 +123,8 @@ namespace TableSoft
                 else
                 {
                     MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
+                    "Ha ocurrido un error al eliminar el registro",
+                    "Error de eliminación",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }

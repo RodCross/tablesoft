@@ -3,7 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+@XmlSchemaTypes({
+      @XmlSchemaType(name="LocalDateTime", type=LocalDateTime.class)
+    })
 @XmlJavaTypeAdapters(
 {
   @XmlJavaTypeAdapter(value = LocalDateTimeAdapter.class, type = LocalDateTime.class)
@@ -11,6 +13,8 @@
 package pe.edu.pucp.tablesoft.services;
 
 import java.time.LocalDateTime;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlSchemaTypes;
 
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapters;

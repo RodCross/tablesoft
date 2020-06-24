@@ -141,14 +141,14 @@ namespace TableSoft
             agenteSel.personaEmail = txtEmailPersonal.Text;
             agenteSel.agenteEmail = txtEmailAgente.Text;
 
-            agenteDAO.actualizarAgente(agenteSel);
-
-
-            MessageBox.Show(
-                "Se ha actualizado el registro.",
-                "Actualización exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+            if (agenteDAO.actualizarAgente(agenteSel) == 0)
+            {
+                MessageBox.Show(
+                    "Se ha actualizado el registro.",
+                    "Actualización exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
             this.Close();
         }
     }

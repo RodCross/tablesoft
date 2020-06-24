@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -51,10 +52,28 @@ namespace TableSoft
                 );
                 return;
             }
+            if (Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre de la biblioteca de contener al menos una letra.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
             if (txtAbrev.Text == "")
             {
                 MessageBox.Show(
                     "Falta indicar la abreviatura de la biblioteca.",
+                    "Error de abreviatura",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtAbrev.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "La abreviatura de la biblioteca de contener al menos una letra.",
                     "Error de abreviatura",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -103,10 +122,28 @@ namespace TableSoft
                 );
                 return;
             }
+            if (Regex.Matches(txtNombre.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "El nombre de la biblioteca de contener al menos una letra.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
             if (txtAbrev.Text == "")
             {
                 MessageBox.Show(
                     "Falta indicar la abreviatura de la biblioteca.",
+                    "Error de abreviatura",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtAbrev.Text, @"^[a-zA-Z]+$").Count == 0)
+            {
+                MessageBox.Show(
+                    "La abreviatura de la biblioteca de contener al menos una letra.",
                     "Error de abreviatura",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );

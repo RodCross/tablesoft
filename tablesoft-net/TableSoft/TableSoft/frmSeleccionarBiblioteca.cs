@@ -18,7 +18,15 @@ namespace TableSoft
         public frmSeleccionarBiblioteca()
         {
             InitializeComponent();
-            bibliotecas = new BindingList<BibliotecaWS.biblioteca>(bibliotecaDAO.listarBibliotecas().ToArray());
+            var bibls = bibliotecaDAO.listarBibliotecas();
+            if(bibls == null)
+            {
+                bibliotecas = new BindingList<BibliotecaWS.biblioteca>();
+            }
+            else
+            {
+                bibliotecas = new BindingList<BibliotecaWS.biblioteca>(bibls);
+            }
             dgvGestionar.AutoGenerateColumns = false;
             dgvGestionar.DataSource = bibliotecas;
         }
@@ -31,14 +39,38 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarBiblioteca frm = new frmGestionarBiblioteca();
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var bibls = bibliotecaDAO.listarBibliotecas();
+                if (bibls == null)
+                {
+                    bibliotecas = new BindingList<BibliotecaWS.biblioteca>();
+                }
+                else
+                {
+                    bibliotecas = new BindingList<BibliotecaWS.biblioteca>(bibls);
+                }
+                dgvGestionar.DataSource = bibliotecas;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             BibliotecaWS.biblioteca bibl = (BibliotecaWS.biblioteca)dgvGestionar.CurrentRow.DataBoundItem;
             frmGestionarBiblioteca frm = new frmGestionarBiblioteca(bibl);
-            frm.ShowDialog();
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                var bibls = bibliotecaDAO.listarBibliotecas();
+                if (bibls == null)
+                {
+                    bibliotecas = new BindingList<BibliotecaWS.biblioteca>();
+                }
+                else
+                {
+                    bibliotecas = new BindingList<BibliotecaWS.biblioteca>(bibls);
+                }
+                dgvGestionar.DataSource = bibliotecas;
+            }
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

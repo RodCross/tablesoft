@@ -53,7 +53,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(700, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(704, 70);
             this.pnlTitulo.TabIndex = 6;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -111,7 +111,7 @@
             this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.Location = new System.Drawing.Point(170, 134);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(316, 28);
+            this.txtNombre.Size = new System.Drawing.Size(501, 28);
             this.txtNombre.TabIndex = 1;
             // 
             // txtIDCategoria
@@ -121,7 +121,7 @@
             this.txtIDCategoria.Location = new System.Drawing.Point(170, 90);
             this.txtIDCategoria.Name = "txtIDCategoria";
             this.txtIDCategoria.ReadOnly = true;
-            this.txtIDCategoria.Size = new System.Drawing.Size(204, 28);
+            this.txtIDCategoria.Size = new System.Drawing.Size(95, 28);
             this.txtIDCategoria.TabIndex = 0;
             // 
             // lblNombre
@@ -143,7 +143,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(419, 247);
+            this.btnEliminar.Location = new System.Drawing.Point(419, 316);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(102, 33);
             this.btnEliminar.TabIndex = 4;
@@ -159,7 +159,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(569, 247);
+            this.btnActualizar.Location = new System.Drawing.Point(569, 316);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 5;
@@ -175,7 +175,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(569, 247);
+            this.btnGuardar.Location = new System.Drawing.Point(569, 316);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 3;
@@ -191,7 +191,7 @@
             this.btnTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTareas.ForeColor = System.Drawing.Color.White;
-            this.btnTareas.Location = new System.Drawing.Point(27, 247);
+            this.btnTareas.Location = new System.Drawing.Point(27, 316);
             this.btnTareas.Name = "btnTareas";
             this.btnTareas.Size = new System.Drawing.Size(102, 33);
             this.btnTareas.TabIndex = 3;
@@ -203,15 +203,16 @@
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDescripcion.Location = new System.Drawing.Point(170, 178);
+            this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(501, 28);
+            this.txtDescripcion.Size = new System.Drawing.Size(501, 117);
             this.txtDescripcion.TabIndex = 10;
             // 
             // frmGestionarCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 308);
+            this.ClientSize = new System.Drawing.Size(704, 372);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnTareas);
             this.Controls.Add(this.btnEliminar);

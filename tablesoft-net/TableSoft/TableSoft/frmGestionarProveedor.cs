@@ -206,12 +206,31 @@ namespace TableSoft
 
             proveedor.telefono = txtTelefono.Text;
             proveedor.email = txtEmail.Text;
-            if (proveedorDAO.insertarProveedor(proveedor) > 0)
+            if (MessageBox.Show("¿Desea crear el registro?", "Crear Proveedor", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (proveedorDAO.insertarProveedor(proveedor) > 0)
+                {
+                    MessageBox.Show(
+                    "Se ha creado el registro exitosamente",
+                    "Registro exitoso",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha creado el registro",
+                    "Registro no realizado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
             {
                 MessageBox.Show(
-                    "Se ha guardado el registro.",
-                    "Guardado exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                "No se ha creado el registro",
+                "Registro no realizado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             txtIDProveedor.Text = proveedor.proveedorId.ToString();
@@ -220,12 +239,31 @@ namespace TableSoft
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (proveedorDAO.eliminarProveedor(proveedor) > -1)
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Proveedor", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha eliminado el registro.",
+                if (proveedorDAO.eliminarProveedor(proveedor) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
                     "Eliminación exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             this.DialogResult = DialogResult.OK;
@@ -369,12 +407,31 @@ namespace TableSoft
 
             proveedor.telefono = txtTelefono.Text;
             proveedor.email = txtEmail.Text;
-            if (proveedorDAO.actualizarProveedor(proveedor) == 0)
+            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Proveedor", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                MessageBox.Show(
-                    "Se ha actualizado el registro.",
+                if (proveedorDAO.actualizarProveedor(proveedor) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha actualizado el registro exitosamente",
                     "Actualización exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se ha realizado la actualización",
+                    "Actualización no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se ha realizado la actualización",
+                "Actualización no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
             this.DialogResult = DialogResult.OK;

@@ -94,11 +94,14 @@ namespace TableSoft
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha eliminado el registro.",
-                "Eliminación exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+            if (estadoDAO.eliminarEstadoTicket(estado) > -1)
+            {
+                MessageBox.Show(
+                    "Se ha eliminado el registro.",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
             this.DialogResult = DialogResult.OK;
         }
 
@@ -147,7 +150,7 @@ namespace TableSoft
             }
             estado.nombre = txtNombre.Text;
             estado.descripcion = txtDescripcion.Text;
-            if (estadoDAO.actualizarEstadoTicket(estado) > 0)
+            if (estadoDAO.actualizarEstadoTicket(estado) > -1)
             {
                 MessageBox.Show(
                     "Se ha actualizado el registro.",

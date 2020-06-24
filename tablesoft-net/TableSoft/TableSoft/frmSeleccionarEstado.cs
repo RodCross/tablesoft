@@ -18,7 +18,15 @@ namespace TableSoft
         public frmSeleccionarEstado()
         {
             InitializeComponent();
-            estados = new BindingList<EstadoTicketWS.estadoTicket>(estadoDAO.listarEstadosTicket().ToArray());
+            var ests = estadoDAO.listarEstadosTicket();
+            if(ests == null)
+            {
+                estados = new BindingList<EstadoTicketWS.estadoTicket>();
+            }
+            else
+            {
+                estados = new BindingList<EstadoTicketWS.estadoTicket>(ests);
+            }
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = estados;
         }
@@ -36,14 +44,40 @@ namespace TableSoft
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             frmGestionarEstado frm = new frmGestionarEstado();
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var ests = estadoDAO.listarEstadosTicket();
+                if (ests == null)
+                {
+                    estados = new BindingList<EstadoTicketWS.estadoTicket>();
+                }
+                else
+                {
+                    estados = new BindingList<EstadoTicketWS.estadoTicket>(ests);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = estados;
+            }
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             EstadoTicketWS.estadoTicket et = (EstadoTicketWS.estadoTicket)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarEstado frm = new frmGestionarEstado(et);
-            frm.ShowDialog();
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var ests = estadoDAO.listarEstadosTicket();
+                if (ests == null)
+                {
+                    estados = new BindingList<EstadoTicketWS.estadoTicket>();
+                }
+                else
+                {
+                    estados = new BindingList<EstadoTicketWS.estadoTicket>(ests);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = estados;
+            }
         }
     }
 }

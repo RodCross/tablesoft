@@ -54,33 +54,25 @@ namespace TableSoft
         {
             tareaPredeterminada.descripcion = txtDesc.Text;
 
-            if (MessageBox.Show("¿Desea crear el registro?", "Crear Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            
+            if (tareaPredeterminadaDAO.insertarTareaPredeterminada(tareaPredeterminada, categoria) > 0)
             {
-                if (tareaPredeterminadaDAO.insertarTareaPredeterminada(tareaPredeterminada, categoria) > 0)
-                {
-                    MessageBox.Show(
-                    "Se ha creado el registro exitosamente",
-                    "Registro exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se ha creado el registro",
-                    "Registro no realizado",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
+                MessageBox.Show(
+                "Se ha creado el registro exitosamente",
+                "Registro exitoso",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
             }
             else
             {
                 MessageBox.Show(
-                "No se ha creado el registro",
+                "Ha ocurrido un error al crear el registro",
                 "Registro no realizado",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
+            
+
             txtIDTarea.Text = tareaPredeterminada.tareaPredeterminadaId.ToString();
             this.DialogResult = DialogResult.OK;
         }
@@ -101,21 +93,15 @@ namespace TableSoft
                 else
                 {
                     MessageBox.Show(
-                    "No se eliminó el registro",
+                    "Ha ocurrido un error al eliminar el registro",
                     "Eliminación no realizada",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-            this.DialogResult = DialogResult.OK;
+
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -127,36 +113,24 @@ namespace TableSoft
         {
             tareaPredeterminada.descripcion = txtDesc.Text;
 
-            
-            if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (tareaPredeterminadaDAO.actualizarTareaPredeterminada(tareaPredeterminada) > -1)
             {
-                if (tareaPredeterminadaDAO.actualizarTareaPredeterminada(tareaPredeterminada) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha actualizado el registro exitosamente",
-                    "Actualización exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se ha realizado la actualización",
-                    "Actualización no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
+                MessageBox.Show(
+                "Se ha actualizado el registro exitosamente",
+                "Actualización exitosa",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
             }
             else
             {
                 MessageBox.Show(
-                "No se ha realizado la actualización",
+                "Ha ocurrido un error al actualizar el registro",
                 "Actualización no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
-            txtIDTarea.Text = tareaPredeterminada.tareaPredeterminadaId.ToString();
             this.DialogResult = DialogResult.OK;
+
         }
     }
 }

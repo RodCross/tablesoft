@@ -38,6 +38,7 @@ namespace TableSoft
                 tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
 
             }
+            lblNombreCategoria.Text = categoria.nombre;
 
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = tareasPredeterminadas;
@@ -58,7 +59,17 @@ namespace TableSoft
             frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(categoria);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
+                var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+                if (tareasPred == null)
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+                }
+                else
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
+
+                }
                 dgvLista.DataSource = tareasPredeterminadas;
             }
         }
@@ -69,7 +80,17 @@ namespace TableSoft
             frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(tareaSeleccionada);
             if(frm.ShowDialog() == DialogResult.OK)
             {
-                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria));
+                var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+                if (tareasPred == null)
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+                }
+                else
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
+
+                }
                 dgvLista.DataSource = tareasPredeterminadas;
             }
         }

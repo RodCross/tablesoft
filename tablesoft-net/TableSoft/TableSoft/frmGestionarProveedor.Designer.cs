@@ -150,11 +150,11 @@
             // 
             this.lblTelefono.AutoSize = true;
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblTelefono.Location = new System.Drawing.Point(77, 330);
+            this.lblTelefono.Location = new System.Drawing.Point(51, 330);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(70, 21);
+            this.lblTelefono.Size = new System.Drawing.Size(96, 21);
             this.lblTelefono.TabIndex = 17;
-            this.lblTelefono.Text = "Teléfono";
+            this.lblTelefono.Text = "Teléfono fijo";
             // 
             // lblCiudad
             // 
@@ -259,7 +259,7 @@
             this.cboPais.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
             this.cboPais.FormattingEnabled = true;
             this.cboPais.Location = new System.Drawing.Point(170, 250);
-            this.cboPais.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboPais.Margin = new System.Windows.Forms.Padding(2);
             this.cboPais.Name = "cboPais";
             this.cboPais.Size = new System.Drawing.Size(305, 29);
             this.cboPais.TabIndex = 4;
@@ -270,7 +270,7 @@
             this.cboCiudad.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
             this.cboCiudad.FormattingEnabled = true;
             this.cboCiudad.Location = new System.Drawing.Point(170, 288);
-            this.cboCiudad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCiudad.Margin = new System.Windows.Forms.Padding(2);
             this.cboCiudad.Name = "cboCiudad";
             this.cboCiudad.Size = new System.Drawing.Size(305, 29);
             this.cboCiudad.TabIndex = 5;

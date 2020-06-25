@@ -62,6 +62,10 @@
             this.lblMsgUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblAsunto = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlMensajes.SuspendLayout();
@@ -176,7 +180,7 @@
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblId.ForeColor = System.Drawing.Color.Black;
-            this.lblId.Location = new System.Drawing.Point(19, 52);
+            this.lblId.Location = new System.Drawing.Point(19, 45);
             this.lblId.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(94, 20);
@@ -188,7 +192,7 @@
             this.lblCreacion.AutoSize = true;
             this.lblCreacion.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCreacion.ForeColor = System.Drawing.Color.Black;
-            this.lblCreacion.Location = new System.Drawing.Point(19, 131);
+            this.lblCreacion.Location = new System.Drawing.Point(19, 98);
             this.lblCreacion.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblCreacion.Name = "lblCreacion";
             this.lblCreacion.Size = new System.Drawing.Size(149, 20);
@@ -200,7 +204,7 @@
             this.lblTituloCreacion.AutoSize = true;
             this.lblTituloCreacion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
             this.lblTituloCreacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloCreacion.Location = new System.Drawing.Point(19, 99);
+            this.lblTituloCreacion.Location = new System.Drawing.Point(19, 76);
             this.lblTituloCreacion.Name = "lblTituloCreacion";
             this.lblTituloCreacion.Size = new System.Drawing.Size(79, 22);
             this.lblTituloCreacion.TabIndex = 2;
@@ -211,7 +215,7 @@
             this.lblUltMod.AutoSize = true;
             this.lblUltMod.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUltMod.ForeColor = System.Drawing.Color.Black;
-            this.lblUltMod.Location = new System.Drawing.Point(19, 210);
+            this.lblUltMod.Location = new System.Drawing.Point(19, 167);
             this.lblUltMod.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblUltMod.Name = "lblUltMod";
             this.lblUltMod.Size = new System.Drawing.Size(149, 20);
@@ -223,7 +227,7 @@
             this.lblTituloUltMod.AutoSize = true;
             this.lblTituloUltMod.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
             this.lblTituloUltMod.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloUltMod.Location = new System.Drawing.Point(19, 178);
+            this.lblTituloUltMod.Location = new System.Drawing.Point(19, 141);
             this.lblTituloUltMod.Name = "lblTituloUltMod";
             this.lblTituloUltMod.Size = new System.Drawing.Size(173, 22);
             this.lblTituloUltMod.TabIndex = 4;
@@ -234,7 +238,7 @@
             this.lblEstado.AutoSize = true;
             this.lblEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstado.ForeColor = System.Drawing.Color.Black;
-            this.lblEstado.Location = new System.Drawing.Point(19, 289);
+            this.lblEstado.Location = new System.Drawing.Point(19, 227);
             this.lblEstado.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblEstado.Name = "lblEstado";
             this.lblEstado.Size = new System.Drawing.Size(62, 20);
@@ -246,7 +250,7 @@
             this.lblTituloEstado.AutoSize = true;
             this.lblTituloEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
             this.lblTituloEstado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloEstado.Location = new System.Drawing.Point(19, 257);
+            this.lblTituloEstado.Location = new System.Drawing.Point(19, 205);
             this.lblTituloEstado.Name = "lblTituloEstado";
             this.lblTituloEstado.Size = new System.Drawing.Size(63, 22);
             this.lblTituloEstado.TabIndex = 6;
@@ -257,7 +261,7 @@
             this.lblBiblioteca.AutoSize = true;
             this.lblBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBiblioteca.ForeColor = System.Drawing.Color.Black;
-            this.lblBiblioteca.Location = new System.Drawing.Point(19, 368);
+            this.lblBiblioteca.Location = new System.Drawing.Point(19, 286);
             this.lblBiblioteca.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblBiblioteca.Name = "lblBiblioteca";
             this.lblBiblioteca.Size = new System.Drawing.Size(257, 20);
@@ -269,7 +273,7 @@
             this.lblTituloBiblioteca.AutoSize = true;
             this.lblTituloBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
             this.lblTituloBiblioteca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloBiblioteca.Location = new System.Drawing.Point(19, 336);
+            this.lblTituloBiblioteca.Location = new System.Drawing.Point(19, 264);
             this.lblTituloBiblioteca.Name = "lblTituloBiblioteca";
             this.lblTituloBiblioteca.Size = new System.Drawing.Size(90, 22);
             this.lblTituloBiblioteca.TabIndex = 8;
@@ -280,7 +284,7 @@
             this.lblActFij.AutoSize = true;
             this.lblActFij.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblActFij.ForeColor = System.Drawing.Color.Black;
-            this.lblActFij.Location = new System.Drawing.Point(19, 447);
+            this.lblActFij.Location = new System.Drawing.Point(19, 351);
             this.lblActFij.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
             this.lblActFij.Name = "lblActFij";
             this.lblActFij.Size = new System.Drawing.Size(90, 20);
@@ -292,7 +296,7 @@
             this.lblTituloActFij.AutoSize = true;
             this.lblTituloActFij.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
             this.lblTituloActFij.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblTituloActFij.Location = new System.Drawing.Point(19, 415);
+            this.lblTituloActFij.Location = new System.Drawing.Point(19, 329);
             this.lblTituloActFij.Name = "lblTituloActFij";
             this.lblTituloActFij.Size = new System.Drawing.Size(93, 22);
             this.lblTituloActFij.TabIndex = 10;
@@ -300,6 +304,10 @@
             // 
             // pnlDatos
             // 
+            this.pnlDatos.Controls.Add(this.label3);
+            this.pnlDatos.Controls.Add(this.label4);
+            this.pnlDatos.Controls.Add(this.label1);
+            this.pnlDatos.Controls.Add(this.label2);
             this.pnlDatos.Controls.Add(this.lblTituloId);
             this.pnlDatos.Controls.Add(this.lblActFij);
             this.pnlDatos.Controls.Add(this.lblId);
@@ -485,6 +493,52 @@
             this.lblAsunto.TabIndex = 0;
             this.lblAsunto.Text = "Falla en las impresoras del Complejo de Innovación Académica";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(20, 409);
+            this.label1.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(179, 20);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Problema en impresoras";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.label2.Location = new System.Drawing.Point(20, 387);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(88, 22);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Categoria";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(20, 468);
+            this.label3.Margin = new System.Windows.Forms.Padding(3, 10, 3, 25);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Incidente";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
+            this.label4.Location = new System.Drawing.Point(20, 446);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(81, 22);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Urgencia";
+            // 
             // frmInfoTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -544,5 +598,9 @@
         private System.Windows.Forms.Button btnCambiarEstado;
         private System.Windows.Forms.Button btnEscalar;
         private System.Windows.Forms.Button btnVerTareas;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }

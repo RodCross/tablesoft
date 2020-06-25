@@ -182,9 +182,9 @@
             this.lblEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblEmail.Location = new System.Drawing.Point(18, 323);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(152, 20);
+            this.lblEmail.Size = new System.Drawing.Size(206, 20);
             this.lblEmail.TabIndex = 0;
-            this.lblEmail.Text = "Tu email (opcional) :";
+            this.lblEmail.Text = "Ingrese su email (opcional) :";
             // 
             // lblBiblioteca
             // 
@@ -210,14 +210,13 @@
             // 
             // lblEstDoc
             // 
-            this.lblEstDoc.AutoSize = true;
             this.lblEstDoc.Font = new System.Drawing.Font("Microsoft PhagsPa", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEstDoc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblEstDoc.Location = new System.Drawing.Point(17, 288);
+            this.lblEstDoc.Location = new System.Drawing.Point(17, 276);
             this.lblEstDoc.Name = "lblEstDoc";
-            this.lblEstDoc.Size = new System.Drawing.Size(229, 22);
+            this.lblEstDoc.Size = new System.Drawing.Size(291, 47);
             this.lblEstDoc.TabIndex = 0;
-            this.lblEstDoc.Text = "¿Eres estudiante o docente?";
+            this.lblEstDoc.Text = "¿El ticket fue reportado por un estudiante o docente?";
             // 
             // txtActivoFijo
             // 

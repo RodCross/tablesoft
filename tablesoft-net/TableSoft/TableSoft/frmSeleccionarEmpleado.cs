@@ -68,5 +68,39 @@ namespace TableSoft
                 dgvLista.DataSource = empleados;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EmpleadoWS.empleado emp = (EmpleadoWS.empleado)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (empleadoDAO.eliminarEmpleado(emp) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                empleados = new BindingList<EmpleadoWS.empleado>(empleadoDAO.listarEmpleados());
+                dgvLista.DataSource = empleados;
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+        }
     }
 }

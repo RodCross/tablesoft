@@ -25,7 +25,6 @@ namespace TableSoft
             picEye.Visible = true;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
-            btnEliminar.Visible = false;
         }
 
         public frmGestionarEmpleado(EmpleadoWS.empleado emp)
@@ -46,7 +45,6 @@ namespace TableSoft
             txtPass.Enabled = false;
             picEye.Visible = false;
             btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
             btnGuardar.Visible = false;
         }
 
@@ -285,39 +283,6 @@ namespace TableSoft
                 MessageBox.Show(
                 "No se ha creado el registro",
                 "Registro no realizado",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-
-            this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (empleadoDAO.eliminarEmpleado(empleadoSel) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-            }
-            else
-            {
-                MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }

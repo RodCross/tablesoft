@@ -79,5 +79,40 @@ namespace TableSoft
                 dgvLista.DataSource = equipos;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EquipoWS.equipo equipo = (EquipoWS.equipo)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Equipo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (equipoDAO.eliminarEquipo(equipo) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                var equis = equipoDAO.listarEquipos();
+                if (equis == null)
+                {
+                    equipos = new BindingList<EquipoWS.equipo>();
+                }
+                else
+                {
+                    equipos = new BindingList<EquipoWS.equipo>(equis);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = equipos;
+            }
+        }
     }
 }

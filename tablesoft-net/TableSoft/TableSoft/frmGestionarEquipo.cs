@@ -22,7 +22,6 @@ namespace TableSoft
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
-            btnEliminar.Visible = false;
         }
 
         public frmGestionarEquipo(EquipoWS.equipo equi)
@@ -33,7 +32,6 @@ namespace TableSoft
             txtNombre.Text = equipo.nombre;
             txtDescripcion.Text = equipo.descripcion;
             btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
             btnGuardar.Visible = false;
         }
 
@@ -110,38 +108,6 @@ namespace TableSoft
                 );
             }
             txtIDEquipo.Text = equipo.equipoId.ToString();
-            this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Equipo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (equipoDAO.eliminarEquipo(equipo) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-            }
-            else
-            {
-                MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
             this.DialogResult = DialogResult.OK;
         }
 

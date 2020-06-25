@@ -21,7 +21,6 @@ namespace TableSoft
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
-            btnEliminar.Visible = false;
         }
 
         public frmGestionarActivoFijo(ActivoFijoWS.activoFijo activo)
@@ -34,7 +33,6 @@ namespace TableSoft
             txtTipo.Text = activoFijo.tipo;
             txtNombre.Text = activoFijo.nombre;
             btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
             btnGuardar.Visible = false;
         }
 
@@ -127,31 +125,6 @@ namespace TableSoft
             txtIDActivoFijo.Text = activoFijo.activoFijoId.ToString();
             this.DialogResult = DialogResult.OK;
 
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Activo Fijo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (activoFijoDAO.eliminarActivoFijo(activoFijo) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                this.DialogResult = DialogResult.OK;
-            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

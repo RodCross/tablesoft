@@ -52,5 +52,31 @@ namespace TableSoft
                 dgvLista.DataSource = activosFijos;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ActivoFijoWS.activoFijo activo = (ActivoFijoWS.activoFijo)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Activo Fijo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (activoFijoDAO.eliminarActivoFijo(activo) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
+                dgvLista.DataSource = activosFijos;
+            }
+        }
     }
 }

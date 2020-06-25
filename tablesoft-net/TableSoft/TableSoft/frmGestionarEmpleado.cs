@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -64,12 +65,183 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" || txtPaterno.Text == "" || txtMaterno.Text == "" || txtCodigo.Text == "" || txtDNI.Text == "" || txtEmailPersonal.Text == "" || -1 == (int)cboBiblioteca.SelectedValue || txtDireccion.Text == "" || txtTel.Text == "" || txtPass.Text == "")
+            if (txtNombre.Text == "")
             {
                 MessageBox.Show(
-                "Debe llenar todos los campos.",
-                "Advertencia",
-                MessageBoxButtons.OK, MessageBoxIcon.Warning
+                    "Falta indicar el nombre del empleado.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtNombre.Text, @"[a-zA-Z]"))
+            {
+                MessageBox.Show(
+                    "El nombre del empleado de contener solo letras.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtPaterno.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el apellido parteno del empleado.",
+                    "Error de apellido parteno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtPaterno.Text, @"[a-zA-Z]"))
+            {
+                MessageBox.Show(
+                    "El apellido parteno del empleado de contener solo letras.",
+                    "Error de apellido parteno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtMaterno.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el apellido materno del empleado.",
+                    "Error de apellido materno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtMaterno.Text, @"[a-zA-Z]"))
+            {
+                MessageBox.Show(
+                    "El apellido materno del empleado de contener solo letras.",
+                    "Error de apellido materno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDireccion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la direccion del empleado.",
+                    "Error de direccion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La direccion del empleado de contener al menos una letra.",
+                    "Error de direccion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtTel.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el telefono del empleado.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtTel.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El telefono del empleado de contener solo numeros.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtPass.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la contraseña del empleado.",
+                    "Error de contraseña",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtCodigo.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el codigo del empleado.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtCodigo.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El codigo del empleado de contener solo numeros.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDNI.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el dni del empleado.",
+                    "Error de dni",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtDNI.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El dni del empleado de contener solo numeros.",
+                    "Error de dni",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtCodigo.Text, @"[0-9]").Count != 8)
+            {
+                MessageBox.Show(
+                    "El codigo del empleado de contener 8 digitos.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (cboBiblioteca.SelectedIndex == -1)
+            {
+                MessageBox.Show(
+                    "Falta seleccionar la biblioteca del empleado.",
+                    "Error de biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtEmailPersonal.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el email personal del empleado.",
+                    "Error de email personal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtEmailPersonal.Text, @"@").Count != 1)
+            {
+                MessageBox.Show(
+                    "El email personal del empleado de contener un arroba.",
+                    "Error de email personal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtEmailPersonal.Text, @"[.]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El email personal del empleado de contener un punto.",
+                    "Error de email personal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
             }
@@ -160,12 +332,174 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text == "" || txtPaterno.Text == "" || txtMaterno.Text == "" || txtCodigo.Text == "" || txtDNI.Text == "" || txtEmailPersonal.Text == "" || txtDireccion.Text == "" || txtTel.Text == "")
+            if (txtNombre.Text == "")
             {
                 MessageBox.Show(
-                "Debe llenar todos los campos.",
-                "Advertencia",
-                MessageBoxButtons.OK, MessageBoxIcon.Warning
+                    "Falta indicar el nombre del empleado.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtNombre.Text, @"[a-zA-Z]"))
+            {
+                MessageBox.Show(
+                    "El nombre del empleado de contener solo letras.",
+                    "Error de nombre",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtPaterno.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el apellido parteno del empleado.",
+                    "Error de apellido parteno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtPaterno.Text, @"[a-zA-Z]"))
+            {
+                MessageBox.Show(
+                    "El apellido parteno del empleado de contener solo letras.",
+                    "Error de apellido parteno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtMaterno.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el apellido materno del empleado.",
+                    "Error de apellido materno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtMaterno.Text, @"[a-zA-Z]"))
+            {
+                MessageBox.Show(
+                    "El apellido materno del empleado de contener solo letras.",
+                    "Error de apellido materno",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDireccion.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar la direccion del empleado.",
+                    "Error de direccion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtDireccion.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "La direccion del empleado de contener al menos una letra.",
+                    "Error de direccion",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtTel.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el telefono del empleado.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtTel.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El telefono del empleado de contener solo numeros.",
+                    "Error de telefono",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtCodigo.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el codigo del empleado.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtCodigo.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El codigo del empleado de contener solo numeros.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtDNI.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el dni del empleado.",
+                    "Error de dni",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (!Regex.IsMatch(txtDNI.Text, @"[0-9]"))
+            {
+                MessageBox.Show(
+                    "El dni del empleado de contener solo numeros.",
+                    "Error de dni",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtCodigo.Text, @"[0-9]").Count != 8)
+            {
+                MessageBox.Show(
+                    "El codigo del empleado de contener 8 digitos.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (cboBiblioteca.SelectedIndex == -1)
+            {
+                MessageBox.Show(
+                    "Falta seleccionar la biblioteca del empleado.",
+                    "Error de biblioteca",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtEmailPersonal.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el email personal del empleado.",
+                    "Error de email personal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtEmailPersonal.Text, @"@").Count != 1)
+            {
+                MessageBox.Show(
+                    "El email personal del empleado de contener un arroba.",
+                    "Error de email personal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtEmailPersonal.Text, @"[.]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El email personal del empleado de contener un punto.",
+                    "Error de email personal",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
             }

@@ -27,7 +27,6 @@ namespace TableSoft
             cboCiudad.Enabled = false;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
-            btnEliminar.Visible = false;
         }
 
         public frmGestionarProveedor(ProveedorWS.proveedor prov)
@@ -45,7 +44,6 @@ namespace TableSoft
             cboPais.SelectedIndex = proveedor.ciudad.pais.paisId - 1;
             cboCiudad.SelectedValue = proveedor.ciudad.nombre;
             btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
             btnGuardar.Visible = false;
         }
 
@@ -243,38 +241,6 @@ namespace TableSoft
                 );
             }
             txtIDProveedor.Text = proveedor.proveedorId.ToString();
-            this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Proveedor", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (proveedorDAO.eliminarProveedor(proveedor) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-            }
-            else
-            {
-                MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
             this.DialogResult = DialogResult.OK;
         }
 

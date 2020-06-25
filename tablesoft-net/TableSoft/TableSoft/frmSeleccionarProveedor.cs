@@ -85,5 +85,48 @@ namespace TableSoft
                 dgvLista.DataSource = proveedores;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            ProveedorWS.proveedor prov = (ProveedorWS.proveedor)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Proveedor", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (proveedorDAO.eliminarProveedor(prov) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                var provs = proveedorDAO.listarProveedores();
+                if (provs == null)
+                {
+                    proveedores = new BindingList<ProveedorWS.proveedor>();
+                }
+                else
+                {
+                    proveedores = new BindingList<ProveedorWS.proveedor>(provs);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = proveedores;
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+        }
     }
 }

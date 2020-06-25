@@ -14,29 +14,45 @@ namespace TableSoft
     {
         private TareaWS.TareaWSClient tareaDAO = new TareaWS.TareaWSClient();
         private BindingList<TareaWS.tarea> tareas;
-
-        // TEMPORAL: hasta traer el objeto ticket desde el formulario padre hasta aqui
-        // se toma un objeto ticket de la lista que existe
-        private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
-        private BindingList<TicketWS.ticket> tickets;
         private TareaWS.ticket ticket = new TareaWS.ticket();
 
-        public frmSeleccionarTareasTicket()
+        public frmSeleccionarTareasTicket(TicketWS.ticket tick)
         {
             InitializeComponent();
-
-            // TEMPORAL
-            tickets = new BindingList<TicketWS.ticket>(ticketDAO.listarTickets());
-            ticket.ticketId = tickets[2].ticketId; // obviamente hardcodeado
-
-            tareas = new BindingList<TareaWS.tarea>(tareaDAO.listarTareasPorTicket(ticket).ToArray());
+            ticket.ticketId = tick.ticketId;
+            TareaWS.tarea[] arrTareas = tareaDAO.listarTareasPorTicket(ticket);
             dgvLista.AutoGenerateColumns = false;
-            dgvLista.DataSource = tareas;
+            if (arrTareas != null)
+            {
+                tareas = new BindingList<TareaWS.tarea>(arrTareas);
+                dgvLista.DataSource = tareas;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
+
+            if (dgvLista.DataSource == null)
+            {
+                btnEditar.Enabled = false;
+            }
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void dgvLista_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dgvLista.DataSource == null)
+            {
+                btnEditar.Enabled = false;
+            }
+            else if (!btnEditar.Enabled)
+            {
+                btnEditar.Enabled = true;
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -56,5 +72,6 @@ namespace TableSoft
             frmGestionarTareasTicket frm = new frmGestionarTareasTicket(tarea);
             frm.ShowDialog();
         }
+
     }
 }

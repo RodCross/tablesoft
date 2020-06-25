@@ -15,6 +15,8 @@ namespace TableSoft
     {
         private CategoriaWS.CategoriaWSClient categoriaDAO = new CategoriaWS.CategoriaWSClient();
         private CategoriaWS.categoria categoria;
+        private frmSeleccionarCategoria frmSC;
+
         public frmGestionarCategoria()
         {
             categoria = new CategoriaWS.categoria();
@@ -24,9 +26,10 @@ namespace TableSoft
             btnTareas.Visible = false;
         }
 
-        public frmGestionarCategoria(CategoriaWS.categoria cat)
+        public frmGestionarCategoria(CategoriaWS.categoria cat, frmSeleccionarCategoria frm)
         {
             categoria = cat;
+            frmSC = frm;
             InitializeComponent();
             txtIDCategoria.Text = categoria.categoriaId.ToString();
             txtNombre.Text = categoria.nombre;
@@ -174,7 +177,18 @@ namespace TableSoft
             if(categoria.categoriaId > 0)
             {
                 frmSeleccionarTareaPredeterminada frm = new frmSeleccionarTareaPredeterminada(categoria);
-                frm.ShowDialog();
+                frm.StartPosition = FormStartPosition.Manual;
+                frm.Location = this.Location;
+
+                frm.FormClosing += delegate
+                {
+                    frmSC.Show();
+                    this.ShowDialog();
+                };
+
+                frm.Show();
+                this.Hide();
+                frmSC.Hide();
             }
             else
             {

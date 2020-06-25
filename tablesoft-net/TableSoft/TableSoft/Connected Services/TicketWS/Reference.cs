@@ -82,59 +82,59 @@ namespace TableSoft.TicketWS {
             "ponse")]
         System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEstadoPorEquipoResponse> listarTicketsPorEstadoPorEquipoAsync(TableSoft.TicketWS.listarTicketsPorEstadoPorEquipoRequest request);
     }
-
+    
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace = "http://services.tablesoft.pucp.edu.pe/")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
     public partial class ticket : object, System.ComponentModel.INotifyPropertyChanged {
-
+        
         private activoFijo activoFijoField;
-
+        
         private agente agenteField;
-
+        
         private string alumnoEmailField;
-
+        
         private string asuntoField;
-
+        
         private biblioteca bibliotecaField;
-
+        
         private categoria categoriaField;
-
+        
         private comentario[] comentariosField;
-
+        
         private string descripcionField;
-
+        
         private empleado empleadoField;
-
+        
         private estadoTicket estadoField;
-
-        private localDateTime fechaCierreField;
-
-        private localDateTime fechaCierreMaximoField;
-
-        private localDateTime fechaEnvioField;
-
+        
+        private string fechaCierreField;
+        
+        private string fechaCierreMaximoField;
+        
+        private string fechaEnvioField;
+        
         private cambioEstadoTicket[] historialEstadoField;
-
+        
         private transferenciaTicket[] historialTransferenciaField;
-
+        
         private tarea[] listaTareasField;
-
+        
         private proveedor proveedorField;
-
+        
         private bool retrasadoField;
-
+        
         private bool retrasadoFieldSpecified;
-
+        
         private int ticketIdField;
-
+        
         private urgencia urgenciaField;
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
         public activoFijo activoFijo {
             get {
                 return this.activoFijoField;
@@ -144,9 +144,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("activoFijo");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
         public agente agente {
             get {
                 return this.agenteField;
@@ -156,9 +156,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("agente");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 2)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
         public string alumnoEmail {
             get {
                 return this.alumnoEmailField;
@@ -168,9 +168,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("alumnoEmail");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 3)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string asunto {
             get {
                 return this.asuntoField;
@@ -180,9 +180,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("asunto");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 4)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public biblioteca biblioteca {
             get {
                 return this.bibliotecaField;
@@ -192,9 +192,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("biblioteca");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 5)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
         public categoria categoria {
             get {
                 return this.categoriaField;
@@ -204,9 +204,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("categoria");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("comentarios", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true, Order = 6)]
+        [System.Xml.Serialization.XmlElementAttribute("comentarios", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=6)]
         public comentario[] comentarios {
             get {
                 return this.comentariosField;
@@ -216,9 +216,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("comentarios");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 7)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public string descripcion {
             get {
                 return this.descripcionField;
@@ -228,9 +228,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("descripcion");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 8)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
         public empleado empleado {
             get {
                 return this.empleadoField;
@@ -240,9 +240,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("empleado");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 9)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
         public estadoTicket estado {
             get {
                 return this.estadoField;
@@ -252,10 +252,10 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("estado");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 10)]
-        public localDateTime fechaCierre {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string fechaCierre {
             get {
                 return this.fechaCierreField;
             }
@@ -264,10 +264,10 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("fechaCierre");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 11)]
-        public localDateTime fechaCierreMaximo {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string fechaCierreMaximo {
             get {
                 return this.fechaCierreMaximoField;
             }
@@ -276,10 +276,10 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("fechaCierreMaximo");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 12)]
-        public localDateTime fechaEnvio {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public string fechaEnvio {
             get {
                 return this.fechaEnvioField;
             }
@@ -288,9 +288,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("fechaEnvio");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("historialEstado", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true, Order = 13)]
+        [System.Xml.Serialization.XmlElementAttribute("historialEstado", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=13)]
         public cambioEstadoTicket[] historialEstado {
             get {
                 return this.historialEstadoField;
@@ -300,9 +300,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("historialEstado");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("historialTransferencia", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true, Order = 14)]
+        [System.Xml.Serialization.XmlElementAttribute("historialTransferencia", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
         public transferenciaTicket[] historialTransferencia {
             get {
                 return this.historialTransferenciaField;
@@ -312,9 +312,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("historialTransferencia");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form = System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable = true, Order = 15)]
+        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=15)]
         public tarea[] listaTareas {
             get {
                 return this.listaTareasField;
@@ -324,9 +324,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("listaTareas");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
         public proveedor proveedor {
             get {
                 return this.proveedorField;
@@ -336,9 +336,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("proveedor");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 17)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
         public bool retrasado {
             get {
                 return this.retrasadoField;
@@ -348,7 +348,7 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("retrasado");
             }
         }
-
+        
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool retrasadoSpecified {
@@ -360,9 +360,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("retrasadoSpecified");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
         public int ticketId {
             get {
                 return this.ticketIdField;
@@ -372,9 +372,9 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("ticketId");
             }
         }
-
+        
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form = System.Xml.Schema.XmlSchemaForm.Unqualified, Order = 19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public urgencia urgencia {
             get {
                 return this.urgenciaField;
@@ -384,26 +384,6 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("urgencia");
             }
         }
-
-        // Para DGV
-
-        EmpleadoWS.EmpleadoWSClient empleadoDAO = new EmpleadoWS.EmpleadoWSClient();
-        public int nombreEmpleado
-        {
-            get
-            {
-                // Aqui hay un problema, necesitamos una funcion
-                // buscarEmpleadoPorId porque este servicio solo trae el ID
-                // del empleado y no hay otra forma de encontrarlo.
-                // Hasta entonces, se retorna el ID del empleado y no su nombre
-
-                return empleado.empleadoId;
-
-                //EmpleadoWS.empleado emp = empleadoDAO.buscarEmpleadoPorCodigo();
-                //return empleado.nombre + empleado.apellidoPaterno + empleado.apellidoPaterno;
-            }
-        }
-        public string nombreEstado { get => estado.nombre; }
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -885,9 +865,9 @@ namespace TableSoft.TicketWS {
         
         private string descripcionField;
         
-        private localDateTime fechaCompletadoField;
+        private string fechaCompletadoField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private int tareaIdField;
         
@@ -941,7 +921,7 @@ namespace TableSoft.TicketWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public localDateTime fechaCompletado {
+        public string fechaCompletado {
             get {
                 return this.fechaCompletadoField;
             }
@@ -953,7 +933,7 @@ namespace TableSoft.TicketWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -1080,7 +1060,7 @@ namespace TableSoft.TicketWS {
         
         private int equipoIdField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private agente[] listaAgentesField;
         
@@ -1138,7 +1118,7 @@ namespace TableSoft.TicketWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -1183,24 +1163,6 @@ namespace TableSoft.TicketWS {
                 this.RaisePropertyChanged("nombre");
             }
         }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class localDateTime : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -1328,7 +1290,7 @@ namespace TableSoft.TicketWS {
         
         private string descripcionField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private int tareaPredeterminadaIdField;
         
@@ -1370,7 +1332,7 @@ namespace TableSoft.TicketWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -1829,7 +1791,7 @@ namespace TableSoft.TicketWS {
         
         private string comentarioField;
         
-        private localDateTime fechaField;
+        private string fechaField;
         
         private int transferenciaIdField;
         
@@ -1859,7 +1821,7 @@ namespace TableSoft.TicketWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fecha {
+        public string fecha {
             get {
                 return this.fechaField;
             }
@@ -1907,7 +1869,7 @@ namespace TableSoft.TicketWS {
         
         private estadoTicket estadoToField;
         
-        private localDateTime fechaCambioEstadoField;
+        private string fechaCambioEstadoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
@@ -1959,7 +1921,7 @@ namespace TableSoft.TicketWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public localDateTime fechaCambioEstado {
+        public string fechaCambioEstado {
             get {
                 return this.fechaCambioEstadoField;
             }
@@ -2079,7 +2041,7 @@ namespace TableSoft.TicketWS {
         
         private int comentarioIdField;
         
-        private localDateTime fechaField;
+        private string fechaField;
         
         private string textoField;
         
@@ -2109,7 +2071,7 @@ namespace TableSoft.TicketWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fecha {
+        public string fecha {
             get {
                 return this.fechaField;
             }

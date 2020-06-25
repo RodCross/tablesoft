@@ -46,20 +46,53 @@ namespace TableSoft
 
         private void btnAtender_Click(object sender, EventArgs e)
         {
-            frmMiEquipoAgente frm = new frmMiEquipoAgente();
-            frm.ShowDialog();
+            frmMiEquipoAgente frm = new frmMiEquipoAgente
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionar_Click(object sender, EventArgs e)
         {
-            frmListaTicketsAgente frm = new frmListaTicketsAgente();
-            frm.ShowDialog();
+            frmListaTicketsAgente frm = new frmListaTicketsAgente
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            frmGeneradorReportesSupervisor frm = new frmGeneradorReportesSupervisor();
-            frm.ShowDialog();
+            frmGeneradorReportesSupervisor frm = new frmGeneradorReportesSupervisor
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
     }
 }

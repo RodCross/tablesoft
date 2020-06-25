@@ -254,7 +254,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInicioSesion";
-            this.Text = "TableSoft";
+            this.Text = "Yanapay | Iniciar sesión";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlLogin.ResumeLayout(false);

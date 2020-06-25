@@ -291,7 +291,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInicioEmpleado";
-            this.Text = "TableSoft";
+            this.Text = "Yanapay | Inicio";
             this.pnlExt.ResumeLayout(false);
             this.pnlInt.ResumeLayout(false);
             this.pnlDer.ResumeLayout(false);

@@ -48,10 +48,9 @@
             this.lblDatosEstado.AutoSize = true;
             this.lblDatosEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblDatosEstado.ForeColor = System.Drawing.Color.White;
-            this.lblDatosEstado.Location = new System.Drawing.Point(40, 27);
-            this.lblDatosEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatosEstado.Location = new System.Drawing.Point(30, 22);
             this.lblDatosEstado.Name = "lblDatosEstado";
-            this.lblDatosEstado.Size = new System.Drawing.Size(231, 36);
+            this.lblDatosEstado.Size = new System.Drawing.Size(175, 27);
             this.lblDatosEstado.TabIndex = 0;
             this.lblDatosEstado.Text = "Datos del estado";
             // 
@@ -62,9 +61,8 @@
             this.pnlTitulo.Controls.Add(this.lblDatosEstado);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(933, 86);
+            this.pnlTitulo.Size = new System.Drawing.Size(700, 70);
             this.pnlTitulo.TabIndex = 5;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -76,10 +74,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(759, 26);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(569, 21);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(136, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(102, 33);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -89,10 +86,9 @@
             // 
             this.lblIDEstado.AutoSize = true;
             this.lblIDEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDEstado.Location = new System.Drawing.Point(171, 114);
-            this.lblIDEstado.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIDEstado.Location = new System.Drawing.Point(128, 93);
             this.lblIDEstado.Name = "lblIDEstado";
-            this.lblIDEstado.Size = new System.Drawing.Size(31, 26);
+            this.lblIDEstado.Size = new System.Drawing.Size(25, 21);
             this.lblIDEstado.TabIndex = 6;
             this.lblIDEstado.Text = "ID";
             // 
@@ -100,11 +96,10 @@
             // 
             this.txtIDEstado.Enabled = false;
             this.txtIDEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDEstado.Location = new System.Drawing.Point(227, 112);
-            this.txtIDEstado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIDEstado.Location = new System.Drawing.Point(170, 91);
             this.txtIDEstado.Name = "txtIDEstado";
             this.txtIDEstado.ReadOnly = true;
-            this.txtIDEstado.Size = new System.Drawing.Size(271, 33);
+            this.txtIDEstado.Size = new System.Drawing.Size(204, 28);
             this.txtIDEstado.TabIndex = 0;
             // 
             // btnActualizar
@@ -115,10 +110,9 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(759, 304);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(569, 247);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(136, 41);
+            this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -132,10 +126,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(759, 304);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(569, 247);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(136, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -144,48 +137,44 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(227, 166);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(170, 135);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(271, 33);
+            this.txtNombre.Size = new System.Drawing.Size(204, 28);
             this.txtNombre.TabIndex = 1;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblNombre.Location = new System.Drawing.Point(113, 169);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(85, 137);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(85, 26);
+            this.lblNombre.Size = new System.Drawing.Size(68, 21);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Nombre";
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(227, 220);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDescripcion.Location = new System.Drawing.Point(170, 179);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(667, 33);
+            this.txtDescripcion.Size = new System.Drawing.Size(501, 28);
             this.txtDescripcion.TabIndex = 2;
             // 
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDescripcion.Location = new System.Drawing.Point(83, 223);
-            this.lblDescripcion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDescripcion.Location = new System.Drawing.Point(62, 181);
             this.lblDescripcion.Name = "lblDescripcion";
-            this.lblDescripcion.Size = new System.Drawing.Size(114, 26);
+            this.lblDescripcion.Size = new System.Drawing.Size(91, 21);
             this.lblDescripcion.TabIndex = 8;
             this.lblDescripcion.Text = "Descripción";
             // 
             // frmGestionarEstado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 379);
+            this.ClientSize = new System.Drawing.Size(700, 308);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtDescripcion);
@@ -197,9 +186,8 @@
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGestionarEstado";
-            this.Text = "frmGestionarEstado";
+            this.Text = "Datos del estado";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);

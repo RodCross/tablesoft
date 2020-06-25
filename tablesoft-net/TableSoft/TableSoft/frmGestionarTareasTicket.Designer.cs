@@ -197,7 +197,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGestionarTareasTicket";
             this.RightToLeftLayout = true;
-            this.Text = "frmGestionarTareasTicket";
+            this.Text = "Datos de la tarea";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);

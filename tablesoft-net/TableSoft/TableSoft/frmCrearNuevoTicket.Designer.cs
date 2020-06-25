@@ -343,7 +343,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCrearNuevoTicket";
-            this.Text = "Abrir un nuevo ticket";
+            this.Text = "Crear un nuevo ticket";
             this.pnlInfo.ResumeLayout(false);
             this.pnlInfo.PerformLayout();
             this.pnlCaracteristicas.ResumeLayout(false);

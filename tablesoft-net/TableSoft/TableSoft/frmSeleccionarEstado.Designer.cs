@@ -52,9 +52,8 @@
             this.pnlTitulo.Controls.Add(this.lblListaEstados);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1019, 86);
+            this.pnlTitulo.Size = new System.Drawing.Size(764, 70);
             this.pnlTitulo.TabIndex = 4;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -63,10 +62,9 @@
             this.lblListaEstados.AutoSize = true;
             this.lblListaEstados.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblListaEstados.ForeColor = System.Drawing.Color.White;
-            this.lblListaEstados.Location = new System.Drawing.Point(40, 28);
-            this.lblListaEstados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblListaEstados.Location = new System.Drawing.Point(30, 23);
             this.lblListaEstados.Name = "lblListaEstados";
-            this.lblListaEstados.Size = new System.Drawing.Size(220, 36);
+            this.lblListaEstados.Size = new System.Drawing.Size(167, 27);
             this.lblListaEstados.TabIndex = 0;
             this.lblListaEstados.Text = "Lista de estados";
             // 
@@ -81,14 +79,13 @@
             this.ID,
             this.Nombre,
             this.Descripcion});
-            this.dgvLista.Location = new System.Drawing.Point(47, 113);
-            this.dgvLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLista.Location = new System.Drawing.Point(35, 92);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowHeadersWidth = 51;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(925, 409);
+            this.dgvLista.Size = new System.Drawing.Size(694, 332);
             this.dgvLista.TabIndex = 0;
             // 
             // ID
@@ -136,10 +133,9 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(599, 553);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Location = new System.Drawing.Point(449, 449);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(159, 41);
+            this.btnNuevo.Size = new System.Drawing.Size(119, 33);
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -153,10 +149,9 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(193, 553);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Location = new System.Drawing.Point(145, 449);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(159, 41);
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -170,10 +165,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(813, 553);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(610, 449);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(159, 41);
+            this.btnEditar.Size = new System.Drawing.Size(119, 33);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -187,10 +181,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(399, 553);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(299, 449);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(159, 41);
+            this.btnEliminar.Size = new System.Drawing.Size(119, 33);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -198,9 +191,9 @@
             // 
             // frmSeleccionarEstado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1019, 620);
+            this.ClientSize = new System.Drawing.Size(764, 504);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);
@@ -209,9 +202,8 @@
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSeleccionarEstado";
-            this.Text = "frmSeleccionarEstado";
+            this.Text = "Lista de estados";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();

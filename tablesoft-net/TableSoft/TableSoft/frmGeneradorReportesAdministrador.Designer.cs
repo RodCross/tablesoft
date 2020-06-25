@@ -301,7 +301,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGeneradorReportesAdministrador";
-            this.Text = "frmGeneradorReportesAdministrador";
+            this.Text = "Generar reporte de tickets";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.grpIndicadores.ResumeLayout(false);

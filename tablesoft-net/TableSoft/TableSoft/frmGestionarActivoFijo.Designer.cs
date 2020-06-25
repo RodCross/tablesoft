@@ -54,9 +54,8 @@
             this.pnlTitulo.Controls.Add(this.lblDatosActivoFijo);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(915, 86);
+            this.pnlTitulo.Size = new System.Drawing.Size(686, 70);
             this.pnlTitulo.TabIndex = 5;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -68,10 +67,9 @@
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(759, 26);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCancelar.Location = new System.Drawing.Point(569, 21);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(136, 41);
+            this.btnCancelar.Size = new System.Drawing.Size(102, 33);
             this.btnCancelar.TabIndex = 1;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -82,30 +80,27 @@
             this.lblDatosActivoFijo.AutoSize = true;
             this.lblDatosActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblDatosActivoFijo.ForeColor = System.Drawing.Color.White;
-            this.lblDatosActivoFijo.Location = new System.Drawing.Point(40, 28);
-            this.lblDatosActivoFijo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDatosActivoFijo.Location = new System.Drawing.Point(30, 23);
             this.lblDatosActivoFijo.Name = "lblDatosActivoFijo";
-            this.lblDatosActivoFijo.Size = new System.Drawing.Size(273, 36);
+            this.lblDatosActivoFijo.Size = new System.Drawing.Size(208, 27);
             this.lblDatosActivoFijo.TabIndex = 0;
             this.lblDatosActivoFijo.Text = "Datos del activo fijo";
             // 
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(227, 170);
-            this.txtCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCodigo.Location = new System.Drawing.Point(170, 138);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(271, 33);
+            this.txtCodigo.Size = new System.Drawing.Size(204, 28);
             this.txtCodigo.TabIndex = 2;
             // 
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblCodigo.Location = new System.Drawing.Point(124, 174);
-            this.lblCodigo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCodigo.Location = new System.Drawing.Point(93, 141);
             this.lblCodigo.Name = "lblCodigo";
-            this.lblCodigo.Size = new System.Drawing.Size(77, 26);
+            this.lblCodigo.Size = new System.Drawing.Size(60, 21);
             this.lblCodigo.TabIndex = 8;
             this.lblCodigo.Text = "Codigo";
             // 
@@ -113,10 +108,9 @@
             // 
             this.lblIDActivoFijo.AutoSize = true;
             this.lblIDActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDActivoFijo.Location = new System.Drawing.Point(171, 114);
-            this.lblIDActivoFijo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIDActivoFijo.Location = new System.Drawing.Point(128, 93);
             this.lblIDActivoFijo.Name = "lblIDActivoFijo";
-            this.lblIDActivoFijo.Size = new System.Drawing.Size(31, 26);
+            this.lblIDActivoFijo.Size = new System.Drawing.Size(25, 21);
             this.lblIDActivoFijo.TabIndex = 6;
             this.lblIDActivoFijo.Text = "ID";
             // 
@@ -124,30 +118,27 @@
             // 
             this.txtIDActivoFijo.Enabled = false;
             this.txtIDActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDActivoFijo.Location = new System.Drawing.Point(227, 112);
-            this.txtIDActivoFijo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIDActivoFijo.Location = new System.Drawing.Point(170, 91);
             this.txtIDActivoFijo.Name = "txtIDActivoFijo";
             this.txtIDActivoFijo.ReadOnly = true;
-            this.txtIDActivoFijo.Size = new System.Drawing.Size(271, 33);
+            this.txtIDActivoFijo.Size = new System.Drawing.Size(204, 28);
             this.txtIDActivoFijo.TabIndex = 0;
             // 
             // txtTipo
             // 
             this.txtTipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTipo.Location = new System.Drawing.Point(227, 283);
-            this.txtTipo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTipo.Location = new System.Drawing.Point(170, 230);
             this.txtTipo.Name = "txtTipo";
-            this.txtTipo.Size = new System.Drawing.Size(271, 33);
+            this.txtTipo.Size = new System.Drawing.Size(204, 28);
             this.txtTipo.TabIndex = 1;
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblTipo.Location = new System.Drawing.Point(151, 287);
-            this.lblTipo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTipo.Location = new System.Drawing.Point(113, 233);
             this.lblTipo.Name = "lblTipo";
-            this.lblTipo.Size = new System.Drawing.Size(51, 26);
+            this.lblTipo.Size = new System.Drawing.Size(40, 21);
             this.lblTipo.TabIndex = 7;
             this.lblTipo.Text = "Tipo";
             this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -161,10 +152,9 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(756, 411);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnActualizar.Location = new System.Drawing.Point(567, 334);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(136, 41);
+            this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 4;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -178,10 +168,9 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(756, 411);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardar.Location = new System.Drawing.Point(567, 334);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(136, 41);
+            this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 3;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -190,48 +179,44 @@
             // txtMarca
             // 
             this.txtMarca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMarca.Location = new System.Drawing.Point(227, 224);
-            this.txtMarca.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMarca.Location = new System.Drawing.Point(170, 182);
             this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(376, 33);
+            this.txtMarca.Size = new System.Drawing.Size(283, 28);
             this.txtMarca.TabIndex = 9;
             // 
             // lblMarca
             // 
             this.lblMarca.AutoSize = true;
             this.lblMarca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblMarca.Location = new System.Drawing.Point(133, 228);
-            this.lblMarca.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblMarca.Location = new System.Drawing.Point(100, 185);
             this.lblMarca.Name = "lblMarca";
-            this.lblMarca.Size = new System.Drawing.Size(66, 26);
+            this.lblMarca.Size = new System.Drawing.Size(53, 21);
             this.lblMarca.TabIndex = 10;
             this.lblMarca.Text = "Marca";
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(227, 334);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombre.Location = new System.Drawing.Point(170, 271);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(515, 33);
+            this.txtNombre.Size = new System.Drawing.Size(387, 28);
             this.txtNombre.TabIndex = 11;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblNombre.Location = new System.Drawing.Point(113, 337);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNombre.Location = new System.Drawing.Point(85, 274);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(85, 26);
+            this.lblNombre.Size = new System.Drawing.Size(68, 21);
             this.lblNombre.TabIndex = 12;
             this.lblNombre.Text = "Nombre";
             // 
             // frmGestionarActivoFijo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(915, 476);
+            this.ClientSize = new System.Drawing.Size(686, 387);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtMarca);
@@ -247,9 +232,8 @@
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGestionarActivoFijo";
-            this.Text = "frmGestionarActivoFijo";
+            this.Text = "Datos del activo fijo";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);

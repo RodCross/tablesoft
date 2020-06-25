@@ -66,7 +66,7 @@ namespace TableSoft
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvLista.CurrentRow.DataBoundItem;
-            frmGestionarCategoria frm = new frmGestionarCategoria(cat);
+            frmGestionarCategoria frm = new frmGestionarCategoria(cat, this);
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 var catgs = categoriaDAO.listarCategorias();

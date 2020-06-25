@@ -47,8 +47,8 @@
             this.lblCategoria = new System.Windows.Forms.Label();
             this.lblAgente = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.lblReportes = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.grpIndicadores.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -252,6 +252,17 @@
             this.pnlTitulo.TabIndex = 8;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
+            // lblReportes
+            // 
+            this.lblReportes.AutoSize = true;
+            this.lblReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReportes.ForeColor = System.Drawing.Color.White;
+            this.lblReportes.Location = new System.Drawing.Point(24, 22);
+            this.lblReportes.Name = "lblReportes";
+            this.lblReportes.Size = new System.Drawing.Size(267, 27);
+            this.lblReportes.TabIndex = 0;
+            this.lblReportes.Text = "Generar reporte de tickets";
+            // 
             // btnVolver
             // 
             this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
@@ -267,17 +278,6 @@
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // lblReportes
-            // 
-            this.lblReportes.AutoSize = true;
-            this.lblReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReportes.ForeColor = System.Drawing.Color.White;
-            this.lblReportes.Location = new System.Drawing.Point(24, 22);
-            this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(267, 27);
-            this.lblReportes.TabIndex = 0;
-            this.lblReportes.Text = "Generar reporte de tickets";
             // 
             // frmGeneradorReportesSupervisor
             // 
@@ -301,7 +301,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGeneradorReportesSupervisor";
-            this.Text = "frmGeneradorReportesSupervisor";
+            this.Text = "Generar reporte de tickets";
             this.grpIndicadores.ResumeLayout(false);
             this.grpIndicadores.PerformLayout();
             this.pnlTitulo.ResumeLayout(false);

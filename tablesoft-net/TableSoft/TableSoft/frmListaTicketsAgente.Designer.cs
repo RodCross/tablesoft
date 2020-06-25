@@ -39,13 +39,13 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblHistorial = new System.Windows.Forms.Label();
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Empleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaApertura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaCierre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.SuspendLayout();
@@ -96,7 +96,7 @@
             this.dgvHistorial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgvHistorial.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvHistorial.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
+            this.Id,
             this.Asunto,
             this.Empleado,
             this.FechaApertura,
@@ -109,34 +109,19 @@
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvHistorial.Size = new System.Drawing.Size(994, 436);
             this.dgvHistorial.TabIndex = 0;
+            this.dgvHistorial.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHistorial_CellFormatting);
             // 
-            // btnVolver
+            // Id
             // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(760, 545);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "< Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ticketId";
+            this.Id.DataPropertyName = "ticketId";
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 75;
+            this.Id.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Id.FillWeight = 50F;
+            this.Id.HeaderText = "ID";
+            this.Id.Name = "Id";
+            this.Id.ReadOnly = true;
+            this.Id.Width = 75;
             // 
             // Asunto
             // 
@@ -151,7 +136,6 @@
             // 
             // Empleado
             // 
-            this.Empleado.DataPropertyName = "nombreEmpleado";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.Empleado.DefaultCellStyle = dataGridViewCellStyle3;
@@ -184,7 +168,6 @@
             // 
             // Estado
             // 
-            this.Estado.DataPropertyName = "nombreEstado";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.Estado.DefaultCellStyle = dataGridViewCellStyle6;
@@ -192,6 +175,22 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             this.Estado.Width = 140;
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(760, 545);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "< Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmListaTicketsAgente
             // 
@@ -207,7 +206,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmListaTicketsAgente";
-            this.Text = "Lista de tickets";
+            this.Text = "Historial de tickets";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).EndInit();
@@ -221,7 +220,7 @@
         private System.Windows.Forms.Label lblHistorial;
         private System.Windows.Forms.DataGridView dgvHistorial;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asunto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Empleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaApertura;

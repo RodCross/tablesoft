@@ -52,9 +52,8 @@
             this.pnlTitulo.Controls.Add(this.lblListaBibliotecas);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(747, 86);
+            this.pnlTitulo.Size = new System.Drawing.Size(560, 70);
             this.pnlTitulo.TabIndex = 4;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -63,10 +62,9 @@
             this.lblListaBibliotecas.AutoSize = true;
             this.lblListaBibliotecas.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblListaBibliotecas.ForeColor = System.Drawing.Color.White;
-            this.lblListaBibliotecas.Location = new System.Drawing.Point(40, 28);
-            this.lblListaBibliotecas.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblListaBibliotecas.Location = new System.Drawing.Point(30, 23);
             this.lblListaBibliotecas.Name = "lblListaBibliotecas";
-            this.lblListaBibliotecas.Size = new System.Drawing.Size(262, 36);
+            this.lblListaBibliotecas.Size = new System.Drawing.Size(199, 27);
             this.lblListaBibliotecas.TabIndex = 0;
             this.lblListaBibliotecas.Text = "Lista de bibliotecas";
             // 
@@ -81,14 +79,13 @@
             this.ID,
             this.Nombre,
             this.Abreviatura});
-            this.dgvGestionar.Location = new System.Drawing.Point(47, 113);
-            this.dgvGestionar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvGestionar.Location = new System.Drawing.Point(35, 92);
             this.dgvGestionar.Name = "dgvGestionar";
             this.dgvGestionar.ReadOnly = true;
             this.dgvGestionar.RowHeadersVisible = false;
             this.dgvGestionar.RowHeadersWidth = 51;
             this.dgvGestionar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGestionar.Size = new System.Drawing.Size(659, 409);
+            this.dgvGestionar.Size = new System.Drawing.Size(494, 332);
             this.dgvGestionar.TabIndex = 0;
             // 
             // ID
@@ -136,10 +133,9 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(406, 553);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Location = new System.Drawing.Point(304, 449);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(136, 41);
+            this.btnNuevo.Size = new System.Drawing.Size(102, 33);
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -153,10 +149,9 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(66, 553);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Location = new System.Drawing.Point(50, 449);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(141, 41);
+            this.btnVolver.Size = new System.Drawing.Size(106, 33);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -170,10 +165,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(570, 553);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(428, 449);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(136, 41);
+            this.btnEditar.Size = new System.Drawing.Size(102, 33);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -187,10 +181,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(239, 553);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(179, 449);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(136, 41);
+            this.btnEliminar.Size = new System.Drawing.Size(102, 33);
             this.btnEliminar.TabIndex = 29;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -198,9 +191,9 @@
             // 
             // frmSeleccionarBiblioteca
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 620);
+            this.ClientSize = new System.Drawing.Size(560, 504);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);
@@ -209,9 +202,8 @@
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSeleccionarBiblioteca";
-            this.Text = "frmSeleccionarBiblioteca";
+            this.Text = "Lista de bibliotecas";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGestionar)).EndInit();

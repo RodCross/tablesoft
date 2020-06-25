@@ -30,8 +30,19 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmInfoTicketEmpleado frm = new frmInfoTicketEmpleado();
-            frm.ShowDialog();
+            frmInfoTicketEmpleado frm = new frmInfoTicketEmpleado
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

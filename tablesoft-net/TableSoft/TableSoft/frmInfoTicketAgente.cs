@@ -13,10 +13,12 @@ namespace TableSoft
 {
     public partial class frmInfoTicketAgente : Form
     {
-        String defaultRespuesta = "Escribe aquí tu comentario.";
+        private String defaultRespuesta = "Escribe aquí tu comentario.";
+        private TicketWS.ticket ticket;
 
-        public frmInfoTicketAgente()
+        public frmInfoTicketAgente(TicketWS.ticket tick)
         {
+            ticket = tick;
             InitializeComponent();
             MostrarDefaultRespuesta();
         }
@@ -83,7 +85,7 @@ namespace TableSoft
 
         private void btnVerTareas_Click(object sender, EventArgs e)
         {
-            frmSeleccionarTareasTicket frm = new frmSeleccionarTareasTicket();
+            frmSeleccionarTareasTicket frm = new frmSeleccionarTareasTicket(ticket);
             frm.ShowDialog();
         }
     }

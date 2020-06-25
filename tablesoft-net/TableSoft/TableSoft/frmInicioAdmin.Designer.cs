@@ -372,7 +372,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInicioAdmin";
-            this.Text = "frmInicioAdmin";
+            this.Text = "Yanapay | Inicio";
             this.pnlExt.ResumeLayout(false);
             this.pnlInt.ResumeLayout(false);
             this.pnlDer2.ResumeLayout(false);

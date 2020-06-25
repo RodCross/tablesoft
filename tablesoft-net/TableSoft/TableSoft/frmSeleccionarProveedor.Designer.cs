@@ -60,9 +60,8 @@
             this.pnlTitulo.Controls.Add(this.lblListaProveedores);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1333, 86);
+            this.pnlTitulo.Size = new System.Drawing.Size(1000, 70);
             this.pnlTitulo.TabIndex = 4;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -71,10 +70,9 @@
             this.lblListaProveedores.AutoSize = true;
             this.lblListaProveedores.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblListaProveedores.ForeColor = System.Drawing.Color.White;
-            this.lblListaProveedores.Location = new System.Drawing.Point(40, 28);
-            this.lblListaProveedores.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblListaProveedores.Location = new System.Drawing.Point(30, 23);
             this.lblListaProveedores.Name = "lblListaProveedores";
-            this.lblListaProveedores.Size = new System.Drawing.Size(283, 36);
+            this.lblListaProveedores.Size = new System.Drawing.Size(214, 27);
             this.lblListaProveedores.TabIndex = 0;
             this.lblListaProveedores.Text = "Lista de proveedores";
             // 
@@ -93,14 +91,13 @@
             this.Ciudad,
             this.Telefono,
             this.Email});
-            this.dgvLista.Location = new System.Drawing.Point(47, 113);
-            this.dgvLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvLista.Location = new System.Drawing.Point(35, 92);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowHeadersWidth = 51;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(1256, 537);
+            this.dgvLista.Size = new System.Drawing.Size(942, 436);
             this.dgvLista.TabIndex = 0;
             this.dgvLista.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLista_CellFormatting);
             // 
@@ -196,10 +193,9 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(932, 671);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNuevo.Location = new System.Drawing.Point(699, 545);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(159, 41);
+            this.btnNuevo.Size = new System.Drawing.Size(119, 33);
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -213,10 +209,9 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(498, 671);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnVolver.Location = new System.Drawing.Point(374, 545);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(159, 41);
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -230,10 +225,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(1147, 671);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(860, 545);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(159, 41);
+            this.btnEditar.Size = new System.Drawing.Size(119, 33);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -247,10 +241,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(718, 671);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(538, 545);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(159, 41);
+            this.btnEliminar.Size = new System.Drawing.Size(119, 33);
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -258,9 +251,9 @@
             // 
             // frmSeleccionarProveedor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1333, 738);
+            this.ClientSize = new System.Drawing.Size(1000, 600);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);
@@ -269,9 +262,8 @@
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmSeleccionarProveedor";
-            this.Text = "frmGestionarProveedor";
+            this.Text = "Lista de proveedores";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();

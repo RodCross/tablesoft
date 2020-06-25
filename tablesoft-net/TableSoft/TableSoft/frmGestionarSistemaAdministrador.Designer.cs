@@ -308,7 +308,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmGestionarSistemaAdministrador";
-            this.Text = "frmGestionarAdministrador";
+            this.Text = "Gestionar sistema";
             this.pnlPersonas.ResumeLayout(false);
             this.pnlPersonas.PerformLayout();
             this.pnlNegocio.ResumeLayout(false);

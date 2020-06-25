@@ -101,9 +101,9 @@
             this.lblFAQ.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblFAQ.Location = new System.Drawing.Point(30, 124);
             this.lblFAQ.Name = "lblFAQ";
-            this.lblFAQ.Size = new System.Drawing.Size(219, 27);
+            this.lblFAQ.Size = new System.Drawing.Size(181, 27);
             this.lblFAQ.TabIndex = 0;
-            this.lblFAQ.Text = "Preguntas frecuentes";
+            this.lblFAQ.Text = "Manual de ayuda";
             // 
             // lblPregCuentas
             // 
@@ -259,7 +259,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAyuda";
-            this.Text = "Preguntas frecuentes";
+            this.Text = "Manual de ayuda";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);

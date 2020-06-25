@@ -41,8 +41,19 @@ namespace TableSoft
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
-            frmCrearNuevoTicket frm = new frmCrearNuevoTicket();
-            frm.ShowDialog();
+            frmCrearNuevoTicket frm = new frmCrearNuevoTicket
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -52,8 +63,19 @@ namespace TableSoft
 
         private void btnEstado_Click(object sender, EventArgs e)
         {
-            frmListaTicketsEmpleado frm = new frmListaTicketsEmpleado();
-            frm.ShowDialog();
+            frmListaTicketsEmpleado frm = new frmListaTicketsEmpleado
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
     }
 }

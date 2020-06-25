@@ -50,6 +50,7 @@
             this.pnlDatos = new System.Windows.Forms.Panel();
             this.pnlMensajes = new System.Windows.Forms.Panel();
             this.pnlRespuesta = new System.Windows.Forms.Panel();
+            this.btnVerTareas = new System.Windows.Forms.Button();
             this.btnResponder = new System.Windows.Forms.Button();
             this.rtfRespuesta = new System.Windows.Forms.RichTextBox();
             this.pnlMsgAgente = new System.Windows.Forms.Panel();
@@ -61,7 +62,6 @@
             this.lblMsgUsuario = new System.Windows.Forms.Label();
             this.lblNombreUsuario = new System.Windows.Forms.Label();
             this.lblAsunto = new System.Windows.Forms.Label();
-            this.btnVerTareas = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlMensajes.SuspendLayout();
@@ -343,6 +343,23 @@
             this.pnlRespuesta.Size = new System.Drawing.Size(706, 453);
             this.pnlRespuesta.TabIndex = 3;
             // 
+            // btnVerTareas
+            // 
+            this.btnVerTareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVerTareas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVerTareas.FlatAppearance.BorderSize = 0;
+            this.btnVerTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVerTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVerTareas.ForeColor = System.Drawing.Color.White;
+            this.btnVerTareas.Location = new System.Drawing.Point(29, 371);
+            this.btnVerTareas.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.btnVerTareas.Name = "btnVerTareas";
+            this.btnVerTareas.Size = new System.Drawing.Size(119, 33);
+            this.btnVerTareas.TabIndex = 2;
+            this.btnVerTareas.Text = "Ver tareas";
+            this.btnVerTareas.UseVisualStyleBackColor = false;
+            this.btnVerTareas.Click += new System.EventHandler(this.btnVerTareas_Click);
+            // 
             // btnResponder
             // 
             this.btnResponder.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(162)))), ((int)(((byte)(208)))));
@@ -468,23 +485,6 @@
             this.lblAsunto.TabIndex = 0;
             this.lblAsunto.Text = "Falla en las impresoras del Complejo de Innovación Académica";
             // 
-            // btnVerTareas
-            // 
-            this.btnVerTareas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnVerTareas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVerTareas.FlatAppearance.BorderSize = 0;
-            this.btnVerTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVerTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVerTareas.ForeColor = System.Drawing.Color.White;
-            this.btnVerTareas.Location = new System.Drawing.Point(29, 371);
-            this.btnVerTareas.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.btnVerTareas.Name = "btnVerTareas";
-            this.btnVerTareas.Size = new System.Drawing.Size(119, 33);
-            this.btnVerTareas.TabIndex = 2;
-            this.btnVerTareas.Text = "Ver tareas";
-            this.btnVerTareas.UseVisualStyleBackColor = false;
-            this.btnVerTareas.Click += new System.EventHandler(this.btnVerTareas_Click);
-            // 
             // frmInfoTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,7 +496,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInfoTicketAgente";
-            this.Text = "frmInfoTicketAgente";
+            this.Text = "Información del ticket";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlDatos.ResumeLayout(false);

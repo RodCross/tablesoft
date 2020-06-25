@@ -420,7 +420,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmInfoTicketEmpleado";
-            this.Text = "frmInfoTicketEmpleado";
+            this.Text = "Información del ticket";
             this.pnlMensajes.ResumeLayout(false);
             this.pnlRespuesta.ResumeLayout(false);
             this.pnlMsgAgente.ResumeLayout(false);

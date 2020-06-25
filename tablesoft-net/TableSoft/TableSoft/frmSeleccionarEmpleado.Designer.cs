@@ -66,14 +66,13 @@
             this.DNI,
             this.Biblioteca,
             this.EmailPersonal});
-            this.dgvLista.Location = new System.Drawing.Point(47, 113);
-            this.dgvLista.Margin = new System.Windows.Forms.Padding(4);
+            this.dgvLista.Location = new System.Drawing.Point(35, 92);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
             this.dgvLista.RowHeadersWidth = 51;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(1230, 537);
+            this.dgvLista.Size = new System.Drawing.Size(922, 436);
             this.dgvLista.TabIndex = 0;
             this.dgvLista.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLista_CellFormatting);
             // 
@@ -154,9 +153,8 @@
             this.pnlTitulo.Controls.Add(this.lblListaEmpleados);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1327, 86);
+            this.pnlTitulo.Size = new System.Drawing.Size(995, 70);
             this.pnlTitulo.TabIndex = 4;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -165,10 +163,9 @@
             this.lblListaEmpleados.AutoSize = true;
             this.lblListaEmpleados.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblListaEmpleados.ForeColor = System.Drawing.Color.White;
-            this.lblListaEmpleados.Location = new System.Drawing.Point(40, 27);
-            this.lblListaEmpleados.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblListaEmpleados.Location = new System.Drawing.Point(30, 22);
             this.lblListaEmpleados.Name = "lblListaEmpleados";
-            this.lblListaEmpleados.Size = new System.Drawing.Size(262, 36);
+            this.lblListaEmpleados.Size = new System.Drawing.Size(199, 27);
             this.lblListaEmpleados.TabIndex = 0;
             this.lblListaEmpleados.Text = "Lista de empleados";
             // 
@@ -180,10 +177,9 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(463, 670);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolver.Location = new System.Drawing.Point(347, 544);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(159, 41);
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 1;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -197,10 +193,9 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(1118, 670);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEditar.Location = new System.Drawing.Point(838, 544);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(159, 41);
+            this.btnEditar.Size = new System.Drawing.Size(119, 33);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -214,10 +209,9 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(903, 670);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnNuevo.Location = new System.Drawing.Point(677, 544);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(159, 41);
+            this.btnNuevo.Size = new System.Drawing.Size(119, 33);
             this.btnNuevo.TabIndex = 2;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -231,10 +225,9 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(686, 670);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnEliminar.Location = new System.Drawing.Point(514, 544);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(159, 41);
+            this.btnEliminar.Size = new System.Drawing.Size(119, 33);
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -242,9 +235,9 @@
             // 
             // frmSeleccionarEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1327, 738);
+            this.ClientSize = new System.Drawing.Size(995, 600);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
             this.Controls.Add(this.btnVolver);
@@ -253,9 +246,8 @@
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmSeleccionarEmpleado";
-            this.Text = "frmSeleccionarAgente";
+            this.Text = "Lista de empleados";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();

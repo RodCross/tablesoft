@@ -29,56 +29,155 @@ namespace TableSoft
 
         private void btnGestionarEmpleado_Click(object sender, EventArgs e)
         {
-            frmSeleccionarEmpleado frm = new frmSeleccionarEmpleado();
-            frm.ShowDialog();
+            frmSeleccionarEmpleado frm = new frmSeleccionarEmpleado
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarAgentes_Click(object sender, EventArgs e)
         {
-            frmSeleccionarAgente frm = new frmSeleccionarAgente();
-            frm.ShowDialog();
+            frmSeleccionarAgente frm = new frmSeleccionarAgente
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarCategorias_Click(object sender, EventArgs e)
         {
-            frmSeleccionarCategoria frm = new frmSeleccionarCategoria();
-            frm.ShowDialog();
+            frmSeleccionarCategoria frm = new frmSeleccionarCategoria
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarUrgencias_Click(object sender, EventArgs e)
         {
-            frmSeleccionarUrgencia frm = new frmSeleccionarUrgencia();
-            frm.ShowDialog();
+            frmSeleccionarUrgencia frm = new frmSeleccionarUrgencia
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarEquiposTrabajo_Click(object sender, EventArgs e)
         {
-            frmSeleccionarEquipo frm = new frmSeleccionarEquipo();
-            frm.ShowDialog();
+            frmSeleccionarEquipo frm = new frmSeleccionarEquipo
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarEstadosTicket_Click(object sender, EventArgs e)
         {
-            frmSeleccionarEstado frm = new frmSeleccionarEstado();
-            frm.ShowDialog();
+            frmSeleccionarEstado frm = new frmSeleccionarEstado
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarProveedores_Click(object sender, EventArgs e)
         {
-            frmSeleccionarProveedor frm = new frmSeleccionarProveedor();
-            frm.ShowDialog();
+            frmSeleccionarProveedor frm = new frmSeleccionarProveedor
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarActivosFijos_Click(object sender, EventArgs e)
         {
-            frmSeleccionarActivoFijo frm = new frmSeleccionarActivoFijo();
-            frm.ShowDialog();
+            frmSeleccionarActivoFijo frm = new frmSeleccionarActivoFijo
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
 
         private void btnGestionarBibliotecas_Click(object sender, EventArgs e)
         {
-            frmSeleccionarBiblioteca frm = new frmSeleccionarBiblioteca();
-            frm.ShowDialog();
+            frmSeleccionarBiblioteca frm = new frmSeleccionarBiblioteca
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
     }
 }

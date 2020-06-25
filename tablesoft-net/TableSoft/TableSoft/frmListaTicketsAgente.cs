@@ -18,14 +18,29 @@ namespace TableSoft
         public frmListaTicketsAgente()
         {
             InitializeComponent();
-            tickets = new BindingList<TicketWS.ticket>(ticketDAO.listarTickets().ToArray());
+            TicketWS.ticket[] arrTickets = ticketDAO.listarTickets();
             dgvHistorial.AutoGenerateColumns = false;
-            dgvHistorial.DataSource = tickets;
+            if (arrTickets != null)
+            {
+                tickets = new BindingList<TicketWS.ticket>(arrTickets);
+                dgvHistorial.DataSource = tickets;
+            }
+            else
+            {
+                dgvHistorial.DataSource = null;
+            }
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
+            dgvHistorial.Rows[e.RowIndex].Cells["Empleado"].Value = data.empleado.empleadoId;
+            dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -35,8 +50,19 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmInfoTicketAgente frm = new frmInfoTicketAgente();
-            frm.ShowDialog();
+            TicketWS.ticket tick = (TicketWS.ticket)dgvHistorial.CurrentRow.DataBoundItem;
+            frmInfoTicketAgente frm = new frmInfoTicketAgente(tick);
+
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.Location = this.Location;
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
     }
 }

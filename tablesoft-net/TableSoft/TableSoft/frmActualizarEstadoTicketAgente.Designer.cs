@@ -36,12 +36,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.lblActualizarEstado = new System.Windows.Forms.Label();
             this.dgvActualizar = new System.Windows.Forms.DataGridView();
-            this.lblIngresarComentario = new System.Windows.Forms.Label();
-            this.btnActualizar = new System.Windows.Forms.Button();
-            this.rtfComentario = new System.Windows.Forms.RichTextBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblIngresarComentario = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
+            this.rtfComentario = new System.Windows.Forms.RichTextBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActualizar)).BeginInit();
             this.SuspendLayout();
@@ -104,6 +104,40 @@
             this.dgvActualizar.Size = new System.Drawing.Size(500, 162);
             this.dgvActualizar.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "estadoId";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ID.FillWeight = 50F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 45;
+            // 
+            // Nombre
+            // 
+            this.Nombre.DataPropertyName = "nombre";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            this.Nombre.Width = 120;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 330;
+            // 
             // lblIngresarComentario
             // 
             this.lblIngresarComentario.AutoSize = true;
@@ -141,40 +175,6 @@
             this.rtfComentario.TabIndex = 1;
             this.rtfComentario.Text = "";
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "estadoId";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 45;
-            // 
-            // Nombre
-            // 
-            this.Nombre.DataPropertyName = "nombre";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 120;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "descripcion";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 330;
-            // 
             // frmActualizarEstadoTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -188,7 +188,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmActualizarEstadoTicketAgente";
-            this.Text = "frmActualizarEstadoTicketAgente";
+            this.Text = "Actualizar estado";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvActualizar)).EndInit();

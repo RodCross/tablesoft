@@ -148,7 +148,7 @@
             this.Categoria.HeaderText = "Categoría";
             this.Categoria.Name = "Categoria";
             this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 150;
+            this.Categoria.Width = 190;
             // 
             // btnVolver
             // 
@@ -194,7 +194,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMiEquipoAgente";
-            this.Text = "frmMiEquipoAgente";
+            this.Text = "Tickets en espera";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicketsEspera)).EndInit();

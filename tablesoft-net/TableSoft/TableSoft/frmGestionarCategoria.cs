@@ -21,7 +21,6 @@ namespace TableSoft
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
-            btnEliminar.Visible = false;
             btnTareas.Visible = false;
         }
 
@@ -33,7 +32,6 @@ namespace TableSoft
             txtNombre.Text = categoria.nombre;
             txtDescripcion.Text = categoria.descripcion;
             btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
             btnTareas.Visible = true;
             btnGuardar.Visible = false;
         }
@@ -103,33 +101,6 @@ namespace TableSoft
                 }
                 txtIDCategoria.Text = categoria.categoriaId.ToString();
                 this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            // Validaciones
-
-
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (categoriaDAO.eliminarCategoria(categoria) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "Ha ocurrido un error al eliminar el registro",
-                    "Error de eliminación",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                this.DialogResult = DialogResult.OK;
-            }   
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

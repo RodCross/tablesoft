@@ -82,5 +82,40 @@ namespace TableSoft
                 dgvLista.DataSource = categorias;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (categoriaDAO.eliminarCategoria(cat) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    var catgs = categoriaDAO.listarCategorias();
+
+                    if (catgs == null)
+                    {
+                        categorias = new BindingList<CategoriaWS.categoria>();
+                    }
+                    else
+                    {
+                        categorias = new BindingList<CategoriaWS.categoria>(catgs);
+                    }
+                    dgvLista.DataSource = categorias;
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Ha ocurrido un error al eliminar el registro",
+                    "Error de eliminación",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+        }
     }
 }

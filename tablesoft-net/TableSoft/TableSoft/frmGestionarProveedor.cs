@@ -180,10 +180,19 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmail.Text, @"@").Count == 0)
+            if (Regex.Matches(txtEmail.Text, @"@").Count != 1)
             {
                 MessageBox.Show(
                     "El email del proveedor de contener un arroba.",
+                    "Error de email",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtEmail.Text, @"[.]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El email del proveedor de contener un punto.",
                     "Error de email",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -384,10 +393,19 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmail.Text, @"@").Count == 0)
+            if (Regex.Matches(txtEmail.Text, @"@").Count != 1)
             {
                 MessageBox.Show(
                     "El email del proveedor de contener un arroba.",
+                    "Error de email",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtEmail.Text, @"[.]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El email del proveedor de contener un punto.",
                     "Error de email",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );

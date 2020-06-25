@@ -83,5 +83,39 @@ namespace TableSoft
                 dgvLista.DataSource = null;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            AgenteWS.agente age = (AgenteWS.agente)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (agenteDAO.eliminarAgente(age) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                agentes = new BindingList<AgenteWS.agente>(agenteDAO.listarAgentes());
+                dgvLista.DataSource = agentes;
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+        }
     }
 }

@@ -79,5 +79,48 @@ namespace TableSoft
                 dgvLista.DataSource = estados;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            EstadoTicketWS.estadoTicket et = (EstadoTicketWS.estadoTicket)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Estado de Ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (estadoDAO.eliminarEstadoTicket(et) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "No se eliminó el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                var ests = estadoDAO.listarEstadosTicket();
+                if (ests == null)
+                {
+                    estados = new BindingList<EstadoTicketWS.estadoTicket>();
+                }
+                else
+                {
+                    estados = new BindingList<EstadoTicketWS.estadoTicket>(ests);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = estados;
+            }
+            else
+            {
+                MessageBox.Show(
+                "No se eliminó el registro",
+                "Eliminación no realizada",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
+        }
     }
 }

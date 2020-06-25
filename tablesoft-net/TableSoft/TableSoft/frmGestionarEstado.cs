@@ -21,7 +21,6 @@ namespace TableSoft
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
-            btnEliminar.Visible = false;
         }
 
         public frmGestionarEstado(EstadoTicketWS.estadoTicket et)
@@ -32,7 +31,6 @@ namespace TableSoft
             txtNombre.Text = estado.nombre;
             txtDescripcion.Text = estado.descripcion;
             btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
             btnGuardar.Visible = false;
         }
 
@@ -105,38 +103,6 @@ namespace TableSoft
                 MessageBox.Show(
                 "No se ha creado el registro",
                 "Registro no realizado",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-            this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Estado de Ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (estadoDAO.eliminarEstadoTicket(estado) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-            }
-            else
-            {
-                MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }

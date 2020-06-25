@@ -94,5 +94,41 @@ namespace TableSoft
                 dgvLista.DataSource = tareasPredeterminadas;
             }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            tareaSeleccionada = (TareaPredeterminadaWS.tareaPredeterminada)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (tareaPredeterminadaDAO.eliminarTareaPredeterminada(tareaSeleccionada) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Ha ocurrido un error al eliminar el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+                if (tareasPred == null)
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+                }
+                else
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
+
+                }
+                dgvLista.DataSource = tareasPredeterminadas;
+            }
+        }
     }
 }

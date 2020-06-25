@@ -28,7 +28,6 @@ namespace TableSoft
 
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
-            btnEliminar.Visible = false;
         }
 
         public frmGestionarTareaPredeterminada(TareaPredeterminadaWS.tareaPredeterminada tar)
@@ -42,7 +41,6 @@ namespace TableSoft
             txtDesc.Text = tareaPredeterminada.descripcion;
 
             btnActualizar.Visible = true;
-            btnEliminar.Visible = true;
             btnGuardar.Visible = false;
         }
 
@@ -94,33 +92,6 @@ namespace TableSoft
 
             txtIDTarea.Text = tareaPredeterminada.tareaPredeterminadaId.ToString();
             this.DialogResult = DialogResult.OK;
-        }
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                if (tareaPredeterminadaDAO.eliminarTareaPredeterminada(tareaPredeterminada) > -1)
-                {
-                    MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                else
-                {
-                    MessageBox.Show(
-                    "Ha ocurrido un error al eliminar el registro",
-                    "Eliminación no realizada",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-                this.DialogResult = DialogResult.OK;
-            }
-
-            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

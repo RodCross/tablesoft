@@ -71,9 +71,9 @@
             // 
             this.pnlExt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
             this.pnlExt.Controls.Add(this.pnlInt);
-            this.pnlExt.Location = new System.Drawing.Point(28, 185);
+            this.pnlExt.Location = new System.Drawing.Point(27, 185);
             this.pnlExt.Name = "pnlExt";
-            this.pnlExt.Size = new System.Drawing.Size(1330, 352);
+            this.pnlExt.Size = new System.Drawing.Size(1223, 352);
             this.pnlExt.TabIndex = 0;
             // 
             // pnlInt
@@ -85,7 +85,7 @@
             this.pnlInt.Controls.Add(this.pnlIzq1);
             this.pnlInt.Location = new System.Drawing.Point(29, 26);
             this.pnlInt.Name = "pnlInt";
-            this.pnlInt.Size = new System.Drawing.Size(1273, 300);
+            this.pnlInt.Size = new System.Drawing.Size(1164, 300);
             this.pnlInt.TabIndex = 0;
             // 
             // pnlDer2
@@ -94,16 +94,16 @@
             this.pnlDer2.Controls.Add(this.picGestionarSistema);
             this.pnlDer2.Controls.Add(this.btnGestionarSistema);
             this.pnlDer2.Controls.Add(this.lblGestionarSistema);
-            this.pnlDer2.Location = new System.Drawing.Point(956, 3);
+            this.pnlDer2.Location = new System.Drawing.Point(876, 3);
             this.pnlDer2.Name = "pnlDer2";
-            this.pnlDer2.Size = new System.Drawing.Size(314, 294);
+            this.pnlDer2.Size = new System.Drawing.Size(285, 294);
             this.pnlDer2.TabIndex = 3;
             // 
             // picGestionarSistema
             // 
             this.picGestionarSistema.Image = global::TableSoft.Properties.Resources.InicioAdministradorSistema;
             this.picGestionarSistema.InitialImage = ((System.Drawing.Image)(resources.GetObject("picGestionarSistema.InitialImage")));
-            this.picGestionarSistema.Location = new System.Drawing.Point(102, 61);
+            this.picGestionarSistema.Location = new System.Drawing.Point(87, 61);
             this.picGestionarSistema.Name = "picGestionarSistema";
             this.picGestionarSistema.Size = new System.Drawing.Size(110, 149);
             this.picGestionarSistema.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -117,9 +117,9 @@
             this.btnGestionarSistema.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarSistema.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionarSistema.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarSistema.Location = new System.Drawing.Point(13, 229);
+            this.btnGestionarSistema.Location = new System.Drawing.Point(17, 229);
             this.btnGestionarSistema.Name = "btnGestionarSistema";
-            this.btnGestionarSistema.Size = new System.Drawing.Size(288, 44);
+            this.btnGestionarSistema.Size = new System.Drawing.Size(250, 44);
             this.btnGestionarSistema.TabIndex = 0;
             this.btnGestionarSistema.Text = "Gestionar sistema";
             this.btnGestionarSistema.UseVisualStyleBackColor = false;
@@ -130,7 +130,7 @@
             this.lblGestionarSistema.AutoSize = true;
             this.lblGestionarSistema.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGestionarSistema.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(198)))), ((int)(((byte)(127)))), ((int)(((byte)(33)))));
-            this.lblGestionarSistema.Location = new System.Drawing.Point(48, 14);
+            this.lblGestionarSistema.Location = new System.Drawing.Point(33, 14);
             this.lblGestionarSistema.Name = "lblGestionarSistema";
             this.lblGestionarSistema.Size = new System.Drawing.Size(218, 32);
             this.lblGestionarSistema.TabIndex = 0;
@@ -143,16 +143,16 @@
             this.pnlDer1.Controls.Add(this.picGenerarReportes);
             this.pnlDer1.Controls.Add(this.btnGenerar);
             this.pnlDer1.Controls.Add(this.lblGenerarReportes);
-            this.pnlDer1.Location = new System.Drawing.Point(636, 3);
+            this.pnlDer1.Location = new System.Drawing.Point(585, 3);
             this.pnlDer1.Name = "pnlDer1";
-            this.pnlDer1.Size = new System.Drawing.Size(314, 294);
+            this.pnlDer1.Size = new System.Drawing.Size(285, 294);
             this.pnlDer1.TabIndex = 2;
             // 
             // picGenerarReportes
             // 
             this.picGenerarReportes.Image = global::TableSoft.Properties.Resources.InicioSupervisorReporte;
             this.picGenerarReportes.InitialImage = ((System.Drawing.Image)(resources.GetObject("picGenerarReportes.InitialImage")));
-            this.picGenerarReportes.Location = new System.Drawing.Point(102, 61);
+            this.picGenerarReportes.Location = new System.Drawing.Point(87, 61);
             this.picGenerarReportes.Name = "picGenerarReportes";
             this.picGenerarReportes.Size = new System.Drawing.Size(110, 149);
             this.picGenerarReportes.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -164,11 +164,11 @@
             this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
             this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Location = new System.Drawing.Point(13, 229);
+            this.btnGenerar.Location = new System.Drawing.Point(18, 229);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(288, 44);
+            this.btnGenerar.Size = new System.Drawing.Size(249, 44);
             this.btnGenerar.TabIndex = 0;
             this.btnGenerar.Text = "Generar reporte de mi equipo";
             this.btnGenerar.UseVisualStyleBackColor = false;
@@ -179,7 +179,7 @@
             this.lblGenerarReportes.AutoSize = true;
             this.lblGenerarReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenerarReportes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.lblGenerarReportes.Location = new System.Drawing.Point(53, 14);
+            this.lblGenerarReportes.Location = new System.Drawing.Point(38, 14);
             this.lblGenerarReportes.Name = "lblGenerarReportes";
             this.lblGenerarReportes.Size = new System.Drawing.Size(209, 32);
             this.lblGenerarReportes.TabIndex = 0;
@@ -192,16 +192,16 @@
             this.pnlIzq2.Controls.Add(this.picAtender);
             this.pnlIzq2.Controls.Add(this.lblAtender);
             this.pnlIzq2.Controls.Add(this.btnAtender);
-            this.pnlIzq2.Location = new System.Drawing.Point(317, 3);
+            this.pnlIzq2.Location = new System.Drawing.Point(294, 3);
             this.pnlIzq2.Name = "pnlIzq2";
-            this.pnlIzq2.Size = new System.Drawing.Size(313, 294);
+            this.pnlIzq2.Size = new System.Drawing.Size(285, 294);
             this.pnlIzq2.TabIndex = 1;
             // 
             // picAtender
             // 
             this.picAtender.Image = global::TableSoft.Properties.Resources.InicioEmpleadoVer;
             this.picAtender.InitialImage = ((System.Drawing.Image)(resources.GetObject("picAtender.InitialImage")));
-            this.picAtender.Location = new System.Drawing.Point(98, 61);
+            this.picAtender.Location = new System.Drawing.Point(84, 61);
             this.picAtender.Name = "picAtender";
             this.picAtender.Size = new System.Drawing.Size(110, 149);
             this.picAtender.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -213,7 +213,7 @@
             this.lblAtender.AutoSize = true;
             this.lblAtender.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAtender.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(121)))), ((int)(((byte)(53)))));
-            this.lblAtender.Location = new System.Drawing.Point(53, 14);
+            this.lblAtender.Location = new System.Drawing.Point(39, 14);
             this.lblAtender.Name = "lblAtender";
             this.lblAtender.Size = new System.Drawing.Size(206, 32);
             this.lblAtender.TabIndex = 0;
@@ -227,9 +227,9 @@
             this.btnAtender.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAtender.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAtender.ForeColor = System.Drawing.Color.White;
-            this.btnAtender.Location = new System.Drawing.Point(12, 229);
+            this.btnAtender.Location = new System.Drawing.Point(17, 229);
             this.btnAtender.Name = "btnAtender";
-            this.btnAtender.Size = new System.Drawing.Size(288, 44);
+            this.btnAtender.Size = new System.Drawing.Size(250, 44);
             this.btnAtender.TabIndex = 0;
             this.btnAtender.Text = "Gestionar mis tickets";
             this.btnAtender.UseVisualStyleBackColor = false;
@@ -243,13 +243,13 @@
             this.pnlIzq1.Controls.Add(this.lblTickets);
             this.pnlIzq1.Location = new System.Drawing.Point(3, 3);
             this.pnlIzq1.Name = "pnlIzq1";
-            this.pnlIzq1.Size = new System.Drawing.Size(308, 294);
+            this.pnlIzq1.Size = new System.Drawing.Size(285, 294);
             this.pnlIzq1.TabIndex = 0;
             // 
             // picTickets
             // 
             this.picTickets.Image = ((System.Drawing.Image)(resources.GetObject("picTickets.Image")));
-            this.picTickets.Location = new System.Drawing.Point(111, 74);
+            this.picTickets.Location = new System.Drawing.Point(95, 74);
             this.picTickets.Name = "picTickets";
             this.picTickets.Size = new System.Drawing.Size(96, 124);
             this.picTickets.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -263,9 +263,9 @@
             this.btnTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnTickets.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTickets.ForeColor = System.Drawing.Color.White;
-            this.btnTickets.Location = new System.Drawing.Point(10, 229);
+            this.btnTickets.Location = new System.Drawing.Point(17, 229);
             this.btnTickets.Name = "btnTickets";
-            this.btnTickets.Size = new System.Drawing.Size(288, 44);
+            this.btnTickets.Size = new System.Drawing.Size(250, 44);
             this.btnTickets.TabIndex = 0;
             this.btnTickets.Text = "Atender nuevo ticket";
             this.btnTickets.UseVisualStyleBackColor = false;
@@ -276,7 +276,7 @@
             this.lblTickets.AutoSize = true;
             this.lblTickets.Font = new System.Drawing.Font("Microsoft PhagsPa", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTickets.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(166)))), ((int)(((byte)(255)))));
-            this.lblTickets.Location = new System.Drawing.Point(46, 14);
+            this.lblTickets.Location = new System.Drawing.Point(34, 14);
             this.lblTickets.Name = "lblTickets";
             this.lblTickets.Size = new System.Drawing.Size(216, 32);
             this.lblTickets.TabIndex = 0;
@@ -290,7 +290,7 @@
             this.pnlOpciones.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlOpciones.Location = new System.Drawing.Point(0, 106);
             this.pnlOpciones.Name = "pnlOpciones";
-            this.pnlOpciones.Size = new System.Drawing.Size(1386, 51);
+            this.pnlOpciones.Size = new System.Drawing.Size(1277, 51);
             this.pnlOpciones.TabIndex = 2;
             // 
             // lklLogout
@@ -300,7 +300,7 @@
             this.lklLogout.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklLogout.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklLogout.LinkColor = System.Drawing.Color.White;
-            this.lklLogout.Location = new System.Drawing.Point(1246, 13);
+            this.lklLogout.Location = new System.Drawing.Point(1122, 13);
             this.lklLogout.Name = "lklLogout";
             this.lklLogout.Size = new System.Drawing.Size(128, 25);
             this.lklLogout.TabIndex = 0;
@@ -318,7 +318,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1386, 106);
+            this.pnlTitulo.Size = new System.Drawing.Size(1277, 106);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -329,12 +329,12 @@
             this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold);
             this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(1236, 65);
+            this.lklFAQ.Location = new System.Drawing.Point(1132, 65);
             this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(138, 17);
+            this.lklFAQ.Size = new System.Drawing.Size(114, 17);
             this.lklFAQ.TabIndex = 0;
             this.lklFAQ.TabStop = true;
-            this.lklFAQ.Text = "Preguntas frecuentes";
+            this.lklFAQ.Text = "Manual de ayuda";
             this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
             this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);
@@ -365,7 +365,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 560);
+            this.ClientSize = new System.Drawing.Size(1277, 560);
             this.Controls.Add(this.pnlExt);
             this.Controls.Add(this.pnlOpciones);
             this.Controls.Add(this.pnlTitulo);

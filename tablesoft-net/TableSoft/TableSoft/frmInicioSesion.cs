@@ -213,8 +213,19 @@ namespace TableSoft
 
         private void lklFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            frmAyuda frm = new frmAyuda();
-            frm.ShowDialog();
+            frmAyuda frm = new frmAyuda
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
     }
 }

@@ -219,12 +219,12 @@
             this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold);
             this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(719, 68);
+            this.lklFAQ.Location = new System.Drawing.Point(739, 68);
             this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(138, 17);
+            this.lklFAQ.Size = new System.Drawing.Size(114, 17);
             this.lklFAQ.TabIndex = 0;
             this.lklFAQ.TabStop = true;
-            this.lklFAQ.Text = "Preguntas frecuentes";
+            this.lklFAQ.Text = "Manual de ayuda";
             this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
             this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);

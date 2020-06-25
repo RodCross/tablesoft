@@ -41,9 +41,9 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.picExit = new System.Windows.Forms.PictureBox();
             this.lblErrEmail = new System.Windows.Forms.Label();
             this.lblErrPassword = new System.Windows.Forms.Label();
+            this.picExit = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
@@ -70,12 +70,12 @@
             this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(719, 68);
+            this.lklFAQ.Location = new System.Drawing.Point(743, 68);
             this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(138, 17);
+            this.lklFAQ.Size = new System.Drawing.Size(114, 17);
             this.lklFAQ.TabIndex = 0;
             this.lklFAQ.TabStop = true;
-            this.lklFAQ.Text = "Preguntas frecuentes";
+            this.lklFAQ.Text = "Manual de ayuda";
             this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
             this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);
@@ -199,23 +199,6 @@
             this.lblEmail.Text = "Email";
             this.lblEmail.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // picExit
-            // 
-            this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picExit.Image = global::TableSoft.Properties.Resources.Exit;
-            this.picExit.Location = new System.Drawing.Point(805, 484);
-            this.picExit.Margin = new System.Windows.Forms.Padding(6);
-            this.picExit.Name = "picExit";
-            this.picExit.Size = new System.Drawing.Size(52, 52);
-            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picExit.TabIndex = 2;
-            this.picExit.TabStop = false;
-            this.picExit.Click += new System.EventHandler(this.picExit_Click);
-            this.picExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseDown);
-            this.picExit.MouseEnter += new System.EventHandler(this.picExit_MouseEnter);
-            this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
-            this.picExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseUp);
-            // 
             // lblErrEmail
             // 
             this.lblErrEmail.BackColor = System.Drawing.Color.Transparent;
@@ -237,6 +220,23 @@
             this.lblErrPassword.Size = new System.Drawing.Size(352, 23);
             this.lblErrPassword.TabIndex = 7;
             this.lblErrPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picExit
+            // 
+            this.picExit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picExit.Image = global::TableSoft.Properties.Resources.Exit;
+            this.picExit.Location = new System.Drawing.Point(805, 484);
+            this.picExit.Margin = new System.Windows.Forms.Padding(6);
+            this.picExit.Name = "picExit";
+            this.picExit.Size = new System.Drawing.Size(52, 52);
+            this.picExit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picExit.TabIndex = 2;
+            this.picExit.TabStop = false;
+            this.picExit.Click += new System.EventHandler(this.picExit_Click);
+            this.picExit.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseDown);
+            this.picExit.MouseEnter += new System.EventHandler(this.picExit_MouseEnter);
+            this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
+            this.picExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseUp);
             // 
             // frmInicioSesion
             // 

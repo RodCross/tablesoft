@@ -65,9 +65,9 @@
             this.lblAbrir.ForeColor = System.Drawing.Color.White;
             this.lblAbrir.Location = new System.Drawing.Point(30, 23);
             this.lblAbrir.Name = "lblAbrir";
-            this.lblAbrir.Size = new System.Drawing.Size(222, 27);
+            this.lblAbrir.Size = new System.Drawing.Size(223, 27);
             this.lblAbrir.TabIndex = 0;
-            this.lblAbrir.Text = "Abrir un nuevo ticket";
+            this.lblAbrir.Text = "Crear un nuevo ticket";
             // 
             // btnEnviar
             // 

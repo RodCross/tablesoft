@@ -181,7 +181,9 @@
             this.lblResTickets2.Name = "lblResTickets2";
             this.lblResTickets2.Size = new System.Drawing.Size(1000, 42);
             this.lblResTickets2.TabIndex = 0;
-            this.lblResTickets2.Text = resources.GetString("lblResTickets2.Text");
+            this.lblResTickets2.Text = "Una vez que has enviado el ticket, cualquier respuesta o novedad sobre su resoluc" +
+    "ión será informada mediante un correo electrónico dirigido a la dirección vincul" +
+    "ada a tu cuenta.";
             // 
             // lblResCat
             // 

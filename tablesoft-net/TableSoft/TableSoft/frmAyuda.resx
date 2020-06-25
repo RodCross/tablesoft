@@ -126,9 +126,6 @@ Esta cuenta será creada a la mayor brevedad posible, dependiendo de la disponib
 A continuación, verás un formulario donde podrás llenar los datos y la información sobre el problema o solicitud que tengas.
 Te pedimos que seas lo más detallado posible al llenar el formulario.</value>
   </data>
-  <data name="lblResTickets2.Text" xml:space="preserve">
-    <value>Una vez que has enviado el ticket, cualquier respuesta o novedad sobre su resolución será informada mediante un correo electrónico dirigido a la dirección vinculada a tu cuenta y que incluirá con un link hacia el ticket en cuestión.</value>
-  </data>
   <data name="lblResCat.Text" xml:space="preserve">
     <value>Si tienes alguna duda sobre las categorías de un ticket, no dudes en preguntarles a tus compañeros. Si todavía te quedan dudas, puedes revisar el siguiente video, que esperamos pueda solucionar cualquier pregunta que tengas: youtube.com/watch?v=PqxC0CSCZYT</value>
   </data>

@@ -360,12 +360,18 @@ public class Principal {
 //            System.out.println(t.mostrarDatos());
 //        }
 
-        // Listar ciudades
-        Categoria cat1 = new Categoria();
-        cat1.setCategoriaId(4);
-
-        int i = categoriaDao.eliminar(cat1);
-        System.out.println(i);
+        ArrayList<Equipo> equipos = equipoDao.listar();
+        for(Equipo e: equipos){
+            System.out.println(e.mostrarDatos());
+            for(Agente a: e.getListaAgentes()){
+                System.out.println(a.mostrarDatos());
+            }
+            for(Categoria c: e.getListaCategorias()){
+                System.out.println(c.mostrarDatos());
+            }
+        }
+        
+        
 
         /* Los metodos para eliminar en las clases con campo activo los ponen en 0
          * Es requisto que se deje un registro permanente en base de datos

@@ -152,7 +152,7 @@ public class CategoriaMySQL implements CategoriaDAO{
             
             CallableStatement cs = con.prepareCall(
                     "{call listar_categoria_equipo(?)}");
-            cs.setInt("_EQUIPO_ID", equipo.getEquipoId());
+            cs.setInt("_ID", equipo.getEquipoId());
             ResultSet rs=cs.executeQuery();
             
             

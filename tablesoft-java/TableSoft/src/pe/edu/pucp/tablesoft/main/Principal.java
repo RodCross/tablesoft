@@ -459,5 +459,24 @@ public class Principal {
 //            System.out.println(e.mostrarDatos());
 //        }
 
+
+//        Agente agenteP;
+//        agenteP = agenteDao.buscarxCodigo("20170910");
+//        if(agenteP.getCodigo() != null){
+//            
+//            System.out.println(agenteP.mostrarDatos());
+//        }
+//        else{
+//            System.out.println("No se encontro el agente");
+//        }
+
+//        Empleado empleadoP;
+//        empleadoP = empleadoDao.buscarxCodigo("20175869");
+//        if(empleadoP.getCodigo() != null){
+//            System.out.println(empleadoP.mostrarDatos());
+//        }
+//        else{
+//            System.out.println("No se encontro el empleado");
+//        }
     }
 }

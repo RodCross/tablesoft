@@ -20,6 +20,7 @@ public class PersonaMySQL implements PersonaDAO{
     CallableStatement cs;
     ResultSet rs;
     
+    
     @Override
     public Persona verificarPersona(String email,String password) {
         Persona persona=null;
@@ -50,5 +51,27 @@ public class PersonaMySQL implements PersonaDAO{
         }
         return persona;
     }
+
+    @Override
+    public int verificarCorreo(String email) {
+        int rpta=-1;
+        try{
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            cs = con.prepareCall("{call verificar_correo(?)}");
+            cs.setString("_EMAIL", email);
+            rs = cs.executeQuery();
+            if(rs.next()){
+                rpta=rs.getInt(1);
+            }   
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{rs.close(); con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return rpta;
+    }
+
+    
     
 }

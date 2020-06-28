@@ -10,4 +10,5 @@ import pe.edu.pucp.tablesoft.model.Persona;
 
 public interface PersonaDAO {
     Persona verificarPersona(String email,String password);
+    int verificarCorreo(String email);
 }

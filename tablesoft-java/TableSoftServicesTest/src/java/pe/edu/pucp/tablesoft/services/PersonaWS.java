@@ -27,4 +27,15 @@ public class PersonaWS {
         }
         return persona;
     }
+    
+    @WebMethod(operationName = "verificarCorreo")
+    public int verificarCorreo(@WebParam(name = "email") String email) {
+        int rpta=-1;
+        try{
+            rpta = daoPersona.verificarCorreo(email);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
+    }
 }

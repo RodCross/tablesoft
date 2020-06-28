@@ -138,38 +138,46 @@ namespace TableSoft
 
             // Iniciar sesion
             if (txtEmail.Text != "" && txtPassword.Text != "")
-            { 
-                PersonaWS.persona user = personaDAO.verificarPersona(txtEmail.Text, txtPassword.Text);
-
-                if (user != null)
+            {
+                int rpta = personaDAO.verificarCorreo(txtEmail.Text);
+                if (rpta == -1)
                 {
-                    // Llevar a inicio en funcion del rol
-                    if (user.tipo == 'E')
-                    {
-                        empleadoLogueado = empleadoDAO.buscarEmpleadoPorCodigo(user.codigo);
-                        AbrirInicioEmpleado();
-                    }
-                    else if (user.tipo == 'A')
-                    {
-                        agenteLogueado = agenteDAO.buscarAgentePorCodigo(user.codigo);
-                        if (agenteLogueado.rol.nombre.Contains("AGENTE"))
-                        {
-                            AbrirInicioAgente();
-                        }
-                        else if (agenteLogueado.rol.nombre.Contains("SUPERVISOR"))
-                        {
-                            AbrirInicioSupervisor();
-                        }
-                        else if (agenteLogueado.rol.nombre.Contains("ADMIN"))
-                        {
-                            AbrirInicioAdmin();
-                        }
-                    }
+                    lblErrEmail.Text = "El email es incorrecto";
                 }
                 else
                 {
-                    lblErrEmail.Text = "El email o la contraseña son incorrectos.";
-                    lblErrPassword.Text = "";
+
+                    PersonaWS.persona user = personaDAO.verificarPersona(txtEmail.Text, txtPassword.Text);
+
+                    if (user != null)
+                    {
+                        // Llevar a inicio en funcion del rol
+                        if (user.tipo == 'E')
+                        {
+                            empleadoLogueado = empleadoDAO.buscarEmpleadoPorCodigo(user.codigo);
+                            AbrirInicioEmpleado();
+                        }
+                        else if (user.tipo == 'A')
+                        {
+                            agenteLogueado = agenteDAO.buscarAgentePorCodigo(user.codigo);
+                            if (agenteLogueado.rol.nombre.Contains("AGENTE"))
+                            {
+                                AbrirInicioAgente();
+                            }
+                            else if (agenteLogueado.rol.nombre.Contains("SUPERVISOR"))
+                            {
+                                AbrirInicioSupervisor();
+                            }
+                            else if (agenteLogueado.rol.nombre.Contains("ADMIN"))
+                            {
+                                AbrirInicioAdmin();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        lblErrPassword.Text = "La contraseña es incorrecta";
+                    }
                 }
             }
         }

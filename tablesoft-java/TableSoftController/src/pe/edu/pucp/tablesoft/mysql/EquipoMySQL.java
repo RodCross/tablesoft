@@ -27,6 +27,8 @@ public class EquipoMySQL implements EquipoDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
 
+            con.setAutoCommit(false);
+            
             CallableStatement cs = con.prepareCall(
                     "{call insertar_equipo(?,?,?,?)}");
             
@@ -57,12 +59,27 @@ public class EquipoMySQL implements EquipoDAO{
                 cs.executeUpdate();
             }
             
-            con.close();
+            con.commit();
+
             equipo.setEquipoId(rpta);
             equipo.setActivo(true);
 
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
+            try{
+                con.rollback();
+            }
+            catch(SQLException ex2){
+                System.out.println(ex2.getMessage());
+            }
+        } finally{
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }
+            catch(SQLException ex3){
+                System.out.println(ex3.getMessage());
+            }
         }
         return rpta;
     }
@@ -76,6 +93,8 @@ public class EquipoMySQL implements EquipoDAO{
             
             con = DriverManager.getConnection(DBManager.urlMySQL, 
                     DBManager.user, DBManager.password);
+            
+            con.setAutoCommit(false);
 
             CallableStatement cs = con.prepareCall(
                     "{call actualizar_equipo(?,?,?)}");
@@ -93,30 +112,37 @@ public class EquipoMySQL implements EquipoDAO{
                 cs.executeUpdate();
             }
             
-            for(Categoria c : equipo.getListaCategorias()){
-                if(c.getActivo()){
-                    cs = con.prepareCall(
-                    "{call insertar_categoria_equipo(?,?)}");
-                    cs.setInt("_EQUIPO_ID", equipo.getEquipoId());
-                    cs.setInt("_CATEGORIA_ID", c.getCategoriaId());
-
-                    cs.executeUpdate();
-                }
-                else{
-                    cs = con.prepareCall(
-                    "{CALL eliminar_categoria_equipo(?,?)}");
-                    cs.setInt("_ID_CATEGORIA", c.getCategoriaId());
-                    cs.setInt("_ID_EQUIPO", equipo.getEquipoId());
+            cs = con.prepareCall("{call eliminar_categorias_equipo(?)}");
+            cs.setInt("_ID", equipo.getEquipoId());
+            cs.executeUpdate();
             
-                    cs.executeUpdate();
-                }
+            for(Categoria c : equipo.getListaCategorias()){
+                cs = con.prepareCall(
+                "{call insertar_categoria_equipo(?,?)}");
+                cs.setInt("_EQUIPO_ID", equipo.getEquipoId());
+                cs.setInt("_CATEGORIA_ID", c.getCategoriaId());
+
+                cs.executeUpdate();
             }
             
-            con.close();
+            con.commit();
 
         } catch(SQLException | ClassNotFoundException ex) {
             System.out.println(ex.getMessage());
-            rpta = -1;
+            try{
+                con.rollback();
+            }
+            catch(SQLException ex2){
+                System.out.println(ex2.getMessage());
+            }
+        } finally{
+            try{
+                con.setAutoCommit(true);
+                con.close();
+            }
+            catch(SQLException ex3){
+                System.out.println(ex3.getMessage());
+            }
         }
         return rpta;
     }

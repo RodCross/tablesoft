@@ -114,5 +114,19 @@ namespace TableSoft
                 dgvLista.DataSource = equipos;
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            EquipoWS.equipo[] nuevosEquipos = equipoDAO.listarEquiposPorNombre(txtBuscar.Text);
+            if (nuevosEquipos != null)
+            {
+                equipos = new BindingList<EquipoWS.equipo>(nuevosEquipos);
+                dgvLista.DataSource = equipos;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
+        }
     }
 }

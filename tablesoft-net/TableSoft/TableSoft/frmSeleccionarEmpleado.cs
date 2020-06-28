@@ -102,5 +102,19 @@ namespace TableSoft
                 );
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            EmpleadoWS.empleado[] nuevosEmpleados = empleadoDAO.listarEmpleadosPorNombre(txtBuscar.Text);
+            if (nuevosEmpleados != null)
+            {
+                empleados = new BindingList<EmpleadoWS.empleado>(nuevosEmpleados);
+                dgvLista.DataSource = empleados;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
+        }
     }
 }

@@ -78,5 +78,19 @@ namespace TableSoft
                 dgvLista.DataSource = activosFijos;
             }
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ActivoFijoWS.activoFijo[] nuevosActivos = activoFijoDAO.listarActivosFijosPorNombre(txtBuscar.Text);
+            if (nuevosActivos != null)
+            {
+                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(nuevosActivos);
+                dgvLista.DataSource = activosFijos;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
+        }
     }
 }

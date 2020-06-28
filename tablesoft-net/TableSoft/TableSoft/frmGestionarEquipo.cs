@@ -15,8 +15,13 @@ namespace TableSoft
     public partial class frmGestionarEquipo : Form
     {
         private EquipoWS.EquipoWSClient equipoDAO = new EquipoWS.EquipoWSClient();
+        private AgenteWS.AgenteWSClient agenteDAO = new AgenteWS.AgenteWSClient();
+
         private EquipoWS.equipo equipo;
         private BindingList<EquipoWS.categoria> categorias;
+
+        private BindingList<AgenteWS.agente> agentes;
+
         public frmGestionarEquipo()
         {
             equipo = new EquipoWS.equipo();
@@ -27,6 +32,9 @@ namespace TableSoft
             categorias = new BindingList<EquipoWS.categoria>();
             dgvListaCategorias.AutoGenerateColumns = false;
             dgvListaCategorias.DataSource = categorias;
+
+            this.Width = 667;
+            btnCancelar.Location = new System.Drawing.Point(537, 22);
         }
 
         public frmGestionarEquipo(EquipoWS.equipo equi)
@@ -39,6 +47,9 @@ namespace TableSoft
             btnActualizar.Visible = true;
             btnGuardar.Visible = false;
 
+            this.Width = 1005;
+            btnCancelar.Location = new System.Drawing.Point(879, 22);
+
             if (equi.listaCategorias != null)
             {
                 categorias = new BindingList<EquipoWS.categoria>(equi.listaCategorias.ToList());
@@ -50,6 +61,23 @@ namespace TableSoft
             
             dgvListaCategorias.AutoGenerateColumns = false;
             dgvListaCategorias.DataSource = categorias;
+
+            var equipoTemp = new AgenteWS.equipo();
+            equipoTemp.equipoId = equi.equipoId;
+            var listaAgentesTemp = agenteDAO.listarAgentesPorEquipo(equipoTemp);
+
+            if(listaAgentesTemp != null)
+            {
+                agentes = new BindingList<AgenteWS.agente>(listaAgentesTemp);
+            }
+            else
+            {
+                agentes = new BindingList<AgenteWS.agente>();
+            }
+
+
+            dgvListaAgentes.AutoGenerateColumns = false;
+            dgvListaAgentes.DataSource = agentes;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -237,6 +265,13 @@ namespace TableSoft
         {
             var cat = (EquipoWS.categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
             categorias.Remove(cat);
+        }
+
+        private void dgvListaAgentes_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            AgenteWS.agente data = dgvListaAgentes.Rows[e.RowIndex].DataBoundItem as AgenteWS.agente;
+
+            dgvListaAgentes.Rows[e.RowIndex].Cells["Rol"].Value = data.rol.nombre;
         }
     }
 }

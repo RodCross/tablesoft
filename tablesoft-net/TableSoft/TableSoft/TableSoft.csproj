@@ -727,6 +727,9 @@
     <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.persona.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.verificarCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.verificarPersonaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

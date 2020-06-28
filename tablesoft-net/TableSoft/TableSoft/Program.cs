@@ -13,7 +13,7 @@ namespace TableSoft
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSeleccionarEquipo());
+            Application.Run(new frmInicioSesion());
         }
     }
 }

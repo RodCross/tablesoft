@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="verificarCorreo" type="tns:verificarCorreo" />
+  <xs:element name="verificarCorreoResponse" type="tns:verificarCorreoResponse" />
   <xs:element name="verificarPersona" type="tns:verificarPersona" />
   <xs:element name="verificarPersonaResponse" type="tns:verificarPersonaResponse" />
   <xs:complexType name="verificarPersona">
@@ -26,6 +28,16 @@
       <xs:element minOccurs="0" name="personaEmail" type="xs:string" />
       <xs:element minOccurs="0" name="telefono" type="xs:string" />
       <xs:element name="tipo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCorreo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarCorreoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

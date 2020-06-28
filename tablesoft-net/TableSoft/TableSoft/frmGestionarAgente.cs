@@ -29,6 +29,8 @@ namespace TableSoft
             picEye.Visible = true;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
+            chkActivo.Visible = false;
+            lblActivo.Visible = false;
         }
 
         public frmGestionarAgente(AgenteWS.agente age)
@@ -54,6 +56,7 @@ namespace TableSoft
             picEye.Visible = false;
             btnActualizar.Visible = true;
             btnGuardar.Visible = false;
+            chkActivo.Checked = age.activo;
         }
 
         private void LlenarCboRoles()
@@ -608,6 +611,8 @@ namespace TableSoft
                 );
                 return;
             }
+
+            
             agenteSel.nombre = txtNombre.Text;
             agenteSel.apellidoPaterno = txtPaterno.Text;
             agenteSel.apellidoMaterno = txtMaterno.Text;
@@ -623,6 +628,7 @@ namespace TableSoft
             agenteSel.agenteEmail = txtEmailAgente.Text;
             agenteSel.direccion = txtDireccion.Text;
             agenteSel.telefono = txtTel.Text;
+            agenteSel.activo = chkActivo.Checked;
 
             if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

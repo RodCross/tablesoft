@@ -61,6 +61,8 @@
             this.txtPass = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
             this.picEye = new System.Windows.Forms.PictureBox();
+            this.lblActivo = new System.Windows.Forms.Label();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             this.SuspendLayout();
@@ -342,11 +344,11 @@
             // 
             this.lblTel.AutoSize = true;
             this.lblTel.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblTel.Location = new System.Drawing.Point(85, 281);
+            this.lblTel.Location = new System.Drawing.Point(35, 281);
             this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(70, 21);
+            this.lblTel.Size = new System.Drawing.Size(120, 21);
             this.lblTel.TabIndex = 21;
-            this.lblTel.Text = "Teléfono";
+            this.lblTel.Text = "Teléfono celular";
             this.lblTel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTel
@@ -403,11 +405,33 @@
             this.picEye.MouseLeave += new System.EventHandler(this.picEye_MouseLeave);
             this.picEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseUp);
             // 
+            // lblActivo
+            // 
+            this.lblActivo.AutoSize = true;
+            this.lblActivo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblActivo.Location = new System.Drawing.Point(102, 583);
+            this.lblActivo.Name = "lblActivo";
+            this.lblActivo.Size = new System.Drawing.Size(53, 21);
+            this.lblActivo.TabIndex = 60;
+            this.lblActivo.Text = "Activo";
+            this.lblActivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // chkActivo
+            // 
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.Location = new System.Drawing.Point(170, 590);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(15, 14);
+            this.chkActivo.TabIndex = 59;
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
             // frmGestionarAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 674);
+            this.Controls.Add(this.lblActivo);
+            this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.picEye);
             this.Controls.Add(this.txtPass);
             this.Controls.Add(this.lblPass);
@@ -483,5 +507,7 @@
         private System.Windows.Forms.TextBox txtPass;
         private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.PictureBox picEye;
+        private System.Windows.Forms.Label lblActivo;
+        private System.Windows.Forms.CheckBox chkActivo;
     }
 }

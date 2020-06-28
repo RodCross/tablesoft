@@ -57,6 +57,8 @@
             this.txtIDEmpleado = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.cboBiblioteca = new System.Windows.Forms.ComboBox();
+            this.chkActivo = new System.Windows.Forms.CheckBox();
+            this.lblActivo = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             this.SuspendLayout();
@@ -198,11 +200,11 @@
             // 
             this.lblTel.AutoSize = true;
             this.lblTel.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblTel.Location = new System.Drawing.Point(85, 281);
+            this.lblTel.Location = new System.Drawing.Point(35, 281);
             this.lblTel.Name = "lblTel";
-            this.lblTel.Size = new System.Drawing.Size(70, 21);
+            this.lblTel.Size = new System.Drawing.Size(120, 21);
             this.lblTel.TabIndex = 19;
-            this.lblTel.Text = "Teléfono";
+            this.lblTel.Text = "Teléfono celular";
             this.lblTel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtMaterno
@@ -360,11 +362,33 @@
             this.cboBiblioteca.Size = new System.Drawing.Size(501, 29);
             this.cboBiblioteca.TabIndex = 9;
             // 
+            // chkActivo
+            // 
+            this.chkActivo.AutoSize = true;
+            this.chkActivo.Location = new System.Drawing.Point(170, 509);
+            this.chkActivo.Name = "chkActivo";
+            this.chkActivo.Size = new System.Drawing.Size(15, 14);
+            this.chkActivo.TabIndex = 57;
+            this.chkActivo.UseVisualStyleBackColor = true;
+            // 
+            // lblActivo
+            // 
+            this.lblActivo.AutoSize = true;
+            this.lblActivo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.lblActivo.Location = new System.Drawing.Point(102, 502);
+            this.lblActivo.Name = "lblActivo";
+            this.lblActivo.Size = new System.Drawing.Size(53, 21);
+            this.lblActivo.TabIndex = 58;
+            this.lblActivo.Text = "Activo";
+            this.lblActivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // frmGestionarEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 596);
+            this.Controls.Add(this.lblActivo);
+            this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.cboBiblioteca);
             this.Controls.Add(this.picEye);
             this.Controls.Add(this.txtPass);
@@ -432,5 +456,7 @@
         private System.Windows.Forms.TextBox txtIDEmpleado;
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.ComboBox cboBiblioteca;
+        private System.Windows.Forms.CheckBox chkActivo;
+        private System.Windows.Forms.Label lblActivo;
     }
 }

@@ -25,6 +25,8 @@ namespace TableSoft
             picEye.Visible = true;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
+            chkActivo.Visible = false;
+            lblActivo.Visible = false;
         }
 
         public frmGestionarEmpleado(EmpleadoWS.empleado emp)
@@ -47,6 +49,7 @@ namespace TableSoft
             picEye.Visible = false;
             btnActualizar.Visible = true;
             btnGuardar.Visible = false;
+            chkActivo.Checked = emp.activo;
         }
 
         private void LlenarCboBiblioteca()
@@ -520,6 +523,7 @@ namespace TableSoft
             empleadoSel.personaEmail = txtEmailPersonal.Text;
             empleadoSel.direccion = txtDireccion.Text;
             empleadoSel.telefono = txtTel.Text;
+            empleadoSel.activo = chkActivo.Checked;
 
             if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

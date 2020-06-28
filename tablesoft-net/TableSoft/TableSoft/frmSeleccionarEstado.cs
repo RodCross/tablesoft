@@ -29,6 +29,8 @@ namespace TableSoft
             }
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = estados;
+            btnNuevo.Visible = false;
+            btnEliminar.Visible = false;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

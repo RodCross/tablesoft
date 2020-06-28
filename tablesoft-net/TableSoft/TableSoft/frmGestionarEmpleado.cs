@@ -37,6 +37,7 @@ namespace TableSoft
             txtPaterno.Text = emp.apellidoPaterno;
             txtMaterno.Text = emp.apellidoMaterno;
             txtCodigo.Text = emp.codigo;
+            txtCodigo.ReadOnly = true;
             txtDNI.Text = emp.dni;
             cboBiblioteca.SelectedValue = emp.biblioteca.bibliotecaId;
             txtEmailPersonal.Text = emp.personaEmail;
@@ -275,18 +276,29 @@ namespace TableSoft
 
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (empleadoDAO.insertarEmpleado(empleadoSel) > 0)
-                {
-                    MessageBox.Show(
-                    "Se ha creado el registro exitosamente",
-                    "Registro exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
+                EmpleadoWS.empleado empleadoBuscado = empleadoDAO.buscarEmpleadoPorCodigo(empleadoSel.codigo);
+                if (empleadoBuscado.empleadoId == 0){
+                    if (empleadoDAO.insertarEmpleado(empleadoSel) > 0)
+                    {
+                        MessageBox.Show(
+                        "Se ha creado el registro exitosamente",
+                        "Registro exitoso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                        "No se ha creado el registro",
+                        "Registro no realizado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
+                    }
                 }
                 else
                 {
                     MessageBox.Show(
-                    "No se ha creado el registro",
+                    "Ya existe un empleado con ese código",
                     "Registro no realizado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );

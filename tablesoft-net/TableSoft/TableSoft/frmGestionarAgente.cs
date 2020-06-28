@@ -42,6 +42,7 @@ namespace TableSoft
             txtPaterno.Text = age.apellidoPaterno;
             txtMaterno.Text = age.apellidoMaterno;
             txtCodigo.Text = age.codigo;
+            txtCodigo.ReadOnly = true;
             txtDNI.Text = age.dni;
             cboRol.SelectedValue = age.rol.rolId;
             cboEquipo.SelectedValue = age.equipo.equipoId;
@@ -329,18 +330,30 @@ namespace TableSoft
             
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (agenteDAO.insertarAgente(agenteSel) > 0)
+                AgenteWS.agente agenteBuscado = agenteDAO.buscarAgentePorCodigo(agenteSel.codigo);
+                if (agenteSel.agenteId == 0)
                 {
-                    MessageBox.Show(
-                    "Se ha creado el registro exitosamente",
-                    "Registro exitoso",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
+                    if (agenteDAO.insertarAgente(agenteSel) > 0)
+                    {
+                        MessageBox.Show(
+                        "Se ha creado el registro exitosamente",
+                        "Registro exitoso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                        "No se ha creado el registro",
+                        "Registro no realizado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
+                    }
                 }
                 else
                 {
                     MessageBox.Show(
-                    "No se ha creado el registro",
+                    "Ya existe un agente con ese código",
                     "Registro no realizado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );

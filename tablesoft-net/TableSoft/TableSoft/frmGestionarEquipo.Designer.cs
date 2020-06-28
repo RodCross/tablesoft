@@ -108,16 +108,16 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(138, 127);
+            this.txtNombre.Location = new System.Drawing.Point(129, 127);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(501, 28);
+            this.txtNombre.Size = new System.Drawing.Size(510, 28);
             this.txtNombre.TabIndex = 1;
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblNombre.Location = new System.Drawing.Point(53, 129);
+            this.lblNombre.Location = new System.Drawing.Point(45, 127);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 21);
             this.lblNombre.TabIndex = 7;
@@ -127,7 +127,7 @@
             // 
             this.lblIDEquipo.AutoSize = true;
             this.lblIDEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIDEquipo.Location = new System.Drawing.Point(96, 85);
+            this.lblIDEquipo.Location = new System.Drawing.Point(88, 86);
             this.lblIDEquipo.Name = "lblIDEquipo";
             this.lblIDEquipo.Size = new System.Drawing.Size(25, 21);
             this.lblIDEquipo.TabIndex = 6;
@@ -136,16 +136,16 @@
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(138, 171);
+            this.txtDescripcion.Location = new System.Drawing.Point(129, 171);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(501, 28);
+            this.txtDescripcion.Size = new System.Drawing.Size(510, 28);
             this.txtDescripcion.TabIndex = 2;
             // 
             // txtIDEquipo
             // 
             this.txtIDEquipo.Enabled = false;
             this.txtIDEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIDEquipo.Location = new System.Drawing.Point(138, 83);
+            this.txtIDEquipo.Location = new System.Drawing.Point(129, 83);
             this.txtIDEquipo.Name = "txtIDEquipo";
             this.txtIDEquipo.ReadOnly = true;
             this.txtIDEquipo.Size = new System.Drawing.Size(105, 28);
@@ -155,7 +155,7 @@
             // 
             this.lblDescripcion.AutoSize = true;
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDescripcion.Location = new System.Drawing.Point(30, 173);
+            this.lblDescripcion.Location = new System.Drawing.Point(22, 174);
             this.lblDescripcion.Name = "lblDescripcion";
             this.lblDescripcion.Size = new System.Drawing.Size(91, 21);
             this.lblDescripcion.TabIndex = 8;
@@ -198,7 +198,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(29, 240);
+            this.label1.Location = new System.Drawing.Point(21, 240);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(195, 25);
             this.label1.TabIndex = 10;
@@ -232,7 +232,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaCategorias.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvListaCategorias.Location = new System.Drawing.Point(34, 285);
+            this.dgvListaCategorias.Location = new System.Drawing.Point(26, 285);
             this.dgvListaCategorias.MultiSelect = false;
             this.dgvListaCategorias.Name = "dgvListaCategorias";
             this.dgvListaCategorias.ReadOnly = true;
@@ -240,7 +240,7 @@
             this.dgvListaCategorias.RowHeadersWidth = 51;
             this.dgvListaCategorias.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaCategorias.Size = new System.Drawing.Size(605, 284);
+            this.dgvListaCategorias.Size = new System.Drawing.Size(613, 284);
             this.dgvListaCategorias.TabIndex = 11;
             // 
             // ID
@@ -319,7 +319,7 @@
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaAgentes.DefaultCellStyle = dataGridViewCellStyle8;
-            this.dgvListaAgentes.Location = new System.Drawing.Point(695, 127);
+            this.dgvListaAgentes.Location = new System.Drawing.Point(683, 127);
             this.dgvListaAgentes.MultiSelect = false;
             this.dgvListaAgentes.Name = "dgvListaAgentes";
             this.dgvListaAgentes.ReadOnly = true;
@@ -327,7 +327,7 @@
             this.dgvListaAgentes.RowHeadersWidth = 51;
             this.dgvListaAgentes.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvListaAgentes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaAgentes.Size = new System.Drawing.Size(310, 509);
+            this.dgvListaAgentes.Size = new System.Drawing.Size(298, 442);
             this.dgvListaAgentes.TabIndex = 14;
             this.dgvListaAgentes.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvListaAgentes_CellFormatting);
             // 
@@ -368,7 +368,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(690, 86);
+            this.label2.Location = new System.Drawing.Point(678, 86);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(175, 25);
             this.label2.TabIndex = 15;

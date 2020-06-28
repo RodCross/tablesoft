@@ -70,7 +70,7 @@ public class AgenteMySQL implements AgenteDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_agente(?,?,?,?,?,?,?,?,?,?,?,?)}");
+                    "{CALL actualizar_agente(?,?,?,?,?,?,?,?,?,?,?,?,?)}");
             
             cs.setInt("_ID", agente.getAgenteId());
             cs.setString("_CODIGO", agente.getCodigo());
@@ -84,7 +84,7 @@ public class AgenteMySQL implements AgenteDAO{
             cs.setString("_AGENTE_EMAIL", agente.getAgenteEmail());
             cs.setInt("_ROL_ID", agente.getRol().getRolId());
             cs.setInt("_EQUIPO_ID", agente.getEquipo().getEquipoId());
-            
+            cs.setBoolean("_ACTIVO", agente.getActivo());
             
             cs.execute();
             con.close();

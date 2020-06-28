@@ -415,6 +415,37 @@ public class Principal {
 //            System.out.println(p.mostrarDatos());
 //        }
 
+//        Empleado empleadoP = new Empleado();
+//        empleadoP.setEmpleadoId(2);
+//        empleadoP.setCodigo("20176969");
+//        empleadoP.setDni("70487898");
+//        empleadoP.setNombre( "Leonardo");
+//        empleadoP.setApellidoPaterno("Cervantes");
+//        empleadoP.setApellidoMaterno("Diaz");
+//        empleadoP.setDireccion("Jiron Patricio 180");
+//        empleadoP.setTelefono("978847893");
+//        empleadoP.setPersonaEmail("a20176969@pucp.edu.pe");
+//        empleadoP.getBiblioteca().setBibliotecaId(3);
+//        empleadoP.setActivo(true);
+//        empleadoDao.actualizar(empleadoP);
+
+//        Agente agenteP = new Agente();
+//        agenteP.setAgenteId(2);
+//        agenteP.setCodigo("20160074");
+//        agenteP.setDni("77456687");
+//        agenteP.setNombre( "Fernando");
+//        agenteP.setApellidoPaterno("Verastegui");
+//        agenteP.setApellidoMaterno("Sanchez");
+//        agenteP.setDireccion("Calle Los Prietos 1231");
+//        agenteP.setTelefono("976541532");
+//        agenteP.setPersonaEmail("f.verastegui@pucp.edu.pe");
+//        
+//        agenteP.setAgenteEmail("fgvs@gmail.com");
+//        agenteP.getRol().setRolId(1);
+//        agenteP.getEquipo().setEquipoId(1);
+//        agenteP.setActivo(false);
+//        agenteDao.actualizar(agenteP);
+
 
     }
 }

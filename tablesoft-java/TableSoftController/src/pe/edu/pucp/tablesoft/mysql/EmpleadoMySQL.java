@@ -61,7 +61,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
             
             CallableStatement cs = con.prepareCall(
-                    "{CALL actualizar_empleado(?,?,?,?,?,?,?,?,?,?)}");
+                    "{CALL actualizar_empleado(?,?,?,?,?,?,?,?,?,?,?)}");
             
             cs.setInt("_ID", empleado.getEmpleadoId());
             cs.setString("_CODIGO", empleado.getCodigo());
@@ -74,6 +74,7 @@ public class EmpleadoMySQL implements EmpleadoDAO{
             cs.setString("_PERSONA_EMAIL", empleado.getPersonaEmail());
             
             cs.setInt("_BIBLIOTECA_ID", empleado.getBiblioteca().getBibliotecaId());
+            cs.setBoolean("_ACTIVO", empleado.getActivo());
             
             cs.execute();
             con.close();

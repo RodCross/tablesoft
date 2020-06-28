@@ -60,4 +60,8 @@ public class ActivoFijoWS {
         return daoActivoFijo.listar();
     }
     
+    @WebMethod(operationName = "listarActivosFijosPorNombre")
+    public ArrayList<ActivoFijo> listarActivosFijosPorNombre(@WebParam(name = "nombre") String nombre){
+        return daoActivoFijo.listarxNombre(nombre);
+    }
 }

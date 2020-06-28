@@ -12,5 +12,6 @@ public interface ActivoFijoDAO {
     int actualizar(ActivoFijo activoFijo);
     int eliminar(ActivoFijo activoFijo);
     ArrayList<ActivoFijo> listar();
+    ArrayList<ActivoFijo> listarxNombre(String nombre);
     ActivoFijo buscar(int activoFijoId);
 }

@@ -64,4 +64,9 @@ public class ProveedorWS {
     public ArrayList<Proveedor> listarProveedores(){
         return daoProveedor.listar();
     }
+    
+    @WebMethod(operationName = "listarProveedoresPorNombre")
+    public ArrayList<Proveedor> listarProveedoresPorNombre(@WebParam(name = "nombre") String nombre){
+        return daoProveedor.listarxNombre(nombre);
+    }
 }

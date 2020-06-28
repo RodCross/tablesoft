@@ -163,5 +163,40 @@ public class ActivoFijoMySQL implements ActivoFijoDAO {
 
         return activoFijo;
     }
+
+    @Override
+    public ArrayList<ActivoFijo> listarxNombre(String nombre) {
+        ArrayList<ActivoFijo> activosFijos=new ArrayList<>();
+        try {
+
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            Connection con;
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL listar_activo_fijo_nombre(?)}");
+            cs.setString("_NOMBRE_ACTIVO_FIJO", nombre);
+            ResultSet rs=cs.executeQuery();
+
+            while(rs.next()) {
+                ActivoFijo activoFijo = new ActivoFijo();
+                activoFijo.setActivoFijoId(rs.getInt("activo_fijo_id"));
+                activoFijo.setNombre(rs.getString("nombre"));
+                activoFijo.setCodigo(rs.getString("codigo"));
+                activoFijo.setMarca(rs.getString("marca"));
+                activoFijo.setTipo(rs.getString("tipo"));
+                activoFijo.setActivo(rs.getBoolean("activo"));
+                activosFijos.add(activoFijo);
+            }
+
+            con.close();
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        return activosFijos;
+    }
     
 }

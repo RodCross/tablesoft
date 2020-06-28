@@ -82,4 +82,9 @@ public class EquipoWS {
         }
         return i;
     }
+    
+    @WebMethod(operationName = "listarEquiposPorNombre")
+    public ArrayList<Equipo> listarEquiposPorNombre(@WebParam(name = "nombre") String nombre){
+        return daoEquipo.listarxNombre(nombre);
+    }
 }

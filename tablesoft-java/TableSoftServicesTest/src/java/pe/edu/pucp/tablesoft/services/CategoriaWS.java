@@ -71,4 +71,9 @@ public class CategoriaWS {
     public ArrayList<Categoria> listarCategoriasPorEquipo(@WebParam(name = "objEquipo") Equipo equipo){
         return daoCategoria.listarxEquipo(equipo);
     }
+    
+    @WebMethod(operationName = "listarCategoriasPorNombre")
+    public ArrayList<Categoria> listarCategoriasPorNombre(@WebParam(name = "nombre") String nombre){
+        return daoCategoria.listarxNombre(nombre);
+    }
 }

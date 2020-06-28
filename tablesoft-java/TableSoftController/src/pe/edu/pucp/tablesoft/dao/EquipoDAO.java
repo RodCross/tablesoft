@@ -16,6 +16,7 @@ public interface EquipoDAO {
     int eliminar(Equipo equipo);     
     ArrayList<Equipo> listar();     // Solo lista los equipos con sus atributos
                                     // No llena su lista de agentes ni lista de categorias
+    ArrayList<Equipo> listarxNombre(String nombre);
     Equipo buscar(int equipoId);
     int agregarCategoria(Equipo equipo, Categoria categoria);
     int quitarCategoria(Equipo equipo, Categoria categoria);

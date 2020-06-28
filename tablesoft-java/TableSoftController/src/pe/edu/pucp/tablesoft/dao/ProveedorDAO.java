@@ -15,5 +15,6 @@ public interface ProveedorDAO {
     int actualizar(Proveedor proveedor);
     int eliminar(Proveedor proveedor);
     ArrayList<Proveedor> listar();
+    ArrayList<Proveedor> listarxNombre(String nombre);
     Proveedor buscar(int proveedorId);
 }

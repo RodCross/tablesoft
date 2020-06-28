@@ -183,4 +183,47 @@ public class ProveedorMySQL implements ProveedorDAO {
         }
         return rpta;
     }
+
+    @Override
+    public ArrayList<Proveedor> listarxNombre(String nombre) {
+        ArrayList<Proveedor> proveedores=new ArrayList<>();
+        try {
+            
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            con = DriverManager.getConnection(DBManager.urlMySQL, 
+                    DBManager.user, DBManager.password);
+            
+            
+            
+            CallableStatement cs = con.prepareCall(
+                    "{CALL listar_proveedor_nombre(?)}");
+            cs.setString("_NOMBRE_PROVEEDOR", nombre);
+            ResultSet rs=cs.executeQuery();
+            
+            while(rs.next()) {
+                Proveedor proveedor = new Proveedor();
+                proveedor.setProveedorId(rs.getInt("proveedor_id"));
+                proveedor.setDireccion(rs.getString("direccion"));
+                proveedor.setEmail(rs.getString("email"));
+                proveedor.setRazonSocial(rs.getString("razon_social"));
+                proveedor.setRuc(rs.getString("ruc"));
+                proveedor.setTelefono(rs.getString("telefono"));
+                proveedor.setActivo(rs.getBoolean("activo"));
+                
+                proveedor.getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                proveedor.getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                proveedor.getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                proveedor.getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                
+                proveedores.add(proveedor);
+            }
+            
+            con.close();
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return proveedores;
+    }
 }

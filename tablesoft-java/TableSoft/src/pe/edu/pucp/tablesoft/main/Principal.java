@@ -360,16 +360,16 @@ public class Principal {
 //            System.out.println(t.mostrarDatos());
 //        }
 
-        ArrayList<Equipo> equipos = equipoDao.listar();
-        for(Equipo e: equipos){
-            System.out.println(e.mostrarDatos());
-            for(Agente a: e.getListaAgentes()){
-                System.out.println(a.mostrarDatos());
-            }
-            for(Categoria c: e.getListaCategorias()){
-                System.out.println(c.mostrarDatos());
-            }
-        }
+//        ArrayList<Equipo> equipos = equipoDao.listar();
+//        for(Equipo e: equipos){
+//            System.out.println(e.mostrarDatos());
+//            for(Agente a: e.getListaAgentes()){
+//                System.out.println(a.mostrarDatos());
+//            }
+//            for(Categoria c: e.getListaCategorias()){
+//                System.out.println(c.mostrarDatos());
+//            }
+//        }
         
         
 
@@ -390,5 +390,31 @@ public class Principal {
 //        for (Agente a : agentes) {
 //            System.out.println(a.mostrarDatos());
 //        }
+
+//        ArrayList<ActivoFijo>activosfijos =activoFijoDao.listarxNombre("12");
+//        System.out.println("\nActivos fijos\n");
+//        for (ActivoFijo a : activosfijos) {
+//            System.out.println(a.mostrarDatos());
+//        }
+
+//        ArrayList<Categoria>categorias =categoriaDao.listarxNombre("EQUI");
+//        System.out.println("\nCategorias\n");
+//        for (Categoria c : categorias) {
+//            System.out.println(c.mostrarDatos());
+//        }
+
+//        ArrayList<Equipo> equipos =equipoDao.listarxNombre("d");
+//        System.out.println("\nEquipos\n");
+//        for (Equipo e : equipos) {
+//            System.out.println(e.mostrarDatos());
+//        }
+
+//        ArrayList<Proveedor> proveedores =proveedorDao.listarxNombre("");
+//        System.out.println("\nProveedores\n");
+//        for (Proveedor p : proveedores) {
+//            System.out.println(p.mostrarDatos());
+//        }
+
+
     }
 }

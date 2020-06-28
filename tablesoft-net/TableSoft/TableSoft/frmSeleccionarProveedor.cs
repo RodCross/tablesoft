@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
@@ -126,6 +127,20 @@ namespace TableSoft
                 "Eliminación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ProveedorWS.proveedor[] nuevosProveedores = proveedorDAO.listarProveedoresPorNombre(txtBuscar.Text);
+            if (nuevosProveedores != null)
+            {
+                proveedores = new BindingList<ProveedorWS.proveedor>(nuevosProveedores);
+                dgvLista.DataSource = proveedores;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
             }
         }
     }

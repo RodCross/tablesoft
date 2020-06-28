@@ -543,6 +543,9 @@
     <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.insertarActivoFijoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -615,6 +618,9 @@
     <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.listarCategoriasPorEquipoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.listarCategoriasPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.listarCategoriasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -663,6 +669,9 @@
     <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.listarEmpleadosDeBibliotecaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.listarEmpleadosResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -683,6 +692,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.insertarEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.listarEquiposPorNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.listarEquiposResponse.datasource">
@@ -744,6 +756,9 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.insertarProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.listarProveedoresPorNombreResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.listarProveedoresResponse.datasource">

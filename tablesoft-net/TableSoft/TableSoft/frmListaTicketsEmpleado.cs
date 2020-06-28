@@ -18,7 +18,15 @@ namespace TableSoft
         public frmListaTicketsEmpleado()
         {
             InitializeComponent();
-            tickets = new BindingList<TicketWS.ticket>(ticketDAO.listarTickets().ToArray());
+            var tic = ticketDAO.listarTickets();
+            if(tic == null)
+            {
+                tickets = new BindingList<TicketWS.ticket>();
+            }
+            else
+            {
+                tickets = new BindingList<TicketWS.ticket>(tic);
+            }
             dgvHistorial.AutoGenerateColumns = false;
             dgvHistorial.DataSource = tickets;
         }
@@ -48,6 +56,12 @@ namespace TableSoft
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
+            dgvHistorial.Rows[e.RowIndex].Cells["estado"].Value = data.estado.estadoId;
         }
     }
 }

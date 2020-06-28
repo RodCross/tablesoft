@@ -48,8 +48,12 @@
             this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.picMinus = new System.Windows.Forms.PictureBox();
+            this.picAdd = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinus)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -155,7 +159,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(537, 612);
+            this.btnActualizar.Location = new System.Drawing.Point(537, 585);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 4;
@@ -171,7 +175,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(537, 612);
+            this.btnGuardar.Location = new System.Drawing.Point(537, 585);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 3;
@@ -194,6 +198,8 @@
             // 
             this.dgvListaCategorias.AllowUserToAddRows = false;
             this.dgvListaCategorias.AllowUserToDeleteRows = false;
+            this.dgvListaCategorias.AllowUserToResizeColumns = false;
+            this.dgvListaCategorias.AllowUserToResizeRows = false;
             this.dgvListaCategorias.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.dgvListaCategorias.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -216,14 +222,15 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvListaCategorias.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvListaCategorias.Location = new System.Drawing.Point(34, 279);
+            this.dgvListaCategorias.Location = new System.Drawing.Point(34, 285);
+            this.dgvListaCategorias.MultiSelect = false;
             this.dgvListaCategorias.Name = "dgvListaCategorias";
             this.dgvListaCategorias.ReadOnly = true;
             this.dgvListaCategorias.RowHeadersVisible = false;
             this.dgvListaCategorias.RowHeadersWidth = 51;
             this.dgvListaCategorias.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvListaCategorias.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvListaCategorias.Size = new System.Drawing.Size(605, 273);
+            this.dgvListaCategorias.Size = new System.Drawing.Size(605, 284);
             this.dgvListaCategorias.TabIndex = 11;
             // 
             // ID
@@ -251,11 +258,35 @@
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
             // 
+            // picMinus
+            // 
+            this.picMinus.Image = global::TableSoft.Properties.Resources.minus;
+            this.picMinus.Location = new System.Drawing.Point(601, 240);
+            this.picMinus.Name = "picMinus";
+            this.picMinus.Size = new System.Drawing.Size(38, 39);
+            this.picMinus.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMinus.TabIndex = 13;
+            this.picMinus.TabStop = false;
+            this.picMinus.Click += new System.EventHandler(this.picMinus_Click);
+            // 
+            // picAdd
+            // 
+            this.picAdd.Image = global::TableSoft.Properties.Resources.plus;
+            this.picAdd.Location = new System.Drawing.Point(555, 240);
+            this.picAdd.Name = "picAdd";
+            this.picAdd.Size = new System.Drawing.Size(40, 39);
+            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAdd.TabIndex = 12;
+            this.picAdd.TabStop = false;
+            this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
+            // 
             // frmGestionarEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(676, 680);
+            this.ClientSize = new System.Drawing.Size(676, 641);
+            this.Controls.Add(this.picMinus);
+            this.Controls.Add(this.picAdd);
             this.Controls.Add(this.dgvListaCategorias);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
@@ -274,6 +305,8 @@
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListaCategorias)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMinus)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,8 +326,10 @@
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvListaCategorias;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.PictureBox picAdd;
+        protected System.Windows.Forms.DataGridView dgvListaCategorias;
+        private System.Windows.Forms.PictureBox picMinus;
     }
 }

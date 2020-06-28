@@ -319,6 +319,12 @@
     <Compile Include="frmSeleccionarActivoFijo.Designer.cs">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeleccionarCategoriaDisponible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarCategoriaDisponible.Designer.cs">
+      <DependentUpon>frmSeleccionarCategoriaDisponible.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeleccionarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -481,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarActivoFijo.resx">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarCategoriaDisponible.resx">
+      <DependentUpon>frmSeleccionarCategoriaDisponible.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarEmpleado.resx">
       <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
@@ -966,6 +975,8 @@
     <None Include="images\Eye.png" />
     <None Include="images\EyeMouseDown.png" />
     <None Include="images\EyeMouseEnter.png" />
+    <None Include="Resources\plus.png" />
+    <None Include="Resources\minus.png" />
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup>

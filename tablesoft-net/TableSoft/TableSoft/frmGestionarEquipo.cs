@@ -41,12 +41,13 @@ namespace TableSoft
 
             if (equi.listaCategorias != null)
             {
-                categorias = new BindingList<EquipoWS.categoria>(equi.listaCategorias);
+                categorias = new BindingList<EquipoWS.categoria>(equi.listaCategorias.ToList());
             }
             else
             {
                 categorias = new BindingList<EquipoWS.categoria>();
             }
+            
             dgvListaCategorias.AutoGenerateColumns = false;
             dgvListaCategorias.DataSource = categorias;
         }
@@ -214,6 +215,28 @@ namespace TableSoft
             }
             
             this.DialogResult = DialogResult.OK;
+        }
+
+        private void picAdd_Click(object sender, EventArgs e)
+        {
+            var frmSelec = new frmSeleccionarCategoriaDisponible();
+            if(frmSelec.ShowDialog() == DialogResult.OK)
+            {
+                var cat = new EquipoWS.categoria();
+                cat.categoriaId = frmSelec.categoriaSeleccionada.categoriaId;
+                cat.nombre = frmSelec.categoriaSeleccionada.nombre;
+                cat.descripcion = frmSelec.categoriaSeleccionada.descripcion;
+                cat.activo = frmSelec.categoriaSeleccionada.activo;
+
+                categorias.Add(cat);
+                dgvListaCategorias.Refresh();
+            }
+        }
+
+        private void picMinus_Click(object sender, EventArgs e)
+        {
+            var cat = (EquipoWS.categoria)dgvListaCategorias.CurrentRow.DataBoundItem;
+            categorias.Remove(cat);
         }
     }
 }

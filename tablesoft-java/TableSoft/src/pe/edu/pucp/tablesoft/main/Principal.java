@@ -447,5 +447,17 @@ public class Principal {
 //        agenteDao.actualizar(agenteP);
 
 
+//        Equipo equipo = new Equipo();
+//        equipo.setNombre("Equipo de prueba 2");
+//        equipo.setDescripcion("Descripicon de prueba 2");
+//        equipo.getListaCategorias().add(new Categoria(8));
+//        
+//        equipoDao.insertar(equipo);
+//        
+//        ArrayList<Equipo> lista = equipoDao.listar();
+//        for(Equipo e : lista){
+//            System.out.println(e.mostrarDatos());
+//        }
+
     }
 }

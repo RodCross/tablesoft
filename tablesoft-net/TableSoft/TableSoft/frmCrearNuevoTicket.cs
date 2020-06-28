@@ -87,10 +87,10 @@ namespace TableSoft
                 );
                 return;
             }
-            if (!Regex.IsMatch(txtAsunto.Text, @"[a-zA-Z]"))
+            if (Regex.Matches(txtAsunto.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
-                    "El asunto del ticket de contener solo letras.",
+                    "El asunto del ticket de contener al menos una letra.",
                     "Error de asunto",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -152,10 +152,19 @@ namespace TableSoft
                     );
                     return;
                 }
-                if (Regex.Matches(txtActivoFijo.Text, @"[0-9]").Count >= 5)
+                if (Regex.Matches(txtActivoFijo.Text, @"[0-9]").Count > 5)
                 {
                     MessageBox.Show(
                         "El codigo del activo fijo del ticket de contener maximo 5 numeros.",
+                        "Error de activo fijo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
+                if (lblErrActFij.Text == "Codigo de activo fijo no valido")
+                {
+                    MessageBox.Show(
+                        "El codigo del activo fijo del ticket debe ser valido.",
                         "Error de activo fijo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
@@ -260,25 +269,32 @@ namespace TableSoft
 
         private void txtActivoFijo_Leave(object sender, EventArgs e)
         {
-            activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
-            actFij = null;
-            foreach(ActivoFijoWS.activoFijo aux in activosFijos)
+            if (txtActivoFijo.Text != "")
             {
-                if(aux.codigo == txtActivoFijo.Text)
+                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
+                actFij = null;
+                foreach (ActivoFijoWS.activoFijo aux in activosFijos)
                 {
-                    actFij = aux;
-                    break;
+                    if (aux.codigo == txtActivoFijo.Text)
+                    {
+                        actFij = aux;
+                        break;
+                    }
                 }
-            }
-            if(actFij == null)
-            {
-                lblErrActFij.Text = "Codigo de activo fijo no valido";
-                txtNombreActivoFijo.Text = "";
+                if (actFij == null)
+                {
+                    lblErrActFij.Text = "Codigo de activo fijo no valido";
+                    txtNombreActivoFijo.Text = "";
+                }
+                else
+                {
+                    lblErrActFij.Text = "";
+                    txtNombreActivoFijo.Text = actFij.nombre;
+                }
             }
             else
             {
                 lblErrActFij.Text = "";
-                txtNombreActivoFijo.Text = actFij.nombre;
             }
         }
     }

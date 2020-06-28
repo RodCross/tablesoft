@@ -30,14 +30,12 @@ public class EquipoMySQL implements EquipoDAO{
             con.setAutoCommit(false);
             
             CallableStatement cs = con.prepareCall(
-                    "{call insertar_equipo(?,?,?,?)}");
+                    "{call insertar_equipo(?,?,?)}");
             
-            LocalDateTime temp = LocalDateTime.now();
             
             cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
             cs.setString("_NOMBRE", equipo.getNombre());
             cs.setString("_DESCRIPCION", equipo.getDescripcion());
-            cs.setTimestamp("_FECHA_CREACION", Timestamp.valueOf(temp));
             
             cs.executeUpdate();
             rpta = cs.getInt("_ID");
@@ -45,7 +43,7 @@ public class EquipoMySQL implements EquipoDAO{
             for(Agente a: equipo.getListaAgentes()){
                 cs = con.prepareCall("{call actualizar_agente_equipo(?,?)}");
                 cs.setInt("_ID", a.getAgenteId());
-                cs.setInt("_EQUIPO_ID", equipo.getEquipoId());
+                cs.setInt("_EQUIPO_ID", rpta);
                 
                 cs.executeUpdate();
             }
@@ -53,7 +51,7 @@ public class EquipoMySQL implements EquipoDAO{
             for(Categoria c : equipo.getListaCategorias()){
                 cs = con.prepareCall(
                 "{call insertar_categoria_equipo(?,?)}");
-                cs.setInt("_EQUIPO_ID", equipo.getEquipoId());
+                cs.setInt("_EQUIPO_ID", rpta);
                 cs.setInt("_CATEGORIA_ID", c.getCategoriaId());
 
                 cs.executeUpdate();

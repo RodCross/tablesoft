@@ -99,8 +99,8 @@ namespace TableSoft
             if (txtPaterno.Text == "")
             {
                 MessageBox.Show(
-                    "Falta indicar el apellido parteno del agente.",
-                    "Error de apellido parteno",
+                    "Falta indicar el apellido paterno del agente.",
+                    "Error de apellido paterno",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -108,8 +108,8 @@ namespace TableSoft
             if (!Regex.IsMatch(txtPaterno.Text, @"[a-zA-Z]"))
             {
                 MessageBox.Show(
-                    "El apellido parteno del agente de contener solo letras.",
-                    "Error de apellido parteno",
+                    "El apellido paterno del agente de contener solo letras.",
+                    "Error de apellido paterno",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -168,6 +168,11 @@ namespace TableSoft
                 );
                 return;
             }
+            if (txtTel.Text.Length != 9)
+            {
+                MessageBox.Show("El telefono del agente debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtPass.Text == "")
             {
                 MessageBox.Show(
@@ -195,6 +200,15 @@ namespace TableSoft
                 );
                 return;
             }
+            if (Regex.Matches(txtCodigo.Text, @"[0-9]").Count != 8)
+            {
+                MessageBox.Show(
+                    "El codigo del agente debe de contener 8 digitos.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
             if (txtDNI.Text == "")
             {
                 MessageBox.Show(
@@ -213,16 +227,16 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtCodigo.Text, @"[0-9]").Count != 8)
+            if (Regex.Matches(txtDNI.Text, @"[0-9]").Count != 8)
             {
                 MessageBox.Show(
-                    "El codigo del agente de contener 8 digitos.",
-                    "Error de codigo",
+                    "El dni del agente debe de contener 8 digitos.",
+                    "Error de dni",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
             }
-            if(cboRol.SelectedIndex == -1)
+            if (cboRol.SelectedIndex == -1)
             {
                 MessageBox.Show(
                     "Falta seleccionar el rol del agente.",
@@ -372,8 +386,8 @@ namespace TableSoft
             if (txtPaterno.Text == "")
             {
                 MessageBox.Show(
-                    "Falta indicar el apellido parteno del agente.",
-                    "Error de apellido parteno",
+                    "Falta indicar el apellido paterno del agente.",
+                    "Error de apellido paterno",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -381,8 +395,8 @@ namespace TableSoft
             if (!Regex.IsMatch(txtPaterno.Text, @"[a-zA-Z]"))
             {
                 MessageBox.Show(
-                    "El apellido parteno del agente de contener solo letras.",
-                    "Error de apellido parteno",
+                    "El apellido paterno del agente de contener solo letras.",
+                    "Error de apellido paterno",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -441,6 +455,11 @@ namespace TableSoft
                 );
                 return;
             }
+            if (txtTel.Text.Length != 9)
+            {
+                MessageBox.Show("El telefono del agente debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtCodigo.Text == "")
             {
                 MessageBox.Show(
@@ -454,6 +473,15 @@ namespace TableSoft
             {
                 MessageBox.Show(
                     "El codigo del agente de contener solo numeros.",
+                    "Error de codigo",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(txtCodigo.Text, @"[0-9]").Count != 8)
+            {
+                MessageBox.Show(
+                    "El codigo del agente de contener 8 digitos.",
                     "Error de codigo",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -477,11 +505,11 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtCodigo.Text, @"[0-9]").Count != 8)
+            if (Regex.Matches(txtDNI.Text, @"[0-9]").Count != 8)
             {
                 MessageBox.Show(
-                    "El codigo del agente de contener 8 digitos.",
-                    "Error de codigo",
+                    "El dni del agente debe de contener 8 digitos.",
+                    "Error de dni",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;

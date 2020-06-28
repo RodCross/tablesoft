@@ -15,53 +15,37 @@ namespace TableSoft
         public AgenteWS.agente agente;
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
         private BindingList<TicketWS.ticket> ticketsEnEspera;
-        private EstadoTicketWS.EstadoTicketWSClient estadoTicketDAO = new EstadoTicketWS.EstadoTicketWSClient();
-        private BindingList<EstadoTicketWS.estadoTicket> estados;
-        private EquipoWS.EquipoWSClient equipoDAO = new EquipoWS.EquipoWSClient();
-        private BindingList<EquipoWS.equipo> equipos;
         public frmMiEquipoAgente()
         {
             InitializeComponent();
             agente = frmInicioSesion.agenteLogueado;
-            estados = new BindingList<EstadoTicketWS.estadoTicket>(estadoTicketDAO.listarEstadosTicket().ToArray());
-            equipos = new BindingList<EquipoWS.equipo>(equipoDAO.listarEquipos().ToArray());
-            TicketWS.ticket tick=new TicketWS.ticket();
+
             TicketWS.equipo equip = new TicketWS.equipo();
-            
-            foreach (EstadoTicketWS.estadoTicket e in estados)
-            {
-                if (e.nombre.ToLower().Equals("activo"))
-                {
-                    tick.estado = new TicketWS.estadoTicket();
-                    tick.estado.estadoId = e.estadoId;
-                    tick.estado.nombre = e.nombre;
-                    tick.estado.descripcion = e.descripcion;
-                    tick.estado.activo = e.activo;
-                    break;
-                }
-            }
+            equip.equipoId = agente.equipo.equipoId;
 
-            foreach (EquipoWS.equipo eq in equipos)
-            {
-                if (eq.equipoId==agente.equipo.equipoId)
-                {
-                    equip.equipoId = eq.equipoId;
-                    equip.nombre = eq.nombre;
-                    equip.descripcion = eq.descripcion;
-                    equip.fechaCreacion = eq.fechaCreacion;
-                    equip.activo = eq.activo;
-                    break;
-                }
-            }
+            TicketWS.estadoTicket estActivo = new TicketWS.estadoTicket();
+            estActivo.estadoId = 1;
+            TicketWS.estadoTicket estRecategorizado = new TicketWS.estadoTicket();
+            estRecategorizado.estadoId = 5;
 
-            var tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(tick.estado, equip);
+            var tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estActivo, equip);
             if (tickts == null)
             {
                 ticketsEnEspera = new BindingList<TicketWS.ticket>();
             }
             else
             {
-                ticketsEnEspera = new BindingList<TicketWS.ticket>(tickts);
+                ticketsEnEspera = new BindingList<TicketWS.ticket>(tickts.ToList());
+            }
+
+            tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estRecategorizado, equip);
+            if(tickts != null)
+            {
+                //ticketsEnEspera.Concat(tickts.ToList());    <- no se si funcionaria
+                foreach(TicketWS.ticket t in tickts)
+                {
+                    ticketsEnEspera.Add(t);
+                }
             }
 
             dgvTicketsEspera.AutoGenerateColumns = false;
@@ -86,6 +70,15 @@ namespace TableSoft
                 MessageBoxButtons.OK, MessageBoxIcon.Information
             );
             this.Close();
+        }
+
+        private void dgvTicketsEspera_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            TicketWS.ticket data = dgvTicketsEspera.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
+
+            dgvTicketsEspera.Rows[e.RowIndex].Cells["AbreviaturaBiblioteca"].Value = data.biblioteca.abreviatura;
+            dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreEmpleado"].Value = data.empleado.nombre;
+            dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreCategoria"].Value = data.categoria.nombre;
         }
     }
 }

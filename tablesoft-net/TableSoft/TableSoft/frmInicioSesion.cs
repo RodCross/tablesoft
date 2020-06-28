@@ -19,7 +19,6 @@ namespace TableSoft
         public static AgenteWS.agente agenteLogueado;
         public static EmpleadoWS.empleado empleadoLogueado;
 
-
         public frmInicioSesion()
         {
             InitializeComponent();
@@ -34,7 +33,7 @@ namespace TableSoft
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location
             };
-
+            
             // Mostrar pagina inicial al cerrar sesion
             frm.FormClosing += delegate
             {
@@ -60,7 +59,6 @@ namespace TableSoft
                 this.Show();
                 LimpiarCampos();
             };
-
             frm.Show();
             this.Hide();
         }

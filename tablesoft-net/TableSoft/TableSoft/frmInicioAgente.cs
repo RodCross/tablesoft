@@ -12,10 +12,12 @@ namespace TableSoft
 {
     public partial class frmInicioAgente : Form
     {
-
+        public AgenteWS.agente agenteLogueado;
         public frmInicioAgente()
         {
             InitializeComponent();
+            
+
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -57,7 +59,6 @@ namespace TableSoft
             {
                 this.Show();
             };
-
             frm.Show();
             this.Hide();
         }

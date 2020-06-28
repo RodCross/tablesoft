@@ -9,6 +9,8 @@
   <xs:element name="insertarEquipo" type="tns:insertarEquipo" />
   <xs:element name="insertarEquipoResponse" type="tns:insertarEquipoResponse" />
   <xs:element name="listarEquipos" type="tns:listarEquipos" />
+  <xs:element name="listarEquiposPorNombre" type="tns:listarEquiposPorNombre" />
+  <xs:element name="listarEquiposPorNombreResponse" type="tns:listarEquiposPorNombreResponse" />
   <xs:element name="listarEquiposResponse" type="tns:listarEquiposResponse" />
   <xs:element name="quitarCategoria" type="tns:quitarCategoria" />
   <xs:element name="quitarCategoriaResponse" type="tns:quitarCategoriaResponse" />
@@ -25,14 +27,11 @@
       <xs:element minOccurs="0" name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="equipoId" type="xs:int" />
-      <xs:element minOccurs="0" name="fechaCreacion" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="listaAgentes" nillable="true" type="tns:agente" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="listaCategorias" nillable="true" type="tns:categoria" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="localDateTime" final="extension restriction">
-    <xs:sequence />
   </xs:complexType>
   <xs:complexType name="agente">
     <xs:complexContent mixed="false">
@@ -74,9 +73,9 @@
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="empleado" type="tns:empleado" />
       <xs:element minOccurs="0" name="estado" type="tns:estadoTicket" />
-      <xs:element minOccurs="0" name="fechaCierre" type="tns:localDateTime" />
-      <xs:element minOccurs="0" name="fechaCierreMaximo" type="tns:localDateTime" />
-      <xs:element minOccurs="0" name="fechaEnvio" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaCierre" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCierreMaximo" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEnvio" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="historialEstado" nillable="true" type="tns:cambioEstadoTicket" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="historialTransferencia" nillable="true" type="tns:transferenciaTicket" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="listaTareas" nillable="true" type="tns:tarea" />
@@ -117,7 +116,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaCreacion" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
       <xs:element name="tareaPredeterminadaId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -125,7 +124,7 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="autor" type="tns:persona" />
       <xs:element name="comentarioId" type="xs:int" />
-      <xs:element minOccurs="0" name="fecha" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
       <xs:element minOccurs="0" name="texto" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
@@ -154,14 +153,14 @@
       <xs:element name="cambioEstadoTicketId" type="xs:int" />
       <xs:element minOccurs="0" name="comentario" type="xs:string" />
       <xs:element minOccurs="0" name="estadoTo" type="tns:estadoTicket" />
-      <xs:element minOccurs="0" name="fechaCambioEstado" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaCambioEstado" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="transferenciaTicket">
     <xs:sequence>
       <xs:element minOccurs="0" name="agenteResponsable" type="tns:agente" />
       <xs:element minOccurs="0" name="comentario" type="xs:string" />
-      <xs:element minOccurs="0" name="fecha" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
       <xs:element name="transferenciaId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -170,8 +169,8 @@
       <xs:element minOccurs="0" name="agente" type="tns:agente" />
       <xs:element minOccurs="0" name="completado" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
-      <xs:element minOccurs="0" name="fechaCompletado" type="tns:localDateTime" />
-      <xs:element minOccurs="0" name="fechaCreacion" type="tns:localDateTime" />
+      <xs:element minOccurs="0" name="fechaCompletado" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
       <xs:element name="tareaId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
@@ -236,6 +235,16 @@
   <xs:complexType name="quitarCategoriaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEquiposPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEquiposPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:equipo" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="actualizarEquipo">

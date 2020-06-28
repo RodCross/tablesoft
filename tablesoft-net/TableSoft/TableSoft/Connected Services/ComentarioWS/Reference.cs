@@ -66,11 +66,11 @@ namespace TableSoft.ComentarioWS {
         
         private estadoTicket estadoField;
         
-        private localDateTime fechaCierreField;
+        private string fechaCierreField;
         
-        private localDateTime fechaCierreMaximoField;
+        private string fechaCierreMaximoField;
         
-        private localDateTime fechaEnvioField;
+        private string fechaEnvioField;
         
         private cambioEstadoTicket[] historialEstadoField;
         
@@ -210,7 +210,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public localDateTime fechaCierre {
+        public string fechaCierre {
             get {
                 return this.fechaCierreField;
             }
@@ -222,7 +222,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
-        public localDateTime fechaCierreMaximo {
+        public string fechaCierreMaximo {
             get {
                 return this.fechaCierreMaximoField;
             }
@@ -234,7 +234,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
-        public localDateTime fechaEnvio {
+        public string fechaEnvio {
             get {
                 return this.fechaEnvioField;
             }
@@ -820,9 +820,9 @@ namespace TableSoft.ComentarioWS {
         
         private string descripcionField;
         
-        private localDateTime fechaCompletadoField;
+        private string fechaCompletadoField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private int tareaIdField;
         
@@ -876,7 +876,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public localDateTime fechaCompletado {
+        public string fechaCompletado {
             get {
                 return this.fechaCompletadoField;
             }
@@ -888,7 +888,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -1015,7 +1015,7 @@ namespace TableSoft.ComentarioWS {
         
         private int equipoIdField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private agente[] listaAgentesField;
         
@@ -1073,7 +1073,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -1118,24 +1118,6 @@ namespace TableSoft.ComentarioWS {
                 this.RaisePropertyChanged("nombre");
             }
         }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class localDateTime : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -1263,7 +1245,7 @@ namespace TableSoft.ComentarioWS {
         
         private string descripcionField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private int tareaPredeterminadaIdField;
         
@@ -1305,7 +1287,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -1764,7 +1746,7 @@ namespace TableSoft.ComentarioWS {
         
         private string comentarioField;
         
-        private localDateTime fechaField;
+        private string fechaField;
         
         private int transferenciaIdField;
         
@@ -1794,7 +1776,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fecha {
+        public string fecha {
             get {
                 return this.fechaField;
             }
@@ -1842,7 +1824,7 @@ namespace TableSoft.ComentarioWS {
         
         private estadoTicket estadoToField;
         
-        private localDateTime fechaCambioEstadoField;
+        private string fechaCambioEstadoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
@@ -1894,7 +1876,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public localDateTime fechaCambioEstado {
+        public string fechaCambioEstado {
             get {
                 return this.fechaCambioEstadoField;
             }
@@ -2014,7 +1996,7 @@ namespace TableSoft.ComentarioWS {
         
         private int comentarioIdField;
         
-        private localDateTime fechaField;
+        private string fechaField;
         
         private string textoField;
         
@@ -2044,7 +2026,7 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fecha {
+        public string fecha {
             get {
                 return this.fechaField;
             }

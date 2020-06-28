@@ -29,6 +29,12 @@
   <message name="listarActivosFijosResponse">
     <part name="parameters" element="tns:listarActivosFijosResponse" />
   </message>
+  <message name="listarActivosFijosPorNombre">
+    <part name="parameters" element="tns:listarActivosFijosPorNombre" />
+  </message>
+  <message name="listarActivosFijosPorNombreResponse">
+    <part name="parameters" element="tns:listarActivosFijosPorNombreResponse" />
+  </message>
   <portType name="ActivoFijoWS">
     <operation name="insertarActivoFijo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest" message="tns:insertarActivoFijo" />
@@ -45,6 +51,10 @@
     <operation name="listarActivosFijos">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest" message="tns:listarActivosFijos" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse" message="tns:listarActivosFijosResponse" />
+    </operation>
+    <operation name="listarActivosFijosPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreRequest" message="tns:listarActivosFijosPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreResponse" message="tns:listarActivosFijosPorNombreResponse" />
     </operation>
   </portType>
   <binding name="ActivoFijoWSPortBinding" type="tns:ActivoFijoWS">
@@ -77,6 +87,15 @@
       </output>
     </operation>
     <operation name="listarActivosFijos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarActivosFijosPorNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

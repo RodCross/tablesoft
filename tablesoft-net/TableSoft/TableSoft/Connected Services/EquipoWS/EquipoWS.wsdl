@@ -41,6 +41,12 @@
   <message name="actualizarEquipoResponse">
     <part name="parameters" element="tns:actualizarEquipoResponse" />
   </message>
+  <message name="listarEquiposPorNombre">
+    <part name="parameters" element="tns:listarEquiposPorNombre" />
+  </message>
+  <message name="listarEquiposPorNombreResponse">
+    <part name="parameters" element="tns:listarEquiposPorNombreResponse" />
+  </message>
   <portType name="EquipoWS">
     <operation name="agregarCategoria">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest" message="tns:agregarCategoria" />
@@ -65,6 +71,10 @@
     <operation name="actualizarEquipo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest" message="tns:actualizarEquipo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse" message="tns:actualizarEquipoResponse" />
+    </operation>
+    <operation name="listarEquiposPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreRequest" message="tns:listarEquiposPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreResponse" message="tns:listarEquiposPorNombreResponse" />
     </operation>
   </portType>
   <binding name="EquipoWSPortBinding" type="tns:EquipoWS">
@@ -115,6 +125,15 @@
       </output>
     </operation>
     <operation name="actualizarEquipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEquiposPorNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

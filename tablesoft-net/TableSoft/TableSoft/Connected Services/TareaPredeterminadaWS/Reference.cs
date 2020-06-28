@@ -184,7 +184,7 @@ namespace TableSoft.TareaPredeterminadaWS {
         
         private string descripcionField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private int tareaPredeterminadaIdField;
         
@@ -226,7 +226,7 @@ namespace TableSoft.TareaPredeterminadaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -247,24 +247,6 @@ namespace TableSoft.TareaPredeterminadaWS {
                 this.RaisePropertyChanged("tareaPredeterminadaId");
             }
         }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class localDateTime : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         

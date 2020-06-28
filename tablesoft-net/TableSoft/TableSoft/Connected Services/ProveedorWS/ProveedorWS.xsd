@@ -7,6 +7,8 @@
   <xs:element name="insertarProveedor" type="tns:insertarProveedor" />
   <xs:element name="insertarProveedorResponse" type="tns:insertarProveedorResponse" />
   <xs:element name="listarProveedores" type="tns:listarProveedores" />
+  <xs:element name="listarProveedoresPorNombre" type="tns:listarProveedoresPorNombre" />
+  <xs:element name="listarProveedoresPorNombreResponse" type="tns:listarProveedoresPorNombreResponse" />
   <xs:element name="listarProveedoresResponse" type="tns:listarProveedoresResponse" />
   <xs:complexType name="listarProveedores">
     <xs:sequence />
@@ -59,6 +61,16 @@
   <xs:complexType name="insertarProveedorResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProveedoresPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarProveedoresPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:proveedor" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="actualizarProveedor">

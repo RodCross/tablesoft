@@ -50,6 +50,19 @@ namespace TableSoft.ActivoFijoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse")]
         System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> listarActivosFijosAsync(TableSoft.ActivoFijoWS.listarActivosFijosRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreReq" +
+            "uest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreRes" +
+            "ponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse listarActivosFijosPorNombre(TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreReq" +
+            "uest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreRes" +
+            "ponse")]
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse> listarActivosFijosPorNombreAsync(TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest request);
     }
     
     /// <remarks/>
@@ -304,6 +317,42 @@ namespace TableSoft.ActivoFijoWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarActivosFijosPorNombre", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarActivosFijosPorNombreRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
+        
+        public listarActivosFijosPorNombreRequest() {
+        }
+        
+        public listarActivosFijosPorNombreRequest(string nombre) {
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarActivosFijosPorNombreResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarActivosFijosPorNombreResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ActivoFijoWS.activoFijo[] @return;
+        
+        public listarActivosFijosPorNombreResponse() {
+        }
+        
+        public listarActivosFijosPorNombreResponse(TableSoft.ActivoFijoWS.activoFijo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ActivoFijoWSChannel : TableSoft.ActivoFijoWS.ActivoFijoWS, System.ServiceModel.IClientChannel {
     }
@@ -419,6 +468,29 @@ namespace TableSoft.ActivoFijoWS {
         public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> listarActivosFijosAsync() {
             TableSoft.ActivoFijoWS.listarActivosFijosRequest inValue = new TableSoft.ActivoFijoWS.listarActivosFijosRequest();
             return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).listarActivosFijosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse TableSoft.ActivoFijoWS.ActivoFijoWS.listarActivosFijosPorNombre(TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest request) {
+            return base.Channel.listarActivosFijosPorNombre(request);
+        }
+        
+        public TableSoft.ActivoFijoWS.activoFijo[] listarActivosFijosPorNombre(string nombre) {
+            TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest inValue = new TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest();
+            inValue.nombre = nombre;
+            TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse retVal = ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).listarActivosFijosPorNombre(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse> TableSoft.ActivoFijoWS.ActivoFijoWS.listarActivosFijosPorNombreAsync(TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest request) {
+            return base.Channel.listarActivosFijosPorNombreAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse> listarActivosFijosPorNombreAsync(string nombre) {
+            TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest inValue = new TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest();
+            inValue.nombre = nombre;
+            return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).listarActivosFijosPorNombreAsync(inValue);
         }
     }
 }

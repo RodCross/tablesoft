@@ -50,6 +50,19 @@ namespace TableSoft.ProveedorWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse")]
         System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync(TableSoft.ProveedorWS.listarProveedoresRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreReque" +
+            "st", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreRespo" +
+            "nse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.ProveedorWS.listarProveedoresPorNombreResponse listarProveedoresPorNombre(TableSoft.ProveedorWS.listarProveedoresPorNombreRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreReque" +
+            "st", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreRespo" +
+            "nse")]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresPorNombreResponse> listarProveedoresPorNombreAsync(TableSoft.ProveedorWS.listarProveedoresPorNombreRequest request);
     }
     
     /// <remarks/>
@@ -438,6 +451,42 @@ namespace TableSoft.ProveedorWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProveedoresPorNombre", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarProveedoresPorNombreRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
+        
+        public listarProveedoresPorNombreRequest() {
+        }
+        
+        public listarProveedoresPorNombreRequest(string nombre) {
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProveedoresPorNombreResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarProveedoresPorNombreResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ProveedorWS.proveedor[] @return;
+        
+        public listarProveedoresPorNombreResponse() {
+        }
+        
+        public listarProveedoresPorNombreResponse(TableSoft.ProveedorWS.proveedor[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ProveedorWSChannel : TableSoft.ProveedorWS.ProveedorWS, System.ServiceModel.IClientChannel {
     }
@@ -553,6 +602,29 @@ namespace TableSoft.ProveedorWS {
         public System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync() {
             TableSoft.ProveedorWS.listarProveedoresRequest inValue = new TableSoft.ProveedorWS.listarProveedoresRequest();
             return ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedoresAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.ProveedorWS.listarProveedoresPorNombreResponse TableSoft.ProveedorWS.ProveedorWS.listarProveedoresPorNombre(TableSoft.ProveedorWS.listarProveedoresPorNombreRequest request) {
+            return base.Channel.listarProveedoresPorNombre(request);
+        }
+        
+        public TableSoft.ProveedorWS.proveedor[] listarProveedoresPorNombre(string nombre) {
+            TableSoft.ProveedorWS.listarProveedoresPorNombreRequest inValue = new TableSoft.ProveedorWS.listarProveedoresPorNombreRequest();
+            inValue.nombre = nombre;
+            TableSoft.ProveedorWS.listarProveedoresPorNombreResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedoresPorNombre(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresPorNombreResponse> TableSoft.ProveedorWS.ProveedorWS.listarProveedoresPorNombreAsync(TableSoft.ProveedorWS.listarProveedoresPorNombreRequest request) {
+            return base.Channel.listarProveedoresPorNombreAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresPorNombreResponse> listarProveedoresPorNombreAsync(string nombre) {
+            TableSoft.ProveedorWS.listarProveedoresPorNombreRequest inValue = new TableSoft.ProveedorWS.listarProveedoresPorNombreRequest();
+            inValue.nombre = nombre;
+            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedoresPorNombreAsync(inValue);
         }
     }
 }

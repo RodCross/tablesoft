@@ -76,6 +76,19 @@ namespace TableSoft.CategoriaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaResponse")]
         System.Threading.Tasks.Task<TableSoft.CategoriaWS.eliminarCategoriaResponse> eliminarCategoriaAsync(TableSoft.CategoriaWS.eliminarCategoriaRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreReques" +
+            "t", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreRespon" +
+            "se")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.CategoriaWS.listarCategoriasPorNombreResponse listarCategoriasPorNombre(TableSoft.CategoriaWS.listarCategoriasPorNombreRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreReques" +
+            "t", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreRespon" +
+            "se")]
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasPorNombreResponse> listarCategoriasPorNombreAsync(TableSoft.CategoriaWS.listarCategoriasPorNombreRequest request);
     }
     
     /// <remarks/>
@@ -194,7 +207,7 @@ namespace TableSoft.CategoriaWS {
         
         private string descripcionField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private int tareaPredeterminadaIdField;
         
@@ -236,7 +249,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -257,24 +270,6 @@ namespace TableSoft.CategoriaWS {
                 this.RaisePropertyChanged("tareaPredeterminadaId");
             }
         }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class localDateTime : object, System.ComponentModel.INotifyPropertyChanged {
         
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
@@ -728,9 +723,9 @@ namespace TableSoft.CategoriaWS {
         
         private string descripcionField;
         
-        private localDateTime fechaCompletadoField;
+        private string fechaCompletadoField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private int tareaIdField;
         
@@ -784,7 +779,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public localDateTime fechaCompletado {
+        public string fechaCompletado {
             get {
                 return this.fechaCompletadoField;
             }
@@ -796,7 +791,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -923,7 +918,7 @@ namespace TableSoft.CategoriaWS {
         
         private int equipoIdField;
         
-        private localDateTime fechaCreacionField;
+        private string fechaCreacionField;
         
         private agente[] listaAgentesField;
         
@@ -981,7 +976,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public localDateTime fechaCreacion {
+        public string fechaCreacion {
             get {
                 return this.fechaCreacionField;
             }
@@ -1065,11 +1060,11 @@ namespace TableSoft.CategoriaWS {
         
         private estadoTicket estadoField;
         
-        private localDateTime fechaCierreField;
+        private string fechaCierreField;
         
-        private localDateTime fechaCierreMaximoField;
+        private string fechaCierreMaximoField;
         
-        private localDateTime fechaEnvioField;
+        private string fechaEnvioField;
         
         private cambioEstadoTicket[] historialEstadoField;
         
@@ -1209,7 +1204,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public localDateTime fechaCierre {
+        public string fechaCierre {
             get {
                 return this.fechaCierreField;
             }
@@ -1221,7 +1216,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
-        public localDateTime fechaCierreMaximo {
+        public string fechaCierreMaximo {
             get {
                 return this.fechaCierreMaximoField;
             }
@@ -1233,7 +1228,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
-        public localDateTime fechaEnvio {
+        public string fechaEnvio {
             get {
                 return this.fechaEnvioField;
             }
@@ -1565,7 +1560,7 @@ namespace TableSoft.CategoriaWS {
         
         private int comentarioIdField;
         
-        private localDateTime fechaField;
+        private string fechaField;
         
         private string textoField;
         
@@ -1595,7 +1590,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fecha {
+        public string fecha {
             get {
                 return this.fechaField;
             }
@@ -1970,7 +1965,7 @@ namespace TableSoft.CategoriaWS {
         
         private estadoTicket estadoToField;
         
-        private localDateTime fechaCambioEstadoField;
+        private string fechaCambioEstadoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
@@ -2022,7 +2017,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public localDateTime fechaCambioEstado {
+        public string fechaCambioEstado {
             get {
                 return this.fechaCambioEstadoField;
             }
@@ -2054,7 +2049,7 @@ namespace TableSoft.CategoriaWS {
         
         private string comentarioField;
         
-        private localDateTime fechaField;
+        private string fechaField;
         
         private int transferenciaIdField;
         
@@ -2084,7 +2079,7 @@ namespace TableSoft.CategoriaWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public localDateTime fecha {
+        public string fecha {
             get {
                 return this.fechaField;
             }
@@ -2316,6 +2311,42 @@ namespace TableSoft.CategoriaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCategoriasPorNombre", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarCategoriasPorNombreRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
+        
+        public listarCategoriasPorNombreRequest() {
+        }
+        
+        public listarCategoriasPorNombreRequest(string nombre) {
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCategoriasPorNombreResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarCategoriasPorNombreResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.CategoriaWS.categoria[] @return;
+        
+        public listarCategoriasPorNombreResponse() {
+        }
+        
+        public listarCategoriasPorNombreResponse(TableSoft.CategoriaWS.categoria[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface CategoriaWSChannel : TableSoft.CategoriaWS.CategoriaWS, System.ServiceModel.IClientChannel {
     }
@@ -2475,6 +2506,29 @@ namespace TableSoft.CategoriaWS {
             TableSoft.CategoriaWS.eliminarCategoriaRequest inValue = new TableSoft.CategoriaWS.eliminarCategoriaRequest();
             inValue.objCategoria = objCategoria;
             return ((TableSoft.CategoriaWS.CategoriaWS)(this)).eliminarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.CategoriaWS.listarCategoriasPorNombreResponse TableSoft.CategoriaWS.CategoriaWS.listarCategoriasPorNombre(TableSoft.CategoriaWS.listarCategoriasPorNombreRequest request) {
+            return base.Channel.listarCategoriasPorNombre(request);
+        }
+        
+        public TableSoft.CategoriaWS.categoria[] listarCategoriasPorNombre(string nombre) {
+            TableSoft.CategoriaWS.listarCategoriasPorNombreRequest inValue = new TableSoft.CategoriaWS.listarCategoriasPorNombreRequest();
+            inValue.nombre = nombre;
+            TableSoft.CategoriaWS.listarCategoriasPorNombreResponse retVal = ((TableSoft.CategoriaWS.CategoriaWS)(this)).listarCategoriasPorNombre(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasPorNombreResponse> TableSoft.CategoriaWS.CategoriaWS.listarCategoriasPorNombreAsync(TableSoft.CategoriaWS.listarCategoriasPorNombreRequest request) {
+            return base.Channel.listarCategoriasPorNombreAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasPorNombreResponse> listarCategoriasPorNombreAsync(string nombre) {
+            TableSoft.CategoriaWS.listarCategoriasPorNombreRequest inValue = new TableSoft.CategoriaWS.listarCategoriasPorNombreRequest();
+            inValue.nombre = nombre;
+            return ((TableSoft.CategoriaWS.CategoriaWS)(this)).listarCategoriasPorNombreAsync(inValue);
         }
     }
 }

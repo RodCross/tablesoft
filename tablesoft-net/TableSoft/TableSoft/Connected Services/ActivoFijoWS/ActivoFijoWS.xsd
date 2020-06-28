@@ -7,6 +7,8 @@
   <xs:element name="insertarActivoFijo" type="tns:insertarActivoFijo" />
   <xs:element name="insertarActivoFijoResponse" type="tns:insertarActivoFijoResponse" />
   <xs:element name="listarActivosFijos" type="tns:listarActivosFijos" />
+  <xs:element name="listarActivosFijosPorNombre" type="tns:listarActivosFijosPorNombre" />
+  <xs:element name="listarActivosFijosPorNombreResponse" type="tns:listarActivosFijosPorNombreResponse" />
   <xs:element name="listarActivosFijosResponse" type="tns:listarActivosFijosResponse" />
   <xs:complexType name="eliminarActivoFijo">
     <xs:sequence>
@@ -54,6 +56,16 @@
   <xs:complexType name="insertarActivoFijoResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarActivosFijosPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarActivosFijosPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:activoFijo" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

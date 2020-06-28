@@ -29,6 +29,12 @@
   <message name="listarProveedoresResponse">
     <part name="parameters" element="tns:listarProveedoresResponse" />
   </message>
+  <message name="listarProveedoresPorNombre">
+    <part name="parameters" element="tns:listarProveedoresPorNombre" />
+  </message>
+  <message name="listarProveedoresPorNombreResponse">
+    <part name="parameters" element="tns:listarProveedoresPorNombreResponse" />
+  </message>
   <portType name="ProveedorWS">
     <operation name="actualizarProveedor">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorRequest" message="tns:actualizarProveedor" />
@@ -45,6 +51,10 @@
     <operation name="listarProveedores">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest" message="tns:listarProveedores" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse" message="tns:listarProveedoresResponse" />
+    </operation>
+    <operation name="listarProveedoresPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreRequest" message="tns:listarProveedoresPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreResponse" message="tns:listarProveedoresPorNombreResponse" />
     </operation>
   </portType>
   <binding name="ProveedorWSPortBinding" type="tns:ProveedorWS">
@@ -77,6 +87,15 @@
       </output>
     </operation>
     <operation name="listarProveedores">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarProveedoresPorNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -31,6 +31,14 @@ namespace TableSoft
             dgvHistorial.DataSource = tickets;
         }
 
+        private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
+            dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " - ");
+            //dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = data.fechaCierre;
+            dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
+        }
+
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -58,10 +66,5 @@ namespace TableSoft
             Movimiento.MoverVentana(Handle, e.Button);
         }
 
-        private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
-            dgvHistorial.Rows[e.RowIndex].Cells["estado"].Value = data.estado.estadoId;
-        }
     }
 }

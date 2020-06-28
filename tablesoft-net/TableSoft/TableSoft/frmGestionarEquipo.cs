@@ -16,12 +16,17 @@ namespace TableSoft
     {
         private EquipoWS.EquipoWSClient equipoDAO = new EquipoWS.EquipoWSClient();
         private EquipoWS.equipo equipo;
+        private BindingList<EquipoWS.categoria> categorias;
         public frmGestionarEquipo()
         {
             equipo = new EquipoWS.equipo();
             InitializeComponent();
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
+
+            categorias = new BindingList<EquipoWS.categoria>();
+            dgvListaCategorias.AutoGenerateColumns = false;
+            dgvListaCategorias.DataSource = categorias;
         }
 
         public frmGestionarEquipo(EquipoWS.equipo equi)
@@ -33,6 +38,17 @@ namespace TableSoft
             txtDescripcion.Text = equipo.descripcion;
             btnActualizar.Visible = true;
             btnGuardar.Visible = false;
+
+            if (equi.listaCategorias != null)
+            {
+                categorias = new BindingList<EquipoWS.categoria>(equi.listaCategorias);
+            }
+            else
+            {
+                categorias = new BindingList<EquipoWS.categoria>();
+            }
+            dgvListaCategorias.AutoGenerateColumns = false;
+            dgvListaCategorias.DataSource = categorias;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -78,8 +94,14 @@ namespace TableSoft
                 );
                 return;
             }
+            
             equipo.nombre = txtNombre.Text;
             equipo.descripcion = txtDescripcion.Text;
+            if(categorias != null)
+            {
+                equipo.listaCategorias = categorias.ToArray();
+            }
+            
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Equipo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (equipoDAO.insertarEquipo(equipo) > 0)
@@ -107,6 +129,7 @@ namespace TableSoft
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
+            
             txtIDEquipo.Text = equipo.equipoId.ToString();
             this.DialogResult = DialogResult.OK;
         }
@@ -154,8 +177,14 @@ namespace TableSoft
                 );
                 return;
             }
+            
             equipo.nombre = txtNombre.Text;
             equipo.descripcion = txtDescripcion.Text;
+            if (categorias != null)
+            {
+                equipo.listaCategorias = categorias.ToArray();
+            }
+
             if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Equipo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (equipoDAO.actualizarEquipo(equipo) > -1)
@@ -183,6 +212,7 @@ namespace TableSoft
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }
+            
             this.DialogResult = DialogResult.OK;
         }
     }

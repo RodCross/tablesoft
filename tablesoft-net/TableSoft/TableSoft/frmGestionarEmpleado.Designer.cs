@@ -295,11 +295,11 @@
             // 
             this.lblEmailPersonal.AutoSize = true;
             this.lblEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailPersonal.Location = new System.Drawing.Point(43, 472);
+            this.lblEmailPersonal.Location = new System.Drawing.Point(64, 472);
             this.lblEmailPersonal.Name = "lblEmailPersonal";
-            this.lblEmailPersonal.Size = new System.Drawing.Size(112, 21);
+            this.lblEmailPersonal.Size = new System.Drawing.Size(91, 21);
             this.lblEmailPersonal.TabIndex = 24;
-            this.lblEmailPersonal.Text = "Email personal";
+            this.lblEmailPersonal.Text = "Email PUCP";
             this.lblEmailPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lblNombre

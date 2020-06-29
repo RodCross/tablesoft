@@ -10,7 +10,7 @@ public class Tarea {
     private Agente agente;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaCompletado;
-    private Boolean completado;
+    private boolean completado;
 
     public Tarea() {
         agente = new Agente();
@@ -30,11 +30,11 @@ public class Tarea {
         this.fechaCompletado = fechaCompletado;
     }
 
-    public Boolean getCompletado() {
+    public boolean getCompletado() {
         return completado;
     }
 
-    public void setCompletado(Boolean completado) {
+    public void setCompletado(boolean completado) {
         this.completado = completado;
     }
 

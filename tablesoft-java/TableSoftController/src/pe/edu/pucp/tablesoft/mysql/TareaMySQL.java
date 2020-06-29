@@ -65,14 +65,16 @@ public class TareaMySQL implements TareaDAO {
             cs.setBoolean("_COMPLETADO", tarea.getCompletado());
                        
             cs.execute();
-            rpta = cs.getInt("_ID");
-            tarea.setTareaId(rpta);
             con.close();
             
-        } catch(SQLException | ClassNotFoundException ex){
+        } catch(SQLException ex){
             System.out.println(ex.getMessage());
             rpta = -1;
+        } catch(ClassNotFoundException ex2){
+            System.out.println(ex2.getMessage());
+            rpta = -2;
         }
+        
         return rpta;
     }
 
@@ -93,6 +95,7 @@ public class TareaMySQL implements TareaDAO {
             
         } catch(SQLException | ClassNotFoundException ex){
             System.out.println(ex.getMessage());
+            rpta = -1;
         }
         return rpta;
     }

@@ -65,29 +65,30 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            TicketWS.ticket tck = (TicketWS.ticket)dgvTicketsEspera.CurrentRow.DataBoundItem;
-            TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
-            estAsignado.estadoId = 6;
-
-            tck.estado = estAsignado;
-            
-            // Registrar el cambio de estado
-            var historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();
-            
-            var cambioEstado = new TicketWS.cambioEstadoTicket();
-            cambioEstado.comentario = "El ticket fue asignado";
-            var ag = new TicketWS.agente();
-            ag.agenteId = agente.agenteId;
-            cambioEstado.agenteResponsable = ag;
-            cambioEstado.estadoTo = estAsignado;
-
-            historialEstados.Add(cambioEstado);
-
-            // Asignar la lista de cambios de estado
-            tck.historialEstado = historialEstados.ToArray();
-
             if (MessageBox.Show("¿Desea atender este ticket?", "Seleccionar ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                TicketWS.ticket tck = (TicketWS.ticket)dgvTicketsEspera.CurrentRow.DataBoundItem;
+                TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
+                estAsignado.estadoId = 6;
+
+                tck.estado = estAsignado;
+
+                // Registrar el cambio de estado
+                var historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();
+
+                var cambioEstado = new TicketWS.cambioEstadoTicket();
+                cambioEstado.comentario = "El ticket fue asignado";
+                var ag = new TicketWS.agente();
+                ag.agenteId = agente.agenteId;
+                cambioEstado.agenteResponsable = ag;
+                cambioEstado.estadoTo = estAsignado;
+
+                historialEstados.Add(cambioEstado);
+
+                tck.agente.agenteId = agente.agenteId;
+                // Asignar la lista de cambios de estado
+                tck.historialEstado = historialEstados.ToArray();
+
                 if (ticketDAO.actualizarTicket(tck) > -1)
                 {
                     MessageBox.Show(

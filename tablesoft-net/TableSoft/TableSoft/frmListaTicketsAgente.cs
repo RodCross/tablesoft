@@ -18,7 +18,9 @@ namespace TableSoft
         public frmListaTicketsAgente()
         {
             InitializeComponent();
-            TicketWS.ticket[] arrTickets = ticketDAO.listarTickets();
+            TicketWS.agente agenAux = new TicketWS.agente();
+            agenAux.agenteId =  frmInicioSesion.agenteLogueado.agenteId;
+            TicketWS.ticket[] arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
             dgvHistorial.AutoGenerateColumns = false;
             if (arrTickets != null)
             {

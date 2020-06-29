@@ -42,6 +42,9 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnReasignar = new System.Windows.Forms.Button();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
+            this.lblIngresar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +60,7 @@
             this.dataGridViewTextBoxColumn3,
             this.Nombre,
             this.dataGridViewTextBoxColumn4});
-            this.dgvCategoria.Location = new System.Drawing.Point(20, 70);
+            this.dgvCategoria.Location = new System.Drawing.Point(20, 147);
             this.dgvCategoria.Margin = new System.Windows.Forms.Padding(3, 10, 3, 15);
             this.dgvCategoria.Name = "dgvCategoria";
             this.dgvCategoria.ReadOnly = true;
@@ -105,7 +108,7 @@
             this.lblIngresarComentario.AutoSize = true;
             this.lblIngresarComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
             this.lblIngresarComentario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblIngresarComentario.Location = new System.Drawing.Point(21, 247);
+            this.lblIngresarComentario.Location = new System.Drawing.Point(21, 324);
             this.lblIngresarComentario.Name = "lblIngresarComentario";
             this.lblIngresarComentario.Size = new System.Drawing.Size(336, 18);
             this.lblIngresarComentario.TabIndex = 4;
@@ -114,7 +117,7 @@
             // rtfComentario
             // 
             this.rtfComentario.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtfComentario.Location = new System.Drawing.Point(20, 279);
+            this.rtfComentario.Location = new System.Drawing.Point(20, 352);
             this.rtfComentario.Margin = new System.Windows.Forms.Padding(3, 10, 3, 3);
             this.rtfComentario.Name = "rtfComentario";
             this.rtfComentario.Size = new System.Drawing.Size(500, 106);
@@ -140,7 +143,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(540, 57);
+            this.pnlTitulo.Size = new System.Drawing.Size(567, 57);
             this.pnlTitulo.TabIndex = 3;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -168,7 +171,7 @@
             this.btnReasignar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnReasignar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
             this.btnReasignar.ForeColor = System.Drawing.Color.White;
-            this.btnReasignar.Location = new System.Drawing.Point(401, 408);
+            this.btnReasignar.Location = new System.Drawing.Point(401, 470);
             this.btnReasignar.Margin = new System.Windows.Forms.Padding(3, 20, 3, 10);
             this.btnReasignar.Name = "btnReasignar";
             this.btnReasignar.Size = new System.Drawing.Size(119, 33);
@@ -177,11 +180,47 @@
             this.btnReasignar.UseVisualStyleBackColor = false;
             this.btnReasignar.Click += new System.EventHandler(this.btnReasignar_Click);
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(383, 105);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(81, 33);
+            this.btnBuscar.TabIndex = 10;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBuscar
+            // 
+            this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(24, 108);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(335, 26);
+            this.txtBuscar.TabIndex = 9;
+            // 
+            // lblIngresar
+            // 
+            this.lblIngresar.AutoSize = true;
+            this.lblIngresar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
+            this.lblIngresar.Location = new System.Drawing.Point(23, 82);
+            this.lblIngresar.Name = "lblIngresar";
+            this.lblIngresar.Size = new System.Drawing.Size(239, 18);
+            this.lblIngresar.TabIndex = 11;
+            this.lblIngresar.Text = "Ingrese el nombre de la categoria:";
+            // 
             // frmReasignarCategoriaTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 460);
+            this.ClientSize = new System.Drawing.Size(567, 522);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtBuscar);
+            this.Controls.Add(this.lblIngresar);
             this.Controls.Add(this.rtfComentario);
             this.Controls.Add(this.btnReasignar);
             this.Controls.Add(this.lblIngresarComentario);
@@ -210,5 +249,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtBuscar;
+        private System.Windows.Forms.Label lblIngresar;
     }
 }

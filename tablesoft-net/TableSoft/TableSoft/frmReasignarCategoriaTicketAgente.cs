@@ -42,5 +42,19 @@ namespace TableSoft
         {
             this.Close();
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            CategoriaWS.categoria[] nuevasCategorias = categoriaDAO.listarCategoriasPorNombre(txtBuscar.Text);
+            if (nuevasCategorias != null)
+            {
+                categorias = new BindingList<CategoriaWS.categoria>(nuevasCategorias);
+                dgvCategoria.DataSource = categorias;
+            }
+            else
+            {
+                dgvCategoria.DataSource = null;
+            }
+        }
     }
 }

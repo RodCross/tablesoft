@@ -120,7 +120,21 @@ namespace TableSoft
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+          
+        }
 
+        private void btnBuscar_Click_1(object sender, EventArgs e)
+        {
+            CategoriaWS.categoria[] nuevasCategorias = categoriaDAO.listarCategoriasPorNombre(txtBuscar.Text);
+            if (nuevasCategorias != null)
+            {
+                categorias = new BindingList<CategoriaWS.categoria>(nuevasCategorias);
+                dgvLista.DataSource = categorias;
+            }
+            else
+            {
+                dgvLista.DataSource = null;
+            }
         }
     }
 }

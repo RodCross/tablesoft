@@ -20,6 +20,7 @@ import pe.edu.pucp.tablesoft.dao.EstadoTicketDAO;
 import pe.edu.pucp.tablesoft.dao.PersonaDAO;
 import pe.edu.pucp.tablesoft.dao.ProveedorDAO;
 import pe.edu.pucp.tablesoft.dao.RolDAO;
+import pe.edu.pucp.tablesoft.dao.TareaDAO;
 import pe.edu.pucp.tablesoft.dao.TareaPredeterminadaDAO;
 import pe.edu.pucp.tablesoft.dao.TicketDAO;
 import pe.edu.pucp.tablesoft.dao.UrgenciaDAO;
@@ -35,6 +36,7 @@ import pe.edu.pucp.tablesoft.model.EstadoTicket;
 import pe.edu.pucp.tablesoft.model.Pais;
 import pe.edu.pucp.tablesoft.model.Proveedor;
 import pe.edu.pucp.tablesoft.model.Rol;
+import pe.edu.pucp.tablesoft.model.Tarea;
 import pe.edu.pucp.tablesoft.model.TareaPredeterminada;
 import pe.edu.pucp.tablesoft.model.Ticket;
 import pe.edu.pucp.tablesoft.model.Urgencia;
@@ -50,6 +52,7 @@ import pe.edu.pucp.tablesoft.mysql.EstadoTicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.PersonaMySQL;
 import pe.edu.pucp.tablesoft.mysql.ProveedorMySQL;
 import pe.edu.pucp.tablesoft.mysql.RolMySQL;
+import pe.edu.pucp.tablesoft.mysql.TareaMySQL;
 import pe.edu.pucp.tablesoft.mysql.TareaPredeterminadaMySQL;
 import pe.edu.pucp.tablesoft.mysql.TicketMySQL;
 import pe.edu.pucp.tablesoft.mysql.UrgenciaMySQL;
@@ -65,6 +68,7 @@ public class Principal {
         AgenteDAO agenteDao = new AgenteMySQL();
         EmpleadoDAO empleadoDao =  new EmpleadoMySQL();
         TicketDAO ticketDao = new TicketMySQL();
+        TareaDAO tareaDao = new TareaMySQL();
         RolDAO rolDao = new RolMySQL();
         BibliotecaDAO bibliotecaDao = new BibliotecaMySQL();
         EstadoTicketDAO estadoTicketDao = new EstadoTicketMySQL();
@@ -496,5 +500,24 @@ public class Principal {
 //        lista.get(2).setAgente(agenteP);        
 //        ticketDao.actualizar(lista.get(2));
 //        System.out.println(lista.get(2).mostrarDatos());
+
+        Ticket tick = new Ticket();
+        tick.setTicketId(2);
+        
+        Agente ag = new Agente();
+        ag.setAgenteId(6);
+        
+        Tarea tar = new Tarea();
+        tar.setAgente(ag);
+        tar.setDescripcion("Tarea desde Java");
+        tar.setCompletado(false);
+        
+        tareaDao.insertar(tar, tick);
+        
+        ArrayList<Tarea> lista = tareaDao.listarxTicket(tick);
+        for(Tarea t: lista){
+            System.out.println(t.getTareaId() + " - " + t.getDescripcion());
+        }
+        
     }
 }

@@ -60,15 +60,26 @@ namespace TableSoft
 
             cboBiblioteca.DataSource = bibliotecas;
             cboBiblioteca.DisplayMember = "nombre";
-            cboBiblioteca.SelectedItem = -1;
 
             cboCategoria.DataSource = categorias;
             cboCategoria.DisplayMember = "nombre";
-            cboCategoria.SelectedItem = -1;
 
             cboUrgencia.DataSource = urgencias;
             cboUrgencia.DisplayMember = "nombre";
+
+            limpiarComponentes();
+        }
+
+        private void limpiarComponentes()
+        {
+            txtAsunto.Text = "";
+            rtfDescripcion.Text = "";
+            cboBiblioteca.SelectedItem = -1;
+            cboCategoria.SelectedItem = -1;
             cboUrgencia.SelectedItem = -1;
+            txtActivoFijo.Text = "";
+            txtNombreActivoFijo.Text = "";
+            txtEmail.Text = "";
         }
 
         private void btnVolver_Click(object sender, EventArgs e)
@@ -258,7 +269,7 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
-                this.DialogResult = DialogResult.OK;
+                limpiarComponentes();
             }
         }
 

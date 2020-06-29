@@ -13,7 +13,7 @@ namespace TableSoft
     public partial class frmReasignarCategoriaTicketAgente : Form
     {
         private CategoriaWS.CategoriaWSClient categoriaDAO = new CategoriaWS.CategoriaWSClient();
-        private BindingList<CategoriaWS.categoria> categorias;
+        private List<CategoriaWS.categoria> categorias;
         private TicketWS.ticket ticket;
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
         private AgenteWS.agente agente;
@@ -22,12 +22,16 @@ namespace TableSoft
             ticket = tck;
             agente = frmInicioSesion.agenteLogueado;
             InitializeComponent();
-            categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
-            foreach (CategoriaWS.categoria catAux in categorias)
+            categorias = new List<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+            CategoriaWS.categoria catAux;
+            int n = categorias.Count;
+            for (int i = 0; i < n; i++)
             {
-                if(catAux.categoriaId == ticket.categoria.categoriaId)
+                catAux = categorias[i];
+                if (catAux.categoriaId == ticket.categoria.categoriaId)
                 {
                     categorias.Remove(catAux);
+                    break;
                 }
             }
             dgvCategoria.AutoGenerateColumns = false;
@@ -46,7 +50,8 @@ namespace TableSoft
                 CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvCategoria.CurrentRow.DataBoundItem;
                 TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
                 estAsignado.estadoId = (int)Estado.Recategorizado;
-
+                TicketWS.categoria catego = new TicketWS.categoria();
+                catego.categoriaId = cat.categoriaId;
                 ticket.estado = estAsignado;
 
                 // Registrar el cambio de estado
@@ -61,7 +66,8 @@ namespace TableSoft
 
                 historialEstados.Add(cambioEstado);
 
-                ticket.categoria.categoriaId = cat.categoriaId;
+                //ticket.categoria.categoriaId = cat.categoriaId;
+                ticket.categoria = catego;
                 // Asignar la lista de cambios de estado
                 ticket.historialEstado = historialEstados.ToArray();
                 if (ticketDAO.actualizarTicket(ticket) > -1)
@@ -94,7 +100,7 @@ namespace TableSoft
             CategoriaWS.categoria[] nuevasCategorias = categoriaDAO.listarCategoriasPorNombre(txtBuscar.Text);
             if (nuevasCategorias != null)
             {
-                categorias = new BindingList<CategoriaWS.categoria>(nuevasCategorias);
+                categorias = new List<CategoriaWS.categoria>(nuevasCategorias);
                 dgvCategoria.DataSource = categorias;
             }
             else

@@ -43,6 +43,7 @@ namespace TableSoft
         {
             if (MessageBox.Show("¿Desea reasignar la categoria?", "Reasignar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvCategoria.CurrentRow.DataBoundItem;
                 TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
                 estAsignado.estadoId = (int)Estado.Recategorizado;
 
@@ -60,6 +61,7 @@ namespace TableSoft
 
                 historialEstados.Add(cambioEstado);
 
+                ticket.categoria.categoriaId = cat.categoriaId;
                 // Asignar la lista de cambios de estado
                 ticket.historialEstado = historialEstados.ToArray();
                 if (ticketDAO.actualizarTicket(ticket) > -1)
@@ -75,7 +77,7 @@ namespace TableSoft
                 {
                     MessageBox.Show(
                         "Ha ocurrido un error con la reasignación",
-                        "Asginación no realizada",
+                        "Reasignación no realizada",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }

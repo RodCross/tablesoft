@@ -14,9 +14,14 @@ namespace TableSoft
     {
         private ProveedorWS.ProveedorWSClient proveedorDAO = new ProveedorWS.ProveedorWSClient();
         private BindingList<ProveedorWS.proveedor> proveedores;
+        private TicketWS.ticket ticket;
+        private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
+        private AgenteWS.agente agente;
 
-        public frmEscalarTicketAgente()
+        public frmEscalarTicketAgente(TicketWS.ticket tck)
         {
+            ticket = tck;
+            agente = frmInicioSesion.agenteLogueado;
             InitializeComponent();
             proveedores = new BindingList<ProveedorWS.proveedor>(proveedorDAO.listarProveedores().ToArray());
             dgvProveedores.AutoGenerateColumns = false;
@@ -36,12 +41,47 @@ namespace TableSoft
 
         private void btnEscalar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha escalado el ticket al proveedor.",
-                "Escalamiento exitoso",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            if (MessageBox.Show("¿Desea reasignar la categoria?", "Reasignar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                ProveedorWS.proveedor prov = (ProveedorWS.proveedor)dgvProveedores.CurrentRow.DataBoundItem;
+                TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
+                estAsignado.estadoId = (int)Estado.Escalado;
+
+                ticket.estado = estAsignado;
+
+                // Registrar el cambio de estado
+                var historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();
+
+                var cambioEstado = new TicketWS.cambioEstadoTicket();
+                cambioEstado.comentario = rtfComentario.Text;
+                var ag = new TicketWS.agente();
+                ag.agenteId = agente.agenteId;
+                cambioEstado.agenteResponsable = ag;
+                cambioEstado.estadoTo = estAsignado;
+
+                historialEstados.Add(cambioEstado);
+
+                ticket.proveedor.proveedorId = prov.proveedorId;
+                // Asignar la lista de cambios de estado
+                ticket.historialEstado = historialEstados.ToArray();
+                if (ticketDAO.actualizarTicket(ticket) > -1)
+                {
+                    MessageBox.Show(
+                        "Se ha escalado el ticket al proveedor.",
+                        "Escalamiento exitoso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Ha ocurrido un error con el escalado.",
+                        "Escalamiento no realizado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

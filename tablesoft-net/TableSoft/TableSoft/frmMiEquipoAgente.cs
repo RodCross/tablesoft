@@ -104,6 +104,37 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+
+                TicketWS.equipo equip = new TicketWS.equipo();
+                equip.equipoId = agente.equipo.equipoId;
+
+                TicketWS.estadoTicket estActivo = new TicketWS.estadoTicket();
+                estActivo.estadoId = 1;
+                TicketWS.estadoTicket estRecategorizado = new TicketWS.estadoTicket();
+                estRecategorizado.estadoId = 5;
+
+                var tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estActivo, equip);
+                if (tickts == null)
+                {
+                    ticketsEnEspera = new BindingList<TicketWS.ticket>();
+                }
+                else
+                {
+                    ticketsEnEspera = new BindingList<TicketWS.ticket>(tickts.ToList());
+                }
+
+                tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estRecategorizado, equip);
+                if (tickts != null)
+                {
+                    //ticketsEnEspera.Concat(tickts.ToList());    <- no se si funcionaria
+                    foreach (TicketWS.ticket t in tickts)
+                    {
+                        ticketsEnEspera.Add(t);
+                    }
+                }
+
+                dgvTicketsEspera.AutoGenerateColumns = false;
+                dgvTicketsEspera.DataSource = ticketsEnEspera;
             }
 
         }

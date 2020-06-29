@@ -25,9 +25,9 @@ namespace TableSoft
             equip.equipoId = agente.equipo.equipoId;
 
             TicketWS.estadoTicket estActivo = new TicketWS.estadoTicket();
-            estActivo.estadoId = 1;
+            estActivo.estadoId = (int)Estado.Activo;
             TicketWS.estadoTicket estRecategorizado = new TicketWS.estadoTicket();
-            estRecategorizado.estadoId = 5;
+            estRecategorizado.estadoId = (int)Estado.Recategorizado;
 
             var tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estActivo, equip);
             if (tickts == null)
@@ -69,7 +69,7 @@ namespace TableSoft
             {
                 TicketWS.ticket tck = (TicketWS.ticket)dgvTicketsEspera.CurrentRow.DataBoundItem;
                 TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
-                estAsignado.estadoId = 6;
+                estAsignado.estadoId = (int)Estado.Asignado;
 
                 tck.estado = estAsignado;
 
@@ -110,9 +110,9 @@ namespace TableSoft
                 equip.equipoId = agente.equipo.equipoId;
 
                 TicketWS.estadoTicket estActivo = new TicketWS.estadoTicket();
-                estActivo.estadoId = 1;
+                estActivo.estadoId = (int)Estado.Activo;
                 TicketWS.estadoTicket estRecategorizado = new TicketWS.estadoTicket();
-                estRecategorizado.estadoId = 5;
+                estRecategorizado.estadoId = (int)Estado.Recategorizado;
 
                 var tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estActivo, equip);
                 if (tickts == null)

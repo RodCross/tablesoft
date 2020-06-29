@@ -294,7 +294,7 @@ public class TicketMySQL implements TicketDAO{
             
             for(Ticket tick : tickets){
                 cs = con.prepareCall("{CALL buscar_empleado(?)}");
-                System.out.println(tick.getEmpleado().getEmpleadoId());
+                cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
                 rs = cs.executeQuery();
                 while(rs.next()){
                     tick.getEmpleado().setEmpleadoId(rs.getInt("empleado_id"));
@@ -755,7 +755,7 @@ public class TicketMySQL implements TicketDAO{
                 DBManager.password
             );            
 
-            CallableStatement cs = con.prepareCall("{CALL listar_ticket_empleado()}");
+            CallableStatement cs = con.prepareCall("{CALL listar_ticket_empleado(?)}");
             cs.setInt("_ID", empleado.getEmpleadoId());
             ResultSet rs = cs.executeQuery();            
             

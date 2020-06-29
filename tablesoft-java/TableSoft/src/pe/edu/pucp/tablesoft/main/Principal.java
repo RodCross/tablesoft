@@ -478,5 +478,14 @@ public class Principal {
 //        else{
 //            System.out.println("No se encontro el empleado");
 //        }
+
+        Empleado empleadoP = new Empleado();
+        empleadoP.setEmpleadoId(2);
+        ArrayList<Ticket> lista = ticketDao.listar();
+        
+        for(Ticket t : lista){
+             System.out.println(t.mostrarDatos());
+             System.out.println(t.getActivoFijo().mostrarDatos());
+        }
     }
 }

@@ -31,7 +31,7 @@ namespace TableSoft
             lblBiblioteca.Text = tick.biblioteca.nombre;
             if(tick.activoFijo.activoFijoId > 0)
             {
-                lblActFij.Text = tick.activoFijo.activoFijoId.ToString();
+                lblActFij.Text = tick.activoFijo.codigo;
             }
             else
             {

@@ -41,8 +41,11 @@ namespace TableSoft
         private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
-            dgvHistorial.Rows[e.RowIndex].Cells["Empleado"].Value = data.empleado.empleadoId;
+            dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
+            dgvHistorial.Rows[e.RowIndex].Cells["Empleado"].Value = data.empleado.nombre + " " + data.empleado.apellidoPaterno + " " + data.empleado.apellidoMaterno;
             dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
+            dgvHistorial.Rows[e.RowIndex].Cells["Urgencia"].Value = data.urgencia.nombre;
+            dgvHistorial.Rows[e.RowIndex].Cells["Categoria"].Value = data.categoria.nombre;
         }
 
         private void btnVolver_Click(object sender, EventArgs e)

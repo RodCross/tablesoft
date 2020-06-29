@@ -29,10 +29,14 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMiEquipoAgente));
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTicketsEspera = new System.Windows.Forms.Label();
@@ -45,6 +49,7 @@
             this.NombreEmpleado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaApertura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NombreUrgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicketsEspera)).BeginInit();
             this.SuspendLayout();
@@ -75,8 +80,18 @@
             // 
             this.dgvTicketsEspera.AllowUserToAddRows = false;
             this.dgvTicketsEspera.AllowUserToDeleteRows = false;
+            this.dgvTicketsEspera.AllowUserToResizeColumns = false;
+            this.dgvTicketsEspera.AllowUserToResizeRows = false;
             this.dgvTicketsEspera.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.dgvTicketsEspera.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvTicketsEspera.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvTicketsEspera.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvTicketsEspera.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
@@ -84,11 +99,23 @@
             this.AbreviaturaBiblioteca,
             this.NombreEmpleado,
             this.FechaApertura,
-            this.NombreCategoria});
+            this.NombreCategoria,
+            this.NombreUrgencia});
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvTicketsEspera.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgvTicketsEspera.Location = new System.Drawing.Point(35, 92);
             this.dgvTicketsEspera.Name = "dgvTicketsEspera";
             this.dgvTicketsEspera.ReadOnly = true;
             this.dgvTicketsEspera.RowHeadersVisible = false;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvTicketsEspera.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvTicketsEspera.RowTemplate.DefaultCellStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvTicketsEspera.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTicketsEspera.Size = new System.Drawing.Size(994, 436);
             this.dgvTicketsEspera.TabIndex = 0;
@@ -129,37 +156,39 @@
             // ID
             // 
             this.ID.DataPropertyName = "ticketId";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
             this.ID.FillWeight = 50F;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.ReadOnly = true;
-            this.ID.Width = 75;
+            this.ID.Width = 30;
             // 
             // Asunto
             // 
             this.Asunto.DataPropertyName = "asunto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.Asunto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.Asunto.DefaultCellStyle = dataGridViewCellStyle3;
             this.Asunto.HeaderText = "Asunto";
             this.Asunto.Name = "Asunto";
             this.Asunto.ReadOnly = true;
-            this.Asunto.Width = 300;
+            this.Asunto.Width = 270;
             // 
             // AbreviaturaBiblioteca
             // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.AbreviaturaBiblioteca.DefaultCellStyle = dataGridViewCellStyle4;
             this.AbreviaturaBiblioteca.HeaderText = "Ubicación";
             this.AbreviaturaBiblioteca.Name = "AbreviaturaBiblioteca";
             this.AbreviaturaBiblioteca.ReadOnly = true;
+            this.AbreviaturaBiblioteca.Width = 75;
             // 
             // NombreEmpleado
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.NombreEmpleado.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.NombreEmpleado.DefaultCellStyle = dataGridViewCellStyle5;
             this.NombreEmpleado.HeaderText = "Empleado";
             this.NombreEmpleado.Name = "NombreEmpleado";
             this.NombreEmpleado.ReadOnly = true;
@@ -168,23 +197,29 @@
             // FechaApertura
             // 
             this.FechaApertura.DataPropertyName = "fechaEnvio";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.FechaApertura.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.FechaApertura.DefaultCellStyle = dataGridViewCellStyle6;
             this.FechaApertura.HeaderText = "Fecha de apertura";
             this.FechaApertura.Name = "FechaApertura";
             this.FechaApertura.ReadOnly = true;
-            this.FechaApertura.Width = 175;
+            this.FechaApertura.Width = 150;
             // 
             // NombreCategoria
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.NombreCategoria.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
+            this.NombreCategoria.DefaultCellStyle = dataGridViewCellStyle7;
             this.NombreCategoria.HeaderText = "Categoría";
             this.NombreCategoria.Name = "NombreCategoria";
             this.NombreCategoria.ReadOnly = true;
             this.NombreCategoria.Width = 190;
+            // 
+            // NombreUrgencia
+            // 
+            this.NombreUrgencia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NombreUrgencia.HeaderText = "Urgencia";
+            this.NombreUrgencia.Name = "NombreUrgencia";
+            this.NombreUrgencia.ReadOnly = true;
             // 
             // frmMiEquipoAgente
             // 
@@ -219,5 +254,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreEmpleado;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaApertura;
         private System.Windows.Forms.DataGridViewTextBoxColumn NombreCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombreUrgencia;
     }
 }

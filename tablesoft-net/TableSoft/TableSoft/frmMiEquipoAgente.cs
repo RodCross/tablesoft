@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
@@ -64,12 +65,47 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se te ha asignado el ticket seleccionado.",
-                "Asignación exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            TicketWS.ticket tck = (TicketWS.ticket)dgvTicketsEspera.CurrentRow.DataBoundItem;
+            TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
+            estAsignado.estadoId = 6;
+
+            tck.estado = estAsignado;
+            
+            // Registrar el cambio de estado
+            var historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();
+            
+            var cambioEstado = new TicketWS.cambioEstadoTicket();
+            cambioEstado.comentario = "El ticket fue asignado";
+            var ag = new TicketWS.agente();
+            ag.agenteId = agente.agenteId;
+            cambioEstado.agenteResponsable = ag;
+            cambioEstado.estadoTo = estAsignado;
+
+            historialEstados.Add(cambioEstado);
+
+            // Asignar la lista de cambios de estado
+            tck.historialEstado = historialEstados.ToArray();
+
+            if (MessageBox.Show("¿Desea atender este ticket?", "Seleccionar ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (ticketDAO.actualizarTicket(tck) > -1)
+                {
+                    MessageBox.Show(
+                    "Se te ha asignado el ticket correctamente",
+                    "Asignación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Ha ocurrido un error con la asignación",
+                    "Asginación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
+
         }
 
         private void dgvTicketsEspera_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -79,6 +115,8 @@ namespace TableSoft
             dgvTicketsEspera.Rows[e.RowIndex].Cells["AbreviaturaBiblioteca"].Value = data.biblioteca.abreviatura;
             dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreEmpleado"].Value = data.empleado.nombre;
             dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreCategoria"].Value = data.categoria.nombre;
+            dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreUrgencia"].Value = data.urgencia.nombre;
+
         }
     }
 }

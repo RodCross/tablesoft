@@ -14,11 +14,22 @@ namespace TableSoft
     {
         private CategoriaWS.CategoriaWSClient categoriaDAO = new CategoriaWS.CategoriaWSClient();
         private BindingList<CategoriaWS.categoria> categorias;
-
-        public frmReasignarCategoriaTicketAgente()
+        private TicketWS.ticket ticket;
+        private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
+        private AgenteWS.agente agente;
+        public frmReasignarCategoriaTicketAgente(TicketWS.ticket tck)
         {
+            ticket = tck;
+            agente = frmInicioSesion.agenteLogueado;
             InitializeComponent();
             categorias = new BindingList<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
+            foreach (CategoriaWS.categoria catAux in categorias)
+            {
+                if(catAux.categoriaId == ticket.categoria.categoriaId)
+                {
+                    categorias.Remove(catAux);
+                }
+            }
             dgvCategoria.AutoGenerateColumns = false;
             dgvCategoria.DataSource = categorias;
         }
@@ -30,12 +41,45 @@ namespace TableSoft
 
         private void btnReasignar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "Se ha cambiado la categoría anterior a la seleccionada.",
-                "Reasignación exitosa",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
-            this.Close();
+            if (MessageBox.Show("¿Desea reasignar la categoria?", "Reasignar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
+                estAsignado.estadoId = (int)Estado.Recategorizado;
+
+                ticket.estado = estAsignado;
+
+                // Registrar el cambio de estado
+                var historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();
+
+                var cambioEstado = new TicketWS.cambioEstadoTicket();
+                cambioEstado.comentario = rtfComentario.Text;
+                var ag = new TicketWS.agente();
+                ag.agenteId = agente.agenteId;
+                cambioEstado.agenteResponsable = ag;
+                cambioEstado.estadoTo = estAsignado;
+
+                historialEstados.Add(cambioEstado);
+
+                // Asignar la lista de cambios de estado
+                ticket.historialEstado = historialEstados.ToArray();
+                if (ticketDAO.actualizarTicket(ticket) > -1)
+                {
+                    MessageBox.Show(
+                        "Se ha cambiado la categoría seleccionada.",
+                        "Reasignación exitosa",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    this.DialogResult = DialogResult.OK;
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Ha ocurrido un error con la reasignación",
+                        "Asginación no realizada",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

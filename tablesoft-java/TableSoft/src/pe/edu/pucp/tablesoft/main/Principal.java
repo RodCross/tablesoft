@@ -487,5 +487,14 @@ public class Principal {
 //             System.out.println(t.mostrarDatos());
 //             System.out.println(t.getActivoFijo().mostrarDatos());
 //        }
+
+        
+//        ArrayList<Ticket> lista = ticketDao.listar();
+//        Agente agenteP = new Agente();
+//        System.out.println(lista.get(2).mostrarDatos());
+//        agenteP.setAgenteId(1);
+//        lista.get(2).setAgente(agenteP);        
+//        ticketDao.actualizar(lista.get(2));
+//        System.out.println(lista.get(2).mostrarDatos());
     }
 }

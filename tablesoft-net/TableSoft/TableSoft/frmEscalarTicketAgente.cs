@@ -49,5 +49,18 @@ namespace TableSoft
             this.Close();
         }
 
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            ProveedorWS.proveedor[] nuevosProveedores = proveedorDAO.listarProveedoresPorNombre(txtBuscar.Text);
+            if (nuevosProveedores != null)
+            {
+                proveedores = new BindingList<ProveedorWS.proveedor>(nuevosProveedores);
+                dgvProveedores.DataSource = proveedores;
+            }
+            else
+            {
+                dgvProveedores.DataSource = null;
+            }
+        }
     }
 }

@@ -19,6 +19,26 @@ namespace TableSoft
             InitializeComponent();
             MostrarDefaultRespuesta();
         }
+        public frmInfoTicketEmpleado(TicketWS.ticket tick)
+        {
+            InitializeComponent();
+            MostrarDefaultRespuesta();
+            lblAsunto.Text = tick.asunto;
+            lblId.Text = "# " + tick.ticketId.ToString();
+            lblCreacion.Text = tick.fechaEnvio.ToString();
+            lblFecCieEst.Text = tick.fechaCierreMaximo.ToString();
+            lblEstado.Text = tick.estado.nombre;
+            lblBiblioteca.Text = tick.biblioteca.nombre;
+            if(tick.activoFijo.activoFijoId > 0)
+            {
+                lblActFij.Text = tick.activoFijo.activoFijoId.ToString();
+            }
+            else
+            {
+                lblTituloActFij.Text = "";
+            }
+            
+        }
 
         private void MostrarDefaultRespuesta()
         {

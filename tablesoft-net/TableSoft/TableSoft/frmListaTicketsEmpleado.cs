@@ -18,7 +18,9 @@ namespace TableSoft
         public frmListaTicketsEmpleado()
         {
             InitializeComponent();
-            var tic = ticketDAO.listarTickets();
+            TicketWS.empleado empAux = new TicketWS.empleado();
+            empAux.empleadoId = frmInicioSesion.empleadoLogueado.empleadoId;
+            var tic = ticketDAO.listarTicketsPorEmpleado(empAux);
             if(tic == null)
             {
                 tickets = new BindingList<TicketWS.ticket>();
@@ -46,11 +48,8 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
-            frmInfoTicketEmpleado frm = new frmInfoTicketEmpleado
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            TicketWS.ticket tic = (TicketWS.ticket)dgvHistorial.CurrentRow.DataBoundItem;
+            frmInfoTicketEmpleado frm = new frmInfoTicketEmpleado(tic);
 
             frm.FormClosing += delegate
             {

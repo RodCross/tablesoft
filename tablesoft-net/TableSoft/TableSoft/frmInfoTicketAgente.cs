@@ -83,8 +83,8 @@ namespace TableSoft
 
         private void btnEscalar_Click(object sender, EventArgs e)
         {
-            frmEscalarTicketAgente frm = new frmEscalarTicketAgente();
-            frm.ShowDialog();
+            //frmEscalarTicketAgente frm = new frmEscalarTicketAgente();
+            //frm.ShowDialog();
         }
 
         private void btnCambiarEstado_Click(object sender, EventArgs e)
@@ -95,8 +95,8 @@ namespace TableSoft
 
         private void btnCambiarCategoria_Click(object sender, EventArgs e)
         {
-            frmReasignarCategoriaTicketAgente frm = new frmReasignarCategoriaTicketAgente();
-            frm.ShowDialog();
+            //frmReasignarCategoriaTicketAgente frm = new frmReasignarCategoriaTicketAgente();
+            //frm.ShowDialog();
         }
 
         private void btnVerTareas_Click(object sender, EventArgs e)

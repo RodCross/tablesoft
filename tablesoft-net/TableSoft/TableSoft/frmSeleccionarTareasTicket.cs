@@ -49,44 +49,47 @@ namespace TableSoft
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //foreach (TareaWS.tarea t in tareas)
-            //{
-            //    if (t.tareaId == 0)
-            //    {
-            //        tareaDAO.insertarTarea(t, ticket);
-            //    }
-            //    else
-            //    {
-            //        tareaDAO.actualizarTarea(t, agente);
-            //    }
-            //}
+            if (MessageBox.Show("¿Desea guardar los cambios realizados?", "Actualizar Lista de Tareas", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                foreach (TareaWS.tarea t in tareas)
+                {
+                    if (t.tareaId == 0)
+                    {
+                        tareaDAO.insertarTarea(t, ticket);
+                    }
+                    else
+                    {
+                        tareaDAO.actualizarTarea(t, agente);
+                    }
+                }
 
-            //var arrTareas = tareaDAO.listarTareasPorTicket(ticket);
+                var arrTareas = tareaDAO.listarTareasPorTicket(ticket);
 
-            //if (arrTareas != null)
-            //{
-            //    tareas = new BindingList<TareaWS.tarea>(arrTareas.ToList());
-            //}
-            //else
-            //{
-            //    tareas = new BindingList<TareaWS.tarea>();
-            //}
+                if (arrTareas != null)
+                {
+                    tareas = new BindingList<TareaWS.tarea>(arrTareas.ToList());
+                }
+                else
+                {
+                    tareas = new BindingList<TareaWS.tarea>();
+                }
 
-            //dgvLista.AutoGenerateColumns = false;
-            //dgvLista.DataSource = tareas;
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = tareas;
+            }
 
+            //TareaWS.tarea tareaNueva = new TareaWS.tarea();
 
-            TareaWS.tarea tareaNueva = new TareaWS.tarea();
+            //tareaNueva.descripcion = txtDescripcion.Text;
+            //tareaNueva.completado = false;
+            //tareaNueva.tareaId = 0;
+            //tareaNueva.agente = new TareaWS.agente();
+            //tareaNueva.agente.agenteId = 6;
+            //tareaNueva.descripcion = "Tarea desde C# hard code";
 
-            tareaNueva.descripcion = txtDescripcion.Text;
-            tareaNueva.completado = false;
-            tareaNueva.tareaId = 0;
-            tareaNueva.agente = new TareaWS.agente();
-            tareaNueva.agente.agenteId = 6;
+            //int i = tareaDAO.insertarTarea(tareaNueva, ticket);
 
-            int i = tareaDAO.insertarTarea(tareaNueva, ticket);
-
-            txtDescripcion.Text = "";
+            //txtDescripcion.Text = "";
 
         }
 

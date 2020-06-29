@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
@@ -14,28 +11,30 @@ namespace TableSoft
     {
         private TareaWS.TareaWSClient tareaDAO = new TareaWS.TareaWSClient();
         private BindingList<TareaWS.tarea> tareas;
+
         private TareaWS.ticket ticket = new TareaWS.ticket();
+        private TareaWS.agente agente = new TareaWS.agente();
 
         public frmSeleccionarTareasTicket(TicketWS.ticket tick)
         {
             InitializeComponent();
+
             ticket.ticketId = tick.ticketId;
+            agente.agenteId = 6;
+
             TareaWS.tarea[] arrTareas = tareaDAO.listarTareasPorTicket(ticket);
-            dgvLista.AutoGenerateColumns = false;
+            
             if (arrTareas != null)
             {
-                tareas = new BindingList<TareaWS.tarea>(arrTareas);
-                dgvLista.DataSource = tareas;
+                tareas = new BindingList<TareaWS.tarea>(arrTareas.ToList());
             }
             else
             {
-                dgvLista.DataSource = null;
+                tareas = new BindingList<TareaWS.tarea>();
             }
 
-            if (dgvLista.DataSource == null)
-            {
-                btnEditar.Enabled = false;
-            }
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = tareas;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -43,35 +42,58 @@ namespace TableSoft
             Movimiento.MoverVentana(Handle, e.Button);
         }
 
-        private void dgvLista_DataSourceChanged(object sender, EventArgs e)
-        {
-            if (dgvLista.DataSource == null)
-            {
-                btnEditar.Enabled = false;
-            }
-            else if (!btnEditar.Enabled)
-            {
-                btnEditar.Enabled = true;
-            }
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btnNuevo_Click(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
-            frmGestionarTareasTicket frm = new frmGestionarTareasTicket();
-            frm.ShowDialog();
+            foreach (TareaWS.tarea t in tareas)
+            {
+                if (t.tareaId != 0)
+                {
+                    tareaDAO.insertarTarea(t, ticket);
+                }
+                else
+                {
+                    tareaDAO.actualizarTarea(t, agente);
+                }
+            }
+
+            var arrTareas = tareaDAO.listarTareasPorTicket(ticket);
+
+            if (arrTareas != null)
+            {
+                tareas = new BindingList<TareaWS.tarea>(arrTareas.ToList());
+            }
+            else
+            {
+                tareas = new BindingList<TareaWS.tarea>();
+            }
+
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = tareas;
+
         }
 
-        private void btnSeleccionar_Click(object sender, EventArgs e)
+        private void picAdd_Click(object sender, EventArgs e)
         {
-            TareaWS.tarea tarea = (TareaWS.tarea)dgvLista.CurrentRow.DataBoundItem;
-            frmGestionarTareasTicket frm = new frmGestionarTareasTicket(tarea);
-            frm.ShowDialog();
-        }
+            if (txtDescripcion.Text != "")
+            {
+                TareaWS.tarea tareaNueva = new TareaWS.tarea();
 
+                tareaNueva.descripcion = txtDescripcion.Text;
+                tareaNueva.completado = false;
+                tareaNueva.tareaId = 0;
+                tareaNueva.agente = new TareaWS.agente();
+                tareaNueva.agente.agenteId = 6;
+
+                tareas.Add(tareaNueva);
+                dgvLista.Refresh();
+                txtDescripcion.Text = "";
+            }
+            
+        }
     }
 }

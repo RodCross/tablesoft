@@ -140,7 +140,7 @@ namespace TableSoft
                 int rpta = personaDAO.verificarCorreo(txtEmail.Text);
                 if (rpta == -1)
                 {
-                    lblErrEmail.Text = "El email es incorrecto";
+                    lblErrEmail.Text = "Has ingresado un email incorrecto.";
                 }
                 else
                 {
@@ -175,6 +175,8 @@ namespace TableSoft
                     else
                     {
                         lblErrPassword.Text = "La contraseña es incorrecta";
+                        txtPassword.SelectAll();
+                        txtPassword.Focus();
                     }
                 }
             }
@@ -220,6 +222,23 @@ namespace TableSoft
         private void lklFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmAyuda frm = new frmAyuda
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void lklForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmRecuperarPassword frm = new frmRecuperarPassword
             {
                 StartPosition = FormStartPosition.Manual,
                 Location = this.Location

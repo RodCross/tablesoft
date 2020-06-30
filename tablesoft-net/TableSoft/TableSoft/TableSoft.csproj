@@ -39,11 +39,39 @@
     <ApplicationIcon>tslogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.5.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.5\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.46.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.46.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.46.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.46.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.46.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.46.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.46.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.46.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Gmail.v1, Version=1.46.0.1992, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Gmail.v1.1.46.0.1992\lib\net45\Google.Apis.Gmail.v1.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.46.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.46.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="MimeKit, Version=2.8.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
+      <HintPath>..\packages\MimeKit.2.8.0\lib\net48\MimeKit.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -260,6 +288,12 @@
     <Compile Include="frmInfoTicketEmpleado.Designer.cs">
       <DependentUpon>frmInfoTicketEmpleado.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCrearNuevaPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCrearNuevaPassword.Designer.cs">
+      <DependentUpon>frmCrearNuevaPassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInicioAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -313,6 +347,18 @@
     </Compile>
     <Compile Include="frmReasignarCategoriaTicketAgente.Designer.cs">
       <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarEnvioExitoso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarEnvioExitoso.Designer.cs">
+      <DependentUpon>frmRecuperarEnvioExitoso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmRecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRecuperarPassword.Designer.cs">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="frmSeleccionarActivoFijo.cs">
       <SubType>Form</SubType>
@@ -394,6 +440,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Include="YanapayEmail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -459,6 +506,9 @@
     <EmbeddedResource Include="frmInfoTicketEmpleado.resx">
       <DependentUpon>frmInfoTicketEmpleado.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCrearNuevaPassword.resx">
+      <DependentUpon>frmCrearNuevaPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmInicioAdmin.resx">
       <DependentUpon>frmInicioAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -485,6 +535,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmReasignarCategoriaTicketAgente.resx">
       <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarEnvioExitoso.resx">
+      <DependentUpon>frmRecuperarEnvioExitoso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRecuperarPassword.resx">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeleccionarActivoFijo.resx">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
@@ -994,6 +1050,7 @@
     <None Include="images\Eye.png" />
     <None Include="images\EyeMouseDown.png" />
     <None Include="images\EyeMouseEnter.png" />
+    <None Include="packages.config" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\minus.png" />
     <Content Include="tslogo.ico" />

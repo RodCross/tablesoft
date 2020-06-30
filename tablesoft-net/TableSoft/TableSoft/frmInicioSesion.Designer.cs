@@ -165,6 +165,8 @@
             this.lklForgot.TabIndex = 3;
             this.lklForgot.TabStop = true;
             this.lklForgot.Text = "¿Olvidaste tu contraseña?";
+            this.lklForgot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lklForgot.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklForgot_LinkClicked);
             // 
             // txtPassword
             // 
@@ -254,6 +256,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInicioSesion";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yanapay | Iniciar sesión";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();

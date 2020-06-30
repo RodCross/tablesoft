@@ -1,0 +1,88 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TableSoft
+{
+    public partial class frmRecuperarPassword : Form
+    {
+        private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
+
+        public frmRecuperarPassword()
+        {
+            InitializeComponent();
+            LimpiarCampos();
+        }
+
+        private void LimpiarCampos()
+        {
+            txtEmail.Text = "";
+            lblErrEmail.Text = "";
+            txtEmail.Select();
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnEnviarEmail_Click(object sender, EventArgs e)
+        {
+            // Validar email no vacio
+            if (txtEmail.Text == "")
+            {
+                lblErrEmail.Text = "Ingresa tu email.";
+            }
+            else
+            {
+                if (lblErrEmail.Text != "")
+                {
+                    lblErrEmail.Text = "";
+                }
+
+                int rpta = personaDAO.verificarCorreo(txtEmail.Text);
+
+                if (rpta == -1)
+                {
+                    lblErrEmail.Text = "Has ingresado un email incorrecto.";
+                }
+
+                else
+                {
+                    // Conectar con Gmail API
+
+
+
+                    frmRecuperarEnvioExitoso frm = new frmRecuperarEnvioExitoso
+                    {
+                        StartPosition = FormStartPosition.Manual,
+                        Location = this.Location
+                    };
+
+                    this.Hide();
+                    if (frm.ShowDialog() == DialogResult.Retry)
+                    {
+                        LimpiarCampos();
+                        this.Show();
+                    }
+                    else
+                    {
+                        LimpiarCampos();
+                        this.Close();
+                    }
+                }
+            }
+        }
+    }
+}

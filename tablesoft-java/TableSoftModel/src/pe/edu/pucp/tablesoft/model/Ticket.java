@@ -29,13 +29,15 @@ public class Ticket {
 
     private ArrayList<Tarea> listaTareas;
     private ArrayList<CambioEstadoTicket> historialEstado;
-    private ArrayList<TransferenciaTicket> historialTransferencia;
+    private ArrayList<TransferenciaInterna> historialTransfInterna;
+    private ArrayList<TransferenciaExterna> historialTransfExterna;
     private ArrayList<Comentario> comentarios;
     
     public Ticket() {
         listaTareas = new ArrayList<>();
         historialEstado = new ArrayList<>();
-        historialTransferencia = new ArrayList();
+        historialTransfInterna = new ArrayList();
+        historialTransfExterna = new ArrayList();
         comentarios = new ArrayList();
         
         estado = new EstadoTicket();
@@ -60,11 +62,28 @@ public class Ticket {
         
         listaTareas = new ArrayList<>();
         historialEstado = new ArrayList<>();
-        historialTransferencia = new ArrayList();
+        historialTransfInterna = new ArrayList();
+        historialTransfExterna = new ArrayList();
         comentarios = new ArrayList();
         
         this.proveedor = new Proveedor();
         this.activoFijo = new ActivoFijo();
+    }
+
+    public ArrayList<TransferenciaInterna> getHistorialTransfInterna() {
+        return historialTransfInterna;
+    }
+
+    public void setHistorialTransfInterna(ArrayList<TransferenciaInterna> historialTransfInterna) {
+        this.historialTransfInterna = historialTransfInterna;
+    }
+
+    public ArrayList<TransferenciaExterna> getHistorialTransfExterna() {
+        return historialTransfExterna;
+    }
+
+    public void setHistorialTransfExterna(ArrayList<TransferenciaExterna> historialTransfExterna) {
+        this.historialTransfExterna = historialTransfExterna;
     }
 
     public Boolean getRetrasado() {
@@ -90,14 +109,6 @@ public class Ticket {
 
     public void setComentarios(ArrayList<Comentario> comentarios) {
         this.comentarios = comentarios;
-    }
-
-    public ArrayList<TransferenciaTicket> getHistorialTransferencia() {
-        return historialTransferencia;
-    }
-
-    public void setHistorialTransferencia(ArrayList<TransferenciaTicket> historialTransferencia) {
-        this.historialTransferencia = historialTransferencia;
     }
 
     public EstadoTicket getEstado() {
@@ -243,7 +254,7 @@ public class Ticket {
         this.setProveedor(proveedor);
         TransferenciaExterna escalado = new TransferenciaExterna(proveedor, getAgente());
         escalado.setComentario(comentario);
-        this.historialTransferencia.add(escalado);
+        this.historialTransfExterna.add(escalado);
     }
     
     public void agregarTarea(Tarea tarea){
@@ -254,7 +265,7 @@ public class Ticket {
         this.setCategoria(categoria);
         TransferenciaInterna cambioCategoria = new TransferenciaInterna(categoria, getAgente());
         cambioCategoria.setComentario(comentario);
-        this.historialTransferencia.add(cambioCategoria);
+        this.historialTransfInterna.add(cambioCategoria);
     }
     
     public void mandarComentario(String comentario, Persona autor){

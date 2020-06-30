@@ -24,7 +24,6 @@ import pe.edu.pucp.tablesoft.model.EstadoTicket;
 import pe.edu.pucp.tablesoft.model.Ticket;
 import pe.edu.pucp.tablesoft.model.TransferenciaExterna;
 import pe.edu.pucp.tablesoft.model.TransferenciaInterna;
-import pe.edu.pucp.tablesoft.model.TransferenciaTicket;
 
 
 public class TicketMySQL implements TicketDAO{
@@ -100,35 +99,33 @@ public class TicketMySQL implements TicketDAO{
                 DBManager.user,
                 DBManager.password
             );
-            
-            if(ticket.getHistorialTransferencia() != null){
-                for (TransferenciaTicket transfer : ticket.getHistorialTransferencia()){
-                    if(transfer.getTransferenciaId() == 0){
-                        transfer.setFecha(LocalDateTime.now());
-                        if(transfer instanceof TransferenciaExterna){
-                            CallableStatement cs1 = con.prepareCall("{CALL insertar_transferencia_externa(?,?,?,?,?)}");
-                            cs1.registerOutParameter("_ID", java.sql.Types.INTEGER);
-                            cs1.setInt("_TICKET_ID", ticket.getTicketId());
-                            cs1.setInt("_AGENTE_ID", transfer.getAgenteResponsable().getAgenteId());
-                            cs1.setString("_COMENTARIO", transfer.getComentario());
-                            cs1.setInt("_PROVEEDOR_ID", ((TransferenciaExterna)transfer).getProveedorTo().getProveedorId());
-                            cs1.execute();
-                            transfer.setTransferenciaId(cs1.getInt("_ID"));
-                        }
-                        if(transfer instanceof TransferenciaInterna){
-                            CallableStatement cs2 = con.prepareCall("{CALL insertar_transferencia_interna(?,?,?,?,?)}");
-                            cs2.registerOutParameter("_ID", java.sql.Types.INTEGER);
-                            cs2.setInt("_TICKET_ID", ticket.getTicketId());
-                            cs2.setInt("_AGENTE_ID", transfer.getAgenteResponsable().getAgenteId());
-                            cs2.setString("_COMENTARIO", transfer.getComentario());
-                            cs2.setInt("_PROVEEDOR_ID", ((TransferenciaInterna)transfer).getCategoriaTo().getCategoriaId());
-                            cs2.execute();
-                            transfer.setTransferenciaId(cs2.getInt("_ID"));
-                        }
-                    }
+            for(TransferenciaExterna transfer : ticket.getHistorialTransfExterna()){
+                if(transfer.getTransferenciaId() == 0){
+                    CallableStatement cs1 = con.prepareCall("{CALL insertar_transferencia_externa(?,?,?,?,?)}");
+                    cs1.registerOutParameter("_ID", java.sql.Types.INTEGER);
+                    cs1.setInt("_TICKET_ID", ticket.getTicketId());
+                    cs1.setInt("_AGENTE_ID", transfer.getAgenteResponsable().getAgenteId());
+                    cs1.setString("_COMENTARIO", transfer.getComentario());
+                    cs1.setInt("_PROVEEDOR_ID", transfer.getProveedorTo().getProveedorId());
+                    cs1.execute();
+                    transfer.setTransferenciaId(cs1.getInt("_ID"));
+                    transfer.setFecha(LocalDateTime.now());
                 }
             }
-            
+            for(TransferenciaInterna transfer : ticket.getHistorialTransfInterna()){
+                if(transfer.getTransferenciaId() == 0){
+                    CallableStatement cs2 = con.prepareCall("{CALL insertar_transferencia_interna(?,?,?,?,?)}");
+                    cs2.registerOutParameter("_ID", java.sql.Types.INTEGER);
+                    cs2.setInt("_TICKET_ID", ticket.getTicketId());
+                    cs2.setInt("_AGENTE_ID", transfer.getAgenteResponsable().getAgenteId());
+                    cs2.setString("_COMENTARIO", transfer.getComentario());
+                    cs2.setInt("_PROVEEDOR_ID", ((TransferenciaInterna)transfer).getCategoriaTo().getCategoriaId());
+                    cs2.execute();
+                    transfer.setTransferenciaId(cs2.getInt("_ID"));
+                    transfer.setFecha(LocalDateTime.now());
+                }
+            }
+
             for (CambioEstadoTicket cambioEstado : ticket.getHistorialEstado()){
                 if(cambioEstado.getCambioEstadoTicketId() == 0){
                     CallableStatement cs3 = con.prepareCall("{CALL insertar_cambio_estado_ticket(?,?,?,?,?)}");
@@ -386,7 +383,8 @@ public class TicketMySQL implements TicketDAO{
                 }
                 
                 // Listar historial de transferencias
-                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                ArrayList<TransferenciaExterna> transferenciasExterna = new ArrayList<>();
+                ArrayList<TransferenciaInterna> transferenciasInterna = new ArrayList<>();
 
                 cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
                 cs.setInt("_ID", tick.getTicketId());
@@ -418,7 +416,7 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
                     transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
-                    transferencias.add(transferExt);
+                    transferenciasExterna.add(transferExt);
                 }
 
                 cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
@@ -443,9 +441,10 @@ public class TicketMySQL implements TicketDAO{
                     transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
                     transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
                     
-                    transferencias.add(transferInt);
+                    transferenciasInterna.add(transferInt);
                 }
-                tick.setHistorialTransferencia(transferencias);
+                tick.setHistorialTransfExterna(transferenciasExterna);
+                tick.setHistorialTransfInterna(transferenciasInterna);
 
                 // Listar historial de cambios de estado
                 ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
@@ -556,7 +555,9 @@ public class TicketMySQL implements TicketDAO{
 
                 tickets.add(ticket);
             }
+            rs.close();
 
+            
             for(Ticket tick : tickets){
                 cs = con.prepareCall("{CALL buscar_empleado(?)}");
                 cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
@@ -579,6 +580,7 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
                     tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
                 }
+                rs.close();
 
                 int agenteId = tick.getAgente().getAgenteId();
                 if(agenteId != 0){
@@ -650,7 +652,8 @@ public class TicketMySQL implements TicketDAO{
                 }
                 
                 // Listar historial de transferencias
-                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                ArrayList<TransferenciaExterna> transferenciasExterna = new ArrayList<>();
+                ArrayList<TransferenciaInterna> transferenciasInterna = new ArrayList<>();
 
                 cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
                 cs.setInt("_ID", tick.getTicketId());
@@ -682,7 +685,7 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
                     transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
-                    transferencias.add(transferExt);
+                    transferenciasExterna.add(transferExt);
                 }
 
                 cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
@@ -707,9 +710,10 @@ public class TicketMySQL implements TicketDAO{
                     transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
                     transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
                     
-                    transferencias.add(transferInt);
+                    transferenciasInterna.add(transferInt);
                 }
-                tick.setHistorialTransferencia(transferencias);
+                tick.setHistorialTransfExterna(transferenciasExterna);
+                tick.setHistorialTransfInterna(transferenciasInterna);
 
                 // Listar historial de cambios de estado
                 ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
@@ -820,7 +824,9 @@ public class TicketMySQL implements TicketDAO{
 
                 tickets.add(ticket);
             }
+            rs.close();
 
+            
             for(Ticket tick : tickets){
                 cs = con.prepareCall("{CALL buscar_empleado(?)}");
                 cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
@@ -843,6 +849,7 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
                     tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
                 }
+                rs.close();
 
                 int agenteId = tick.getAgente().getAgenteId();
                 if(agenteId != 0){
@@ -914,7 +921,8 @@ public class TicketMySQL implements TicketDAO{
                 }
                 
                 // Listar historial de transferencias
-                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                ArrayList<TransferenciaExterna> transferenciasExterna = new ArrayList<>();
+                ArrayList<TransferenciaInterna> transferenciasInterna = new ArrayList<>();
 
                 cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
                 cs.setInt("_ID", tick.getTicketId());
@@ -946,7 +954,7 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
                     transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
-                    transferencias.add(transferExt);
+                    transferenciasExterna.add(transferExt);
                 }
 
                 cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
@@ -971,9 +979,10 @@ public class TicketMySQL implements TicketDAO{
                     transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
                     transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
                     
-                    transferencias.add(transferInt);
+                    transferenciasInterna.add(transferInt);
                 }
-                tick.setHistorialTransferencia(transferencias);
+                tick.setHistorialTransfExterna(transferenciasExterna);
+                tick.setHistorialTransfInterna(transferenciasInterna);
 
                 // Listar historial de cambios de estado
                 ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
@@ -1084,7 +1093,9 @@ public class TicketMySQL implements TicketDAO{
 
                 tickets.add(ticket);
             }
+            rs.close();
 
+            
             for(Ticket tick : tickets){
                 cs = con.prepareCall("{CALL buscar_empleado(?)}");
                 cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
@@ -1107,6 +1118,7 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
                     tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
                 }
+                rs.close();
 
                 int agenteId = tick.getAgente().getAgenteId();
                 if(agenteId != 0){
@@ -1178,7 +1190,8 @@ public class TicketMySQL implements TicketDAO{
                 }
                 
                 // Listar historial de transferencias
-                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                ArrayList<TransferenciaExterna> transferenciasExterna = new ArrayList<>();
+                ArrayList<TransferenciaInterna> transferenciasInterna = new ArrayList<>();
 
                 cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
                 cs.setInt("_ID", tick.getTicketId());
@@ -1210,7 +1223,7 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
                     transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
-                    transferencias.add(transferExt);
+                    transferenciasExterna.add(transferExt);
                 }
 
                 cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
@@ -1235,9 +1248,10 @@ public class TicketMySQL implements TicketDAO{
                     transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
                     transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
                     
-                    transferencias.add(transferInt);
+                    transferenciasInterna.add(transferInt);
                 }
-                tick.setHistorialTransferencia(transferencias);
+                tick.setHistorialTransfExterna(transferenciasExterna);
+                tick.setHistorialTransfInterna(transferenciasInterna);
 
                 // Listar historial de cambios de estado
                 ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
@@ -1349,7 +1363,9 @@ public class TicketMySQL implements TicketDAO{
 
                 tickets.add(ticket);
             }
+            rs.close();
 
+            
             for(Ticket tick : tickets){
                 cs = con.prepareCall("{CALL buscar_empleado(?)}");
                 cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
@@ -1372,6 +1388,7 @@ public class TicketMySQL implements TicketDAO{
                     tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
                     tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
                 }
+                rs.close();
 
                 int agenteId = tick.getAgente().getAgenteId();
                 if(agenteId != 0){
@@ -1443,7 +1460,8 @@ public class TicketMySQL implements TicketDAO{
                 }
                 
                 // Listar historial de transferencias
-                ArrayList<TransferenciaTicket> transferencias = new ArrayList<>();
+                ArrayList<TransferenciaExterna> transferenciasExterna = new ArrayList<>();
+                ArrayList<TransferenciaInterna> transferenciasInterna = new ArrayList<>();
 
                 cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
                 cs.setInt("_ID", tick.getTicketId());
@@ -1475,7 +1493,7 @@ public class TicketMySQL implements TicketDAO{
                     transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
                     transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
                     
-                    transferencias.add(transferExt);
+                    transferenciasExterna.add(transferExt);
                 }
 
                 cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
@@ -1500,9 +1518,10 @@ public class TicketMySQL implements TicketDAO{
                     transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
                     transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
                     
-                    transferencias.add(transferInt);
+                    transferenciasInterna.add(transferInt);
                 }
-                tick.setHistorialTransferencia(transferencias);
+                tick.setHistorialTransfExterna(transferenciasExterna);
+                tick.setHistorialTransfInterna(transferenciasInterna);
 
                 // Listar historial de cambios de estado
                 ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();

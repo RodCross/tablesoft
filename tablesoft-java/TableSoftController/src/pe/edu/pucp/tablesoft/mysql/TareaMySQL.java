@@ -139,4 +139,85 @@ public class TareaMySQL implements TareaDAO {
         return tareas;
     }
 
+    @Override
+    public int actualizarInsertarArreglo(ArrayList<Tarea> tareas, Ticket ticket) {
+        int rpta = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            for(Tarea tarea : tareas){
+                if(tarea.getTareaId() != 0){
+                    CallableStatement cs = con.prepareCall(
+                        "{CALL actualizar_tarea(?,?,?,?)}");
+
+                    cs.setInt("_ID", tarea.getTareaId());
+                    cs.setInt("_AGENTE_ID", tarea.getAgente().getAgenteId());
+                    cs.setString("_DESCRIPCION", tarea.getDescripcion());
+                    cs.setBoolean("_COMPLETADO", tarea.getCompletado());
+
+                    cs.execute();
+                    rpta++;
+                }
+                else{
+                    tarea.setFechaCreacion(LocalDateTime.now());
+            
+                    CallableStatement cs = con.prepareCall(
+                            "{CALL insertar_tarea(?,?,?,?,?)}");
+
+                    cs.registerOutParameter("_ID", java.sql.Types.INTEGER);
+                    cs.setInt("_TICKET_ID", ticket.getTicketId());            
+                    cs.setString("_DESCRIPCION", tarea.getDescripcion());
+                    cs.setInt("_AGENTE_ID",tarea.getAgente().getAgenteId());
+                    cs.setBoolean("_COMPLETADO", tarea.getCompletado());
+
+                    cs.execute();
+                    tarea.setTareaId(cs.getInt("_ID"));
+                    if(tarea.getTareaId() != 0) rpta++;
+                }
+            }
+                
+            con.close();
+            
+        } catch(SQLException ex){
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        } catch(ClassNotFoundException ex2){
+            System.out.println(ex2.getMessage());
+            rpta = -2;
+        }
+        
+        return rpta;
+    }
+
+    @Override
+    public int eliminarArreglo(ArrayList<Tarea> tareas) {
+        int rpta = 0;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            for(Tarea tarea : tareas){
+                CallableStatement cs = con.prepareCall(
+                    "{CALL eliminar_tarea(?)}");
+            
+                cs.setInt("_ID", tarea.getTareaId());
+
+                cs.execute();
+                rpta ++;
+            }
+                
+            con.close();
+            
+        } catch(SQLException ex){
+            System.out.println(ex.getMessage());
+            rpta = -1;
+        } catch(ClassNotFoundException ex2){
+            System.out.println(ex2.getMessage());
+            rpta = -2;
+        }
+        
+        return rpta;
+    }
+
 }

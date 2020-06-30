@@ -49,12 +49,33 @@ public class TareaWS {
         }
         return i;
     }
+    @WebMethod(operationName = "actualizarInsertarTareas")
+    public int actualizarInsertarTareas(@WebParam(name = "objArrTarea") ArrayList<Tarea>tareas, @WebParam(name = "objTicket")  Ticket ticket) {
+        int i = 0;
+        try{
+            i = daoTarea.actualizarInsertarArreglo(tareas, ticket);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return i;
+    }
     
     @WebMethod(operationName = "eliminarTarea")
     public int eliminarTarea(@WebParam(name = "objTarea") Tarea tarea) {
         int i = 0;
         try{
             i = daoTarea.eliminar(tarea);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return i;
+    }
+    
+    @WebMethod(operationName = "eliminarTareas")
+    public int eliminarTareas(@WebParam(name = "objTarea") ArrayList<Tarea> tareas) {
+        int i = 0;
+        try{
+            i = daoTarea.eliminarArreglo(tareas);
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }

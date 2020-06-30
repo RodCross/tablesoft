@@ -500,24 +500,26 @@ public class Principal {
 //        lista.get(2).setAgente(agenteP);        
 //        ticketDao.actualizar(lista.get(2));
 //        System.out.println(lista.get(2).mostrarDatos());
-
-        Ticket tick = new Ticket();
-        tick.setTicketId(2);
-        
-        Agente ag = new Agente();
-        ag.setAgenteId(6);
-        
-        Tarea tar = new Tarea();
-        tar.setAgente(ag);
-        tar.setDescripcion("Tarea desde Java");
-        tar.setCompletado(false);
-        
-        tareaDao.insertar(tar, tick);
-        
-        ArrayList<Tarea> lista = tareaDao.listarxTicket(tick);
-        for(Tarea t: lista){
-            System.out.println(t.getTareaId() + " - " + t.getDescripcion());
-        }
+//
+//        Ticket tick = new Ticket();
+//        tick.setTicketId(1);
+//        
+//        Agente ag = new Agente();
+//        ag.setAgenteId(6);
+//        
+//        Tarea tar = new Tarea();
+//        tar.setAgente(ag);
+//        tar.setDescripcion("Tarea desde Java");
+//        tar.setCompletado(false);
+//        
+//        tareaDao.insertar(tar, tick);
+//        
+//        ArrayList<Tarea> lista = tareaDao.listarxTicket(tick);
+//        for(Tarea t: lista){
+//            System.out.println(t.getTareaId() + " - " + t.getDescripcion());
+//        }
+//        int i = tareaDao.eliminarArreglo(lista);
+//        System.out.println(i);
         
     }
 }

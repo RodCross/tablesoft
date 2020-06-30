@@ -117,15 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="lblMsgAgente.Text" xml:space="preserve">
-    <value>Saludos, Stefano:
-Para poder determinar la raíz del problema, necesitamos un poco más de información de su parte. ¿Podría intentar volver a realizar las impresiones, para luego revisar si hay mensajes en los displays de las dos impresoras?  Si esto fuera así, le agradecería que nos brinde el contenido de dichos mensajes. Esto ayudará a identificar con más facilidad la causa y también a determinar si es necesario enviar un técnico al área de las impresoras. También sería bueno que adjunte una foto del documento impreso a medias. Espero su respuesta.</value>
-  </data>
-  <data name="lblMsgUsuario.Text" xml:space="preserve">
-    <value>Saludos,
-Escribo para comunicar un problema que yo y mis colegas hemos notado hace unos minutos. Al intentar imprimir documentos, ninguna de las dos impresoras funciona correctamente. Una de ellas mueve el papel de la bandeja, pero solo imprime un par de líneas y luego deja la hoja en blanco, mientras que la otra directamente no comienza la impresion. Espero su respuesta. Gracias de antemano.
-</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

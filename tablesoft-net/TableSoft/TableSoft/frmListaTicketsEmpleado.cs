@@ -54,6 +54,8 @@ namespace TableSoft
             TicketWS.ticket tic = (TicketWS.ticket)dgvHistorial.CurrentRow.DataBoundItem;
             frmInfoTicketEmpleado frm = new frmInfoTicketEmpleado(tic);
 
+            frm.StartPosition = FormStartPosition.Manual;
+            frm.Location = this.Location;
             frm.FormClosing += delegate
             {
                 this.Show();
@@ -67,6 +69,5 @@ namespace TableSoft
         {
             Movimiento.MoverVentana(Handle, e.Button);
         }
-
     }
 }

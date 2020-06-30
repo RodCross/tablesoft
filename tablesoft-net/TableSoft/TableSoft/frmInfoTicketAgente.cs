@@ -23,12 +23,12 @@ namespace TableSoft
             MostrarDefaultRespuesta();
             lblAsunto.Text = tick.asunto;
             lblId.Text = "# " + tick.ticketId.ToString();
-            lblCreacion.Text = tick.fechaEnvio.ToString();
-            lblFecCieEst.Text = tick.fechaCierreMaximo.ToString();
+            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - ");
+            lblFecCieEst.Text = tick.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
             lblEstado.Text = tick.estado.nombre;
-            lblBiblioteca.Text = tick.biblioteca.nombre;
-            lblCategoria.Text = tick.categoria.nombre;
-            lblUrgencia.Text = tick.urgencia.nombre;
+            lblBib.Text = tick.biblioteca.nombre;
+            lblCat.Text = tick.categoria.nombre;
+            lblUrg.Text = tick.urgencia.nombre;
             if (tick.activoFijo.activoFijoId > 0)
             {
                 lblActFij.Text = tick.activoFijo.codigo;

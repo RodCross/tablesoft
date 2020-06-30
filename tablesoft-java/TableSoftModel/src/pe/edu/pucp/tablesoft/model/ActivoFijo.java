@@ -7,7 +7,7 @@ public class ActivoFijo {
     private String codigo;
     private String marca;
     private String tipo;
-    private Boolean activo;
+    private boolean activo;
     
     public ActivoFijo(){
     }
@@ -63,11 +63,11 @@ public class ActivoFijo {
         this.codigo = codigo;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
     

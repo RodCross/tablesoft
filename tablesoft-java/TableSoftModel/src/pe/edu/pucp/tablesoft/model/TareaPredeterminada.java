@@ -7,7 +7,7 @@ public class TareaPredeterminada {
     private int tareaPredeterminadaId;
     private LocalDateTime fechaCreacion;
     private String descripcion;
-    private Boolean activo;
+    private boolean activo;
 
     public TareaPredeterminada() {
     }
@@ -40,11 +40,11 @@ public class TareaPredeterminada {
         this.descripcion = descripcion;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
     

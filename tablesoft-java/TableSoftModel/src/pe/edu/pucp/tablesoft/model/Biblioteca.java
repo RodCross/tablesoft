@@ -7,7 +7,7 @@ public class Biblioteca {
     private int bibliotecaId;
     private String nombre;
     private String abreviatura;
-    private Boolean activo;
+    private boolean activo;
 
     public Biblioteca() {
     }
@@ -46,11 +46,11 @@ public class Biblioteca {
         this.abreviatura = abreviatura;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
     

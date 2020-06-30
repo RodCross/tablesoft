@@ -9,7 +9,7 @@ public class Ticket {
     private String asunto;
     private String descripcion;
     private EstadoTicket estado;
-    private Boolean retrasado;
+    private boolean retrasado;
     
     private LocalDateTime fechaEnvio;
     private LocalDateTime fechaCierreMaximo;
@@ -86,11 +86,11 @@ public class Ticket {
         this.historialTransfExterna = historialTransfExterna;
     }
 
-    public Boolean getRetrasado() {
+    public boolean getRetrasado() {
         return retrasado;
     }
 
-    public void setRetrasado(Boolean retrasado) {
+    public void setRetrasado(boolean retrasado) {
         this.retrasado = retrasado;
     }
     

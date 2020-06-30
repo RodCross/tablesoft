@@ -8,7 +8,7 @@ public class Proveedor {
     private String telefono;
     private String email;
     private Ciudad ciudad;
-    private Boolean activo;
+    private boolean activo;
 
     public Proveedor() {   
         this.ciudad = new Ciudad();
@@ -36,11 +36,11 @@ public class Proveedor {
     }
     
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
 

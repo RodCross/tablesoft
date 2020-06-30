@@ -5,7 +5,7 @@ public class Urgencia {
     private int urgenciaId;
     private String nombre;
     private int plazoMaximo;
-    private Boolean activo;
+    private boolean activo;
 
     public Urgencia() {
         
@@ -44,11 +44,11 @@ public class Urgencia {
         this.plazoMaximo = plazoMaximo;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
     

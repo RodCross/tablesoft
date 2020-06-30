@@ -10,7 +10,7 @@ public class Persona {
     private String telefono;
     private String password;
     private String personaEmail;
-    private Boolean activo;
+    private boolean activo;
     private char tipo;
 
     public Persona() {
@@ -74,11 +74,11 @@ public class Persona {
         this.password = password;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
 

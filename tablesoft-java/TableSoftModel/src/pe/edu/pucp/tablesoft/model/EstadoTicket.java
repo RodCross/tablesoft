@@ -5,7 +5,7 @@ public class EstadoTicket {
     private int estadoId;
     private String nombre;
     private String descripcion;
-    private Boolean activo;
+    private boolean activo;
     
     public EstadoTicket(){
         
@@ -45,11 +45,11 @@ public class EstadoTicket {
         this.descripcion = descripcion;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
     public String mostrarDatos(){

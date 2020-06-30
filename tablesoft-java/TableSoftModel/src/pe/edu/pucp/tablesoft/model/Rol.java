@@ -7,7 +7,7 @@ public class Rol {
     private int rolId;
     private String nombre;
     private String descripcion;
-    private Boolean activo;
+    private boolean activo;
 
     public Rol(String nombre, String descripcion) {
         this.nombre = nombre;
@@ -41,11 +41,11 @@ public class Rol {
         this.descripcion = descripcion;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
     

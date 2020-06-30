@@ -8,7 +8,7 @@ public class Equipo {
     private String nombre;
     private String descripcion;
     private LocalDateTime fechaCreacion;
-    private Boolean activo;
+    private boolean activo;
     
     private ArrayList<Agente> listaAgentes;
     private ArrayList<Categoria> listaCategorias;
@@ -58,11 +58,11 @@ public class Equipo {
         this.fechaCreacion = fechaCreacion;
     }
 
-    public Boolean getActivo() {
+    public boolean getActivo() {
         return activo;
     }
 
-    public void setActivo(Boolean activo) {
+    public void setActivo(boolean activo) {
         this.activo = activo;
     }
     

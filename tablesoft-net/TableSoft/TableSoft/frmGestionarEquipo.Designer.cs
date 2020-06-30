@@ -48,7 +48,7 @@
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblCatAsoc = new System.Windows.Forms.Label();
             this.dgvListaCategorias = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -193,16 +193,16 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // label1
+            // lblCatAsoc
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(21, 240);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 25);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "Categorías asociadas";
+            this.lblCatAsoc.AutoSize = true;
+            this.lblCatAsoc.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCatAsoc.ForeColor = System.Drawing.Color.Black;
+            this.lblCatAsoc.Location = new System.Drawing.Point(21, 240);
+            this.lblCatAsoc.Name = "lblCatAsoc";
+            this.lblCatAsoc.Size = new System.Drawing.Size(195, 25);
+            this.lblCatAsoc.TabIndex = 10;
+            this.lblCatAsoc.Text = "Categorías asociadas";
             // 
             // dgvListaCategorias
             // 
@@ -386,7 +386,7 @@
             this.Controls.Add(this.picMinus);
             this.Controls.Add(this.picAdd);
             this.Controls.Add(this.dgvListaCategorias);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblCatAsoc);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.lblIDEquipo);
@@ -424,7 +424,7 @@
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblCatAsoc;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.PictureBox picAdd;

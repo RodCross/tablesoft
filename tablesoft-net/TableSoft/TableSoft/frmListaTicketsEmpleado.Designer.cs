@@ -33,9 +33,15 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaTicketsEmpleado));
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblHistorial = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Agente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,9 +50,6 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Urgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblHistorial = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -93,88 +96,6 @@
             this.dgvHistorial.TabIndex = 0;
             this.dgvHistorial.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHistorial_CellFormatting);
             // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ticketId";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
-            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Width = 125;
-            // 
-            // Asunto
-            // 
-            this.Asunto.DataPropertyName = "asunto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
-            this.Asunto.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Asunto.HeaderText = "Asunto";
-            this.Asunto.MinimumWidth = 6;
-            this.Asunto.Name = "Asunto";
-            this.Asunto.ReadOnly = true;
-            this.Asunto.Width = 350;
-            // 
-            // Agente
-            // 
-            this.Agente.HeaderText = "Agente";
-            this.Agente.MinimumWidth = 6;
-            this.Agente.Name = "Agente";
-            this.Agente.ReadOnly = true;
-            this.Agente.Width = 125;
-            // 
-            // FechaEnvio
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
-            this.FechaEnvio.DefaultCellStyle = dataGridViewCellStyle3;
-            this.FechaEnvio.HeaderText = "Fecha de envío";
-            this.FechaEnvio.MinimumWidth = 6;
-            this.FechaEnvio.Name = "FechaEnvio";
-            this.FechaEnvio.ReadOnly = true;
-            this.FechaEnvio.Width = 175;
-            // 
-            // FechaCierre
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
-            this.FechaCierre.DefaultCellStyle = dataGridViewCellStyle4;
-            this.FechaCierre.HeaderText = "Fecha de cierre";
-            this.FechaCierre.MinimumWidth = 6;
-            this.FechaCierre.Name = "FechaCierre";
-            this.FechaCierre.ReadOnly = true;
-            this.FechaCierre.Width = 175;
-            // 
-            // Categoria
-            // 
-            this.Categoria.HeaderText = "Categoria";
-            this.Categoria.MinimumWidth = 6;
-            this.Categoria.Name = "Categoria";
-            this.Categoria.ReadOnly = true;
-            this.Categoria.Width = 125;
-            // 
-            // Urgencia
-            // 
-            this.Urgencia.HeaderText = "Urgencia";
-            this.Urgencia.MinimumWidth = 6;
-            this.Urgencia.Name = "Urgencia";
-            this.Urgencia.ReadOnly = true;
-            this.Urgencia.Width = 125;
-            // 
-            // Estado
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
-            this.Estado.DefaultCellStyle = dataGridViewCellStyle5;
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
-            this.Estado.Width = 190;
-            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
@@ -212,6 +133,97 @@
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ticketId";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
+            this.ID.DefaultCellStyle = dataGridViewCellStyle1;
+            this.ID.FillWeight = 50F;
+            this.ID.HeaderText = "ID";
+            this.ID.MinimumWidth = 6;
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Width = 125;
+            // 
+            // Asunto
+            // 
+            this.Asunto.DataPropertyName = "asunto";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
+            this.Asunto.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Asunto.HeaderText = "Asunto";
+            this.Asunto.MinimumWidth = 6;
+            this.Asunto.Name = "Asunto";
+            this.Asunto.ReadOnly = true;
+            this.Asunto.Width = 350;
+            // 
+            // Agente
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Agente.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Agente.HeaderText = "Agente";
+            this.Agente.MinimumWidth = 6;
+            this.Agente.Name = "Agente";
+            this.Agente.ReadOnly = true;
+            this.Agente.Width = 200;
+            // 
+            // FechaEnvio
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
+            this.FechaEnvio.DefaultCellStyle = dataGridViewCellStyle4;
+            this.FechaEnvio.HeaderText = "Fecha de envío";
+            this.FechaEnvio.MinimumWidth = 6;
+            this.FechaEnvio.Name = "FechaEnvio";
+            this.FechaEnvio.ReadOnly = true;
+            this.FechaEnvio.Width = 175;
+            // 
+            // FechaCierre
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
+            this.FechaCierre.DefaultCellStyle = dataGridViewCellStyle5;
+            this.FechaCierre.HeaderText = "Fecha de cierre";
+            this.FechaCierre.MinimumWidth = 6;
+            this.FechaCierre.Name = "FechaCierre";
+            this.FechaCierre.ReadOnly = true;
+            this.FechaCierre.Width = 175;
+            // 
+            // Categoria
+            // 
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Categoria.DefaultCellStyle = dataGridViewCellStyle6;
+            this.Categoria.HeaderText = "Categoria";
+            this.Categoria.MinimumWidth = 6;
+            this.Categoria.Name = "Categoria";
+            this.Categoria.ReadOnly = true;
+            this.Categoria.Width = 225;
+            // 
+            // Urgencia
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Urgencia.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Urgencia.HeaderText = "Urgencia";
+            this.Urgencia.MinimumWidth = 6;
+            this.Urgencia.Name = "Urgencia";
+            this.Urgencia.ReadOnly = true;
+            this.Urgencia.Width = 125;
+            // 
+            // Estado
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
+            this.Estado.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Estado.HeaderText = "Estado";
+            this.Estado.MinimumWidth = 6;
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 190;
             // 
             // frmListaTicketsEmpleado
             // 

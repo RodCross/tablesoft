@@ -39,7 +39,7 @@ namespace TableSoft
             dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
             //dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = data.fechaCierre;
             dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
-            dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = data.agente.nombre + " " + data.agente.apellidoPaterno + " " + data.agente.apellidoMaterno;
+            dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = data.agente.apellidoPaterno + " " + data.agente.apellidoMaterno + ", " + data.agente.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Urgencia"].Value = data.urgencia.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Categoria"].Value = data.categoria.nombre;
         }

@@ -8,33 +8,45 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
     public partial class frmReasignarCategoriaTicketAgente : Form
     {
         private CategoriaWS.CategoriaWSClient categoriaDAO = new CategoriaWS.CategoriaWSClient();
-        private List<CategoriaWS.categoria> categorias;
+        private BindingList<CategoriaWS.categoria> categorias;
         private TicketWS.ticket ticket;
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
-        private AgenteWS.agente agente;
+        private TicketWS.agente agente;
         public frmReasignarCategoriaTicketAgente(TicketWS.ticket tck)
         {
             ticket = tck;
-            agente = frmInicioSesion.agenteLogueado;
+            agente.agenteId = frmInicioSesion.agenteLogueado.agenteId;
+            agente.codigo = frmInicioSesion.agenteLogueado.codigo;
+
             InitializeComponent();
-            categorias = new List<CategoriaWS.categoria>(categoriaDAO.listarCategorias().ToArray());
-            CategoriaWS.categoria catAux;
-            int n = categorias.Count;
-            for (int i = 0; i < n; i++)
+
+            var cats = categoriaDAO.listarCategorias();
+
+            if(cats == null)
             {
-                catAux = categorias[i];
-                if (catAux.categoriaId == ticket.categoria.categoriaId)
+                categorias = new BindingList<CategoriaWS.categoria>();
+            }
+            else
+            {
+                categorias = new BindingList<CategoriaWS.categoria>(cats.ToList());
+            }
+
+            foreach(var cat in categorias)
+            {
+                if(cat.categoriaId == ticket.categoria.categoriaId)
                 {
-                    categorias.Remove(catAux);
+                    categorias.Remove(cat);
                     break;
                 }
             }
+
             dgvCategoria.AutoGenerateColumns = false;
             dgvCategoria.DataSource = categorias;
         }
@@ -67,29 +79,45 @@ namespace TableSoft
             if (MessageBox.Show("¿Desea reasignar la categoria?", "Reasignar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvCategoria.CurrentRow.DataBoundItem;
+                TicketWS.categoria cateGo = new TicketWS.categoria();
+                cateGo.categoriaId = cat.categoriaId;
+                ticket.categoria = cateGo;
+
                 TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
                 estAsignado.estadoId = (int)Estado.Recategorizado;
-                TicketWS.categoria catego = new TicketWS.categoria();
-                catego.categoriaId = cat.categoriaId;
                 ticket.estado = estAsignado;
+                
 
-                // Registrar el cambio de estado
-                var historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();
-
-                var cambioEstado = new TicketWS.cambioEstadoTicket();
-                cambioEstado.comentario = rtfComentario.Text;
+                // Creamos el cambio de estado
                 var ag = new TicketWS.agente();
                 ag.agenteId = agente.agenteId;
+                var cambioEstado = new TicketWS.cambioEstadoTicket();
+                cambioEstado.comentario = rtfComentario.Text;
                 cambioEstado.agenteResponsable = ag;
                 cambioEstado.estadoTo = estAsignado;
 
+                // Registrar el cambio de estado
+
+                // Agregarlo al historial del ticket
+                BindingList<TicketWS.cambioEstadoTicket> historialEstados;
+
+                if(ticket.historialEstado == null)
+                {
+                    historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();      // Si no tiene se crea una lista
+                }                                                                           // Sino se crea una lista a partir de este
+                else
+                {
+                    historialEstados = new BindingList<TicketWS.cambioEstadoTicket>(ticket.historialEstado.ToList());
+                }
                 historialEstados.Add(cambioEstado);
 
-                //ticket.categoria.categoriaId = cat.categoriaId;
-                ticket.categoria = catego;
-                ticket.agente = null;
-                // Asignar la lista de cambios de estado
+                // Se vuelve de nuevo a Array para ser asignado al ticket
                 ticket.historialEstado = historialEstados.ToArray();
+
+                // Creamos la transferencia interna
+                
+                
+                // Se actualiza el ticket
                 if (ticketDAO.actualizarTicket(ticket) > -1)
                 {
                     MessageBox.Show(
@@ -117,16 +145,28 @@ namespace TableSoft
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            CategoriaWS.categoria[] nuevasCategorias = categoriaDAO.listarCategoriasPorNombre(txtBuscar.Text);
-            if (nuevasCategorias != null)
+            var cats = categoriaDAO.listarCategoriasPorNombre(txtBuscar.Text);
+
+            if (cats == null)
             {
-                categorias = new List<CategoriaWS.categoria>(nuevasCategorias);
-                dgvCategoria.DataSource = categorias;
+                categorias = new BindingList<CategoriaWS.categoria>();
             }
             else
             {
-                dgvCategoria.DataSource = null;
+                categorias = new BindingList<CategoriaWS.categoria>(cats.ToList());
             }
+
+            foreach (var cat in categorias)
+            {
+                if (cat.categoriaId == ticket.categoria.categoriaId)
+                {
+                    categorias.Remove(cat);
+                    break;
+                }
+            }
+
+            dgvCategoria.AutoGenerateColumns = false;
+            dgvCategoria.DataSource = categorias;
         }
     }
 }

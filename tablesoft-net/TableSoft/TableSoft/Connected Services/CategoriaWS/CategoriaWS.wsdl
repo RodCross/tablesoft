@@ -11,23 +11,17 @@
   <message name="listarCategoriasResponse">
     <part name="parameters" element="tns:listarCategoriasResponse" />
   </message>
-  <message name="insertarCategoria">
-    <part name="parameters" element="tns:insertarCategoria" />
-  </message>
-  <message name="insertarCategoriaResponse">
-    <part name="parameters" element="tns:insertarCategoriaResponse" />
-  </message>
   <message name="actualizarCategoria">
     <part name="parameters" element="tns:actualizarCategoria" />
   </message>
   <message name="actualizarCategoriaResponse">
     <part name="parameters" element="tns:actualizarCategoriaResponse" />
   </message>
-  <message name="listarCategoriasDisponibles">
-    <part name="parameters" element="tns:listarCategoriasDisponibles" />
+  <message name="insertarCategoria">
+    <part name="parameters" element="tns:insertarCategoria" />
   </message>
-  <message name="listarCategoriasDisponiblesResponse">
-    <part name="parameters" element="tns:listarCategoriasDisponiblesResponse" />
+  <message name="insertarCategoriaResponse">
+    <part name="parameters" element="tns:insertarCategoriaResponse" />
   </message>
   <message name="listarCategoriasPorEquipo">
     <part name="parameters" element="tns:listarCategoriasPorEquipo" />
@@ -35,11 +29,11 @@
   <message name="listarCategoriasPorEquipoResponse">
     <part name="parameters" element="tns:listarCategoriasPorEquipoResponse" />
   </message>
-  <message name="eliminarCategoria">
-    <part name="parameters" element="tns:eliminarCategoria" />
+  <message name="listarCategoriasDisponibles">
+    <part name="parameters" element="tns:listarCategoriasDisponibles" />
   </message>
-  <message name="eliminarCategoriaResponse">
-    <part name="parameters" element="tns:eliminarCategoriaResponse" />
+  <message name="listarCategoriasDisponiblesResponse">
+    <part name="parameters" element="tns:listarCategoriasDisponiblesResponse" />
   </message>
   <message name="listarCategoriasPorNombre">
     <part name="parameters" element="tns:listarCategoriasPorNombre" />
@@ -47,34 +41,40 @@
   <message name="listarCategoriasPorNombreResponse">
     <part name="parameters" element="tns:listarCategoriasPorNombreResponse" />
   </message>
+  <message name="eliminarCategoria">
+    <part name="parameters" element="tns:eliminarCategoria" />
+  </message>
+  <message name="eliminarCategoriaResponse">
+    <part name="parameters" element="tns:eliminarCategoriaResponse" />
+  </message>
   <portType name="CategoriaWS">
     <operation name="listarCategorias">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasRequest" message="tns:listarCategorias" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasResponse" message="tns:listarCategoriasResponse" />
     </operation>
-    <operation name="insertarCategoria">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaRequest" message="tns:insertarCategoria" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaResponse" message="tns:insertarCategoriaResponse" />
-    </operation>
     <operation name="actualizarCategoria">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/actualizarCategoriaRequest" message="tns:actualizarCategoria" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/actualizarCategoriaResponse" message="tns:actualizarCategoriaResponse" />
     </operation>
-    <operation name="listarCategoriasDisponibles">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesRequest" message="tns:listarCategoriasDisponibles" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesResponse" message="tns:listarCategoriasDisponiblesResponse" />
+    <operation name="insertarCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaRequest" message="tns:insertarCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaResponse" message="tns:insertarCategoriaResponse" />
     </operation>
     <operation name="listarCategoriasPorEquipo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorEquipoRequest" message="tns:listarCategoriasPorEquipo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorEquipoResponse" message="tns:listarCategoriasPorEquipoResponse" />
     </operation>
-    <operation name="eliminarCategoria">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaRequest" message="tns:eliminarCategoria" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaResponse" message="tns:eliminarCategoriaResponse" />
+    <operation name="listarCategoriasDisponibles">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesRequest" message="tns:listarCategoriasDisponibles" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesResponse" message="tns:listarCategoriasDisponiblesResponse" />
     </operation>
     <operation name="listarCategoriasPorNombre">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreRequest" message="tns:listarCategoriasPorNombre" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreResponse" message="tns:listarCategoriasPorNombreResponse" />
+    </operation>
+    <operation name="eliminarCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaRequest" message="tns:eliminarCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaResponse" message="tns:eliminarCategoriaResponse" />
     </operation>
   </portType>
   <binding name="CategoriaWSPortBinding" type="tns:CategoriaWS">
@@ -88,15 +88,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarCategoria">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="actualizarCategoria">
       <soap:operation soapAction="" />
       <input>
@@ -106,7 +97,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarCategoriasDisponibles">
+    <operation name="insertarCategoria">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -124,7 +115,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarCategoria">
+    <operation name="listarCategoriasDisponibles">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -134,6 +125,15 @@
       </output>
     </operation>
     <operation name="listarCategoriasPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarCategoria">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

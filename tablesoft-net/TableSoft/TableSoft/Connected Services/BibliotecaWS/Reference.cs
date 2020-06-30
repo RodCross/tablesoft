@@ -25,6 +25,15 @@ namespace TableSoft.BibliotecaWS {
         System.Threading.Tasks.Task<TableSoft.BibliotecaWS.actualizarBibliotecaResponse> actualizarBibliotecaAsync(TableSoft.BibliotecaWS.actualizarBibliotecaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.BibliotecaWS.eliminarBibliotecaResponse eliminarBiblioteca(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaResponse")]
+        System.Threading.Tasks.Task<TableSoft.BibliotecaWS.eliminarBibliotecaResponse> eliminarBibliotecaAsync(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/insertarBibliotecaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/insertarBibliotecaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -41,15 +50,6 @@ namespace TableSoft.BibliotecaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/listarBibliotecasRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/listarBibliotecasResponse")]
         System.Threading.Tasks.Task<TableSoft.BibliotecaWS.listarBibliotecasResponse> listarBibliotecasAsync(TableSoft.BibliotecaWS.listarBibliotecasRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.BibliotecaWS.eliminarBibliotecaResponse eliminarBiblioteca(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/BibliotecaWS/eliminarBibliotecaResponse")]
-        System.Threading.Tasks.Task<TableSoft.BibliotecaWS.eliminarBibliotecaResponse> eliminarBibliotecaAsync(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request);
     }
     
     /// <remarks/>
@@ -179,6 +179,42 @@ namespace TableSoft.BibliotecaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBiblioteca", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarBibliotecaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.BibliotecaWS.biblioteca objBiblioteca;
+        
+        public eliminarBibliotecaRequest() {
+        }
+        
+        public eliminarBibliotecaRequest(TableSoft.BibliotecaWS.biblioteca objBiblioteca) {
+            this.objBiblioteca = objBiblioteca;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBibliotecaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarBibliotecaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarBibliotecaResponse() {
+        }
+        
+        public eliminarBibliotecaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarBiblioteca", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarBibliotecaRequest {
         
@@ -240,42 +276,6 @@ namespace TableSoft.BibliotecaWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBiblioteca", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarBibliotecaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.BibliotecaWS.biblioteca objBiblioteca;
-        
-        public eliminarBibliotecaRequest() {
-        }
-        
-        public eliminarBibliotecaRequest(TableSoft.BibliotecaWS.biblioteca objBiblioteca) {
-            this.objBiblioteca = objBiblioteca;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarBibliotecaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarBibliotecaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarBibliotecaResponse() {
-        }
-        
-        public eliminarBibliotecaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface BibliotecaWSChannel : TableSoft.BibliotecaWS.BibliotecaWS, System.ServiceModel.IClientChannel {
     }
@@ -327,6 +327,29 @@ namespace TableSoft.BibliotecaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.BibliotecaWS.eliminarBibliotecaResponse TableSoft.BibliotecaWS.BibliotecaWS.eliminarBiblioteca(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request) {
+            return base.Channel.eliminarBiblioteca(request);
+        }
+        
+        public int eliminarBiblioteca(TableSoft.BibliotecaWS.biblioteca objBiblioteca) {
+            TableSoft.BibliotecaWS.eliminarBibliotecaRequest inValue = new TableSoft.BibliotecaWS.eliminarBibliotecaRequest();
+            inValue.objBiblioteca = objBiblioteca;
+            TableSoft.BibliotecaWS.eliminarBibliotecaResponse retVal = ((TableSoft.BibliotecaWS.BibliotecaWS)(this)).eliminarBiblioteca(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.BibliotecaWS.eliminarBibliotecaResponse> TableSoft.BibliotecaWS.BibliotecaWS.eliminarBibliotecaAsync(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request) {
+            return base.Channel.eliminarBibliotecaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.BibliotecaWS.eliminarBibliotecaResponse> eliminarBibliotecaAsync(TableSoft.BibliotecaWS.biblioteca objBiblioteca) {
+            TableSoft.BibliotecaWS.eliminarBibliotecaRequest inValue = new TableSoft.BibliotecaWS.eliminarBibliotecaRequest();
+            inValue.objBiblioteca = objBiblioteca;
+            return ((TableSoft.BibliotecaWS.BibliotecaWS)(this)).eliminarBibliotecaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.BibliotecaWS.insertarBibliotecaResponse TableSoft.BibliotecaWS.BibliotecaWS.insertarBiblioteca(TableSoft.BibliotecaWS.insertarBibliotecaRequest request) {
             return base.Channel.insertarBiblioteca(request);
         }
@@ -368,29 +391,6 @@ namespace TableSoft.BibliotecaWS {
         public System.Threading.Tasks.Task<TableSoft.BibliotecaWS.listarBibliotecasResponse> listarBibliotecasAsync() {
             TableSoft.BibliotecaWS.listarBibliotecasRequest inValue = new TableSoft.BibliotecaWS.listarBibliotecasRequest();
             return ((TableSoft.BibliotecaWS.BibliotecaWS)(this)).listarBibliotecasAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.BibliotecaWS.eliminarBibliotecaResponse TableSoft.BibliotecaWS.BibliotecaWS.eliminarBiblioteca(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request) {
-            return base.Channel.eliminarBiblioteca(request);
-        }
-        
-        public int eliminarBiblioteca(TableSoft.BibliotecaWS.biblioteca objBiblioteca) {
-            TableSoft.BibliotecaWS.eliminarBibliotecaRequest inValue = new TableSoft.BibliotecaWS.eliminarBibliotecaRequest();
-            inValue.objBiblioteca = objBiblioteca;
-            TableSoft.BibliotecaWS.eliminarBibliotecaResponse retVal = ((TableSoft.BibliotecaWS.BibliotecaWS)(this)).eliminarBiblioteca(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.BibliotecaWS.eliminarBibliotecaResponse> TableSoft.BibliotecaWS.BibliotecaWS.eliminarBibliotecaAsync(TableSoft.BibliotecaWS.eliminarBibliotecaRequest request) {
-            return base.Channel.eliminarBibliotecaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.BibliotecaWS.eliminarBibliotecaResponse> eliminarBibliotecaAsync(TableSoft.BibliotecaWS.biblioteca objBiblioteca) {
-            TableSoft.BibliotecaWS.eliminarBibliotecaRequest inValue = new TableSoft.BibliotecaWS.eliminarBibliotecaRequest();
-            inValue.objBiblioteca = objBiblioteca;
-            return ((TableSoft.BibliotecaWS.BibliotecaWS)(this)).eliminarBibliotecaAsync(inValue);
         }
     }
 }

@@ -8,12 +8,9 @@
   <xs:element name="insertarUrgenciaResponse" type="tns:insertarUrgenciaResponse" />
   <xs:element name="listarUrgencias" type="tns:listarUrgencias" />
   <xs:element name="listarUrgenciasResponse" type="tns:listarUrgenciasResponse" />
-  <xs:complexType name="listarUrgencias">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarUrgenciasResponse">
+  <xs:complexType name="insertarUrgencia">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:urgencia" />
+      <xs:element minOccurs="0" name="objUrgencia" type="tns:urgencia" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="urgencia">
@@ -24,14 +21,17 @@
       <xs:element name="urgenciaId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarUrgencia">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objUrgencia" type="tns:urgencia" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="insertarUrgenciaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarUrgencias">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarUrgenciasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:urgencia" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="actualizarUrgencia">

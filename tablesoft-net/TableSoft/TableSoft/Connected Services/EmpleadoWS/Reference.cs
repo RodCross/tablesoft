@@ -16,17 +16,6 @@ namespace TableSoft.EmpleadoWS {
     public interface EmpleadoWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreResponse" +
-            "")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse listarEmpleadosPorNombre(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreResponse" +
-            "")]
-        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse> listarEmpleadosPorNombreAsync(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/insertarEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/insertarEmpleadoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -54,15 +43,6 @@ namespace TableSoft.EmpleadoWS {
         System.Threading.Tasks.Task<TableSoft.EmpleadoWS.listarEmpleadosResponse> listarEmpleadosAsync(TableSoft.EmpleadoWS.listarEmpleadosRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EmpleadoWS.actualizarEmpleadoResponse actualizarEmpleado(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoResponse")]
-        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.actualizarEmpleadoResponse> actualizarEmpleadoAsync(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosDeBibliotecaReque" +
             "st", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosDeBibliotecaRespo" +
             "nse")]
@@ -83,6 +63,26 @@ namespace TableSoft.EmpleadoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/buscarEmpleadoPorCodigoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/buscarEmpleadoPorCodigoResponse")]
         System.Threading.Tasks.Task<TableSoft.EmpleadoWS.buscarEmpleadoPorCodigoResponse> buscarEmpleadoPorCodigoAsync(TableSoft.EmpleadoWS.buscarEmpleadoPorCodigoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreResponse" +
+            "")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse listarEmpleadosPorNombre(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreResponse" +
+            "")]
+        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse> listarEmpleadosPorNombreAsync(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.EmpleadoWS.actualizarEmpleadoResponse actualizarEmpleado(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoResponse")]
+        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.actualizarEmpleadoResponse> actualizarEmpleadoAsync(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request);
     }
     
     /// <remarks/>
@@ -574,8 +574,6 @@ namespace TableSoft.EmpleadoWS {
         
         private bool completadoField;
         
-        private bool completadoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCompletadoField;
@@ -605,18 +603,6 @@ namespace TableSoft.EmpleadoWS {
             set {
                 this.completadoField = value;
                 this.RaisePropertyChanged("completado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool completadoSpecified {
-            get {
-                return this.completadoFieldSpecified;
-            }
-            set {
-                this.completadoFieldSpecified = value;
-                this.RaisePropertyChanged("completadoSpecified");
             }
         }
         
@@ -2108,42 +2094,6 @@ namespace TableSoft.EmpleadoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadosPorNombre", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEmpleadosPorNombreRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string nombre;
-        
-        public listarEmpleadosPorNombreRequest() {
-        }
-        
-        public listarEmpleadosPorNombreRequest(string nombre) {
-            this.nombre = nombre;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadosPorNombreResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEmpleadosPorNombreResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EmpleadoWS.empleado[] @return;
-        
-        public listarEmpleadosPorNombreResponse() {
-        }
-        
-        public listarEmpleadosPorNombreResponse(TableSoft.EmpleadoWS.empleado[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarEmpleado", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarEmpleadoRequest {
         
@@ -2244,42 +2194,6 @@ namespace TableSoft.EmpleadoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEmpleado", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarEmpleadoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EmpleadoWS.empleado objEmpleado;
-        
-        public actualizarEmpleadoRequest() {
-        }
-        
-        public actualizarEmpleadoRequest(TableSoft.EmpleadoWS.empleado objEmpleado) {
-            this.objEmpleado = objEmpleado;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEmpleadoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarEmpleadoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarEmpleadoResponse() {
-        }
-        
-        public actualizarEmpleadoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadosDeBiblioteca", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarEmpleadosDeBibliotecaRequest {
         
@@ -2349,6 +2263,78 @@ namespace TableSoft.EmpleadoWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadosPorNombre", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarEmpleadosPorNombreRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string nombre;
+        
+        public listarEmpleadosPorNombreRequest() {
+        }
+        
+        public listarEmpleadosPorNombreRequest(string nombre) {
+            this.nombre = nombre;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEmpleadosPorNombreResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarEmpleadosPorNombreResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EmpleadoWS.empleado[] @return;
+        
+        public listarEmpleadosPorNombreResponse() {
+        }
+        
+        public listarEmpleadosPorNombreResponse(TableSoft.EmpleadoWS.empleado[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEmpleado", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarEmpleadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EmpleadoWS.empleado objEmpleado;
+        
+        public actualizarEmpleadoRequest() {
+        }
+        
+        public actualizarEmpleadoRequest(TableSoft.EmpleadoWS.empleado objEmpleado) {
+            this.objEmpleado = objEmpleado;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEmpleadoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarEmpleadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarEmpleadoResponse() {
+        }
+        
+        public actualizarEmpleadoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface EmpleadoWSChannel : TableSoft.EmpleadoWS.EmpleadoWS, System.ServiceModel.IClientChannel {
     }
@@ -2374,29 +2360,6 @@ namespace TableSoft.EmpleadoWS {
         
         public EmpleadoWSClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse TableSoft.EmpleadoWS.EmpleadoWS.listarEmpleadosPorNombre(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request) {
-            return base.Channel.listarEmpleadosPorNombre(request);
-        }
-        
-        public TableSoft.EmpleadoWS.empleado[] listarEmpleadosPorNombre(string nombre) {
-            TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest inValue = new TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest();
-            inValue.nombre = nombre;
-            TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse retVal = ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).listarEmpleadosPorNombre(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse> TableSoft.EmpleadoWS.EmpleadoWS.listarEmpleadosPorNombreAsync(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request) {
-            return base.Channel.listarEmpleadosPorNombreAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse> listarEmpleadosPorNombreAsync(string nombre) {
-            TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest inValue = new TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest();
-            inValue.nombre = nombre;
-            return ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).listarEmpleadosPorNombreAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2467,29 +2430,6 @@ namespace TableSoft.EmpleadoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EmpleadoWS.actualizarEmpleadoResponse TableSoft.EmpleadoWS.EmpleadoWS.actualizarEmpleado(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request) {
-            return base.Channel.actualizarEmpleado(request);
-        }
-        
-        public int actualizarEmpleado(TableSoft.EmpleadoWS.empleado objEmpleado) {
-            TableSoft.EmpleadoWS.actualizarEmpleadoRequest inValue = new TableSoft.EmpleadoWS.actualizarEmpleadoRequest();
-            inValue.objEmpleado = objEmpleado;
-            TableSoft.EmpleadoWS.actualizarEmpleadoResponse retVal = ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).actualizarEmpleado(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.actualizarEmpleadoResponse> TableSoft.EmpleadoWS.EmpleadoWS.actualizarEmpleadoAsync(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request) {
-            return base.Channel.actualizarEmpleadoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.EmpleadoWS.actualizarEmpleadoResponse> actualizarEmpleadoAsync(TableSoft.EmpleadoWS.empleado objEmpleado) {
-            TableSoft.EmpleadoWS.actualizarEmpleadoRequest inValue = new TableSoft.EmpleadoWS.actualizarEmpleadoRequest();
-            inValue.objEmpleado = objEmpleado;
-            return ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).actualizarEmpleadoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.EmpleadoWS.listarEmpleadosDeBibliotecaResponse TableSoft.EmpleadoWS.EmpleadoWS.listarEmpleadosDeBiblioteca(TableSoft.EmpleadoWS.listarEmpleadosDeBibliotecaRequest request) {
             return base.Channel.listarEmpleadosDeBiblioteca(request);
         }
@@ -2533,6 +2473,52 @@ namespace TableSoft.EmpleadoWS {
             TableSoft.EmpleadoWS.buscarEmpleadoPorCodigoRequest inValue = new TableSoft.EmpleadoWS.buscarEmpleadoPorCodigoRequest();
             inValue.codigo = codigo;
             return ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).buscarEmpleadoPorCodigoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse TableSoft.EmpleadoWS.EmpleadoWS.listarEmpleadosPorNombre(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request) {
+            return base.Channel.listarEmpleadosPorNombre(request);
+        }
+        
+        public TableSoft.EmpleadoWS.empleado[] listarEmpleadosPorNombre(string nombre) {
+            TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest inValue = new TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest();
+            inValue.nombre = nombre;
+            TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse retVal = ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).listarEmpleadosPorNombre(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse> TableSoft.EmpleadoWS.EmpleadoWS.listarEmpleadosPorNombreAsync(TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest request) {
+            return base.Channel.listarEmpleadosPorNombreAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse> listarEmpleadosPorNombreAsync(string nombre) {
+            TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest inValue = new TableSoft.EmpleadoWS.listarEmpleadosPorNombreRequest();
+            inValue.nombre = nombre;
+            return ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).listarEmpleadosPorNombreAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.EmpleadoWS.actualizarEmpleadoResponse TableSoft.EmpleadoWS.EmpleadoWS.actualizarEmpleado(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request) {
+            return base.Channel.actualizarEmpleado(request);
+        }
+        
+        public int actualizarEmpleado(TableSoft.EmpleadoWS.empleado objEmpleado) {
+            TableSoft.EmpleadoWS.actualizarEmpleadoRequest inValue = new TableSoft.EmpleadoWS.actualizarEmpleadoRequest();
+            inValue.objEmpleado = objEmpleado;
+            TableSoft.EmpleadoWS.actualizarEmpleadoResponse retVal = ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).actualizarEmpleado(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.EmpleadoWS.actualizarEmpleadoResponse> TableSoft.EmpleadoWS.EmpleadoWS.actualizarEmpleadoAsync(TableSoft.EmpleadoWS.actualizarEmpleadoRequest request) {
+            return base.Channel.actualizarEmpleadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.EmpleadoWS.actualizarEmpleadoResponse> actualizarEmpleadoAsync(TableSoft.EmpleadoWS.empleado objEmpleado) {
+            TableSoft.EmpleadoWS.actualizarEmpleadoRequest inValue = new TableSoft.EmpleadoWS.actualizarEmpleadoRequest();
+            inValue.objEmpleado = objEmpleado;
+            return ((TableSoft.EmpleadoWS.EmpleadoWS)(this)).actualizarEmpleadoAsync(inValue);
         }
     }
 }

@@ -16,13 +16,13 @@ namespace TableSoft.TareaWS {
     public interface TareaWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TareaWS.insertarTareaResponse insertarTarea(TableSoft.TareaWS.insertarTareaRequest request);
+        TableSoft.TareaWS.eliminarTareaResponse eliminarTarea(TableSoft.TareaWS.eliminarTareaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaResponse")]
-        System.Threading.Tasks.Task<TableSoft.TareaWS.insertarTareaResponse> insertarTareaAsync(TableSoft.TareaWS.insertarTareaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaResponse")]
+        System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareaResponse> eliminarTareaAsync(TableSoft.TareaWS.eliminarTareaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarTareaResponse")]
@@ -34,13 +34,13 @@ namespace TableSoft.TareaWS {
         System.Threading.Tasks.Task<TableSoft.TareaWS.actualizarTareaResponse> actualizarTareaAsync(TableSoft.TareaWS.actualizarTareaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TareaWS.eliminarTareaResponse eliminarTarea(TableSoft.TareaWS.eliminarTareaRequest request);
+        TableSoft.TareaWS.insertarTareaResponse insertarTarea(TableSoft.TareaWS.insertarTareaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaResponse")]
-        System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareaResponse> eliminarTareaAsync(TableSoft.TareaWS.eliminarTareaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaResponse")]
+        System.Threading.Tasks.Task<TableSoft.TareaWS.insertarTareaResponse> insertarTareaAsync(TableSoft.TareaWS.insertarTareaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/listarTareasPorTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/listarTareasPorTicketResponse")]
@@ -63,8 +63,6 @@ namespace TableSoft.TareaWS {
         private agente agenteField;
         
         private bool completadoField;
-        
-        private bool completadoFieldSpecified;
         
         private string descripcionField;
         
@@ -95,18 +93,6 @@ namespace TableSoft.TareaWS {
             set {
                 this.completadoField = value;
                 this.RaisePropertyChanged("completado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool completadoSpecified {
-            get {
-                return this.completadoFieldSpecified;
-            }
-            set {
-                this.completadoFieldSpecified = value;
-                this.RaisePropertyChanged("completadoSpecified");
             }
         }
         
@@ -2075,40 +2061,35 @@ namespace TableSoft.TareaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarTarea", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarTareaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTarea", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarTareaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public TableSoft.TareaWS.tarea objTarea;
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TareaWS.ticket objTicket;
-        
-        public insertarTareaRequest() {
+        public eliminarTareaRequest() {
         }
         
-        public insertarTareaRequest(TableSoft.TareaWS.tarea objTarea, TableSoft.TareaWS.ticket objTicket) {
+        public eliminarTareaRequest(TableSoft.TareaWS.tarea objTarea) {
             this.objTarea = objTarea;
-            this.objTicket = objTicket;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarTareaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarTareaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTareaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarTareaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarTareaResponse() {
+        public eliminarTareaResponse() {
         }
         
-        public insertarTareaResponse(int @return) {
+        public eliminarTareaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2157,35 +2138,40 @@ namespace TableSoft.TareaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTarea", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarTareaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarTarea", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarTareaRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public TableSoft.TareaWS.tarea objTarea;
         
-        public eliminarTareaRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TareaWS.ticket objTicket;
+        
+        public insertarTareaRequest() {
         }
         
-        public eliminarTareaRequest(TableSoft.TareaWS.tarea objTarea) {
+        public insertarTareaRequest(TableSoft.TareaWS.tarea objTarea, TableSoft.TareaWS.ticket objTicket) {
             this.objTarea = objTarea;
+            this.objTicket = objTicket;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTareaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarTareaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarTareaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarTareaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarTareaResponse() {
+        public insertarTareaResponse() {
         }
         
-        public eliminarTareaResponse(int @return) {
+        public insertarTareaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2254,28 +2240,26 @@ namespace TableSoft.TareaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TareaWS.insertarTareaResponse TableSoft.TareaWS.TareaWS.insertarTarea(TableSoft.TareaWS.insertarTareaRequest request) {
-            return base.Channel.insertarTarea(request);
+        TableSoft.TareaWS.eliminarTareaResponse TableSoft.TareaWS.TareaWS.eliminarTarea(TableSoft.TareaWS.eliminarTareaRequest request) {
+            return base.Channel.eliminarTarea(request);
         }
         
-        public int insertarTarea(TableSoft.TareaWS.tarea objTarea, TableSoft.TareaWS.ticket objTicket) {
-            TableSoft.TareaWS.insertarTareaRequest inValue = new TableSoft.TareaWS.insertarTareaRequest();
+        public int eliminarTarea(TableSoft.TareaWS.tarea objTarea) {
+            TableSoft.TareaWS.eliminarTareaRequest inValue = new TableSoft.TareaWS.eliminarTareaRequest();
             inValue.objTarea = objTarea;
-            inValue.objTicket = objTicket;
-            TableSoft.TareaWS.insertarTareaResponse retVal = ((TableSoft.TareaWS.TareaWS)(this)).insertarTarea(inValue);
+            TableSoft.TareaWS.eliminarTareaResponse retVal = ((TableSoft.TareaWS.TareaWS)(this)).eliminarTarea(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TareaWS.insertarTareaResponse> TableSoft.TareaWS.TareaWS.insertarTareaAsync(TableSoft.TareaWS.insertarTareaRequest request) {
-            return base.Channel.insertarTareaAsync(request);
+        System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareaResponse> TableSoft.TareaWS.TareaWS.eliminarTareaAsync(TableSoft.TareaWS.eliminarTareaRequest request) {
+            return base.Channel.eliminarTareaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.TareaWS.insertarTareaResponse> insertarTareaAsync(TableSoft.TareaWS.tarea objTarea, TableSoft.TareaWS.ticket objTicket) {
-            TableSoft.TareaWS.insertarTareaRequest inValue = new TableSoft.TareaWS.insertarTareaRequest();
+        public System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareaResponse> eliminarTareaAsync(TableSoft.TareaWS.tarea objTarea) {
+            TableSoft.TareaWS.eliminarTareaRequest inValue = new TableSoft.TareaWS.eliminarTareaRequest();
             inValue.objTarea = objTarea;
-            inValue.objTicket = objTicket;
-            return ((TableSoft.TareaWS.TareaWS)(this)).insertarTareaAsync(inValue);
+            return ((TableSoft.TareaWS.TareaWS)(this)).eliminarTareaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2304,26 +2288,28 @@ namespace TableSoft.TareaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TareaWS.eliminarTareaResponse TableSoft.TareaWS.TareaWS.eliminarTarea(TableSoft.TareaWS.eliminarTareaRequest request) {
-            return base.Channel.eliminarTarea(request);
+        TableSoft.TareaWS.insertarTareaResponse TableSoft.TareaWS.TareaWS.insertarTarea(TableSoft.TareaWS.insertarTareaRequest request) {
+            return base.Channel.insertarTarea(request);
         }
         
-        public int eliminarTarea(TableSoft.TareaWS.tarea objTarea) {
-            TableSoft.TareaWS.eliminarTareaRequest inValue = new TableSoft.TareaWS.eliminarTareaRequest();
+        public int insertarTarea(TableSoft.TareaWS.tarea objTarea, TableSoft.TareaWS.ticket objTicket) {
+            TableSoft.TareaWS.insertarTareaRequest inValue = new TableSoft.TareaWS.insertarTareaRequest();
             inValue.objTarea = objTarea;
-            TableSoft.TareaWS.eliminarTareaResponse retVal = ((TableSoft.TareaWS.TareaWS)(this)).eliminarTarea(inValue);
+            inValue.objTicket = objTicket;
+            TableSoft.TareaWS.insertarTareaResponse retVal = ((TableSoft.TareaWS.TareaWS)(this)).insertarTarea(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareaResponse> TableSoft.TareaWS.TareaWS.eliminarTareaAsync(TableSoft.TareaWS.eliminarTareaRequest request) {
-            return base.Channel.eliminarTareaAsync(request);
+        System.Threading.Tasks.Task<TableSoft.TareaWS.insertarTareaResponse> TableSoft.TareaWS.TareaWS.insertarTareaAsync(TableSoft.TareaWS.insertarTareaRequest request) {
+            return base.Channel.insertarTareaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareaResponse> eliminarTareaAsync(TableSoft.TareaWS.tarea objTarea) {
-            TableSoft.TareaWS.eliminarTareaRequest inValue = new TableSoft.TareaWS.eliminarTareaRequest();
+        public System.Threading.Tasks.Task<TableSoft.TareaWS.insertarTareaResponse> insertarTareaAsync(TableSoft.TareaWS.tarea objTarea, TableSoft.TareaWS.ticket objTicket) {
+            TableSoft.TareaWS.insertarTareaRequest inValue = new TableSoft.TareaWS.insertarTareaRequest();
             inValue.objTarea = objTarea;
-            return ((TableSoft.TareaWS.TareaWS)(this)).eliminarTareaAsync(inValue);
+            inValue.objTicket = objTicket;
+            return ((TableSoft.TareaWS.TareaWS)(this)).insertarTareaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

@@ -16,6 +16,24 @@ namespace TableSoft.EquipoWS {
     public interface EquipoWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.EquipoWS.eliminarEquipoResponse eliminarEquipo(TableSoft.EquipoWS.eliminarEquipoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse")]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.eliminarEquipoResponse> eliminarEquipoAsync(TableSoft.EquipoWS.eliminarEquipoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.EquipoWS.quitarCategoriaResponse quitarCategoria(TableSoft.EquipoWS.quitarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> quitarCategoriaAsync(TableSoft.EquipoWS.quitarCategoriaRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -25,13 +43,13 @@ namespace TableSoft.EquipoWS {
         System.Threading.Tasks.Task<TableSoft.EquipoWS.agregarCategoriaResponse> agregarCategoriaAsync(TableSoft.EquipoWS.agregarCategoriaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EquipoWS.eliminarEquipoResponse eliminarEquipo(TableSoft.EquipoWS.eliminarEquipoRequest request);
+        TableSoft.EquipoWS.actualizarEquipoResponse actualizarEquipo(TableSoft.EquipoWS.actualizarEquipoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse")]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.eliminarEquipoResponse> eliminarEquipoAsync(TableSoft.EquipoWS.eliminarEquipoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse")]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> actualizarEquipoAsync(TableSoft.EquipoWS.actualizarEquipoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoResponse")]
@@ -50,24 +68,6 @@ namespace TableSoft.EquipoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse")]
         System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> listarEquiposAsync(TableSoft.EquipoWS.listarEquiposRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EquipoWS.quitarCategoriaResponse quitarCategoria(TableSoft.EquipoWS.quitarCategoriaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> quitarCategoriaAsync(TableSoft.EquipoWS.quitarCategoriaRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EquipoWS.actualizarEquipoResponse actualizarEquipo(TableSoft.EquipoWS.actualizarEquipoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse")]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> actualizarEquipoAsync(TableSoft.EquipoWS.actualizarEquipoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreResponse")]
@@ -1154,8 +1154,6 @@ namespace TableSoft.EquipoWS {
         
         private bool completadoField;
         
-        private bool completadoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCompletadoField;
@@ -1185,18 +1183,6 @@ namespace TableSoft.EquipoWS {
             set {
                 this.completadoField = value;
                 this.RaisePropertyChanged("completado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool completadoSpecified {
-            get {
-                return this.completadoFieldSpecified;
-            }
-            set {
-                this.completadoFieldSpecified = value;
-                this.RaisePropertyChanged("completadoSpecified");
             }
         }
         
@@ -2102,6 +2088,83 @@ namespace TableSoft.EquipoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarEquipoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EquipoWS.equipo objEquipo;
+        
+        public eliminarEquipoRequest() {
+        }
+        
+        public eliminarEquipoRequest(TableSoft.EquipoWS.equipo objEquipo) {
+            this.objEquipo = objEquipo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEquipoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarEquipoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarEquipoResponse() {
+        }
+        
+        public eliminarEquipoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="quitarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class quitarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EquipoWS.equipo objEquipo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EquipoWS.categoria objCategoria;
+        
+        public quitarCategoriaRequest() {
+        }
+        
+        public quitarCategoriaRequest(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
+            this.objEquipo = objEquipo;
+            this.objCategoria = objCategoria;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="quitarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class quitarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public quitarCategoriaResponse() {
+        }
+        
+        public quitarCategoriaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="agregarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class agregarCategoriaRequest {
         
@@ -2143,17 +2206,17 @@ namespace TableSoft.EquipoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarEquipoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarEquipoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public TableSoft.EquipoWS.equipo objEquipo;
         
-        public eliminarEquipoRequest() {
+        public actualizarEquipoRequest() {
         }
         
-        public eliminarEquipoRequest(TableSoft.EquipoWS.equipo objEquipo) {
+        public actualizarEquipoRequest(TableSoft.EquipoWS.equipo objEquipo) {
             this.objEquipo = objEquipo;
         }
     }
@@ -2161,17 +2224,17 @@ namespace TableSoft.EquipoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEquipoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarEquipoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarEquipoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarEquipoResponse() {
+        public actualizarEquipoResponse() {
         }
         
-        public eliminarEquipoResponse(int @return) {
+        public actualizarEquipoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2243,83 +2306,6 @@ namespace TableSoft.EquipoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="quitarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class quitarCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EquipoWS.equipo objEquipo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EquipoWS.categoria objCategoria;
-        
-        public quitarCategoriaRequest() {
-        }
-        
-        public quitarCategoriaRequest(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
-            this.objEquipo = objEquipo;
-            this.objCategoria = objCategoria;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="quitarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class quitarCategoriaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public quitarCategoriaResponse() {
-        }
-        
-        public quitarCategoriaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarEquipoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EquipoWS.equipo objEquipo;
-        
-        public actualizarEquipoRequest() {
-        }
-        
-        public actualizarEquipoRequest(TableSoft.EquipoWS.equipo objEquipo) {
-            this.objEquipo = objEquipo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarEquipoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarEquipoResponse() {
-        }
-        
-        public actualizarEquipoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarEquiposPorNombre", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarEquiposPorNombreRequest {
         
@@ -2381,6 +2367,54 @@ namespace TableSoft.EquipoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.EquipoWS.eliminarEquipoResponse TableSoft.EquipoWS.EquipoWS.eliminarEquipo(TableSoft.EquipoWS.eliminarEquipoRequest request) {
+            return base.Channel.eliminarEquipo(request);
+        }
+        
+        public int eliminarEquipo(TableSoft.EquipoWS.equipo objEquipo) {
+            TableSoft.EquipoWS.eliminarEquipoRequest inValue = new TableSoft.EquipoWS.eliminarEquipoRequest();
+            inValue.objEquipo = objEquipo;
+            TableSoft.EquipoWS.eliminarEquipoResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).eliminarEquipo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.eliminarEquipoResponse> TableSoft.EquipoWS.EquipoWS.eliminarEquipoAsync(TableSoft.EquipoWS.eliminarEquipoRequest request) {
+            return base.Channel.eliminarEquipoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.EquipoWS.eliminarEquipoResponse> eliminarEquipoAsync(TableSoft.EquipoWS.equipo objEquipo) {
+            TableSoft.EquipoWS.eliminarEquipoRequest inValue = new TableSoft.EquipoWS.eliminarEquipoRequest();
+            inValue.objEquipo = objEquipo;
+            return ((TableSoft.EquipoWS.EquipoWS)(this)).eliminarEquipoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.EquipoWS.quitarCategoriaResponse TableSoft.EquipoWS.EquipoWS.quitarCategoria(TableSoft.EquipoWS.quitarCategoriaRequest request) {
+            return base.Channel.quitarCategoria(request);
+        }
+        
+        public int quitarCategoria(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
+            TableSoft.EquipoWS.quitarCategoriaRequest inValue = new TableSoft.EquipoWS.quitarCategoriaRequest();
+            inValue.objEquipo = objEquipo;
+            inValue.objCategoria = objCategoria;
+            TableSoft.EquipoWS.quitarCategoriaResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).quitarCategoria(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> TableSoft.EquipoWS.EquipoWS.quitarCategoriaAsync(TableSoft.EquipoWS.quitarCategoriaRequest request) {
+            return base.Channel.quitarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> quitarCategoriaAsync(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
+            TableSoft.EquipoWS.quitarCategoriaRequest inValue = new TableSoft.EquipoWS.quitarCategoriaRequest();
+            inValue.objEquipo = objEquipo;
+            inValue.objCategoria = objCategoria;
+            return ((TableSoft.EquipoWS.EquipoWS)(this)).quitarCategoriaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.EquipoWS.agregarCategoriaResponse TableSoft.EquipoWS.EquipoWS.agregarCategoria(TableSoft.EquipoWS.agregarCategoriaRequest request) {
             return base.Channel.agregarCategoria(request);
         }
@@ -2406,26 +2440,26 @@ namespace TableSoft.EquipoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EquipoWS.eliminarEquipoResponse TableSoft.EquipoWS.EquipoWS.eliminarEquipo(TableSoft.EquipoWS.eliminarEquipoRequest request) {
-            return base.Channel.eliminarEquipo(request);
+        TableSoft.EquipoWS.actualizarEquipoResponse TableSoft.EquipoWS.EquipoWS.actualizarEquipo(TableSoft.EquipoWS.actualizarEquipoRequest request) {
+            return base.Channel.actualizarEquipo(request);
         }
         
-        public int eliminarEquipo(TableSoft.EquipoWS.equipo objEquipo) {
-            TableSoft.EquipoWS.eliminarEquipoRequest inValue = new TableSoft.EquipoWS.eliminarEquipoRequest();
+        public int actualizarEquipo(TableSoft.EquipoWS.equipo objEquipo) {
+            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
             inValue.objEquipo = objEquipo;
-            TableSoft.EquipoWS.eliminarEquipoResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).eliminarEquipo(inValue);
+            TableSoft.EquipoWS.actualizarEquipoResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipo(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.eliminarEquipoResponse> TableSoft.EquipoWS.EquipoWS.eliminarEquipoAsync(TableSoft.EquipoWS.eliminarEquipoRequest request) {
-            return base.Channel.eliminarEquipoAsync(request);
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> TableSoft.EquipoWS.EquipoWS.actualizarEquipoAsync(TableSoft.EquipoWS.actualizarEquipoRequest request) {
+            return base.Channel.actualizarEquipoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.EquipoWS.eliminarEquipoResponse> eliminarEquipoAsync(TableSoft.EquipoWS.equipo objEquipo) {
-            TableSoft.EquipoWS.eliminarEquipoRequest inValue = new TableSoft.EquipoWS.eliminarEquipoRequest();
+        public System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> actualizarEquipoAsync(TableSoft.EquipoWS.equipo objEquipo) {
+            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
             inValue.objEquipo = objEquipo;
-            return ((TableSoft.EquipoWS.EquipoWS)(this)).eliminarEquipoAsync(inValue);
+            return ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2470,54 +2504,6 @@ namespace TableSoft.EquipoWS {
         public System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> listarEquiposAsync() {
             TableSoft.EquipoWS.listarEquiposRequest inValue = new TableSoft.EquipoWS.listarEquiposRequest();
             return ((TableSoft.EquipoWS.EquipoWS)(this)).listarEquiposAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EquipoWS.quitarCategoriaResponse TableSoft.EquipoWS.EquipoWS.quitarCategoria(TableSoft.EquipoWS.quitarCategoriaRequest request) {
-            return base.Channel.quitarCategoria(request);
-        }
-        
-        public int quitarCategoria(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
-            TableSoft.EquipoWS.quitarCategoriaRequest inValue = new TableSoft.EquipoWS.quitarCategoriaRequest();
-            inValue.objEquipo = objEquipo;
-            inValue.objCategoria = objCategoria;
-            TableSoft.EquipoWS.quitarCategoriaResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).quitarCategoria(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> TableSoft.EquipoWS.EquipoWS.quitarCategoriaAsync(TableSoft.EquipoWS.quitarCategoriaRequest request) {
-            return base.Channel.quitarCategoriaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> quitarCategoriaAsync(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
-            TableSoft.EquipoWS.quitarCategoriaRequest inValue = new TableSoft.EquipoWS.quitarCategoriaRequest();
-            inValue.objEquipo = objEquipo;
-            inValue.objCategoria = objCategoria;
-            return ((TableSoft.EquipoWS.EquipoWS)(this)).quitarCategoriaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EquipoWS.actualizarEquipoResponse TableSoft.EquipoWS.EquipoWS.actualizarEquipo(TableSoft.EquipoWS.actualizarEquipoRequest request) {
-            return base.Channel.actualizarEquipo(request);
-        }
-        
-        public int actualizarEquipo(TableSoft.EquipoWS.equipo objEquipo) {
-            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
-            inValue.objEquipo = objEquipo;
-            TableSoft.EquipoWS.actualizarEquipoResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> TableSoft.EquipoWS.EquipoWS.actualizarEquipoAsync(TableSoft.EquipoWS.actualizarEquipoRequest request) {
-            return base.Channel.actualizarEquipoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> actualizarEquipoAsync(TableSoft.EquipoWS.equipo objEquipo) {
-            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
-            inValue.objEquipo = objEquipo;
-            return ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

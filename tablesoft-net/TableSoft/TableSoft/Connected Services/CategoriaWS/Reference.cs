@@ -25,15 +25,6 @@ namespace TableSoft.CategoriaWS {
         System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasResponse> listarCategoriasAsync(TableSoft.CategoriaWS.listarCategoriasRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.CategoriaWS.insertarCategoriaResponse insertarCategoria(TableSoft.CategoriaWS.insertarCategoriaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaResponse")]
-        System.Threading.Tasks.Task<TableSoft.CategoriaWS.insertarCategoriaResponse> insertarCategoriaAsync(TableSoft.CategoriaWS.insertarCategoriaRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/actualizarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/actualizarCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -43,17 +34,13 @@ namespace TableSoft.CategoriaWS {
         System.Threading.Tasks.Task<TableSoft.CategoriaWS.actualizarCategoriaResponse> actualizarCategoriaAsync(TableSoft.CategoriaWS.actualizarCategoriaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesRequ" +
-            "est", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesResp" +
-            "onse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse listarCategoriasDisponibles(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request);
+        TableSoft.CategoriaWS.insertarCategoriaResponse insertarCategoria(TableSoft.CategoriaWS.insertarCategoriaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesRequ" +
-            "est", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesResp" +
-            "onse")]
-        System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse> listarCategoriasDisponiblesAsync(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/insertarCategoriaResponse")]
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.insertarCategoriaResponse> insertarCategoriaAsync(TableSoft.CategoriaWS.insertarCategoriaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorEquipoReques" +
@@ -69,13 +56,17 @@ namespace TableSoft.CategoriaWS {
         System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasPorEquipoResponse> listarCategoriasPorEquipoAsync(TableSoft.CategoriaWS.listarCategoriasPorEquipoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesRequ" +
+            "est", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesResp" +
+            "onse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.CategoriaWS.eliminarCategoriaResponse eliminarCategoria(TableSoft.CategoriaWS.eliminarCategoriaRequest request);
+        TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse listarCategoriasDisponibles(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaResponse")]
-        System.Threading.Tasks.Task<TableSoft.CategoriaWS.eliminarCategoriaResponse> eliminarCategoriaAsync(TableSoft.CategoriaWS.eliminarCategoriaRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesRequ" +
+            "est", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasDisponiblesResp" +
+            "onse")]
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse> listarCategoriasDisponiblesAsync(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreReques" +
@@ -89,6 +80,15 @@ namespace TableSoft.CategoriaWS {
             "t", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/listarCategoriasPorNombreRespon" +
             "se")]
         System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasPorNombreResponse> listarCategoriasPorNombreAsync(TableSoft.CategoriaWS.listarCategoriasPorNombreRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.CategoriaWS.eliminarCategoriaResponse eliminarCategoria(TableSoft.CategoriaWS.eliminarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/CategoriaWS/eliminarCategoriaResponse")]
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.eliminarCategoriaResponse> eliminarCategoriaAsync(TableSoft.CategoriaWS.eliminarCategoriaRequest request);
     }
     
     /// <remarks/>
@@ -719,8 +719,6 @@ namespace TableSoft.CategoriaWS {
         
         private bool completadoField;
         
-        private bool completadoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCompletadoField;
@@ -750,18 +748,6 @@ namespace TableSoft.CategoriaWS {
             set {
                 this.completadoField = value;
                 this.RaisePropertyChanged("completado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool completadoSpecified {
-            get {
-                return this.completadoFieldSpecified;
-            }
-            set {
-                this.completadoFieldSpecified = value;
-                this.RaisePropertyChanged("completadoSpecified");
             }
         }
         
@@ -2142,42 +2128,6 @@ namespace TableSoft.CategoriaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.CategoriaWS.categoria objCategoria;
-        
-        public insertarCategoriaRequest() {
-        }
-        
-        public insertarCategoriaRequest(TableSoft.CategoriaWS.categoria objCategoria) {
-            this.objCategoria = objCategoria;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarCategoriaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarCategoriaResponse() {
-        }
-        
-        public insertarCategoriaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class actualizarCategoriaRequest {
         
@@ -2214,27 +2164,35 @@ namespace TableSoft.CategoriaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCategoriasDisponibles", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarCategoriasDisponiblesRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarCategoriaRequest {
         
-        public listarCategoriasDisponiblesRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.CategoriaWS.categoria objCategoria;
+        
+        public insertarCategoriaRequest() {
+        }
+        
+        public insertarCategoriaRequest(TableSoft.CategoriaWS.categoria objCategoria) {
+            this.objCategoria = objCategoria;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCategoriasDisponiblesResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarCategoriasDisponiblesResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarCategoriaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.CategoriaWS.categoria[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarCategoriasDisponiblesResponse() {
+        public insertarCategoriaResponse() {
         }
         
-        public listarCategoriasDisponiblesResponse(TableSoft.CategoriaWS.categoria[] @return) {
+        public insertarCategoriaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2278,35 +2236,27 @@ namespace TableSoft.CategoriaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarCategoriaRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCategoriasDisponibles", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarCategoriasDisponiblesRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.CategoriaWS.categoria objCategoria;
-        
-        public eliminarCategoriaRequest() {
-        }
-        
-        public eliminarCategoriaRequest(TableSoft.CategoriaWS.categoria objCategoria) {
-            this.objCategoria = objCategoria;
+        public listarCategoriasDisponiblesRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarCategoriaResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarCategoriasDisponiblesResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarCategoriasDisponiblesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.CategoriaWS.categoria[] @return;
         
-        public eliminarCategoriaResponse() {
+        public listarCategoriasDisponiblesResponse() {
         }
         
-        public eliminarCategoriaResponse(int @return) {
+        public listarCategoriasDisponiblesResponse(TableSoft.CategoriaWS.categoria[] @return) {
             this.@return = @return;
         }
     }
@@ -2343,6 +2293,42 @@ namespace TableSoft.CategoriaWS {
         }
         
         public listarCategoriasPorNombreResponse(TableSoft.CategoriaWS.categoria[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarCategoriaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.CategoriaWS.categoria objCategoria;
+        
+        public eliminarCategoriaRequest() {
+        }
+        
+        public eliminarCategoriaRequest(TableSoft.CategoriaWS.categoria objCategoria) {
+            this.objCategoria = objCategoria;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarCategoriaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarCategoriaResponse() {
+        }
+        
+        public eliminarCategoriaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2396,29 +2382,6 @@ namespace TableSoft.CategoriaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.CategoriaWS.insertarCategoriaResponse TableSoft.CategoriaWS.CategoriaWS.insertarCategoria(TableSoft.CategoriaWS.insertarCategoriaRequest request) {
-            return base.Channel.insertarCategoria(request);
-        }
-        
-        public int insertarCategoria(TableSoft.CategoriaWS.categoria objCategoria) {
-            TableSoft.CategoriaWS.insertarCategoriaRequest inValue = new TableSoft.CategoriaWS.insertarCategoriaRequest();
-            inValue.objCategoria = objCategoria;
-            TableSoft.CategoriaWS.insertarCategoriaResponse retVal = ((TableSoft.CategoriaWS.CategoriaWS)(this)).insertarCategoria(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.CategoriaWS.insertarCategoriaResponse> TableSoft.CategoriaWS.CategoriaWS.insertarCategoriaAsync(TableSoft.CategoriaWS.insertarCategoriaRequest request) {
-            return base.Channel.insertarCategoriaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.CategoriaWS.insertarCategoriaResponse> insertarCategoriaAsync(TableSoft.CategoriaWS.categoria objCategoria) {
-            TableSoft.CategoriaWS.insertarCategoriaRequest inValue = new TableSoft.CategoriaWS.insertarCategoriaRequest();
-            inValue.objCategoria = objCategoria;
-            return ((TableSoft.CategoriaWS.CategoriaWS)(this)).insertarCategoriaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.CategoriaWS.actualizarCategoriaResponse TableSoft.CategoriaWS.CategoriaWS.actualizarCategoria(TableSoft.CategoriaWS.actualizarCategoriaRequest request) {
             return base.Channel.actualizarCategoria(request);
         }
@@ -2442,24 +2405,26 @@ namespace TableSoft.CategoriaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse TableSoft.CategoriaWS.CategoriaWS.listarCategoriasDisponibles(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request) {
-            return base.Channel.listarCategoriasDisponibles(request);
+        TableSoft.CategoriaWS.insertarCategoriaResponse TableSoft.CategoriaWS.CategoriaWS.insertarCategoria(TableSoft.CategoriaWS.insertarCategoriaRequest request) {
+            return base.Channel.insertarCategoria(request);
         }
         
-        public TableSoft.CategoriaWS.categoria[] listarCategoriasDisponibles() {
-            TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest inValue = new TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest();
-            TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse retVal = ((TableSoft.CategoriaWS.CategoriaWS)(this)).listarCategoriasDisponibles(inValue);
+        public int insertarCategoria(TableSoft.CategoriaWS.categoria objCategoria) {
+            TableSoft.CategoriaWS.insertarCategoriaRequest inValue = new TableSoft.CategoriaWS.insertarCategoriaRequest();
+            inValue.objCategoria = objCategoria;
+            TableSoft.CategoriaWS.insertarCategoriaResponse retVal = ((TableSoft.CategoriaWS.CategoriaWS)(this)).insertarCategoria(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse> TableSoft.CategoriaWS.CategoriaWS.listarCategoriasDisponiblesAsync(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request) {
-            return base.Channel.listarCategoriasDisponiblesAsync(request);
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.insertarCategoriaResponse> TableSoft.CategoriaWS.CategoriaWS.insertarCategoriaAsync(TableSoft.CategoriaWS.insertarCategoriaRequest request) {
+            return base.Channel.insertarCategoriaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse> listarCategoriasDisponiblesAsync() {
-            TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest inValue = new TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest();
-            return ((TableSoft.CategoriaWS.CategoriaWS)(this)).listarCategoriasDisponiblesAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.CategoriaWS.insertarCategoriaResponse> insertarCategoriaAsync(TableSoft.CategoriaWS.categoria objCategoria) {
+            TableSoft.CategoriaWS.insertarCategoriaRequest inValue = new TableSoft.CategoriaWS.insertarCategoriaRequest();
+            inValue.objCategoria = objCategoria;
+            return ((TableSoft.CategoriaWS.CategoriaWS)(this)).insertarCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2486,26 +2451,24 @@ namespace TableSoft.CategoriaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.CategoriaWS.eliminarCategoriaResponse TableSoft.CategoriaWS.CategoriaWS.eliminarCategoria(TableSoft.CategoriaWS.eliminarCategoriaRequest request) {
-            return base.Channel.eliminarCategoria(request);
+        TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse TableSoft.CategoriaWS.CategoriaWS.listarCategoriasDisponibles(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request) {
+            return base.Channel.listarCategoriasDisponibles(request);
         }
         
-        public int eliminarCategoria(TableSoft.CategoriaWS.categoria objCategoria) {
-            TableSoft.CategoriaWS.eliminarCategoriaRequest inValue = new TableSoft.CategoriaWS.eliminarCategoriaRequest();
-            inValue.objCategoria = objCategoria;
-            TableSoft.CategoriaWS.eliminarCategoriaResponse retVal = ((TableSoft.CategoriaWS.CategoriaWS)(this)).eliminarCategoria(inValue);
+        public TableSoft.CategoriaWS.categoria[] listarCategoriasDisponibles() {
+            TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest inValue = new TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest();
+            TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse retVal = ((TableSoft.CategoriaWS.CategoriaWS)(this)).listarCategoriasDisponibles(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.CategoriaWS.eliminarCategoriaResponse> TableSoft.CategoriaWS.CategoriaWS.eliminarCategoriaAsync(TableSoft.CategoriaWS.eliminarCategoriaRequest request) {
-            return base.Channel.eliminarCategoriaAsync(request);
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse> TableSoft.CategoriaWS.CategoriaWS.listarCategoriasDisponiblesAsync(TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest request) {
+            return base.Channel.listarCategoriasDisponiblesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.CategoriaWS.eliminarCategoriaResponse> eliminarCategoriaAsync(TableSoft.CategoriaWS.categoria objCategoria) {
-            TableSoft.CategoriaWS.eliminarCategoriaRequest inValue = new TableSoft.CategoriaWS.eliminarCategoriaRequest();
-            inValue.objCategoria = objCategoria;
-            return ((TableSoft.CategoriaWS.CategoriaWS)(this)).eliminarCategoriaAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse> listarCategoriasDisponiblesAsync() {
+            TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest inValue = new TableSoft.CategoriaWS.listarCategoriasDisponiblesRequest();
+            return ((TableSoft.CategoriaWS.CategoriaWS)(this)).listarCategoriasDisponiblesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2529,6 +2492,29 @@ namespace TableSoft.CategoriaWS {
             TableSoft.CategoriaWS.listarCategoriasPorNombreRequest inValue = new TableSoft.CategoriaWS.listarCategoriasPorNombreRequest();
             inValue.nombre = nombre;
             return ((TableSoft.CategoriaWS.CategoriaWS)(this)).listarCategoriasPorNombreAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.CategoriaWS.eliminarCategoriaResponse TableSoft.CategoriaWS.CategoriaWS.eliminarCategoria(TableSoft.CategoriaWS.eliminarCategoriaRequest request) {
+            return base.Channel.eliminarCategoria(request);
+        }
+        
+        public int eliminarCategoria(TableSoft.CategoriaWS.categoria objCategoria) {
+            TableSoft.CategoriaWS.eliminarCategoriaRequest inValue = new TableSoft.CategoriaWS.eliminarCategoriaRequest();
+            inValue.objCategoria = objCategoria;
+            TableSoft.CategoriaWS.eliminarCategoriaResponse retVal = ((TableSoft.CategoriaWS.CategoriaWS)(this)).eliminarCategoria(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.CategoriaWS.eliminarCategoriaResponse> TableSoft.CategoriaWS.CategoriaWS.eliminarCategoriaAsync(TableSoft.CategoriaWS.eliminarCategoriaRequest request) {
+            return base.Channel.eliminarCategoriaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.CategoriaWS.eliminarCategoriaResponse> eliminarCategoriaAsync(TableSoft.CategoriaWS.categoria objCategoria) {
+            TableSoft.CategoriaWS.eliminarCategoriaRequest inValue = new TableSoft.CategoriaWS.eliminarCategoriaRequest();
+            inValue.objCategoria = objCategoria;
+            return ((TableSoft.CategoriaWS.CategoriaWS)(this)).eliminarCategoriaAsync(inValue);
         }
     }
 }

@@ -25,13 +25,13 @@ namespace TableSoft.ProveedorWS {
         System.Threading.Tasks.Task<TableSoft.ProveedorWS.actualizarProveedorResponse> actualizarProveedorAsync(TableSoft.ProveedorWS.actualizarProveedorRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ProveedorWS.insertarProveedorResponse insertarProveedor(TableSoft.ProveedorWS.insertarProveedorRequest request);
+        TableSoft.ProveedorWS.listarProveedoresResponse listarProveedores(TableSoft.ProveedorWS.listarProveedoresRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorResponse")]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.insertarProveedorResponse> insertarProveedorAsync(TableSoft.ProveedorWS.insertarProveedorRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse")]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync(TableSoft.ProveedorWS.listarProveedoresRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorResponse")]
@@ -43,13 +43,13 @@ namespace TableSoft.ProveedorWS {
         System.Threading.Tasks.Task<TableSoft.ProveedorWS.eliminarProveedorResponse> eliminarProveedorAsync(TableSoft.ProveedorWS.eliminarProveedorRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ProveedorWS.listarProveedoresResponse listarProveedores(TableSoft.ProveedorWS.listarProveedoresRequest request);
+        TableSoft.ProveedorWS.insertarProveedorResponse insertarProveedor(TableSoft.ProveedorWS.insertarProveedorRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse")]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync(TableSoft.ProveedorWS.listarProveedoresRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorResponse")]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.insertarProveedorResponse> insertarProveedorAsync(TableSoft.ProveedorWS.insertarProveedorRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreReque" +
@@ -354,35 +354,27 @@ namespace TableSoft.ProveedorWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarProveedor", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarProveedorRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProveedores", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarProveedoresRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.ProveedorWS.proveedor objProveedor;
-        
-        public insertarProveedorRequest() {
-        }
-        
-        public insertarProveedorRequest(TableSoft.ProveedorWS.proveedor objProveedor) {
-            this.objProveedor = objProveedor;
+        public listarProveedoresRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarProveedorResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarProveedorResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProveedoresResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarProveedoresResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ProveedorWS.proveedor[] @return;
         
-        public insertarProveedorResponse() {
+        public listarProveedoresResponse() {
         }
         
-        public insertarProveedorResponse(int @return) {
+        public listarProveedoresResponse(TableSoft.ProveedorWS.proveedor[] @return) {
             this.@return = @return;
         }
     }
@@ -426,27 +418,35 @@ namespace TableSoft.ProveedorWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProveedores", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarProveedoresRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarProveedor", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarProveedorRequest {
         
-        public listarProveedoresRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ProveedorWS.proveedor objProveedor;
+        
+        public insertarProveedorRequest() {
+        }
+        
+        public insertarProveedorRequest(TableSoft.ProveedorWS.proveedor objProveedor) {
+            this.objProveedor = objProveedor;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarProveedoresResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarProveedoresResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarProveedorResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarProveedorResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.ProveedorWS.proveedor[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarProveedoresResponse() {
+        public insertarProveedorResponse() {
         }
         
-        public listarProveedoresResponse(TableSoft.ProveedorWS.proveedor[] @return) {
+        public insertarProveedorResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -538,26 +538,24 @@ namespace TableSoft.ProveedorWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ProveedorWS.insertarProveedorResponse TableSoft.ProveedorWS.ProveedorWS.insertarProveedor(TableSoft.ProveedorWS.insertarProveedorRequest request) {
-            return base.Channel.insertarProveedor(request);
+        TableSoft.ProveedorWS.listarProveedoresResponse TableSoft.ProveedorWS.ProveedorWS.listarProveedores(TableSoft.ProveedorWS.listarProveedoresRequest request) {
+            return base.Channel.listarProveedores(request);
         }
         
-        public int insertarProveedor(TableSoft.ProveedorWS.proveedor objProveedor) {
-            TableSoft.ProveedorWS.insertarProveedorRequest inValue = new TableSoft.ProveedorWS.insertarProveedorRequest();
-            inValue.objProveedor = objProveedor;
-            TableSoft.ProveedorWS.insertarProveedorResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).insertarProveedor(inValue);
+        public TableSoft.ProveedorWS.proveedor[] listarProveedores() {
+            TableSoft.ProveedorWS.listarProveedoresRequest inValue = new TableSoft.ProveedorWS.listarProveedoresRequest();
+            TableSoft.ProveedorWS.listarProveedoresResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedores(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.insertarProveedorResponse> TableSoft.ProveedorWS.ProveedorWS.insertarProveedorAsync(TableSoft.ProveedorWS.insertarProveedorRequest request) {
-            return base.Channel.insertarProveedorAsync(request);
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> TableSoft.ProveedorWS.ProveedorWS.listarProveedoresAsync(TableSoft.ProveedorWS.listarProveedoresRequest request) {
+            return base.Channel.listarProveedoresAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.insertarProveedorResponse> insertarProveedorAsync(TableSoft.ProveedorWS.proveedor objProveedor) {
-            TableSoft.ProveedorWS.insertarProveedorRequest inValue = new TableSoft.ProveedorWS.insertarProveedorRequest();
-            inValue.objProveedor = objProveedor;
-            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).insertarProveedorAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync() {
+            TableSoft.ProveedorWS.listarProveedoresRequest inValue = new TableSoft.ProveedorWS.listarProveedoresRequest();
+            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedoresAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -584,24 +582,26 @@ namespace TableSoft.ProveedorWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ProveedorWS.listarProveedoresResponse TableSoft.ProveedorWS.ProveedorWS.listarProveedores(TableSoft.ProveedorWS.listarProveedoresRequest request) {
-            return base.Channel.listarProveedores(request);
+        TableSoft.ProveedorWS.insertarProveedorResponse TableSoft.ProveedorWS.ProveedorWS.insertarProveedor(TableSoft.ProveedorWS.insertarProveedorRequest request) {
+            return base.Channel.insertarProveedor(request);
         }
         
-        public TableSoft.ProveedorWS.proveedor[] listarProveedores() {
-            TableSoft.ProveedorWS.listarProveedoresRequest inValue = new TableSoft.ProveedorWS.listarProveedoresRequest();
-            TableSoft.ProveedorWS.listarProveedoresResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedores(inValue);
+        public int insertarProveedor(TableSoft.ProveedorWS.proveedor objProveedor) {
+            TableSoft.ProveedorWS.insertarProveedorRequest inValue = new TableSoft.ProveedorWS.insertarProveedorRequest();
+            inValue.objProveedor = objProveedor;
+            TableSoft.ProveedorWS.insertarProveedorResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).insertarProveedor(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> TableSoft.ProveedorWS.ProveedorWS.listarProveedoresAsync(TableSoft.ProveedorWS.listarProveedoresRequest request) {
-            return base.Channel.listarProveedoresAsync(request);
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.insertarProveedorResponse> TableSoft.ProveedorWS.ProveedorWS.insertarProveedorAsync(TableSoft.ProveedorWS.insertarProveedorRequest request) {
+            return base.Channel.insertarProveedorAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync() {
-            TableSoft.ProveedorWS.listarProveedoresRequest inValue = new TableSoft.ProveedorWS.listarProveedoresRequest();
-            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedoresAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.insertarProveedorResponse> insertarProveedorAsync(TableSoft.ProveedorWS.proveedor objProveedor) {
+            TableSoft.ProveedorWS.insertarProveedorRequest inValue = new TableSoft.ProveedorWS.insertarProveedorRequest();
+            inValue.objProveedor = objProveedor;
+            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).insertarProveedorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

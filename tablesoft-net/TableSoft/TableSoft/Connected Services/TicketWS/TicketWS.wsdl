@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/TicketWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="actualizarTicket">
-    <part name="parameters" element="tns:actualizarTicket" />
+  <message name="listarTickets">
+    <part name="parameters" element="tns:listarTickets" />
   </message>
-  <message name="actualizarTicketResponse">
-    <part name="parameters" element="tns:actualizarTicketResponse" />
+  <message name="listarTicketsResponse">
+    <part name="parameters" element="tns:listarTicketsResponse" />
   </message>
   <message name="insertarTicket">
     <part name="parameters" element="tns:insertarTicket" />
@@ -17,23 +17,11 @@
   <message name="insertarTicketResponse">
     <part name="parameters" element="tns:insertarTicketResponse" />
   </message>
-  <message name="listarTickets">
-    <part name="parameters" element="tns:listarTickets" />
+  <message name="actualizarTicket">
+    <part name="parameters" element="tns:actualizarTicket" />
   </message>
-  <message name="listarTicketsResponse">
-    <part name="parameters" element="tns:listarTicketsResponse" />
-  </message>
-  <message name="listarTicketsPorEmpleado">
-    <part name="parameters" element="tns:listarTicketsPorEmpleado" />
-  </message>
-  <message name="listarTicketsPorEmpleadoResponse">
-    <part name="parameters" element="tns:listarTicketsPorEmpleadoResponse" />
-  </message>
-  <message name="listarTicketsPorAgente">
-    <part name="parameters" element="tns:listarTicketsPorAgente" />
-  </message>
-  <message name="listarTicketsPorAgenteResponse">
-    <part name="parameters" element="tns:listarTicketsPorAgenteResponse" />
+  <message name="actualizarTicketResponse">
+    <part name="parameters" element="tns:actualizarTicketResponse" />
   </message>
   <message name="listarTicketsPorCategoria">
     <part name="parameters" element="tns:listarTicketsPorCategoria" />
@@ -41,45 +29,57 @@
   <message name="listarTicketsPorCategoriaResponse">
     <part name="parameters" element="tns:listarTicketsPorCategoriaResponse" />
   </message>
+  <message name="listarTicketsPorAgente">
+    <part name="parameters" element="tns:listarTicketsPorAgente" />
+  </message>
+  <message name="listarTicketsPorAgenteResponse">
+    <part name="parameters" element="tns:listarTicketsPorAgenteResponse" />
+  </message>
   <message name="listarTicketsPorEstadoPorEquipo">
     <part name="parameters" element="tns:listarTicketsPorEstadoPorEquipo" />
   </message>
   <message name="listarTicketsPorEstadoPorEquipoResponse">
     <part name="parameters" element="tns:listarTicketsPorEstadoPorEquipoResponse" />
   </message>
+  <message name="listarTicketsPorEmpleado">
+    <part name="parameters" element="tns:listarTicketsPorEmpleado" />
+  </message>
+  <message name="listarTicketsPorEmpleadoResponse">
+    <part name="parameters" element="tns:listarTicketsPorEmpleadoResponse" />
+  </message>
   <portType name="TicketWS">
-    <operation name="actualizarTicket">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketRequest" message="tns:actualizarTicket" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketResponse" message="tns:actualizarTicketResponse" />
+    <operation name="listarTickets">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsRequest" message="tns:listarTickets" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsResponse" message="tns:listarTicketsResponse" />
     </operation>
     <operation name="insertarTicket">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/insertarTicketRequest" message="tns:insertarTicket" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/insertarTicketResponse" message="tns:insertarTicketResponse" />
     </operation>
-    <operation name="listarTickets">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsRequest" message="tns:listarTickets" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsResponse" message="tns:listarTicketsResponse" />
-    </operation>
-    <operation name="listarTicketsPorEmpleado">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoRequest" message="tns:listarTicketsPorEmpleado" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoResponse" message="tns:listarTicketsPorEmpleadoResponse" />
-    </operation>
-    <operation name="listarTicketsPorAgente">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteRequest" message="tns:listarTicketsPorAgente" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteResponse" message="tns:listarTicketsPorAgenteResponse" />
+    <operation name="actualizarTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketRequest" message="tns:actualizarTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketResponse" message="tns:actualizarTicketResponse" />
     </operation>
     <operation name="listarTicketsPorCategoria">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorCategoriaRequest" message="tns:listarTicketsPorCategoria" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorCategoriaResponse" message="tns:listarTicketsPorCategoriaResponse" />
     </operation>
+    <operation name="listarTicketsPorAgente">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteRequest" message="tns:listarTicketsPorAgente" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteResponse" message="tns:listarTicketsPorAgenteResponse" />
+    </operation>
     <operation name="listarTicketsPorEstadoPorEquipo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEstadoPorEquipoRequest" message="tns:listarTicketsPorEstadoPorEquipo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEstadoPorEquipoResponse" message="tns:listarTicketsPorEstadoPorEquipoResponse" />
     </operation>
+    <operation name="listarTicketsPorEmpleado">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoRequest" message="tns:listarTicketsPorEmpleado" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoResponse" message="tns:listarTicketsPorEmpleadoResponse" />
+    </operation>
   </portType>
   <binding name="TicketWSPortBinding" type="tns:TicketWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="actualizarTicket">
+    <operation name="listarTickets">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -97,25 +97,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarTickets">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTicketsPorEmpleado">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarTicketsPorAgente">
+    <operation name="actualizarTicket">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -133,7 +115,25 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarTicketsPorAgente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarTicketsPorEstadoPorEquipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarTicketsPorEmpleado">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

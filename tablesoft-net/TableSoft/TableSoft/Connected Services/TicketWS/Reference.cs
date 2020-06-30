@@ -16,13 +16,13 @@ namespace TableSoft.TicketWS {
     public interface TicketWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TicketWS.actualizarTicketResponse actualizarTicket(TableSoft.TicketWS.actualizarTicketRequest request);
+        TableSoft.TicketWS.listarTicketsResponse listarTickets(TableSoft.TicketWS.listarTicketsRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketResponse")]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.actualizarTicketResponse> actualizarTicketAsync(TableSoft.TicketWS.actualizarTicketRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsResponse")]
+        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsResponse> listarTicketsAsync(TableSoft.TicketWS.listarTicketsRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/insertarTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/insertarTicketResponse")]
@@ -34,31 +34,13 @@ namespace TableSoft.TicketWS {
         System.Threading.Tasks.Task<TableSoft.TicketWS.insertarTicketResponse> insertarTicketAsync(TableSoft.TicketWS.insertarTicketRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TicketWS.listarTicketsResponse listarTickets(TableSoft.TicketWS.listarTicketsRequest request);
+        TableSoft.TicketWS.actualizarTicketResponse actualizarTicket(TableSoft.TicketWS.actualizarTicketRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsResponse")]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsResponse> listarTicketsAsync(TableSoft.TicketWS.listarTicketsRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TicketWS.listarTicketsPorEmpleadoResponse listarTicketsPorEmpleado(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoResponse")]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEmpleadoResponse> listarTicketsPorEmpleadoAsync(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TicketWS.listarTicketsPorAgenteResponse listarTicketsPorAgente(TableSoft.TicketWS.listarTicketsPorAgenteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteResponse")]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorAgenteResponse> listarTicketsPorAgenteAsync(TableSoft.TicketWS.listarTicketsPorAgenteRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/actualizarTicketResponse")]
+        System.Threading.Tasks.Task<TableSoft.TicketWS.actualizarTicketResponse> actualizarTicketAsync(TableSoft.TicketWS.actualizarTicketRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorCategoriaResponse")]
@@ -68,6 +50,15 @@ namespace TableSoft.TicketWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorCategoriaResponse")]
         System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorCategoriaResponse> listarTicketsPorCategoriaAsync(TableSoft.TicketWS.listarTicketsPorCategoriaRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.TicketWS.listarTicketsPorAgenteResponse listarTicketsPorAgente(TableSoft.TicketWS.listarTicketsPorAgenteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorAgenteResponse")]
+        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorAgenteResponse> listarTicketsPorAgenteAsync(TableSoft.TicketWS.listarTicketsPorAgenteRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEstadoPorEquipoReq" +
@@ -81,6 +72,15 @@ namespace TableSoft.TicketWS {
             "uest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEstadoPorEquipoRes" +
             "ponse")]
         System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEstadoPorEquipoResponse> listarTicketsPorEstadoPorEquipoAsync(TableSoft.TicketWS.listarTicketsPorEstadoPorEquipoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.TicketWS.listarTicketsPorEmpleadoResponse listarTicketsPorEmpleado(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TicketWS/listarTicketsPorEmpleadoResponse")]
+        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEmpleadoResponse> listarTicketsPorEmpleadoAsync(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request);
     }
     
     /// <remarks/>
@@ -861,8 +861,6 @@ namespace TableSoft.TicketWS {
         
         private bool completadoField;
         
-        private bool completadoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCompletadoField;
@@ -892,18 +890,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.completadoField = value;
                 this.RaisePropertyChanged("completado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool completadoSpecified {
-            get {
-                return this.completadoFieldSpecified;
-            }
-            set {
-                this.completadoFieldSpecified = value;
-                this.RaisePropertyChanged("completadoSpecified");
             }
         }
         
@@ -2106,35 +2092,27 @@ namespace TableSoft.TicketWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarTicketRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTickets", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTicketsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TicketWS.ticket objTicket;
-        
-        public actualizarTicketRequest() {
-        }
-        
-        public actualizarTicketRequest(TableSoft.TicketWS.ticket objTicket) {
-            this.objTicket = objTicket;
+        public listarTicketsRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTicketResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarTicketResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTicketsResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TicketWS.ticket[] @return;
         
-        public actualizarTicketResponse() {
+        public listarTicketsResponse() {
         }
         
-        public actualizarTicketResponse(int @return) {
+        public listarTicketsResponse(TableSoft.TicketWS.ticket[] @return) {
             this.@return = @return;
         }
     }
@@ -2178,99 +2156,35 @@ namespace TableSoft.TicketWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTickets", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTicketsRequest {
-        
-        public listarTicketsRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTicketsResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TicketWS.ticket[] @return;
-        
-        public listarTicketsResponse() {
-        }
-        
-        public listarTicketsResponse(TableSoft.TicketWS.ticket[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorEmpleado", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTicketsPorEmpleadoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarTicketRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TicketWS.empleado objEmpleado;
+        public TableSoft.TicketWS.ticket objTicket;
         
-        public listarTicketsPorEmpleadoRequest() {
+        public actualizarTicketRequest() {
         }
         
-        public listarTicketsPorEmpleadoRequest(TableSoft.TicketWS.empleado objEmpleado) {
-            this.objEmpleado = objEmpleado;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorEmpleadoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTicketsPorEmpleadoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TicketWS.ticket[] @return;
-        
-        public listarTicketsPorEmpleadoResponse() {
-        }
-        
-        public listarTicketsPorEmpleadoResponse(TableSoft.TicketWS.ticket[] @return) {
-            this.@return = @return;
+        public actualizarTicketRequest(TableSoft.TicketWS.ticket objTicket) {
+            this.objTicket = objTicket;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorAgente", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTicketsPorAgenteRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTicketResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarTicketResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TicketWS.agente objAgente;
+        public int @return;
         
-        public listarTicketsPorAgenteRequest() {
+        public actualizarTicketResponse() {
         }
         
-        public listarTicketsPorAgenteRequest(TableSoft.TicketWS.agente objAgente) {
-            this.objAgente = objAgente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorAgenteResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarTicketsPorAgenteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TicketWS.ticket[] @return;
-        
-        public listarTicketsPorAgenteResponse() {
-        }
-        
-        public listarTicketsPorAgenteResponse(TableSoft.TicketWS.ticket[] @return) {
+        public actualizarTicketResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2307,6 +2221,42 @@ namespace TableSoft.TicketWS {
         }
         
         public listarTicketsPorCategoriaResponse(TableSoft.TicketWS.ticket[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorAgente", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTicketsPorAgenteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TicketWS.agente objAgente;
+        
+        public listarTicketsPorAgenteRequest() {
+        }
+        
+        public listarTicketsPorAgenteRequest(TableSoft.TicketWS.agente objAgente) {
+            this.objAgente = objAgente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorAgenteResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTicketsPorAgenteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TicketWS.ticket[] @return;
+        
+        public listarTicketsPorAgenteResponse() {
+        }
+        
+        public listarTicketsPorAgenteResponse(TableSoft.TicketWS.ticket[] @return) {
             this.@return = @return;
         }
     }
@@ -2352,6 +2302,42 @@ namespace TableSoft.TicketWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorEmpleado", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTicketsPorEmpleadoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TicketWS.empleado objEmpleado;
+        
+        public listarTicketsPorEmpleadoRequest() {
+        }
+        
+        public listarTicketsPorEmpleadoRequest(TableSoft.TicketWS.empleado objEmpleado) {
+            this.objEmpleado = objEmpleado;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarTicketsPorEmpleadoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarTicketsPorEmpleadoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TicketWS.ticket[] @return;
+        
+        public listarTicketsPorEmpleadoResponse() {
+        }
+        
+        public listarTicketsPorEmpleadoResponse(TableSoft.TicketWS.ticket[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface TicketWSChannel : TableSoft.TicketWS.TicketWS, System.ServiceModel.IClientChannel {
     }
@@ -2380,26 +2366,24 @@ namespace TableSoft.TicketWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TicketWS.actualizarTicketResponse TableSoft.TicketWS.TicketWS.actualizarTicket(TableSoft.TicketWS.actualizarTicketRequest request) {
-            return base.Channel.actualizarTicket(request);
+        TableSoft.TicketWS.listarTicketsResponse TableSoft.TicketWS.TicketWS.listarTickets(TableSoft.TicketWS.listarTicketsRequest request) {
+            return base.Channel.listarTickets(request);
         }
         
-        public int actualizarTicket(TableSoft.TicketWS.ticket objTicket) {
-            TableSoft.TicketWS.actualizarTicketRequest inValue = new TableSoft.TicketWS.actualizarTicketRequest();
-            inValue.objTicket = objTicket;
-            TableSoft.TicketWS.actualizarTicketResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).actualizarTicket(inValue);
+        public TableSoft.TicketWS.ticket[] listarTickets() {
+            TableSoft.TicketWS.listarTicketsRequest inValue = new TableSoft.TicketWS.listarTicketsRequest();
+            TableSoft.TicketWS.listarTicketsResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).listarTickets(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.actualizarTicketResponse> TableSoft.TicketWS.TicketWS.actualizarTicketAsync(TableSoft.TicketWS.actualizarTicketRequest request) {
-            return base.Channel.actualizarTicketAsync(request);
+        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsResponse> TableSoft.TicketWS.TicketWS.listarTicketsAsync(TableSoft.TicketWS.listarTicketsRequest request) {
+            return base.Channel.listarTicketsAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.TicketWS.actualizarTicketResponse> actualizarTicketAsync(TableSoft.TicketWS.ticket objTicket) {
-            TableSoft.TicketWS.actualizarTicketRequest inValue = new TableSoft.TicketWS.actualizarTicketRequest();
-            inValue.objTicket = objTicket;
-            return ((TableSoft.TicketWS.TicketWS)(this)).actualizarTicketAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsResponse> listarTicketsAsync() {
+            TableSoft.TicketWS.listarTicketsRequest inValue = new TableSoft.TicketWS.listarTicketsRequest();
+            return ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2426,70 +2410,26 @@ namespace TableSoft.TicketWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TicketWS.listarTicketsResponse TableSoft.TicketWS.TicketWS.listarTickets(TableSoft.TicketWS.listarTicketsRequest request) {
-            return base.Channel.listarTickets(request);
+        TableSoft.TicketWS.actualizarTicketResponse TableSoft.TicketWS.TicketWS.actualizarTicket(TableSoft.TicketWS.actualizarTicketRequest request) {
+            return base.Channel.actualizarTicket(request);
         }
         
-        public TableSoft.TicketWS.ticket[] listarTickets() {
-            TableSoft.TicketWS.listarTicketsRequest inValue = new TableSoft.TicketWS.listarTicketsRequest();
-            TableSoft.TicketWS.listarTicketsResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).listarTickets(inValue);
+        public int actualizarTicket(TableSoft.TicketWS.ticket objTicket) {
+            TableSoft.TicketWS.actualizarTicketRequest inValue = new TableSoft.TicketWS.actualizarTicketRequest();
+            inValue.objTicket = objTicket;
+            TableSoft.TicketWS.actualizarTicketResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).actualizarTicket(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsResponse> TableSoft.TicketWS.TicketWS.listarTicketsAsync(TableSoft.TicketWS.listarTicketsRequest request) {
-            return base.Channel.listarTicketsAsync(request);
+        System.Threading.Tasks.Task<TableSoft.TicketWS.actualizarTicketResponse> TableSoft.TicketWS.TicketWS.actualizarTicketAsync(TableSoft.TicketWS.actualizarTicketRequest request) {
+            return base.Channel.actualizarTicketAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsResponse> listarTicketsAsync() {
-            TableSoft.TicketWS.listarTicketsRequest inValue = new TableSoft.TicketWS.listarTicketsRequest();
-            return ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TicketWS.listarTicketsPorEmpleadoResponse TableSoft.TicketWS.TicketWS.listarTicketsPorEmpleado(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request) {
-            return base.Channel.listarTicketsPorEmpleado(request);
-        }
-        
-        public TableSoft.TicketWS.ticket[] listarTicketsPorEmpleado(TableSoft.TicketWS.empleado objEmpleado) {
-            TableSoft.TicketWS.listarTicketsPorEmpleadoRequest inValue = new TableSoft.TicketWS.listarTicketsPorEmpleadoRequest();
-            inValue.objEmpleado = objEmpleado;
-            TableSoft.TicketWS.listarTicketsPorEmpleadoResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorEmpleado(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEmpleadoResponse> TableSoft.TicketWS.TicketWS.listarTicketsPorEmpleadoAsync(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request) {
-            return base.Channel.listarTicketsPorEmpleadoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEmpleadoResponse> listarTicketsPorEmpleadoAsync(TableSoft.TicketWS.empleado objEmpleado) {
-            TableSoft.TicketWS.listarTicketsPorEmpleadoRequest inValue = new TableSoft.TicketWS.listarTicketsPorEmpleadoRequest();
-            inValue.objEmpleado = objEmpleado;
-            return ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorEmpleadoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TicketWS.listarTicketsPorAgenteResponse TableSoft.TicketWS.TicketWS.listarTicketsPorAgente(TableSoft.TicketWS.listarTicketsPorAgenteRequest request) {
-            return base.Channel.listarTicketsPorAgente(request);
-        }
-        
-        public TableSoft.TicketWS.ticket[] listarTicketsPorAgente(TableSoft.TicketWS.agente objAgente) {
-            TableSoft.TicketWS.listarTicketsPorAgenteRequest inValue = new TableSoft.TicketWS.listarTicketsPorAgenteRequest();
-            inValue.objAgente = objAgente;
-            TableSoft.TicketWS.listarTicketsPorAgenteResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorAgente(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorAgenteResponse> TableSoft.TicketWS.TicketWS.listarTicketsPorAgenteAsync(TableSoft.TicketWS.listarTicketsPorAgenteRequest request) {
-            return base.Channel.listarTicketsPorAgenteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorAgenteResponse> listarTicketsPorAgenteAsync(TableSoft.TicketWS.agente objAgente) {
-            TableSoft.TicketWS.listarTicketsPorAgenteRequest inValue = new TableSoft.TicketWS.listarTicketsPorAgenteRequest();
-            inValue.objAgente = objAgente;
-            return ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorAgenteAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.TicketWS.actualizarTicketResponse> actualizarTicketAsync(TableSoft.TicketWS.ticket objTicket) {
+            TableSoft.TicketWS.actualizarTicketRequest inValue = new TableSoft.TicketWS.actualizarTicketRequest();
+            inValue.objTicket = objTicket;
+            return ((TableSoft.TicketWS.TicketWS)(this)).actualizarTicketAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2516,6 +2456,29 @@ namespace TableSoft.TicketWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.TicketWS.listarTicketsPorAgenteResponse TableSoft.TicketWS.TicketWS.listarTicketsPorAgente(TableSoft.TicketWS.listarTicketsPorAgenteRequest request) {
+            return base.Channel.listarTicketsPorAgente(request);
+        }
+        
+        public TableSoft.TicketWS.ticket[] listarTicketsPorAgente(TableSoft.TicketWS.agente objAgente) {
+            TableSoft.TicketWS.listarTicketsPorAgenteRequest inValue = new TableSoft.TicketWS.listarTicketsPorAgenteRequest();
+            inValue.objAgente = objAgente;
+            TableSoft.TicketWS.listarTicketsPorAgenteResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorAgente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorAgenteResponse> TableSoft.TicketWS.TicketWS.listarTicketsPorAgenteAsync(TableSoft.TicketWS.listarTicketsPorAgenteRequest request) {
+            return base.Channel.listarTicketsPorAgenteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorAgenteResponse> listarTicketsPorAgenteAsync(TableSoft.TicketWS.agente objAgente) {
+            TableSoft.TicketWS.listarTicketsPorAgenteRequest inValue = new TableSoft.TicketWS.listarTicketsPorAgenteRequest();
+            inValue.objAgente = objAgente;
+            return ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorAgenteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.TicketWS.listarTicketsPorEstadoPorEquipoResponse TableSoft.TicketWS.TicketWS.listarTicketsPorEstadoPorEquipo(TableSoft.TicketWS.listarTicketsPorEstadoPorEquipoRequest request) {
             return base.Channel.listarTicketsPorEstadoPorEquipo(request);
         }
@@ -2538,6 +2501,29 @@ namespace TableSoft.TicketWS {
             inValue.objEstadoTicket = objEstadoTicket;
             inValue.objEquipo = objEquipo;
             return ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorEstadoPorEquipoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.TicketWS.listarTicketsPorEmpleadoResponse TableSoft.TicketWS.TicketWS.listarTicketsPorEmpleado(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request) {
+            return base.Channel.listarTicketsPorEmpleado(request);
+        }
+        
+        public TableSoft.TicketWS.ticket[] listarTicketsPorEmpleado(TableSoft.TicketWS.empleado objEmpleado) {
+            TableSoft.TicketWS.listarTicketsPorEmpleadoRequest inValue = new TableSoft.TicketWS.listarTicketsPorEmpleadoRequest();
+            inValue.objEmpleado = objEmpleado;
+            TableSoft.TicketWS.listarTicketsPorEmpleadoResponse retVal = ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorEmpleado(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEmpleadoResponse> TableSoft.TicketWS.TicketWS.listarTicketsPorEmpleadoAsync(TableSoft.TicketWS.listarTicketsPorEmpleadoRequest request) {
+            return base.Channel.listarTicketsPorEmpleadoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.TicketWS.listarTicketsPorEmpleadoResponse> listarTicketsPorEmpleadoAsync(TableSoft.TicketWS.empleado objEmpleado) {
+            TableSoft.TicketWS.listarTicketsPorEmpleadoRequest inValue = new TableSoft.TicketWS.listarTicketsPorEmpleadoRequest();
+            inValue.objEmpleado = objEmpleado;
+            return ((TableSoft.TicketWS.TicketWS)(this)).listarTicketsPorEmpleadoAsync(inValue);
         }
     }
 }

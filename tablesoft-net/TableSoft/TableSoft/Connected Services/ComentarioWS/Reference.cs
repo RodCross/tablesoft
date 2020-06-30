@@ -816,8 +816,6 @@ namespace TableSoft.ComentarioWS {
         
         private bool completadoField;
         
-        private bool completadoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCompletadoField;
@@ -847,18 +845,6 @@ namespace TableSoft.ComentarioWS {
             set {
                 this.completadoField = value;
                 this.RaisePropertyChanged("completado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool completadoSpecified {
-            get {
-                return this.completadoFieldSpecified;
-            }
-            set {
-                this.completadoFieldSpecified = value;
-                this.RaisePropertyChanged("completadoSpecified");
             }
         }
         

@@ -25,6 +25,15 @@ namespace TableSoft.RolWS {
         System.Threading.Tasks.Task<TableSoft.RolWS.insertarRolResponse> insertarRolAsync(TableSoft.RolWS.insertarRolRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.RolWS.actualizarRolResponse actualizarRol(TableSoft.RolWS.actualizarRolRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolResponse")]
+        System.Threading.Tasks.Task<TableSoft.RolWS.actualizarRolResponse> actualizarRolAsync(TableSoft.RolWS.actualizarRolRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -41,15 +50,6 @@ namespace TableSoft.RolWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/eliminarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/eliminarRolResponse")]
         System.Threading.Tasks.Task<TableSoft.RolWS.eliminarRolResponse> eliminarRolAsync(TableSoft.RolWS.eliminarRolRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.RolWS.actualizarRolResponse actualizarRol(TableSoft.RolWS.actualizarRolRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolResponse")]
-        System.Threading.Tasks.Task<TableSoft.RolWS.actualizarRolResponse> actualizarRolAsync(TableSoft.RolWS.actualizarRolRequest request);
     }
     
     /// <remarks/>
@@ -179,6 +179,42 @@ namespace TableSoft.RolWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarRol", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarRolRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.RolWS.rol objRol;
+        
+        public actualizarRolRequest() {
+        }
+        
+        public actualizarRolRequest(TableSoft.RolWS.rol objRol) {
+            this.objRol = objRol;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarRolResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarRolResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarRolResponse() {
+        }
+        
+        public actualizarRolResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarRoles", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarRolesRequest {
         
@@ -240,42 +276,6 @@ namespace TableSoft.RolWS {
         }
     }
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarRol", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarRolRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.RolWS.rol objRol;
-        
-        public actualizarRolRequest() {
-        }
-        
-        public actualizarRolRequest(TableSoft.RolWS.rol objRol) {
-            this.objRol = objRol;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarRolResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarRolResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarRolResponse() {
-        }
-        
-        public actualizarRolResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface RolWSChannel : TableSoft.RolWS.RolWS, System.ServiceModel.IClientChannel {
     }
@@ -327,6 +327,29 @@ namespace TableSoft.RolWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.RolWS.actualizarRolResponse TableSoft.RolWS.RolWS.actualizarRol(TableSoft.RolWS.actualizarRolRequest request) {
+            return base.Channel.actualizarRol(request);
+        }
+        
+        public int actualizarRol(TableSoft.RolWS.rol objRol) {
+            TableSoft.RolWS.actualizarRolRequest inValue = new TableSoft.RolWS.actualizarRolRequest();
+            inValue.objRol = objRol;
+            TableSoft.RolWS.actualizarRolResponse retVal = ((TableSoft.RolWS.RolWS)(this)).actualizarRol(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.RolWS.actualizarRolResponse> TableSoft.RolWS.RolWS.actualizarRolAsync(TableSoft.RolWS.actualizarRolRequest request) {
+            return base.Channel.actualizarRolAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.RolWS.actualizarRolResponse> actualizarRolAsync(TableSoft.RolWS.rol objRol) {
+            TableSoft.RolWS.actualizarRolRequest inValue = new TableSoft.RolWS.actualizarRolRequest();
+            inValue.objRol = objRol;
+            return ((TableSoft.RolWS.RolWS)(this)).actualizarRolAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.RolWS.listarRolesResponse TableSoft.RolWS.RolWS.listarRoles(TableSoft.RolWS.listarRolesRequest request) {
             return base.Channel.listarRoles(request);
         }
@@ -368,29 +391,6 @@ namespace TableSoft.RolWS {
             TableSoft.RolWS.eliminarRolRequest inValue = new TableSoft.RolWS.eliminarRolRequest();
             inValue.objRol = objRol;
             return ((TableSoft.RolWS.RolWS)(this)).eliminarRolAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.RolWS.actualizarRolResponse TableSoft.RolWS.RolWS.actualizarRol(TableSoft.RolWS.actualizarRolRequest request) {
-            return base.Channel.actualizarRol(request);
-        }
-        
-        public int actualizarRol(TableSoft.RolWS.rol objRol) {
-            TableSoft.RolWS.actualizarRolRequest inValue = new TableSoft.RolWS.actualizarRolRequest();
-            inValue.objRol = objRol;
-            TableSoft.RolWS.actualizarRolResponse retVal = ((TableSoft.RolWS.RolWS)(this)).actualizarRol(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.RolWS.actualizarRolResponse> TableSoft.RolWS.RolWS.actualizarRolAsync(TableSoft.RolWS.actualizarRolRequest request) {
-            return base.Channel.actualizarRolAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.RolWS.actualizarRolResponse> actualizarRolAsync(TableSoft.RolWS.rol objRol) {
-            TableSoft.RolWS.actualizarRolRequest inValue = new TableSoft.RolWS.actualizarRolRequest();
-            inValue.objRol = objRol;
-            return ((TableSoft.RolWS.RolWS)(this)).actualizarRolAsync(inValue);
         }
     }
 }

@@ -163,7 +163,7 @@
   <xs:complexType name="tarea">
     <xs:sequence>
       <xs:element minOccurs="0" name="agente" type="tns:agente" />
-      <xs:element minOccurs="0" name="completado" type="xs:boolean" />
+      <xs:element name="completado" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCompletado" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />

@@ -17,7 +17,7 @@
   <xs:complexType name="tarea">
     <xs:sequence>
       <xs:element minOccurs="0" name="agente" type="tns:agente" />
-      <xs:element minOccurs="0" name="completado" type="xs:boolean" />
+      <xs:element name="completado" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCompletado" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
@@ -212,6 +212,16 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="eliminarTarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTareaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="insertarTarea">
     <xs:sequence>
       <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
@@ -219,16 +229,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="insertarTareaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarTarea">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarTareaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

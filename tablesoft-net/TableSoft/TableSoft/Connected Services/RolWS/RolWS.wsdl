@@ -11,6 +11,12 @@
   <message name="insertarRolResponse">
     <part name="parameters" element="tns:insertarRolResponse" />
   </message>
+  <message name="actualizarRol">
+    <part name="parameters" element="tns:actualizarRol" />
+  </message>
+  <message name="actualizarRolResponse">
+    <part name="parameters" element="tns:actualizarRolResponse" />
+  </message>
   <message name="listarRoles">
     <part name="parameters" element="tns:listarRoles" />
   </message>
@@ -23,16 +29,14 @@
   <message name="eliminarRolResponse">
     <part name="parameters" element="tns:eliminarRolResponse" />
   </message>
-  <message name="actualizarRol">
-    <part name="parameters" element="tns:actualizarRol" />
-  </message>
-  <message name="actualizarRolResponse">
-    <part name="parameters" element="tns:actualizarRolResponse" />
-  </message>
   <portType name="RolWS">
     <operation name="insertarRol">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolRequest" message="tns:insertarRol" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolResponse" message="tns:insertarRolResponse" />
+    </operation>
+    <operation name="actualizarRol">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolRequest" message="tns:actualizarRol" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolResponse" message="tns:actualizarRolResponse" />
     </operation>
     <operation name="listarRoles">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesRequest" message="tns:listarRoles" />
@@ -41,10 +45,6 @@
     <operation name="eliminarRol">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/eliminarRolRequest" message="tns:eliminarRol" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/eliminarRolResponse" message="tns:eliminarRolResponse" />
-    </operation>
-    <operation name="actualizarRol">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolRequest" message="tns:actualizarRol" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolResponse" message="tns:actualizarRolResponse" />
     </operation>
   </portType>
   <binding name="RolWSPortBinding" type="tns:RolWS">
@@ -58,6 +58,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="actualizarRol">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarRoles">
       <soap:operation soapAction="" />
       <input>
@@ -68,15 +77,6 @@
       </output>
     </operation>
     <operation name="eliminarRol">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="actualizarRol">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/TareaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="insertarTarea">
-    <part name="parameters" element="tns:insertarTarea" />
+  <message name="eliminarTarea">
+    <part name="parameters" element="tns:eliminarTarea" />
   </message>
-  <message name="insertarTareaResponse">
-    <part name="parameters" element="tns:insertarTareaResponse" />
+  <message name="eliminarTareaResponse">
+    <part name="parameters" element="tns:eliminarTareaResponse" />
   </message>
   <message name="actualizarTarea">
     <part name="parameters" element="tns:actualizarTarea" />
@@ -17,11 +17,11 @@
   <message name="actualizarTareaResponse">
     <part name="parameters" element="tns:actualizarTareaResponse" />
   </message>
-  <message name="eliminarTarea">
-    <part name="parameters" element="tns:eliminarTarea" />
+  <message name="insertarTarea">
+    <part name="parameters" element="tns:insertarTarea" />
   </message>
-  <message name="eliminarTareaResponse">
-    <part name="parameters" element="tns:eliminarTareaResponse" />
+  <message name="insertarTareaResponse">
+    <part name="parameters" element="tns:insertarTareaResponse" />
   </message>
   <message name="listarTareasPorTicket">
     <part name="parameters" element="tns:listarTareasPorTicket" />
@@ -30,17 +30,17 @@
     <part name="parameters" element="tns:listarTareasPorTicketResponse" />
   </message>
   <portType name="TareaWS">
-    <operation name="insertarTarea">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaRequest" message="tns:insertarTarea" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaResponse" message="tns:insertarTareaResponse" />
+    <operation name="eliminarTarea">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaRequest" message="tns:eliminarTarea" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaResponse" message="tns:eliminarTareaResponse" />
     </operation>
     <operation name="actualizarTarea">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarTareaRequest" message="tns:actualizarTarea" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarTareaResponse" message="tns:actualizarTareaResponse" />
     </operation>
-    <operation name="eliminarTarea">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaRequest" message="tns:eliminarTarea" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaResponse" message="tns:eliminarTareaResponse" />
+    <operation name="insertarTarea">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaRequest" message="tns:insertarTarea" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaResponse" message="tns:insertarTareaResponse" />
     </operation>
     <operation name="listarTareasPorTicket">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaWS/listarTareasPorTicketRequest" message="tns:listarTareasPorTicket" />
@@ -49,7 +49,7 @@
   </portType>
   <binding name="TareaWSPortBinding" type="tns:TareaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="insertarTarea">
+    <operation name="eliminarTarea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarTarea">
+    <operation name="insertarTarea">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/UrgenciaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="insertarUrgencia">
+    <part name="parameters" element="tns:insertarUrgencia" />
+  </message>
+  <message name="insertarUrgenciaResponse">
+    <part name="parameters" element="tns:insertarUrgenciaResponse" />
+  </message>
   <message name="eliminarUrgencia">
     <part name="parameters" element="tns:eliminarUrgencia" />
   </message>
@@ -17,12 +23,6 @@
   <message name="listarUrgenciasResponse">
     <part name="parameters" element="tns:listarUrgenciasResponse" />
   </message>
-  <message name="insertarUrgencia">
-    <part name="parameters" element="tns:insertarUrgencia" />
-  </message>
-  <message name="insertarUrgenciaResponse">
-    <part name="parameters" element="tns:insertarUrgenciaResponse" />
-  </message>
   <message name="actualizarUrgencia">
     <part name="parameters" element="tns:actualizarUrgencia" />
   </message>
@@ -30,6 +30,10 @@
     <part name="parameters" element="tns:actualizarUrgenciaResponse" />
   </message>
   <portType name="UrgenciaWS">
+    <operation name="insertarUrgencia">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/insertarUrgenciaRequest" message="tns:insertarUrgencia" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/insertarUrgenciaResponse" message="tns:insertarUrgenciaResponse" />
+    </operation>
     <operation name="eliminarUrgencia">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaRequest" message="tns:eliminarUrgencia" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaResponse" message="tns:eliminarUrgenciaResponse" />
@@ -38,10 +42,6 @@
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasRequest" message="tns:listarUrgencias" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasResponse" message="tns:listarUrgenciasResponse" />
     </operation>
-    <operation name="insertarUrgencia">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/insertarUrgenciaRequest" message="tns:insertarUrgencia" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/insertarUrgenciaResponse" message="tns:insertarUrgenciaResponse" />
-    </operation>
     <operation name="actualizarUrgencia">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaRequest" message="tns:actualizarUrgencia" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaResponse" message="tns:actualizarUrgenciaResponse" />
@@ -49,6 +49,15 @@
   </portType>
   <binding name="UrgenciaWSPortBinding" type="tns:UrgenciaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarUrgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarUrgencia">
       <soap:operation soapAction="" />
       <input>
@@ -59,15 +68,6 @@
       </output>
     </operation>
     <operation name="listarUrgencias">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="insertarUrgencia">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

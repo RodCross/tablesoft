@@ -135,7 +135,7 @@ namespace TableSoft
 
                 BindingList<TicketWS.transferenciaExterna> historialTransfExterna;
 
-                if (ticket.historialTransfInterna == null)
+                if (ticket.historialTransfExterna == null)
                 {
                     historialTransfExterna = new BindingList<TicketWS.transferenciaExterna>();
                 }

@@ -863,10 +863,16 @@
     <None Include="Connected Services\TareaPredeterminadaWS\TareaPredeterminadaWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.actualizarInsertarTareasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\TareaWS\TableSoft.TareaWS.actualizarTareaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\TareaWS\TableSoft.TareaWS.eliminarTareaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.eliminarTareasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\TareaWS\TableSoft.TareaWS.insertarTareaResponse.datasource">

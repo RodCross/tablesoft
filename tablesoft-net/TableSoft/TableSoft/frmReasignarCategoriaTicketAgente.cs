@@ -23,7 +23,6 @@ namespace TableSoft
         {
             ticket = tck;
             agente.agenteId = frmInicioSesion.agenteLogueado.agenteId;
-            agente.codigo = frmInicioSesion.agenteLogueado.codigo;
 
             InitializeComponent();
 
@@ -80,6 +79,7 @@ namespace TableSoft
             {
                 CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvCategoria.CurrentRow.DataBoundItem;
                 TicketWS.categoria cateGo = new TicketWS.categoria();
+                cateGo.nombre = cat.nombre;
                 cateGo.categoriaId = cat.categoriaId;
                 ticket.categoria = cateGo;
 
@@ -87,14 +87,15 @@ namespace TableSoft
                 estAsignado.estadoId = (int)Estado.Recategorizado;
                 ticket.estado = estAsignado;
                 
-
-                // Creamos el cambio de estado
                 var ag = new TicketWS.agente();
                 ag.agenteId = agente.agenteId;
+
+                // Creamos el cambio de estado
                 var cambioEstado = new TicketWS.cambioEstadoTicket();
-                cambioEstado.comentario = rtfComentario.Text;
+                cambioEstado.comentario = "El ticket ha sido recategorizado";
                 cambioEstado.agenteResponsable = ag;
                 cambioEstado.estadoTo = estAsignado;
+                cambioEstado.cambioEstadoTicketId = 0;
 
                 // Registrar el cambio de estado
 
@@ -115,8 +116,28 @@ namespace TableSoft
                 ticket.historialEstado = historialEstados.ToArray();
 
                 // Creamos la transferencia interna
-                
-                
+                var transfer = new TicketWS.transferenciaInterna();
+                transfer.agenteResponsable = ag;
+                transfer.comentario = rtfComentario.Text;
+                transfer.categoriaTo = cateGo;
+                transfer.transferenciaId = 0;
+
+                // Registrar la transferenica
+
+                BindingList<TicketWS.transferenciaInterna> historialTransfInterna;
+
+                if(ticket.historialTransfInterna == null)
+                {
+                    historialTransfInterna = new BindingList<TicketWS.transferenciaInterna>();
+                }
+                else
+                {
+                    historialTransfInterna = new BindingList<TicketWS.transferenciaInterna>(ticket.historialTransfInterna.ToList());
+                }
+                historialTransfInterna.Add(transfer);
+
+                ticket.historialTransfInterna = historialTransfInterna.ToArray();
+
                 // Se actualiza el ticket
                 if (ticketDAO.actualizarTicket(ticket) > -1)
                 {

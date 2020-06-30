@@ -291,6 +291,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmInicioEmpleado";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yanapay | Inicio";
             this.pnlExt.ResumeLayout(false);
             this.pnlInt.ResumeLayout(false);

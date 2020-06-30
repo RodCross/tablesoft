@@ -134,6 +134,7 @@ namespace TableSoft
                         "Reasignación no realizada",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
+                    this.Close();
                 }
             }
         }

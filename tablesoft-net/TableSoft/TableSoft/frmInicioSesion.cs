@@ -28,11 +28,7 @@ namespace TableSoft
         // Inicios de sesion
         private void AbrirInicioEmpleado()
         {
-            frmInicioEmpleado frm = new frmInicioEmpleado
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmInicioEmpleado frm = new frmInicioEmpleado();
             
             // Mostrar pagina inicial al cerrar sesion
             frm.FormClosing += delegate
@@ -47,11 +43,7 @@ namespace TableSoft
 
         private void AbrirInicioAgente()
         {
-            frmInicioAgente frm = new frmInicioAgente
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmInicioAgente frm = new frmInicioAgente();
 
             // Mostrar pagina inicial al cerrar sesion
             frm.FormClosing += delegate
@@ -65,11 +57,7 @@ namespace TableSoft
 
         private void AbrirInicioSupervisor()
         {
-            frmInicioSupervisor frm = new frmInicioSupervisor
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmInicioSupervisor frm = new frmInicioSupervisor();
 
             // Mostrar pagina inicial al cerrar sesion
             frm.FormClosing += delegate
@@ -84,11 +72,7 @@ namespace TableSoft
 
         private void AbrirInicioAdmin()
         {
-            frmInicioAdmin frm = new frmInicioAdmin
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmInicioAdmin frm = new frmInicioAdmin();
 
             // Mostrar pagina inicial al cerrar sesion
             frm.FormClosing += delegate

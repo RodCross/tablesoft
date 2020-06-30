@@ -12,7 +12,7 @@ namespace TableSoft
 {
     public partial class frmInfoTicketEmpleado : Form
     {
-        private const string defaultRespuesta = "Escribe aquí tu comentario.";
+        private const string comentarioPorDefecto = "Escribe aquí tu comentario.";
         private int numPanel = 0;
         private int longitudY = 0;
         private Panel panel;
@@ -30,13 +30,13 @@ namespace TableSoft
         {
             InitializeComponent();
             CrearPaneles();
-            MostrarDefaultRespuesta();
+            MostrarComentarioPorDefecto();
         }
         public frmInfoTicketEmpleado(TicketWS.ticket tick)
         {
             InitializeComponent();
             CrearPaneles();
-            MostrarDefaultRespuesta();
+            MostrarComentarioPorDefecto();
             lblAsunto.Text = tick.asunto;
             lblId.Text = "# " + tick.ticketId.ToString();
             lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - "); ;
@@ -134,10 +134,10 @@ namespace TableSoft
             }
         }
 
-        private void MostrarDefaultRespuesta()
+        private void MostrarComentarioPorDefecto()
         {
             rtfRespuesta.ForeColor = Color.Gray;
-            rtfRespuesta.Text = defaultRespuesta;
+            rtfRespuesta.Text = comentarioPorDefecto;
         }
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
@@ -184,7 +184,7 @@ namespace TableSoft
 
         private void rtfRespuesta_Enter(object sender, EventArgs e)
         {
-            if (rtfRespuesta.Text == defaultRespuesta)
+            if (rtfRespuesta.Text == comentarioPorDefecto)
             {
                 rtfRespuesta.Text = "";
                 rtfRespuesta.ForeColor = Color.Black;
@@ -195,7 +195,7 @@ namespace TableSoft
         {
             if (rtfRespuesta.Text == "")
             {
-                MostrarDefaultRespuesta();
+                MostrarComentarioPorDefecto();
             }
         }
     }

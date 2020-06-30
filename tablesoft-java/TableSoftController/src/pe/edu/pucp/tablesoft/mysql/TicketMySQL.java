@@ -119,7 +119,7 @@ public class TicketMySQL implements TicketDAO{
                     cs2.setInt("_TICKET_ID", ticket.getTicketId());
                     cs2.setInt("_AGENTE_ID", transfer.getAgenteResponsable().getAgenteId());
                     cs2.setString("_COMENTARIO", transfer.getComentario());
-                    cs2.setInt("_PROVEEDOR_ID", ((TransferenciaInterna)transfer).getCategoriaTo().getCategoriaId());
+                    cs2.setInt("_CATEGORIA_ID", transfer.getCategoriaTo().getCategoriaId());
                     cs2.execute();
                     transfer.setTransferenciaId(cs2.getInt("_ID"));
                     transfer.setFecha(LocalDateTime.now());

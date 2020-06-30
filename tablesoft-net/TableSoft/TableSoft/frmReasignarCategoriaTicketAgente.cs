@@ -8,7 +8,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
@@ -18,7 +17,8 @@ namespace TableSoft
         private BindingList<CategoriaWS.categoria> categorias;
         private TicketWS.ticket ticket;
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
-        private TicketWS.agente agente;
+        private TicketWS.agente agente = new TicketWS.agente();
+
         public frmReasignarCategoriaTicketAgente(TicketWS.ticket tck)
         {
             ticket = tck;

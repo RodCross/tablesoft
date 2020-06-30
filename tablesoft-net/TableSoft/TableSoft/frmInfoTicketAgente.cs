@@ -13,29 +13,29 @@ namespace TableSoft
 {
     public partial class frmInfoTicketAgente : Form
     {
+        private ComentarioWS.ComentarioWSClient comentarioDAO = new ComentarioWS.ComentarioWSClient();
+        private ComentarioWS.comentario[] comentarios;
+        private ComentarioWS.comentario comentarioActual;
         private TicketWS.ticket ticket;
+
         private const string comentarioPorDefecto = "Escribe aquí tu comentario.";
         private int numPanel = 0;
         private int longitudY = 0;
-        private Panel panel;
+        private Dictionary<int, Panel> paneles = new Dictionary<int, Panel>();
         private Label lblNombre;
         private Label lblFecha;
         private Label lblCom;
-
-        // temporal
-        private BindingList<string> nombres = new BindingList<string>();
-        private BindingList<string> fechas = new BindingList<string>();
-        private BindingList<string> comentarios = new BindingList<string>();
 
         public frmInfoTicketAgente(TicketWS.ticket tick)
         {
             ticket = tick;
             InitializeComponent();
+            LlenarComentarios();
             CrearPaneles();
             MostrarComentarioPorDefecto();
             lblAsunto.Text = tick.asunto;
             lblId.Text = "# " + tick.ticketId.ToString();
-            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - ");
+            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace(" ", " - ");
             lblFecCieEst.Text = tick.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
             lblEstado.Text = tick.estado.nombre;
             lblBib.Text = tick.biblioteca.nombre;
@@ -51,83 +51,104 @@ namespace TableSoft
             }
         }
 
+        private void LlenarComentarios()
+        {
+            ComentarioWS.ticket tCom = new ComentarioWS.ticket
+            {
+                ticketId = ticket.ticketId
+            };
+
+            comentarios = comentarioDAO.listarComentariosDeTicket(tCom);
+        }
+
         private void CrearPaneles()
         {
-            nombres.Add("ROLDÁN HUAYLLASCO, STEFANO");
-            nombres.Add("VERÁSTEGUI SÁNCHEZ, FERNANDO GUILLERMO");
-            nombres.Add("ROLDÁN HUAYLLASCO, STEFANO");
-            fechas.Add("2020/06/29 - 22:44:45");
-            fechas.Add("2020/05/17 - 16:33:02");
-            fechas.Add("2020/04/03 - 04:14:57");
-            comentarios.Add("Estimado Fernando:\nHe procedido a realizar lo que usted me ha indicado y estoy a la espera de su nueva respuesta. Agradezco de antemano su comprensión ante estos inesperados inconvenientes.");
-            comentarios.Add("Saludos, Stefano:\nPara poder determinar la raíz del problema, necesitamos un poco más de información de su parte. ¿Podría intentar volver a realizar las impresiones, para luego revisar si hay mensajes en los displays de las dos impresoras ? Si esto fuera así, le agradecería que nos brinde el contenido de dichos mensajes.Esto ayudará a identificar con más facilidad la causa y también a determinar si es necesario enviar un técnico al área de las impresoras.También sería bueno que adjunte una foto del documento impreso a medias.Espero su respuesta.Si esto fuera así, le agradecería que nos brinde el contenido de dichos mensajes.Esto ayudará a identificar con más facilidad la causa y también a determinar si es necesario enviar un técnico al área de las impresoras.También sería bueno que adjunte una foto del documento impreso a medias.Espero su respuesta.También sería bueno que adjunte una foto del documento impreso a medias.Espero su respuesta.Espero su respuesta.Espero respuesta.");
-            comentarios.Add("Saludos,\nEscribo para comunicar un problema que yo y mis colegas hemos notado hace unos minutos.Al intentar imprimir documentos, ninguna de las dos impresoras funciona correctamente.Una de ellas mueve el papel de la bandeja, pero solo imprime un par de líneas y luego deja la hoja en blanco, mientras que la otra directamente no comienza la impresion.Espero su respuesta.Gracias de antemano.");
-
-            foreach (string nombre in nombres)
+            if (comentarios != null)
             {
-                panel = new Panel
-                {
-                    Location = new Point(3, longitudY + 6),
-                    Name = "pnlMsg" + numPanel,
-                    Size = new Size(706, 170),
-                    BackColor = SystemColors.Control
-                };
+                numPanel = 0;
+                longitudY = 0;
 
-                lblNombre = new Label
+                foreach (ComentarioWS.comentario comentario in comentarios)
                 {
-                    Font = new Font("Microsoft PhagsPa", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0),
-                    Location = new Point(17, 3),
-                    Name = "lblNombre" + numPanel,
-                    Size = new Size(654, 22),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Text = nombre
-                };
+                    paneles.Add(numPanel, new Panel
+                    {
+                        Location = new Point(3, longitudY + 6),
+                        Name = "pnlMsg" + numPanel,
+                        Size = new Size(706, 170),
+                        BackColor = SystemColors.Control
+                    });
 
-                lblFecha = new Label
-                {
-                    Font = new Font("Microsoft PhagsPa", 10.25F, FontStyle.Bold, GraphicsUnit.Point, 0),
-                    Location = new Point(18, 28),
-                    Name = "lblFecha" + numPanel,
-                    Size = new Size(654, 20),
-                    TextAlign = ContentAlignment.MiddleLeft,
-                    Text = fechas[numPanel]
-                };
+                    lblNombre = new Label
+                    {
+                        Font = new Font("Microsoft PhagsPa", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                        Location = new Point(17, 3),
+                        Name = "lblNombre" + numPanel,
+                        Size = new Size(654, 22),
+                        TextAlign = ContentAlignment.MiddleLeft,
+                        Text = (comentario.autor.apellidoPaterno + " " + comentario.autor.apellidoMaterno + ", " + comentario.autor.nombre).ToUpper()
+                    };
 
-                lblCom = new Label
-                {
-                    Font = new Font("Microsoft PhagsPa", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0),
-                    Location = new Point(18, 53),
-                    Name = "lblCom" + numPanel,
-                    Size = new Size(10, 10),
-                    TextAlign = ContentAlignment.TopLeft,
-                    Text = comentarios[numPanel]
-                };
+                    lblFecha = new Label
+                    {
+                        Font = new Font("Microsoft PhagsPa", 10.25F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                        Location = new Point(18, 28),
+                        Name = "lblFecha" + numPanel,
+                        Size = new Size(654, 20),
+                        TextAlign = ContentAlignment.MiddleLeft,
+                        Text = comentario.fecha.Replace('-', '/').Replace("T", " - ")
+                    };
 
-                // AQUI VERIFICAR SI LA RESPUESTA VIENE DE UN AGENTE
-                if (nombre[0] == 'V')
-                {
-                    lblNombre.ForeColor = lblFecha.ForeColor = lblCom.ForeColor = Color.MediumBlue;
+                    lblCom = new Label
+                    {
+                        Font = new Font("Microsoft PhagsPa", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0),
+                        Location = new Point(18, 53),
+                        Name = "lblCom" + numPanel,
+                        Size = new Size(10, 10),
+                        TextAlign = ContentAlignment.TopLeft,
+                        Text = comentario.texto
+                    };
+
+                    // Toda la seccion va de color azul si el comentario ha sido
+                    // escrito por un agente. Caso contrario, va en escala de grises.
+                    if (comentario.autor.tipo == 'A')
+                    {
+                        lblNombre.ForeColor = lblFecha.ForeColor = lblCom.ForeColor = Color.MediumBlue;
+                    }
+                    else
+                    {
+                        lblNombre.ForeColor = Color.FromArgb(71, 82, 94);
+                        lblFecha.ForeColor = Color.Gray;
+                        lblCom.ForeColor = Color.Black;
+                    }
+
+                    paneles[numPanel].Controls.Add(lblNombre);
+                    paneles[numPanel].Controls.Add(lblFecha);
+
+                    // Acomodar panel a longitud de comentario
+                    lblCom.MaximumSize = new Size(666, 0);
+                    lblCom.AutoSize = true;
+                    paneles[numPanel].Controls.Add(lblCom);
+                    paneles[numPanel].Size = new Size(706, lblCom.Size.Height + 68);
+                    longitudY = paneles[numPanel].Location.Y + paneles[numPanel].Size.Height;
+
+                    pnlMensajes.Controls.Add(paneles[numPanel]);
+                    numPanel++;
                 }
-                else
-                {
-                    lblNombre.ForeColor = Color.FromArgb(71, 82, 94);
-                    lblFecha.ForeColor = Color.Gray;
-                    lblCom.ForeColor = Color.Black;
-                }
+            }   
+        }
 
-                panel.Controls.Add(lblNombre);
-                panel.Controls.Add(lblFecha);
-
-                // Acomodar panel a longitud de comentario
-                lblCom.MaximumSize = new Size(666, 0);
-                lblCom.AutoSize = true;
-                panel.Controls.Add(lblCom);
-                panel.Size = new Size(706, lblCom.Size.Height + 68);
-                longitudY = panel.Location.Y + panel.Size.Height;
-
-                pnlMensajes.Controls.Add(panel);
-                numPanel++;
+        private void RecargarComentarios()
+        {
+            // Elimina los paneles de los mensajes individuales junto con la memoria usada
+            foreach (KeyValuePair<int, Panel> entrada in paneles)
+            {
+                pnlMensajes.Controls.Remove(entrada.Value);
+                entrada.Value.Dispose();    
             }
+
+            // Limpia el diccionario que guarda paneles para poder llenarlo otra vez
+            paneles.Clear();
+            CrearPaneles();
         }
 
         private void MostrarComentarioPorDefecto()
@@ -148,11 +169,54 @@ namespace TableSoft
 
         private void btnResponder_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(
-                "La respuesta se ha registrado correctamente.",
-                "Registro exitoso",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-            );
+            if (rtfRespuesta.Text.Length < 30)
+            {
+                MessageBox.Show(
+                "El comentario debe tener como mínimo 30 caracteres.",
+                "Comentario muy corto",
+                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                if (MessageBox.Show(
+                    "¿Deseas registrar el comentario ingresado?",
+                    "Registrar comentario",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    comentarioActual = new ComentarioWS.comentario
+                    {
+                        texto = rtfRespuesta.Text,
+                        autor = new ComentarioWS.persona()
+                    };
+                    comentarioActual.autor.codigo = frmInicioSesion.agenteLogueado.codigo;
+                    ComentarioWS.ticket tCom = new ComentarioWS.ticket
+                    {
+                        ticketId = ticket.ticketId
+                    };
+
+                    if (comentarioDAO.insertarComentario(comentarioActual, tCom) != 0)
+                    {
+                        MessageBox.Show(
+                        "El comentario se ha registrado correctamente.",
+                        "Registro exitoso",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Limpiar respuesta, actualizar lista de comentarios y recargar paneles
+                        rtfRespuesta.Text = "";
+                        rtfRespuesta.Select();
+                        comentarios = comentarioDAO.listarComentariosDeTicket(tCom);
+                        RecargarComentarios();
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                        "El comentario no se ha podido registrar.",
+                        "Registro fallido",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
         }
 
         private void rtfRespuesta_Enter(object sender, EventArgs e)

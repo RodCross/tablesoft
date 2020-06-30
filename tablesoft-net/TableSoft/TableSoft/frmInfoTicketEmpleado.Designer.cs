@@ -247,7 +247,6 @@
             this.lblBib.Name = "lblBib";
             this.lblBib.Size = new System.Drawing.Size(260, 47);
             this.lblBib.TabIndex = 9;
-            this.lblBib.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEstado
             // 

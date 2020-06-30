@@ -72,7 +72,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
-            this.pnlTitulo.TabIndex = 0;
+            this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // btnVolver
@@ -86,7 +86,7 @@
             this.btnVolver.Location = new System.Drawing.Point(910, 19);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 1;
+            this.btnVolver.TabIndex = 0;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -99,7 +99,7 @@
             this.lblInfoTicket.Location = new System.Drawing.Point(30, 22);
             this.lblInfoTicket.Name = "lblInfoTicket";
             this.lblInfoTicket.Size = new System.Drawing.Size(230, 27);
-            this.lblInfoTicket.TabIndex = 0;
+            this.lblInfoTicket.TabIndex = 1;
             this.lblInfoTicket.Text = "Información del ticket";
             // 
             // pnlDatos
@@ -123,7 +123,7 @@
             this.pnlDatos.Location = new System.Drawing.Point(12, 76);
             this.pnlDatos.Name = "pnlDatos";
             this.pnlDatos.Size = new System.Drawing.Size(302, 553);
-            this.pnlDatos.TabIndex = 3;
+            this.pnlDatos.TabIndex = 2;
             // 
             // lblUrg
             // 
@@ -255,7 +255,6 @@
             this.lblBib.Name = "lblBib";
             this.lblBib.Size = new System.Drawing.Size(260, 47);
             this.lblBib.TabIndex = 9;
-            this.lblBib.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEstado
             // 
@@ -377,7 +376,7 @@
             this.lblAsunto.Location = new System.Drawing.Point(339, 78);
             this.lblAsunto.Name = "lblAsunto";
             this.lblAsunto.Size = new System.Drawing.Size(690, 37);
-            this.lblAsunto.TabIndex = 4;
+            this.lblAsunto.TabIndex = 3;
             this.lblAsunto.Text = "Asunto del ticket";
             this.lblAsunto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -392,7 +391,7 @@
             this.pnlComentario.Location = new System.Drawing.Point(320, 354);
             this.pnlComentario.Name = "pnlComentario";
             this.pnlComentario.Size = new System.Drawing.Size(732, 275);
-            this.pnlComentario.TabIndex = 5;
+            this.pnlComentario.TabIndex = 0;
             // 
             // btnResponder
             // 
@@ -408,6 +407,7 @@
             this.btnResponder.TabIndex = 1;
             this.btnResponder.Text = "Responder";
             this.btnResponder.UseVisualStyleBackColor = false;
+            this.btnResponder.Click += new System.EventHandler(this.btnResponder_Click);
             // 
             // rtfRespuesta
             // 
@@ -426,11 +426,10 @@
             this.pnlMensajes.Location = new System.Drawing.Point(320, 121);
             this.pnlMensajes.Name = "pnlMensajes";
             this.pnlMensajes.Size = new System.Drawing.Size(732, 227);
-            this.pnlMensajes.TabIndex = 6;
+            this.pnlMensajes.TabIndex = 4;
             // 
             // frmInfoTicketAgente
             // 
-            this.AcceptButton = this.btnResponder;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 639);

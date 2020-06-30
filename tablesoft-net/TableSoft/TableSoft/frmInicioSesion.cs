@@ -266,5 +266,15 @@ namespace TableSoft
             pic.Image = Properties.Resources.EyeMouseEnter;
             txtPassword.PasswordChar = '•';
         }
+
+        private void txtEmail_Enter(object sender, EventArgs e)
+        {
+            txtEmail.SelectAll();
+        }
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            txtPassword.SelectAll();
+        }
     }
 }

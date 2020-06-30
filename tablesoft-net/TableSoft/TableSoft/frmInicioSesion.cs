@@ -236,5 +236,35 @@ namespace TableSoft
             frm.Show();
             this.Hide();
         }
+
+        private void picEye_MouseDown(object sender, MouseEventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.EyeMouseDown;
+            txtPassword.PasswordChar = '\0';
+        }
+
+        private void picEye_MouseEnter(object sender, EventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.EyeMouseEnter;
+        }
+
+        private void picEye_MouseLeave(object sender, EventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.Eye;
+        }
+
+        private void picEye_MouseUp(object sender, MouseEventArgs e)
+        {
+            PictureBox pic = (PictureBox)sender;
+
+            pic.Image = Properties.Resources.EyeMouseEnter;
+            txtPassword.PasswordChar = '•';
+        }
     }
 }

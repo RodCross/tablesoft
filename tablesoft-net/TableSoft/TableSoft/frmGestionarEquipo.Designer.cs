@@ -270,7 +270,8 @@
             // 
             // picMinus
             // 
-            this.picMinus.Image = global::TableSoft.Properties.Resources.minus;
+            this.picMinus.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picMinus.Image = global::TableSoft.Properties.Resources.Minus;
             this.picMinus.Location = new System.Drawing.Point(601, 240);
             this.picMinus.Name = "picMinus";
             this.picMinus.Size = new System.Drawing.Size(38, 39);
@@ -281,7 +282,8 @@
             // 
             // picAdd
             // 
-            this.picAdd.Image = global::TableSoft.Properties.Resources.plus;
+            this.picAdd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picAdd.Image = global::TableSoft.Properties.Resources.Plus;
             this.picAdd.Location = new System.Drawing.Point(555, 240);
             this.picAdd.Name = "picAdd";
             this.picAdd.Size = new System.Drawing.Size(40, 39);

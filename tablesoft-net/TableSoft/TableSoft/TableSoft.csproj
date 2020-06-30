@@ -1057,6 +1057,8 @@
     <None Include="packages.config" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\minus.png" />
+    <None Include="images\Minus.png" />
+    <None Include="images\Plus.png" />
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup>

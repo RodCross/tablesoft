@@ -44,9 +44,11 @@
             this.lblErrEmail = new System.Windows.Forms.Label();
             this.lblErrPassword = new System.Windows.Forms.Label();
             this.picExit = new System.Windows.Forms.PictureBox();
+            this.picEye = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             this.pnlLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -117,6 +119,7 @@
             // pnlLogin
             // 
             this.pnlLogin.BackColor = System.Drawing.Color.White;
+            this.pnlLogin.Controls.Add(this.picEye);
             this.pnlLogin.Controls.Add(this.txtEmail);
             this.pnlLogin.Controls.Add(this.btnLogin);
             this.pnlLogin.Controls.Add(this.lklForgot);
@@ -173,8 +176,8 @@
             this.txtPassword.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPassword.Location = new System.Drawing.Point(30, 148);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(351, 28);
+            this.txtPassword.PasswordChar = '•';
+            this.txtPassword.Size = new System.Drawing.Size(323, 28);
             this.txtPassword.TabIndex = 1;
             // 
             // lblContraseña
@@ -240,6 +243,21 @@
             this.picExit.MouseLeave += new System.EventHandler(this.picExit_MouseLeave);
             this.picExit.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picExit_MouseUp);
             // 
+            // picEye
+            // 
+            this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picEye.Image = global::TableSoft.Properties.Resources.Eye;
+            this.picEye.Location = new System.Drawing.Point(352, 148);
+            this.picEye.Name = "picEye";
+            this.picEye.Size = new System.Drawing.Size(29, 28);
+            this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picEye.TabIndex = 58;
+            this.picEye.TabStop = false;
+            this.picEye.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseDown);
+            this.picEye.MouseEnter += new System.EventHandler(this.picEye_MouseEnter);
+            this.picEye.MouseLeave += new System.EventHandler(this.picEye_MouseLeave);
+            this.picEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseUp);
+            // 
             // frmInicioSesion
             // 
             this.AcceptButton = this.btnLogin;
@@ -263,6 +281,7 @@
             this.pnlLogin.ResumeLayout(false);
             this.pnlLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picExit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picEye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -285,5 +304,6 @@
         private System.Windows.Forms.LinkLabel lklFAQ;
         private System.Windows.Forms.Label lblErrEmail;
         private System.Windows.Forms.Label lblErrPassword;
+        private System.Windows.Forms.PictureBox picEye;
     }
 }

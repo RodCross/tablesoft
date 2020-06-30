@@ -165,7 +165,7 @@
             // 
             // picAdd
             // 
-            this.picAdd.Image = global::TableSoft.Properties.Resources.plus;
+            this.picAdd.Image = global::TableSoft.Properties.Resources.Plus;
             this.picAdd.Location = new System.Drawing.Point(413, 503);
             this.picAdd.Name = "picAdd";
             this.picAdd.Size = new System.Drawing.Size(40, 39);

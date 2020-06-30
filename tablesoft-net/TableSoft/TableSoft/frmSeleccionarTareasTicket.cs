@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
@@ -20,7 +21,7 @@ namespace TableSoft
             InitializeComponent();
 
             ticket.ticketId = tick.ticketId;
-            agente.agenteId = 6;
+            agente.agenteId = frmInicioSesion.agenteLogueado.agenteId;
 
             TareaWS.tarea[] arrTareas = tareaDAO.listarTareasPorTicket(ticket);
             
@@ -51,15 +52,22 @@ namespace TableSoft
         {
             if (MessageBox.Show("¿Desea guardar los cambios realizados?", "Actualizar Lista de Tareas", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                foreach (TareaWS.tarea t in tareas)
+
+                foreach (DataGridViewRow row in dgvLista.Rows)
                 {
-                    if (t.tareaId == 0)
+                    TareaWS.tarea t = (TareaWS.tarea)row.DataBoundItem;
+
+                    if (Convert.ToBoolean(row.Cells["Eliminar"].Value) == true)
                     {
-                        tareaDAO.insertarTarea(t, ticket);
+                        if (t.tareaId != 0) tareaDAO.eliminarTarea(t);
                     }
                     else
                     {
-                        tareaDAO.actualizarTarea(t, agente);
+                        if (t.tareaId == 0) tareaDAO.insertarTarea(t, ticket);
+                        else
+                        {
+                            tareaDAO.actualizarTarea(t, agente);
+                        }
                     }
                 }
 
@@ -76,21 +84,9 @@ namespace TableSoft
 
                 dgvLista.AutoGenerateColumns = false;
                 dgvLista.DataSource = tareas;
+
+                MessageBox.Show("Actualizacion completa", "Actualizar Lista de Tareas", MessageBoxButtons.OK);
             }
-
-            //TareaWS.tarea tareaNueva = new TareaWS.tarea();
-
-            //tareaNueva.descripcion = txtDescripcion.Text;
-            //tareaNueva.completado = false;
-            //tareaNueva.tareaId = 0;
-            //tareaNueva.agente = new TareaWS.agente();
-            //tareaNueva.agente.agenteId = 6;
-            //tareaNueva.descripcion = "Tarea desde C# hard code";
-
-            //int i = tareaDAO.insertarTarea(tareaNueva, ticket);
-
-            //txtDescripcion.Text = "";
-
         }
 
         private void picAdd_Click(object sender, EventArgs e)

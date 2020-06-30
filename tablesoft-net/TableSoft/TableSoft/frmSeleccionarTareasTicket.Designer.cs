@@ -41,12 +41,12 @@
             this.lblListaTareas = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.picAdd = new System.Windows.Forms.PictureBox();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
-            this.picAdd = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
@@ -154,6 +154,26 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(35, 466);
+            this.txtDescripcion.Multiline = true;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(372, 76);
+            this.txtDescripcion.TabIndex = 6;
+            // 
+            // picAdd
+            // 
+            this.picAdd.Image = global::TableSoft.Properties.Resources.plus;
+            this.picAdd.Location = new System.Drawing.Point(413, 503);
+            this.picAdd.Name = "picAdd";
+            this.picAdd.Size = new System.Drawing.Size(40, 39);
+            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picAdd.TabIndex = 13;
+            this.picAdd.TabStop = false;
+            this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
+            // 
             // ID
             // 
             this.ID.DataPropertyName = "tareaId";
@@ -196,26 +216,6 @@
             this.Eliminar.HeaderText = "Eliminar";
             this.Eliminar.Name = "Eliminar";
             // 
-            // txtDescripcion
-            // 
-            this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(35, 466);
-            this.txtDescripcion.Multiline = true;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(324, 76);
-            this.txtDescripcion.TabIndex = 6;
-            // 
-            // picAdd
-            // 
-            this.picAdd.Image = global::TableSoft.Properties.Resources.plus;
-            this.picAdd.Location = new System.Drawing.Point(365, 503);
-            this.picAdd.Name = "picAdd";
-            this.picAdd.Size = new System.Drawing.Size(40, 39);
-            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picAdd.TabIndex = 13;
-            this.picAdd.TabStop = false;
-            this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
-            // 
             // frmSeleccionarTareasTicket
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,11 +245,11 @@
         private System.Windows.Forms.Label lblListaTareas;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.PictureBox picAdd;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Completado;
         private System.Windows.Forms.DataGridViewCheckBoxColumn Eliminar;
-        private System.Windows.Forms.TextBox txtDescripcion;
-        private System.Windows.Forms.PictureBox picAdd;
     }
 }

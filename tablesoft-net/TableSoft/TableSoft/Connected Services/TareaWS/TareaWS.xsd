@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarInsertarTareas" type="tns:actualizarInsertarTareas" />
+  <xs:element name="actualizarInsertarTareasResponse" type="tns:actualizarInsertarTareasResponse" />
   <xs:element name="actualizarTarea" type="tns:actualizarTarea" />
   <xs:element name="actualizarTareaResponse" type="tns:actualizarTareaResponse" />
   <xs:element name="eliminarTarea" type="tns:eliminarTarea" />
   <xs:element name="eliminarTareaResponse" type="tns:eliminarTareaResponse" />
+  <xs:element name="eliminarTareas" type="tns:eliminarTareas" />
+  <xs:element name="eliminarTareasResponse" type="tns:eliminarTareasResponse" />
   <xs:element name="insertarTarea" type="tns:insertarTarea" />
   <xs:element name="insertarTareaResponse" type="tns:insertarTareaResponse" />
   <xs:element name="listarTareasPorTicket" type="tns:listarTareasPorTicket" />
   <xs:element name="listarTareasPorTicketResponse" type="tns:listarTareasPorTicketResponse" />
-  <xs:complexType name="actualizarTarea">
+  <xs:complexType name="eliminarTareas">
     <xs:sequence>
-      <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
-      <xs:element minOccurs="0" name="objAgente" type="tns:agente" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objTarea" type="tns:tarea" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="tarea">
@@ -96,7 +99,8 @@
       <xs:element minOccurs="0" name="fechaCierreMaximo" type="xs:string" />
       <xs:element minOccurs="0" name="fechaEnvio" type="xs:string" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="historialEstado" nillable="true" type="tns:cambioEstadoTicket" />
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="historialTransferencia" nillable="true" type="tns:transferenciaTicket" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="historialTransfExterna" nillable="true" type="tns:transferenciaExterna" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="historialTransfInterna" nillable="true" type="tns:transferenciaInterna" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="listaTareas" nillable="true" type="tns:tarea" />
       <xs:element minOccurs="0" name="proveedor" type="tns:proveedor" />
       <xs:element minOccurs="0" name="retrasado" type="xs:boolean" />
@@ -158,6 +162,15 @@
       <xs:element minOccurs="0" name="fechaCambioEstado" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="transferenciaExterna">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:transferenciaTicket">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="proveedorTo" type="tns:proveedor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="transferenciaTicket">
     <xs:sequence>
       <xs:element minOccurs="0" name="agenteResponsable" type="tns:agente" />
@@ -191,6 +204,15 @@
       <xs:element name="paisId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="transferenciaInterna">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:transferenciaTicket">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categoriaTo" type="tns:categoria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="urgencia">
     <xs:sequence>
       <xs:element minOccurs="0" name="activo" type="xs:boolean" />
@@ -207,7 +229,29 @@
       <xs:element name="rolId" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="eliminarTareasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarTarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
+      <xs:element minOccurs="0" name="objAgente" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="actualizarTareaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarInsertarTareas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objArrTarea" type="tns:tarea" />
+      <xs:element minOccurs="0" name="objTicket" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarInsertarTareasResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>

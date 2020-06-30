@@ -18,6 +18,7 @@ namespace TableSoft.TareaWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.TareaWS.eliminarTareaResponse eliminarTarea(TableSoft.TareaWS.eliminarTareaRequest request);
         
@@ -27,6 +28,7 @@ namespace TableSoft.TareaWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarTareaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.TareaWS.actualizarTareaResponse actualizarTarea(TableSoft.TareaWS.actualizarTareaRequest request);
         
@@ -36,6 +38,7 @@ namespace TableSoft.TareaWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/insertarTareaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.TareaWS.insertarTareaResponse insertarTarea(TableSoft.TareaWS.insertarTareaRequest request);
         
@@ -45,11 +48,32 @@ namespace TableSoft.TareaWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/listarTareasPorTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/listarTareasPorTicketResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.TareaWS.listarTareasPorTicketResponse listarTareasPorTicket(TableSoft.TareaWS.listarTareasPorTicketRequest request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/listarTareasPorTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/listarTareasPorTicketResponse")]
         System.Threading.Tasks.Task<TableSoft.TareaWS.listarTareasPorTicketResponse> listarTareasPorTicketAsync(TableSoft.TareaWS.listarTareasPorTicketRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareasRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.TareaWS.eliminarTareasResponse eliminarTareas(TableSoft.TareaWS.eliminarTareasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareasRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/eliminarTareasResponse")]
+        System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareasResponse> eliminarTareasAsync(TableSoft.TareaWS.eliminarTareasRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarInsertarTareasRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarInsertarTareasResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.TareaWS.actualizarInsertarTareasResponse actualizarInsertarTareas(TableSoft.TareaWS.actualizarInsertarTareasRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarInsertarTareasRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaWS/actualizarInsertarTareasResponse")]
+        System.Threading.Tasks.Task<TableSoft.TareaWS.actualizarInsertarTareasResponse> actualizarInsertarTareasAsync(TableSoft.TareaWS.actualizarInsertarTareasRequest request);
     }
     
     /// <remarks/>
@@ -980,6 +1004,8 @@ namespace TableSoft.TareaWS {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(transferenciaInterna))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(transferenciaExterna))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1049,6 +1075,52 @@ namespace TableSoft.TareaWS {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class transferenciaInterna : transferenciaTicket {
+        
+        private categoria categoriaToField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public categoria categoriaTo {
+            get {
+                return this.categoriaToField;
+            }
+            set {
+                this.categoriaToField = value;
+                this.RaisePropertyChanged("categoriaTo");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class transferenciaExterna : transferenciaTicket {
+        
+        private proveedor proveedorToField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public proveedor proveedorTo {
+            get {
+                return this.proveedorToField;
+            }
+            set {
+                this.proveedorToField = value;
+                this.RaisePropertyChanged("proveedorTo");
             }
         }
     }
@@ -1666,7 +1738,9 @@ namespace TableSoft.TareaWS {
         
         private cambioEstadoTicket[] historialEstadoField;
         
-        private transferenciaTicket[] historialTransferenciaField;
+        private transferenciaExterna[] historialTransfExternaField;
+        
+        private transferenciaInterna[] historialTransfInternaField;
         
         private tarea[] listaTareasField;
         
@@ -1849,19 +1923,31 @@ namespace TableSoft.TareaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("historialTransferencia", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
-        public transferenciaTicket[] historialTransferencia {
+        [System.Xml.Serialization.XmlElementAttribute("historialTransfExterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
+        public transferenciaExterna[] historialTransfExterna {
             get {
-                return this.historialTransferenciaField;
+                return this.historialTransfExternaField;
             }
             set {
-                this.historialTransferenciaField = value;
-                this.RaisePropertyChanged("historialTransferencia");
+                this.historialTransfExternaField = value;
+                this.RaisePropertyChanged("historialTransfExterna");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute("historialTransfInterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=15)]
+        public transferenciaInterna[] historialTransfInterna {
+            get {
+                return this.historialTransfInternaField;
+            }
+            set {
+                this.historialTransfInternaField = value;
+                this.RaisePropertyChanged("historialTransfInterna");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=16)]
         public tarea[] listaTareas {
             get {
                 return this.listaTareasField;
@@ -1873,7 +1959,7 @@ namespace TableSoft.TareaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
         public proveedor proveedor {
             get {
                 return this.proveedorField;
@@ -1885,7 +1971,7 @@ namespace TableSoft.TareaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
         public bool retrasado {
             get {
                 return this.retrasadoField;
@@ -1909,7 +1995,7 @@ namespace TableSoft.TareaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public int ticketId {
             get {
                 return this.ticketIdField;
@@ -1921,7 +2007,7 @@ namespace TableSoft.TareaWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
         public urgencia urgencia {
             get {
                 return this.urgenciaField;
@@ -2212,6 +2298,83 @@ namespace TableSoft.TareaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTareas", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarTareasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("objTarea", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TareaWS.tarea[] objTarea;
+        
+        public eliminarTareasRequest() {
+        }
+        
+        public eliminarTareasRequest(TableSoft.TareaWS.tarea[] objTarea) {
+            this.objTarea = objTarea;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarTareasResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarTareasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarTareasResponse() {
+        }
+        
+        public eliminarTareasResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarInsertarTareas", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarInsertarTareasRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("objArrTarea", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TareaWS.tarea[] objArrTarea;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TareaWS.ticket objTicket;
+        
+        public actualizarInsertarTareasRequest() {
+        }
+        
+        public actualizarInsertarTareasRequest(TableSoft.TareaWS.tarea[] objArrTarea, TableSoft.TareaWS.ticket objTicket) {
+            this.objArrTarea = objArrTarea;
+            this.objTicket = objTicket;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarInsertarTareasResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarInsertarTareasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarInsertarTareasResponse() {
+        }
+        
+        public actualizarInsertarTareasResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface TareaWSChannel : TableSoft.TareaWS.TareaWS, System.ServiceModel.IClientChannel {
     }
@@ -2333,6 +2496,54 @@ namespace TableSoft.TareaWS {
             TableSoft.TareaWS.listarTareasPorTicketRequest inValue = new TableSoft.TareaWS.listarTareasPorTicketRequest();
             inValue.objTicket = objTicket;
             return ((TableSoft.TareaWS.TareaWS)(this)).listarTareasPorTicketAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.TareaWS.eliminarTareasResponse TableSoft.TareaWS.TareaWS.eliminarTareas(TableSoft.TareaWS.eliminarTareasRequest request) {
+            return base.Channel.eliminarTareas(request);
+        }
+        
+        public int eliminarTareas(TableSoft.TareaWS.tarea[] objTarea) {
+            TableSoft.TareaWS.eliminarTareasRequest inValue = new TableSoft.TareaWS.eliminarTareasRequest();
+            inValue.objTarea = objTarea;
+            TableSoft.TareaWS.eliminarTareasResponse retVal = ((TableSoft.TareaWS.TareaWS)(this)).eliminarTareas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareasResponse> TableSoft.TareaWS.TareaWS.eliminarTareasAsync(TableSoft.TareaWS.eliminarTareasRequest request) {
+            return base.Channel.eliminarTareasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.TareaWS.eliminarTareasResponse> eliminarTareasAsync(TableSoft.TareaWS.tarea[] objTarea) {
+            TableSoft.TareaWS.eliminarTareasRequest inValue = new TableSoft.TareaWS.eliminarTareasRequest();
+            inValue.objTarea = objTarea;
+            return ((TableSoft.TareaWS.TareaWS)(this)).eliminarTareasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.TareaWS.actualizarInsertarTareasResponse TableSoft.TareaWS.TareaWS.actualizarInsertarTareas(TableSoft.TareaWS.actualizarInsertarTareasRequest request) {
+            return base.Channel.actualizarInsertarTareas(request);
+        }
+        
+        public int actualizarInsertarTareas(TableSoft.TareaWS.tarea[] objArrTarea, TableSoft.TareaWS.ticket objTicket) {
+            TableSoft.TareaWS.actualizarInsertarTareasRequest inValue = new TableSoft.TareaWS.actualizarInsertarTareasRequest();
+            inValue.objArrTarea = objArrTarea;
+            inValue.objTicket = objTicket;
+            TableSoft.TareaWS.actualizarInsertarTareasResponse retVal = ((TableSoft.TareaWS.TareaWS)(this)).actualizarInsertarTareas(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.TareaWS.actualizarInsertarTareasResponse> TableSoft.TareaWS.TareaWS.actualizarInsertarTareasAsync(TableSoft.TareaWS.actualizarInsertarTareasRequest request) {
+            return base.Channel.actualizarInsertarTareasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.TareaWS.actualizarInsertarTareasResponse> actualizarInsertarTareasAsync(TableSoft.TareaWS.tarea[] objArrTarea, TableSoft.TareaWS.ticket objTicket) {
+            TableSoft.TareaWS.actualizarInsertarTareasRequest inValue = new TableSoft.TareaWS.actualizarInsertarTareasRequest();
+            inValue.objArrTarea = objArrTarea;
+            inValue.objTicket = objTicket;
+            return ((TableSoft.TareaWS.TareaWS)(this)).actualizarInsertarTareasAsync(inValue);
         }
     }
 }

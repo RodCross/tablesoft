@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -45,6 +46,24 @@ namespace TableSoft
 
         private void btnReasignar_Click(object sender, EventArgs e)
         {
+            if (rtfComentario.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el comentario de la recategorizacion.",
+                    "Error de comentario",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(rtfComentario.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El comentario de la recategorizacion de contener al menos una letra.",
+                    "Error de comentario",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
             if (MessageBox.Show("¿Desea reasignar la categoria?", "Reasignar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvCategoria.CurrentRow.DataBoundItem;
@@ -68,6 +87,7 @@ namespace TableSoft
 
                 //ticket.categoria.categoriaId = cat.categoriaId;
                 ticket.categoria = catego;
+                ticket.agente = null;
                 // Asignar la lista de cambios de estado
                 ticket.historialEstado = historialEstados.ToArray();
                 if (ticketDAO.actualizarTicket(ticket) > -1)

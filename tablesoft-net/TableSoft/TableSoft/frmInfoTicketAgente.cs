@@ -238,8 +238,8 @@ namespace TableSoft
 
         private void btnEscalar_Click(object sender, EventArgs e)
         {
-            //frmEscalarTicketAgente frm = new frmEscalarTicketAgente();
-            //frm.ShowDialog();
+            frmEscalarTicketAgente frm = new frmEscalarTicketAgente(ticket);
+            frm.ShowDialog();
         }
 
         private void btnCambiarEstado_Click(object sender, EventArgs e)

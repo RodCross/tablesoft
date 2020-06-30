@@ -83,9 +83,10 @@ namespace TableSoft
                 cateGo.categoriaId = cat.categoriaId;
                 ticket.categoria = cateGo;
 
-                TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
-                estAsignado.estadoId = (int)Estado.Recategorizado;
-                ticket.estado = estAsignado;
+                TicketWS.estadoTicket estRecategorizado = new TicketWS.estadoTicket();
+                estRecategorizado.estadoId = (int)Estado.Recategorizado;
+                estRecategorizado.nombre = "RECATEGORIZADO";
+                ticket.estado = estRecategorizado;
                 
                 var ag = new TicketWS.agente();
                 ag.agenteId = agente.agenteId;
@@ -94,7 +95,7 @@ namespace TableSoft
                 var cambioEstado = new TicketWS.cambioEstadoTicket();
                 cambioEstado.comentario = "El ticket ha sido recategorizado";
                 cambioEstado.agenteResponsable = ag;
-                cambioEstado.estadoTo = estAsignado;
+                cambioEstado.estadoTo = estRecategorizado;
                 cambioEstado.cambioEstadoTicketId = 0;
 
                 // Registrar el cambio de estado

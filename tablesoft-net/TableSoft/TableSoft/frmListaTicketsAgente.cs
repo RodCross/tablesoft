@@ -20,17 +20,18 @@ namespace TableSoft
             InitializeComponent();
             TicketWS.agente agenAux = new TicketWS.agente();
             agenAux.agenteId =  frmInicioSesion.agenteLogueado.agenteId;
-            TicketWS.ticket[] arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
-            dgvHistorial.AutoGenerateColumns = false;
-            if (arrTickets != null)
+
+            var arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
+            if (arrTickets == null)
             {
-                tickets = new BindingList<TicketWS.ticket>(arrTickets);
-                dgvHistorial.DataSource = tickets;
+                tickets = new BindingList<TicketWS.ticket>();
             }
             else
             {
-                dgvHistorial.DataSource = null;
+                tickets = new BindingList<TicketWS.ticket>(arrTickets);
             }
+            dgvHistorial.AutoGenerateColumns = false;
+            dgvHistorial.DataSource = tickets;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -41,7 +42,7 @@ namespace TableSoft
         private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
-            dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
+            //dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
             dgvHistorial.Rows[e.RowIndex].Cells["Empleado"].Value = data.empleado.nombre + " " + data.empleado.apellidoPaterno + " " + data.empleado.apellidoMaterno;
             dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Urgencia"].Value = data.urgencia.nombre;

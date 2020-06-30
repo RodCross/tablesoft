@@ -52,24 +52,33 @@ namespace TableSoft
         {
             if (MessageBox.Show("¿Desea guardar los cambios realizados?", "Actualizar Lista de Tareas", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-
-                foreach (DataGridViewRow row in dgvLista.Rows)
+                // Obtener un arreglo de las tareas a eliminar y eliminarlas
+                
+                List<DataGridViewRow> filasEliminar = dgvLista.Rows.Cast<DataGridViewRow>().Where(g => Convert.ToBoolean(g.Cells["Eliminar"].Value) == true).ToList();
+                BindingList<TareaWS.tarea> tareasUpdate = new BindingList<TareaWS.tarea>();
+                foreach (var fila in filasEliminar)
                 {
-                    TareaWS.tarea t = (TareaWS.tarea)row.DataBoundItem;
-
-                    if (Convert.ToBoolean(row.Cells["Eliminar"].Value) == true)
+                    var tar = (TareaWS.tarea)fila.DataBoundItem;
+                    if (tar.tareaId != 0)
                     {
-                        if (t.tareaId != 0) tareaDAO.eliminarTarea(t);
-                    }
-                    else
-                    {
-                        if (t.tareaId == 0) tareaDAO.insertarTarea(t, ticket);
-                        else
-                        {
-                            tareaDAO.actualizarTarea(t, agente);
-                        }
+                        tareasUpdate.Add(tar);
                     }
                 }
+
+                tareaDAO.eliminarTareas(tareasUpdate.ToArray());
+
+                // Obtener un arreglo de las taeras a actualizar y actualizarlas
+
+                List<DataGridViewRow> filasActualizarInsertar = dgvLista.Rows.Cast<DataGridViewRow>().Where(g => Convert.ToBoolean(g.Cells["Eliminar"].Value) == false).ToList();
+                tareasUpdate = new BindingList<TareaWS.tarea>();
+                foreach(var fila in filasActualizarInsertar)
+                {
+                    tareasUpdate.Add((TareaWS.tarea)fila.DataBoundItem);
+                }
+
+                tareaDAO.actualizarInsertarTareas(tareasUpdate.ToArray(), ticket);
+                
+                // Actualizar dgv
 
                 var arrTareas = tareaDAO.listarTareasPorTicket(ticket);
 
@@ -84,8 +93,6 @@ namespace TableSoft
 
                 dgvLista.AutoGenerateColumns = false;
                 dgvLista.DataSource = tareas;
-
-                MessageBox.Show("Actualizacion completa", "Actualizar Lista de Tareas", MessageBoxButtons.OK);
             }
         }
 

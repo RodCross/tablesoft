@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,7 +24,29 @@ namespace TableSoft
             ticket = tck;
             agente = frmInicioSesion.agenteLogueado;
             InitializeComponent();
-            proveedores = new BindingList<ProveedorWS.proveedor>(proveedorDAO.listarProveedores().ToArray());
+
+            var provs = proveedorDAO.listarProveedores();
+            if(provs == null)
+            {
+                proveedores = new BindingList<ProveedorWS.proveedor>();
+            }
+            else
+            {
+                proveedores = new BindingList<ProveedorWS.proveedor>(provs.ToList());
+            }
+
+            if(ticket.proveedor != null)
+            {
+                foreach(var prov in proveedores)
+                {
+                    if (prov.proveedorId == ticket.proveedor.proveedorId)
+                    {
+                        proveedores.Remove(prov);
+                        break;
+                    }
+                }
+            }
+                
             dgvProveedores.AutoGenerateColumns = false;
             dgvProveedores.DataSource = proveedores;
         }
@@ -41,34 +64,95 @@ namespace TableSoft
 
         private void btnEscalar_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Desea reasignar la categoria?", "Reasignar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (rtfComentario.Text == "")
+            {
+                MessageBox.Show(
+                    "Falta indicar el comentario del escalado.",
+                    "Error de comentario",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (Regex.Matches(rtfComentario.Text, @"[a-zA-Z]").Count == 0)
+            {
+                MessageBox.Show(
+                    "El comentario del escalado de contener al menos una letra.",
+                    "Error de comentario",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (MessageBox.Show("¿Desea escalar el ticket?", "Escalar ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 ProveedorWS.proveedor prov = (ProveedorWS.proveedor)dgvProveedores.CurrentRow.DataBoundItem;
-                TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
-                estAsignado.estadoId = (int)Estado.Escalado;
+                TicketWS.proveedor proveGo = new TicketWS.proveedor();
+                proveGo.proveedorId = prov.proveedorId;
+                proveGo.razonSocial = prov.razonSocial;
+                proveGo.ruc = prov.ruc;
+                ticket.proveedor = proveGo;
 
-                ticket.estado = estAsignado;
+                TicketWS.estadoTicket estEscalado = new TicketWS.estadoTicket();
+                estEscalado.estadoId = (int)Estado.Escalado;
+                estEscalado.nombre = "ESCALADO";
+                ticket.estado = estEscalado;
 
-                // Registrar el cambio de estado
-                var historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();
-
-                var cambioEstado = new TicketWS.cambioEstadoTicket();
-                cambioEstado.comentario = rtfComentario.Text;
                 var ag = new TicketWS.agente();
                 ag.agenteId = agente.agenteId;
-                cambioEstado.agenteResponsable = ag;
-                cambioEstado.estadoTo = estAsignado;
 
+                // Creamos el cambio de estado
+                var cambioEstado = new TicketWS.cambioEstadoTicket();
+                cambioEstado.comentario = "El ticket ha sido escalado";
+                cambioEstado.agenteResponsable = ag;
+                cambioEstado.estadoTo = estEscalado;
+                cambioEstado.cambioEstadoTicketId = 0;
+
+                // Registrar el cambio de estado
+
+                // Agregarlo al historial del ticket
+                BindingList<TicketWS.cambioEstadoTicket> historialEstados;
+
+                if (ticket.historialEstado == null)
+                {
+                    historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();      // Si no tiene se crea una lista
+                }                                                                           // Sino se crea una lista a partir de este
+                else
+                {
+                    historialEstados = new BindingList<TicketWS.cambioEstadoTicket>(ticket.historialEstado.ToList());
+                }
                 historialEstados.Add(cambioEstado);
 
-                ticket.proveedor.proveedorId = prov.proveedorId;
-                // Asignar la lista de cambios de estado
+                // Se vuelve de nuevo a Array para ser asignado al ticket
                 ticket.historialEstado = historialEstados.ToArray();
+
+                // Creamos la transferencia externa
+                var transfer = new TicketWS.transferenciaExterna();
+                transfer.agenteResponsable = ag;
+                transfer.comentario = rtfComentario.Text;
+                transfer.proveedorTo = proveGo;
+                transfer.transferenciaId = 0;
+
+                // Registrar la transferenica
+
+                BindingList<TicketWS.transferenciaExterna> historialTransfExterna;
+
+                if (ticket.historialTransfInterna == null)
+                {
+                    historialTransfExterna = new BindingList<TicketWS.transferenciaExterna>();
+                }
+                else
+                {
+                    historialTransfExterna = new BindingList<TicketWS.transferenciaExterna>(ticket.historialTransfExterna.ToList());
+                }
+                historialTransfExterna.Add(transfer);
+
+                ticket.historialTransfExterna = historialTransfExterna.ToArray();
+
+                // Se actualiza el ticket
                 if (ticketDAO.actualizarTicket(ticket) > -1)
                 {
                     MessageBox.Show(
-                        "Se ha escalado el ticket al proveedor.",
-                        "Escalamiento exitoso",
+                        "Se ha cambiado la categoría seleccionada.",
+                        "Reasignación exitosa",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                     this.DialogResult = DialogResult.OK;
@@ -76,10 +160,11 @@ namespace TableSoft
                 else
                 {
                     MessageBox.Show(
-                        "Ha ocurrido un error con el escalado.",
-                        "Escalamiento no realizado",
+                        "Ha ocurrido un error con la reasignación",
+                        "Reasignación no realizada",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
+                    this.Close();
                 }
             }
         }
@@ -91,16 +176,30 @@ namespace TableSoft
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            ProveedorWS.proveedor[] nuevosProveedores = proveedorDAO.listarProveedoresPorNombre(txtBuscar.Text);
-            if (nuevosProveedores != null)
+            var provs = proveedorDAO.listarProveedoresPorNombre(txtBuscar.Text);
+            if (provs == null)
             {
-                proveedores = new BindingList<ProveedorWS.proveedor>(nuevosProveedores);
-                dgvProveedores.DataSource = proveedores;
+                proveedores = new BindingList<ProveedorWS.proveedor>();
             }
             else
             {
-                dgvProveedores.DataSource = null;
+                proveedores = new BindingList<ProveedorWS.proveedor>(provs.ToList());
             }
+
+            if (ticket.proveedor != null)
+            {
+                foreach (var prov in proveedores)
+                {
+                    if (prov.proveedorId == ticket.proveedor.proveedorId)
+                    {
+                        proveedores.Remove(prov);
+                        break;
+                    }
+                }
+            }
+
+            dgvProveedores.AutoGenerateColumns = false;
+            dgvProveedores.DataSource = proveedores;
         }
     }
 }

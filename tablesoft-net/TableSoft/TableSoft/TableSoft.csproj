@@ -432,6 +432,7 @@
     <Compile Include="frmSeleccionarUrgencia.Designer.cs">
       <DependentUpon>frmSeleccionarUrgencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="GmailAPI.cs" />
     <Compile Include="Movimiento.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -927,6 +928,9 @@
     <None Include="Connected Services\UrgenciaWS\UrgenciaWS.wsdl" />
     <None Include="Connected Services\UrgenciaWS\UrgenciaWS.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="credentials.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="images\InicioEmpleadoAbrir.png" />
   </ItemGroup>

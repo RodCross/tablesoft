@@ -16,6 +16,16 @@ namespace TableSoft.ComentarioWS {
     public interface ComentarioWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.ComentarioWS.insertarComentarioResponse insertarComentario(TableSoft.ComentarioWS.insertarComentarioRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioResponse")]
+        System.Threading.Tasks.Task<TableSoft.ComentarioWS.insertarComentarioResponse> insertarComentarioAsync(TableSoft.ComentarioWS.insertarComentarioRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ComentarioWS/listarComentariosDeTicketReque" +
             "st", ReplyAction="http://services.tablesoft.pucp.edu.pe/ComentarioWS/listarComentariosDeTicketRespo" +
             "nse")]
@@ -28,16 +38,6 @@ namespace TableSoft.ComentarioWS {
             "st", ReplyAction="http://services.tablesoft.pucp.edu.pe/ComentarioWS/listarComentariosDeTicketRespo" +
             "nse")]
         System.Threading.Tasks.Task<TableSoft.ComentarioWS.listarComentariosDeTicketResponse> listarComentariosDeTicketAsync(TableSoft.ComentarioWS.listarComentariosDeTicketRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ComentarioWS.insertarComentarioResponse insertarComentario(TableSoft.ComentarioWS.insertarComentarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ComentarioWS/insertarComentarioResponse")]
-        System.Threading.Tasks.Task<TableSoft.ComentarioWS.insertarComentarioResponse> insertarComentarioAsync(TableSoft.ComentarioWS.insertarComentarioRequest request);
     }
     
     /// <remarks/>
@@ -46,299 +46,235 @@ namespace TableSoft.ComentarioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class ticket : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class comentario : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private activoFijo activoFijoField;
+        private persona autorField;
         
-        private agente agenteField;
+        private int comentarioIdField;
         
-        private string alumnoEmailField;
+        private string fechaField;
         
-        private string asuntoField;
-        
-        private biblioteca bibliotecaField;
-        
-        private categoria categoriaField;
-        
-        private comentario[] comentariosField;
-        
-        private string descripcionField;
-        
-        private empleado empleadoField;
-        
-        private estadoTicket estadoField;
-        
-        private string fechaCierreField;
-        
-        private string fechaCierreMaximoField;
-        
-        private string fechaEnvioField;
-        
-        private cambioEstadoTicket[] historialEstadoField;
-        
-        private transferenciaExterna[] historialTransfExternaField;
-        
-        private transferenciaInterna[] historialTransfInternaField;
-        
-        private tarea[] listaTareasField;
-        
-        private proveedor proveedorField;
-        
-        private bool retrasadoField;
-        
-        private int ticketIdField;
-        
-        private urgencia urgenciaField;
+        private string textoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public activoFijo activoFijo {
+        public persona autor {
             get {
-                return this.activoFijoField;
+                return this.autorField;
             }
             set {
-                this.activoFijoField = value;
-                this.RaisePropertyChanged("activoFijo");
+                this.autorField = value;
+                this.RaisePropertyChanged("autor");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public agente agente {
+        public int comentarioId {
             get {
-                return this.agenteField;
+                return this.comentarioIdField;
             }
             set {
-                this.agenteField = value;
-                this.RaisePropertyChanged("agente");
+                this.comentarioIdField = value;
+                this.RaisePropertyChanged("comentarioId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string alumnoEmail {
+        public string fecha {
             get {
-                return this.alumnoEmailField;
+                return this.fechaField;
             }
             set {
-                this.alumnoEmailField = value;
-                this.RaisePropertyChanged("alumnoEmail");
+                this.fechaField = value;
+                this.RaisePropertyChanged("fecha");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string asunto {
+        public string texto {
             get {
-                return this.asuntoField;
+                return this.textoField;
             }
             set {
-                this.asuntoField = value;
-                this.RaisePropertyChanged("asunto");
+                this.textoField = value;
+                this.RaisePropertyChanged("texto");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(empleado))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(agente))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class persona : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool activoField;
+        
+        private string apellidoMaternoField;
+        
+        private string apellidoPaternoField;
+        
+        private string codigoField;
+        
+        private string direccionField;
+        
+        private string dniField;
+        
+        private string nombreField;
+        
+        private string passwordField;
+        
+        private string personaEmailField;
+        
+        private string telefonoField;
+        
+        private ushort tipoField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public bool activo {
+            get {
+                return this.activoField;
+            }
+            set {
+                this.activoField = value;
+                this.RaisePropertyChanged("activo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string apellidoMaterno {
+            get {
+                return this.apellidoMaternoField;
+            }
+            set {
+                this.apellidoMaternoField = value;
+                this.RaisePropertyChanged("apellidoMaterno");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string apellidoPaterno {
+            get {
+                return this.apellidoPaternoField;
+            }
+            set {
+                this.apellidoPaternoField = value;
+                this.RaisePropertyChanged("apellidoPaterno");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string codigo {
+            get {
+                return this.codigoField;
+            }
+            set {
+                this.codigoField = value;
+                this.RaisePropertyChanged("codigo");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public biblioteca biblioteca {
+        public string direccion {
             get {
-                return this.bibliotecaField;
+                return this.direccionField;
             }
             set {
-                this.bibliotecaField = value;
-                this.RaisePropertyChanged("biblioteca");
+                this.direccionField = value;
+                this.RaisePropertyChanged("direccion");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public categoria categoria {
+        public string dni {
             get {
-                return this.categoriaField;
+                return this.dniField;
             }
             set {
-                this.categoriaField = value;
-                this.RaisePropertyChanged("categoria");
+                this.dniField = value;
+                this.RaisePropertyChanged("dni");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("comentarios", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=6)]
-        public comentario[] comentarios {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
+        public string nombre {
             get {
-                return this.comentariosField;
+                return this.nombreField;
             }
             set {
-                this.comentariosField = value;
-                this.RaisePropertyChanged("comentarios");
+                this.nombreField = value;
+                this.RaisePropertyChanged("nombre");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public string descripcion {
+        public string password {
             get {
-                return this.descripcionField;
+                return this.passwordField;
             }
             set {
-                this.descripcionField = value;
-                this.RaisePropertyChanged("descripcion");
+                this.passwordField = value;
+                this.RaisePropertyChanged("password");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public empleado empleado {
+        public string personaEmail {
             get {
-                return this.empleadoField;
+                return this.personaEmailField;
             }
             set {
-                this.empleadoField = value;
-                this.RaisePropertyChanged("empleado");
+                this.personaEmailField = value;
+                this.RaisePropertyChanged("personaEmail");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public estadoTicket estado {
+        public string telefono {
             get {
-                return this.estadoField;
+                return this.telefonoField;
             }
             set {
-                this.estadoField = value;
-                this.RaisePropertyChanged("estado");
+                this.telefonoField = value;
+                this.RaisePropertyChanged("telefono");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public string fechaCierre {
+        public ushort tipo {
             get {
-                return this.fechaCierreField;
+                return this.tipoField;
             }
             set {
-                this.fechaCierreField = value;
-                this.RaisePropertyChanged("fechaCierre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
-        public string fechaCierreMaximo {
-            get {
-                return this.fechaCierreMaximoField;
-            }
-            set {
-                this.fechaCierreMaximoField = value;
-                this.RaisePropertyChanged("fechaCierreMaximo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
-        public string fechaEnvio {
-            get {
-                return this.fechaEnvioField;
-            }
-            set {
-                this.fechaEnvioField = value;
-                this.RaisePropertyChanged("fechaEnvio");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("historialEstado", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=13)]
-        public cambioEstadoTicket[] historialEstado {
-            get {
-                return this.historialEstadoField;
-            }
-            set {
-                this.historialEstadoField = value;
-                this.RaisePropertyChanged("historialEstado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("historialTransfExterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
-        public transferenciaExterna[] historialTransfExterna {
-            get {
-                return this.historialTransfExternaField;
-            }
-            set {
-                this.historialTransfExternaField = value;
-                this.RaisePropertyChanged("historialTransfExterna");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("historialTransfInterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=15)]
-        public transferenciaInterna[] historialTransfInterna {
-            get {
-                return this.historialTransfInternaField;
-            }
-            set {
-                this.historialTransfInternaField = value;
-                this.RaisePropertyChanged("historialTransfInterna");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=16)]
-        public tarea[] listaTareas {
-            get {
-                return this.listaTareasField;
-            }
-            set {
-                this.listaTareasField = value;
-                this.RaisePropertyChanged("listaTareas");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
-        public proveedor proveedor {
-            get {
-                return this.proveedorField;
-            }
-            set {
-                this.proveedorField = value;
-                this.RaisePropertyChanged("proveedor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
-        public bool retrasado {
-            get {
-                return this.retrasadoField;
-            }
-            set {
-                this.retrasadoField = value;
-                this.RaisePropertyChanged("retrasado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
-        public int ticketId {
-            get {
-                return this.ticketIdField;
-            }
-            set {
-                this.ticketIdField = value;
-                this.RaisePropertyChanged("ticketId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
-        public urgencia urgencia {
-            get {
-                return this.urgenciaField;
-            }
-            set {
-                this.urgenciaField = value;
-                this.RaisePropertyChanged("urgencia");
+                this.tipoField = value;
+                this.RaisePropertyChanged("tipo");
             }
         }
         
@@ -358,19 +294,15 @@ namespace TableSoft.ComentarioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class activoFijo : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class rol : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool activoField;
         
-        private int activoFijoIdField;
-        
-        private string codigoField;
-        
-        private string marcaField;
+        private string descripcionField;
         
         private string nombreField;
         
-        private string tipoField;
+        private int rolIdField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
@@ -386,42 +318,18 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int activoFijoId {
+        public string descripcion {
             get {
-                return this.activoFijoIdField;
+                return this.descripcionField;
             }
             set {
-                this.activoFijoIdField = value;
-                this.RaisePropertyChanged("activoFijoId");
+                this.descripcionField = value;
+                this.RaisePropertyChanged("descripcion");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string codigo {
-            get {
-                return this.codigoField;
-            }
-            set {
-                this.codigoField = value;
-                this.RaisePropertyChanged("codigo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string marca {
-            get {
-                return this.marcaField;
-            }
-            set {
-                this.marcaField = value;
-                this.RaisePropertyChanged("marca");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
         public string nombre {
             get {
                 return this.nombreField;
@@ -433,14 +341,14 @@ namespace TableSoft.ComentarioWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public string tipo {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public int rolId {
             get {
-                return this.tipoField;
+                return this.rolIdField;
             }
             set {
-                this.tipoField = value;
-                this.RaisePropertyChanged("tipo");
+                this.rolIdField = value;
+                this.RaisePropertyChanged("rolId");
             }
         }
         
@@ -993,30 +901,136 @@ namespace TableSoft.ComentarioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class rol : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class ticket : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private bool activoField;
+        private activoFijo activoFijoField;
+        
+        private agente agenteField;
+        
+        private string alumnoEmailField;
+        
+        private string asuntoField;
+        
+        private biblioteca bibliotecaField;
+        
+        private categoria categoriaField;
+        
+        private comentario[] comentariosField;
         
         private string descripcionField;
         
-        private string nombreField;
+        private empleado empleadoField;
         
-        private int rolIdField;
+        private estadoTicket estadoField;
+        
+        private string fechaCierreField;
+        
+        private string fechaCierreMaximoField;
+        
+        private string fechaEnvioField;
+        
+        private cambioEstadoTicket[] historialEstadoField;
+        
+        private transferenciaExterna[] historialTransfExternaField;
+        
+        private transferenciaInterna[] historialTransfInternaField;
+        
+        private tarea[] listaTareasField;
+        
+        private proveedor proveedorField;
+        
+        private bool retrasadoField;
+        
+        private int ticketIdField;
+        
+        private urgencia urgenciaField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public bool activo {
+        public activoFijo activoFijo {
             get {
-                return this.activoField;
+                return this.activoFijoField;
             }
             set {
-                this.activoField = value;
-                this.RaisePropertyChanged("activo");
+                this.activoFijoField = value;
+                this.RaisePropertyChanged("activoFijo");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public agente agente {
+            get {
+                return this.agenteField;
+            }
+            set {
+                this.agenteField = value;
+                this.RaisePropertyChanged("agente");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string alumnoEmail {
+            get {
+                return this.alumnoEmailField;
+            }
+            set {
+                this.alumnoEmailField = value;
+                this.RaisePropertyChanged("alumnoEmail");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string asunto {
+            get {
+                return this.asuntoField;
+            }
+            set {
+                this.asuntoField = value;
+                this.RaisePropertyChanged("asunto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public biblioteca biblioteca {
+            get {
+                return this.bibliotecaField;
+            }
+            set {
+                this.bibliotecaField = value;
+                this.RaisePropertyChanged("biblioteca");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public categoria categoria {
+            get {
+                return this.categoriaField;
+            }
+            set {
+                this.categoriaField = value;
+                this.RaisePropertyChanged("categoria");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("comentarios", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=6)]
+        public comentario[] comentarios {
+            get {
+                return this.comentariosField;
+            }
+            set {
+                this.comentariosField = value;
+                this.RaisePropertyChanged("comentarios");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
         public string descripcion {
             get {
                 return this.descripcionField;
@@ -1028,26 +1042,158 @@ namespace TableSoft.ComentarioWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string nombre {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
+        public empleado empleado {
             get {
-                return this.nombreField;
+                return this.empleadoField;
             }
             set {
-                this.nombreField = value;
-                this.RaisePropertyChanged("nombre");
+                this.empleadoField = value;
+                this.RaisePropertyChanged("empleado");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public int rolId {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
+        public estadoTicket estado {
             get {
-                return this.rolIdField;
+                return this.estadoField;
             }
             set {
-                this.rolIdField = value;
-                this.RaisePropertyChanged("rolId");
+                this.estadoField = value;
+                this.RaisePropertyChanged("estado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
+        public string fechaCierre {
+            get {
+                return this.fechaCierreField;
+            }
+            set {
+                this.fechaCierreField = value;
+                this.RaisePropertyChanged("fechaCierre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=11)]
+        public string fechaCierreMaximo {
+            get {
+                return this.fechaCierreMaximoField;
+            }
+            set {
+                this.fechaCierreMaximoField = value;
+                this.RaisePropertyChanged("fechaCierreMaximo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=12)]
+        public string fechaEnvio {
+            get {
+                return this.fechaEnvioField;
+            }
+            set {
+                this.fechaEnvioField = value;
+                this.RaisePropertyChanged("fechaEnvio");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("historialEstado", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=13)]
+        public cambioEstadoTicket[] historialEstado {
+            get {
+                return this.historialEstadoField;
+            }
+            set {
+                this.historialEstadoField = value;
+                this.RaisePropertyChanged("historialEstado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("historialTransfExterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
+        public transferenciaExterna[] historialTransfExterna {
+            get {
+                return this.historialTransfExternaField;
+            }
+            set {
+                this.historialTransfExternaField = value;
+                this.RaisePropertyChanged("historialTransfExterna");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("historialTransfInterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=15)]
+        public transferenciaInterna[] historialTransfInterna {
+            get {
+                return this.historialTransfInternaField;
+            }
+            set {
+                this.historialTransfInternaField = value;
+                this.RaisePropertyChanged("historialTransfInterna");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=16)]
+        public tarea[] listaTareas {
+            get {
+                return this.listaTareasField;
+            }
+            set {
+                this.listaTareasField = value;
+                this.RaisePropertyChanged("listaTareas");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        public proveedor proveedor {
+            get {
+                return this.proveedorField;
+            }
+            set {
+                this.proveedorField = value;
+                this.RaisePropertyChanged("proveedor");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        public bool retrasado {
+            get {
+                return this.retrasadoField;
+            }
+            set {
+                this.retrasadoField = value;
+                this.RaisePropertyChanged("retrasado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        public int ticketId {
+            get {
+                return this.ticketIdField;
+            }
+            set {
+                this.ticketIdField = value;
+                this.RaisePropertyChanged("ticketId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
+        public urgencia urgencia {
+            get {
+                return this.urgenciaField;
+            }
+            set {
+                this.urgenciaField = value;
+                this.RaisePropertyChanged("urgencia");
             }
         }
         
@@ -1062,36 +1208,24 @@ namespace TableSoft.ComentarioWS {
     }
     
     /// <remarks/>
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(empleado))]
-    [System.Xml.Serialization.XmlIncludeAttribute(typeof(agente))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class persona : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class activoFijo : object, System.ComponentModel.INotifyPropertyChanged {
         
         private bool activoField;
         
-        private string apellidoMaternoField;
-        
-        private string apellidoPaternoField;
+        private int activoFijoIdField;
         
         private string codigoField;
         
-        private string direccionField;
-        
-        private string dniField;
+        private string marcaField;
         
         private string nombreField;
         
-        private string passwordField;
-        
-        private string personaEmailField;
-        
-        private string telefonoField;
-        
-        private ushort tipoField;
+        private string tipoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
@@ -1107,30 +1241,18 @@ namespace TableSoft.ComentarioWS {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string apellidoMaterno {
+        public int activoFijoId {
             get {
-                return this.apellidoMaternoField;
+                return this.activoFijoIdField;
             }
             set {
-                this.apellidoMaternoField = value;
-                this.RaisePropertyChanged("apellidoMaterno");
+                this.activoFijoIdField = value;
+                this.RaisePropertyChanged("activoFijoId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string apellidoPaterno {
-            get {
-                return this.apellidoPaternoField;
-            }
-            set {
-                this.apellidoPaternoField = value;
-                this.RaisePropertyChanged("apellidoPaterno");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string codigo {
             get {
                 return this.codigoField;
@@ -1142,31 +1264,19 @@ namespace TableSoft.ComentarioWS {
         }
         
         /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string marca {
+            get {
+                return this.marcaField;
+            }
+            set {
+                this.marcaField = value;
+                this.RaisePropertyChanged("marca");
+            }
+        }
+        
+        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public string direccion {
-            get {
-                return this.direccionField;
-            }
-            set {
-                this.direccionField = value;
-                this.RaisePropertyChanged("direccion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public string dni {
-            get {
-                return this.dniField;
-            }
-            set {
-                this.dniField = value;
-                this.RaisePropertyChanged("dni");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=6)]
         public string nombre {
             get {
                 return this.nombreField;
@@ -1178,44 +1288,8 @@ namespace TableSoft.ComentarioWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=7)]
-        public string password {
-            get {
-                return this.passwordField;
-            }
-            set {
-                this.passwordField = value;
-                this.RaisePropertyChanged("password");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=8)]
-        public string personaEmail {
-            get {
-                return this.personaEmailField;
-            }
-            set {
-                this.personaEmailField = value;
-                this.RaisePropertyChanged("personaEmail");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=9)]
-        public string telefono {
-            get {
-                return this.telefonoField;
-            }
-            set {
-                this.telefonoField = value;
-                this.RaisePropertyChanged("telefono");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=10)]
-        public ushort tipo {
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public string tipo {
             get {
                 return this.tipoField;
             }
@@ -1231,57 +1305,6 @@ namespace TableSoft.ComentarioWS {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class empleado : persona {
-        
-        private biblioteca bibliotecaField;
-        
-        private int empleadoIdField;
-        
-        private ticket[] listaTicketsField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public biblioteca biblioteca {
-            get {
-                return this.bibliotecaField;
-            }
-            set {
-                this.bibliotecaField = value;
-                this.RaisePropertyChanged("biblioteca");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int empleadoId {
-            get {
-                return this.empleadoIdField;
-            }
-            set {
-                this.empleadoIdField = value;
-                this.RaisePropertyChanged("empleadoId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaTickets", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
-        public ticket[] listaTickets {
-            get {
-                return this.listaTicketsField;
-            }
-            set {
-                this.listaTicketsField = value;
-                this.RaisePropertyChanged("listaTickets");
             }
         }
     }
@@ -1366,14 +1389,105 @@ namespace TableSoft.ComentarioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class pais : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class empleado : persona {
         
-        private string nombreField;
+        private biblioteca bibliotecaField;
         
-        private int paisIdField;
+        private int empleadoIdField;
+        
+        private ticket[] listaTicketsField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public biblioteca biblioteca {
+            get {
+                return this.bibliotecaField;
+            }
+            set {
+                this.bibliotecaField = value;
+                this.RaisePropertyChanged("biblioteca");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int empleadoId {
+            get {
+                return this.empleadoIdField;
+            }
+            set {
+                this.empleadoIdField = value;
+                this.RaisePropertyChanged("empleadoId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaTickets", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=2)]
+        public ticket[] listaTickets {
+            get {
+                return this.listaTicketsField;
+            }
+            set {
+                this.listaTicketsField = value;
+                this.RaisePropertyChanged("listaTickets");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class estadoTicket : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private bool activoField;
+        
+        private string descripcionField;
+        
+        private int estadoIdField;
+        
+        private string nombreField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public bool activo {
+            get {
+                return this.activoField;
+            }
+            set {
+                this.activoField = value;
+                this.RaisePropertyChanged("activo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                this.descripcionField = value;
+                this.RaisePropertyChanged("descripcion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public int estadoId {
+            get {
+                return this.estadoIdField;
+            }
+            set {
+                this.estadoIdField = value;
+                this.RaisePropertyChanged("estadoId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
         public string nombre {
             get {
                 return this.nombreField;
@@ -1381,18 +1495,6 @@ namespace TableSoft.ComentarioWS {
             set {
                 this.nombreField = value;
                 this.RaisePropertyChanged("nombre");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int paisId {
-            get {
-                return this.paisIdField;
-            }
-            set {
-                this.paisIdField = value;
-                this.RaisePropertyChanged("paisId");
             }
         }
         
@@ -1412,47 +1514,75 @@ namespace TableSoft.ComentarioWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class ciudad : object, System.ComponentModel.INotifyPropertyChanged {
+    public partial class cambioEstadoTicket : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private int ciudadIdField;
+        private agente agenteResponsableField;
         
-        private string nombreField;
+        private int cambioEstadoTicketIdField;
         
-        private pais paisField;
+        private string comentarioField;
+        
+        private estadoTicket estadoToField;
+        
+        private string fechaCambioEstadoField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public int ciudadId {
+        public agente agenteResponsable {
             get {
-                return this.ciudadIdField;
+                return this.agenteResponsableField;
             }
             set {
-                this.ciudadIdField = value;
-                this.RaisePropertyChanged("ciudadId");
+                this.agenteResponsableField = value;
+                this.RaisePropertyChanged("agenteResponsable");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string nombre {
+        public int cambioEstadoTicketId {
             get {
-                return this.nombreField;
+                return this.cambioEstadoTicketIdField;
             }
             set {
-                this.nombreField = value;
-                this.RaisePropertyChanged("nombre");
+                this.cambioEstadoTicketIdField = value;
+                this.RaisePropertyChanged("cambioEstadoTicketId");
             }
         }
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public pais pais {
+        public string comentario {
             get {
-                return this.paisField;
+                return this.comentarioField;
             }
             set {
-                this.paisField = value;
-                this.RaisePropertyChanged("pais");
+                this.comentarioField = value;
+                this.RaisePropertyChanged("comentario");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public estadoTicket estadoTo {
+            get {
+                return this.estadoToField;
+            }
+            set {
+                this.estadoToField = value;
+                this.RaisePropertyChanged("estadoTo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string fechaCambioEstado {
+            get {
+                return this.fechaCambioEstadoField;
+            }
+            set {
+                this.fechaCambioEstadoField = value;
+                this.RaisePropertyChanged("fechaCambioEstado");
             }
         }
         
@@ -1462,6 +1592,29 @@ namespace TableSoft.ComentarioWS {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class transferenciaExterna : transferenciaTicket {
+        
+        private proveedor proveedorToField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public proveedor proveedorTo {
+            get {
+                return this.proveedorToField;
+            }
+            set {
+                this.proveedorToField = value;
+                this.RaisePropertyChanged("proveedorTo");
             }
         }
     }
@@ -1597,6 +1750,112 @@ namespace TableSoft.ComentarioWS {
     }
     
     /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class ciudad : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private int ciudadIdField;
+        
+        private string nombreField;
+        
+        private pais paisField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public int ciudadId {
+            get {
+                return this.ciudadIdField;
+            }
+            set {
+                this.ciudadIdField = value;
+                this.RaisePropertyChanged("ciudadId");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public string nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+                this.RaisePropertyChanged("nombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public pais pais {
+            get {
+                return this.paisField;
+            }
+            set {
+                this.paisField = value;
+                this.RaisePropertyChanged("pais");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class pais : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nombreField;
+        
+        private int paisIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public string nombre {
+            get {
+                return this.nombreField;
+            }
+            set {
+                this.nombreField = value;
+                this.RaisePropertyChanged("nombre");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public int paisId {
+            get {
+                return this.paisIdField;
+            }
+            set {
+                this.paisIdField = value;
+                this.RaisePropertyChanged("paisId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(transferenciaInterna))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(transferenciaExterna))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
@@ -1695,301 +1954,6 @@ namespace TableSoft.ComentarioWS {
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class transferenciaExterna : transferenciaTicket {
-        
-        private proveedor proveedorToField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public proveedor proveedorTo {
-            get {
-                return this.proveedorToField;
-            }
-            set {
-                this.proveedorToField = value;
-                this.RaisePropertyChanged("proveedorTo");
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class cambioEstadoTicket : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private agente agenteResponsableField;
-        
-        private int cambioEstadoTicketIdField;
-        
-        private string comentarioField;
-        
-        private estadoTicket estadoToField;
-        
-        private string fechaCambioEstadoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public agente agenteResponsable {
-            get {
-                return this.agenteResponsableField;
-            }
-            set {
-                this.agenteResponsableField = value;
-                this.RaisePropertyChanged("agenteResponsable");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int cambioEstadoTicketId {
-            get {
-                return this.cambioEstadoTicketIdField;
-            }
-            set {
-                this.cambioEstadoTicketIdField = value;
-                this.RaisePropertyChanged("cambioEstadoTicketId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string comentario {
-            get {
-                return this.comentarioField;
-            }
-            set {
-                this.comentarioField = value;
-                this.RaisePropertyChanged("comentario");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public estadoTicket estadoTo {
-            get {
-                return this.estadoToField;
-            }
-            set {
-                this.estadoToField = value;
-                this.RaisePropertyChanged("estadoTo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public string fechaCambioEstado {
-            get {
-                return this.fechaCambioEstadoField;
-            }
-            set {
-                this.fechaCambioEstadoField = value;
-                this.RaisePropertyChanged("fechaCambioEstado");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class estadoTicket : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private bool activoField;
-        
-        private string descripcionField;
-        
-        private int estadoIdField;
-        
-        private string nombreField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public bool activo {
-            get {
-                return this.activoField;
-            }
-            set {
-                this.activoField = value;
-                this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public string descripcion {
-            get {
-                return this.descripcionField;
-            }
-            set {
-                this.descripcionField = value;
-                this.RaisePropertyChanged("descripcion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public int estadoId {
-            get {
-                return this.estadoIdField;
-            }
-            set {
-                this.estadoIdField = value;
-                this.RaisePropertyChanged("estadoId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string nombre {
-            get {
-                return this.nombreField;
-            }
-            set {
-                this.nombreField = value;
-                this.RaisePropertyChanged("nombre");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class comentario : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private persona autorField;
-        
-        private int comentarioIdField;
-        
-        private string fechaField;
-        
-        private string textoField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public persona autor {
-            get {
-                return this.autorField;
-            }
-            set {
-                this.autorField = value;
-                this.RaisePropertyChanged("autor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public int comentarioId {
-            get {
-                return this.comentarioIdField;
-            }
-            set {
-                this.comentarioIdField = value;
-                this.RaisePropertyChanged("comentarioId");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string fecha {
-            get {
-                return this.fechaField;
-            }
-            set {
-                this.fechaField = value;
-                this.RaisePropertyChanged("fecha");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string texto {
-            get {
-                return this.textoField;
-            }
-            set {
-                this.textoField = value;
-                this.RaisePropertyChanged("texto");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarComentariosDeTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarComentariosDeTicketRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.ComentarioWS.ticket objTicket;
-        
-        public listarComentariosDeTicketRequest() {
-        }
-        
-        public listarComentariosDeTicketRequest(TableSoft.ComentarioWS.ticket objTicket) {
-            this.objTicket = objTicket;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarComentariosDeTicketResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarComentariosDeTicketResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.ComentarioWS.comentario[] @return;
-        
-        public listarComentariosDeTicketResponse() {
-        }
-        
-        public listarComentariosDeTicketResponse(TableSoft.ComentarioWS.comentario[] @return) {
-            this.@return = @return;
-        }
-    }
-    
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2031,6 +1995,42 @@ namespace TableSoft.ComentarioWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarComentariosDeTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarComentariosDeTicketRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ComentarioWS.ticket objTicket;
+        
+        public listarComentariosDeTicketRequest() {
+        }
+        
+        public listarComentariosDeTicketRequest(TableSoft.ComentarioWS.ticket objTicket) {
+            this.objTicket = objTicket;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarComentariosDeTicketResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarComentariosDeTicketResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ComentarioWS.comentario[] @return;
+        
+        public listarComentariosDeTicketResponse() {
+        }
+        
+        public listarComentariosDeTicketResponse(TableSoft.ComentarioWS.comentario[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ComentarioWSChannel : TableSoft.ComentarioWS.ComentarioWS, System.ServiceModel.IClientChannel {
     }
@@ -2059,29 +2059,6 @@ namespace TableSoft.ComentarioWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ComentarioWS.listarComentariosDeTicketResponse TableSoft.ComentarioWS.ComentarioWS.listarComentariosDeTicket(TableSoft.ComentarioWS.listarComentariosDeTicketRequest request) {
-            return base.Channel.listarComentariosDeTicket(request);
-        }
-        
-        public TableSoft.ComentarioWS.comentario[] listarComentariosDeTicket(TableSoft.ComentarioWS.ticket objTicket) {
-            TableSoft.ComentarioWS.listarComentariosDeTicketRequest inValue = new TableSoft.ComentarioWS.listarComentariosDeTicketRequest();
-            inValue.objTicket = objTicket;
-            TableSoft.ComentarioWS.listarComentariosDeTicketResponse retVal = ((TableSoft.ComentarioWS.ComentarioWS)(this)).listarComentariosDeTicket(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ComentarioWS.listarComentariosDeTicketResponse> TableSoft.ComentarioWS.ComentarioWS.listarComentariosDeTicketAsync(TableSoft.ComentarioWS.listarComentariosDeTicketRequest request) {
-            return base.Channel.listarComentariosDeTicketAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.ComentarioWS.listarComentariosDeTicketResponse> listarComentariosDeTicketAsync(TableSoft.ComentarioWS.ticket objTicket) {
-            TableSoft.ComentarioWS.listarComentariosDeTicketRequest inValue = new TableSoft.ComentarioWS.listarComentariosDeTicketRequest();
-            inValue.objTicket = objTicket;
-            return ((TableSoft.ComentarioWS.ComentarioWS)(this)).listarComentariosDeTicketAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.ComentarioWS.insertarComentarioResponse TableSoft.ComentarioWS.ComentarioWS.insertarComentario(TableSoft.ComentarioWS.insertarComentarioRequest request) {
             return base.Channel.insertarComentario(request);
         }
@@ -2104,6 +2081,29 @@ namespace TableSoft.ComentarioWS {
             inValue.objComentario = objComentario;
             inValue.objTicket = objTicket;
             return ((TableSoft.ComentarioWS.ComentarioWS)(this)).insertarComentarioAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.ComentarioWS.listarComentariosDeTicketResponse TableSoft.ComentarioWS.ComentarioWS.listarComentariosDeTicket(TableSoft.ComentarioWS.listarComentariosDeTicketRequest request) {
+            return base.Channel.listarComentariosDeTicket(request);
+        }
+        
+        public TableSoft.ComentarioWS.comentario[] listarComentariosDeTicket(TableSoft.ComentarioWS.ticket objTicket) {
+            TableSoft.ComentarioWS.listarComentariosDeTicketRequest inValue = new TableSoft.ComentarioWS.listarComentariosDeTicketRequest();
+            inValue.objTicket = objTicket;
+            TableSoft.ComentarioWS.listarComentariosDeTicketResponse retVal = ((TableSoft.ComentarioWS.ComentarioWS)(this)).listarComentariosDeTicket(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.ComentarioWS.listarComentariosDeTicketResponse> TableSoft.ComentarioWS.ComentarioWS.listarComentariosDeTicketAsync(TableSoft.ComentarioWS.listarComentariosDeTicketRequest request) {
+            return base.Channel.listarComentariosDeTicketAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.ComentarioWS.listarComentariosDeTicketResponse> listarComentariosDeTicketAsync(TableSoft.ComentarioWS.ticket objTicket) {
+            TableSoft.ComentarioWS.listarComentariosDeTicketRequest inValue = new TableSoft.ComentarioWS.listarComentariosDeTicketRequest();
+            inValue.objTicket = objTicket;
+            return ((TableSoft.ComentarioWS.ComentarioWS)(this)).listarComentariosDeTicketAsync(inValue);
         }
     }
 }

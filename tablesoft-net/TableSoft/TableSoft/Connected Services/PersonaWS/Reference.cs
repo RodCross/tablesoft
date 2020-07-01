@@ -16,15 +16,6 @@ namespace TableSoft.PersonaWS {
     public interface PersonaWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.PersonaWS.verificarCorreoResponse verificarCorreo(TableSoft.PersonaWS.verificarCorreoRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoResponse")]
-        System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarCorreoResponse> verificarCorreoAsync(TableSoft.PersonaWS.verificarCorreoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarPersonaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarPersonaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -32,42 +23,15 @@ namespace TableSoft.PersonaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarPersonaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarPersonaResponse")]
         System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarPersonaResponse> verificarPersonaAsync(TableSoft.PersonaWS.verificarPersonaRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCorreo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class verificarCorreoRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public string email;
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.PersonaWS.verificarCorreoResponse verificarCorreo(TableSoft.PersonaWS.verificarCorreoRequest request);
         
-        public verificarCorreoRequest() {
-        }
-        
-        public verificarCorreoRequest(string email) {
-            this.email = email;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCorreoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class verificarCorreoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public verificarCorreoResponse() {
-        }
-        
-        public verificarCorreoResponse(int @return) {
-            this.@return = @return;
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoResponse")]
+        System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarCorreoResponse> verificarCorreoAsync(TableSoft.PersonaWS.verificarCorreoRequest request);
     }
     
     /// <remarks/>
@@ -283,6 +247,42 @@ namespace TableSoft.PersonaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCorreo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class verificarCorreoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string email;
+        
+        public verificarCorreoRequest() {
+        }
+        
+        public verificarCorreoRequest(string email) {
+            this.email = email;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="verificarCorreoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class verificarCorreoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public verificarCorreoResponse() {
+        }
+        
+        public verificarCorreoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PersonaWSChannel : TableSoft.PersonaWS.PersonaWS, System.ServiceModel.IClientChannel {
     }
@@ -311,29 +311,6 @@ namespace TableSoft.PersonaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.PersonaWS.verificarCorreoResponse TableSoft.PersonaWS.PersonaWS.verificarCorreo(TableSoft.PersonaWS.verificarCorreoRequest request) {
-            return base.Channel.verificarCorreo(request);
-        }
-        
-        public int verificarCorreo(string email) {
-            TableSoft.PersonaWS.verificarCorreoRequest inValue = new TableSoft.PersonaWS.verificarCorreoRequest();
-            inValue.email = email;
-            TableSoft.PersonaWS.verificarCorreoResponse retVal = ((TableSoft.PersonaWS.PersonaWS)(this)).verificarCorreo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarCorreoResponse> TableSoft.PersonaWS.PersonaWS.verificarCorreoAsync(TableSoft.PersonaWS.verificarCorreoRequest request) {
-            return base.Channel.verificarCorreoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarCorreoResponse> verificarCorreoAsync(string email) {
-            TableSoft.PersonaWS.verificarCorreoRequest inValue = new TableSoft.PersonaWS.verificarCorreoRequest();
-            inValue.email = email;
-            return ((TableSoft.PersonaWS.PersonaWS)(this)).verificarCorreoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.PersonaWS.verificarPersonaResponse TableSoft.PersonaWS.PersonaWS.verificarPersona(TableSoft.PersonaWS.verificarPersonaRequest request) {
             return base.Channel.verificarPersona(request);
         }
@@ -356,6 +333,29 @@ namespace TableSoft.PersonaWS {
             inValue.email = email;
             inValue.password = password;
             return ((TableSoft.PersonaWS.PersonaWS)(this)).verificarPersonaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.PersonaWS.verificarCorreoResponse TableSoft.PersonaWS.PersonaWS.verificarCorreo(TableSoft.PersonaWS.verificarCorreoRequest request) {
+            return base.Channel.verificarCorreo(request);
+        }
+        
+        public int verificarCorreo(string email) {
+            TableSoft.PersonaWS.verificarCorreoRequest inValue = new TableSoft.PersonaWS.verificarCorreoRequest();
+            inValue.email = email;
+            TableSoft.PersonaWS.verificarCorreoResponse retVal = ((TableSoft.PersonaWS.PersonaWS)(this)).verificarCorreo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarCorreoResponse> TableSoft.PersonaWS.PersonaWS.verificarCorreoAsync(TableSoft.PersonaWS.verificarCorreoRequest request) {
+            return base.Channel.verificarCorreoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarCorreoResponse> verificarCorreoAsync(string email) {
+            TableSoft.PersonaWS.verificarCorreoRequest inValue = new TableSoft.PersonaWS.verificarCorreoRequest();
+            inValue.email = email;
+            return ((TableSoft.PersonaWS.PersonaWS)(this)).verificarCorreoAsync(inValue);
         }
     }
 }

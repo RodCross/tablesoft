@@ -11,12 +11,6 @@
   <message name="listarTareasPredeterminadasPorCategoriaResponse">
     <part name="parameters" element="tns:listarTareasPredeterminadasPorCategoriaResponse" />
   </message>
-  <message name="actualizarTareaPredeterminada">
-    <part name="parameters" element="tns:actualizarTareaPredeterminada" />
-  </message>
-  <message name="actualizarTareaPredeterminadaResponse">
-    <part name="parameters" element="tns:actualizarTareaPredeterminadaResponse" />
-  </message>
   <message name="insertarTareaPredeterminada">
     <part name="parameters" element="tns:insertarTareaPredeterminada" />
   </message>
@@ -29,14 +23,16 @@
   <message name="eliminarTareaPredeterminadaResponse">
     <part name="parameters" element="tns:eliminarTareaPredeterminadaResponse" />
   </message>
+  <message name="actualizarTareaPredeterminada">
+    <part name="parameters" element="tns:actualizarTareaPredeterminada" />
+  </message>
+  <message name="actualizarTareaPredeterminadaResponse">
+    <part name="parameters" element="tns:actualizarTareaPredeterminadaResponse" />
+  </message>
   <portType name="TareaPredeterminadaWS">
     <operation name="listarTareasPredeterminadasPorCategoria">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaRequest" message="tns:listarTareasPredeterminadasPorCategoria" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaResponse" message="tns:listarTareasPredeterminadasPorCategoriaResponse" />
-    </operation>
-    <operation name="actualizarTareaPredeterminada">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaRequest" message="tns:actualizarTareaPredeterminada" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaResponse" message="tns:actualizarTareaPredeterminadaResponse" />
     </operation>
     <operation name="insertarTareaPredeterminada">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/insertarTareaPredeterminadaRequest" message="tns:insertarTareaPredeterminada" />
@@ -45,6 +41,10 @@
     <operation name="eliminarTareaPredeterminada">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaRequest" message="tns:eliminarTareaPredeterminada" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaResponse" message="tns:eliminarTareaPredeterminadaResponse" />
+    </operation>
+    <operation name="actualizarTareaPredeterminada">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaRequest" message="tns:actualizarTareaPredeterminada" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaResponse" message="tns:actualizarTareaPredeterminadaResponse" />
     </operation>
   </portType>
   <binding name="TareaPredeterminadaWSPortBinding" type="tns:TareaPredeterminadaWS">
@@ -58,15 +58,6 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="actualizarTareaPredeterminada">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
     <operation name="insertarTareaPredeterminada">
       <soap:operation soapAction="" />
       <input>
@@ -77,6 +68,15 @@
       </output>
     </operation>
     <operation name="eliminarTareaPredeterminada">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarTareaPredeterminada">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

@@ -16,15 +16,6 @@ namespace TableSoft.EstadoTicketWS {
     public interface EstadoTicketWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EstadoTicketWS.listarEstadosTicketResponse listarEstadosTicket(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse")]
-        System.Threading.Tasks.Task<TableSoft.EstadoTicketWS.listarEstadosTicketResponse> listarEstadosTicketAsync(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketResponse" +
             "")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -34,6 +25,15 @@ namespace TableSoft.EstadoTicketWS {
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketResponse" +
             "")]
         System.Threading.Tasks.Task<TableSoft.EstadoTicketWS.eliminarEstadoTicketResponse> eliminarEstadoTicketAsync(TableSoft.EstadoTicketWS.eliminarEstadoTicketRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.EstadoTicketWS.listarEstadosTicketResponse listarEstadosTicket(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse")]
+        System.Threading.Tasks.Task<TableSoft.EstadoTicketWS.listarEstadosTicketResponse> listarEstadosTicketAsync(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketReques" +
@@ -137,34 +137,6 @@ namespace TableSoft.EstadoTicketWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEstadosTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEstadosTicketRequest {
-        
-        public listarEstadosTicketRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEstadosTicketResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEstadosTicketResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EstadoTicketWS.estadoTicket[] @return;
-        
-        public listarEstadosTicketResponse() {
-        }
-        
-        public listarEstadosTicketResponse(TableSoft.EstadoTicketWS.estadoTicket[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEstadoTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class eliminarEstadoTicketRequest {
         
@@ -194,6 +166,34 @@ namespace TableSoft.EstadoTicketWS {
         }
         
         public eliminarEstadoTicketResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEstadosTicket", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarEstadosTicketRequest {
+        
+        public listarEstadosTicketRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEstadosTicketResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarEstadosTicketResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EstadoTicketWS.estadoTicket[] @return;
+        
+        public listarEstadosTicketResponse() {
+        }
+        
+        public listarEstadosTicketResponse(TableSoft.EstadoTicketWS.estadoTicket[] @return) {
             this.@return = @return;
         }
     }
@@ -298,27 +298,6 @@ namespace TableSoft.EstadoTicketWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EstadoTicketWS.listarEstadosTicketResponse TableSoft.EstadoTicketWS.EstadoTicketWS.listarEstadosTicket(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request) {
-            return base.Channel.listarEstadosTicket(request);
-        }
-        
-        public TableSoft.EstadoTicketWS.estadoTicket[] listarEstadosTicket() {
-            TableSoft.EstadoTicketWS.listarEstadosTicketRequest inValue = new TableSoft.EstadoTicketWS.listarEstadosTicketRequest();
-            TableSoft.EstadoTicketWS.listarEstadosTicketResponse retVal = ((TableSoft.EstadoTicketWS.EstadoTicketWS)(this)).listarEstadosTicket(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EstadoTicketWS.listarEstadosTicketResponse> TableSoft.EstadoTicketWS.EstadoTicketWS.listarEstadosTicketAsync(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request) {
-            return base.Channel.listarEstadosTicketAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.EstadoTicketWS.listarEstadosTicketResponse> listarEstadosTicketAsync() {
-            TableSoft.EstadoTicketWS.listarEstadosTicketRequest inValue = new TableSoft.EstadoTicketWS.listarEstadosTicketRequest();
-            return ((TableSoft.EstadoTicketWS.EstadoTicketWS)(this)).listarEstadosTicketAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.EstadoTicketWS.eliminarEstadoTicketResponse TableSoft.EstadoTicketWS.EstadoTicketWS.eliminarEstadoTicket(TableSoft.EstadoTicketWS.eliminarEstadoTicketRequest request) {
             return base.Channel.eliminarEstadoTicket(request);
         }
@@ -339,6 +318,27 @@ namespace TableSoft.EstadoTicketWS {
             TableSoft.EstadoTicketWS.eliminarEstadoTicketRequest inValue = new TableSoft.EstadoTicketWS.eliminarEstadoTicketRequest();
             inValue.objEstadoTicket = objEstadoTicket;
             return ((TableSoft.EstadoTicketWS.EstadoTicketWS)(this)).eliminarEstadoTicketAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.EstadoTicketWS.listarEstadosTicketResponse TableSoft.EstadoTicketWS.EstadoTicketWS.listarEstadosTicket(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request) {
+            return base.Channel.listarEstadosTicket(request);
+        }
+        
+        public TableSoft.EstadoTicketWS.estadoTicket[] listarEstadosTicket() {
+            TableSoft.EstadoTicketWS.listarEstadosTicketRequest inValue = new TableSoft.EstadoTicketWS.listarEstadosTicketRequest();
+            TableSoft.EstadoTicketWS.listarEstadosTicketResponse retVal = ((TableSoft.EstadoTicketWS.EstadoTicketWS)(this)).listarEstadosTicket(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.EstadoTicketWS.listarEstadosTicketResponse> TableSoft.EstadoTicketWS.EstadoTicketWS.listarEstadosTicketAsync(TableSoft.EstadoTicketWS.listarEstadosTicketRequest request) {
+            return base.Channel.listarEstadosTicketAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.EstadoTicketWS.listarEstadosTicketResponse> listarEstadosTicketAsync() {
+            TableSoft.EstadoTicketWS.listarEstadosTicketRequest inValue = new TableSoft.EstadoTicketWS.listarEstadosTicketRequest();
+            return ((TableSoft.EstadoTicketWS.EstadoTicketWS)(this)).listarEstadosTicketAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

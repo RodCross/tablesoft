@@ -16,13 +16,13 @@ namespace TableSoft.ActivoFijoWS {
     public interface ActivoFijoWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ActivoFijoWS.eliminarActivoFijoResponse eliminarActivoFijo(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request);
+        TableSoft.ActivoFijoWS.insertarActivoFijoResponse insertarActivoFijo(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoResponse")]
-        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.eliminarActivoFijoResponse> eliminarActivoFijoAsync(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoResponse")]
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.insertarActivoFijoResponse> insertarActivoFijoAsync(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoResponse")]
@@ -32,6 +32,15 @@ namespace TableSoft.ActivoFijoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoResponse")]
         System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.actualizarActivoFijoResponse> actualizarActivoFijoAsync(TableSoft.ActivoFijoWS.actualizarActivoFijoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.ActivoFijoWS.listarActivosFijosResponse listarActivosFijos(TableSoft.ActivoFijoWS.listarActivosFijosRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse")]
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> listarActivosFijosAsync(TableSoft.ActivoFijoWS.listarActivosFijosRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreReq" +
@@ -47,22 +56,13 @@ namespace TableSoft.ActivoFijoWS {
         System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse> listarActivosFijosPorNombreAsync(TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ActivoFijoWS.insertarActivoFijoResponse insertarActivoFijo(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request);
+        TableSoft.ActivoFijoWS.eliminarActivoFijoResponse eliminarActivoFijo(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoResponse")]
-        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.insertarActivoFijoResponse> insertarActivoFijoAsync(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ActivoFijoWS.listarActivosFijosResponse listarActivosFijos(TableSoft.ActivoFijoWS.listarActivosFijosRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse")]
-        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> listarActivosFijosAsync(TableSoft.ActivoFijoWS.listarActivosFijosRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoResponse")]
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.eliminarActivoFijoResponse> eliminarActivoFijoAsync(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request);
     }
     
     /// <remarks/>
@@ -170,17 +170,17 @@ namespace TableSoft.ActivoFijoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarActivoFijo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarActivoFijoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarActivoFijo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarActivoFijoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public TableSoft.ActivoFijoWS.activoFijo objActivoFijo;
         
-        public eliminarActivoFijoRequest() {
+        public insertarActivoFijoRequest() {
         }
         
-        public eliminarActivoFijoRequest(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
+        public insertarActivoFijoRequest(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
             this.objActivoFijo = objActivoFijo;
         }
     }
@@ -188,17 +188,17 @@ namespace TableSoft.ActivoFijoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarActivoFijoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarActivoFijoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarActivoFijoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarActivoFijoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public eliminarActivoFijoResponse() {
+        public insertarActivoFijoResponse() {
         }
         
-        public eliminarActivoFijoResponse(int @return) {
+        public insertarActivoFijoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -242,6 +242,34 @@ namespace TableSoft.ActivoFijoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarActivosFijos", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarActivosFijosRequest {
+        
+        public listarActivosFijosRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarActivosFijosResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarActivosFijosResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ActivoFijoWS.activoFijo[] @return;
+        
+        public listarActivosFijosResponse() {
+        }
+        
+        public listarActivosFijosResponse(TableSoft.ActivoFijoWS.activoFijo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarActivosFijosPorNombre", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarActivosFijosPorNombreRequest {
         
@@ -278,17 +306,17 @@ namespace TableSoft.ActivoFijoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarActivoFijo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarActivoFijoRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarActivoFijo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarActivoFijoRequest {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public TableSoft.ActivoFijoWS.activoFijo objActivoFijo;
         
-        public insertarActivoFijoRequest() {
+        public eliminarActivoFijoRequest() {
         }
         
-        public insertarActivoFijoRequest(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
+        public eliminarActivoFijoRequest(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
             this.objActivoFijo = objActivoFijo;
         }
     }
@@ -296,45 +324,17 @@ namespace TableSoft.ActivoFijoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarActivoFijoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarActivoFijoResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarActivoFijoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarActivoFijoResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
         public int @return;
         
-        public insertarActivoFijoResponse() {
+        public eliminarActivoFijoResponse() {
         }
         
-        public insertarActivoFijoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarActivosFijos", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarActivosFijosRequest {
-        
-        public listarActivosFijosRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarActivosFijosResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarActivosFijosResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.ActivoFijoWS.activoFijo[] @return;
-        
-        public listarActivosFijosResponse() {
-        }
-        
-        public listarActivosFijosResponse(TableSoft.ActivoFijoWS.activoFijo[] @return) {
+        public eliminarActivoFijoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -367,26 +367,26 @@ namespace TableSoft.ActivoFijoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ActivoFijoWS.eliminarActivoFijoResponse TableSoft.ActivoFijoWS.ActivoFijoWS.eliminarActivoFijo(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request) {
-            return base.Channel.eliminarActivoFijo(request);
+        TableSoft.ActivoFijoWS.insertarActivoFijoResponse TableSoft.ActivoFijoWS.ActivoFijoWS.insertarActivoFijo(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request) {
+            return base.Channel.insertarActivoFijo(request);
         }
         
-        public int eliminarActivoFijo(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
-            TableSoft.ActivoFijoWS.eliminarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.eliminarActivoFijoRequest();
+        public int insertarActivoFijo(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
+            TableSoft.ActivoFijoWS.insertarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.insertarActivoFijoRequest();
             inValue.objActivoFijo = objActivoFijo;
-            TableSoft.ActivoFijoWS.eliminarActivoFijoResponse retVal = ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).eliminarActivoFijo(inValue);
+            TableSoft.ActivoFijoWS.insertarActivoFijoResponse retVal = ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).insertarActivoFijo(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.eliminarActivoFijoResponse> TableSoft.ActivoFijoWS.ActivoFijoWS.eliminarActivoFijoAsync(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request) {
-            return base.Channel.eliminarActivoFijoAsync(request);
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.insertarActivoFijoResponse> TableSoft.ActivoFijoWS.ActivoFijoWS.insertarActivoFijoAsync(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request) {
+            return base.Channel.insertarActivoFijoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.eliminarActivoFijoResponse> eliminarActivoFijoAsync(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
-            TableSoft.ActivoFijoWS.eliminarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.eliminarActivoFijoRequest();
+        public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.insertarActivoFijoResponse> insertarActivoFijoAsync(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
+            TableSoft.ActivoFijoWS.insertarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.insertarActivoFijoRequest();
             inValue.objActivoFijo = objActivoFijo;
-            return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).eliminarActivoFijoAsync(inValue);
+            return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).insertarActivoFijoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -413,6 +413,27 @@ namespace TableSoft.ActivoFijoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.ActivoFijoWS.listarActivosFijosResponse TableSoft.ActivoFijoWS.ActivoFijoWS.listarActivosFijos(TableSoft.ActivoFijoWS.listarActivosFijosRequest request) {
+            return base.Channel.listarActivosFijos(request);
+        }
+        
+        public TableSoft.ActivoFijoWS.activoFijo[] listarActivosFijos() {
+            TableSoft.ActivoFijoWS.listarActivosFijosRequest inValue = new TableSoft.ActivoFijoWS.listarActivosFijosRequest();
+            TableSoft.ActivoFijoWS.listarActivosFijosResponse retVal = ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).listarActivosFijos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> TableSoft.ActivoFijoWS.ActivoFijoWS.listarActivosFijosAsync(TableSoft.ActivoFijoWS.listarActivosFijosRequest request) {
+            return base.Channel.listarActivosFijosAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> listarActivosFijosAsync() {
+            TableSoft.ActivoFijoWS.listarActivosFijosRequest inValue = new TableSoft.ActivoFijoWS.listarActivosFijosRequest();
+            return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).listarActivosFijosAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse TableSoft.ActivoFijoWS.ActivoFijoWS.listarActivosFijosPorNombre(TableSoft.ActivoFijoWS.listarActivosFijosPorNombreRequest request) {
             return base.Channel.listarActivosFijosPorNombre(request);
         }
@@ -436,47 +457,26 @@ namespace TableSoft.ActivoFijoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ActivoFijoWS.insertarActivoFijoResponse TableSoft.ActivoFijoWS.ActivoFijoWS.insertarActivoFijo(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request) {
-            return base.Channel.insertarActivoFijo(request);
+        TableSoft.ActivoFijoWS.eliminarActivoFijoResponse TableSoft.ActivoFijoWS.ActivoFijoWS.eliminarActivoFijo(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request) {
+            return base.Channel.eliminarActivoFijo(request);
         }
         
-        public int insertarActivoFijo(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
-            TableSoft.ActivoFijoWS.insertarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.insertarActivoFijoRequest();
+        public int eliminarActivoFijo(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
+            TableSoft.ActivoFijoWS.eliminarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.eliminarActivoFijoRequest();
             inValue.objActivoFijo = objActivoFijo;
-            TableSoft.ActivoFijoWS.insertarActivoFijoResponse retVal = ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).insertarActivoFijo(inValue);
+            TableSoft.ActivoFijoWS.eliminarActivoFijoResponse retVal = ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).eliminarActivoFijo(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.insertarActivoFijoResponse> TableSoft.ActivoFijoWS.ActivoFijoWS.insertarActivoFijoAsync(TableSoft.ActivoFijoWS.insertarActivoFijoRequest request) {
-            return base.Channel.insertarActivoFijoAsync(request);
+        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.eliminarActivoFijoResponse> TableSoft.ActivoFijoWS.ActivoFijoWS.eliminarActivoFijoAsync(TableSoft.ActivoFijoWS.eliminarActivoFijoRequest request) {
+            return base.Channel.eliminarActivoFijoAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.insertarActivoFijoResponse> insertarActivoFijoAsync(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
-            TableSoft.ActivoFijoWS.insertarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.insertarActivoFijoRequest();
+        public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.eliminarActivoFijoResponse> eliminarActivoFijoAsync(TableSoft.ActivoFijoWS.activoFijo objActivoFijo) {
+            TableSoft.ActivoFijoWS.eliminarActivoFijoRequest inValue = new TableSoft.ActivoFijoWS.eliminarActivoFijoRequest();
             inValue.objActivoFijo = objActivoFijo;
-            return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).insertarActivoFijoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ActivoFijoWS.listarActivosFijosResponse TableSoft.ActivoFijoWS.ActivoFijoWS.listarActivosFijos(TableSoft.ActivoFijoWS.listarActivosFijosRequest request) {
-            return base.Channel.listarActivosFijos(request);
-        }
-        
-        public TableSoft.ActivoFijoWS.activoFijo[] listarActivosFijos() {
-            TableSoft.ActivoFijoWS.listarActivosFijosRequest inValue = new TableSoft.ActivoFijoWS.listarActivosFijosRequest();
-            TableSoft.ActivoFijoWS.listarActivosFijosResponse retVal = ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).listarActivosFijos(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> TableSoft.ActivoFijoWS.ActivoFijoWS.listarActivosFijosAsync(TableSoft.ActivoFijoWS.listarActivosFijosRequest request) {
-            return base.Channel.listarActivosFijosAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.ActivoFijoWS.listarActivosFijosResponse> listarActivosFijosAsync() {
-            TableSoft.ActivoFijoWS.listarActivosFijosRequest inValue = new TableSoft.ActivoFijoWS.listarActivosFijosRequest();
-            return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).listarActivosFijosAsync(inValue);
+            return ((TableSoft.ActivoFijoWS.ActivoFijoWS)(this)).eliminarActivoFijoAsync(inValue);
         }
     }
 }

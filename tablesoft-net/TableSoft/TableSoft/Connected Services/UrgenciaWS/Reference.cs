@@ -25,15 +25,6 @@ namespace TableSoft.UrgenciaWS {
         System.Threading.Tasks.Task<TableSoft.UrgenciaWS.insertarUrgenciaResponse> insertarUrgenciaAsync(TableSoft.UrgenciaWS.insertarUrgenciaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.UrgenciaWS.eliminarUrgenciaResponse eliminarUrgencia(TableSoft.UrgenciaWS.eliminarUrgenciaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaResponse")]
-        System.Threading.Tasks.Task<TableSoft.UrgenciaWS.eliminarUrgenciaResponse> eliminarUrgenciaAsync(TableSoft.UrgenciaWS.eliminarUrgenciaRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -41,6 +32,15 @@ namespace TableSoft.UrgenciaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasResponse")]
         System.Threading.Tasks.Task<TableSoft.UrgenciaWS.listarUrgenciasResponse> listarUrgenciasAsync(TableSoft.UrgenciaWS.listarUrgenciasRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.UrgenciaWS.eliminarUrgenciaResponse eliminarUrgencia(TableSoft.UrgenciaWS.eliminarUrgenciaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/eliminarUrgenciaResponse")]
+        System.Threading.Tasks.Task<TableSoft.UrgenciaWS.eliminarUrgenciaResponse> eliminarUrgenciaAsync(TableSoft.UrgenciaWS.eliminarUrgenciaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaResponse")]
@@ -165,6 +165,34 @@ namespace TableSoft.UrgenciaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUrgencias", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarUrgenciasRequest {
+        
+        public listarUrgenciasRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUrgenciasResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarUrgenciasResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.UrgenciaWS.urgencia[] @return;
+        
+        public listarUrgenciasResponse() {
+        }
+        
+        public listarUrgenciasResponse(TableSoft.UrgenciaWS.urgencia[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarUrgencia", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class eliminarUrgenciaRequest {
         
@@ -194,34 +222,6 @@ namespace TableSoft.UrgenciaWS {
         }
         
         public eliminarUrgenciaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUrgencias", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarUrgenciasRequest {
-        
-        public listarUrgenciasRequest() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarUrgenciasResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarUrgenciasResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.UrgenciaWS.urgencia[] @return;
-        
-        public listarUrgenciasResponse() {
-        }
-        
-        public listarUrgenciasResponse(TableSoft.UrgenciaWS.urgencia[] @return) {
             this.@return = @return;
         }
     }
@@ -313,6 +313,27 @@ namespace TableSoft.UrgenciaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.UrgenciaWS.listarUrgenciasResponse TableSoft.UrgenciaWS.UrgenciaWS.listarUrgencias(TableSoft.UrgenciaWS.listarUrgenciasRequest request) {
+            return base.Channel.listarUrgencias(request);
+        }
+        
+        public TableSoft.UrgenciaWS.urgencia[] listarUrgencias() {
+            TableSoft.UrgenciaWS.listarUrgenciasRequest inValue = new TableSoft.UrgenciaWS.listarUrgenciasRequest();
+            TableSoft.UrgenciaWS.listarUrgenciasResponse retVal = ((TableSoft.UrgenciaWS.UrgenciaWS)(this)).listarUrgencias(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.UrgenciaWS.listarUrgenciasResponse> TableSoft.UrgenciaWS.UrgenciaWS.listarUrgenciasAsync(TableSoft.UrgenciaWS.listarUrgenciasRequest request) {
+            return base.Channel.listarUrgenciasAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.UrgenciaWS.listarUrgenciasResponse> listarUrgenciasAsync() {
+            TableSoft.UrgenciaWS.listarUrgenciasRequest inValue = new TableSoft.UrgenciaWS.listarUrgenciasRequest();
+            return ((TableSoft.UrgenciaWS.UrgenciaWS)(this)).listarUrgenciasAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.UrgenciaWS.eliminarUrgenciaResponse TableSoft.UrgenciaWS.UrgenciaWS.eliminarUrgencia(TableSoft.UrgenciaWS.eliminarUrgenciaRequest request) {
             return base.Channel.eliminarUrgencia(request);
         }
@@ -333,27 +354,6 @@ namespace TableSoft.UrgenciaWS {
             TableSoft.UrgenciaWS.eliminarUrgenciaRequest inValue = new TableSoft.UrgenciaWS.eliminarUrgenciaRequest();
             inValue.objUrgencia = objUrgencia;
             return ((TableSoft.UrgenciaWS.UrgenciaWS)(this)).eliminarUrgenciaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.UrgenciaWS.listarUrgenciasResponse TableSoft.UrgenciaWS.UrgenciaWS.listarUrgencias(TableSoft.UrgenciaWS.listarUrgenciasRequest request) {
-            return base.Channel.listarUrgencias(request);
-        }
-        
-        public TableSoft.UrgenciaWS.urgencia[] listarUrgencias() {
-            TableSoft.UrgenciaWS.listarUrgenciasRequest inValue = new TableSoft.UrgenciaWS.listarUrgenciasRequest();
-            TableSoft.UrgenciaWS.listarUrgenciasResponse retVal = ((TableSoft.UrgenciaWS.UrgenciaWS)(this)).listarUrgencias(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.UrgenciaWS.listarUrgenciasResponse> TableSoft.UrgenciaWS.UrgenciaWS.listarUrgenciasAsync(TableSoft.UrgenciaWS.listarUrgenciasRequest request) {
-            return base.Channel.listarUrgenciasAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.UrgenciaWS.listarUrgenciasResponse> listarUrgenciasAsync() {
-            TableSoft.UrgenciaWS.listarUrgenciasRequest inValue = new TableSoft.UrgenciaWS.listarUrgenciasRequest();
-            return ((TableSoft.UrgenciaWS.UrgenciaWS)(this)).listarUrgenciasAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

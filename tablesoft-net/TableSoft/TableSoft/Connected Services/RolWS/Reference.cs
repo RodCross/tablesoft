@@ -16,13 +16,13 @@ namespace TableSoft.RolWS {
     public interface RolWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.RolWS.insertarRolResponse insertarRol(TableSoft.RolWS.insertarRolRequest request);
+        TableSoft.RolWS.listarRolesResponse listarRoles(TableSoft.RolWS.listarRolesRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolResponse")]
-        System.Threading.Tasks.Task<TableSoft.RolWS.insertarRolResponse> insertarRolAsync(TableSoft.RolWS.insertarRolRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesResponse")]
+        System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> listarRolesAsync(TableSoft.RolWS.listarRolesRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/actualizarRolResponse")]
@@ -34,13 +34,13 @@ namespace TableSoft.RolWS {
         System.Threading.Tasks.Task<TableSoft.RolWS.actualizarRolResponse> actualizarRolAsync(TableSoft.RolWS.actualizarRolRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.RolWS.listarRolesResponse listarRoles(TableSoft.RolWS.listarRolesRequest request);
+        TableSoft.RolWS.insertarRolResponse insertarRol(TableSoft.RolWS.insertarRolRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/listarRolesResponse")]
-        System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> listarRolesAsync(TableSoft.RolWS.listarRolesRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/insertarRolResponse")]
+        System.Threading.Tasks.Task<TableSoft.RolWS.insertarRolResponse> insertarRolAsync(TableSoft.RolWS.insertarRolRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/RolWS/eliminarRolRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/RolWS/eliminarRolResponse")]
@@ -129,35 +129,27 @@ namespace TableSoft.RolWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRol", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarRolRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRoles", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarRolesRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.RolWS.rol objRol;
-        
-        public insertarRolRequest() {
-        }
-        
-        public insertarRolRequest(TableSoft.RolWS.rol objRol) {
-            this.objRol = objRol;
+        public listarRolesRequest() {
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRolResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarRolResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRolesResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarRolesResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.RolWS.rol[] @return;
         
-        public insertarRolResponse() {
+        public listarRolesResponse() {
         }
         
-        public insertarRolResponse(int @return) {
+        public listarRolesResponse(TableSoft.RolWS.rol[] @return) {
             this.@return = @return;
         }
     }
@@ -201,27 +193,35 @@ namespace TableSoft.RolWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRoles", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarRolesRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRol", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarRolRequest {
         
-        public listarRolesRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.RolWS.rol objRol;
+        
+        public insertarRolRequest() {
+        }
+        
+        public insertarRolRequest(TableSoft.RolWS.rol objRol) {
+            this.objRol = objRol;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarRolesResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarRolesResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarRolResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarRolResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.RolWS.rol[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarRolesResponse() {
+        public insertarRolResponse() {
         }
         
-        public listarRolesResponse(TableSoft.RolWS.rol[] @return) {
+        public insertarRolResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -290,26 +290,24 @@ namespace TableSoft.RolWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.RolWS.insertarRolResponse TableSoft.RolWS.RolWS.insertarRol(TableSoft.RolWS.insertarRolRequest request) {
-            return base.Channel.insertarRol(request);
+        TableSoft.RolWS.listarRolesResponse TableSoft.RolWS.RolWS.listarRoles(TableSoft.RolWS.listarRolesRequest request) {
+            return base.Channel.listarRoles(request);
         }
         
-        public int insertarRol(TableSoft.RolWS.rol objRol) {
-            TableSoft.RolWS.insertarRolRequest inValue = new TableSoft.RolWS.insertarRolRequest();
-            inValue.objRol = objRol;
-            TableSoft.RolWS.insertarRolResponse retVal = ((TableSoft.RolWS.RolWS)(this)).insertarRol(inValue);
+        public TableSoft.RolWS.rol[] listarRoles() {
+            TableSoft.RolWS.listarRolesRequest inValue = new TableSoft.RolWS.listarRolesRequest();
+            TableSoft.RolWS.listarRolesResponse retVal = ((TableSoft.RolWS.RolWS)(this)).listarRoles(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.RolWS.insertarRolResponse> TableSoft.RolWS.RolWS.insertarRolAsync(TableSoft.RolWS.insertarRolRequest request) {
-            return base.Channel.insertarRolAsync(request);
+        System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> TableSoft.RolWS.RolWS.listarRolesAsync(TableSoft.RolWS.listarRolesRequest request) {
+            return base.Channel.listarRolesAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.RolWS.insertarRolResponse> insertarRolAsync(TableSoft.RolWS.rol objRol) {
-            TableSoft.RolWS.insertarRolRequest inValue = new TableSoft.RolWS.insertarRolRequest();
-            inValue.objRol = objRol;
-            return ((TableSoft.RolWS.RolWS)(this)).insertarRolAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> listarRolesAsync() {
+            TableSoft.RolWS.listarRolesRequest inValue = new TableSoft.RolWS.listarRolesRequest();
+            return ((TableSoft.RolWS.RolWS)(this)).listarRolesAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -336,24 +334,26 @@ namespace TableSoft.RolWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.RolWS.listarRolesResponse TableSoft.RolWS.RolWS.listarRoles(TableSoft.RolWS.listarRolesRequest request) {
-            return base.Channel.listarRoles(request);
+        TableSoft.RolWS.insertarRolResponse TableSoft.RolWS.RolWS.insertarRol(TableSoft.RolWS.insertarRolRequest request) {
+            return base.Channel.insertarRol(request);
         }
         
-        public TableSoft.RolWS.rol[] listarRoles() {
-            TableSoft.RolWS.listarRolesRequest inValue = new TableSoft.RolWS.listarRolesRequest();
-            TableSoft.RolWS.listarRolesResponse retVal = ((TableSoft.RolWS.RolWS)(this)).listarRoles(inValue);
+        public int insertarRol(TableSoft.RolWS.rol objRol) {
+            TableSoft.RolWS.insertarRolRequest inValue = new TableSoft.RolWS.insertarRolRequest();
+            inValue.objRol = objRol;
+            TableSoft.RolWS.insertarRolResponse retVal = ((TableSoft.RolWS.RolWS)(this)).insertarRol(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> TableSoft.RolWS.RolWS.listarRolesAsync(TableSoft.RolWS.listarRolesRequest request) {
-            return base.Channel.listarRolesAsync(request);
+        System.Threading.Tasks.Task<TableSoft.RolWS.insertarRolResponse> TableSoft.RolWS.RolWS.insertarRolAsync(TableSoft.RolWS.insertarRolRequest request) {
+            return base.Channel.insertarRolAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.RolWS.listarRolesResponse> listarRolesAsync() {
-            TableSoft.RolWS.listarRolesRequest inValue = new TableSoft.RolWS.listarRolesRequest();
-            return ((TableSoft.RolWS.RolWS)(this)).listarRolesAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.RolWS.insertarRolResponse> insertarRolAsync(TableSoft.RolWS.rol objRol) {
+            TableSoft.RolWS.insertarRolRequest inValue = new TableSoft.RolWS.insertarRolRequest();
+            inValue.objRol = objRol;
+            return ((TableSoft.RolWS.RolWS)(this)).insertarRolAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

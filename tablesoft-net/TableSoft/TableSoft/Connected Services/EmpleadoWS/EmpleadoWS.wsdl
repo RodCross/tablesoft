@@ -35,17 +35,17 @@
   <message name="buscarEmpleadoPorCodigoResponse">
     <part name="parameters" element="tns:buscarEmpleadoPorCodigoResponse" />
   </message>
-  <message name="listarEmpleadosPorNombre">
-    <part name="parameters" element="tns:listarEmpleadosPorNombre" />
-  </message>
-  <message name="listarEmpleadosPorNombreResponse">
-    <part name="parameters" element="tns:listarEmpleadosPorNombreResponse" />
-  </message>
   <message name="actualizarEmpleado">
     <part name="parameters" element="tns:actualizarEmpleado" />
   </message>
   <message name="actualizarEmpleadoResponse">
     <part name="parameters" element="tns:actualizarEmpleadoResponse" />
+  </message>
+  <message name="listarEmpleadosPorNombre">
+    <part name="parameters" element="tns:listarEmpleadosPorNombre" />
+  </message>
+  <message name="listarEmpleadosPorNombreResponse">
+    <part name="parameters" element="tns:listarEmpleadosPorNombreResponse" />
   </message>
   <portType name="EmpleadoWS">
     <operation name="insertarEmpleado">
@@ -68,13 +68,13 @@
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/buscarEmpleadoPorCodigoRequest" message="tns:buscarEmpleadoPorCodigo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/buscarEmpleadoPorCodigoResponse" message="tns:buscarEmpleadoPorCodigoResponse" />
     </operation>
-    <operation name="listarEmpleadosPorNombre">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreRequest" message="tns:listarEmpleadosPorNombre" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreResponse" message="tns:listarEmpleadosPorNombreResponse" />
-    </operation>
     <operation name="actualizarEmpleado">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoRequest" message="tns:actualizarEmpleado" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoResponse" message="tns:actualizarEmpleadoResponse" />
+    </operation>
+    <operation name="listarEmpleadosPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreRequest" message="tns:listarEmpleadosPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreResponse" message="tns:listarEmpleadosPorNombreResponse" />
     </operation>
   </portType>
   <binding name="EmpleadoWSPortBinding" type="tns:EmpleadoWS">
@@ -124,7 +124,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarEmpleadosPorNombre">
+    <operation name="actualizarEmpleado">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -133,7 +133,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="actualizarEmpleado">
+    <operation name="listarEmpleadosPorNombre">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

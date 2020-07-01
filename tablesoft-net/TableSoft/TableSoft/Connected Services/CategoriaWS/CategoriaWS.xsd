@@ -274,6 +274,14 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:categoria" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="listarCategoriasDisponibles">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarCategoriasDisponiblesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:categoria" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="actualizarCategoria">
     <xs:sequence>
       <xs:element minOccurs="0" name="objCategoria" type="tns:categoria" />
@@ -282,14 +290,6 @@
   <xs:complexType name="actualizarCategoriaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarCategoriasDisponibles">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarCategoriasDisponiblesResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:categoria" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

@@ -29,19 +29,6 @@ namespace TableSoft.TareaPredeterminadaWS {
         System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse> listarTareasPredeterminadasPorCategoriaAsync(TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
-            "erminadaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
-            "erminadaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse actualizarTareaPredeterminada(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
-            "erminadaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
-            "erminadaResponse")]
-        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse> actualizarTareaPredeterminadaAsync(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/insertarTareaPredeter" +
             "minadaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/insertarTareaPredeter" +
             "minadaResponse")]
@@ -66,6 +53,19 @@ namespace TableSoft.TareaPredeterminadaWS {
             "minadaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeter" +
             "minadaResponse")]
         System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.eliminarTareaPredeterminadaResponse> eliminarTareaPredeterminadaAsync(TableSoft.TareaPredeterminadaWS.eliminarTareaPredeterminadaRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
+            "erminadaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
+            "erminadaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse actualizarTareaPredeterminada(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
+            "erminadaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredet" +
+            "erminadaResponse")]
+        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse> actualizarTareaPredeterminadaAsync(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request);
     }
     
     /// <remarks/>
@@ -269,42 +269,6 @@ namespace TableSoft.TareaPredeterminadaWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTareaPredeterminada", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarTareaPredeterminadaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada;
-        
-        public actualizarTareaPredeterminadaRequest() {
-        }
-        
-        public actualizarTareaPredeterminadaRequest(TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada) {
-            this.objTareaPredeterminada = objTareaPredeterminada;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTareaPredeterminadaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarTareaPredeterminadaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarTareaPredeterminadaResponse() {
-        }
-        
-        public actualizarTareaPredeterminadaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarTareaPredeterminada", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarTareaPredeterminadaRequest {
         
@@ -379,6 +343,42 @@ namespace TableSoft.TareaPredeterminadaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTareaPredeterminada", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarTareaPredeterminadaRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada;
+        
+        public actualizarTareaPredeterminadaRequest() {
+        }
+        
+        public actualizarTareaPredeterminadaRequest(TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada) {
+            this.objTareaPredeterminada = objTareaPredeterminada;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarTareaPredeterminadaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarTareaPredeterminadaResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarTareaPredeterminadaResponse() {
+        }
+        
+        public actualizarTareaPredeterminadaResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface TareaPredeterminadaWSChannel : TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS, System.ServiceModel.IClientChannel {
     }
@@ -430,29 +430,6 @@ namespace TableSoft.TareaPredeterminadaWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.actualizarTareaPredeterminada(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request) {
-            return base.Channel.actualizarTareaPredeterminada(request);
-        }
-        
-        public int actualizarTareaPredeterminada(TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada) {
-            TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest inValue = new TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest();
-            inValue.objTareaPredeterminada = objTareaPredeterminada;
-            TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse retVal = ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).actualizarTareaPredeterminada(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse> TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.actualizarTareaPredeterminadaAsync(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request) {
-            return base.Channel.actualizarTareaPredeterminadaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse> actualizarTareaPredeterminadaAsync(TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada) {
-            TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest inValue = new TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest();
-            inValue.objTareaPredeterminada = objTareaPredeterminada;
-            return ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).actualizarTareaPredeterminadaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.TareaPredeterminadaWS.insertarTareaPredeterminadaResponse TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.insertarTareaPredeterminada(TableSoft.TareaPredeterminadaWS.insertarTareaPredeterminadaRequest request) {
             return base.Channel.insertarTareaPredeterminada(request);
         }
@@ -498,6 +475,29 @@ namespace TableSoft.TareaPredeterminadaWS {
             TableSoft.TareaPredeterminadaWS.eliminarTareaPredeterminadaRequest inValue = new TableSoft.TareaPredeterminadaWS.eliminarTareaPredeterminadaRequest();
             inValue.objTareaPredeterminada = objTareaPredeterminada;
             return ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).eliminarTareaPredeterminadaAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.actualizarTareaPredeterminada(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request) {
+            return base.Channel.actualizarTareaPredeterminada(request);
+        }
+        
+        public int actualizarTareaPredeterminada(TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada) {
+            TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest inValue = new TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest();
+            inValue.objTareaPredeterminada = objTareaPredeterminada;
+            TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse retVal = ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).actualizarTareaPredeterminada(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse> TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS.actualizarTareaPredeterminadaAsync(TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest request) {
+            return base.Channel.actualizarTareaPredeterminadaAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse> actualizarTareaPredeterminadaAsync(TableSoft.TareaPredeterminadaWS.tareaPredeterminada objTareaPredeterminada) {
+            TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest inValue = new TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaRequest();
+            inValue.objTareaPredeterminada = objTareaPredeterminada;
+            return ((TableSoft.TareaPredeterminadaWS.TareaPredeterminadaWS)(this)).actualizarTareaPredeterminadaAsync(inValue);
         }
     }
 }

@@ -16,6 +16,16 @@ namespace TableSoft.EquipoWS {
     public interface EquipoWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.EquipoWS.listarEquiposResponse listarEquipos(TableSoft.EquipoWS.listarEquiposRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse")]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> listarEquiposAsync(TableSoft.EquipoWS.listarEquiposRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
@@ -24,26 +34,6 @@ namespace TableSoft.EquipoWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse")]
         System.Threading.Tasks.Task<TableSoft.EquipoWS.eliminarEquipoResponse> eliminarEquipoAsync(TableSoft.EquipoWS.eliminarEquipoRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EquipoWS.quitarCategoriaResponse quitarCategoria(TableSoft.EquipoWS.quitarCategoriaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> quitarCategoriaAsync(TableSoft.EquipoWS.quitarCategoriaRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EquipoWS.agregarCategoriaResponse agregarCategoria(TableSoft.EquipoWS.agregarCategoriaRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse")]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.agregarCategoriaResponse> agregarCategoriaAsync(TableSoft.EquipoWS.agregarCategoriaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse")]
@@ -56,6 +46,16 @@ namespace TableSoft.EquipoWS {
         System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> actualizarEquipoAsync(TableSoft.EquipoWS.actualizarEquipoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.EquipoWS.quitarCategoriaResponse quitarCategoria(TableSoft.EquipoWS.quitarCategoriaRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse")]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.quitarCategoriaResponse> quitarCategoriaAsync(TableSoft.EquipoWS.quitarCategoriaRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
@@ -66,14 +66,14 @@ namespace TableSoft.EquipoWS {
         System.Threading.Tasks.Task<TableSoft.EquipoWS.insertarEquipoResponse> insertarEquipoAsync(TableSoft.EquipoWS.insertarEquipoRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse")]
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.EquipoWS.listarEquiposResponse listarEquipos(TableSoft.EquipoWS.listarEquiposRequest request);
+        TableSoft.EquipoWS.agregarCategoriaResponse agregarCategoria(TableSoft.EquipoWS.agregarCategoriaRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse")]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> listarEquiposAsync(TableSoft.EquipoWS.listarEquiposRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse")]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.agregarCategoriaResponse> agregarCategoriaAsync(TableSoft.EquipoWS.agregarCategoriaRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreResponse")]
@@ -2003,6 +2003,34 @@ namespace TableSoft.EquipoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEquipos", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarEquiposRequest {
+        
+        public listarEquiposRequest() {
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEquiposResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class listarEquiposResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EquipoWS.equipo[] @return;
+        
+        public listarEquiposResponse() {
+        }
+        
+        public listarEquiposResponse(TableSoft.EquipoWS.equipo[] @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class eliminarEquipoRequest {
         
@@ -2032,6 +2060,42 @@ namespace TableSoft.EquipoWS {
         }
         
         public eliminarEquipoResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarEquipoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EquipoWS.equipo objEquipo;
+        
+        public actualizarEquipoRequest() {
+        }
+        
+        public actualizarEquipoRequest(TableSoft.EquipoWS.equipo objEquipo) {
+            this.objEquipo = objEquipo;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarEquipoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarEquipoResponse() {
+        }
+        
+        public actualizarEquipoResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2080,83 +2144,6 @@ namespace TableSoft.EquipoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class agregarCategoriaRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EquipoWS.equipo objEquipo;
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EquipoWS.categoria objCategoria;
-        
-        public agregarCategoriaRequest() {
-        }
-        
-        public agregarCategoriaRequest(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
-            this.objEquipo = objEquipo;
-            this.objCategoria = objCategoria;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class agregarCategoriaResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public agregarCategoriaResponse() {
-        }
-        
-        public agregarCategoriaResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarEquipoRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EquipoWS.equipo objEquipo;
-        
-        public actualizarEquipoRequest() {
-        }
-        
-        public actualizarEquipoRequest(TableSoft.EquipoWS.equipo objEquipo) {
-            this.objEquipo = objEquipo;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarEquipoResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarEquipoResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarEquipoResponse() {
-        }
-        
-        public actualizarEquipoResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="insertarEquipo", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class insertarEquipoRequest {
         
@@ -2193,27 +2180,40 @@ namespace TableSoft.EquipoWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEquipos", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEquiposRequest {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarCategoria", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class agregarCategoriaRequest {
         
-        public listarEquiposRequest() {
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EquipoWS.equipo objEquipo;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.EquipoWS.categoria objCategoria;
+        
+        public agregarCategoriaRequest() {
+        }
+        
+        public agregarCategoriaRequest(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
+            this.objEquipo = objEquipo;
+            this.objCategoria = objCategoria;
         }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="listarEquiposResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class listarEquiposResponse {
+    [System.ServiceModel.MessageContractAttribute(WrapperName="agregarCategoriaResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class agregarCategoriaResponse {
         
         [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute("return", Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.EquipoWS.equipo[] @return;
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
         
-        public listarEquiposResponse() {
+        public agregarCategoriaResponse() {
         }
         
-        public listarEquiposResponse(TableSoft.EquipoWS.equipo[] @return) {
+        public agregarCategoriaResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2282,6 +2282,27 @@ namespace TableSoft.EquipoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.EquipoWS.listarEquiposResponse TableSoft.EquipoWS.EquipoWS.listarEquipos(TableSoft.EquipoWS.listarEquiposRequest request) {
+            return base.Channel.listarEquipos(request);
+        }
+        
+        public TableSoft.EquipoWS.equipo[] listarEquipos() {
+            TableSoft.EquipoWS.listarEquiposRequest inValue = new TableSoft.EquipoWS.listarEquiposRequest();
+            TableSoft.EquipoWS.listarEquiposResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).listarEquipos(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> TableSoft.EquipoWS.EquipoWS.listarEquiposAsync(TableSoft.EquipoWS.listarEquiposRequest request) {
+            return base.Channel.listarEquiposAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> listarEquiposAsync() {
+            TableSoft.EquipoWS.listarEquiposRequest inValue = new TableSoft.EquipoWS.listarEquiposRequest();
+            return ((TableSoft.EquipoWS.EquipoWS)(this)).listarEquiposAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.EquipoWS.eliminarEquipoResponse TableSoft.EquipoWS.EquipoWS.eliminarEquipo(TableSoft.EquipoWS.eliminarEquipoRequest request) {
             return base.Channel.eliminarEquipo(request);
         }
@@ -2302,6 +2323,29 @@ namespace TableSoft.EquipoWS {
             TableSoft.EquipoWS.eliminarEquipoRequest inValue = new TableSoft.EquipoWS.eliminarEquipoRequest();
             inValue.objEquipo = objEquipo;
             return ((TableSoft.EquipoWS.EquipoWS)(this)).eliminarEquipoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.EquipoWS.actualizarEquipoResponse TableSoft.EquipoWS.EquipoWS.actualizarEquipo(TableSoft.EquipoWS.actualizarEquipoRequest request) {
+            return base.Channel.actualizarEquipo(request);
+        }
+        
+        public int actualizarEquipo(TableSoft.EquipoWS.equipo objEquipo) {
+            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
+            inValue.objEquipo = objEquipo;
+            TableSoft.EquipoWS.actualizarEquipoResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipo(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> TableSoft.EquipoWS.EquipoWS.actualizarEquipoAsync(TableSoft.EquipoWS.actualizarEquipoRequest request) {
+            return base.Channel.actualizarEquipoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> actualizarEquipoAsync(TableSoft.EquipoWS.equipo objEquipo) {
+            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
+            inValue.objEquipo = objEquipo;
+            return ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipoAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2330,54 +2374,6 @@ namespace TableSoft.EquipoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EquipoWS.agregarCategoriaResponse TableSoft.EquipoWS.EquipoWS.agregarCategoria(TableSoft.EquipoWS.agregarCategoriaRequest request) {
-            return base.Channel.agregarCategoria(request);
-        }
-        
-        public int agregarCategoria(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
-            TableSoft.EquipoWS.agregarCategoriaRequest inValue = new TableSoft.EquipoWS.agregarCategoriaRequest();
-            inValue.objEquipo = objEquipo;
-            inValue.objCategoria = objCategoria;
-            TableSoft.EquipoWS.agregarCategoriaResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).agregarCategoria(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.agregarCategoriaResponse> TableSoft.EquipoWS.EquipoWS.agregarCategoriaAsync(TableSoft.EquipoWS.agregarCategoriaRequest request) {
-            return base.Channel.agregarCategoriaAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.EquipoWS.agregarCategoriaResponse> agregarCategoriaAsync(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
-            TableSoft.EquipoWS.agregarCategoriaRequest inValue = new TableSoft.EquipoWS.agregarCategoriaRequest();
-            inValue.objEquipo = objEquipo;
-            inValue.objCategoria = objCategoria;
-            return ((TableSoft.EquipoWS.EquipoWS)(this)).agregarCategoriaAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EquipoWS.actualizarEquipoResponse TableSoft.EquipoWS.EquipoWS.actualizarEquipo(TableSoft.EquipoWS.actualizarEquipoRequest request) {
-            return base.Channel.actualizarEquipo(request);
-        }
-        
-        public int actualizarEquipo(TableSoft.EquipoWS.equipo objEquipo) {
-            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
-            inValue.objEquipo = objEquipo;
-            TableSoft.EquipoWS.actualizarEquipoResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipo(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> TableSoft.EquipoWS.EquipoWS.actualizarEquipoAsync(TableSoft.EquipoWS.actualizarEquipoRequest request) {
-            return base.Channel.actualizarEquipoAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.EquipoWS.actualizarEquipoResponse> actualizarEquipoAsync(TableSoft.EquipoWS.equipo objEquipo) {
-            TableSoft.EquipoWS.actualizarEquipoRequest inValue = new TableSoft.EquipoWS.actualizarEquipoRequest();
-            inValue.objEquipo = objEquipo;
-            return ((TableSoft.EquipoWS.EquipoWS)(this)).actualizarEquipoAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.EquipoWS.insertarEquipoResponse TableSoft.EquipoWS.EquipoWS.insertarEquipo(TableSoft.EquipoWS.insertarEquipoRequest request) {
             return base.Channel.insertarEquipo(request);
         }
@@ -2401,24 +2397,28 @@ namespace TableSoft.EquipoWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.EquipoWS.listarEquiposResponse TableSoft.EquipoWS.EquipoWS.listarEquipos(TableSoft.EquipoWS.listarEquiposRequest request) {
-            return base.Channel.listarEquipos(request);
+        TableSoft.EquipoWS.agregarCategoriaResponse TableSoft.EquipoWS.EquipoWS.agregarCategoria(TableSoft.EquipoWS.agregarCategoriaRequest request) {
+            return base.Channel.agregarCategoria(request);
         }
         
-        public TableSoft.EquipoWS.equipo[] listarEquipos() {
-            TableSoft.EquipoWS.listarEquiposRequest inValue = new TableSoft.EquipoWS.listarEquiposRequest();
-            TableSoft.EquipoWS.listarEquiposResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).listarEquipos(inValue);
+        public int agregarCategoria(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
+            TableSoft.EquipoWS.agregarCategoriaRequest inValue = new TableSoft.EquipoWS.agregarCategoriaRequest();
+            inValue.objEquipo = objEquipo;
+            inValue.objCategoria = objCategoria;
+            TableSoft.EquipoWS.agregarCategoriaResponse retVal = ((TableSoft.EquipoWS.EquipoWS)(this)).agregarCategoria(inValue);
             return retVal.@return;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> TableSoft.EquipoWS.EquipoWS.listarEquiposAsync(TableSoft.EquipoWS.listarEquiposRequest request) {
-            return base.Channel.listarEquiposAsync(request);
+        System.Threading.Tasks.Task<TableSoft.EquipoWS.agregarCategoriaResponse> TableSoft.EquipoWS.EquipoWS.agregarCategoriaAsync(TableSoft.EquipoWS.agregarCategoriaRequest request) {
+            return base.Channel.agregarCategoriaAsync(request);
         }
         
-        public System.Threading.Tasks.Task<TableSoft.EquipoWS.listarEquiposResponse> listarEquiposAsync() {
-            TableSoft.EquipoWS.listarEquiposRequest inValue = new TableSoft.EquipoWS.listarEquiposRequest();
-            return ((TableSoft.EquipoWS.EquipoWS)(this)).listarEquiposAsync(inValue);
+        public System.Threading.Tasks.Task<TableSoft.EquipoWS.agregarCategoriaResponse> agregarCategoriaAsync(TableSoft.EquipoWS.equipo objEquipo, TableSoft.EquipoWS.categoria objCategoria) {
+            TableSoft.EquipoWS.agregarCategoriaRequest inValue = new TableSoft.EquipoWS.agregarCategoriaRequest();
+            inValue.objEquipo = objEquipo;
+            inValue.objCategoria = objCategoria;
+            return ((TableSoft.EquipoWS.EquipoWS)(this)).agregarCategoriaAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

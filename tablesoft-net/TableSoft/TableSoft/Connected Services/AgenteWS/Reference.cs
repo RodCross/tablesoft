@@ -16,16 +16,6 @@ namespace TableSoft.AgenteWS {
     public interface AgenteWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.AgenteWS.insertarAgenteResponse insertarAgente(TableSoft.AgenteWS.insertarAgenteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteResponse")]
-        System.Threading.Tasks.Task<TableSoft.AgenteWS.insertarAgenteResponse> insertarAgenteAsync(TableSoft.AgenteWS.insertarAgenteRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
@@ -36,16 +26,6 @@ namespace TableSoft.AgenteWS {
         System.Threading.Tasks.Task<TableSoft.AgenteWS.listarAgentesResponse> listarAgentesAsync(TableSoft.AgenteWS.listarAgentesRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.AgenteWS.eliminarAgenteResponse eliminarAgente(TableSoft.AgenteWS.eliminarAgenteRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteResponse")]
-        System.Threading.Tasks.Task<TableSoft.AgenteWS.eliminarAgenteResponse> eliminarAgenteAsync(TableSoft.AgenteWS.eliminarAgenteRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
@@ -54,6 +34,26 @@ namespace TableSoft.AgenteWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteResponse")]
         System.Threading.Tasks.Task<TableSoft.AgenteWS.actualizarAgenteResponse> actualizarAgenteAsync(TableSoft.AgenteWS.actualizarAgenteRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.AgenteWS.insertarAgenteResponse insertarAgente(TableSoft.AgenteWS.insertarAgenteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteResponse")]
+        System.Threading.Tasks.Task<TableSoft.AgenteWS.insertarAgenteResponse> insertarAgenteAsync(TableSoft.AgenteWS.insertarAgenteRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.AgenteWS.eliminarAgenteResponse eliminarAgente(TableSoft.AgenteWS.eliminarAgenteRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteResponse")]
+        System.Threading.Tasks.Task<TableSoft.AgenteWS.eliminarAgenteResponse> eliminarAgenteAsync(TableSoft.AgenteWS.eliminarAgenteRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorEquipoResponse")]
@@ -2003,42 +2003,6 @@ namespace TableSoft.AgenteWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarAgente", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarAgenteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.AgenteWS.agente objAgente;
-        
-        public insertarAgenteRequest() {
-        }
-        
-        public insertarAgenteRequest(TableSoft.AgenteWS.agente objAgente) {
-            this.objAgente = objAgente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarAgenteResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class insertarAgenteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public insertarAgenteResponse() {
-        }
-        
-        public insertarAgenteResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarAgentes", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarAgentesRequest {
         
@@ -2060,42 +2024,6 @@ namespace TableSoft.AgenteWS {
         }
         
         public listarAgentesResponse(TableSoft.AgenteWS.agente[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAgente", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarAgenteRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.AgenteWS.agente objAgente;
-        
-        public eliminarAgenteRequest() {
-        }
-        
-        public eliminarAgenteRequest(TableSoft.AgenteWS.agente objAgente) {
-            this.objAgente = objAgente;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAgenteResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarAgenteResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarAgenteResponse() {
-        }
-        
-        public eliminarAgenteResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2132,6 +2060,78 @@ namespace TableSoft.AgenteWS {
         }
         
         public actualizarAgenteResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarAgente", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarAgenteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.AgenteWS.agente objAgente;
+        
+        public insertarAgenteRequest() {
+        }
+        
+        public insertarAgenteRequest(TableSoft.AgenteWS.agente objAgente) {
+            this.objAgente = objAgente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="insertarAgenteResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class insertarAgenteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public insertarAgenteResponse() {
+        }
+        
+        public insertarAgenteResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAgente", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarAgenteRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.AgenteWS.agente objAgente;
+        
+        public eliminarAgenteRequest() {
+        }
+        
+        public eliminarAgenteRequest(TableSoft.AgenteWS.agente objAgente) {
+            this.objAgente = objAgente;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarAgenteResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarAgenteResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarAgenteResponse() {
+        }
+        
+        public eliminarAgenteResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -2272,29 +2272,6 @@ namespace TableSoft.AgenteWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.AgenteWS.insertarAgenteResponse TableSoft.AgenteWS.AgenteWS.insertarAgente(TableSoft.AgenteWS.insertarAgenteRequest request) {
-            return base.Channel.insertarAgente(request);
-        }
-        
-        public int insertarAgente(TableSoft.AgenteWS.agente objAgente) {
-            TableSoft.AgenteWS.insertarAgenteRequest inValue = new TableSoft.AgenteWS.insertarAgenteRequest();
-            inValue.objAgente = objAgente;
-            TableSoft.AgenteWS.insertarAgenteResponse retVal = ((TableSoft.AgenteWS.AgenteWS)(this)).insertarAgente(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.AgenteWS.insertarAgenteResponse> TableSoft.AgenteWS.AgenteWS.insertarAgenteAsync(TableSoft.AgenteWS.insertarAgenteRequest request) {
-            return base.Channel.insertarAgenteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.AgenteWS.insertarAgenteResponse> insertarAgenteAsync(TableSoft.AgenteWS.agente objAgente) {
-            TableSoft.AgenteWS.insertarAgenteRequest inValue = new TableSoft.AgenteWS.insertarAgenteRequest();
-            inValue.objAgente = objAgente;
-            return ((TableSoft.AgenteWS.AgenteWS)(this)).insertarAgenteAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.AgenteWS.listarAgentesResponse TableSoft.AgenteWS.AgenteWS.listarAgentes(TableSoft.AgenteWS.listarAgentesRequest request) {
             return base.Channel.listarAgentes(request);
         }
@@ -2313,29 +2290,6 @@ namespace TableSoft.AgenteWS {
         public System.Threading.Tasks.Task<TableSoft.AgenteWS.listarAgentesResponse> listarAgentesAsync() {
             TableSoft.AgenteWS.listarAgentesRequest inValue = new TableSoft.AgenteWS.listarAgentesRequest();
             return ((TableSoft.AgenteWS.AgenteWS)(this)).listarAgentesAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.AgenteWS.eliminarAgenteResponse TableSoft.AgenteWS.AgenteWS.eliminarAgente(TableSoft.AgenteWS.eliminarAgenteRequest request) {
-            return base.Channel.eliminarAgente(request);
-        }
-        
-        public int eliminarAgente(TableSoft.AgenteWS.agente objAgente) {
-            TableSoft.AgenteWS.eliminarAgenteRequest inValue = new TableSoft.AgenteWS.eliminarAgenteRequest();
-            inValue.objAgente = objAgente;
-            TableSoft.AgenteWS.eliminarAgenteResponse retVal = ((TableSoft.AgenteWS.AgenteWS)(this)).eliminarAgente(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.AgenteWS.eliminarAgenteResponse> TableSoft.AgenteWS.AgenteWS.eliminarAgenteAsync(TableSoft.AgenteWS.eliminarAgenteRequest request) {
-            return base.Channel.eliminarAgenteAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.AgenteWS.eliminarAgenteResponse> eliminarAgenteAsync(TableSoft.AgenteWS.agente objAgente) {
-            TableSoft.AgenteWS.eliminarAgenteRequest inValue = new TableSoft.AgenteWS.eliminarAgenteRequest();
-            inValue.objAgente = objAgente;
-            return ((TableSoft.AgenteWS.AgenteWS)(this)).eliminarAgenteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -2359,6 +2313,52 @@ namespace TableSoft.AgenteWS {
             TableSoft.AgenteWS.actualizarAgenteRequest inValue = new TableSoft.AgenteWS.actualizarAgenteRequest();
             inValue.objAgente = objAgente;
             return ((TableSoft.AgenteWS.AgenteWS)(this)).actualizarAgenteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.AgenteWS.insertarAgenteResponse TableSoft.AgenteWS.AgenteWS.insertarAgente(TableSoft.AgenteWS.insertarAgenteRequest request) {
+            return base.Channel.insertarAgente(request);
+        }
+        
+        public int insertarAgente(TableSoft.AgenteWS.agente objAgente) {
+            TableSoft.AgenteWS.insertarAgenteRequest inValue = new TableSoft.AgenteWS.insertarAgenteRequest();
+            inValue.objAgente = objAgente;
+            TableSoft.AgenteWS.insertarAgenteResponse retVal = ((TableSoft.AgenteWS.AgenteWS)(this)).insertarAgente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.AgenteWS.insertarAgenteResponse> TableSoft.AgenteWS.AgenteWS.insertarAgenteAsync(TableSoft.AgenteWS.insertarAgenteRequest request) {
+            return base.Channel.insertarAgenteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.AgenteWS.insertarAgenteResponse> insertarAgenteAsync(TableSoft.AgenteWS.agente objAgente) {
+            TableSoft.AgenteWS.insertarAgenteRequest inValue = new TableSoft.AgenteWS.insertarAgenteRequest();
+            inValue.objAgente = objAgente;
+            return ((TableSoft.AgenteWS.AgenteWS)(this)).insertarAgenteAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.AgenteWS.eliminarAgenteResponse TableSoft.AgenteWS.AgenteWS.eliminarAgente(TableSoft.AgenteWS.eliminarAgenteRequest request) {
+            return base.Channel.eliminarAgente(request);
+        }
+        
+        public int eliminarAgente(TableSoft.AgenteWS.agente objAgente) {
+            TableSoft.AgenteWS.eliminarAgenteRequest inValue = new TableSoft.AgenteWS.eliminarAgenteRequest();
+            inValue.objAgente = objAgente;
+            TableSoft.AgenteWS.eliminarAgenteResponse retVal = ((TableSoft.AgenteWS.AgenteWS)(this)).eliminarAgente(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.AgenteWS.eliminarAgenteResponse> TableSoft.AgenteWS.AgenteWS.eliminarAgenteAsync(TableSoft.AgenteWS.eliminarAgenteRequest request) {
+            return base.Channel.eliminarAgenteAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.AgenteWS.eliminarAgenteResponse> eliminarAgenteAsync(TableSoft.AgenteWS.agente objAgente) {
+            TableSoft.AgenteWS.eliminarAgenteRequest inValue = new TableSoft.AgenteWS.eliminarAgenteRequest();
+            inValue.objAgente = objAgente;
+            return ((TableSoft.AgenteWS.AgenteWS)(this)).eliminarAgenteAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]

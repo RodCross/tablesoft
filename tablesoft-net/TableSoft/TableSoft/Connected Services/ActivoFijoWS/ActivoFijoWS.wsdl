@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/ActivoFijoWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="eliminarActivoFijo">
-    <part name="parameters" element="tns:eliminarActivoFijo" />
+  <message name="insertarActivoFijo">
+    <part name="parameters" element="tns:insertarActivoFijo" />
   </message>
-  <message name="eliminarActivoFijoResponse">
-    <part name="parameters" element="tns:eliminarActivoFijoResponse" />
+  <message name="insertarActivoFijoResponse">
+    <part name="parameters" element="tns:insertarActivoFijoResponse" />
   </message>
   <message name="actualizarActivoFijo">
     <part name="parameters" element="tns:actualizarActivoFijo" />
@@ -17,49 +17,49 @@
   <message name="actualizarActivoFijoResponse">
     <part name="parameters" element="tns:actualizarActivoFijoResponse" />
   </message>
-  <message name="listarActivosFijosPorNombre">
-    <part name="parameters" element="tns:listarActivosFijosPorNombre" />
-  </message>
-  <message name="listarActivosFijosPorNombreResponse">
-    <part name="parameters" element="tns:listarActivosFijosPorNombreResponse" />
-  </message>
-  <message name="insertarActivoFijo">
-    <part name="parameters" element="tns:insertarActivoFijo" />
-  </message>
-  <message name="insertarActivoFijoResponse">
-    <part name="parameters" element="tns:insertarActivoFijoResponse" />
-  </message>
   <message name="listarActivosFijos">
     <part name="parameters" element="tns:listarActivosFijos" />
   </message>
   <message name="listarActivosFijosResponse">
     <part name="parameters" element="tns:listarActivosFijosResponse" />
   </message>
+  <message name="listarActivosFijosPorNombre">
+    <part name="parameters" element="tns:listarActivosFijosPorNombre" />
+  </message>
+  <message name="listarActivosFijosPorNombreResponse">
+    <part name="parameters" element="tns:listarActivosFijosPorNombreResponse" />
+  </message>
+  <message name="eliminarActivoFijo">
+    <part name="parameters" element="tns:eliminarActivoFijo" />
+  </message>
+  <message name="eliminarActivoFijoResponse">
+    <part name="parameters" element="tns:eliminarActivoFijoResponse" />
+  </message>
   <portType name="ActivoFijoWS">
-    <operation name="eliminarActivoFijo">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoRequest" message="tns:eliminarActivoFijo" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoResponse" message="tns:eliminarActivoFijoResponse" />
+    <operation name="insertarActivoFijo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest" message="tns:insertarActivoFijo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoResponse" message="tns:insertarActivoFijoResponse" />
     </operation>
     <operation name="actualizarActivoFijo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoRequest" message="tns:actualizarActivoFijo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/actualizarActivoFijoResponse" message="tns:actualizarActivoFijoResponse" />
     </operation>
-    <operation name="listarActivosFijosPorNombre">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreRequest" message="tns:listarActivosFijosPorNombre" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreResponse" message="tns:listarActivosFijosPorNombreResponse" />
-    </operation>
-    <operation name="insertarActivoFijo">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoRequest" message="tns:insertarActivoFijo" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/insertarActivoFijoResponse" message="tns:insertarActivoFijoResponse" />
-    </operation>
     <operation name="listarActivosFijos">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosRequest" message="tns:listarActivosFijos" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosResponse" message="tns:listarActivosFijosResponse" />
     </operation>
+    <operation name="listarActivosFijosPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreRequest" message="tns:listarActivosFijosPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/listarActivosFijosPorNombreResponse" message="tns:listarActivosFijosPorNombreResponse" />
+    </operation>
+    <operation name="eliminarActivoFijo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoRequest" message="tns:eliminarActivoFijo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ActivoFijoWS/eliminarActivoFijoResponse" message="tns:eliminarActivoFijoResponse" />
+    </operation>
   </portType>
   <binding name="ActivoFijoWSPortBinding" type="tns:ActivoFijoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarActivoFijo">
+    <operation name="insertarActivoFijo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -77,6 +77,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="listarActivosFijos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="listarActivosFijosPorNombre">
       <soap:operation soapAction="" />
       <input>
@@ -86,16 +95,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarActivoFijo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="listarActivosFijos">
+    <operation name="eliminarActivoFijo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

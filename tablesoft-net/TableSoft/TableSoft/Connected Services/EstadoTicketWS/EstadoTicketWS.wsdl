@@ -5,17 +5,17 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/EstadoTicketWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="listarEstadosTicket">
-    <part name="parameters" element="tns:listarEstadosTicket" />
-  </message>
-  <message name="listarEstadosTicketResponse">
-    <part name="parameters" element="tns:listarEstadosTicketResponse" />
-  </message>
   <message name="eliminarEstadoTicket">
     <part name="parameters" element="tns:eliminarEstadoTicket" />
   </message>
   <message name="eliminarEstadoTicketResponse">
     <part name="parameters" element="tns:eliminarEstadoTicketResponse" />
+  </message>
+  <message name="listarEstadosTicket">
+    <part name="parameters" element="tns:listarEstadosTicket" />
+  </message>
+  <message name="listarEstadosTicketResponse">
+    <part name="parameters" element="tns:listarEstadosTicketResponse" />
   </message>
   <message name="actualizarEstadoTicket">
     <part name="parameters" element="tns:actualizarEstadoTicket" />
@@ -30,13 +30,13 @@
     <part name="parameters" element="tns:insertarEstadoTicketResponse" />
   </message>
   <portType name="EstadoTicketWS">
-    <operation name="listarEstadosTicket">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest" message="tns:listarEstadosTicket" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse" message="tns:listarEstadosTicketResponse" />
-    </operation>
     <operation name="eliminarEstadoTicket">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketRequest" message="tns:eliminarEstadoTicket" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketResponse" message="tns:eliminarEstadoTicketResponse" />
+    </operation>
+    <operation name="listarEstadosTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest" message="tns:listarEstadosTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse" message="tns:listarEstadosTicketResponse" />
     </operation>
     <operation name="actualizarEstadoTicket">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketRequest" message="tns:actualizarEstadoTicket" />
@@ -49,7 +49,7 @@
   </portType>
   <binding name="EstadoTicketWSPortBinding" type="tns:EstadoTicketWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarEstadosTicket">
+    <operation name="eliminarEstadoTicket">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="eliminarEstadoTicket">
+    <operation name="listarEstadosTicket">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

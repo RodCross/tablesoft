@@ -5,23 +5,17 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/EquipoWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="listarEquipos">
+    <part name="parameters" element="tns:listarEquipos" />
+  </message>
+  <message name="listarEquiposResponse">
+    <part name="parameters" element="tns:listarEquiposResponse" />
+  </message>
   <message name="eliminarEquipo">
     <part name="parameters" element="tns:eliminarEquipo" />
   </message>
   <message name="eliminarEquipoResponse">
     <part name="parameters" element="tns:eliminarEquipoResponse" />
-  </message>
-  <message name="quitarCategoria">
-    <part name="parameters" element="tns:quitarCategoria" />
-  </message>
-  <message name="quitarCategoriaResponse">
-    <part name="parameters" element="tns:quitarCategoriaResponse" />
-  </message>
-  <message name="agregarCategoria">
-    <part name="parameters" element="tns:agregarCategoria" />
-  </message>
-  <message name="agregarCategoriaResponse">
-    <part name="parameters" element="tns:agregarCategoriaResponse" />
   </message>
   <message name="actualizarEquipo">
     <part name="parameters" element="tns:actualizarEquipo" />
@@ -29,17 +23,23 @@
   <message name="actualizarEquipoResponse">
     <part name="parameters" element="tns:actualizarEquipoResponse" />
   </message>
+  <message name="quitarCategoria">
+    <part name="parameters" element="tns:quitarCategoria" />
+  </message>
+  <message name="quitarCategoriaResponse">
+    <part name="parameters" element="tns:quitarCategoriaResponse" />
+  </message>
   <message name="insertarEquipo">
     <part name="parameters" element="tns:insertarEquipo" />
   </message>
   <message name="insertarEquipoResponse">
     <part name="parameters" element="tns:insertarEquipoResponse" />
   </message>
-  <message name="listarEquipos">
-    <part name="parameters" element="tns:listarEquipos" />
+  <message name="agregarCategoria">
+    <part name="parameters" element="tns:agregarCategoria" />
   </message>
-  <message name="listarEquiposResponse">
-    <part name="parameters" element="tns:listarEquiposResponse" />
+  <message name="agregarCategoriaResponse">
+    <part name="parameters" element="tns:agregarCategoriaResponse" />
   </message>
   <message name="listarEquiposPorNombre">
     <part name="parameters" element="tns:listarEquiposPorNombre" />
@@ -48,29 +48,29 @@
     <part name="parameters" element="tns:listarEquiposPorNombreResponse" />
   </message>
   <portType name="EquipoWS">
+    <operation name="listarEquipos">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest" message="tns:listarEquipos" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse" message="tns:listarEquiposResponse" />
+    </operation>
     <operation name="eliminarEquipo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest" message="tns:eliminarEquipo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse" message="tns:eliminarEquipoResponse" />
-    </operation>
-    <operation name="quitarCategoria">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest" message="tns:quitarCategoria" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse" message="tns:quitarCategoriaResponse" />
-    </operation>
-    <operation name="agregarCategoria">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest" message="tns:agregarCategoria" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse" message="tns:agregarCategoriaResponse" />
     </operation>
     <operation name="actualizarEquipo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest" message="tns:actualizarEquipo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse" message="tns:actualizarEquipoResponse" />
     </operation>
+    <operation name="quitarCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest" message="tns:quitarCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse" message="tns:quitarCategoriaResponse" />
+    </operation>
     <operation name="insertarEquipo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoRequest" message="tns:insertarEquipo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoResponse" message="tns:insertarEquipoResponse" />
     </operation>
-    <operation name="listarEquipos">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest" message="tns:listarEquipos" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse" message="tns:listarEquiposResponse" />
+    <operation name="agregarCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest" message="tns:agregarCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse" message="tns:agregarCategoriaResponse" />
     </operation>
     <operation name="listarEquiposPorNombre">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreRequest" message="tns:listarEquiposPorNombre" />
@@ -79,25 +79,16 @@
   </portType>
   <binding name="EquipoWSPortBinding" type="tns:EquipoWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarEquipos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="eliminarEquipo">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="quitarCategoria">
-      <soap:operation soapAction="" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="agregarCategoria">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -115,6 +106,15 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="quitarCategoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="insertarEquipo">
       <soap:operation soapAction="" />
       <input>
@@ -124,7 +124,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="listarEquipos">
+    <operation name="agregarCategoria">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

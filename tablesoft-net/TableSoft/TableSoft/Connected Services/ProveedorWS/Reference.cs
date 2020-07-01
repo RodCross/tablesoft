@@ -16,15 +16,6 @@ namespace TableSoft.ProveedorWS {
     public interface ProveedorWS {
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ProveedorWS.actualizarProveedorResponse actualizarProveedor(TableSoft.ProveedorWS.actualizarProveedorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorResponse")]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.actualizarProveedorResponse> actualizarProveedorAsync(TableSoft.ProveedorWS.actualizarProveedorRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
@@ -32,15 +23,6 @@ namespace TableSoft.ProveedorWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresResponse")]
         System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync(TableSoft.ProveedorWS.listarProveedoresRequest request);
-        
-        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorResponse")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
-        TableSoft.ProveedorWS.eliminarProveedorResponse eliminarProveedor(TableSoft.ProveedorWS.eliminarProveedorRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorResponse")]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.eliminarProveedorResponse> eliminarProveedorAsync(TableSoft.ProveedorWS.eliminarProveedorRequest request);
         
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/insertarProveedorResponse")]
@@ -63,6 +45,24 @@ namespace TableSoft.ProveedorWS {
             "st", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/listarProveedoresPorNombreRespo" +
             "nse")]
         System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresPorNombreResponse> listarProveedoresPorNombreAsync(TableSoft.ProveedorWS.listarProveedoresPorNombreRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.ProveedorWS.actualizarProveedorResponse actualizarProveedor(TableSoft.ProveedorWS.actualizarProveedorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/actualizarProveedorResponse")]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.actualizarProveedorResponse> actualizarProveedorAsync(TableSoft.ProveedorWS.actualizarProveedorRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.ProveedorWS.eliminarProveedorResponse eliminarProveedor(TableSoft.ProveedorWS.eliminarProveedorRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ProveedorWS/eliminarProveedorResponse")]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.eliminarProveedorResponse> eliminarProveedorAsync(TableSoft.ProveedorWS.eliminarProveedorRequest request);
     }
     
     /// <remarks/>
@@ -304,42 +304,6 @@ namespace TableSoft.ProveedorWS {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarProveedor", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarProveedorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.ProveedorWS.proveedor objProveedor;
-        
-        public actualizarProveedorRequest() {
-        }
-        
-        public actualizarProveedorRequest(TableSoft.ProveedorWS.proveedor objProveedor) {
-            this.objProveedor = objProveedor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarProveedorResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class actualizarProveedorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public actualizarProveedorResponse() {
-        }
-        
-        public actualizarProveedorResponse(int @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(WrapperName="listarProveedores", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
     public partial class listarProveedoresRequest {
         
@@ -361,42 +325,6 @@ namespace TableSoft.ProveedorWS {
         }
         
         public listarProveedoresResponse(TableSoft.ProveedorWS.proveedor[] @return) {
-            this.@return = @return;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProveedor", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarProveedorRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public TableSoft.ProveedorWS.proveedor objProveedor;
-        
-        public eliminarProveedorRequest() {
-        }
-        
-        public eliminarProveedorRequest(TableSoft.ProveedorWS.proveedor objProveedor) {
-            this.objProveedor = objProveedor;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProveedorResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
-    public partial class eliminarProveedorResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
-        public int @return;
-        
-        public eliminarProveedorResponse() {
-        }
-        
-        public eliminarProveedorResponse(int @return) {
             this.@return = @return;
         }
     }
@@ -473,6 +401,78 @@ namespace TableSoft.ProveedorWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarProveedor", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarProveedorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ProveedorWS.proveedor objProveedor;
+        
+        public actualizarProveedorRequest() {
+        }
+        
+        public actualizarProveedorRequest(TableSoft.ProveedorWS.proveedor objProveedor) {
+            this.objProveedor = objProveedor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarProveedorResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarProveedorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarProveedorResponse() {
+        }
+        
+        public actualizarProveedorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProveedor", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarProveedorRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.ProveedorWS.proveedor objProveedor;
+        
+        public eliminarProveedorRequest() {
+        }
+        
+        public eliminarProveedorRequest(TableSoft.ProveedorWS.proveedor objProveedor) {
+            this.objProveedor = objProveedor;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="eliminarProveedorResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class eliminarProveedorResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public eliminarProveedorResponse() {
+        }
+        
+        public eliminarProveedorResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ProveedorWSChannel : TableSoft.ProveedorWS.ProveedorWS, System.ServiceModel.IClientChannel {
     }
@@ -501,29 +501,6 @@ namespace TableSoft.ProveedorWS {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ProveedorWS.actualizarProveedorResponse TableSoft.ProveedorWS.ProveedorWS.actualizarProveedor(TableSoft.ProveedorWS.actualizarProveedorRequest request) {
-            return base.Channel.actualizarProveedor(request);
-        }
-        
-        public int actualizarProveedor(TableSoft.ProveedorWS.proveedor objProveedor) {
-            TableSoft.ProveedorWS.actualizarProveedorRequest inValue = new TableSoft.ProveedorWS.actualizarProveedorRequest();
-            inValue.objProveedor = objProveedor;
-            TableSoft.ProveedorWS.actualizarProveedorResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).actualizarProveedor(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.actualizarProveedorResponse> TableSoft.ProveedorWS.ProveedorWS.actualizarProveedorAsync(TableSoft.ProveedorWS.actualizarProveedorRequest request) {
-            return base.Channel.actualizarProveedorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.actualizarProveedorResponse> actualizarProveedorAsync(TableSoft.ProveedorWS.proveedor objProveedor) {
-            TableSoft.ProveedorWS.actualizarProveedorRequest inValue = new TableSoft.ProveedorWS.actualizarProveedorRequest();
-            inValue.objProveedor = objProveedor;
-            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).actualizarProveedorAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
         TableSoft.ProveedorWS.listarProveedoresResponse TableSoft.ProveedorWS.ProveedorWS.listarProveedores(TableSoft.ProveedorWS.listarProveedoresRequest request) {
             return base.Channel.listarProveedores(request);
         }
@@ -542,29 +519,6 @@ namespace TableSoft.ProveedorWS {
         public System.Threading.Tasks.Task<TableSoft.ProveedorWS.listarProveedoresResponse> listarProveedoresAsync() {
             TableSoft.ProveedorWS.listarProveedoresRequest inValue = new TableSoft.ProveedorWS.listarProveedoresRequest();
             return ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedoresAsync(inValue);
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        TableSoft.ProveedorWS.eliminarProveedorResponse TableSoft.ProveedorWS.ProveedorWS.eliminarProveedor(TableSoft.ProveedorWS.eliminarProveedorRequest request) {
-            return base.Channel.eliminarProveedor(request);
-        }
-        
-        public int eliminarProveedor(TableSoft.ProveedorWS.proveedor objProveedor) {
-            TableSoft.ProveedorWS.eliminarProveedorRequest inValue = new TableSoft.ProveedorWS.eliminarProveedorRequest();
-            inValue.objProveedor = objProveedor;
-            TableSoft.ProveedorWS.eliminarProveedorResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).eliminarProveedor(inValue);
-            return retVal.@return;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<TableSoft.ProveedorWS.eliminarProveedorResponse> TableSoft.ProveedorWS.ProveedorWS.eliminarProveedorAsync(TableSoft.ProveedorWS.eliminarProveedorRequest request) {
-            return base.Channel.eliminarProveedorAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.eliminarProveedorResponse> eliminarProveedorAsync(TableSoft.ProveedorWS.proveedor objProveedor) {
-            TableSoft.ProveedorWS.eliminarProveedorRequest inValue = new TableSoft.ProveedorWS.eliminarProveedorRequest();
-            inValue.objProveedor = objProveedor;
-            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).eliminarProveedorAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
@@ -611,6 +565,52 @@ namespace TableSoft.ProveedorWS {
             TableSoft.ProveedorWS.listarProveedoresPorNombreRequest inValue = new TableSoft.ProveedorWS.listarProveedoresPorNombreRequest();
             inValue.nombre = nombre;
             return ((TableSoft.ProveedorWS.ProveedorWS)(this)).listarProveedoresPorNombreAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.ProveedorWS.actualizarProveedorResponse TableSoft.ProveedorWS.ProveedorWS.actualizarProveedor(TableSoft.ProveedorWS.actualizarProveedorRequest request) {
+            return base.Channel.actualizarProveedor(request);
+        }
+        
+        public int actualizarProveedor(TableSoft.ProveedorWS.proveedor objProveedor) {
+            TableSoft.ProveedorWS.actualizarProveedorRequest inValue = new TableSoft.ProveedorWS.actualizarProveedorRequest();
+            inValue.objProveedor = objProveedor;
+            TableSoft.ProveedorWS.actualizarProveedorResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).actualizarProveedor(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.actualizarProveedorResponse> TableSoft.ProveedorWS.ProveedorWS.actualizarProveedorAsync(TableSoft.ProveedorWS.actualizarProveedorRequest request) {
+            return base.Channel.actualizarProveedorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.actualizarProveedorResponse> actualizarProveedorAsync(TableSoft.ProveedorWS.proveedor objProveedor) {
+            TableSoft.ProveedorWS.actualizarProveedorRequest inValue = new TableSoft.ProveedorWS.actualizarProveedorRequest();
+            inValue.objProveedor = objProveedor;
+            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).actualizarProveedorAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.ProveedorWS.eliminarProveedorResponse TableSoft.ProveedorWS.ProveedorWS.eliminarProveedor(TableSoft.ProveedorWS.eliminarProveedorRequest request) {
+            return base.Channel.eliminarProveedor(request);
+        }
+        
+        public int eliminarProveedor(TableSoft.ProveedorWS.proveedor objProveedor) {
+            TableSoft.ProveedorWS.eliminarProveedorRequest inValue = new TableSoft.ProveedorWS.eliminarProveedorRequest();
+            inValue.objProveedor = objProveedor;
+            TableSoft.ProveedorWS.eliminarProveedorResponse retVal = ((TableSoft.ProveedorWS.ProveedorWS)(this)).eliminarProveedor(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.ProveedorWS.eliminarProveedorResponse> TableSoft.ProveedorWS.ProveedorWS.eliminarProveedorAsync(TableSoft.ProveedorWS.eliminarProveedorRequest request) {
+            return base.Channel.eliminarProveedorAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.ProveedorWS.eliminarProveedorResponse> eliminarProveedorAsync(TableSoft.ProveedorWS.proveedor objProveedor) {
+            TableSoft.ProveedorWS.eliminarProveedorRequest inValue = new TableSoft.ProveedorWS.eliminarProveedorRequest();
+            inValue.objProveedor = objProveedor;
+            return ((TableSoft.ProveedorWS.ProveedorWS)(this)).eliminarProveedorAsync(inValue);
         }
     }
 }

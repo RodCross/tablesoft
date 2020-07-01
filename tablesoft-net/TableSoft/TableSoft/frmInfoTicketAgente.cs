@@ -49,6 +49,18 @@ namespace TableSoft
             {
                 lblTituloActFij.Text = "";
             }
+
+            // Segun el estado del ticket
+
+            if(ticket.estado.estadoId == (int)Estado.Cerrado)
+            {
+                btnCambiarCategoria.Enabled = false;
+                btnCerrarTicket.Enabled = false;
+                btnEscalar.Enabled = false;
+                btnVerTareas.Enabled = false;
+                btnResponder.Enabled = false;
+            }
+
         }
 
         private void LlenarComentarios()

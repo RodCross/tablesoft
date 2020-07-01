@@ -53,6 +53,11 @@ namespace TableSoft
             {
                 lblTituloActFij.Text = "";
             }
+
+            if (ticket.estado.estadoId == (int)Estado.Cerrado)
+            {
+                btnResponder.Enabled = false;
+            }
         }
 
         private void LlenarComentarios()

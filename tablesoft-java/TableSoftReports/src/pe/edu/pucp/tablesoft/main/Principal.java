@@ -1,18 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package pe.edu.pucp.tablesoft.main;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.HashMap;
+
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
+
 import pe.edu.pucp.tablesoft.config.DBManager;
 
 
@@ -21,7 +18,7 @@ public class Principal {
         byte[] arreglo = null;
         Connection con;
         try{
-            
+            Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
 
 

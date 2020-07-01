@@ -25,10 +25,9 @@ public class Principal {
         con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
         
         
-        //Obtener la ruta al archivo
         String rutaReporteJasper
         = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath();
+       "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath();
         
         //Obtener la ruta del subreporte
         String rutaSubReporteJasper
@@ -38,7 +37,20 @@ public class Principal {
         //Obtener la ruta del subreporte2
         String rutaSubReporte2Jasper
         = Principal.class.getResource(
+       "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath();
+        
+        String rutaSubReporte3Jasper
+        = Principal.class.getResource(
        "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath();
+        
+        //Obtener la ruta al archivo
+        String rutaSubReporte4Jasper
+        = Principal.class.getResource(
+       "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath();
+        
+        String rutaSubReporte5Jasper
+        = Principal.class.getResource(
+       "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath();
         
         //Objecto JasperReport
         JasperReport objJR = 
@@ -49,6 +61,7 @@ public class Principal {
         /*
         llenar hash map pi
         */
+        hm.put("", rutaReporteJasper);
         //Object JasperPrint
         JasperPrint objJPrint =
         JasperFillManager.fillReport(objJR,hm,con);

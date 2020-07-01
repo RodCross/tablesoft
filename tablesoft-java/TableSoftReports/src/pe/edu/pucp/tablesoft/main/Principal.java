@@ -61,7 +61,12 @@ public class Principal {
         /*
         llenar hash map pi
         */
-        hm.put("", rutaReporteJasper);
+        hm.put("Ticket_id", 2);
+        hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporteJasper);
+        hm.put("RUTA_LISTA_TRANS_TICKET", rutaSubReporte2Jasper);
+        hm.put("RUTA_LISTA_TAREAS", rutaSubReporte3Jasper);
+        hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte4Jasper);
+        hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte5Jasper);
         //Object JasperPrint
         JasperPrint objJPrint =
         JasperFillManager.fillReport(objJR,hm,con);

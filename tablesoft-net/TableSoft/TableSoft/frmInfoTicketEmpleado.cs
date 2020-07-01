@@ -39,7 +39,7 @@ namespace TableSoft
             MostrarComentarioPorDefecto();
             lblAsunto.Text = tick.asunto;
             lblId.Text = "# " + tick.ticketId.ToString();
-            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - "); ;
+            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - "); 
             lblFecCieEst.Text = tick.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
             lblEstado.Text = tick.estado.nombre;
             lblBib.Text = tick.biblioteca.nombre;

@@ -231,8 +231,17 @@ namespace TableSoft
             ticket.empleado.empleadoId = frmInicioSesion.empleadoLogueado.empleadoId;
             ticket.estado = new TicketWS.estadoTicket();
             ticket.estado.estadoId = 1;
-
+            
             ticket.activoFijo = new TicketWS.activoFijo();
+            if (txtActivoFijo.Text != "")
+            {
+                ticket.activoFijo.activoFijoId = actFij.activoFijoId;
+                ticket.activoFijo.codigo = actFij.codigo;
+            }
+
+           
+            
+            
             if (txtEmail.Text != "")
             {
                 ticket.activoFijo.activoFijoId = actFij.activoFijoId;

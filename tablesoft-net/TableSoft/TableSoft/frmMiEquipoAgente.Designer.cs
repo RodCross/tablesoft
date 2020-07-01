@@ -174,7 +174,7 @@
             this.Asunto.HeaderText = "Asunto";
             this.Asunto.Name = "Asunto";
             this.Asunto.ReadOnly = true;
-            this.Asunto.Width = 270;
+            this.Asunto.Width = 250;
             // 
             // AbreviaturaBiblioteca
             // 
@@ -192,7 +192,7 @@
             this.NombreEmpleado.HeaderText = "Empleado";
             this.NombreEmpleado.Name = "NombreEmpleado";
             this.NombreEmpleado.ReadOnly = true;
-            this.NombreEmpleado.Width = 150;
+            this.NombreEmpleado.Width = 170;
             // 
             // FechaApertura
             // 

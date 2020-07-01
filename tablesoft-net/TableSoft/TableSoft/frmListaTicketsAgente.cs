@@ -14,11 +14,12 @@ namespace TableSoft
     {
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
         private BindingList<TicketWS.ticket> tickets;
+        private TicketWS.agente agenAux = new TicketWS.agente();
 
         public frmListaTicketsAgente()
         {
             InitializeComponent();
-            TicketWS.agente agenAux = new TicketWS.agente();
+           
             agenAux.agenteId =  frmInicioSesion.agenteLogueado.agenteId;
 
             var arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
@@ -69,6 +70,17 @@ namespace TableSoft
 
             frm.Show();
             this.Hide();
+            /*var arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
+            if (arrTickets == null)
+            {
+                tickets = new BindingList<TicketWS.ticket>();
+            }
+            else
+            {
+                tickets = new BindingList<TicketWS.ticket>(arrTickets);
+            }
+            dgvHistorial.AutoGenerateColumns = false;
+            dgvHistorial.DataSource = tickets;*/
         }
     }
 }

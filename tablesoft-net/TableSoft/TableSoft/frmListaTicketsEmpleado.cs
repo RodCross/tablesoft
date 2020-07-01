@@ -37,9 +37,25 @@ namespace TableSoft
         {
             TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
             dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
-            //dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = data.fechaCierre;
+            if(data.fechaCierre != null)
+            {
+                dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = data.fechaCierre;
+            }
+            else
+            {
+                dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = "Ticket abierto";
+            }
+            
             dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
-            dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = data.agente.apellidoPaterno + " " + data.agente.apellidoMaterno + ", " + data.agente.nombre;
+
+            if (data.agente.nombre != null)
+            {
+                dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = data.agente.apellidoPaterno + " " + data.agente.apellidoMaterno + ", " + data.agente.nombre;
+            }
+            else
+            {
+                dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = "Sin agente asignado";
+            }
             dgvHistorial.Rows[e.RowIndex].Cells["Urgencia"].Value = data.urgencia.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Categoria"].Value = data.categoria.nombre;
         }
@@ -51,8 +67,11 @@ namespace TableSoft
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
+            
+            
             TicketWS.ticket tic = (TicketWS.ticket)dgvHistorial.CurrentRow.DataBoundItem;
             frmInfoTicketEmpleado frm = new frmInfoTicketEmpleado(tic);
+
 
             frm.StartPosition = FormStartPosition.Manual;
             frm.Location = this.Location;

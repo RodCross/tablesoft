@@ -24,7 +24,7 @@ public class Principal {
             
             String rutaImagen
                 = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.png").getPath();
+       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.jpg").getPath();
         ImageIcon icon = new ImageIcon(rutaImagen);
         java.awt.Image imagenReporte = icon.getImage();
 
@@ -64,7 +64,7 @@ public class Principal {
             /*
             llenar hash map pi
             */
-            hm.put("Ticket_id", 2);
+            hm.put("Ticket_id", 1);
             hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporteJasper);
             hm.put("RUTA_LISTA_TRANS_TICKET", rutaSubReporte2Jasper);
             hm.put("RUTA_LISTA_TAREAS", rutaSubReporte3Jasper);

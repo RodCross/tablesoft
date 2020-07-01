@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
@@ -16,6 +17,7 @@ namespace TableSoft
         private TicketWS.ticket ticket;
         private TicketWS.estadoTicket estResuelto;
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
+        private TareaWS.TareaWSClient tareaDAO = new TareaWS.TareaWSClient();
         public frmCerrarTicketAgente(TicketWS.ticket tick)
         {
             InitializeComponent();
@@ -51,60 +53,83 @@ namespace TableSoft
                 );
                 return;
             }
+            bool tareasCompletadas = true;
 
-            if (MessageBox.Show("¿Está seguro de que desea cerrar el ticket?", "Resolución de ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            var tck = new TareaWS.ticket();
+            tck.ticketId = ticket.ticketId;
+            var tareas = tareaDAO.listarTareasPorTicket(tck);
+            
+            foreach(var t in tareas)
             {
-                var ag = new TicketWS.agente();
-                ag.agenteId = frmInicioSesion.agenteLogueado.agenteId;
-
-                ticket.estado = estResuelto;
-
-                // Creamos el cambio de estado
-                var cambioEstado = new TicketWS.cambioEstadoTicket();
-                cambioEstado.comentario = rtfComentario.Text;
-                cambioEstado.agenteResponsable = ag;
-                cambioEstado.estadoTo = estResuelto;
-                cambioEstado.cambioEstadoTicketId = 0;
-
-                // Registrar el cambio de estado
-
-                // Agregarlo al historial del ticket
-                BindingList<TicketWS.cambioEstadoTicket> historialEstados;
-
-                if (ticket.historialEstado == null)
+                if (t.completado == false)
                 {
-                    historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();      // Si no tiene se crea una lista
-                }                                                                           // Sino se crea una lista a partir de este
-                else
-                {
-                    historialEstados = new BindingList<TicketWS.cambioEstadoTicket>(ticket.historialEstado.ToList());
+                    tareasCompletadas = false;
+                    break;
                 }
-                historialEstados.Add(cambioEstado);
 
-                // Se vuelve de nuevo a Array para ser asignado al ticket
-                ticket.historialEstado = historialEstados.ToArray();
-
-                // Se actualiza el ticket
-                if (ticketDAO.actualizarTicket(ticket) > -1)
-                {
-                    MessageBox.Show(
-                        "Se ha cerrado el ticket correctamente.",
-                        "Actualización exitosa",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                    this.DialogResult = DialogResult.OK;
-                }
-                else
-                {
-                    MessageBox.Show(
-                        "Ha ocurrido un error con la actualización",
-                        "Reasignación no realizada",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                    this.Close();
-                }
             }
 
+            if (tareasCompletadas)
+            {
+                if (MessageBox.Show("¿Está seguro de que desea cerrar el ticket?", "Resolución de ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    var ag = new TicketWS.agente();
+                    ag.agenteId = frmInicioSesion.agenteLogueado.agenteId;
+
+                    ticket.estado = estResuelto;
+
+                    // Creamos el cambio de estado
+                    var cambioEstado = new TicketWS.cambioEstadoTicket();
+                    cambioEstado.comentario = rtfComentario.Text;
+                    cambioEstado.agenteResponsable = ag;
+                    cambioEstado.estadoTo = estResuelto;
+                    cambioEstado.cambioEstadoTicketId = 0;
+
+                    // Registrar el cambio de estado
+
+                    // Agregarlo al historial del ticket
+                    BindingList<TicketWS.cambioEstadoTicket> historialEstados;
+
+                    if (ticket.historialEstado == null)
+                    {
+                        historialEstados = new BindingList<TicketWS.cambioEstadoTicket>();      // Si no tiene se crea una lista
+                    }                                                                           // Sino se crea una lista a partir de este
+                    else
+                    {
+                        historialEstados = new BindingList<TicketWS.cambioEstadoTicket>(ticket.historialEstado.ToList());
+                    }
+                    historialEstados.Add(cambioEstado);
+
+                    // Se vuelve de nuevo a Array para ser asignado al ticket
+                    ticket.historialEstado = historialEstados.ToArray();
+
+                    // Se actualiza el ticket
+                    if (ticketDAO.actualizarTicket(ticket) > -1)
+                    {
+                        MessageBox.Show(
+                            "Se ha cerrado el ticket correctamente.",
+                            "Actualización exitosa",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
+                        this.DialogResult = DialogResult.OK;
+                    }
+                    else
+                    {
+                        MessageBox.Show(
+                            "Ha ocurrido un error con la actualización",
+                            "Reasignación no realizada",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
+                        this.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Tiene tareas no completadas, por favor complete las tareas antes de cerrar el ticket.",
+                    "Tareas incompletas", MessageBoxButtons.OK);
+                this.Close();
+            }
             
         }
 

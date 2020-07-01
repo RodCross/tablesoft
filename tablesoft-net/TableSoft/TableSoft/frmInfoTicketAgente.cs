@@ -60,6 +60,11 @@ namespace TableSoft
                 btnVerTareas.Enabled = false;
                 btnResponder.Enabled = false;
             }
+            if(ticket.estado.estadoId == (int)Estado.Escalado)
+            {
+                btnCambiarCategoria.Enabled = false;
+                //btnVerTareas.Enabled = false;
+            }
 
         }
 

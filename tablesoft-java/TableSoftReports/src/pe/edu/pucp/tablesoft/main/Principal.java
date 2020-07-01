@@ -22,60 +22,60 @@ public class Principal {
         Connection con;
         try{
             
-        con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-        
-        
-        String rutaReporteJasper
-        = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath();
-        
-        //Obtener la ruta del subreporte
-        String rutaSubReporteJasper
-        = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Lista_Comentarios_Ticket.jasper").getPath();
-        
-        //Obtener la ruta del subreporte2
-        String rutaSubReporte2Jasper
-        = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath();
-        
-        String rutaSubReporte3Jasper
-        = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath();
-        
-        //Obtener la ruta al archivo
-        String rutaSubReporte4Jasper
-        = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath();
-        
-        String rutaSubReporte5Jasper
-        = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath();
-        
-        //Objecto JasperReport
-        JasperReport objJR = 
-                (JasperReport)
-                JRLoader.loadObjectFromFile(rutaReporteJasper);
-        
-        HashMap hm = new HashMap();
-        /*
-        llenar hash map pi
-        */
-        hm.put("Ticket_id", 2);
-        hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporteJasper);
-        hm.put("RUTA_LISTA_TRANS_TICKET", rutaSubReporte2Jasper);
-        hm.put("RUTA_LISTA_TAREAS", rutaSubReporte3Jasper);
-        hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte4Jasper);
-        hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte5Jasper);
-        //Object JasperPrint
-        JasperPrint objJPrint =
-        JasperFillManager.fillReport(objJR,hm,con);
-        
-        //Cerramos la conexion
-        con.close();
-        
-        JasperViewer jw = new JasperViewer(objJPrint);
-        jw.setVisible(true);
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+
+
+            String rutaReporteJasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath();
+
+            //Obtener la ruta del subreporte
+            String rutaSubReporteJasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Comentarios_Ticket.jasper").getPath();
+
+            //Obtener la ruta del subreporte2
+            String rutaSubReporte2Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath();
+
+            String rutaSubReporte3Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath();
+
+            //Obtener la ruta al archivo
+            String rutaSubReporte4Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath();
+
+            String rutaSubReporte5Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath();
+
+            //Objecto JasperReport
+            JasperReport objJR = 
+                    (JasperReport)
+                    JRLoader.loadObjectFromFile(rutaReporteJasper);
+
+            HashMap hm = new HashMap();
+            /*
+            llenar hash map pi
+            */
+            hm.put("Ticket_id", 2);
+            hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporteJasper);
+            hm.put("RUTA_LISTA_TRANS_TICKET", rutaSubReporte2Jasper);
+            hm.put("RUTA_LISTA_TAREAS", rutaSubReporte3Jasper);
+            hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte4Jasper);
+            hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte5Jasper);
+            //Object JasperPrint
+            JasperPrint objJPrint =
+            JasperFillManager.fillReport(objJR,hm,con);
+
+            //Cerramos la conexion
+            con.close();
+
+            JasperViewer jw = new JasperViewer(objJPrint);
+            jw.setVisible(true);
         
         }catch(Exception ex){
             System.out.println(ex.getMessage());

@@ -3,6 +3,7 @@ package pe.edu.pucp.tablesoft.main;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.util.HashMap;
+import javax.swing.ImageIcon;
 
 import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
@@ -20,7 +21,12 @@ public class Principal {
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
-
+            
+            String rutaImagen
+                = Principal.class.getResource(
+       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.png").getPath();
+        ImageIcon icon = new ImageIcon(rutaImagen);
+        java.awt.Image imagenReporte = icon.getImage();
 
             String rutaReporteJasper
             = Principal.class.getResource(
@@ -64,6 +70,7 @@ public class Principal {
             hm.put("RUTA_LISTA_TAREAS", rutaSubReporte3Jasper);
             hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte4Jasper);
             hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte5Jasper);
+            hm.put("IMAGEN_REPORTE", imagenReporte);
             //Object JasperPrint
             JasperPrint objJPrint =
             JasperFillManager.fillReport(objJR,hm,con);

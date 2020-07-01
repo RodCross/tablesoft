@@ -78,8 +78,6 @@ namespace TableSoft.TareaPredeterminadaWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int categoriaIdField;
         
         private string descripcionField;
@@ -97,18 +95,6 @@ namespace TableSoft.TareaPredeterminadaWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -180,8 +166,6 @@ namespace TableSoft.TareaPredeterminadaWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCreacionField;
@@ -197,18 +181,6 @@ namespace TableSoft.TareaPredeterminadaWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

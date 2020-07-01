@@ -136,8 +136,6 @@ namespace TableSoft.TicketWS {
         
         private bool retrasadoField;
         
-        private bool retrasadoFieldSpecified;
-        
         private int ticketIdField;
         
         private urgencia urgenciaField;
@@ -371,18 +369,6 @@ namespace TableSoft.TicketWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool retrasadoSpecified {
-            get {
-                return this.retrasadoFieldSpecified;
-            }
-            set {
-                this.retrasadoFieldSpecified = value;
-                this.RaisePropertyChanged("retrasadoSpecified");
-            }
-        }
-        
-        /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public int ticketId {
             get {
@@ -426,8 +412,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int activoFijoIdField;
         
         private string codigoField;
@@ -447,18 +431,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -542,8 +514,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string nombreField;
         
         private int plazoMaximoField;
@@ -559,18 +529,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -811,8 +769,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private int equipoIdField;
@@ -834,18 +790,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -941,8 +885,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int categoriaIdField;
         
         private string descripcionField;
@@ -960,18 +902,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1043,8 +973,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCreacionField;
@@ -1060,18 +988,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1131,8 +1047,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private string nombreField;
@@ -1148,18 +1062,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1221,8 +1123,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string apellidoMaternoField;
         
         private string apellidoPaternoField;
@@ -1252,18 +1152,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1460,8 +1348,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int bibliotecaIdField;
         
         private string nombreField;
@@ -1487,18 +1373,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1652,8 +1526,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private ciudad ciudadField;
         
         private string direccionField;
@@ -1677,18 +1549,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -2006,8 +1866,6 @@ namespace TableSoft.TicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private int estadoIdField;
@@ -2023,18 +1881,6 @@ namespace TableSoft.TicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

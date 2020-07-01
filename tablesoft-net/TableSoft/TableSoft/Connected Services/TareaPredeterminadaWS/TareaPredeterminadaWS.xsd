@@ -15,7 +15,7 @@
   </xs:complexType>
   <xs:complexType name="tareaPredeterminada">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
       <xs:element name="tareaPredeterminadaId" type="xs:int" />
@@ -43,7 +43,7 @@
   </xs:complexType>
   <xs:complexType name="categoria">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element name="categoriaId" type="xs:int" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />

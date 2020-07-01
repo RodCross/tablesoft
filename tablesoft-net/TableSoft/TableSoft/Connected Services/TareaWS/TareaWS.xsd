@@ -42,7 +42,7 @@
   </xs:complexType>
   <xs:complexType name="persona">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
       <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
       <xs:element minOccurs="0" name="codigo" type="xs:string" />
@@ -57,7 +57,7 @@
   </xs:complexType>
   <xs:complexType name="equipo">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="equipoId" type="xs:int" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
@@ -68,7 +68,7 @@
   </xs:complexType>
   <xs:complexType name="categoria">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element name="categoriaId" type="xs:int" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -77,7 +77,7 @@
   </xs:complexType>
   <xs:complexType name="tareaPredeterminada">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
       <xs:element name="tareaPredeterminadaId" type="xs:int" />
@@ -103,14 +103,14 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="historialTransfInterna" nillable="true" type="tns:transferenciaInterna" />
       <xs:element minOccurs="0" maxOccurs="unbounded" name="listaTareas" nillable="true" type="tns:tarea" />
       <xs:element minOccurs="0" name="proveedor" type="tns:proveedor" />
-      <xs:element minOccurs="0" name="retrasado" type="xs:boolean" />
+      <xs:element name="retrasado" type="xs:boolean" />
       <xs:element name="ticketId" type="xs:int" />
       <xs:element minOccurs="0" name="urgencia" type="tns:urgencia" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="activoFijo">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element name="activoFijoId" type="xs:int" />
       <xs:element minOccurs="0" name="codigo" type="xs:string" />
       <xs:element minOccurs="0" name="marca" type="xs:string" />
@@ -121,7 +121,7 @@
   <xs:complexType name="biblioteca">
     <xs:sequence>
       <xs:element minOccurs="0" name="abreviatura" type="xs:string" />
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element name="bibliotecaId" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
@@ -147,7 +147,7 @@
   </xs:complexType>
   <xs:complexType name="estadoTicket">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element name="estadoId" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
@@ -181,7 +181,7 @@
   </xs:complexType>
   <xs:complexType name="proveedor">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="ciudad" type="tns:ciudad" />
       <xs:element minOccurs="0" name="direccion" type="xs:string" />
       <xs:element minOccurs="0" name="email" type="xs:string" />
@@ -215,7 +215,7 @@
   </xs:complexType>
   <xs:complexType name="urgencia">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element name="plazoMaximo" type="xs:int" />
       <xs:element name="urgenciaId" type="xs:int" />
@@ -223,7 +223,7 @@
   </xs:complexType>
   <xs:complexType name="rol">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element name="rolId" type="xs:int" />

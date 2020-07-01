@@ -15,7 +15,7 @@
   </xs:complexType>
   <xs:complexType name="rol">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="descripcion" type="xs:string" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
       <xs:element name="rolId" type="xs:int" />

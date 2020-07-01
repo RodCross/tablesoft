@@ -18,6 +18,7 @@ namespace TableSoft.AgenteWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/insertarAgenteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.AgenteWS.insertarAgenteResponse insertarAgente(TableSoft.AgenteWS.insertarAgenteRequest request);
         
@@ -27,6 +28,7 @@ namespace TableSoft.AgenteWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.AgenteWS.listarAgentesResponse listarAgentes(TableSoft.AgenteWS.listarAgentesRequest request);
         
@@ -36,6 +38,7 @@ namespace TableSoft.AgenteWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/eliminarAgenteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.AgenteWS.eliminarAgenteResponse eliminarAgente(TableSoft.AgenteWS.eliminarAgenteRequest request);
         
@@ -45,6 +48,7 @@ namespace TableSoft.AgenteWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/actualizarAgenteResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.AgenteWS.actualizarAgenteResponse actualizarAgente(TableSoft.AgenteWS.actualizarAgenteRequest request);
         
@@ -54,6 +58,7 @@ namespace TableSoft.AgenteWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorEquipoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorEquipoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.AgenteWS.listarAgentesPorEquipoResponse listarAgentesPorEquipo(TableSoft.AgenteWS.listarAgentesPorEquipoRequest request);
         
@@ -63,6 +68,7 @@ namespace TableSoft.AgenteWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/buscarAgentePorCodigoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/buscarAgentePorCodigoResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.AgenteWS.buscarAgentePorCodigoResponse buscarAgentePorCodigo(TableSoft.AgenteWS.buscarAgentePorCodigoRequest request);
         
@@ -72,6 +78,7 @@ namespace TableSoft.AgenteWS {
         // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorNombreRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/AgenteWS/listarAgentesPorNombreResponse")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
         [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
         TableSoft.AgenteWS.listarAgentesPorNombreResponse listarAgentesPorNombre(TableSoft.AgenteWS.listarAgentesPorNombreRequest request);
         
@@ -168,8 +175,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private int equipoIdField;
@@ -191,18 +196,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -298,8 +291,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int categoriaIdField;
         
         private string descripcionField;
@@ -317,18 +308,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -400,8 +379,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private string fechaCreacionField;
@@ -417,18 +394,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -488,8 +453,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private string nombreField;
@@ -505,18 +468,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -576,8 +527,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string nombreField;
         
         private int plazoMaximoField;
@@ -593,18 +542,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -641,6 +578,108 @@ namespace TableSoft.AgenteWS {
             set {
                 this.urgenciaIdField = value;
                 this.RaisePropertyChanged("urgenciaId");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class tarea : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private agente agenteField;
+        
+        private bool completadoField;
+        
+        private string descripcionField;
+        
+        private string fechaCompletadoField;
+        
+        private string fechaCreacionField;
+        
+        private int tareaIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public agente agente {
+            get {
+                return this.agenteField;
+            }
+            set {
+                this.agenteField = value;
+                this.RaisePropertyChanged("agente");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
+        public bool completado {
+            get {
+                return this.completadoField;
+            }
+            set {
+                this.completadoField = value;
+                this.RaisePropertyChanged("completado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
+        public string descripcion {
+            get {
+                return this.descripcionField;
+            }
+            set {
+                this.descripcionField = value;
+                this.RaisePropertyChanged("descripcion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
+        public string fechaCompletado {
+            get {
+                return this.fechaCompletadoField;
+            }
+            set {
+                this.fechaCompletadoField = value;
+                this.RaisePropertyChanged("fechaCompletado");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
+        public string fechaCreacion {
+            get {
+                return this.fechaCreacionField;
+            }
+            set {
+                this.fechaCreacionField = value;
+                this.RaisePropertyChanged("fechaCreacion");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
+        public int tareaId {
+            get {
+                return this.tareaIdField;
+            }
+            set {
+                this.tareaIdField = value;
+                this.RaisePropertyChanged("tareaId");
             }
         }
         
@@ -770,8 +809,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private ciudad ciudadField;
         
         private string direccionField;
@@ -795,18 +832,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -905,122 +930,8 @@ namespace TableSoft.AgenteWS {
     }
     
     /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
-    public partial class tarea : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private agente agenteField;
-        
-        private bool completadoField;
-        
-        private bool completadoFieldSpecified;
-        
-        private string descripcionField;
-        
-        private string fechaCompletadoField;
-        
-        private string fechaCreacionField;
-        
-        private int tareaIdField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
-        public agente agente {
-            get {
-                return this.agenteField;
-            }
-            set {
-                this.agenteField = value;
-                this.RaisePropertyChanged("agente");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=1)]
-        public bool completado {
-            get {
-                return this.completadoField;
-            }
-            set {
-                this.completadoField = value;
-                this.RaisePropertyChanged("completado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool completadoSpecified {
-            get {
-                return this.completadoFieldSpecified;
-            }
-            set {
-                this.completadoFieldSpecified = value;
-                this.RaisePropertyChanged("completadoSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=2)]
-        public string descripcion {
-            get {
-                return this.descripcionField;
-            }
-            set {
-                this.descripcionField = value;
-                this.RaisePropertyChanged("descripcion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=3)]
-        public string fechaCompletado {
-            get {
-                return this.fechaCompletadoField;
-            }
-            set {
-                this.fechaCompletadoField = value;
-                this.RaisePropertyChanged("fechaCompletado");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=4)]
-        public string fechaCreacion {
-            get {
-                return this.fechaCreacionField;
-            }
-            set {
-                this.fechaCreacionField = value;
-                this.RaisePropertyChanged("fechaCreacion");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=5)]
-        public int tareaId {
-            get {
-                return this.tareaIdField;
-            }
-            set {
-                this.tareaIdField = value;
-                this.RaisePropertyChanged("tareaId");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(transferenciaInterna))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(transferenciaExterna))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -1090,6 +1001,52 @@ namespace TableSoft.AgenteWS {
             System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class transferenciaInterna : transferenciaTicket {
+        
+        private categoria categoriaToField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public categoria categoriaTo {
+            get {
+                return this.categoriaToField;
+            }
+            set {
+                this.categoriaToField = value;
+                this.RaisePropertyChanged("categoriaTo");
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/")]
+    public partial class transferenciaExterna : transferenciaTicket {
+        
+        private proveedor proveedorToField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=0)]
+        public proveedor proveedorTo {
+            get {
+                return this.proveedorToField;
+            }
+            set {
+                this.proveedorToField = value;
+                this.RaisePropertyChanged("proveedorTo");
             }
         }
     }
@@ -1192,8 +1149,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private int estadoIdField;
@@ -1209,18 +1164,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1356,8 +1299,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string apellidoMaternoField;
         
         private string apellidoPaternoField;
@@ -1387,18 +1328,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1595,8 +1524,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int bibliotecaIdField;
         
         private string nombreField;
@@ -1622,18 +1549,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         
@@ -1707,15 +1622,15 @@ namespace TableSoft.AgenteWS {
         
         private cambioEstadoTicket[] historialEstadoField;
         
-        private transferenciaTicket[] historialTransferenciaField;
+        private transferenciaExterna[] historialTransfExternaField;
+        
+        private transferenciaInterna[] historialTransfInternaField;
         
         private tarea[] listaTareasField;
         
         private proveedor proveedorField;
         
         private bool retrasadoField;
-        
-        private bool retrasadoFieldSpecified;
         
         private int ticketIdField;
         
@@ -1890,19 +1805,31 @@ namespace TableSoft.AgenteWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("historialTransferencia", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
-        public transferenciaTicket[] historialTransferencia {
+        [System.Xml.Serialization.XmlElementAttribute("historialTransfExterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=14)]
+        public transferenciaExterna[] historialTransfExterna {
             get {
-                return this.historialTransferenciaField;
+                return this.historialTransfExternaField;
             }
             set {
-                this.historialTransferenciaField = value;
-                this.RaisePropertyChanged("historialTransferencia");
+                this.historialTransfExternaField = value;
+                this.RaisePropertyChanged("historialTransfExterna");
             }
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=15)]
+        [System.Xml.Serialization.XmlElementAttribute("historialTransfInterna", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=15)]
+        public transferenciaInterna[] historialTransfInterna {
+            get {
+                return this.historialTransfInternaField;
+            }
+            set {
+                this.historialTransfInternaField = value;
+                this.RaisePropertyChanged("historialTransfInterna");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute("listaTareas", Form=System.Xml.Schema.XmlSchemaForm.Unqualified, IsNullable=true, Order=16)]
         public tarea[] listaTareas {
             get {
                 return this.listaTareasField;
@@ -1914,7 +1841,7 @@ namespace TableSoft.AgenteWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=16)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
         public proveedor proveedor {
             get {
                 return this.proveedorField;
@@ -1926,7 +1853,7 @@ namespace TableSoft.AgenteWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=17)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
         public bool retrasado {
             get {
                 return this.retrasadoField;
@@ -1938,19 +1865,7 @@ namespace TableSoft.AgenteWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool retrasadoSpecified {
-            get {
-                return this.retrasadoFieldSpecified;
-            }
-            set {
-                this.retrasadoFieldSpecified = value;
-                this.RaisePropertyChanged("retrasadoSpecified");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=18)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
         public int ticketId {
             get {
                 return this.ticketIdField;
@@ -1962,7 +1877,7 @@ namespace TableSoft.AgenteWS {
         }
         
         /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=19)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, Order=20)]
         public urgencia urgencia {
             get {
                 return this.urgenciaField;
@@ -1993,8 +1908,6 @@ namespace TableSoft.AgenteWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int activoFijoIdField;
         
         private string codigoField;
@@ -2014,18 +1927,6 @@ namespace TableSoft.AgenteWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

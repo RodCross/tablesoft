@@ -20,7 +20,7 @@
   </xs:complexType>
   <xs:complexType name="proveedor">
     <xs:sequence>
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element minOccurs="0" name="ciudad" type="tns:ciudad" />
       <xs:element minOccurs="0" name="direccion" type="xs:string" />
       <xs:element minOccurs="0" name="email" type="xs:string" />

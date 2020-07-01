@@ -70,8 +70,6 @@ namespace TableSoft.EstadoTicketWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string descripcionField;
         
         private int estadoIdField;
@@ -87,18 +85,6 @@ namespace TableSoft.EstadoTicketWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

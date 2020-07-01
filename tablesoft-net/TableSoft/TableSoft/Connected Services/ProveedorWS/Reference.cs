@@ -75,8 +75,6 @@ namespace TableSoft.ProveedorWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private ciudad ciudadField;
         
         private string direccionField;
@@ -100,18 +98,6 @@ namespace TableSoft.ProveedorWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

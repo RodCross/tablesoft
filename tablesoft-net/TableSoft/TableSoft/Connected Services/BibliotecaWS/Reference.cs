@@ -64,8 +64,6 @@ namespace TableSoft.BibliotecaWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int bibliotecaIdField;
         
         private string nombreField;
@@ -91,18 +89,6 @@ namespace TableSoft.BibliotecaWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

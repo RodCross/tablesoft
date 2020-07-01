@@ -16,7 +16,7 @@
   <xs:complexType name="biblioteca">
     <xs:sequence>
       <xs:element minOccurs="0" name="abreviatura" type="xs:string" />
-      <xs:element minOccurs="0" name="activo" type="xs:boolean" />
+      <xs:element name="activo" type="xs:boolean" />
       <xs:element name="bibliotecaId" type="xs:int" />
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>

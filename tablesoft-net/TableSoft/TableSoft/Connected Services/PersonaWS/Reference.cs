@@ -80,8 +80,6 @@ namespace TableSoft.PersonaWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string apellidoMaternoField;
         
         private string apellidoPaternoField;
@@ -111,18 +109,6 @@ namespace TableSoft.PersonaWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

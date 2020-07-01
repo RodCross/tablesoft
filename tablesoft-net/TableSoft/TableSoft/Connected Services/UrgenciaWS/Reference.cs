@@ -62,8 +62,6 @@ namespace TableSoft.UrgenciaWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private string nombreField;
         
         private int plazoMaximoField;
@@ -79,18 +77,6 @@ namespace TableSoft.UrgenciaWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

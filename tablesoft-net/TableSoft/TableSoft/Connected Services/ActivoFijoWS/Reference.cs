@@ -75,8 +75,6 @@ namespace TableSoft.ActivoFijoWS {
         
         private bool activoField;
         
-        private bool activoFieldSpecified;
-        
         private int activoFijoIdField;
         
         private string codigoField;
@@ -96,18 +94,6 @@ namespace TableSoft.ActivoFijoWS {
             set {
                 this.activoField = value;
                 this.RaisePropertyChanged("activo");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
-        public bool activoSpecified {
-            get {
-                return this.activoFieldSpecified;
-            }
-            set {
-                this.activoFieldSpecified = value;
-                this.RaisePropertyChanged("activoSpecified");
             }
         }
         

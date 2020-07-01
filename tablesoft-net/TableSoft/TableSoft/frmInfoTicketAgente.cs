@@ -244,8 +244,11 @@ namespace TableSoft
 
         private void btnCambiarEstado_Click(object sender, EventArgs e)
         {
-            frmActualizarEstadoTicketAgente frm = new frmActualizarEstadoTicketAgente();
-            frm.ShowDialog();
+            frmCerrarTicketAgente frm = new frmCerrarTicketAgente(ticket);
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                this.Close();
+            }
         }
 
         private void btnCambiarCategoria_Click(object sender, EventArgs e)

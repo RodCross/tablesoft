@@ -50,7 +50,7 @@
             this.lblFecIni = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
             this.btnEscalar = new System.Windows.Forms.Button();
-            this.btnCambiarEstado = new System.Windows.Forms.Button();
+            this.btnCerrarTicket = new System.Windows.Forms.Button();
             this.btnCambiarCategoria = new System.Windows.Forms.Button();
             this.btnVerTareas = new System.Windows.Forms.Button();
             this.lblAsunto = new System.Windows.Forms.Label();
@@ -308,7 +308,7 @@
             this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEscalar.ForeColor = System.Drawing.Color.White;
-            this.btnEscalar.Location = new System.Drawing.Point(561, 222);
+            this.btnEscalar.Location = new System.Drawing.Point(380, 224);
             this.btnEscalar.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnEscalar.Name = "btnEscalar";
             this.btnEscalar.Size = new System.Drawing.Size(119, 33);
@@ -317,22 +317,22 @@
             this.btnEscalar.UseVisualStyleBackColor = false;
             this.btnEscalar.Click += new System.EventHandler(this.btnEscalar_Click);
             // 
-            // btnCambiarEstado
+            // btnCerrarTicket
             // 
-            this.btnCambiarEstado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnCambiarEstado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCambiarEstado.FlatAppearance.BorderSize = 0;
-            this.btnCambiarEstado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCambiarEstado.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCambiarEstado.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarEstado.Location = new System.Drawing.Point(369, 222);
-            this.btnCambiarEstado.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
-            this.btnCambiarEstado.Name = "btnCambiarEstado";
-            this.btnCambiarEstado.Size = new System.Drawing.Size(165, 33);
-            this.btnCambiarEstado.TabIndex = 4;
-            this.btnCambiarEstado.Text = "Cambiar estado";
-            this.btnCambiarEstado.UseVisualStyleBackColor = false;
-            this.btnCambiarEstado.Click += new System.EventHandler(this.btnCambiarEstado_Click);
+            this.btnCerrarTicket.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnCerrarTicket.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarTicket.FlatAppearance.BorderSize = 0;
+            this.btnCerrarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarTicket.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarTicket.Location = new System.Drawing.Point(522, 224);
+            this.btnCerrarTicket.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
+            this.btnCerrarTicket.Name = "btnCerrarTicket";
+            this.btnCerrarTicket.Size = new System.Drawing.Size(165, 33);
+            this.btnCerrarTicket.TabIndex = 4;
+            this.btnCerrarTicket.Text = "Cerrar Ticket";
+            this.btnCerrarTicket.UseVisualStyleBackColor = false;
+            this.btnCerrarTicket.Click += new System.EventHandler(this.btnCambiarEstado_Click);
             // 
             // btnCambiarCategoria
             // 
@@ -387,7 +387,7 @@
             this.pnlComentario.Controls.Add(this.btnResponder);
             this.pnlComentario.Controls.Add(this.rtfRespuesta);
             this.pnlComentario.Controls.Add(this.btnEscalar);
-            this.pnlComentario.Controls.Add(this.btnCambiarEstado);
+            this.pnlComentario.Controls.Add(this.btnCerrarTicket);
             this.pnlComentario.Location = new System.Drawing.Point(320, 354);
             this.pnlComentario.Name = "pnlComentario";
             this.pnlComentario.Size = new System.Drawing.Size(732, 275);
@@ -475,7 +475,7 @@
         private System.Windows.Forms.Label lblId;
         private System.Windows.Forms.Button btnVerTareas;
         private System.Windows.Forms.Button btnCambiarCategoria;
-        private System.Windows.Forms.Button btnCambiarEstado;
+        private System.Windows.Forms.Button btnCerrarTicket;
         private System.Windows.Forms.Button btnEscalar;
         private System.Windows.Forms.Label lblAsunto;
         private System.Windows.Forms.Panel pnlComentario;

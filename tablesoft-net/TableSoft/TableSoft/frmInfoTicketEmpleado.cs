@@ -33,18 +33,27 @@ namespace TableSoft
         public frmInfoTicketEmpleado(TicketWS.ticket tick)
         {
             ticket = tick;
+
             InitializeComponent();
             LlenarComentarios();
             CrearPaneles();
-            lblAsunto.Text = tick.asunto;
-            lblId.Text = "# " + tick.ticketId.ToString();
-            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - "); 
-            lblFecCieEst.Text = tick.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
-            lblEstado.Text = tick.estado.nombre;
-            lblBib.Text = tick.biblioteca.nombre;
-            lblCat.Text = tick.categoria.nombre;
-            lblUrg.Text = tick.urgencia.nombre;
-            if(tick.activoFijo.activoFijoId > 0)
+
+            lblAsunto.Text = ticket.asunto;
+            lblId.Text = "# " + ticket.ticketId.ToString();
+            lblFecIni.Text = ticket.fechaEnvio.Replace('-', '/').Replace("T", " - ");
+            if (ticket.fechaCierreMaximo != null)
+            {
+                lblFecCieEst.Text = ticket.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
+            }
+            else
+            {
+                lblFecCieEst.Text = "Error en la fecha";
+            }
+            lblEstado.Text = ticket.estado.nombre;
+            lblBib.Text = ticket.biblioteca.nombre;
+            lblCat.Text = ticket.categoria.nombre;
+            lblUrg.Text = ticket.urgencia.nombre;
+            if(ticket.activoFijo.activoFijoId > 0)
             {
                 lblActFij.Text = tick.activoFijo.codigo;
             }

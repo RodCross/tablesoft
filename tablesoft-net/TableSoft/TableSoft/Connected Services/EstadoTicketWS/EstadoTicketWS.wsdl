@@ -5,11 +5,11 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/EstadoTicketWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="eliminarEstadoTicket">
-    <part name="parameters" element="tns:eliminarEstadoTicket" />
+  <message name="actualizarEstadoTicket">
+    <part name="parameters" element="tns:actualizarEstadoTicket" />
   </message>
-  <message name="eliminarEstadoTicketResponse">
-    <part name="parameters" element="tns:eliminarEstadoTicketResponse" />
+  <message name="actualizarEstadoTicketResponse">
+    <part name="parameters" element="tns:actualizarEstadoTicketResponse" />
   </message>
   <message name="listarEstadosTicket">
     <part name="parameters" element="tns:listarEstadosTicket" />
@@ -17,39 +17,39 @@
   <message name="listarEstadosTicketResponse">
     <part name="parameters" element="tns:listarEstadosTicketResponse" />
   </message>
-  <message name="actualizarEstadoTicket">
-    <part name="parameters" element="tns:actualizarEstadoTicket" />
-  </message>
-  <message name="actualizarEstadoTicketResponse">
-    <part name="parameters" element="tns:actualizarEstadoTicketResponse" />
-  </message>
   <message name="insertarEstadoTicket">
     <part name="parameters" element="tns:insertarEstadoTicket" />
   </message>
   <message name="insertarEstadoTicketResponse">
     <part name="parameters" element="tns:insertarEstadoTicketResponse" />
   </message>
+  <message name="eliminarEstadoTicket">
+    <part name="parameters" element="tns:eliminarEstadoTicket" />
+  </message>
+  <message name="eliminarEstadoTicketResponse">
+    <part name="parameters" element="tns:eliminarEstadoTicketResponse" />
+  </message>
   <portType name="EstadoTicketWS">
-    <operation name="eliminarEstadoTicket">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketRequest" message="tns:eliminarEstadoTicket" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketResponse" message="tns:eliminarEstadoTicketResponse" />
+    <operation name="actualizarEstadoTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketRequest" message="tns:actualizarEstadoTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketResponse" message="tns:actualizarEstadoTicketResponse" />
     </operation>
     <operation name="listarEstadosTicket">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketRequest" message="tns:listarEstadosTicket" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/listarEstadosTicketResponse" message="tns:listarEstadosTicketResponse" />
     </operation>
-    <operation name="actualizarEstadoTicket">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketRequest" message="tns:actualizarEstadoTicket" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/actualizarEstadoTicketResponse" message="tns:actualizarEstadoTicketResponse" />
-    </operation>
     <operation name="insertarEstadoTicket">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/insertarEstadoTicketRequest" message="tns:insertarEstadoTicket" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/insertarEstadoTicketResponse" message="tns:insertarEstadoTicketResponse" />
     </operation>
+    <operation name="eliminarEstadoTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketRequest" message="tns:eliminarEstadoTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EstadoTicketWS/eliminarEstadoTicketResponse" message="tns:eliminarEstadoTicketResponse" />
+    </operation>
   </portType>
   <binding name="EstadoTicketWSPortBinding" type="tns:EstadoTicketWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="eliminarEstadoTicket">
+    <operation name="actualizarEstadoTicket">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -67,7 +67,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="actualizarEstadoTicket">
+    <operation name="insertarEstadoTicket">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarEstadoTicket">
+    <operation name="eliminarEstadoTicket">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

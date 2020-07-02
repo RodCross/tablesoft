@@ -234,6 +234,17 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
+  <xs:complexType name="actualizarInsertarTareas">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="objArrTarea" type="tns:tarea" />
+      <xs:element minOccurs="0" name="objTicket" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarInsertarTareasResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="actualizarTarea">
     <xs:sequence>
       <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
@@ -245,13 +256,22 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="actualizarInsertarTareas">
+  <xs:complexType name="listarTareasPorTicket">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="objArrTarea" type="tns:tarea" />
       <xs:element minOccurs="0" name="objTicket" type="tns:ticket" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="actualizarInsertarTareasResponse">
+  <xs:complexType name="listarTareasPorTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarTareaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
@@ -265,26 +285,6 @@
   <xs:complexType name="insertarTareaResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarTarea">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objTarea" type="tns:tarea" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="eliminarTareaResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTareasPorTicket">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objTicket" type="tns:ticket" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="listarTareasPorTicketResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:tarea" />
     </xs:sequence>
   </xs:complexType>
 </xs:schema>

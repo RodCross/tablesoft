@@ -5,23 +5,11 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/TareaPredeterminadaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
-  <message name="listarTareasPredeterminadasPorCategoria">
-    <part name="parameters" element="tns:listarTareasPredeterminadasPorCategoria" />
-  </message>
-  <message name="listarTareasPredeterminadasPorCategoriaResponse">
-    <part name="parameters" element="tns:listarTareasPredeterminadasPorCategoriaResponse" />
-  </message>
   <message name="insertarTareaPredeterminada">
     <part name="parameters" element="tns:insertarTareaPredeterminada" />
   </message>
   <message name="insertarTareaPredeterminadaResponse">
     <part name="parameters" element="tns:insertarTareaPredeterminadaResponse" />
-  </message>
-  <message name="eliminarTareaPredeterminada">
-    <part name="parameters" element="tns:eliminarTareaPredeterminada" />
-  </message>
-  <message name="eliminarTareaPredeterminadaResponse">
-    <part name="parameters" element="tns:eliminarTareaPredeterminadaResponse" />
   </message>
   <message name="actualizarTareaPredeterminada">
     <part name="parameters" element="tns:actualizarTareaPredeterminada" />
@@ -29,27 +17,39 @@
   <message name="actualizarTareaPredeterminadaResponse">
     <part name="parameters" element="tns:actualizarTareaPredeterminadaResponse" />
   </message>
+  <message name="eliminarTareaPredeterminada">
+    <part name="parameters" element="tns:eliminarTareaPredeterminada" />
+  </message>
+  <message name="eliminarTareaPredeterminadaResponse">
+    <part name="parameters" element="tns:eliminarTareaPredeterminadaResponse" />
+  </message>
+  <message name="listarTareasPredeterminadasPorCategoria">
+    <part name="parameters" element="tns:listarTareasPredeterminadasPorCategoria" />
+  </message>
+  <message name="listarTareasPredeterminadasPorCategoriaResponse">
+    <part name="parameters" element="tns:listarTareasPredeterminadasPorCategoriaResponse" />
+  </message>
   <portType name="TareaPredeterminadaWS">
-    <operation name="listarTareasPredeterminadasPorCategoria">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaRequest" message="tns:listarTareasPredeterminadasPorCategoria" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaResponse" message="tns:listarTareasPredeterminadasPorCategoriaResponse" />
-    </operation>
     <operation name="insertarTareaPredeterminada">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/insertarTareaPredeterminadaRequest" message="tns:insertarTareaPredeterminada" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/insertarTareaPredeterminadaResponse" message="tns:insertarTareaPredeterminadaResponse" />
-    </operation>
-    <operation name="eliminarTareaPredeterminada">
-      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaRequest" message="tns:eliminarTareaPredeterminada" />
-      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaResponse" message="tns:eliminarTareaPredeterminadaResponse" />
     </operation>
     <operation name="actualizarTareaPredeterminada">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaRequest" message="tns:actualizarTareaPredeterminada" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/actualizarTareaPredeterminadaResponse" message="tns:actualizarTareaPredeterminadaResponse" />
     </operation>
+    <operation name="eliminarTareaPredeterminada">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaRequest" message="tns:eliminarTareaPredeterminada" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/eliminarTareaPredeterminadaResponse" message="tns:eliminarTareaPredeterminadaResponse" />
+    </operation>
+    <operation name="listarTareasPredeterminadasPorCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaRequest" message="tns:listarTareasPredeterminadasPorCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/TareaPredeterminadaWS/listarTareasPredeterminadasPorCategoriaResponse" message="tns:listarTareasPredeterminadasPorCategoriaResponse" />
+    </operation>
   </portType>
   <binding name="TareaPredeterminadaWSPortBinding" type="tns:TareaPredeterminadaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <operation name="listarTareasPredeterminadasPorCategoria">
+    <operation name="insertarTareaPredeterminada">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -58,7 +58,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="insertarTareaPredeterminada">
+    <operation name="actualizarTareaPredeterminada">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />
@@ -76,7 +76,7 @@
         <soap:body use="literal" />
       </output>
     </operation>
-    <operation name="actualizarTareaPredeterminada">
+    <operation name="listarTareasPredeterminadasPorCategoria">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

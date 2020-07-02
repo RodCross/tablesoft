@@ -8,12 +8,9 @@
   <xs:element name="insertarEstadoTicketResponse" type="tns:insertarEstadoTicketResponse" />
   <xs:element name="listarEstadosTicket" type="tns:listarEstadosTicket" />
   <xs:element name="listarEstadosTicketResponse" type="tns:listarEstadosTicketResponse" />
-  <xs:complexType name="listarEstadosTicket">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarEstadosTicketResponse">
+  <xs:complexType name="actualizarEstadoTicket">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estadoTicket" />
+      <xs:element minOccurs="0" name="objEstadoTicket" type="tns:estadoTicket" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="estadoTicket">
@@ -24,14 +21,17 @@
       <xs:element minOccurs="0" name="nombre" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="actualizarEstadoTicket">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objEstadoTicket" type="tns:estadoTicket" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="actualizarEstadoTicketResponse">
     <xs:sequence>
       <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstadosTicket">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarEstadosTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estadoTicket" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="eliminarEstadoTicket">

@@ -590,22 +590,22 @@
     <None Include="Connected Services\ActivoFijoWS\ActivoFijoWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.activoFijo.datasource">
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.activoFijo1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.actualizarActivoFijoResponse.datasource">
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.actualizarActivoFijoResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.eliminarActivoFijoResponse.datasource">
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.eliminarActivoFijoResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.insertarActivoFijoResponse.datasource">
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.insertarActivoFijoResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse.datasource">
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosResponse.datasource">
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosResponse1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\AgenteWS\AgenteWS.wsdl" />

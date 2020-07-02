@@ -246,14 +246,6 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:agente" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="listarAgentes">
-    <xs:sequence />
-  </xs:complexType>
-  <xs:complexType name="listarAgentesResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:agente" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="buscarAgentePorCodigo">
     <xs:sequence>
       <xs:element minOccurs="0" name="codigo" type="xs:string" />
@@ -262,6 +254,14 @@
   <xs:complexType name="buscarAgentePorCodigoResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentes">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAgentesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:agente" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarAgentesPorNombre">

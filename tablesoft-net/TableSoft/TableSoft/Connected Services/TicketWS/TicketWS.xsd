@@ -255,16 +255,6 @@
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ticket" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="insertarTicket">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="objTicket" type="tns:ticket" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="insertarTicketResponse">
-    <xs:sequence>
-      <xs:element name="return" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
   <xs:complexType name="listarTicketsPorAgente">
     <xs:sequence>
       <xs:element minOccurs="0" name="objAgente" type="tns:agente" />
@@ -283,6 +273,16 @@
   <xs:complexType name="listarTicketsPorCategoriaResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objTicket" type="tns:ticket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarTicketResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="listarTicketsPorEmpleado">

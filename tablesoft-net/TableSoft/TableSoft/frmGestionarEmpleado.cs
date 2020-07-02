@@ -17,6 +17,7 @@ namespace TableSoft
         private EmpleadoWS.EmpleadoWSClient empleadoDAO = new EmpleadoWS.EmpleadoWSClient();
         private BibliotecaWS.BibliotecaWSClient bibliotecaDAO = new BibliotecaWS.BibliotecaWSClient();
         private EmpleadoWS.empleado empleadoSel;
+        private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
 
         public frmGestionarEmpleado()
         {
@@ -267,8 +268,29 @@ namespace TableSoft
 
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                EmpleadoWS.empleado empleadoBuscado = empleadoDAO.buscarEmpleadoPorCodigo(empleadoSel.codigo);
-                if (empleadoBuscado.empleadoId == 0){
+                int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
+                EmpleadoWS.empleado empBusc = empleadoDAO.buscarEmpleadoPorCodigo(empleadoSel.codigo);
+
+                if (rpta == 1)
+                {
+                    MessageBox.Show(
+                    "Ya existe un usuario con ese correo",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
+                if (empBusc.empleadoId != 0)
+                {
+                    MessageBox.Show(
+                    "Ya existe un usuario con ese código",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
+
+                if (rpta == -1) { 
                     if (empleadoDAO.insertarEmpleado(empleadoSel) > 0)
                     {
                         MessageBox.Show(

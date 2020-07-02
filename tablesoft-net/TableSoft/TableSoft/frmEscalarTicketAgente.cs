@@ -151,8 +151,8 @@ namespace TableSoft
                 if (ticketDAO.actualizarTicket(ticket) > -1)
                 {
                     MessageBox.Show(
-                        "Se ha cambiado la categoría seleccionada.",
-                        "Reasignación exitosa",
+                        "Se ha registrado el escalado de ticket.",
+                        "Escalado exitoso",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                     this.DialogResult = DialogResult.OK;
@@ -160,8 +160,8 @@ namespace TableSoft
                 else
                 {
                     MessageBox.Show(
-                        "Ha ocurrido un error con la reasignación",
-                        "Reasignación no realizada",
+                        "Ha ocurrido un error con el escalado",
+                        "Escalado no realizado",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                     this.Close();

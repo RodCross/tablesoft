@@ -257,8 +257,43 @@ namespace TableSoft
 
         private void btnEscalar_Click(object sender, EventArgs e)
         {
+            TicketWS.ticket tick = ticket;
+            
             frmEscalarTicketAgente frm = new frmEscalarTicketAgente(ticket);
             frm.ShowDialog();
+            
+            lblAsunto.Text = tick.asunto;
+            lblId.Text = "# " + tick.ticketId.ToString();
+            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - ");
+            lblFecCieEst.Text = tick.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
+            lblEstado.Text = tick.estado.nombre;
+            lblBib.Text = tick.biblioteca.nombre;
+            lblCat.Text = tick.categoria.nombre;
+            lblUrg.Text = tick.urgencia.nombre;
+            if (tick.activoFijo.activoFijoId > 0)
+            {
+                lblActFij.Text = tick.activoFijo.codigo;
+            }
+            else
+            {
+                lblTituloActFij.Text = "";
+            }
+
+            // Segun el estado del ticket
+
+            if (ticket.estado.estadoId == (int)Estado.Cerrado)
+            {
+                btnCambiarCategoria.Enabled = false;
+                btnCerrarTicket.Enabled = false;
+                btnEscalar.Enabled = false;
+                btnVerTareas.Enabled = false;
+                btnResponder.Enabled = false;
+            }
+            if (ticket.estado.estadoId == (int)Estado.Escalado)
+            {
+                btnCambiarCategoria.Enabled = false;
+                //btnVerTareas.Enabled = false;
+            }
         }
 
         private void btnCambiarEstado_Click(object sender, EventArgs e)

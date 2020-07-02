@@ -669,7 +669,7 @@ namespace TableSoft
             YanapayEmail email = new YanapayEmail()
             {
                 FromAddress = "noreply.yanapay@gmail.com",
-                ToRecipients = "noreply.yanapay@gmail.com",
+                ToRecipients = age.personaEmail,
                 Subject = "Yanapay - Nuevo empleado",
                 Body = body,
                 IsHtml = true

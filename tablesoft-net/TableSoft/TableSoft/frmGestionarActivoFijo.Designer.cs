@@ -56,7 +56,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(686, 70);
-            this.pnlTitulo.TabIndex = 5;
+            this.pnlTitulo.TabIndex = 7;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // btnCancelar
@@ -70,7 +70,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(569, 21);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(102, 33);
-            this.btnCancelar.TabIndex = 1;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
@@ -83,7 +83,7 @@
             this.lblDatosActivoFijo.Location = new System.Drawing.Point(30, 23);
             this.lblDatosActivoFijo.Name = "lblDatosActivoFijo";
             this.lblDatosActivoFijo.Size = new System.Drawing.Size(208, 27);
-            this.lblDatosActivoFijo.TabIndex = 0;
+            this.lblDatosActivoFijo.TabIndex = 1;
             this.lblDatosActivoFijo.Text = "Datos del activo fijo";
             // 
             // txtCodigo
@@ -92,7 +92,7 @@
             this.txtCodigo.Location = new System.Drawing.Point(170, 138);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 28);
-            this.txtCodigo.TabIndex = 2;
+            this.txtCodigo.TabIndex = 1;
             // 
             // lblCodigo
             // 
@@ -101,7 +101,7 @@
             this.lblCodigo.Location = new System.Drawing.Point(93, 141);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(60, 21);
-            this.lblCodigo.TabIndex = 8;
+            this.lblCodigo.TabIndex = 9;
             this.lblCodigo.Text = "Codigo";
             // 
             // lblIDActivoFijo
@@ -111,7 +111,7 @@
             this.lblIDActivoFijo.Location = new System.Drawing.Point(128, 93);
             this.lblIDActivoFijo.Name = "lblIDActivoFijo";
             this.lblIDActivoFijo.Size = new System.Drawing.Size(25, 21);
-            this.lblIDActivoFijo.TabIndex = 6;
+            this.lblIDActivoFijo.TabIndex = 8;
             this.lblIDActivoFijo.Text = "ID";
             // 
             // txtIDActivoFijo
@@ -130,7 +130,7 @@
             this.txtTipo.Location = new System.Drawing.Point(170, 230);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(204, 28);
-            this.txtTipo.TabIndex = 1;
+            this.txtTipo.TabIndex = 3;
             // 
             // lblTipo
             // 
@@ -139,7 +139,7 @@
             this.lblTipo.Location = new System.Drawing.Point(113, 233);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(40, 21);
-            this.lblTipo.TabIndex = 7;
+            this.lblTipo.TabIndex = 11;
             this.lblTipo.Text = "Tipo";
             this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.lblTipo.Click += new System.EventHandler(this.lblNombre_Click);
@@ -155,7 +155,7 @@
             this.btnActualizar.Location = new System.Drawing.Point(567, 334);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
-            this.btnActualizar.TabIndex = 4;
+            this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -171,7 +171,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(567, 334);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
-            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
@@ -182,7 +182,7 @@
             this.txtMarca.Location = new System.Drawing.Point(170, 182);
             this.txtMarca.Name = "txtMarca";
             this.txtMarca.Size = new System.Drawing.Size(283, 28);
-            this.txtMarca.TabIndex = 9;
+            this.txtMarca.TabIndex = 2;
             // 
             // lblMarca
             // 
@@ -200,7 +200,7 @@
             this.txtNombre.Location = new System.Drawing.Point(170, 271);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(387, 28);
-            this.txtNombre.TabIndex = 11;
+            this.txtNombre.TabIndex = 4;
             // 
             // lblNombre
             // 

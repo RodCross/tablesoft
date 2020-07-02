@@ -18,7 +18,7 @@ namespace TableSoft
         private AgenteWS.AgenteWSClient agenteDAO = new AgenteWS.AgenteWSClient();
         private RolWS.RolWSClient rolDAO = new RolWS.RolWSClient();
         private AgenteWS.agente agenteSel;
-
+        private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
 
         public frmGestionarAgente()
         {
@@ -333,8 +333,29 @@ namespace TableSoft
             
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                AgenteWS.agente agenteBuscado = agenteDAO.buscarAgentePorCodigo(agenteSel.codigo);
-                if (agenteSel.agenteId == 0)
+                int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
+                AgenteWS.agente agBusc = agenteDAO.buscarAgentePorCodigo(agenteSel.codigo);
+
+                if(rpta == 1)
+                {
+                    MessageBox.Show(
+                    "Ya existe un usuario con ese correo",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
+                if(agBusc.agenteId != 0)
+                {
+                    MessageBox.Show(
+                    "Ya existe un usuario con ese código",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
+
+                if (rpta == -1)
                 {
                     if (agenteDAO.insertarAgente(agenteSel) > 0)
                     {
@@ -347,28 +368,12 @@ namespace TableSoft
                     else
                     {
                         MessageBox.Show(
-                        "No se ha creado el registro",
+                        "Ha ocurrido un error al realizar el registro",
                         "Registro no realizado",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                         );
                     }
                 }
-                else
-                {
-                    MessageBox.Show(
-                    "Ya existe un agente con ese código",
-                    "Registro no realizado",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                }
-            }
-            else
-            {
-                MessageBox.Show(
-                "No se ha creado el registro",
-                "Registro no realizado",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
             }
 
             this.DialogResult = DialogResult.OK;

@@ -24,36 +24,36 @@ public class Principal {
             
             String rutaImagen
                 = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.jpg").getPath();
+       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.jpg").getPath().replace("%20", " ");
         ImageIcon icon = new ImageIcon(rutaImagen);
         java.awt.Image imagenReporte = icon.getImage();
 
             String rutaReporteJasper
             = Principal.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath();
+           "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath().replace("%20", " ");
 
             //Obtener la ruta del subreporte
             String rutaSubReporteJasper
             = Principal.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Lista_Comentarios_Ticket.jasper").getPath();
+           "/pe/edu/pucp/tablesoft/reports/Lista_Comentarios_Ticket.jasper").getPath().replace("%20", " ");
 
             //Obtener la ruta del subreporte2
             String rutaSubReporte2Jasper
             = Principal.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath();
+           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath().replace("%20", " ");
 
             String rutaSubReporte3Jasper
             = Principal.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath();
+           "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath().replace("%20", " ");
 
             //Obtener la ruta al archivo
             String rutaSubReporte4Jasper
             = Principal.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath();
+           "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath().replace("%20", " ");
 
             String rutaSubReporte5Jasper
             = Principal.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath();
+           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath().replace("%20", " ");
 
             //Objecto JasperReport
             JasperReport objJR = 

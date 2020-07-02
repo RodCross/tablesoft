@@ -58,6 +58,8 @@
             this.btnResponder = new System.Windows.Forms.Button();
             this.rtfRespuesta = new System.Windows.Forms.RichTextBox();
             this.pnlMensajes = new System.Windows.Forms.Panel();
+            this.btnReporte = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlComentario.SuspendLayout();
@@ -71,7 +73,7 @@
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1064, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(1070, 70);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -428,11 +430,28 @@
             this.pnlMensajes.Size = new System.Drawing.Size(732, 227);
             this.pnlMensajes.TabIndex = 4;
             // 
+            // btnReporte
+            // 
+            this.btnReporte.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnReporte.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnReporte.FlatAppearance.BorderSize = 0;
+            this.btnReporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReporte.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReporte.ForeColor = System.Drawing.Color.White;
+            this.btnReporte.Location = new System.Drawing.Point(12, 635);
+            this.btnReporte.Name = "btnReporte";
+            this.btnReporte.Size = new System.Drawing.Size(148, 33);
+            this.btnReporte.TabIndex = 1;
+            this.btnReporte.Text = "Generar Reporte";
+            this.btnReporte.UseVisualStyleBackColor = false;
+            this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
+            // 
             // frmInfoTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 639);
+            this.ClientSize = new System.Drawing.Size(1070, 680);
+            this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.pnlMensajes);
             this.Controls.Add(this.pnlComentario);
             this.Controls.Add(this.lblAsunto);
@@ -482,5 +501,7 @@
         private System.Windows.Forms.Button btnResponder;
         private System.Windows.Forms.RichTextBox rtfRespuesta;
         private System.Windows.Forms.Panel pnlMensajes;
+        private System.Windows.Forms.Button btnReporte;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
     }
 }

@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Text;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -281,6 +282,22 @@ namespace TableSoft
         {
             frmSeleccionarTareasTicket frm = new frmSeleccionarTareasTicket(ticket);
             frm.ShowDialog();
+        }
+
+        private void btnReporte_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                saveFileDialog1.ShowDialog();
+                ReporteWS.ReporteWSClient daoReporte = new ReporteWS.ReporteWSClient();
+                byte[] arreglo = daoReporte.generarReporteTickets(ticket.ticketId);
+                File.WriteAllBytes(saveFileDialog1.FileName + ".pdf", arreglo);
+                MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

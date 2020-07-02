@@ -20,7 +20,6 @@ namespace TableSoft
         private ComentarioWS.comentario comentarioActual;
         private TicketWS.ticket ticket;
 
-        private const string comentarioPorDefecto = "Escribe aquí tu comentario.";
         private int numPanel = 0;
         private int longitudY = 0;
         private Dictionary<int, Panel> paneles = new Dictionary<int, Panel>();
@@ -34,7 +33,6 @@ namespace TableSoft
             InitializeComponent();
             LlenarComentarios();
             CrearPaneles();
-            MostrarComentarioPorDefecto();
             lblAsunto.Text = tick.asunto;
             lblId.Text = "# " + tick.ticketId.ToString();
             lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - ");
@@ -170,12 +168,6 @@ namespace TableSoft
             CrearPaneles();
         }
 
-        private void MostrarComentarioPorDefecto()
-        {
-            rtfRespuesta.ForeColor = Color.Gray;
-            rtfRespuesta.Text = comentarioPorDefecto;
-        }
-
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             Movimiento.MoverVentana(Handle, e.Button);
@@ -235,23 +227,6 @@ namespace TableSoft
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-            }
-        }
-
-        private void rtfRespuesta_Enter(object sender, EventArgs e)
-        {
-            if (rtfRespuesta.Text == comentarioPorDefecto)
-            {
-                rtfRespuesta.Text = "";
-                rtfRespuesta.ForeColor = Color.Black;
-            }
-        }
-
-        private void rtfRespuesta_Leave(object sender, EventArgs e)
-        {
-            if (rtfRespuesta.Text == "")
-            {
-                MostrarComentarioPorDefecto();
             }
         }
 

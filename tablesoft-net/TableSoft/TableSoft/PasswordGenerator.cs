@@ -11,7 +11,7 @@ namespace TableSoft
         public static string GenerateRandomPassword()
         {
             Random random = new Random();
-            string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
+            string characters = "abcdefghijkmnopqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ123456789";
             int length = characters.Length;
             char letter;
             int passLength = 8;

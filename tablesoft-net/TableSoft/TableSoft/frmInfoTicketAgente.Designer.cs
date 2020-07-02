@@ -310,7 +310,7 @@
             this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEscalar.ForeColor = System.Drawing.Color.White;
-            this.btnEscalar.Location = new System.Drawing.Point(380, 224);
+            this.btnEscalar.Location = new System.Drawing.Point(373, 222);
             this.btnEscalar.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnEscalar.Name = "btnEscalar";
             this.btnEscalar.Size = new System.Drawing.Size(119, 33);
@@ -327,12 +327,12 @@
             this.btnCerrarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarTicket.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarTicket.Location = new System.Drawing.Point(522, 224);
+            this.btnCerrarTicket.Location = new System.Drawing.Point(521, 222);
             this.btnCerrarTicket.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnCerrarTicket.Name = "btnCerrarTicket";
             this.btnCerrarTicket.Size = new System.Drawing.Size(165, 33);
             this.btnCerrarTicket.TabIndex = 4;
-            this.btnCerrarTicket.Text = "Cerrar Ticket";
+            this.btnCerrarTicket.Text = "Cerrar ticket";
             this.btnCerrarTicket.UseVisualStyleBackColor = false;
             this.btnCerrarTicket.Click += new System.EventHandler(this.btnCambiarEstado_Click);
             // 
@@ -344,7 +344,7 @@
             this.btnCambiarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarCategoria.Location = new System.Drawing.Point(177, 222);
+            this.btnCambiarCategoria.Location = new System.Drawing.Point(179, 222);
             this.btnCambiarCategoria.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnCambiarCategoria.Name = "btnCambiarCategoria";
             this.btnCambiarCategoria.Size = new System.Drawing.Size(165, 33);
@@ -419,8 +419,6 @@
             this.rtfRespuesta.Size = new System.Drawing.Size(663, 112);
             this.rtfRespuesta.TabIndex = 0;
             this.rtfRespuesta.Text = "";
-            this.rtfRespuesta.Enter += new System.EventHandler(this.rtfRespuesta_Enter);
-            this.rtfRespuesta.Leave += new System.EventHandler(this.rtfRespuesta_Leave);
             // 
             // pnlMensajes
             // 

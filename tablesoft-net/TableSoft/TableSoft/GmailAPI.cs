@@ -62,14 +62,9 @@ namespace TableSoft
             mailMessage.Subject = email.Subject;
             mailMessage.Body = email.Body;
             mailMessage.IsBodyHtml = email.IsHtml;
-
-            // Por si necesitamos enviar archivos adjuntos alguna vez.
-            // No lo creo necesario por ahora, pero borrémoslo cuando estemos seguros.
-
-            //foreach (System.Net.Mail.Attachment attachment in email.Attachments)
-            //{
-            //    mailMessage.Attachments.Add(attachment);
-            //}
+            mailMessage.BodyEncoding = System.Text.Encoding.GetEncoding("ISO-8859-1");
+            mailMessage.HeadersEncoding = System.Text.Encoding.GetEncoding("ISO-8859-1");
+            mailMessage.SubjectEncoding = System.Text.Encoding.GetEncoding("ISO-8859-1");
 
             var mimeMessage = MimeKit.MimeMessage.CreateFromMailMessage(mailMessage);
 
@@ -85,7 +80,7 @@ namespace TableSoft
 
         public static string Encode(string text)
         {
-            byte[] bytes = System.Text.Encoding.UTF8.GetBytes(text);
+            byte[] bytes = System.Text.Encoding.GetEncoding("ISO-8859-1").GetBytes(text);
 
             return System.Convert.ToBase64String(bytes)
                 .Replace('+', '-')

@@ -337,8 +337,6 @@
             this.rtfRespuesta.Size = new System.Drawing.Size(663, 112);
             this.rtfRespuesta.TabIndex = 0;
             this.rtfRespuesta.Text = "";
-            this.rtfRespuesta.Enter += new System.EventHandler(this.rtfRespuesta_Enter);
-            this.rtfRespuesta.Leave += new System.EventHandler(this.rtfRespuesta_Leave);
             // 
             // lblAsunto
             // 

@@ -59,15 +59,19 @@ namespace TableSoft
             tck.ticketId = ticket.ticketId;
             var tareas = tareaDAO.listarTareasPorTicket(tck);
             
-            foreach(var t in tareas)
+            if (tareas != null)
             {
-                if (t.completado == false)
+                foreach (var t in tareas)
                 {
-                    tareasCompletadas = false;
-                    break;
-                }
+                    if (t.completado == false)
+                    {
+                        tareasCompletadas = false;
+                        break;
+                    }
 
+                }
             }
+
 
             if (tareasCompletadas)
             {

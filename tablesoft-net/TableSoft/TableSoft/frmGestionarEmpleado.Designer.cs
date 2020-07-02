@@ -34,9 +34,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblDatosEmpleado = new System.Windows.Forms.Label();
-            this.picEye = new System.Windows.Forms.PictureBox();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.lblPass = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -60,7 +57,6 @@
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.lblActivo = new System.Windows.Forms.Label();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             this.SuspendLayout();
             // 
             // btnActualizar
@@ -71,7 +67,7 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(569, 537);
+            this.btnActualizar.Location = new System.Drawing.Point(569, 501);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
             this.btnActualizar.TabIndex = 12;
@@ -87,7 +83,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(569, 537);
+            this.btnGuardar.Location = new System.Drawing.Point(569, 501);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 6;
@@ -133,41 +129,6 @@
             this.lblDatosEmpleado.Size = new System.Drawing.Size(207, 27);
             this.lblDatosEmpleado.TabIndex = 1;
             this.lblDatosEmpleado.Text = "Datos del empleado";
-            // 
-            // picEye
-            // 
-            this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picEye.Image = global::TableSoft.Properties.Resources.Eye;
-            this.picEye.Location = new System.Drawing.Point(642, 315);
-            this.picEye.Name = "picEye";
-            this.picEye.Size = new System.Drawing.Size(29, 28);
-            this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEye.TabIndex = 56;
-            this.picEye.TabStop = false;
-            this.picEye.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseDown);
-            this.picEye.MouseEnter += new System.EventHandler(this.picEye_MouseEnter);
-            this.picEye.MouseLeave += new System.EventHandler(this.picEye_MouseLeave);
-            this.picEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseUp);
-            // 
-            // txtPass
-            // 
-            this.txtPass.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(170, 315);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '•';
-            this.txtPass.Size = new System.Drawing.Size(501, 28);
-            this.txtPass.TabIndex = 6;
-            // 
-            // lblPass
-            // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblPass.Location = new System.Drawing.Point(66, 318);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(89, 21);
-            this.lblPass.TabIndex = 20;
-            this.lblPass.Text = "Contraseña";
-            this.lblPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtTel
             // 
@@ -249,7 +210,7 @@
             // 
             this.lblBiblioteca.AutoSize = true;
             this.lblBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblBiblioteca.Location = new System.Drawing.Point(78, 432);
+            this.lblBiblioteca.Location = new System.Drawing.Point(78, 395);
             this.lblBiblioteca.Name = "lblBiblioteca";
             this.lblBiblioteca.Size = new System.Drawing.Size(77, 21);
             this.lblBiblioteca.TabIndex = 23;
@@ -267,7 +228,7 @@
             // txtDNI
             // 
             this.txtDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(170, 389);
+            this.txtDNI.Location = new System.Drawing.Point(170, 352);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(204, 28);
             this.txtDNI.TabIndex = 8;
@@ -276,7 +237,7 @@
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDNI.Location = new System.Drawing.Point(118, 392);
+            this.lblDNI.Location = new System.Drawing.Point(118, 355);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(37, 21);
             this.lblDNI.TabIndex = 22;
@@ -286,7 +247,7 @@
             // txtEmailPersonal
             // 
             this.txtEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailPersonal.Location = new System.Drawing.Point(170, 469);
+            this.txtEmailPersonal.Location = new System.Drawing.Point(170, 432);
             this.txtEmailPersonal.Name = "txtEmailPersonal";
             this.txtEmailPersonal.Size = new System.Drawing.Size(501, 28);
             this.txtEmailPersonal.TabIndex = 10;
@@ -295,7 +256,7 @@
             // 
             this.lblEmailPersonal.AutoSize = true;
             this.lblEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailPersonal.Location = new System.Drawing.Point(64, 472);
+            this.lblEmailPersonal.Location = new System.Drawing.Point(64, 435);
             this.lblEmailPersonal.Name = "lblEmailPersonal";
             this.lblEmailPersonal.Size = new System.Drawing.Size(91, 21);
             this.lblEmailPersonal.TabIndex = 24;
@@ -327,7 +288,7 @@
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(170, 352);
+            this.txtCodigo.Location = new System.Drawing.Point(170, 315);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 28);
             this.txtCodigo.TabIndex = 7;
@@ -346,7 +307,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblCodigo.Location = new System.Drawing.Point(95, 355);
+            this.lblCodigo.Location = new System.Drawing.Point(95, 318);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(60, 21);
             this.lblCodigo.TabIndex = 21;
@@ -357,7 +318,7 @@
             // 
             this.cboBiblioteca.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
             this.cboBiblioteca.FormattingEnabled = true;
-            this.cboBiblioteca.Location = new System.Drawing.Point(170, 429);
+            this.cboBiblioteca.Location = new System.Drawing.Point(170, 392);
             this.cboBiblioteca.Name = "cboBiblioteca";
             this.cboBiblioteca.Size = new System.Drawing.Size(501, 29);
             this.cboBiblioteca.TabIndex = 9;
@@ -365,7 +326,7 @@
             // chkActivo
             // 
             this.chkActivo.AutoSize = true;
-            this.chkActivo.Location = new System.Drawing.Point(170, 509);
+            this.chkActivo.Location = new System.Drawing.Point(170, 477);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(15, 14);
             this.chkActivo.TabIndex = 57;
@@ -375,7 +336,7 @@
             // 
             this.lblActivo.AutoSize = true;
             this.lblActivo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblActivo.Location = new System.Drawing.Point(102, 502);
+            this.lblActivo.Location = new System.Drawing.Point(102, 470);
             this.lblActivo.Name = "lblActivo";
             this.lblActivo.Size = new System.Drawing.Size(53, 21);
             this.lblActivo.TabIndex = 58;
@@ -386,13 +347,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 596);
+            this.ClientSize = new System.Drawing.Size(700, 560);
             this.Controls.Add(this.lblActivo);
             this.Controls.Add(this.chkActivo);
             this.Controls.Add(this.cboBiblioteca);
-            this.Controls.Add(this.picEye);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.txtDireccion);
@@ -421,7 +379,6 @@
             this.Text = "Datos del empleado";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,9 +390,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblDatosEmpleado;
-        private System.Windows.Forms.PictureBox picEye;
-        private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Label lblPass;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.TextBox txtDireccion;

@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
@@ -21,8 +22,6 @@ namespace TableSoft
         {
             InitializeComponent();
             LlenarCboBiblioteca();
-            txtPass.Enabled = true;
-            picEye.Visible = true;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
             chkActivo.Visible = false;
@@ -45,8 +44,6 @@ namespace TableSoft
             txtEmailPersonal.Text = emp.personaEmail;
             txtDireccion.Text = emp.direccion;
             txtTel.Text = emp.telefono;
-            txtPass.Enabled = false;
-            picEye.Visible = false;
             btnActualizar.Visible = true;
             btnGuardar.Visible = false;
             chkActivo.Checked = emp.activo;
@@ -162,15 +159,6 @@ namespace TableSoft
                 MessageBox.Show("El telefono del empleado debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            if (txtPass.Text == "")
-            {
-                MessageBox.Show(
-                    "Falta indicar la contraseña del empleado.",
-                    "Error de contraseña",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
             if (txtCodigo.Text == "")
             {
                 MessageBox.Show(
@@ -275,7 +263,7 @@ namespace TableSoft
             empleadoSel.personaEmail = txtEmailPersonal.Text;
             empleadoSel.direccion = txtDireccion.Text;
             empleadoSel.telefono = txtTel.Text;
-            empleadoSel.password = txtPass.Text;
+            empleadoSel.password = PasswordGenerator.GenerateRandomPassword();
 
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -288,6 +276,8 @@ namespace TableSoft
                         "Registro exitoso",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                         );
+
+                        EnviarEmailRegistrado(empleadoSel);
                     }
                     else
                     {
@@ -556,34 +546,25 @@ namespace TableSoft
             this.DialogResult = DialogResult.OK;
         }
 
-        private void picEye_MouseDown(object sender, MouseEventArgs e)
+        private void EnviarEmailRegistrado(EmpleadoWS.empleado emp)
         {
-            PictureBox pic = (PictureBox)sender;
+            string body = "Estimado " + emp.nombre + " " + emp.apellidoPaterno + ":\n";
+            body += "Tienes un nuevo usuario en el sistema Yanapay.\n";
+            body += "Puedes iniciar sesion como empleado con las siguientes credenciales:\n";
+            body += "Email: " + emp.personaEmail + "\n";
+            body += "Password: " + emp.password + "\n";
+            body += "Saludos,\nSistema de mesa de ayuda Yanapay";
 
-            pic.Image = Properties.Resources.EyeMouseDown;
-            txtPass.PasswordChar = '\0';
-        }
+            YanapayEmail email = new YanapayEmail()
+            {
+                FromAddress = "noreply.yanapay@gmail.com",
+                ToRecipients = emp.personaEmail,
+                Subject = "Yanapay - Nuevo empleado",
+                Body = body,
+                IsHtml = false
+            };
 
-        private void picEye_MouseEnter(object sender, EventArgs e)
-        {
-            PictureBox pic = (PictureBox)sender;
-
-            pic.Image = Properties.Resources.EyeMouseEnter;
-        }
-
-        private void picEye_MouseLeave(object sender, EventArgs e)
-        {
-            PictureBox pic = (PictureBox)sender;
-
-            pic.Image = Properties.Resources.Eye;
-        }
-
-        private void picEye_MouseUp(object sender, MouseEventArgs e)
-        {
-            PictureBox pic = (PictureBox)sender;
-
-            pic.Image = Properties.Resources.EyeMouseEnter;
-            txtPass.PasswordChar = '•';
+            GmailAPI.ConectarAPI(email);
         }
     }
 }

@@ -98,11 +98,7 @@ namespace TableSoft
 
         private void btnGestionarSistema_Click(object sender, EventArgs e)
         {
-            frmGestionarSistemaAdministrador frm = new frmGestionarSistemaAdministrador
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmGestionarSistemaAdministrador frm = new frmGestionarSistemaAdministrador();
 
             frm.FormClosing += delegate
             {

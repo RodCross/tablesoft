@@ -21,7 +21,7 @@ namespace TableSoft
         private static string[] Scopes = { GmailService.Scope.GmailCompose };
         private static string ApplicationName = "Yanapay Desktop";
 
-        public void ConectarAPI()
+        public static void ConectarAPI(YanapayEmail email)
         {
             UserCredential credential;
 
@@ -49,15 +49,6 @@ namespace TableSoft
 
             // Define parameters of request.
             UsersResource.LabelsResource.ListRequest request = service.Users.Labels.List("me");
-
-            YanapayEmail email = new YanapayEmail()
-            {
-                FromAddress = "noreply.yanapay@gmail.com",
-                ToRecipients = "correodelreceptor123abc@gmail.com",
-                Subject = "Asunto",
-                Body = "Cuerpo",
-                IsHtml = false
-            };
 
             SendEmail(email, service);
         }

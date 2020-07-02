@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace TableSoft
+{
+    public class PasswordGenerator
+    {
+        public static string GenerateRandomPassword()
+        {
+            Random random = new Random();
+            string characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890%$#@";
+            int length = characters.Length;
+            char letter;
+            int passLength = 8;
+            string randomPassword = string.Empty;
+
+            for (int i = 0; i < passLength; i++)
+            {
+                letter = characters[random.Next(length)];
+                randomPassword += letter.ToString();
+            }
+
+            return randomPassword;
+        }
+    }
+}

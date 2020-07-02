@@ -29,11 +29,7 @@ namespace TableSoft
 
         private void btnGestionarEmpleado_Click(object sender, EventArgs e)
         {
-            frmSeleccionarEmpleado frm = new frmSeleccionarEmpleado
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarEmpleado frm = new frmSeleccionarEmpleado();
 
             frm.FormClosing += delegate
             {
@@ -46,11 +42,7 @@ namespace TableSoft
 
         private void btnGestionarAgentes_Click(object sender, EventArgs e)
         {
-            frmSeleccionarAgente frm = new frmSeleccionarAgente
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarAgente frm = new frmSeleccionarAgente();
 
             frm.FormClosing += delegate
             {
@@ -63,11 +55,7 @@ namespace TableSoft
 
         private void btnGestionarCategorias_Click(object sender, EventArgs e)
         {
-            frmSeleccionarCategoria frm = new frmSeleccionarCategoria
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarCategoria frm = new frmSeleccionarCategoria();
 
             frm.FormClosing += delegate
             {
@@ -80,11 +68,7 @@ namespace TableSoft
 
         private void btnGestionarUrgencias_Click(object sender, EventArgs e)
         {
-            frmSeleccionarUrgencia frm = new frmSeleccionarUrgencia
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarUrgencia frm = new frmSeleccionarUrgencia();
 
             frm.FormClosing += delegate
             {
@@ -97,11 +81,7 @@ namespace TableSoft
 
         private void btnGestionarEquiposTrabajo_Click(object sender, EventArgs e)
         {
-            frmSeleccionarEquipo frm = new frmSeleccionarEquipo
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarEquipo frm = new frmSeleccionarEquipo();
 
             frm.FormClosing += delegate
             {
@@ -114,11 +94,7 @@ namespace TableSoft
 
         private void btnGestionarEstadosTicket_Click(object sender, EventArgs e)
         {
-            frmSeleccionarEstado frm = new frmSeleccionarEstado
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarEstado frm = new frmSeleccionarEstado();
 
             frm.FormClosing += delegate
             {
@@ -131,11 +107,7 @@ namespace TableSoft
 
         private void btnGestionarProveedores_Click(object sender, EventArgs e)
         {
-            frmSeleccionarProveedor frm = new frmSeleccionarProveedor
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarProveedor frm = new frmSeleccionarProveedor();
 
             frm.FormClosing += delegate
             {
@@ -148,11 +120,7 @@ namespace TableSoft
 
         private void btnGestionarActivosFijos_Click(object sender, EventArgs e)
         {
-            frmSeleccionarActivoFijo frm = new frmSeleccionarActivoFijo
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarActivoFijo frm = new frmSeleccionarActivoFijo();
 
             frm.FormClosing += delegate
             {
@@ -165,11 +133,7 @@ namespace TableSoft
 
         private void btnGestionarBibliotecas_Click(object sender, EventArgs e)
         {
-            frmSeleccionarBiblioteca frm = new frmSeleccionarBiblioteca
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
+            frmSeleccionarBiblioteca frm = new frmSeleccionarBiblioteca();
 
             frm.FormClosing += delegate
             {

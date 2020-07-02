@@ -213,6 +213,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSeleccionarUrgencia";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de urgencias";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();

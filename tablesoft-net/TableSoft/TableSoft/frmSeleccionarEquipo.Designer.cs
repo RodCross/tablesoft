@@ -265,6 +265,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSeleccionarEquipo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Lista de equipos";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();

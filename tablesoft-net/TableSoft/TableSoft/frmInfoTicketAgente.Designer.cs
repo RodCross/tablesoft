@@ -59,7 +59,7 @@
             this.rtfRespuesta = new System.Windows.Forms.RichTextBox();
             this.pnlMensajes = new System.Windows.Forms.Panel();
             this.btnReporte = new System.Windows.Forms.Button();
-            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.sfdReporte = new System.Windows.Forms.SaveFileDialog();
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlComentario.SuspendLayout();
@@ -502,6 +502,6 @@
         private System.Windows.Forms.RichTextBox rtfRespuesta;
         private System.Windows.Forms.Panel pnlMensajes;
         private System.Windows.Forms.Button btnReporte;
-        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.SaveFileDialog sfdReporte;
     }
 }

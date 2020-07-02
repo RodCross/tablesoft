@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -25,8 +26,6 @@ namespace TableSoft
             InitializeComponent();
             LlenarCboRoles();
             LlenarCboEquipos();
-            txtPass.Enabled = true;
-            picEye.Visible = true;
             btnGuardar.Visible = true;
             btnActualizar.Visible = false;
             chkActivo.Visible = false;
@@ -52,8 +51,6 @@ namespace TableSoft
             txtEmailAgente.Text = age.agenteEmail;
             txtDireccion.Text = age.direccion;
             txtTel.Text = age.telefono;
-            txtPass.Enabled = false;
-            picEye.Visible = false;
             btnActualizar.Visible = true;
             btnGuardar.Visible = false;
             chkActivo.Checked = age.activo;
@@ -175,15 +172,6 @@ namespace TableSoft
             if (txtTel.Text.Length != 9)
             {
                 MessageBox.Show("El telefono del agente debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            if (txtPass.Text == "")
-            {
-                MessageBox.Show(
-                    "Falta indicar la contraseña del agente.",
-                    "Error de contraseña",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
                 return;
             }
             if (txtCodigo.Text == "")
@@ -328,9 +316,9 @@ namespace TableSoft
             agenteSel.agenteEmail = txtEmailAgente.Text;
             agenteSel.direccion = txtDireccion.Text;
             agenteSel.telefono = txtTel.Text;
-            agenteSel.password = txtPass.Text;
+            agenteSel.password = PasswordGenerator.GenerateRandomPassword();
 
-            
+
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
@@ -364,6 +352,8 @@ namespace TableSoft
                         "Registro exitoso",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                         );
+
+                        EnviarEmailRegistrado(agenteSel);
                     }
                     else
                     {
@@ -666,34 +656,26 @@ namespace TableSoft
             this.DialogResult = DialogResult.OK;
         }
 
-        private void picEye_MouseDown(object sender, MouseEventArgs e)
+        private void EnviarEmailRegistrado(AgenteWS.agente age)
         {
-            PictureBox pic = (PictureBox)sender;
+            StreamReader streamReader = new StreamReader("../../html/email.html", System.Text.Encoding.UTF8);
+            string body = streamReader.ReadToEnd();
+            body = body.Replace("*NOMBREPH*", age.nombre);
+            body = body.Replace("*APELLIDOPH*", age.apellidoPaterno);
+            body = body.Replace("*TIPOPH*", "agente");
+            body = body.Replace("*EMAILPH*", age.personaEmail);
+            body = body.Replace("*PASSPH*", age.password);
 
-            pic.Image = Properties.Resources.EyeMouseDown;
-            txtPass.PasswordChar = '\0';
-        }
+            YanapayEmail email = new YanapayEmail()
+            {
+                FromAddress = "noreply.yanapay@gmail.com",
+                ToRecipients = "noreply.yanapay@gmail.com",
+                Subject = "Yanapay - Nuevo empleado",
+                Body = body,
+                IsHtml = true
+            };
 
-        private void picEye_MouseEnter(object sender, EventArgs e)
-        {
-            PictureBox pic = (PictureBox)sender;
-
-            pic.Image = Properties.Resources.EyeMouseEnter;
-        }
-
-        private void picEye_MouseLeave(object sender, EventArgs e)
-        {
-            PictureBox pic = (PictureBox)sender;
-
-            pic.Image = Properties.Resources.Eye;
-        }
-
-        private void picEye_MouseUp(object sender, MouseEventArgs e)
-        {
-            PictureBox pic = (PictureBox)sender;
-
-            pic.Image = Properties.Resources.EyeMouseEnter;
-            txtPass.PasswordChar = '•';
+            GmailAPI.ConectarAPI(email);
         }
     }
 }

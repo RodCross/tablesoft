@@ -7,6 +7,7 @@ using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -187,11 +188,11 @@ namespace TableSoft
 
         private void btnResponder_Click(object sender, EventArgs e)
         {
-            if (rtfRespuesta.Text.Length < 30)
+            if (Regex.Matches(rtfRespuesta.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
-                "El comentario debe tener como mínimo 30 caracteres.",
-                "Comentario muy corto",
+                "El comentario es inválido.",
+                "Comentario no puede ser registrado",
                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
@@ -288,10 +289,10 @@ namespace TableSoft
         {
             try
             {
-                saveFileDialog1.ShowDialog();
+                sfdReporte.ShowDialog();
                 ReporteWS.ReporteWSClient daoReporte = new ReporteWS.ReporteWSClient();
                 byte[] arreglo = daoReporte.generarReporteTickets(ticket.ticketId);
-                File.WriteAllBytes(saveFileDialog1.FileName + ".pdf", arreglo);
+                File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
                 MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)

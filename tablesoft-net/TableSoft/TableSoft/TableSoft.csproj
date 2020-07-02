@@ -142,6 +142,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\ReporteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\RolWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -826,6 +831,13 @@
     <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.proveedor.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\ReporteWS\ReporteWS.wsdl" />
+    <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\RolWS\RolWS.wsdl" />
     <None Include="Connected Services\RolWS\RolWS.xsd">
       <SubType>Designer</SubType>
@@ -1066,6 +1078,12 @@
     <None Include="Resources\minus.png" />
     <None Include="images\Minus.png" />
     <None Include="images\Plus.png" />
+    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
+    <None Include="Connected Services\ReporteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -1084,6 +1102,7 @@
     <WCFMetadataStorage Include="Connected Services\PaisWS\" />
     <WCFMetadataStorage Include="Connected Services\PersonaWS\" />
     <WCFMetadataStorage Include="Connected Services\ProveedorWS\" />
+    <WCFMetadataStorage Include="Connected Services\ReporteWS\" />
     <WCFMetadataStorage Include="Connected Services\RolWS\" />
     <WCFMetadataStorage Include="Connected Services\TareaPredeterminadaWS\" />
     <WCFMetadataStorage Include="Connected Services\TareaWS\" />

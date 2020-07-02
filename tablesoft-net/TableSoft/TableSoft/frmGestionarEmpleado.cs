@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -570,20 +571,21 @@ namespace TableSoft
 
         private void EnviarEmailRegistrado(EmpleadoWS.empleado emp)
         {
-            string body = "Estimado " + emp.nombre + " " + emp.apellidoPaterno + ":\n";
-            body += "Tienes un nuevo usuario en el sistema Yanapay.\n";
-            body += "Puedes iniciar sesion como empleado con las siguientes credenciales:\n";
-            body += "Email: " + emp.personaEmail + "\n";
-            body += "Password: " + emp.password + "\n";
-            body += "Saludos,\nSistema de mesa de ayuda Yanapay";
+            StreamReader streamReader = new StreamReader("../../html/email.html", System.Text.Encoding.UTF8);
+            string body = streamReader.ReadToEnd();
+            body = body.Replace("*NOMBREPH*", emp.nombre);
+            body = body.Replace("*APELLIDOPH*", emp.apellidoPaterno);
+            body = body.Replace("*TIPOPH*", "empleado");
+            body = body.Replace("*EMAILPH*", emp.personaEmail);
+            body = body.Replace("*PASSPH*", emp.password);
 
             YanapayEmail email = new YanapayEmail()
             {
                 FromAddress = "noreply.yanapay@gmail.com",
-                ToRecipients = emp.personaEmail,
+                ToRecipients = "noreply.yanapay@gmail.com",
                 Subject = "Yanapay - Nuevo empleado",
                 Body = body,
-                IsHtml = false
+                IsHtml = true
             };
 
             GmailAPI.ConectarAPI(email);

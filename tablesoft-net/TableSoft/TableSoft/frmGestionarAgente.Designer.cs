@@ -58,13 +58,9 @@
             this.lblTel = new System.Windows.Forms.Label();
             this.txtTel = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.txtPass = new System.Windows.Forms.TextBox();
-            this.lblPass = new System.Windows.Forms.Label();
-            this.picEye = new System.Windows.Forms.PictureBox();
             this.lblActivo = new System.Windows.Forms.Label();
             this.chkActivo = new System.Windows.Forms.CheckBox();
             this.pnlTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEye)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -76,7 +72,7 @@
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
             this.pnlTitulo.Size = new System.Drawing.Size(700, 70);
-            this.pnlTitulo.TabIndex = 15;
+            this.pnlTitulo.TabIndex = 14;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
             // btnCancelar
@@ -109,19 +105,19 @@
             // txtEmailAgente
             // 
             this.txtEmailAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailAgente.Location = new System.Drawing.Point(170, 547);
+            this.txtEmailAgente.Location = new System.Drawing.Point(170, 510);
             this.txtEmailAgente.Name = "txtEmailAgente";
             this.txtEmailAgente.Size = new System.Drawing.Size(501, 28);
-            this.txtEmailAgente.TabIndex = 12;
+            this.txtEmailAgente.TabIndex = 11;
             // 
             // lblEmailAgente
             // 
             this.lblEmailAgente.AutoSize = true;
             this.lblEmailAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailAgente.Location = new System.Drawing.Point(56, 550);
+            this.lblEmailAgente.Location = new System.Drawing.Point(56, 513);
             this.lblEmailAgente.Name = "lblEmailAgente";
             this.lblEmailAgente.Size = new System.Drawing.Size(99, 21);
-            this.lblEmailAgente.TabIndex = 28;
+            this.lblEmailAgente.TabIndex = 26;
             this.lblEmailAgente.Text = "Email agente";
             this.lblEmailAgente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -129,19 +125,19 @@
             // 
             this.cboRol.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRol.FormattingEnabled = true;
-            this.cboRol.Location = new System.Drawing.Point(170, 430);
+            this.cboRol.Location = new System.Drawing.Point(170, 393);
             this.cboRol.Name = "cboRol";
             this.cboRol.Size = new System.Drawing.Size(204, 29);
-            this.cboRol.TabIndex = 9;
+            this.cboRol.TabIndex = 8;
             // 
             // lblRol
             // 
             this.lblRol.AutoSize = true;
             this.lblRol.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblRol.Location = new System.Drawing.Point(122, 433);
+            this.lblRol.Location = new System.Drawing.Point(122, 396);
             this.lblRol.Name = "lblRol";
             this.lblRol.Size = new System.Drawing.Size(33, 21);
-            this.lblRol.TabIndex = 25;
+            this.lblRol.TabIndex = 23;
             this.lblRol.Text = "Rol";
             this.lblRol.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -149,10 +145,10 @@
             // 
             this.cboEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboEquipo.FormattingEnabled = true;
-            this.cboEquipo.Location = new System.Drawing.Point(170, 471);
+            this.cboEquipo.Location = new System.Drawing.Point(170, 434);
             this.cboEquipo.Name = "cboEquipo";
             this.cboEquipo.Size = new System.Drawing.Size(204, 29);
-            this.cboEquipo.TabIndex = 10;
+            this.cboEquipo.TabIndex = 9;
             // 
             // txtNombre
             // 
@@ -165,38 +161,38 @@
             // txtDNI
             // 
             this.txtDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDNI.Location = new System.Drawing.Point(170, 389);
+            this.txtDNI.Location = new System.Drawing.Point(170, 352);
             this.txtDNI.Name = "txtDNI";
             this.txtDNI.Size = new System.Drawing.Size(204, 28);
-            this.txtDNI.TabIndex = 8;
+            this.txtDNI.TabIndex = 7;
             // 
             // lblDNI
             // 
             this.lblDNI.AutoSize = true;
             this.lblDNI.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblDNI.Location = new System.Drawing.Point(118, 392);
+            this.lblDNI.Location = new System.Drawing.Point(118, 355);
             this.lblDNI.Name = "lblDNI";
             this.lblDNI.Size = new System.Drawing.Size(37, 21);
-            this.lblDNI.TabIndex = 24;
+            this.lblDNI.TabIndex = 22;
             this.lblDNI.Text = "DNI";
             this.lblDNI.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtEmailPersonal
             // 
             this.txtEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmailPersonal.Location = new System.Drawing.Point(170, 510);
+            this.txtEmailPersonal.Location = new System.Drawing.Point(170, 473);
             this.txtEmailPersonal.Name = "txtEmailPersonal";
             this.txtEmailPersonal.Size = new System.Drawing.Size(501, 28);
-            this.txtEmailPersonal.TabIndex = 11;
+            this.txtEmailPersonal.TabIndex = 10;
             // 
             // lblEmailPersonal
             // 
             this.lblEmailPersonal.AutoSize = true;
             this.lblEmailPersonal.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEmailPersonal.Location = new System.Drawing.Point(64, 513);
+            this.lblEmailPersonal.Location = new System.Drawing.Point(64, 476);
             this.lblEmailPersonal.Name = "lblEmailPersonal";
             this.lblEmailPersonal.Size = new System.Drawing.Size(91, 21);
-            this.lblEmailPersonal.TabIndex = 27;
+            this.lblEmailPersonal.TabIndex = 25;
             this.lblEmailPersonal.Text = "Email PUCP";
             this.lblEmailPersonal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -207,7 +203,7 @@
             this.lblNombre.Location = new System.Drawing.Point(87, 133);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(68, 21);
-            this.lblNombre.TabIndex = 17;
+            this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "Nombre";
             this.lblNombre.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -215,10 +211,10 @@
             // 
             this.lblEquipo.AutoSize = true;
             this.lblEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblEquipo.Location = new System.Drawing.Point(97, 474);
+            this.lblEquipo.Location = new System.Drawing.Point(97, 437);
             this.lblEquipo.Name = "lblEquipo";
             this.lblEquipo.Size = new System.Drawing.Size(58, 21);
-            this.lblEquipo.TabIndex = 26;
+            this.lblEquipo.TabIndex = 24;
             this.lblEquipo.Text = "Equipo";
             this.lblEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -229,17 +225,17 @@
             this.lblIDAgente.Location = new System.Drawing.Point(130, 96);
             this.lblIDAgente.Name = "lblIDAgente";
             this.lblIDAgente.Size = new System.Drawing.Size(25, 21);
-            this.lblIDAgente.TabIndex = 16;
+            this.lblIDAgente.TabIndex = 15;
             this.lblIDAgente.Text = "ID";
             this.lblIDAgente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtCodigo
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodigo.Location = new System.Drawing.Point(170, 352);
+            this.txtCodigo.Location = new System.Drawing.Point(170, 315);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 28);
-            this.txtCodigo.TabIndex = 7;
+            this.txtCodigo.TabIndex = 6;
             // 
             // txtIDAgente
             // 
@@ -255,10 +251,10 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblCodigo.Location = new System.Drawing.Point(95, 355);
+            this.lblCodigo.Location = new System.Drawing.Point(95, 318);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(60, 21);
-            this.lblCodigo.TabIndex = 23;
+            this.lblCodigo.TabIndex = 21;
             this.lblCodigo.Text = "Código";
             this.lblCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -270,10 +266,10 @@
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(569, 615);
+            this.btnActualizar.Location = new System.Drawing.Point(569, 579);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(102, 33);
-            this.btnActualizar.TabIndex = 14;
+            this.btnActualizar.TabIndex = 13;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
@@ -286,7 +282,7 @@
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(569, 615);
+            this.btnGuardar.Location = new System.Drawing.Point(569, 579);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(102, 33);
             this.btnGuardar.TabIndex = 8;
@@ -309,7 +305,7 @@
             this.lblPaterno.Location = new System.Drawing.Point(30, 170);
             this.lblPaterno.Name = "lblPaterno";
             this.lblPaterno.Size = new System.Drawing.Size(125, 21);
-            this.lblPaterno.TabIndex = 18;
+            this.lblPaterno.TabIndex = 17;
             this.lblPaterno.Text = "Apellido Paterno";
             this.lblPaterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -328,7 +324,7 @@
             this.lblMaterno.Location = new System.Drawing.Point(25, 207);
             this.lblMaterno.Name = "lblMaterno";
             this.lblMaterno.Size = new System.Drawing.Size(130, 21);
-            this.lblMaterno.TabIndex = 19;
+            this.lblMaterno.TabIndex = 18;
             this.lblMaterno.Text = "Apellido Materno";
             this.lblMaterno.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -347,7 +343,7 @@
             this.lblTel.Location = new System.Drawing.Point(35, 281);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(120, 21);
-            this.lblTel.TabIndex = 21;
+            this.lblTel.TabIndex = 20;
             this.lblTel.Text = "Teléfono celular";
             this.lblTel.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -366,75 +362,37 @@
             this.lblDireccion.Location = new System.Drawing.Point(80, 244);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(75, 21);
-            this.lblDireccion.TabIndex = 20;
+            this.lblDireccion.TabIndex = 19;
             this.lblDireccion.Text = "Dirección";
             this.lblDireccion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtPass
-            // 
-            this.txtPass.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPass.Location = new System.Drawing.Point(170, 315);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.PasswordChar = '•';
-            this.txtPass.Size = new System.Drawing.Size(501, 28);
-            this.txtPass.TabIndex = 6;
-            // 
-            // lblPass
-            // 
-            this.lblPass.AutoSize = true;
-            this.lblPass.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblPass.Location = new System.Drawing.Point(66, 318);
-            this.lblPass.Name = "lblPass";
-            this.lblPass.Size = new System.Drawing.Size(89, 21);
-            this.lblPass.TabIndex = 22;
-            this.lblPass.Text = "Contraseña";
-            this.lblPass.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // picEye
-            // 
-            this.picEye.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picEye.Image = global::TableSoft.Properties.Resources.Eye;
-            this.picEye.Location = new System.Drawing.Point(642, 315);
-            this.picEye.Name = "picEye";
-            this.picEye.Size = new System.Drawing.Size(29, 28);
-            this.picEye.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picEye.TabIndex = 29;
-            this.picEye.TabStop = false;
-            this.picEye.MouseDown += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseDown);
-            this.picEye.MouseEnter += new System.EventHandler(this.picEye_MouseEnter);
-            this.picEye.MouseLeave += new System.EventHandler(this.picEye_MouseLeave);
-            this.picEye.MouseUp += new System.Windows.Forms.MouseEventHandler(this.picEye_MouseUp);
             // 
             // lblActivo
             // 
             this.lblActivo.AutoSize = true;
             this.lblActivo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F);
-            this.lblActivo.Location = new System.Drawing.Point(102, 583);
+            this.lblActivo.Location = new System.Drawing.Point(102, 548);
             this.lblActivo.Name = "lblActivo";
             this.lblActivo.Size = new System.Drawing.Size(53, 21);
-            this.lblActivo.TabIndex = 60;
+            this.lblActivo.TabIndex = 27;
             this.lblActivo.Text = "Activo";
             this.lblActivo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // chkActivo
             // 
             this.chkActivo.AutoSize = true;
-            this.chkActivo.Location = new System.Drawing.Point(170, 590);
+            this.chkActivo.Location = new System.Drawing.Point(170, 555);
             this.chkActivo.Name = "chkActivo";
             this.chkActivo.Size = new System.Drawing.Size(15, 14);
-            this.chkActivo.TabIndex = 59;
+            this.chkActivo.TabIndex = 12;
             this.chkActivo.UseVisualStyleBackColor = true;
             // 
             // frmGestionarAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 674);
+            this.ClientSize = new System.Drawing.Size(700, 638);
             this.Controls.Add(this.lblActivo);
             this.Controls.Add(this.chkActivo);
-            this.Controls.Add(this.picEye);
-            this.Controls.Add(this.txtPass);
-            this.Controls.Add(this.lblPass);
             this.Controls.Add(this.txtTel);
             this.Controls.Add(this.lblDireccion);
             this.Controls.Add(this.txtDireccion);
@@ -468,7 +426,6 @@
             this.Text = "Datos del agente";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picEye)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -504,9 +461,6 @@
         private System.Windows.Forms.Label lblTel;
         private System.Windows.Forms.TextBox txtTel;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.Label lblPass;
-        private System.Windows.Forms.PictureBox picEye;
         private System.Windows.Forms.Label lblActivo;
         private System.Windows.Forms.CheckBox chkActivo;
     }

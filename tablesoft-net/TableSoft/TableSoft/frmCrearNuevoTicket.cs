@@ -184,19 +184,10 @@ namespace TableSoft
             }
             if (txtEmail.Text != "")
             {
-                if (Regex.Matches(txtEmail.Text, @"@").Count != 1)
+                if (!Regex.Match(txtEmail.Text, @"^([\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$").Success)
                 {
                     MessageBox.Show(
-                        "El email del alumno de contener un arroba.",
-                        "Error de email",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                    return;
-                }
-                if (Regex.Matches(txtEmail.Text, @"[.]").Count == 0)
-                {
-                    MessageBox.Show(
-                        "El email del alumno de contener un punto.",
+                        "Debe ingresar un email válido.",
                         "Error de email",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
@@ -242,7 +233,7 @@ namespace TableSoft
            
             
             
-            if (txtEmail.Text != "")
+            if (txtActivoFijo.Text != "")
             {
                 ticket.activoFijo.activoFijoId = actFij.activoFijoId;
                 ticket.activoFijo.tipo = actFij.tipo;

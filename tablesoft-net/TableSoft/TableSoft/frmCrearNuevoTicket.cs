@@ -92,7 +92,7 @@ namespace TableSoft
             if (txtAsunto.Text == "")
             {
                 MessageBox.Show(
-                    "Falta indicar el asunto del ticket.",
+                    "El asunto no puede estar vacío",
                     "Error de asunto",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -101,7 +101,7 @@ namespace TableSoft
             if (Regex.Matches(txtAsunto.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
-                    "El asunto del ticket de contener al menos una letra.",
+                    "Este asunto no es válido.",
                     "Error de asunto",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -110,7 +110,7 @@ namespace TableSoft
             if (rtfDescripcion.Text == "")
             {
                 MessageBox.Show(
-                    "Falta indicar la descripcion del ticket.",
+                    "La descripción no puede estar vacía.",
                     "Error de descripcion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -119,7 +119,7 @@ namespace TableSoft
             if (Regex.Matches(rtfDescripcion.Text, @"[a-zA-Z]").Count == 0)
             {
                 MessageBox.Show(
-                    "La descripcion del ticket de contener al menos una letra.",
+                    "Esta descripción no es válida.",
                     "Error de descripcion",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -158,7 +158,7 @@ namespace TableSoft
                 {
                     MessageBox.Show(
                         "El codigo del activo fijo del ticket de contener solo numeros.",
-                        "Error de asunto",
+                        "Error de de activo fijo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                     return;

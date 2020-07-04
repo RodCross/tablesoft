@@ -157,7 +157,7 @@ namespace TableSoft
                 if (!Regex.IsMatch(txtActivoFijo.Text, @"[0-9]"))
                 {
                     MessageBox.Show(
-                        "El codigo del activo fijo del ticket de contener solo numeros.",
+                        "El código del activo fijo del ticket de contener solo numeros.",
                         "Error de de activo fijo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
@@ -166,16 +166,16 @@ namespace TableSoft
                 if (Regex.Matches(txtActivoFijo.Text, @"[0-9]").Count > 5)
                 {
                     MessageBox.Show(
-                        "El codigo del activo fijo del ticket de contener maximo 5 numeros.",
+                        "El código del activo fijo del ticket de contener maximo 5 numeros.",
                         "Error de activo fijo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                     return;
                 }
-                if (lblErrActFij.Text == "Codigo de activo fijo no valido")
+                if (lblErrActFij.Text == "Código de activo fijo no valido")
                 {
                     MessageBox.Show(
-                        "El codigo del activo fijo del ticket debe ser valido.",
+                        "El código del activo fijo del ticket debe ser valido.",
                         "Error de activo fijo",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
@@ -187,7 +187,7 @@ namespace TableSoft
                 if (!Regex.Match(txtEmail.Text, @"^([\w-.]+)@(([[0-9]{1,3}.[0-9]{1,3}.[0-9]{1,3}.)|(([\w-]+.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(]?)$").Success)
                 {
                     MessageBox.Show(
-                        "Debe ingresar un email válido.",
+                        "El email ingresado no es válido",
                         "Error de email",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );

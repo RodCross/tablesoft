@@ -101,7 +101,16 @@ namespace TableSoft
             {
                 MessageBox.Show(
                     "Falta indicar la razon social del proveedor.",
-                    "Error de razon social",
+                    "Error en la razon social",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if(txtRazonSocial.Text.Length > 200)
+            {
+                MessageBox.Show(
+                    "La longitud de la razon social no debe ser mayor a 200 caracteres",
+                    "Error en la razon social",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -183,19 +192,10 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmail.Text, @"@").Count != 1)
+            if (!Regex.IsMatch(txtEmail.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 MessageBox.Show(
-                    "El email del proveedor de contener un arroba.",
-                    "Error de email",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmail.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email del proveedor de contener un punto.",
+                    "Existe un error en el formato del email",
                     "Error de email",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -249,6 +249,7 @@ namespace TableSoft
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+           
             if (txtRUC.Text == "")
             {
                 MessageBox.Show(
@@ -281,6 +282,15 @@ namespace TableSoft
                 MessageBox.Show(
                     "Falta indicar la razon social del proveedor.",
                     "Error de razon social",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (txtRazonSocial.Text.Length > 200)
+            {
+                MessageBox.Show(
+                    "La longitud de la razon social no debe ser mayor a 200 caracteres",
+                    "Error en la razon social",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -362,19 +372,11 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmail.Text, @"@").Count != 1)
+
+            if (!Regex.IsMatch(txtEmail.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 MessageBox.Show(
-                    "El email del proveedor de contener un arroba.",
-                    "Error de email",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmail.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email del proveedor de contener un punto.",
+                    "Existe un error en el formato del email",
                     "Error de email",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );

@@ -174,6 +174,11 @@ namespace TableSoft
                 MessageBox.Show("El telefono del agente debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (txtTel.Text[0] != '9')
+            {
+                MessageBox.Show("El telefono del agente debe iniciar con el digito 9", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtCodigo.Text == "")
             {
                 MessageBox.Show(
@@ -255,20 +260,11 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmailPersonal.Text, @"@").Count != 1)
+            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 MessageBox.Show(
-                    "El email personal del agente de contener un arroba.",
-                    "Error de email personal",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmailPersonal.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email personal del agente de contener un punto.",
-                    "Error de email personal",
+                    "Existe un error en el formato del email personal del agente.",
+                    "Error de email",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -282,19 +278,10 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmailAgente.Text, @"@").Count != 1)
+            if (!Regex.IsMatch(txtEmailAgente.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
             {
                 MessageBox.Show(
-                    "El email agente del agente de contener un arroba.",
-                    "Error de email agente",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmailAgente.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email agente del agente de contener un punto.",
+                    "Existe un error en el formato del email del agente.",
                     "Error de email agente",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -364,9 +351,10 @@ namespace TableSoft
                         );
                     }
                 }
+                this.DialogResult = DialogResult.OK;
             }
 
-            this.DialogResult = DialogResult.OK;
+            
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -471,6 +459,11 @@ namespace TableSoft
                 MessageBox.Show("El telefono del agente debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (txtTel.Text[0] != '9')
+            {
+                MessageBox.Show("El telefono del agente debe iniciar con el digito 9", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtCodigo.Text == "")
             {
                 MessageBox.Show(
@@ -552,20 +545,11 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmailPersonal.Text, @"@").Count != 1)
+            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 MessageBox.Show(
-                    "El email personal del agente de contener un arroba.",
-                    "Error de email personal",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmailPersonal.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email personal del agente de contener un punto.",
-                    "Error de email personal",
+                    "Existe un error en el formato del email personal del agente.",
+                    "Error de email",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -579,19 +563,10 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmailAgente.Text, @"@").Count != 1)
+            if (!Regex.IsMatch(txtEmailAgente.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
             {
                 MessageBox.Show(
-                    "El email agente del agente de contener un arroba.",
-                    "Error de email agente",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmailAgente.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email agente del agente de contener un punto.",
+                    "Existe un error en el formato del email del agente.",
                     "Error de email agente",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );

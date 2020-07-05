@@ -161,6 +161,11 @@ namespace TableSoft
                 MessageBox.Show("El telefono del empleado debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (txtTel.Text[0] != '9')
+            {
+                MessageBox.Show("El telefono del empleado debe iniciar con el digito 9", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtCodigo.Text == "")
             {
                 MessageBox.Show(
@@ -233,20 +238,11 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmailPersonal.Text, @"@").Count != 1)
+            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
             {
                 MessageBox.Show(
-                    "El email personal del empleado de contener un arroba.",
-                    "Error de email personal",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmailPersonal.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email personal del empleado de contener un punto.",
-                    "Error de email personal",
+                    "Existe un error en el formato del email PUCP del empleado.",
+                    "Error de email PUCP empleado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -319,17 +315,8 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se ha creado el registro",
-                "Registro no realizado",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
-
-            this.DialogResult = DialogResult.OK;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -434,6 +421,11 @@ namespace TableSoft
                 MessageBox.Show("El telefono del empleado debe de tener 9 digitos", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
+            if (txtTel.Text[0] != '9')
+            {
+                MessageBox.Show("El telefono del empleado debe iniciar con el digito 9", "Error de telefono", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (txtCodigo.Text == "")
             {
                 MessageBox.Show(
@@ -506,20 +498,11 @@ namespace TableSoft
                 );
                 return;
             }
-            if (Regex.Matches(txtEmailPersonal.Text, @"@").Count != 1)
+            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
             {
                 MessageBox.Show(
-                    "El email personal del empleado de contener un arroba.",
-                    "Error de email personal",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-                return;
-            }
-            if (Regex.Matches(txtEmailPersonal.Text, @"[.]").Count == 0)
-            {
-                MessageBox.Show(
-                    "El email personal del empleado de contener un punto.",
-                    "Error de email personal",
+                    "Existe un error en el formato del email PUCP del empleado.",
+                    "Error de email PUCP empleado",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
                 return;
@@ -556,17 +539,11 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
+                this.DialogResult = DialogResult.OK;
             }
-            else
-            {
-                MessageBox.Show(
-                "No se ha realizado la actualización",
-                "Actualización no realizada",
-                MessageBoxButtons.OK, MessageBoxIcon.Information
-                );
-            }
+            
 
-            this.DialogResult = DialogResult.OK;
+            
         }
 
         private void EnviarEmailRegistrado(EmpleadoWS.empleado emp)

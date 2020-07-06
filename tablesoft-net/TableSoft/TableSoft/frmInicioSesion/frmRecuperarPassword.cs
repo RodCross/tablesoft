@@ -13,6 +13,7 @@ namespace TableSoft
     public partial class frmRecuperarPassword : Form
     {
         private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
+        private EmailWS.EmailWSSoapClient servicioEmail = new EmailWS.EmailWSSoapClient();
 
         public frmRecuperarPassword()
         {
@@ -62,25 +63,45 @@ namespace TableSoft
                 {
                     // Conectar con Gmail API
 
+                    string codigo = RandomGenerator.GenerateRandomCode();
 
+                    EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
+                    correo.FromAddress = "noreply.yanapay@gmail.com";
+                    correo.ToRecipients = txtEmail.Text;
+                    correo.Subject = "Recuperar contraseña";
+                    correo.Body = "Tu código de recuperación es el siguiente: " + codigo;
+                    correo.IsHtml = false;
 
-                    frmRecuperarEnvioExitoso frm = new frmRecuperarEnvioExitoso
+                    if (servicioEmail.EnviarCorreo(correo) == false)
                     {
-                        StartPosition = FormStartPosition.Manual,
-                        Location = this.Location
-                    };
-
-                    this.Hide();
-                    if (frm.ShowDialog() == DialogResult.Retry)
-                    {
-                        LimpiarCampos();
-                        this.Show();
+                        MessageBox.Show(
+                        "Ha ocurrido un error al enviar el correo de confirmación",
+                        "Correo no enviado",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                        );
                     }
                     else
                     {
-                        LimpiarCampos();
-                        this.Close();
+                        frmRecuperarEnvioExitoso frm = new frmRecuperarEnvioExitoso(codigo)
+                        {
+                            StartPosition = FormStartPosition.Manual,
+                            Location = this.Location
+                        };
+
+                        this.Hide();
+                        if (frm.ShowDialog() == DialogResult.Retry)
+                        {
+                            LimpiarCampos();
+                            this.Show();
+                        }
+                        else
+                        {
+                            LimpiarCampos();
+                            this.Close();
+                        }
                     }
+
+                    
                 }
             }
         }

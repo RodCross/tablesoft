@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TableSoft
 {
-    public class PasswordGenerator
+    public class RandomGenerator
     {
         public static string GenerateRandomPassword()
         {
@@ -24,6 +24,13 @@ namespace TableSoft
             }
 
             return randomPassword;
+        }
+        public static string GenerateRandomCode()
+        {
+            Random r = new Random();
+            int randNum = r.Next(1000000);
+
+            return randNum.ToString("D6");
         }
     }
 }

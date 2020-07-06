@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmRecuperarEnvioExitoso));
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.lblTituloExito = new System.Windows.Forms.Label();
@@ -40,7 +41,6 @@
             this.btnVerificar = new System.Windows.Forms.Button();
             this.lklReenviar = new System.Windows.Forms.LinkLabel();
             this.lblErrCodigo = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,6 +56,22 @@
             this.pnlTitulo.Size = new System.Drawing.Size(884, 106);
             this.pnlTitulo.TabIndex = 3;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(736, 52);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
+            this.btnVolver.TabIndex = 0;
+            this.btnVolver.Text = "Ir a Inicio";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // lblBibliotecasPUCP
             // 
@@ -121,6 +137,7 @@
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.ForeColor = System.Drawing.Color.Black;
             this.txtCodigo.Location = new System.Drawing.Point(307, 330);
+            this.txtCodigo.MaxLength = 6;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(272, 69);
             this.txtCodigo.TabIndex = 0;
@@ -180,22 +197,6 @@
             this.lblErrCodigo.TabIndex = 8;
             this.lblErrCodigo.Text = "Código incorrecto. R";
             this.lblErrCodigo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(736, 52);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 0;
-            this.btnVolver.Text = "Ir a Inicio";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // frmRecuperarEnvioExitoso
             // 

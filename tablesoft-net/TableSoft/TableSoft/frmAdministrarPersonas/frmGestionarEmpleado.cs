@@ -262,7 +262,7 @@ namespace TableSoft
             empleadoSel.personaEmail = txtEmailPersonal.Text;
             empleadoSel.direccion = txtDireccion.Text;
             empleadoSel.telefono = txtTel.Text;
-            empleadoSel.password = PasswordGenerator.GenerateRandomPassword();
+            empleadoSel.password = RandomGenerator.GenerateRandomPassword();
 
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {

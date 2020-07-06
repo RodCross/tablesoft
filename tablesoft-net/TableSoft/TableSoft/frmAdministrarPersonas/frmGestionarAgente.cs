@@ -307,7 +307,7 @@ namespace TableSoft
             agenteSel.agenteEmail = txtEmailAgente.Text;
             agenteSel.direccion = txtDireccion.Text;
             agenteSel.telefono = txtTel.Text;
-            agenteSel.password = PasswordGenerator.GenerateRandomPassword();
+            agenteSel.password = RandomGenerator.GenerateRandomPassword();
 
 
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)

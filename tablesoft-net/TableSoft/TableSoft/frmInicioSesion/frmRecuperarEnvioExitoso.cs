@@ -13,11 +13,13 @@ namespace TableSoft
     public partial class frmRecuperarEnvioExitoso : Form
     {
         private bool reenviado = false;
+        private string codigo;
 
-        public frmRecuperarEnvioExitoso()
+        public frmRecuperarEnvioExitoso(string code)
         {
             InitializeComponent();
             LimpiarCampos();
+            this.codigo = code;
         }
 
         private void LimpiarCampos()
@@ -59,11 +61,9 @@ namespace TableSoft
                     lklReenviar.Text = "";
                 }
             }
-            else if (txtCodigo.Text == "123456")
+            else if (txtCodigo.Text == codigo)
             {
                 // success
-
-
 
                 frmCrearNuevaPassword frm = new frmCrearNuevaPassword
                 {

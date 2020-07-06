@@ -72,6 +72,26 @@ public class PersonaMySQL implements PersonaDAO{
         return rpta;
     }
 
+    @Override
+    public int actualizarPass(String email, String password) {
+        int rpta=-1;
+        try{
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            cs = con.prepareCall("{call actualizar_pass(?,?)}");
+            cs.setString("_EMAIL", email);
+            cs.setString("_PASS", password);
+            
+            cs.executeUpdate();
+            rpta = 1;
+            
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }finally{
+            try{con.close();}catch(Exception ex){System.out.println(ex.getMessage());}
+        }
+        return rpta;
+    }
+
     
     
 }

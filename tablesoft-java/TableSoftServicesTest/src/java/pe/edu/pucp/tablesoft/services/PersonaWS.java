@@ -38,4 +38,15 @@ public class PersonaWS {
         }
         return rpta;
     }
+    
+    @WebMethod(operationName = "actualizarPass")
+    public int actualizarPass(@WebParam(name = "email") String email,@WebParam(name = "pass") String pass ) {
+        int rpta=-1;
+        try{
+            rpta = daoPersona.actualizarPass(email,pass);
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return rpta;
+    }
 }

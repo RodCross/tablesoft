@@ -12,12 +12,6 @@ namespace TableSoftEmail
 
     public class EmailWS : System.Web.Services.WebService
     {
-
-        [WebMethod]
-        public string Saludar(string a)
-        {
-            return "Hello " + a;
-        }
         [WebMethod]
         public bool EnviarCorreo(YanapayEmail email)
         {
@@ -30,6 +24,27 @@ namespace TableSoftEmail
             {
                 Console.WriteLine(ex.Message.ToString());
                 return false;
+            }
+        }
+        [WebMethod]
+        public string EnviarCorreoString(string subject,string body, string recipient)
+        {
+            try
+            {
+                YanapayEmail email = new YanapayEmail()
+                {
+                    FromAddress = "noreply.yanapay@gmail.com",
+                    ToRecipients = recipient,
+                    Subject = subject,
+                    Body = body,
+                    IsHtml = false
+                };
+                GmailAPI.ConectarAPI(email);
+                return "enviado";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message.ToString();
             }
         }
     }

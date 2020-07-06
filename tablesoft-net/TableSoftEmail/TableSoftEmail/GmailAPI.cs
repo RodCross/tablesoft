@@ -26,11 +26,11 @@ namespace TableSoftEmail
             UserCredential credential;
 
             using (var stream =
-                new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
+                new FileStream("C:/inetpub/wwwroot/TableSoftEmail/credentials.json", FileMode.Open, FileAccess.Read))
             {
                 // The file token.json stores the user's access and refresh tokens, and is created
                 // automatically when the authorization flow completes for the first time.
-                string credPath = "token.json";
+                string credPath = "C:/pixies/token.json";
                 credential = GoogleWebAuthorizationBroker.AuthorizeAsync(
                     GoogleClientSecrets.Load(stream).Secrets,
                     Scopes,

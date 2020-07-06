@@ -142,9 +142,11 @@
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.Location = new System.Drawing.Point(170, 327);
+            this.txtTelefono.MaxLength = 30;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(305, 28);
             this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblTelefono
             // 
@@ -198,9 +200,11 @@
             // 
             this.txtRUC.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRUC.Location = new System.Drawing.Point(170, 132);
+            this.txtRUC.MaxLength = 11;
             this.txtRUC.Name = "txtRUC";
             this.txtRUC.Size = new System.Drawing.Size(204, 28);
             this.txtRUC.TabIndex = 1;
+            this.txtRUC.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtRUC_KeyPress);
             // 
             // txtIDProveedor
             // 

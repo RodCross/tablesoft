@@ -246,9 +246,11 @@
             // 
             this.txtActivoFijo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtActivoFijo.Location = new System.Drawing.Point(20, 233);
+            this.txtActivoFijo.MaxLength = 5;
             this.txtActivoFijo.Name = "txtActivoFijo";
             this.txtActivoFijo.Size = new System.Drawing.Size(97, 28);
             this.txtActivoFijo.TabIndex = 3;
+            this.txtActivoFijo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtActivoFijo_KeyPress);
             this.txtActivoFijo.Leave += new System.EventHandler(this.txtActivoFijo_Leave);
             // 
             // cboBiblioteca

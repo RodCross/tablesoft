@@ -151,5 +151,13 @@ namespace TableSoft
             this.DialogResult = DialogResult.OK;
 
         }
+
+        private void txtPlazoMaximo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
     }
 }

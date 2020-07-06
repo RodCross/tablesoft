@@ -90,9 +90,11 @@
             // 
             this.txtCodigo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(170, 138);
+            this.txtCodigo.MaxLength = 5;
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(204, 28);
             this.txtCodigo.TabIndex = 1;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // lblCodigo
             // 
@@ -142,7 +144,6 @@
             this.lblTipo.TabIndex = 11;
             this.lblTipo.Text = "Tipo";
             this.lblTipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblTipo.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // btnActualizar
             // 

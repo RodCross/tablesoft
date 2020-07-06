@@ -90,6 +90,7 @@
             this.txtPlazoMaximo.Name = "txtPlazoMaximo";
             this.txtPlazoMaximo.Size = new System.Drawing.Size(149, 28);
             this.txtPlazoMaximo.TabIndex = 2;
+            this.txtPlazoMaximo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPlazoMaximo_KeyPress);
             // 
             // lblPlazoMaximo
             // 

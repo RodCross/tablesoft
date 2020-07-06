@@ -780,6 +780,9 @@
     <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.actualizarPassResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.buscarPersonaxEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.persona.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

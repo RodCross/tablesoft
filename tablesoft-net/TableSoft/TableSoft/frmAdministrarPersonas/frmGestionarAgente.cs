@@ -659,7 +659,7 @@ namespace TableSoft
         private void EnviarEmailRegistrado(AgenteWS.agente age)
         {
 
-            StreamReader streamReader = new StreamReader("../../html/EmailCrearPersona.html", System.Text.Encoding.UTF8);
+            StreamReader streamReader = new StreamReader("../../emails/EmailCrearPersona.html", System.Text.Encoding.UTF8);
             string body = streamReader.ReadToEnd();
             body = body.Replace("*NOMBREPH*", age.nombre);
             body = body.Replace("*APELLIDOPH*", age.apellidoPaterno);

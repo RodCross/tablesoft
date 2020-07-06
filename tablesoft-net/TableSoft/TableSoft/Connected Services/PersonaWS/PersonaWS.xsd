@@ -2,6 +2,8 @@
 <xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:element name="actualizarPass" type="tns:actualizarPass" />
   <xs:element name="actualizarPassResponse" type="tns:actualizarPassResponse" />
+  <xs:element name="buscarPersonaxEmail" type="tns:buscarPersonaxEmail" />
+  <xs:element name="buscarPersonaxEmailResponse" type="tns:buscarPersonaxEmailResponse" />
   <xs:element name="verificarCorreo" type="tns:verificarCorreo" />
   <xs:element name="verificarCorreoResponse" type="tns:verificarCorreoResponse" />
   <xs:element name="verificarPersona" type="tns:verificarPersona" />
@@ -17,13 +19,12 @@
       <xs:element name="return" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="verificarPersona">
+  <xs:complexType name="buscarPersonaxEmail">
     <xs:sequence>
       <xs:element minOccurs="0" name="email" type="xs:string" />
-      <xs:element minOccurs="0" name="password" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="verificarPersonaResponse">
+  <xs:complexType name="buscarPersonaxEmailResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" type="tns:persona" />
     </xs:sequence>
@@ -41,6 +42,17 @@
       <xs:element minOccurs="0" name="personaEmail" type="xs:string" />
       <xs:element minOccurs="0" name="telefono" type="xs:string" />
       <xs:element name="tipo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarPersona">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarPersonaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:persona" />
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="verificarCorreo">

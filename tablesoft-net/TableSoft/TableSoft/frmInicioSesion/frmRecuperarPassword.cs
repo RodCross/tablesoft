@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -74,13 +75,20 @@ namespace TableSoft
                     // Conectar con Gmail API
 
                     string codigo = RandomGenerator.GenerateRandomCode();
+                    PersonaWS.persona per = personaDAO.buscarPersonaxEmail(txtEmail.Text);
+
+                    StreamReader streamReader = new StreamReader("../../emails/EmailCrearPersona.html", System.Text.Encoding.UTF8);
+                    string body = streamReader.ReadToEnd();
+                    body = body.Replace("*NOMBREPH*", per.nombre);
+                    body = body.Replace("*APELLIDOPH*", per.apellidoPaterno);
+                    body = body.Replace("*CODIGOPH*", codigo);
 
                     EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
                     correo.FromAddress = "noreply.yanapay@gmail.com";
                     correo.ToRecipients = txtEmail.Text;
-                    correo.Subject = "Recuperar contraseña";
-                    correo.Body = "Tu código de recuperación es el siguiente: " + codigo;
-                    correo.IsHtml = false;
+                    correo.Subject = "Yanapay - Recuperación de contraseña";
+                    correo.Body = body;
+                    correo.IsHtml = true;
 
                     if (servicioEmail.EnviarCorreo(correo) == false)
                     {
@@ -92,7 +100,7 @@ namespace TableSoft
                     }
                     else
                     {
-                        frmRecuperarEnvioExitoso frm = new frmRecuperarEnvioExitoso(codigo,txtEmail.Text)
+                        frmRecuperarEnvioExitoso frm = new frmRecuperarEnvioExitoso(codigo, txtEmail.Text)
                         {
                             StartPosition = FormStartPosition.Manual,
                             Location = this.Location
@@ -110,8 +118,6 @@ namespace TableSoft
                             this.Close();
                         }
                     }
-
-                    
                 }
             }
         }

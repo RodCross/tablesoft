@@ -41,6 +41,15 @@ namespace TableSoft.PersonaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassResponse")]
         System.Threading.Tasks.Task<TableSoft.PersonaWS.actualizarPassResponse> actualizarPassAsync(TableSoft.PersonaWS.actualizarPassRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/buscarPersonaxEmailRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/buscarPersonaxEmailResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.PersonaWS.buscarPersonaxEmailResponse buscarPersonaxEmail(TableSoft.PersonaWS.buscarPersonaxEmailRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/buscarPersonaxEmailRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/buscarPersonaxEmailResponse")]
+        System.Threading.Tasks.Task<TableSoft.PersonaWS.buscarPersonaxEmailResponse> buscarPersonaxEmailAsync(TableSoft.PersonaWS.buscarPersonaxEmailRequest request);
     }
     
     /// <remarks/>
@@ -333,6 +342,42 @@ namespace TableSoft.PersonaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPersonaxEmail", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarPersonaxEmailRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string email;
+        
+        public buscarPersonaxEmailRequest() {
+        }
+        
+        public buscarPersonaxEmailRequest(string email) {
+            this.email = email;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="buscarPersonaxEmailResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class buscarPersonaxEmailResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public TableSoft.PersonaWS.persona @return;
+        
+        public buscarPersonaxEmailResponse() {
+        }
+        
+        public buscarPersonaxEmailResponse(TableSoft.PersonaWS.persona @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PersonaWSChannel : TableSoft.PersonaWS.PersonaWS, System.ServiceModel.IClientChannel {
     }
@@ -431,6 +476,29 @@ namespace TableSoft.PersonaWS {
             inValue.email = email;
             inValue.pass = pass;
             return ((TableSoft.PersonaWS.PersonaWS)(this)).actualizarPassAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.PersonaWS.buscarPersonaxEmailResponse TableSoft.PersonaWS.PersonaWS.buscarPersonaxEmail(TableSoft.PersonaWS.buscarPersonaxEmailRequest request) {
+            return base.Channel.buscarPersonaxEmail(request);
+        }
+        
+        public TableSoft.PersonaWS.persona buscarPersonaxEmail(string email) {
+            TableSoft.PersonaWS.buscarPersonaxEmailRequest inValue = new TableSoft.PersonaWS.buscarPersonaxEmailRequest();
+            inValue.email = email;
+            TableSoft.PersonaWS.buscarPersonaxEmailResponse retVal = ((TableSoft.PersonaWS.PersonaWS)(this)).buscarPersonaxEmail(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.PersonaWS.buscarPersonaxEmailResponse> TableSoft.PersonaWS.PersonaWS.buscarPersonaxEmailAsync(TableSoft.PersonaWS.buscarPersonaxEmailRequest request) {
+            return base.Channel.buscarPersonaxEmailAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.PersonaWS.buscarPersonaxEmailResponse> buscarPersonaxEmailAsync(string email) {
+            TableSoft.PersonaWS.buscarPersonaxEmailRequest inValue = new TableSoft.PersonaWS.buscarPersonaxEmailRequest();
+            inValue.email = email;
+            return ((TableSoft.PersonaWS.PersonaWS)(this)).buscarPersonaxEmailAsync(inValue);
         }
     }
 }

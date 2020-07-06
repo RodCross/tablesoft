@@ -10,6 +10,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TableSoft.AgenteWS;
+using TableSoft.EmailWS;
 
 namespace TableSoft
 {
@@ -20,6 +21,8 @@ namespace TableSoft
         private RolWS.RolWSClient rolDAO = new RolWS.RolWSClient();
         private AgenteWS.agente agenteSel;
         private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
+
+        private EmailWS.EmailWSSoapClient servicioEmail = new EmailWS.EmailWSSoapClient();
 
         public frmGestionarAgente()
         {
@@ -260,10 +263,10 @@ namespace TableSoft
                 );
                 return;
             }
-            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
             {
                 MessageBox.Show(
-                    "Existe un error en el formato del email personal del agente.",
+                    "Debe ingresar un correo válido del dominio PUCP.",
                     "Error de email",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -278,7 +281,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (!Regex.IsMatch(txtEmailAgente.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
+            if (!Regex.IsMatch(txtEmailAgente.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 MessageBox.Show(
                     "Existe un error en el formato del email del agente.",
@@ -641,16 +644,21 @@ namespace TableSoft
             body = body.Replace("*EMAILPH*", age.personaEmail);
             body = body.Replace("*PASSPH*", age.password);
 
-            YanapayEmail email = new YanapayEmail()
-            {
-                FromAddress = "noreply.yanapay@gmail.com",
-                ToRecipients = age.personaEmail,
-                Subject = "Yanapay - Nuevo empleado",
-                Body = body,
-                IsHtml = true
-            };
+            EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
+            correo.FromAddress = "noreply.yanapay@gmail.com";
+            correo.ToRecipients = age.personaEmail;
+            correo.Subject = "Yanapay - Nuevo empleado";
+            correo.Body = body;
+            correo.IsHtml = true;
 
-            GmailAPI.ConectarAPI(email);
+            if (servicioEmail.EnviarCorreo(correo) == false)
+            {
+                MessageBox.Show(
+                "Ha ocurrido un error al enviar el correo de confirmación",
+                "Correo no enviado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
         }
     }
 }

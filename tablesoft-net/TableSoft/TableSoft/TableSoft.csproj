@@ -112,6 +112,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Connected Services\EmailWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Connected Services\EmpleadoWS\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -711,6 +716,7 @@
     <None Include="Connected Services\ComentarioWS\TableSoft.ComentarioWS.listarComentariosDeTicketResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\EmailWS\EmailWS.wsdl" />
     <None Include="Connected Services\EmpleadoWS\EmpleadoWS.wsdl" />
     <None Include="Connected Services\EmpleadoWS\EmpleadoWS.xsd">
       <SubType>Designer</SubType>
@@ -1084,6 +1090,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Connected Services\EmailWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EmailWS\configuration.svcinfo" />
+    <None Include="Connected Services\EmailWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup>
@@ -1096,6 +1108,7 @@
     <WCFMetadataStorage Include="Connected Services\CategoriaWS\" />
     <WCFMetadataStorage Include="Connected Services\CiudadWS\" />
     <WCFMetadataStorage Include="Connected Services\ComentarioWS\" />
+    <WCFMetadataStorage Include="Connected Services\EmailWS\" />
     <WCFMetadataStorage Include="Connected Services\EmpleadoWS\" />
     <WCFMetadataStorage Include="Connected Services\EquipoWS\" />
     <WCFMetadataStorage Include="Connected Services\EstadoTicketWS\" />

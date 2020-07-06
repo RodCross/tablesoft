@@ -49,4 +49,9 @@ public class PersonaWS {
         }
         return rpta;
     }
+    
+    @WebMethod(operationName = "buscarPersonaxEmail")
+    public Persona buscarxEmail(@WebParam(name = "email") String email) {
+        return daoPersona.buscarxEmail(email);
+    }
 }

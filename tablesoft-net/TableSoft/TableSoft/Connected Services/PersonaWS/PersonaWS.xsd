@@ -1,9 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarPass" type="tns:actualizarPass" />
+  <xs:element name="actualizarPassResponse" type="tns:actualizarPassResponse" />
   <xs:element name="verificarCorreo" type="tns:verificarCorreo" />
   <xs:element name="verificarCorreoResponse" type="tns:verificarCorreoResponse" />
   <xs:element name="verificarPersona" type="tns:verificarPersona" />
   <xs:element name="verificarPersonaResponse" type="tns:verificarPersonaResponse" />
+  <xs:complexType name="actualizarPass">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element minOccurs="0" name="pass" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarPassResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
   <xs:complexType name="verificarPersona">
     <xs:sequence>
       <xs:element minOccurs="0" name="email" type="xs:string" />

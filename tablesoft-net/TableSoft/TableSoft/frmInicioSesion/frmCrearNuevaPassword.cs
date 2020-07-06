@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
     public partial class frmCrearNuevaPassword : Form
     {
+        private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
         private string emailUsuario;
         public frmCrearNuevaPassword(string emailUsuario)
         {
@@ -66,7 +68,22 @@ namespace TableSoft
                     {
                         // REGISTRAR EN BD
 
+                        int rpta = personaDAO.actualizarPass(emailUsuario, txtNuevaPass.Text);
 
+                        if (rpta > -1)
+                        {
+                            MessageBox.Show(
+                            "Contraseña actualizada correctamente.",
+                            "Actualización exitosa.",
+                            MessageBoxButtons.OK);
+                        }
+                        else
+                        {
+                            MessageBox.Show(
+                            "Ocurrió un error al actualizar la contraseña",
+                            "Error de actualización.",
+                            MessageBoxButtons.OK);
+                        }
 
                         this.DialogResult = DialogResult.OK;
                     }

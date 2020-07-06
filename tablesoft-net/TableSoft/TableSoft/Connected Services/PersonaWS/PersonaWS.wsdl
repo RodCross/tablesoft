@@ -17,6 +17,12 @@
   <message name="verificarCorreoResponse">
     <part name="parameters" element="tns:verificarCorreoResponse" />
   </message>
+  <message name="actualizarPass">
+    <part name="parameters" element="tns:actualizarPass" />
+  </message>
+  <message name="actualizarPassResponse">
+    <part name="parameters" element="tns:actualizarPassResponse" />
+  </message>
   <portType name="PersonaWS">
     <operation name="verificarPersona">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarPersonaRequest" message="tns:verificarPersona" />
@@ -25,6 +31,10 @@
     <operation name="verificarCorreo">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoRequest" message="tns:verificarCorreo" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoResponse" message="tns:verificarCorreoResponse" />
+    </operation>
+    <operation name="actualizarPass">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassRequest" message="tns:actualizarPass" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassResponse" message="tns:actualizarPassResponse" />
     </operation>
   </portType>
   <binding name="PersonaWSPortBinding" type="tns:PersonaWS">
@@ -39,6 +49,15 @@
       </output>
     </operation>
     <operation name="verificarCorreo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarPass">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

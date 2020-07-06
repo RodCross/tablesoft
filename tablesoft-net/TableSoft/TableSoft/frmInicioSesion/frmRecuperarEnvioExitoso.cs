@@ -15,6 +15,7 @@ namespace TableSoft
         private bool reenviado = false;
         private string codigo;
         private string emailUsuario;
+        private EmailWS.EmailWSSoapClient servicioEmail = new EmailWS.EmailWSSoapClient();
 
         public frmRecuperarEnvioExitoso(string code, string emailUsuario)
         {
@@ -39,6 +40,22 @@ namespace TableSoft
 
         private void lklReenviar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
+
+            EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
+            correo.FromAddress = "noreply.yanapay@gmail.com";
+            correo.ToRecipients = emailUsuario;
+            correo.Subject = "Recuperar contraseña";
+            correo.Body = "Tu código de recuperación es el siguiente: " + codigo;
+            correo.IsHtml = false;
+
+            if (servicioEmail.EnviarCorreo(correo) == false)
+            {
+                MessageBox.Show(
+                "Ha ocurrido un error al enviar el correo de confirmación",
+                "Correo no enviado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
             MessageBox.Show(
                 "Se ha reenviado el mensaje con éxito. Esta opción solo está disponible una vez.",
                 "Reenvío exitoso",

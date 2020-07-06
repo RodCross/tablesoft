@@ -32,6 +32,15 @@ namespace TableSoft.PersonaWS {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoResponse")]
         System.Threading.Tasks.Task<TableSoft.PersonaWS.verificarCorreoResponse> verificarCorreoAsync(TableSoft.PersonaWS.verificarCorreoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.PersonaWS.actualizarPassResponse actualizarPass(TableSoft.PersonaWS.actualizarPassRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassResponse")]
+        System.Threading.Tasks.Task<TableSoft.PersonaWS.actualizarPassResponse> actualizarPassAsync(TableSoft.PersonaWS.actualizarPassRequest request);
     }
     
     /// <remarks/>
@@ -283,6 +292,47 @@ namespace TableSoft.PersonaWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarPass", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarPassRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string email;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public string pass;
+        
+        public actualizarPassRequest() {
+        }
+        
+        public actualizarPassRequest(string email, string pass) {
+            this.email = email;
+            this.pass = pass;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="actualizarPassResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class actualizarPassResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public int @return;
+        
+        public actualizarPassResponse() {
+        }
+        
+        public actualizarPassResponse(int @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface PersonaWSChannel : TableSoft.PersonaWS.PersonaWS, System.ServiceModel.IClientChannel {
     }
@@ -356,6 +406,31 @@ namespace TableSoft.PersonaWS {
             TableSoft.PersonaWS.verificarCorreoRequest inValue = new TableSoft.PersonaWS.verificarCorreoRequest();
             inValue.email = email;
             return ((TableSoft.PersonaWS.PersonaWS)(this)).verificarCorreoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.PersonaWS.actualizarPassResponse TableSoft.PersonaWS.PersonaWS.actualizarPass(TableSoft.PersonaWS.actualizarPassRequest request) {
+            return base.Channel.actualizarPass(request);
+        }
+        
+        public int actualizarPass(string email, string pass) {
+            TableSoft.PersonaWS.actualizarPassRequest inValue = new TableSoft.PersonaWS.actualizarPassRequest();
+            inValue.email = email;
+            inValue.pass = pass;
+            TableSoft.PersonaWS.actualizarPassResponse retVal = ((TableSoft.PersonaWS.PersonaWS)(this)).actualizarPass(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.PersonaWS.actualizarPassResponse> TableSoft.PersonaWS.PersonaWS.actualizarPassAsync(TableSoft.PersonaWS.actualizarPassRequest request) {
+            return base.Channel.actualizarPassAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.PersonaWS.actualizarPassResponse> actualizarPassAsync(string email, string pass) {
+            TableSoft.PersonaWS.actualizarPassRequest inValue = new TableSoft.PersonaWS.actualizarPassRequest();
+            inValue.email = email;
+            inValue.pass = pass;
+            return ((TableSoft.PersonaWS.PersonaWS)(this)).actualizarPassAsync(inValue);
         }
     }
 }

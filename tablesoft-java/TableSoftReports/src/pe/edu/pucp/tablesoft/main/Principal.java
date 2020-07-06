@@ -66,9 +66,7 @@ public class Principal {
                     JRLoader.loadObjectFromFile(rutaReporteJasper);
 
             HashMap hm = new HashMap();
-            /*
-            llenar hash map pi
-            */
+            
             hm.put("Ticket_id", 1);
             hm.put("RUTA_REPORTE", rutaSubReporte1Jasper);
             hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporte2Jasper);

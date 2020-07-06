@@ -53,46 +53,50 @@ public class ReporteTickets extends HttpServlet {
 
             String rutaReporteJasper
             = ReporteTickets.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/ReporteTicket2.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte1Jasper
+            = ReporteTickets.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath().replace("%20", " ");
-
+            
+            
             //Obtener la ruta del subreporte
-            String rutaSubReporteJasper
+            String rutaSubReporte2Jasper
             = ReporteTickets.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Comentarios_Ticket.jasper").getPath().replace("%20", " ");
 
             //Obtener la ruta del subreporte2
-            String rutaSubReporte2Jasper
+            String rutaSubReporte3Jasper
             = ReporteTickets.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath().replace("%20", " ");
 
-            String rutaSubReporte3Jasper
+            String rutaSubReporte4Jasper
             = ReporteTickets.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath().replace("%20", " ");
 
             //Obtener la ruta al archivo
-            String rutaSubReporte4Jasper
+            String rutaSubReporte5Jasper
             = ReporteTickets.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath().replace("%20", " ");
 
-            String rutaSubReporte5Jasper
+            String rutaSubReporte6Jasper
             = ReporteTickets.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath().replace("%20", " ");
-            
-             //Objecto JasperReport
+
+            //Objecto JasperReport
             JasperReport objJR = 
                     (JasperReport)
                     JRLoader.loadObjectFromFile(rutaReporteJasper);
 
             HashMap hm = new HashMap();
-            /*
-            llenar hash map pi
-            */
-            hm.put("Ticket_id", 2);
-            hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporteJasper);
-            hm.put("RUTA_LISTA_TRANS_TICKET", rutaSubReporte2Jasper);
-            hm.put("RUTA_LISTA_TAREAS", rutaSubReporte3Jasper);
-            hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte4Jasper);
-            hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte5Jasper);
+            
+            hm.put("Ticket_id", 1);
+            hm.put("RUTA_REPORTE", rutaSubReporte1Jasper);
+            hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporte2Jasper);
+            hm.put("RUTA_LISTA_TRANS_TICKET", rutaSubReporte3Jasper);
+            hm.put("RUTA_LISTA_TAREAS", rutaSubReporte4Jasper);
+            hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte5Jasper);
+            hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte6Jasper);
             hm.put("IMAGEN_REPORTE", imagenReporte);
             //Object JasperPrint
             JasperPrint objJPrint =

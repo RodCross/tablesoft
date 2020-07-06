@@ -39,33 +39,6 @@
     <ApplicationIcon>tslogo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
-      <HintPath>..\packages\Portable.BouncyCastle.1.8.6.7\lib\net40\BouncyCastle.Crypto.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis, Version=1.47.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.47.0\lib\net45\Google.Apis.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Auth, Version=1.47.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.47.0\lib\net45\Google.Apis.Auth.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.47.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Auth.1.47.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Core, Version=1.47.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Core.1.47.0\lib\net45\Google.Apis.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.Gmail.v1, Version=1.46.0.1999, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.Gmail.v1.1.46.0.1999\lib\net45\Google.Apis.Gmail.v1.dll</HintPath>
-    </Reference>
-    <Reference Include="Google.Apis.PlatformServices, Version=1.47.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
-      <HintPath>..\packages\Google.Apis.1.47.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
-    </Reference>
-    <Reference Include="MimeKit, Version=2.8.0.0, Culture=neutral, PublicKeyToken=bede1c8a46c66814, processorArchitecture=MSIL">
-      <HintPath>..\packages\MimeKit.2.8.0\lib\net48\MimeKit.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -178,271 +151,270 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
-    <Compile Include="frmCerrarTicketAgente.cs">
+    <Compile Include="frmTicketsAgente\frmCerrarTicketAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCerrarTicketAgente.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmCerrarTicketAgente.Designer.cs">
       <DependentUpon>frmCerrarTicketAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAyuda.cs">
+    <Compile Include="frmInicioSesion\frmAyuda.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAyuda.Designer.cs">
+    <Compile Include="frmInicioSesion\frmAyuda.Designer.cs">
       <DependentUpon>frmAyuda.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCrearNuevoTicket.cs">
+    <Compile Include="frmTicketsEmpleado\frmCrearNuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCrearNuevoTicket.Designer.cs">
+    <Compile Include="frmTicketsEmpleado\frmCrearNuevoTicket.Designer.cs">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEscalarTicketAgente.cs">
+    <Compile Include="frmTicketsAgente\frmEscalarTicketAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEscalarTicketAgente.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmEscalarTicketAgente.Designer.cs">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGeneradorReportesAdministrador.cs">
+    <Compile Include="frmReportes\frmGeneradorReportesAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGeneradorReportesAdministrador.Designer.cs">
+    <Compile Include="frmReportes\frmGeneradorReportesAdministrador.Designer.cs">
       <DependentUpon>frmGeneradorReportesAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGeneradorReportesSupervisor.cs">
+    <Compile Include="frmReportes\frmGeneradorReportesSupervisor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGeneradorReportesSupervisor.Designer.cs">
+    <Compile Include="frmReportes\frmGeneradorReportesSupervisor.Designer.cs">
       <DependentUpon>frmGeneradorReportesSupervisor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarActivoFijo.cs">
+    <Compile Include="frmAdministrarOtros\frmGestionarActivoFijo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarActivoFijo.Designer.cs">
+    <Compile Include="frmAdministrarOtros\frmGestionarActivoFijo.Designer.cs">
       <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarAgente.cs">
+    <Compile Include="frmAdministrarPersonas\frmGestionarAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarAgente.Designer.cs">
+    <Compile Include="frmAdministrarPersonas\frmGestionarAgente.Designer.cs">
       <DependentUpon>frmGestionarAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarBiblioteca.cs">
+    <Compile Include="frmAdministrarOtros\frmGestionarBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarBiblioteca.Designer.cs">
+    <Compile Include="frmAdministrarOtros\frmGestionarBiblioteca.Designer.cs">
       <DependentUpon>frmGestionarBiblioteca.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarCategoria.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarCategoria.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarCategoria.Designer.cs">
       <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarEmpleado.cs">
+    <Compile Include="frmAdministrarPersonas\frmGestionarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarEmpleado.Designer.cs">
+    <Compile Include="frmAdministrarPersonas\frmGestionarEmpleado.Designer.cs">
       <DependentUpon>frmGestionarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarEquipo.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarEquipo.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarEquipo.Designer.cs">
       <DependentUpon>frmGestionarEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarEstado.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarEstado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarEstado.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarEstado.Designer.cs">
       <DependentUpon>frmGestionarEstado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarSistemaAdministrador.cs">
+    <Compile Include="frmPantallaInicio\frmGestionarSistemaAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarSistemaAdministrador.Designer.cs">
+    <Compile Include="frmPantallaInicio\frmGestionarSistemaAdministrador.Designer.cs">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarTareaPredeterminada.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarTareaPredeterminada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarTareaPredeterminada.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarTareaPredeterminada.Designer.cs">
       <DependentUpon>frmGestionarTareaPredeterminada.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarTareasTicket.cs">
+    <Compile Include="frmTicketsAgente\frmGestionarTareasTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarTareasTicket.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmGestionarTareasTicket.Designer.cs">
       <DependentUpon>frmGestionarTareasTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarUrgencia.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarUrgencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarUrgencia.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmGestionarUrgencia.Designer.cs">
       <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGestionarProveedor.cs">
+    <Compile Include="frmAdministrarOtros\frmGestionarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGestionarProveedor.Designer.cs">
+    <Compile Include="frmAdministrarOtros\frmGestionarProveedor.Designer.cs">
       <DependentUpon>frmGestionarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInfoTicketAgente.cs">
+    <Compile Include="frmTicketsAgente\frmInfoTicketAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInfoTicketAgente.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmInfoTicketAgente.Designer.cs">
       <DependentUpon>frmInfoTicketAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInfoTicketEmpleado.cs">
+    <Compile Include="frmTicketsEmpleado\frmInfoTicketEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInfoTicketEmpleado.Designer.cs">
+    <Compile Include="frmTicketsEmpleado\frmInfoTicketEmpleado.Designer.cs">
       <DependentUpon>frmInfoTicketEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCrearNuevaPassword.cs">
+    <Compile Include="frmInicioSesion\frmCrearNuevaPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCrearNuevaPassword.Designer.cs">
+    <Compile Include="frmInicioSesion\frmCrearNuevaPassword.Designer.cs">
       <DependentUpon>frmCrearNuevaPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioAdmin.cs">
+    <Compile Include="frmPantallaInicio\frmInicioAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicioAdmin.Designer.cs">
+    <Compile Include="frmPantallaInicio\frmInicioAdmin.Designer.cs">
       <DependentUpon>frmInicioAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioAgente.cs">
+    <Compile Include="frmPantallaInicio\frmInicioAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicioAgente.Designer.cs">
+    <Compile Include="frmPantallaInicio\frmInicioAgente.Designer.cs">
       <DependentUpon>frmInicioAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioSupervisor.cs">
+    <Compile Include="frmPantallaInicio\frmInicioSupervisor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicioSupervisor.Designer.cs">
+    <Compile Include="frmPantallaInicio\frmInicioSupervisor.Designer.cs">
       <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaTicketsEmpleado.cs">
+    <Compile Include="frmTicketsEmpleado\frmListaTicketsEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaTicketsEmpleado.Designer.cs">
+    <Compile Include="frmTicketsEmpleado\frmListaTicketsEmpleado.Designer.cs">
       <DependentUpon>frmListaTicketsEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaTicketsAgente.cs">
+    <Compile Include="frmTicketsAgente\frmListaTicketsAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaTicketsAgente.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmListaTicketsAgente.Designer.cs">
       <DependentUpon>frmListaTicketsAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioEmpleado.cs">
+    <Compile Include="frmPantallaInicio\frmInicioEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicioEmpleado.Designer.cs">
+    <Compile Include="frmPantallaInicio\frmInicioEmpleado.Designer.cs">
       <DependentUpon>frmInicioEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioSesion.cs">
+    <Compile Include="frmInicioSesion\frmInicioSesion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmInicioSesion.Designer.cs">
+    <Compile Include="frmInicioSesion\frmInicioSesion.Designer.cs">
       <DependentUpon>frmInicioSesion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMiEquipoAgente.cs">
+    <Compile Include="frmTicketsAgente\frmMiEquipoAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMiEquipoAgente.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmMiEquipoAgente.Designer.cs">
       <DependentUpon>frmMiEquipoAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmReasignarCategoriaTicketAgente.cs">
+    <Compile Include="frmTicketsAgente\frmReasignarCategoriaTicketAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmReasignarCategoriaTicketAgente.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmReasignarCategoriaTicketAgente.Designer.cs">
       <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRecuperarEnvioExitoso.cs">
+    <Compile Include="frmInicioSesion\frmRecuperarEnvioExitoso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecuperarEnvioExitoso.Designer.cs">
+    <Compile Include="frmInicioSesion\frmRecuperarEnvioExitoso.Designer.cs">
       <DependentUpon>frmRecuperarEnvioExitoso.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmRecuperarPassword.cs">
+    <Compile Include="frmInicioSesion\frmRecuperarPassword.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmRecuperarPassword.Designer.cs">
+    <Compile Include="frmInicioSesion\frmRecuperarPassword.Designer.cs">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarActivoFijo.cs">
+    <Compile Include="frmAdministrarOtros\frmSeleccionarActivoFijo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarActivoFijo.Designer.cs">
+    <Compile Include="frmAdministrarOtros\frmSeleccionarActivoFijo.Designer.cs">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarCategoriaDisponible.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoriaDisponible.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarCategoriaDisponible.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoriaDisponible.Designer.cs">
       <DependentUpon>frmSeleccionarCategoriaDisponible.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarEmpleado.cs">
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarEmpleado.Designer.cs">
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarEmpleado.Designer.cs">
       <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarBiblioteca.cs">
+    <Compile Include="frmAdministrarOtros\frmSeleccionarBiblioteca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarBiblioteca.Designer.cs">
+    <Compile Include="frmAdministrarOtros\frmSeleccionarBiblioteca.Designer.cs">
       <DependentUpon>frmSeleccionarBiblioteca.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarCategoria.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarCategoria.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoria.Designer.cs">
       <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarAgente.cs">
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarAgente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarAgente.Designer.cs">
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarAgente.Designer.cs">
       <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarEquipo.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEquipo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarEquipo.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEquipo.Designer.cs">
       <DependentUpon>frmSeleccionarEquipo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarEstado.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEstado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarEstado.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEstado.Designer.cs">
       <DependentUpon>frmSeleccionarEstado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarProveedor.cs">
+    <Compile Include="frmAdministrarOtros\frmSeleccionarProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarProveedor.Designer.cs">
+    <Compile Include="frmAdministrarOtros\frmSeleccionarProveedor.Designer.cs">
       <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarTareaPredeterminada.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarTareaPredeterminada.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarTareaPredeterminada.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarTareaPredeterminada.Designer.cs">
       <DependentUpon>frmSeleccionarTareaPredeterminada.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarTareasTicket.cs">
+    <Compile Include="frmTicketsAgente\frmSeleccionarTareasTicket.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarTareasTicket.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmSeleccionarTareasTicket.Designer.cs">
       <DependentUpon>frmSeleccionarTareasTicket.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarUrgencia.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarUrgencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarUrgencia.Designer.cs">
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarUrgencia.Designer.cs">
       <DependentUpon>frmSeleccionarUrgencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="GmailAPI.cs" />
     <Compile Include="Movimiento.cs" />
     <Compile Include="PasswordGenerator.cs" />
     <Compile Include="Program.cs" />
@@ -452,142 +424,141 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="YanapayEmail.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="frmCerrarTicketAgente.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmCerrarTicketAgente.resx">
       <DependentUpon>frmCerrarTicketAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAyuda.resx">
+    <EmbeddedResource Include="frmInicioSesion\frmAyuda.resx">
       <DependentUpon>frmAyuda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCrearNuevoTicket.resx">
+    <EmbeddedResource Include="frmTicketsEmpleado\frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEscalarTicketAgente.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmEscalarTicketAgente.resx">
       <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGeneradorReportesAdministrador.resx">
+    <EmbeddedResource Include="frmReportes\frmGeneradorReportesAdministrador.resx">
       <DependentUpon>frmGeneradorReportesAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGeneradorReportesSupervisor.resx">
+    <EmbeddedResource Include="frmReportes\frmGeneradorReportesSupervisor.resx">
       <DependentUpon>frmGeneradorReportesSupervisor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarActivoFijo.resx">
+    <EmbeddedResource Include="frmAdministrarOtros\frmGestionarActivoFijo.resx">
       <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarAgente.resx">
+    <EmbeddedResource Include="frmAdministrarPersonas\frmGestionarAgente.resx">
       <DependentUpon>frmGestionarAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarBiblioteca.resx">
+    <EmbeddedResource Include="frmAdministrarOtros\frmGestionarBiblioteca.resx">
       <DependentUpon>frmGestionarBiblioteca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarCategoria.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarCategoria.resx">
       <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarEmpleado.resx">
+    <EmbeddedResource Include="frmAdministrarPersonas\frmGestionarEmpleado.resx">
       <DependentUpon>frmGestionarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarEquipo.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarEquipo.resx">
       <DependentUpon>frmGestionarEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarEstado.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarEstado.resx">
       <DependentUpon>frmGestionarEstado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarSistemaAdministrador.resx">
+    <EmbeddedResource Include="frmPantallaInicio\frmGestionarSistemaAdministrador.resx">
       <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarTareaPredeterminada.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarTareaPredeterminada.resx">
       <DependentUpon>frmGestionarTareaPredeterminada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarTareasTicket.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmGestionarTareasTicket.resx">
       <DependentUpon>frmGestionarTareasTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarUrgencia.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarUrgencia.resx">
       <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGestionarProveedor.resx">
+    <EmbeddedResource Include="frmAdministrarOtros\frmGestionarProveedor.resx">
       <DependentUpon>frmGestionarProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInfoTicketAgente.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmInfoTicketAgente.resx">
       <DependentUpon>frmInfoTicketAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInfoTicketEmpleado.resx">
+    <EmbeddedResource Include="frmTicketsEmpleado\frmInfoTicketEmpleado.resx">
       <DependentUpon>frmInfoTicketEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCrearNuevaPassword.resx">
+    <EmbeddedResource Include="frmInicioSesion\frmCrearNuevaPassword.resx">
       <DependentUpon>frmCrearNuevaPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioAdmin.resx">
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioAdmin.resx">
       <DependentUpon>frmInicioAdmin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioAgente.resx">
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioAgente.resx">
       <DependentUpon>frmInicioAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioSupervisor.resx">
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioSupervisor.resx">
       <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaTicketsEmpleado.resx">
+    <EmbeddedResource Include="frmTicketsEmpleado\frmListaTicketsEmpleado.resx">
       <DependentUpon>frmListaTicketsEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaTicketsAgente.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmListaTicketsAgente.resx">
       <DependentUpon>frmListaTicketsAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioEmpleado.resx">
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioEmpleado.resx">
       <DependentUpon>frmInicioEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioSesion.resx">
+    <EmbeddedResource Include="frmInicioSesion\frmInicioSesion.resx">
       <DependentUpon>frmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMiEquipoAgente.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmMiEquipoAgente.resx">
       <DependentUpon>frmMiEquipoAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmReasignarCategoriaTicketAgente.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmReasignarCategoriaTicketAgente.resx">
       <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecuperarEnvioExitoso.resx">
+    <EmbeddedResource Include="frmInicioSesion\frmRecuperarEnvioExitoso.resx">
       <DependentUpon>frmRecuperarEnvioExitoso.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmRecuperarPassword.resx">
+    <EmbeddedResource Include="frmInicioSesion\frmRecuperarPassword.resx">
       <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarActivoFijo.resx">
+    <EmbeddedResource Include="frmAdministrarOtros\frmSeleccionarActivoFijo.resx">
       <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarCategoriaDisponible.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarCategoriaDisponible.resx">
       <DependentUpon>frmSeleccionarCategoriaDisponible.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarEmpleado.resx">
+    <EmbeddedResource Include="frmAdministrarPersonas\frmSeleccionarEmpleado.resx">
       <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarBiblioteca.resx">
+    <EmbeddedResource Include="frmAdministrarOtros\frmSeleccionarBiblioteca.resx">
       <DependentUpon>frmSeleccionarBiblioteca.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarCategoria.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarCategoria.resx">
       <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarAgente.resx">
+    <EmbeddedResource Include="frmAdministrarPersonas\frmSeleccionarAgente.resx">
       <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarEquipo.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarEquipo.resx">
       <DependentUpon>frmSeleccionarEquipo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarEstado.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarEstado.resx">
       <DependentUpon>frmSeleccionarEstado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarProveedor.resx">
+    <EmbeddedResource Include="frmAdministrarOtros\frmSeleccionarProveedor.resx">
       <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarTareaPredeterminada.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarTareaPredeterminada.resx">
       <DependentUpon>frmSeleccionarTareaPredeterminada.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarTareasTicket.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmSeleccionarTareasTicket.resx">
       <DependentUpon>frmSeleccionarTareasTicket.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarUrgencia.resx">
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarUrgencia.resx">
       <DependentUpon>frmSeleccionarUrgencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -954,9 +925,6 @@
     <None Include="Connected Services\UrgenciaWS\UrgenciaWS.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="credentials.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="images\InicioEmpleadoAbrir.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1079,7 +1047,6 @@
     <None Include="images\Eye.png" />
     <None Include="images\EyeMouseDown.png" />
     <None Include="images\EyeMouseEnter.png" />
-    <None Include="packages.config" />
     <None Include="Resources\plus.png" />
     <None Include="Resources\minus.png" />
     <None Include="images\Minus.png" />

@@ -12,9 +12,11 @@ namespace TableSoft
 {
     public partial class frmCrearNuevaPassword : Form
     {
-        public frmCrearNuevaPassword()
+        private string emailUsuario;
+        public frmCrearNuevaPassword(string emailUsuario)
         {
             InitializeComponent();
+            this.emailUsuario = emailUsuario;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

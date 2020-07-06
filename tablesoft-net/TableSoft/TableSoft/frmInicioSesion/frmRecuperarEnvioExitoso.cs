@@ -14,12 +14,14 @@ namespace TableSoft
     {
         private bool reenviado = false;
         private string codigo;
+        private string emailUsuario;
 
-        public frmRecuperarEnvioExitoso(string code)
+        public frmRecuperarEnvioExitoso(string code, string emailUsuario)
         {
             InitializeComponent();
             LimpiarCampos();
             this.codigo = code;
+            this.emailUsuario = emailUsuario;
         }
 
         private void LimpiarCampos()
@@ -65,7 +67,7 @@ namespace TableSoft
             {
                 // success
 
-                frmCrearNuevaPassword frm = new frmCrearNuevaPassword
+                frmCrearNuevaPassword frm = new frmCrearNuevaPassword(emailUsuario)
                 {
                     StartPosition = FormStartPosition.Manual,
                     Location = this.Location

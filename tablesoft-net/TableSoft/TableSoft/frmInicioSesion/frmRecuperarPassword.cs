@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -51,6 +52,15 @@ namespace TableSoft
                 {
                     lblErrEmail.Text = "";
                 }
+                if (!Regex.IsMatch(txtEmail.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
+                {
+                    MessageBox.Show(
+                        "Debe ingresar un correo válido del dominio PUCP.",
+                        "Error de email",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
 
                 int rpta = personaDAO.verificarCorreo(txtEmail.Text);
 
@@ -82,7 +92,7 @@ namespace TableSoft
                     }
                     else
                     {
-                        frmRecuperarEnvioExitoso frm = new frmRecuperarEnvioExitoso(codigo)
+                        frmRecuperarEnvioExitoso frm = new frmRecuperarEnvioExitoso(codigo,txtEmail.Text)
                         {
                             StartPosition = FormStartPosition.Manual,
                             Location = this.Location

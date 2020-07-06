@@ -606,6 +606,27 @@ namespace TableSoft
 
             if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
+                AgenteWS.agente agBusc = agenteDAO.buscarAgentePorCodigo(agenteSel.codigo);
+
+                if (rpta == 1)
+                {
+                    MessageBox.Show(
+                    "Ya existe un usuario con ese correo",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
+                if (agBusc.agenteId != 0)
+                {
+                    MessageBox.Show(
+                    "Ya existe un usuario con ese código",
+                    "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    return;
+                }
                 if (agenteDAO.actualizarAgente(agenteSel) > -1)
                 {
                     MessageBox.Show(

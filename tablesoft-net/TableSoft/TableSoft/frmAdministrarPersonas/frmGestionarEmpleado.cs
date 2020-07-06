@@ -570,7 +570,7 @@ namespace TableSoft
 
         private void EnviarEmailRegistrado(EmpleadoWS.empleado emp)
         {
-            StreamReader streamReader = new StreamReader("../../html/email.html", System.Text.Encoding.UTF8);
+            StreamReader streamReader = new StreamReader("../../html/EmailCrearPersona.html", System.Text.Encoding.UTF8);
             string body = streamReader.ReadToEnd();
             body = body.Replace("*NOMBREPH*", emp.nombre);
             body = body.Replace("*APELLIDOPH*", emp.apellidoPaterno);

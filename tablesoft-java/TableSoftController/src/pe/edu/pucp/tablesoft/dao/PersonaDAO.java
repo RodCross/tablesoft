@@ -12,4 +12,5 @@ public interface PersonaDAO {
     Persona verificarPersona(String email,String password);
     int verificarCorreo(String email);
     int actualizarPass(String email, String password);
+    Persona buscarxEmail(String email);
 }

@@ -9,6 +9,7 @@ import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import pe.edu.pucp.tablesoft.config.DBManager;
 import pe.edu.pucp.tablesoft.dao.PersonaDAO;
 import pe.edu.pucp.tablesoft.model.Persona;
@@ -92,6 +93,27 @@ public class PersonaMySQL implements PersonaDAO{
         return rpta;
     }
 
-    
-    
+    @Override
+    public Persona buscarxEmail(String email) {
+        Persona persona = new Persona();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL, DBManager.user, DBManager.password);
+            
+            CallableStatement cs = con.prepareCall("{call buscar_persona_email(?)}");
+            cs.setString("_EMAIL", email);
+            
+            ResultSet rs = cs.executeQuery();
+            
+            while(rs.next()){
+                persona.setNombre(rs.getString("nombre"));
+                persona.setApellidoPaterno(rs.getString("apellido_paterno"));
+            }
+            con.close();
+            
+        } catch(SQLException | ClassNotFoundException ex){
+            System.out.println(ex.getMessage());
+        }
+        return persona;
+    }    
 }

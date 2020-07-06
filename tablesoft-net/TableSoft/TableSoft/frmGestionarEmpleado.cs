@@ -19,6 +19,7 @@ namespace TableSoft
         private BibliotecaWS.BibliotecaWSClient bibliotecaDAO = new BibliotecaWS.BibliotecaWSClient();
         private EmpleadoWS.empleado empleadoSel;
         private PersonaWS.PersonaWSClient personaDAO = new PersonaWS.PersonaWSClient();
+        private EmailWS.EmailWSSoapClient servicioEmail = new EmailWS.EmailWSSoapClient();
 
         public frmGestionarEmpleado()
         {
@@ -556,16 +557,21 @@ namespace TableSoft
             body = body.Replace("*EMAILPH*", emp.personaEmail);
             body = body.Replace("*PASSPH*", emp.password);
 
-            YanapayEmail email = new YanapayEmail()
-            {
-                FromAddress = "noreply.yanapay@gmail.com",
-                ToRecipients = emp.personaEmail,
-                Subject = "Yanapay - Nuevo empleado",
-                Body = body,
-                IsHtml = true
-            };
+            EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
+            correo.FromAddress = "noreply.yanapay@gmail.com";
+            correo.ToRecipients = emp.personaEmail;
+            correo.Subject = "Yanapay - Nuevo empleado";
+            correo.Body = body;
+            correo.IsHtml = true;
 
-            GmailAPI.ConectarAPI(email);
+            if (servicioEmail.EnviarCorreo(correo) == false)
+            {
+                MessageBox.Show(
+                "Ha ocurrido un error al enviar el correo de confirmación",
+                "Correo no enviado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+            }
         }
     }
 }

@@ -302,6 +302,7 @@ namespace TableSoft
 
             agenteSel.equipo.equipoId = (int)cboEquipo.SelectedValue;
             agenteSel.rol.rolId = (int)cboRol.SelectedValue;
+            agenteSel.rol.nombre = ((RolWS.rol)(cboRol.SelectedItem)).nombre;
             agenteSel.personaEmail = txtEmailPersonal.Text;
             agenteSel.agenteEmail = txtEmailAgente.Text;
             agenteSel.direccion = txtDireccion.Text;
@@ -636,18 +637,19 @@ namespace TableSoft
 
         private void EnviarEmailRegistrado(AgenteWS.agente age)
         {
+
             StreamReader streamReader = new StreamReader("../../html/email.html", System.Text.Encoding.UTF8);
             string body = streamReader.ReadToEnd();
             body = body.Replace("*NOMBREPH*", age.nombre);
             body = body.Replace("*APELLIDOPH*", age.apellidoPaterno);
-            body = body.Replace("*TIPOPH*", "agente");
+            body = body.Replace("*TIPOPH*", age.rol.nombre);
             body = body.Replace("*EMAILPH*", age.personaEmail);
             body = body.Replace("*PASSPH*", age.password);
 
             EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
             correo.FromAddress = "noreply.yanapay@gmail.com";
             correo.ToRecipients = age.personaEmail;
-            correo.Subject = "Yanapay - Nuevo empleado";
+            correo.Subject = "Yanapay - Nuevo agente";
             correo.Body = body;
             correo.IsHtml = true;
 

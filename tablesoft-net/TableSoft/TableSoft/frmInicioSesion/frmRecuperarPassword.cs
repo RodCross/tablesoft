@@ -77,7 +77,7 @@ namespace TableSoft
                     string codigo = RandomGenerator.GenerateRandomCode();
                     PersonaWS.persona per = personaDAO.buscarPersonaxEmail(txtEmail.Text);
 
-                    StreamReader streamReader = new StreamReader("../../emails/EmailCrearPersona.html", System.Text.Encoding.UTF8);
+                    StreamReader streamReader = new StreamReader("../../emails/EmailRecuperarPass.html", System.Text.Encoding.UTF8);
                     string body = streamReader.ReadToEnd();
                     body = body.Replace("*NOMBREPH*", per.nombre);
                     body = body.Replace("*APELLIDOPH*", per.apellidoPaterno);

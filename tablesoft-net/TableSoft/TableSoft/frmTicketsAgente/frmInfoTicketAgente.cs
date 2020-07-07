@@ -20,6 +20,8 @@ namespace TableSoft
         private ComentarioWS.comentario comentarioActual;
         private TicketWS.ticket ticket;
 
+        private EmailWS.EmailWSSoapClient servicioEmail = new EmailWS.EmailWSSoapClient();
+
         private int numPanel = 0;
         private int longitudY = 0;
         private Dictionary<int, Panel> paneles = new Dictionary<int, Panel>();
@@ -217,16 +219,20 @@ namespace TableSoft
 
                     if (comentarioDAO.insertarComentario(comentarioActual, tCom) != 0)
                     {
-                        MessageBox.Show(
-                        "El comentario se ha registrado correctamente.",
-                        "Registro exitoso",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        //MessageBox.Show(
+                        //"El comentario se ha registrado correctamente.",
+                        //"Registro exitoso",
+                        //MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         // Limpiar respuesta, actualizar lista de comentarios y recargar paneles
                         rtfRespuesta.Text = "";
                         rtfRespuesta.Select();
                         comentarios = comentarioDAO.listarComentariosDeTicket(tCom);
                         RecargarComentarios();
+                        
+                        // Mandar correo al empleado
+
+                        EnviarEmailNoficacion(ticket.empleado);
                     }
                     else
                     {
@@ -236,6 +242,34 @@ namespace TableSoft
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
+            }
+        }
+
+        private void EnviarEmailNoficacion(TicketWS.empleado emp)
+        {
+
+            StreamReader streamReader = new StreamReader("../../emails/EmailNotificacionComentario.html", System.Text.Encoding.UTF8);
+            string body = streamReader.ReadToEnd();
+            body = body.Replace("*NOMBREPH*", emp.nombre);
+            body = body.Replace("*APELLIDOPH*", emp.apellidoPaterno);
+            body = body.Replace("*TIPOPH*", "agente");
+            body = body.Replace("*TICKETIDPH*", ticket.ticketId.ToString());
+            body = body.Replace("*ASUNTOPH*", ticket.asunto);
+
+            EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
+            correo.FromAddress = "noreply.yanapay@gmail.com";
+            correo.ToRecipients = emp.personaEmail;
+            correo.Subject = "Yanapay - Nuevo comentario";
+            correo.Body = body;
+            correo.IsHtml = true;
+
+            if (servicioEmail.EnviarCorreo(correo) == false)
+            {
+                MessageBox.Show(
+                "Ha ocurrido un error al enviar el correo de confirmación",
+                "Correo no enviado",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
             }
         }
 

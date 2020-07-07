@@ -16,4 +16,5 @@ public interface UrgenciaDAO {
     int eliminar(Urgencia urgencia);
     ArrayList<Urgencia> listar();
     Urgencia buscar(int urgenciaId);
+    ArrayList<Urgencia> listarxNombre(String nombre);
 }

@@ -7,6 +7,7 @@
 package pe.edu.pucp.tablesoft.main;
 
 import java.util.ArrayList;
+import pe.edu.pucp.tablesoft.config.DAOFactory;
 import pe.edu.pucp.tablesoft.config.DBController;
 import pe.edu.pucp.tablesoft.dao.ActivoFijoDAO;
 import pe.edu.pucp.tablesoft.dao.AgenteDAO;
@@ -521,5 +522,9 @@ public class Principal {
 //        int i = tareaDao.eliminarArreglo(lista);
 //        System.out.println(i);
         
+//           ArrayList<Urgencia> urgencias=urgenciaDao.listarxNombre("em");
+//           for (Urgencia urg :urgencias){
+//               System.out.println(urg.getNombre());
+//           }
     }
 }

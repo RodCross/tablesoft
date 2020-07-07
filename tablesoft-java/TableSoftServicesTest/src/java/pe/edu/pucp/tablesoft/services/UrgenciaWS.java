@@ -60,5 +60,8 @@ public class UrgenciaWS {
         return daoUrgencia.listar();
     }
     
-    
+    @WebMethod(operationName = "listarUrgenciasPorNombre")
+    public ArrayList<Urgencia> listarUrgenciasPorNombre(@WebParam(name = "nombre") String nombre){
+        return daoUrgencia.listarxNombre(nombre);
+    }
 }

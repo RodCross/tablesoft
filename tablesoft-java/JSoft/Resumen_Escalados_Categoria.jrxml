@@ -35,9 +35,9 @@ FROM (SELECT count(*) AS total_categoria
 		<band splitType="Stretch"/>
 	</background>
 	<summary>
-		<band height="248" splitType="Stretch">
+		<band height="221" splitType="Stretch">
 			<textField>
-				<reportElement x="-20" y="0" width="520" height="30" uuid="022ee06e-d556-47c2-be29-4c4987a40cf7">
+				<reportElement x="-20" y="-18" width="520" height="30" uuid="022ee06e-d556-47c2-be29-4c4987a40cf7">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="991649b9-73b3-4459-8c82-89f74fdb90f2"/>
 				</reportElement>
 				<textElement>
@@ -46,7 +46,7 @@ FROM (SELECT count(*) AS total_categoria
 				<textFieldExpression><![CDATA["Porcentaje de tickets escalados entre enviados: " + FIXED($F{total_escalados}.doubleValue()/$F{total_categoria}.doubleValue()*100,2) +"%"]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement x="-20" y="38" width="565" height="200" uuid="d3fa76d1-d289-4dc7-9708-6f421b0929ab"/>
+				<reportElement x="-20" y="15" width="565" height="200" uuid="d3fa76d1-d289-4dc7-9708-6f421b0929ab"/>
 				<subreportParameter name="FechaInicio">
 					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
 				</subreportParameter>

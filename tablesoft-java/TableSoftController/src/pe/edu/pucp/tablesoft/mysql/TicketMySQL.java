@@ -1554,5 +1554,271 @@ public class TicketMySQL implements TicketDAO{
         
         return tickets;
     }
+
+    @Override
+    public Ticket buscar(int ticketId) {
+        Ticket ticket = new Ticket();
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(
+                DBManager.urlMySQL,
+                DBManager.user,
+                DBManager.password
+            );            
+
+            CallableStatement cs = con.prepareCall("{CALL buscar_ticket(?)}");
+            cs.setInt("_ID", ticketId);
+            ResultSet rs = cs.executeQuery();            
+            
+            while(rs.next()) {
+                
+                Timestamp fechaEnvio = rs.getTimestamp("fecha_envio");
+                Timestamp fechaCierreMaximo = rs.getTimestamp("fecha_cierre_maximo");
+                Timestamp fechaCierre = rs.getTimestamp("fecha_cierre");
+                
+                
+                ticket.setTicketId(rs.getInt("ticket_id"));
+                ticket.setAsunto(rs.getString("asunto"));
+                ticket.setDescripcion(rs.getString("descripcion"));
+                
+                ticket.getEstado().setEstadoId(rs.getInt("estado_id"));
+                ticket.getEstado().setNombre(rs.getString("estado_nombre"));
+                ticket.getEstado().setDescripcion(rs.getString("estado_descripcion"));
+                ticket.getEstado().setActivo(rs.getBoolean("estado_activo"));
+                
+                ticket.setFechaEnvio(fechaEnvio.toLocalDateTime());
+                if (fechaCierreMaximo != null) {
+                    ticket.setFechaCierreMaximo(fechaCierreMaximo.toLocalDateTime());
+                }
+                if (fechaCierre != null) {
+                    ticket.setFechaCierre(fechaCierre.toLocalDateTime());
+                }
+                
+                ticket.getUrgencia().setUrgenciaId(rs.getInt("urgencia_id"));
+                ticket.getUrgencia().setNombre(rs.getString("urgencia_nombre"));
+                ticket.getUrgencia().setPlazoMaximo(rs.getInt("plazo_maximo"));
+                ticket.getUrgencia().setActivo(rs.getBoolean("urgencia_activo"));
+                
+                ticket.getCategoria().setCategoriaId(rs.getInt("categoria_id"));
+                ticket.getCategoria().setNombre(rs.getString("categoria_nombre"));
+                ticket.getCategoria().setDescripcion(rs.getString("categoria_descripcion"));
+                ticket.getCategoria().setActivo(rs.getBoolean("categoria_activo"));
+                
+                int bibliotecaId = rs.getInt("biblioteca_id");
+                if(bibliotecaId != 0){
+                    ticket.getBiblioteca().setBibliotecaId(bibliotecaId);
+                    ticket.getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
+                    ticket.getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
+                    ticket.getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
+                }
+                
+                int activoFijoId = rs.getInt("activo_fijo_id");
+                if(activoFijoId != 0){
+                    ticket.getActivoFijo().setActivoFijoId(activoFijoId);
+                }
+                int proveedorId = rs.getInt("proveedor_id");
+                if(proveedorId != 0){
+                    ticket.getProveedor().setProveedorId(proveedorId);
+                }
+                
+                ticket.getEmpleado().setEmpleadoId(rs.getInt("empleado_id"));
+                ticket.getAgente().setAgenteId(rs.getInt("agente_id"));
+                
+                ticket.setAlumnoEmail(rs.getString("alumno_email"));
+                
+                ticket.setRetrasado(rs.getBoolean("retrasado"));
+            }
+            rs.close();
+
+            Ticket tick = ticket;
+            if(ticket.getTicketId() != 0){
+                cs = con.prepareCall("{CALL buscar_empleado(?)}");
+                cs.setInt("_ID", tick.getEmpleado().getEmpleadoId());
+                rs = cs.executeQuery();
+                while(rs.next()){
+                    tick.getEmpleado().setEmpleadoId(rs.getInt("empleado_id"));
+                    tick.getEmpleado().setCodigo(rs.getString("codigo"));
+                    tick.getEmpleado().setDni(rs.getString("dni"));
+                    tick.getEmpleado().setPersonaEmail(rs.getString("persona_email"));
+                    tick.getEmpleado().setActivo(rs.getBoolean("activo"));
+                    tick.getEmpleado().setNombre(rs.getString("nombre"));
+                    tick.getEmpleado().setApellidoPaterno(rs.getString("apellido_paterno"));
+                    tick.getEmpleado().setApellidoMaterno(rs.getString("apellido_materno"));
+                    tick.getEmpleado().setDireccion(rs.getString("direccion"));
+                    tick.getEmpleado().setTelefono(rs.getString("telefono"));
+                    tick.getEmpleado().setTipo(rs.getString("tipo").charAt(0));
+                    
+                    tick.getEmpleado().getBiblioteca().setBibliotecaId(rs.getInt("biblioteca_id"));
+                    tick.getEmpleado().getBiblioteca().setNombre(rs.getString("biblioteca_nombre"));
+                    tick.getEmpleado().getBiblioteca().setAbreviatura(rs.getString("biblioteca_abreviatura"));
+                    tick.getEmpleado().getBiblioteca().setActivo(rs.getBoolean("biblioteca_activo"));
+                }
+                rs.close();
+
+                int agenteId = tick.getAgente().getAgenteId();
+                if(agenteId != 0){
+                    cs = con.prepareCall("{CALL buscar_agente(?)}");
+                    cs.setInt("_ID", agenteId);
+                    rs = cs.executeQuery();
+                    while(rs.next()){
+                        tick.getAgente().setAgenteId(rs.getInt("agente_id"));
+                        tick.getAgente().setCodigo(rs.getString("codigo"));
+                        tick.getAgente().setDni(rs.getString("dni"));
+                        tick.getAgente().setPersonaEmail(rs.getString("persona_email"));
+                        tick.getAgente().setAgenteEmail(rs.getString("agente_email"));
+                        tick.getAgente().setActivo(rs.getBoolean("activo"));
+                        tick.getAgente().setNombre(rs.getString("nombre"));
+                        tick.getAgente().setApellidoPaterno(rs.getString("apellido_paterno"));
+                        tick.getAgente().setApellidoMaterno(rs.getString("apellido_materno"));
+                        tick.getAgente().setDireccion(rs.getString("direccion"));
+                        tick.getAgente().setTelefono(rs.getString("telefono"));
+                        tick.getAgente().setTipo(rs.getString("tipo").charAt(0));
+
+                        tick.getAgente().getEquipo().setEquipoId(rs.getInt("equipo_id"));
+                        tick.getAgente().getEquipo().setDescripcion(rs.getString("equipo_descripcion"));
+                        tick.getAgente().getEquipo().setFechaCreacion(rs.getTimestamp("fecha_creacion").toLocalDateTime());
+                        tick.getAgente().getEquipo().setNombre(rs.getString("equipo_nombre"));
+                        tick.getAgente().getEquipo().setActivo(rs.getBoolean("equipo_activo"));
+
+                        tick.getAgente().getRol().setRolId(rs.getInt("rol_id"));
+                        tick.getAgente().getRol().setNombre(rs.getString("rol_nombre"));
+                        tick.getAgente().getRol().setDescripcion(rs.getString("rol_descripcion"));
+                        tick.getAgente().getRol().setActivo(rs.getBoolean("rol_activo"));
+                    }
+                }
+
+                int proveedorId = tick.getProveedor().getProveedorId();
+                if(proveedorId != 0){
+                    cs = con.prepareCall("{CALL buscar_proveedor(?)}");
+                    cs.setInt("_ID", proveedorId);
+                    rs = cs.executeQuery();
+                    while(rs.next()){
+                        tick.getProveedor().setProveedorId(rs.getInt("proveedor_id"));
+                        tick.getProveedor().setDireccion(rs.getString("direccion"));
+                        tick.getProveedor().setEmail(rs.getString("email"));
+                        tick.getProveedor().setRazonSocial(rs.getString("razon_social"));
+                        tick.getProveedor().setRuc(rs.getString("ruc"));
+                        tick.getProveedor().setTelefono(rs.getString("telefono"));
+                        tick.getProveedor().setActivo(rs.getBoolean("activo"));
+                        
+                        tick.getProveedor().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                        tick.getProveedor().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                        tick.getProveedor().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                        tick.getProveedor().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                    }
+                }
+
+                int activoFijoId = tick.getActivoFijo().getActivoFijoId();
+                if(activoFijoId != 0){
+                    cs = con.prepareCall("{CALL buscar_activo_fijo(?)}");
+                    cs.setInt("_ID", activoFijoId);
+                    rs=cs.executeQuery();
+
+                    while(rs.next()) {
+                        tick.getActivoFijo().setActivoFijoId(rs.getInt("activo_fijo_id"));
+                        tick.getActivoFijo().setNombre(rs.getString("nombre"));
+                        tick.getActivoFijo().setCodigo(rs.getString("codigo"));
+                        tick.getActivoFijo().setMarca(rs.getString("marca"));
+                        tick.getActivoFijo().setTipo(rs.getString("tipo"));
+                        tick.getActivoFijo().setActivo(rs.getBoolean("activo"));
+                    }
+                }
+                
+                // Listar historial de transferencias
+                ArrayList<TransferenciaExterna> transferenciasExterna = new ArrayList<>();
+                ArrayList<TransferenciaInterna> transferenciasInterna = new ArrayList<>();
+
+                cs = con.prepareCall("{CALL listar_transferencia_externa(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaExterna transferExt = new TransferenciaExterna();
+
+                    transferExt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferExt.setComentario(rs.getString("comentario"));
+                    transferExt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferExt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferExt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferExt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferExt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferExt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferExt.getProveedorTo().setProveedorId(rs.getInt("proveedor_id_to"));
+                    transferExt.getProveedorTo().setRuc(rs.getString("ruc"));
+                    transferExt.getProveedorTo().setRazonSocial(rs.getString("razon_social"));
+                    transferExt.getProveedorTo().setTelefono(rs.getString("proveedor_telefono"));
+                    transferExt.getProveedorTo().setDireccion(rs.getString("proveedor_direccion"));
+                    transferExt.getProveedorTo().setEmail(rs.getString("proveedor_email"));
+                    transferExt.getProveedorTo().setActivo(rs.getBoolean("proveedor_activo"));
+                    
+                    transferExt.getProveedorTo().getCiudad().setCiudadId(rs.getInt("ciudad_id"));
+                    transferExt.getProveedorTo().getCiudad().setNombre(rs.getString("ciudad_nombre"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setPaisId(rs.getInt("pais_id"));
+                    transferExt.getProveedorTo().getCiudad().getPais().setNombre(rs.getString("pais_nombre"));
+                    
+                    transferenciasExterna.add(transferExt);
+                }
+
+                cs = con.prepareCall("{CALL listar_transferencia_interna(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    TransferenciaInterna transferInt = new TransferenciaInterna();
+
+                    transferInt.setTransferenciaId(rs.getInt("transferencia_id"));
+                    transferInt.setComentario(rs.getString("comentario"));
+                    transferInt.setFecha(rs.getTimestamp("fecha_transferencia").toLocalDateTime());
+
+                    transferInt.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+                    transferInt.getAgenteResponsable().setNombre(rs.getString("agente_nombre"));
+                    transferInt.getAgenteResponsable().setApellidoPaterno(rs.getString("agente_apellido_paterno"));
+                    transferInt.getAgenteResponsable().setApellidoMaterno(rs.getString("agente_apellido_materno"));
+                    transferInt.getAgenteResponsable().setCodigo(rs.getString("agente_codigo"));
+
+                    transferInt.getCategoriaTo().setCategoriaId(rs.getInt("categoria_id_to"));
+                    transferInt.getCategoriaTo().setNombre(rs.getString("categoria_nombre"));
+                    transferInt.getCategoriaTo().setDescripcion(rs.getString("categoria_descripcion"));
+                    transferInt.getCategoriaTo().setActivo(rs.getBoolean("categoria_activo"));
+                    
+                    transferenciasInterna.add(transferInt);
+                }
+                tick.setHistorialTransfExterna(transferenciasExterna);
+                tick.setHistorialTransfInterna(transferenciasInterna);
+
+                // Listar historial de cambios de estado
+                ArrayList<CambioEstadoTicket> cambiosEstado = new ArrayList<>();
+                cs = con.prepareCall("{CALL listar_cambio_estado_ticket(?)}");
+                cs.setInt("_ID", tick.getTicketId());
+                rs=cs.executeQuery();
+                
+                while(rs.next()) {
+                    CambioEstadoTicket cambio = new CambioEstadoTicket();
+                
+                    cambio.getEstadoTo().setEstadoId(rs.getInt("estado_id_to"));
+                    cambio.getEstadoTo().setNombre(rs.getString("estado_nombre"));
+                    cambio.getEstadoTo().setDescripcion(rs.getString("estado_descripcion"));
+                    cambio.getEstadoTo().setActivo(rs.getBoolean("estado_activo"));
+
+                    cambio.setCambioEstadoTicketId(rs.getInt("cambio_estado_id"));
+                    cambio.getAgenteResponsable().setAgenteId(rs.getInt("agente_id"));
+
+                    cambio.setComentario(rs.getString("comentario"));
+                    cambio.setFechaCambioEstado(rs.getTimestamp("fecha_cambio_estado").toLocalDateTime());
+                    cambiosEstado.add(cambio);
+                }
+                tick.setHistorialEstado(cambiosEstado);
+            }
+            
+            con.close();
+        } catch(SQLException | ClassNotFoundException ex) {
+            System.out.println(ex.getMessage());
+        }
+        
+        return ticket;
+    }
     
 }

@@ -33,4 +33,5 @@ public interface TicketDAO {
     ArrayList<Ticket> listarxEmpleado(Empleado empleado);
     ArrayList<Ticket> listarxCategoria(Categoria agente);
     ArrayList<Ticket> listarxEstadoxEquipo(EstadoTicket estado, Equipo equipo);
+    Ticket buscar(int ticketId);
 }

@@ -53,6 +53,11 @@ public class TicketWS {
         return i;
     }
     
+    @WebMethod(operationName = "buscarTicketPorId")
+    public Ticket buscarTicketPorId(@WebParam(name = "id") int ticketId){
+        return daoTicket.buscar(ticketId);
+    }
+    
     @WebMethod(operationName = "listarTickets")
     public ArrayList<Ticket> listarTickets(){
         return daoTicket.listar();

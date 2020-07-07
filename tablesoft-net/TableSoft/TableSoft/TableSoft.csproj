@@ -897,6 +897,9 @@
     <None Include="Connected Services\TicketWS\TableSoft.TicketWS.actualizarTicketResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.buscarTicketPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\TicketWS\TableSoft.TicketWS.insertarTicketResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

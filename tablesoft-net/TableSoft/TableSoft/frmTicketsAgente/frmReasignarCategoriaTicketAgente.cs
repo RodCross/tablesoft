@@ -77,7 +77,7 @@ namespace TableSoft
             }
             if (MessageBox.Show("¿Desea reasignar la categoria?", "Reasignar Categoria", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                ticket.agente.agenteId= 0;
+                ticket.agente = null;
                 
                 CategoriaWS.categoria cat = (CategoriaWS.categoria)dgvCategoria.CurrentRow.DataBoundItem;
                 TicketWS.categoria cateGo = new TicketWS.categoria();

@@ -39,6 +39,20 @@ namespace TableSoft
             if (MessageBox.Show("¿Desea atender este ticket?", "Seleccionar ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 TicketWS.ticket tck = (TicketWS.ticket)dgvTicketsEspera.CurrentRow.DataBoundItem;
+                
+                // Verificar que el ticket no ha sido asignado
+                TicketWS.ticket tckBD = ticketDAO.buscarTicketPorId(tck.ticketId);
+                if (tckBD.agente.agenteId != 0)
+                {
+                    MessageBox.Show(
+                    "Este ticket ya ha sido asignado a otro agente",
+                    "Asignación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                    Refrescar();
+                    return;
+                }
+
                 TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
                 estAsignado.estadoId = (int)Estado.Asignado;
                 estAsignado.nombre = "ASIGNADO";

@@ -5,6 +5,12 @@
       <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/UrgenciaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
     </xsd:schema>
   </types>
+  <message name="listarUrgenciasPorNombre">
+    <part name="parameters" element="tns:listarUrgenciasPorNombre" />
+  </message>
+  <message name="listarUrgenciasPorNombreResponse">
+    <part name="parameters" element="tns:listarUrgenciasPorNombreResponse" />
+  </message>
   <message name="actualizarUrgencia">
     <part name="parameters" element="tns:actualizarUrgencia" />
   </message>
@@ -30,6 +36,10 @@
     <part name="parameters" element="tns:listarUrgenciasResponse" />
   </message>
   <portType name="UrgenciaWS">
+    <operation name="listarUrgenciasPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasPorNombreRequest" message="tns:listarUrgenciasPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/listarUrgenciasPorNombreResponse" message="tns:listarUrgenciasPorNombreResponse" />
+    </operation>
     <operation name="actualizarUrgencia">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaRequest" message="tns:actualizarUrgencia" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/UrgenciaWS/actualizarUrgenciaResponse" message="tns:actualizarUrgenciaResponse" />
@@ -49,6 +59,15 @@
   </portType>
   <binding name="UrgenciaWSPortBinding" type="tns:UrgenciaWS">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarUrgenciasPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="actualizarUrgencia">
       <soap:operation soapAction="" />
       <input>

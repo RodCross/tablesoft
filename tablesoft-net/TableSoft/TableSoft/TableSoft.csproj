@@ -930,6 +930,9 @@
     <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.insertarUrgenciaResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.listarUrgenciasPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.listarUrgenciasResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

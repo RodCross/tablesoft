@@ -7,6 +7,8 @@
   <xs:element name="insertarUrgencia" type="tns:insertarUrgencia" />
   <xs:element name="insertarUrgenciaResponse" type="tns:insertarUrgenciaResponse" />
   <xs:element name="listarUrgencias" type="tns:listarUrgencias" />
+  <xs:element name="listarUrgenciasPorNombre" type="tns:listarUrgenciasPorNombre" />
+  <xs:element name="listarUrgenciasPorNombreResponse" type="tns:listarUrgenciasPorNombreResponse" />
   <xs:element name="listarUrgenciasResponse" type="tns:listarUrgenciasResponse" />
   <xs:complexType name="insertarUrgencia">
     <xs:sequence>
@@ -30,6 +32,16 @@
     <xs:sequence />
   </xs:complexType>
   <xs:complexType name="listarUrgenciasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:urgencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarUrgenciasPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarUrgenciasPorNombreResponse">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:urgencia" />
     </xs:sequence>

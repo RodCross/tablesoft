@@ -10,7 +10,7 @@
 		<![CDATA[select date(fecha_envio) as "Dia de Envio",
     count(ticket_id)
 from ticket
-where categoria_id = 1
+where categoria_id = $P{Categoria_id} 
 and fecha_envio > $P{FechaInicio} 
 and fecha_envio <  $P{FechaFin} 
 group by date(fecha_envio)]]>

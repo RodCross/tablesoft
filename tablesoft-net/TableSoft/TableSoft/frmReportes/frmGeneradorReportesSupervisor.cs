@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TableSoft.frmReportes;
 
 namespace TableSoft
 {
@@ -35,6 +36,45 @@ namespace TableSoft
                 MessageBoxButtons.OK, MessageBoxIcon.Information
             );
             this.Close();
+        }
+
+        private void btnGenerarReporteCategoria_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarObjeto frm = new frmSeleccionarObjeto(1);
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnGenerarReporteUrgencia_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarObjeto frm = new frmSeleccionarObjeto(2);
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnGenerarReporteAgente_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarObjeto frm = new frmSeleccionarObjeto(3);
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
         }
     }
 }

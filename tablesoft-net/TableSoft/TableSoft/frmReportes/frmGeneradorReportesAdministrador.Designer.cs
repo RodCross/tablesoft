@@ -30,27 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGeneradorReportesAdministrador));
             this.btnVolver = new System.Windows.Forms.Button();
-            this.lblUrgencia = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.lblEquipo = new System.Windows.Forms.Label();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblReportes = new System.Windows.Forms.Label();
-            this.grpIndicadores = new System.Windows.Forms.GroupBox();
-            this.chkPorcentajeEscRes = new System.Windows.Forms.CheckBox();
-            this.chkPorcentajeDemRes = new System.Windows.Forms.CheckBox();
-            this.chkTicketsEscalados = new System.Windows.Forms.CheckBox();
-            this.chkTicketsDemorados = new System.Windows.Forms.CheckBox();
-            this.chkTicketsResueltos = new System.Windows.Forms.CheckBox();
-            this.cboEquipo = new System.Windows.Forms.ComboBox();
-            this.cboUrgencia = new System.Windows.Forms.ComboBox();
-            this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
-            this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaFin = new System.Windows.Forms.Label();
-            this.lblFechaInicio = new System.Windows.Forms.Label();
-            this.btnGenerar = new System.Windows.Forms.Button();
-            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.btnGenerarReporteEquipo = new System.Windows.Forms.Button();
+            this.btnGenerarReporteUrgencia = new System.Windows.Forms.Button();
+            this.btnGenerarReporteCategoria = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
-            this.grpIndicadores.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnVolver
@@ -61,49 +46,14 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(97, 571);
+            this.btnVolver.Location = new System.Drawing.Point(24, 366);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(106, 33);
+            this.btnVolver.Size = new System.Drawing.Size(141, 41);
             this.btnVolver.TabIndex = 20;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // lblUrgencia
-            // 
-            this.lblUrgencia.AutoSize = true;
-            this.lblUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUrgencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblUrgencia.Location = new System.Drawing.Point(92, 137);
-            this.lblUrgencia.Name = "lblUrgencia";
-            this.lblUrgencia.Size = new System.Drawing.Size(72, 21);
-            this.lblUrgencia.TabIndex = 24;
-            this.lblUrgencia.Text = "Urgencia";
-            this.lblUrgencia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblCategoria
-            // 
-            this.lblCategoria.AutoSize = true;
-            this.lblCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCategoria.Location = new System.Drawing.Point(87, 103);
-            this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(77, 21);
-            this.lblCategoria.TabIndex = 23;
-            this.lblCategoria.Text = "Categoría";
-            this.lblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblEquipo
-            // 
-            this.lblEquipo.AutoSize = true;
-            this.lblEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblEquipo.Location = new System.Drawing.Point(105, 171);
-            this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(58, 21);
-            this.lblEquipo.TabIndex = 25;
-            this.lblEquipo.Text = "Equipo";
-            this.lblEquipo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // pnlTitulo
             // 
@@ -111,8 +61,9 @@
             this.pnlTitulo.Controls.Add(this.lblReportes);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(444, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(592, 86);
             this.pnlTitulo.TabIndex = 22;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -121,217 +72,89 @@
             this.lblReportes.AutoSize = true;
             this.lblReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReportes.ForeColor = System.Drawing.Color.White;
-            this.lblReportes.Location = new System.Drawing.Point(24, 22);
+            this.lblReportes.Location = new System.Drawing.Point(32, 27);
+            this.lblReportes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(267, 27);
+            this.lblReportes.Size = new System.Drawing.Size(352, 36);
             this.lblReportes.TabIndex = 0;
             this.lblReportes.Text = "Generar reporte de tickets";
             // 
-            // grpIndicadores
+            // btnGenerarReporteEquipo
             // 
-            this.grpIndicadores.Controls.Add(this.chkPorcentajeEscRes);
-            this.grpIndicadores.Controls.Add(this.chkPorcentajeDemRes);
-            this.grpIndicadores.Controls.Add(this.chkTicketsEscalados);
-            this.grpIndicadores.Controls.Add(this.chkTicketsDemorados);
-            this.grpIndicadores.Controls.Add(this.chkTicketsResueltos);
-            this.grpIndicadores.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpIndicadores.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.grpIndicadores.Location = new System.Drawing.Point(38, 311);
-            this.grpIndicadores.Name = "grpIndicadores";
-            this.grpIndicadores.Size = new System.Drawing.Size(369, 223);
-            this.grpIndicadores.TabIndex = 19;
-            this.grpIndicadores.TabStop = false;
-            this.grpIndicadores.Text = "Indicadores";
+            this.btnGenerarReporteEquipo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGenerarReporteEquipo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerarReporteEquipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReporteEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReporteEquipo.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporteEquipo.Location = new System.Drawing.Point(142, 281);
+            this.btnGenerarReporteEquipo.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerarReporteEquipo.Name = "btnGenerarReporteEquipo";
+            this.btnGenerarReporteEquipo.Size = new System.Drawing.Size(308, 47);
+            this.btnGenerarReporteEquipo.TabIndex = 25;
+            this.btnGenerarReporteEquipo.Text = "Generar reporte de Equipos";
+            this.btnGenerarReporteEquipo.UseVisualStyleBackColor = false;
+            this.btnGenerarReporteEquipo.Click += new System.EventHandler(this.btnGenerarReporteEquipo_Click);
             // 
-            // chkPorcentajeEscRes
+            // btnGenerarReporteUrgencia
             // 
-            this.chkPorcentajeEscRes.AutoSize = true;
-            this.chkPorcentajeEscRes.Location = new System.Drawing.Point(28, 179);
-            this.chkPorcentajeEscRes.Name = "chkPorcentajeEscRes";
-            this.chkPorcentajeEscRes.Size = new System.Drawing.Size(267, 21);
-            this.chkPorcentajeEscRes.TabIndex = 4;
-            this.chkPorcentajeEscRes.Text = "Porcentaje de tickets escalados/resueltos";
-            this.chkPorcentajeEscRes.UseVisualStyleBackColor = true;
+            this.btnGenerarReporteUrgencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGenerarReporteUrgencia.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerarReporteUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReporteUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReporteUrgencia.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporteUrgencia.Location = new System.Drawing.Point(142, 202);
+            this.btnGenerarReporteUrgencia.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerarReporteUrgencia.Name = "btnGenerarReporteUrgencia";
+            this.btnGenerarReporteUrgencia.Size = new System.Drawing.Size(308, 47);
+            this.btnGenerarReporteUrgencia.TabIndex = 24;
+            this.btnGenerarReporteUrgencia.Text = "Generar reporte de Urgencia";
+            this.btnGenerarReporteUrgencia.UseVisualStyleBackColor = false;
+            this.btnGenerarReporteUrgencia.Click += new System.EventHandler(this.btnGenerarReporteUrgencia_Click);
             // 
-            // chkPorcentajeDemRes
+            // btnGenerarReporteCategoria
             // 
-            this.chkPorcentajeDemRes.AutoSize = true;
-            this.chkPorcentajeDemRes.Location = new System.Drawing.Point(28, 143);
-            this.chkPorcentajeDemRes.Name = "chkPorcentajeDemRes";
-            this.chkPorcentajeDemRes.Size = new System.Drawing.Size(277, 21);
-            this.chkPorcentajeDemRes.TabIndex = 3;
-            this.chkPorcentajeDemRes.Text = "Porcentaje de tickets demorados/resueltos";
-            this.chkPorcentajeDemRes.UseVisualStyleBackColor = true;
-            // 
-            // chkTicketsEscalados
-            // 
-            this.chkTicketsEscalados.AutoSize = true;
-            this.chkTicketsEscalados.Location = new System.Drawing.Point(28, 107);
-            this.chkTicketsEscalados.Name = "chkTicketsEscalados";
-            this.chkTicketsEscalados.Size = new System.Drawing.Size(200, 21);
-            this.chkTicketsEscalados.TabIndex = 2;
-            this.chkTicketsEscalados.Text = "Cantidad de tickets escalados";
-            this.chkTicketsEscalados.UseVisualStyleBackColor = true;
-            // 
-            // chkTicketsDemorados
-            // 
-            this.chkTicketsDemorados.AutoSize = true;
-            this.chkTicketsDemorados.Location = new System.Drawing.Point(28, 71);
-            this.chkTicketsDemorados.Name = "chkTicketsDemorados";
-            this.chkTicketsDemorados.Size = new System.Drawing.Size(210, 21);
-            this.chkTicketsDemorados.TabIndex = 1;
-            this.chkTicketsDemorados.Text = "Cantidad de tickets demorados";
-            this.chkTicketsDemorados.UseVisualStyleBackColor = true;
-            // 
-            // chkTicketsResueltos
-            // 
-            this.chkTicketsResueltos.AutoSize = true;
-            this.chkTicketsResueltos.Location = new System.Drawing.Point(28, 35);
-            this.chkTicketsResueltos.Name = "chkTicketsResueltos";
-            this.chkTicketsResueltos.Size = new System.Drawing.Size(195, 21);
-            this.chkTicketsResueltos.TabIndex = 0;
-            this.chkTicketsResueltos.Text = "Cantidad de tickets resueltos";
-            this.chkTicketsResueltos.UseVisualStyleBackColor = true;
-            // 
-            // cboEquipo
-            // 
-            this.cboEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboEquipo.FormattingEnabled = true;
-            this.cboEquipo.Location = new System.Drawing.Point(185, 171);
-            this.cboEquipo.Name = "cboEquipo";
-            this.cboEquipo.Size = new System.Drawing.Size(192, 25);
-            this.cboEquipo.TabIndex = 16;
-            // 
-            // cboUrgencia
-            // 
-            this.cboUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboUrgencia.FormattingEnabled = true;
-            this.cboUrgencia.Location = new System.Drawing.Point(185, 137);
-            this.cboUrgencia.Name = "cboUrgencia";
-            this.cboUrgencia.Size = new System.Drawing.Size(192, 25);
-            this.cboUrgencia.TabIndex = 15;
-            // 
-            // dtpFechaFin
-            // 
-            this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(185, 239);
-            this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(192, 24);
-            this.dtpFechaFin.TabIndex = 18;
-            // 
-            // dtpFechaInicio
-            // 
-            this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(185, 205);
-            this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(192, 24);
-            this.dtpFechaInicio.TabIndex = 17;
-            // 
-            // lblFechaFin
-            // 
-            this.lblFechaFin.AutoSize = true;
-            this.lblFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaFin.Location = new System.Drawing.Point(71, 239);
-            this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(93, 21);
-            this.lblFechaFin.TabIndex = 27;
-            this.lblFechaFin.Text = "Fecha de fin";
-            this.lblFechaFin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // lblFechaInicio
-            // 
-            this.lblFechaInicio.AutoSize = true;
-            this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(52, 205);
-            this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(112, 21);
-            this.lblFechaInicio.TabIndex = 26;
-            this.lblFechaInicio.Text = "Fecha de inicio";
-            this.lblFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // btnGenerar
-            // 
-            this.btnGenerar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnGenerar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGenerar.FlatAppearance.BorderSize = 0;
-            this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Location = new System.Drawing.Point(242, 571);
-            this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(106, 33);
-            this.btnGenerar.TabIndex = 21;
-            this.btnGenerar.Text = "Generar";
-            this.btnGenerar.UseVisualStyleBackColor = false;
-            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
-            // 
-            // cboCategoria
-            // 
-            this.cboCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboCategoria.FormattingEnabled = true;
-            this.cboCategoria.Location = new System.Drawing.Point(185, 103);
-            this.cboCategoria.Margin = new System.Windows.Forms.Padding(3, 15, 3, 3);
-            this.cboCategoria.Name = "cboCategoria";
-            this.cboCategoria.Size = new System.Drawing.Size(192, 25);
-            this.cboCategoria.TabIndex = 14;
+            this.btnGenerarReporteCategoria.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGenerarReporteCategoria.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGenerarReporteCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGenerarReporteCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGenerarReporteCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnGenerarReporteCategoria.Location = new System.Drawing.Point(142, 122);
+            this.btnGenerarReporteCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerarReporteCategoria.Name = "btnGenerarReporteCategoria";
+            this.btnGenerarReporteCategoria.Size = new System.Drawing.Size(308, 47);
+            this.btnGenerarReporteCategoria.TabIndex = 23;
+            this.btnGenerarReporteCategoria.Text = "Generar reporte de Categoria";
+            this.btnGenerarReporteCategoria.UseVisualStyleBackColor = false;
+            this.btnGenerarReporteCategoria.Click += new System.EventHandler(this.btnGenerarReporteCategoria_Click);
             // 
             // frmGeneradorReportesAdministrador
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 640);
+            this.ClientSize = new System.Drawing.Size(592, 436);
+            this.Controls.Add(this.btnGenerarReporteEquipo);
+            this.Controls.Add(this.btnGenerarReporteUrgencia);
+            this.Controls.Add(this.btnGenerarReporteCategoria);
             this.Controls.Add(this.btnVolver);
-            this.Controls.Add(this.lblUrgencia);
-            this.Controls.Add(this.lblCategoria);
-            this.Controls.Add(this.lblEquipo);
             this.Controls.Add(this.pnlTitulo);
-            this.Controls.Add(this.grpIndicadores);
-            this.Controls.Add(this.cboEquipo);
-            this.Controls.Add(this.cboUrgencia);
-            this.Controls.Add(this.dtpFechaFin);
-            this.Controls.Add(this.dtpFechaInicio);
-            this.Controls.Add(this.lblFechaFin);
-            this.Controls.Add(this.lblFechaInicio);
-            this.Controls.Add(this.btnGenerar);
-            this.Controls.Add(this.cboCategoria);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmGeneradorReportesAdministrador";
             this.Text = "Generar reporte de tickets";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
-            this.grpIndicadores.ResumeLayout(false);
-            this.grpIndicadores.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.Label lblUrgencia;
-        private System.Windows.Forms.Label lblCategoria;
-        private System.Windows.Forms.Label lblEquipo;
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblReportes;
-        private System.Windows.Forms.GroupBox grpIndicadores;
-        private System.Windows.Forms.CheckBox chkPorcentajeEscRes;
-        private System.Windows.Forms.CheckBox chkPorcentajeDemRes;
-        private System.Windows.Forms.CheckBox chkTicketsEscalados;
-        private System.Windows.Forms.CheckBox chkTicketsDemorados;
-        private System.Windows.Forms.CheckBox chkTicketsResueltos;
-        private System.Windows.Forms.ComboBox cboEquipo;
-        private System.Windows.Forms.ComboBox cboUrgencia;
-        private System.Windows.Forms.DateTimePicker dtpFechaFin;
-        private System.Windows.Forms.DateTimePicker dtpFechaInicio;
-        private System.Windows.Forms.Label lblFechaFin;
-        private System.Windows.Forms.Label lblFechaInicio;
-        private System.Windows.Forms.Button btnGenerar;
-        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Button btnGenerarReporteEquipo;
+        private System.Windows.Forms.Button btnGenerarReporteUrgencia;
+        private System.Windows.Forms.Button btnGenerarReporteCategoria;
     }
 }

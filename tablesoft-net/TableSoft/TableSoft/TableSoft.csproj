@@ -151,6 +151,12 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="Estado.cs" />
+    <Compile Include="frmReportes\frmSeleccionarObjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes\frmSeleccionarObjeto.Designer.cs">
+      <DependentUpon>frmSeleccionarObjeto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTicketsAgente\frmCerrarTicketAgente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -429,6 +435,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmReportes\frmSeleccionarObjeto.resx">
+      <DependentUpon>frmSeleccionarObjeto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTicketsAgente\frmCerrarTicketAgente.resx">
       <DependentUpon>frmCerrarTicketAgente.cs</DependentUpon>
     </EmbeddedResource>

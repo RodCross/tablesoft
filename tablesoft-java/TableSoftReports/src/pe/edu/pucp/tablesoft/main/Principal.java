@@ -136,6 +136,38 @@ public class Principal {
             String rutaSubReporte6Jasper
             = Principal.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte7Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Escalados_Categoria.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte8Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Demorados_Categoria.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte9Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Recategorizados_Categoria.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte10Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Escalados_Categoria.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte11Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Recategorizados_Categoria.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte12Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Demorados_Categoria.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte13Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Dia_Categoria.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte14Jasper
+            = Principal.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Biblioteca_Categoria.jasper").getPath().replace("%20", " ");
 
             //Objecto JasperReport
             JasperReport objJR = 
@@ -159,6 +191,17 @@ public class Principal {
             hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte5Jasper);
             hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte6Jasper);
             hm.put("IMAGEN_REPORTE", imagenReporte);
+            
+
+            hm.put("RUTA_GRAFICO_ESCALADOS", rutaSubReporte7Jasper);
+            hm.put("RUTA_GRAFICO_DEMORADOS", rutaSubReporte8Jasper);
+            hm.put("RUTA_GRAFICO_RECATEGORIZADOS", rutaSubReporte9Jasper);
+            hm.put("RUTA_RESUMEN_ESCALADOS", rutaSubReporte10Jasper);
+            hm.put("RUTA_RESUMEN_RECATEGORIZADOS", rutaSubReporte11Jasper);
+            hm.put("RUTA_RESUMEN_DEMORADOS", rutaSubReporte12Jasper);
+            hm.put("RUTA_TICKET_DIA", rutaSubReporte13Jasper);
+            hm.put("RUTA_TICKET_BIBLIOTECA", rutaSubReporte14Jasper);
+            
             //Object JasperPrint
             JasperPrint objJPrint =
             JasperFillManager.fillReport(objJR,hm,con);

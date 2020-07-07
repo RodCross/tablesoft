@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Lista_Transferencia_Ticket" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="adb025c9-8359-4811-9e1f-7cc0d9890672">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Ticket_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select TT.transferencia_id, 
+CONCAT(P.nombre, " " ,P.apellido_paterno, " ",  P.apellido_materno) as nombrePersona,
+TT.fecha_transferencia, 
+TT.comentario,
+PR.razon_social,
+PR.ruc
+from transferencia_ticket TT
+inner join transferencia_externa TE
+on TE.transferencia_id = TT.transferencia_id
+inner join agente A
+on TT.agente_id = A.agente_id 
+inner join persona P
+on P.codigo = A.codigo 
+inner join proveedor PR
+on PR.proveedor_id = TE.proveedor_id_to
+where TT.ticket_id =  $P{Ticket_id} ;]]>
+	</queryString>
+	<field name="transferencia_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="transferencia_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transferencia_ticket"/>
+	</field>
+	<field name="nombrePersona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombrePersona"/>
+	</field>
+	<field name="fecha_transferencia" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_transferencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transferencia_ticket"/>
+	</field>
+	<field name="comentario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="comentario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transferencia_ticket"/>
+	</field>
+	<field name="razon_social" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="razon_social"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proveedor"/>
+	</field>
+	<field name="ruc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ruc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proveedor"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="320" height="23" uuid="87f26932-a06f-4be8-bc86-ae25ca6d628a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de escalados a proveedor del ticket]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<line>
+				<reportElement x="0" y="0" width="542" height="1" uuid="bb12f6fa-72c3-45b2-ae22-1ea2756446e4"/>
+			</line>
+			<staticText>
+				<reportElement x="3" y="5" width="26" height="30" uuid="a8f4aad1-9a14-45f1-92f7-88ef32b1182a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="53878724-85ac-4790-b963-8f10c94534db"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="36" y="5" width="120" height="30" uuid="ceb02a74-d34a-49ac-99fa-381a6b7d00bb">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf71c8c4-fbe8-4b25-b782-14e18b7cf09d"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Escalado realizado por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="166" y="5" width="80" height="30" uuid="4cbb1d0e-af7c-4184-8674-d45eb0528001">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a1d6a45-c383-4694-a61c-9f585ee56d8a"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha del escalado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="5" width="100" height="30" uuid="e1caae1a-b8ab-4a9d-85c7-a0abc7949661">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e1dedaf-0881-40c0-98f0-51fcdf677807"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comentario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="359" y="5" width="100" height="30" uuid="1e98385a-1311-475d-9693-53fc9ab0d4a3">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ccf63c-7919-4fd0-ae59-275d74d86f3e"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Razon social del proveedor]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="465" y="5" width="75" height="30" uuid="97f5855a-ce66-4d07-8566-3a9249b554b4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65808f16-0f09-4bc6-b1c2-a88504bec193"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[RUC]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="48" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="10" width="25" height="30" uuid="e840f5a8-1568-42bc-b7f8-5486e307dded">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="53878724-85ac-4790-b963-8f10c94534db"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{transferencia_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="36" y="10" width="120" height="30" uuid="9b041579-5564-46b0-8476-8787c0c296ac">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf71c8c4-fbe8-4b25-b782-14e18b7cf09d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="166" y="10" width="80" height="30" uuid="55c0d61a-65eb-4e14-bda3-2d1403265668">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a1d6a45-c383-4694-a61c-9f585ee56d8a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fecha_transferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="254" y="10" width="100" height="30" uuid="bcdfa06f-2bd6-4491-af6e-14974caad4ea">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e1dedaf-0881-40c0-98f0-51fcdf677807"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{comentario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="359" y="10" width="100" height="30" uuid="6e23c5b3-40bb-4f33-ae1d-d650ad7a1f45">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ccf63c-7919-4fd0-ae59-275d74d86f3e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{razon_social}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="465" y="10" width="75" height="30" uuid="1c9e7b4b-274c-4d07-8bf9-3519226d1a6c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65808f16-0f09-4bc6-b1c2-a88504bec193"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="3" y="0" width="541" height="1" uuid="1226b69f-d262-4781-a1bc-0ecefc9fd673"/>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

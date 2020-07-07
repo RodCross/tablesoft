@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteTicket" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="926d8285-45c8-4db0-8e35-05867a1a5f96">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="dbpixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="Ticket_id" class="java.lang.Integer"/>
+	<parameter name="RUTA_LISTA_TRANS_TICKET" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_TRANS_EXTERNA" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_CAMBIOS" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_TAREAS" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_COMENTARIOS" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT  
+		T.ticket_id,
+		T.asunto, 
+        T.descripcion, 
+        T.fecha_envio, 
+        T.fecha_cierre_maximo, 
+        T.fecha_cierre,
+        CASE WHEN PE.tipo = 'E' THEN CONCAT(PE.nombre, " " ,PE.apellido_paterno, " ",  PE.apellido_materno) END as nombreEmpleado,
+        CASE WHEN P.tipo = 'A' THEN CONCAT(P.nombre, " " ,P.apellido_paterno, " ",  P.apellido_materno) END as nombreAgente,
+        T.alumno_email,
+        E.nombre as nombreEstado, 
+        U.nombre as nombreUrgencia, 
+        C.nombre as nombreCategoria, 
+        B.nombre as nombreBiblioteca, 
+        AF.nombre as nombreActivoFijo,
+        PRO.razon_social as nombreProveedor, 
+        T.retrasado
+FROM ticket T
+  inner join estado_ticket E on T.estado_id = E.estado_id
+  inner join urgencia U on T.urgencia_id = U.urgencia_id
+  inner join categoria C on T.categoria_id = C.categoria_id
+  inner join biblioteca B on T.biblioteca_id = B.biblioteca_id
+  inner join empleado EM on T.empleado_id = EM.empleado_id
+  left join agente A on T.agente_id = A.agente_id
+  left join persona P on P.codigo = A.codigo 
+  left join persona PE on PE.codigo = EM.codigo
+  left join activo_fijo AF on T.activo_fijo_id = AF.activo_fijo_id
+  left join proveedor PRO on T.proveedor_id = PRO.proveedor_id
+  where T.ticket_id =  $P{Ticket_id} 
+order by T.ticket_id;]]>
+	</queryString>
+	<field name="ticket_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ticket_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<field name="asunto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="asunto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<field name="fecha_envio" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_envio"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<field name="fecha_cierre_maximo" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_cierre_maximo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<field name="fecha_cierre" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_cierre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<field name="nombreEmpleado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreEmpleado"/>
+	</field>
+	<field name="nombreAgente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreAgente"/>
+	</field>
+	<field name="alumno_email" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="alumno_email"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<field name="nombreEstado" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreEstado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estado_ticket"/>
+	</field>
+	<field name="nombreUrgencia" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreUrgencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="urgencia"/>
+	</field>
+	<field name="nombreCategoria" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreCategoria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="categoria"/>
+	</field>
+	<field name="nombreBiblioteca" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreBiblioteca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="biblioteca"/>
+	</field>
+	<field name="nombreActivoFijo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreActivoFijo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="activo_fijo"/>
+	</field>
+	<field name="nombreProveedor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreProveedor"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="proveedor"/>
+	</field>
+	<field name="retrasado" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="retrasado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="492" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="150" y="49" width="330" height="30" uuid="8997d0f9-86a8-480c-af04-c038294030c9"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{asunto}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="49" width="140" height="30" uuid="6eb59d56-4ea2-4ec6-9a1f-f09a2667491d"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Asunto]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="79" width="330" height="30" uuid="ac1901eb-2dea-4508-8297-df55a5b058ed"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="79" width="140" height="30" uuid="8c6be4c6-f91d-4db7-8da6-b3f0c5c2f4ff"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="109" width="330" height="30" uuid="cccb0fdf-c765-4ab6-9d84-40268c447158"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_envio}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="109" width="140" height="30" uuid="dbb69c4e-af86-464a-a51e-9f73c612ab0e"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de envio]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="139" width="330" height="30" uuid="1a10d906-20bf-432b-879e-d4547786ba30"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fecha_cierre_maximo}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="139" width="140" height="30" uuid="c1c0885a-aa75-4ec7-8e80-97b184d8e140"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de cierre maximo estimado]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="172" width="330" height="30" uuid="c32af3a0-6afd-4886-a5e6-9e3bd98f5fdf"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{fecha_cierre}==null,"Ticket en atencion",$F{fecha_cierre})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="172" width="140" height="30" uuid="5a88ea9d-fc78-4a11-9819-4faaf7611bdd"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Fecha de cierre]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="202" width="330" height="30" uuid="00eb6f41-61ef-4ca9-9381-70e6496190e2"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEmpleado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="202" width="140" height="30" uuid="546c91f3-ff27-427e-b753-75286da8eedc"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre del empleado]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="232" width="330" height="30" uuid="efccd2d5-15d3-4f96-bb8b-18c105b2b59a"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{nombreAgente} == null,"Sin agente asociado",$F{nombreAgente})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="232" width="140" height="30" uuid="5df6ca40-384a-46ad-8535-244ad08be7eb"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Nombre del agente]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="262" width="330" height="30" uuid="f718841c-a4f4-4c60-97bf-43913f4edef4"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{alumno_email}==null,"Sin email del alumno asociado",$F{alumno_email})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="262" width="140" height="30" uuid="803ed6d0-0aad-41c9-98f6-e3acfe8b27e2"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Email del alumno]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="292" width="330" height="30" uuid="e1196e8d-ab53-48b6-bce7-e0ed57024dc3"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreEstado}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="292" width="140" height="30" uuid="c2f88b4d-78a6-4c07-964b-09883cf0577b"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Estado actual del ticket:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="322" width="330" height="30" uuid="56aef169-74b8-4afc-ad45-221c03b1083c"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreUrgencia}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="322" width="140" height="30" uuid="caaccb6b-5e6a-4b8f-b120-c6f49dba54e8"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Urgencia del ticket:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="352" width="330" height="30" uuid="07fb1478-3138-4714-bacf-f37f7f12fe54"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreCategoria}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="352" width="140" height="30" uuid="14525e81-1667-4e67-89ef-584598b497c1"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Categoria del ticket:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="382" width="330" height="30" uuid="593fb3da-c8e1-45aa-ab3c-1b3a16d1f185"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreBiblioteca}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="382" width="140" height="30" uuid="5c5c7411-8000-4ff5-9528-2cb196442ad4"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Biblioteca:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="412" width="330" height="30" uuid="b5fb3c9a-6130-44e3-aaa7-95b31d94e7a3"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{nombreActivoFijo}==null,"Sin activo fijo asociado",$F{nombreActivoFijo})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="412" width="140" height="30" uuid="976cbd5e-6559-466e-855d-d1ffe8e168d6"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Activo Fijo]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="442" width="330" height="30" uuid="14c9b6cd-9bb5-4acd-86ff-07f454d1b19a"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{nombreProveedor}==null,"Sin proveedor asociado",$F{nombreProveedor})]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="442" width="140" height="30" uuid="93d3f0ca-d119-46c5-8aa4-d35fa033d210"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Proveedor escalado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="150" y="472" width="330" height="18" uuid="3fb835c7-75e9-43d8-b4ba-ad7e0977ad1f"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[IF($F{retrasado}==false,"Sin retraso","Con retraso")]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="0" y="472" width="140" height="18" uuid="c8c9c661-0646-4e24-88d6-7a1efda91f88"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Retrasado:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="0" y="0" width="160" height="30" uuid="0e8238ed-710b-4246-bf50-acf7647bbaf6"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Ticket N°" + $F{ticket_id}]]></textFieldExpression>
+			</textField>
+		</band>
+		<band height="139">
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="3" width="499" height="19" uuid="0738ae4c-1603-40f6-9d42-68789446077a"/>
+				<subreportParameter name="Ticket_id">
+					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_LISTA_COMENTARIOS}]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="false">
+				<reportElement positionType="Float" x="-21" y="27" width="500" height="22" uuid="0d26235b-97b8-4d23-9b5b-a4c2ca22f2d1"/>
+				<subreportParameter name="Ticket_id">
+					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_LISTA_TAREAS}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="57" width="500" height="19" uuid="3b60b02b-3b23-44fe-86b7-79bfb77a25ef"/>
+				<subreportParameter name="TicketId">
+					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_LISTA_CAMBIOS}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-20" y="84" width="500" height="19" uuid="1227345b-0607-4a8f-ad0b-eb2b4215a899"/>
+				<subreportParameter name="Ticket_id">
+					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_LISTA_TRANS_EXTERNA}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-21" y="110" width="500" height="23" uuid="728dffb7-835d-462d-a199-12b02ca0568e"/>
+				<subreportParameter name="Ticket_id">
+					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_LISTA_TRANS_TICKET}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

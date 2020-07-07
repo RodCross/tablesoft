@@ -585,8 +585,30 @@ namespace TableSoft
                 );
                 return;
             }
-
             
+            int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
+            AgenteWS.agente agBusc = agenteDAO.buscarAgentePorCodigo(txtCodigo.Text);
+
+            if (rpta == 1 && txtEmailPersonal.Text != agenteSel.personaEmail)
+            {
+                MessageBox.Show(
+                "Ya existe un usuario con ese correo",
+                "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (agBusc.agenteId != 0 && txtCodigo.Text != agenteSel.codigo)
+            {
+                MessageBox.Show(
+                "Ya existe un usuario con ese código",
+                "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+
+
             agenteSel.nombre = txtNombre.Text;
             agenteSel.apellidoPaterno = txtPaterno.Text;
             agenteSel.apellidoMaterno = txtMaterno.Text;
@@ -606,27 +628,6 @@ namespace TableSoft
 
             if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
-                AgenteWS.agente agBusc = agenteDAO.buscarAgentePorCodigo(agenteSel.codigo);
-
-                if (rpta == 1)
-                {
-                    MessageBox.Show(
-                    "Ya existe un usuario con ese correo",
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                    return;
-                }
-                if (agBusc.agenteId != 0)
-                {
-                    MessageBox.Show(
-                    "Ya existe un usuario con ese código",
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                    return;
-                }
                 if (agenteDAO.actualizarAgente(agenteSel) > -1)
                 {
                     MessageBox.Show(

@@ -508,6 +508,29 @@ namespace TableSoft
                 );
                 return;
             }
+
+            int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
+            EmpleadoWS.empleado empBusc = empleadoDAO.buscarEmpleadoPorCodigo(txtCodigo.Text);
+
+            if (rpta == 1 && txtEmailPersonal.Text != empleadoSel.personaEmail)
+            {
+                MessageBox.Show(
+                "Ya existe un usuario con ese correo",
+                "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+            if (empBusc.empleadoId != 0 && txtCodigo.Text != empleadoSel.codigo)
+            {
+                MessageBox.Show(
+                "Ya existe un usuario con ese código",
+                "Error",
+                MessageBoxButtons.OK, MessageBoxIcon.Information
+                );
+                return;
+            }
+
             empleadoSel.nombre = txtNombre.Text;
             empleadoSel.apellidoPaterno = txtPaterno.Text;
             empleadoSel.apellidoMaterno = txtMaterno.Text;
@@ -524,27 +547,6 @@ namespace TableSoft
 
             if (MessageBox.Show("¿Desea actualizar el registro?", "Actualizar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int rpta = personaDAO.verificarCorreo(txtEmailPersonal.Text);
-                EmpleadoWS.empleado empBusc = empleadoDAO.buscarEmpleadoPorCodigo(empleadoSel.codigo);
-
-                if (rpta == 1)
-                {
-                    MessageBox.Show(
-                    "Ya existe un usuario con ese correo",
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                    return;
-                }
-                if (empBusc.empleadoId != 0)
-                {
-                    MessageBox.Show(
-                    "Ya existe un usuario con ese código",
-                    "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information
-                    );
-                    return;
-                }
                 if (empleadoDAO.actualizarEmpleado(empleadoSel) > -1)
                 {
                     MessageBox.Show(

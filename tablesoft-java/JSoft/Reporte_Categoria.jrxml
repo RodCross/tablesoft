@@ -25,6 +25,9 @@
 	<parameter name="RUTA_RESUMEN_DEMORADOS" class="java.lang.String"/>
 	<parameter name="RUTA_TICKET_DIA" class="java.lang.String"/>
 	<parameter name="RUTA_TICKET_BIBLIOTECA" class="java.lang.String"/>
+	<parameter name="RUTA_GRAFICO_ACTIVOFIJO" class="java.lang.String"/>
+	<parameter name="RUTA_RESUMEN_ACTIVOFIJO" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_URGENCIA" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select T.ticket_id
 from ticket T 
@@ -116,32 +119,35 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 		</band>
 	</detail>
 	<pageFooter>
-		<band height="17">
+		<band height="25">
 			<textField isBlankWhenNull="false">
-				<reportElement x="434" y="0" width="80" height="13" forecolor="#000000" uuid="25533b18-6c5a-40aa-a85a-5058d1ec1d0d"/>
+				<reportElement x="434" y="10" width="80" height="13" forecolor="#000000" uuid="25533b18-6c5a-40aa-a85a-5058d1ec1d0d"/>
 				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
 					<font fontName="Arial" size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
 			</textField>
 			<textField evaluationTime="Report" isBlankWhenNull="false">
-				<reportElement x="515" y="0" width="40" height="13" forecolor="#000000" uuid="6eb216b8-2646-4935-ab5d-849ebad867b1"/>
+				<reportElement x="515" y="10" width="40" height="13" forecolor="#000000" uuid="6eb216b8-2646-4935-ab5d-849ebad867b1"/>
 				<textElement verticalAlignment="Middle" markup="none">
 					<font fontName="Arial" size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
 			</textField>
 			<textField pattern="dd/MM/yyyy" isBlankWhenNull="false">
-				<reportElement x="2" y="1" width="197" height="13" forecolor="#000000" uuid="4b2dd62e-c289-4c6d-b8cb-e0bad8a13a53"/>
+				<reportElement x="2" y="11" width="197" height="13" forecolor="#000000" uuid="4b2dd62e-c289-4c6d-b8cb-e0bad8a13a53"/>
 				<textElement verticalAlignment="Middle" markup="none">
 					<font fontName="Arial" size="10" isBold="false"/>
 				</textElement>
 				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 			</textField>
+			<line>
+				<reportElement x="0" y="6" width="555" height="1" uuid="18dbb32f-557f-412f-9613-c6ad03da62ce"/>
+			</line>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="391" splitType="Stretch">
+		<band height="561" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="12" width="160" height="20" uuid="59bb36b9-9bf4-4aa3-998d-317aeacf8a1a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -203,7 +209,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<subreportExpression><![CDATA[$P{RUTA_RESUMEN_RECATEGORIZADOS}]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement positionType="Float" x="0" y="265" width="550" height="55" uuid="9f4a2c5f-27f3-49cc-b114-406dc0d42c81"/>
+				<reportElement positionType="Float" x="0" y="341" width="550" height="55" uuid="9f4a2c5f-27f3-49cc-b114-406dc0d42c81"/>
 				<subreportParameter name="FechaInicio">
 					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -226,7 +232,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<textFieldExpression><![CDATA["Cantidad de tickets enviados:  "  + $V{Total}]]></textFieldExpression>
 			</textField>
 			<subreport>
-				<reportElement positionType="Float" x="0" y="320" width="550" height="60" uuid="eb83e028-9a2f-49f2-a954-673d1d69d84c"/>
+				<reportElement positionType="Float" x="0" y="396" width="550" height="60" uuid="eb83e028-9a2f-49f2-a954-673d1d69d84c"/>
 				<subreportParameter name="FechaInicio">
 					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -238,6 +244,37 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{RUTA_TICKET_BIBLIOTECA}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="266" width="551" height="70" uuid="f7dd559a-5f60-4617-a8b5-2ec0a0588384"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Categoria_id">
+					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_GRAFICO">
+					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_ACTIVOFIJO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_RESUMEN_ACTIVOFIJO}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="460" width="551" height="80" uuid="2adb3c99-fd6f-4f0a-83c7-2558dbc012f4"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Categoria_id">
+					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_URGENCIA}]]></subreportExpression>
 			</subreport>
 		</band>
 	</summary>

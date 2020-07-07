@@ -8,24 +8,24 @@
 	<parameter name="Categoria_id" class="java.lang.Integer"/>
 	<parameter name="Total" class="java.lang.Long"/>
 	<queryString>
-		<![CDATA[ SELECT
-    'Resueltos a tiempo' as Nombre,
+		<![CDATA[       SELECT
+    'No asociados a activo fijo' as Nombre,
     A.total_naf as Cantidad
 FROM (select count(*) as total_naf
 
       from ticket 
        WHERE categoria_id =  $P{Categoria_id} 
       and fecha_envio >  $P{FechaInicio} 
-      and fecha_envio <   $P{FechaFin} and retrasado = 0) A
+      and fecha_envio <   $P{FechaFin} and activo_fijo_id is null) A
 UNION ALL
 SELECT 
-    'Demorados' as Nombre,
+    'Asociados a activo fijo' as Nombre,
     B.total_af as Cantidad
 FROM (select count(*) as total_af
        from ticket
        WHERE categoria_id =  $P{Categoria_id} 
        and fecha_envio >  $P{FechaInicio} 
-      and fecha_envio <   $P{FechaFin}  and retrasado =1) B;]]>
+      and fecha_envio <   $P{FechaFin}  and activo_fijo_id is not null) B;]]>
 	</queryString>
 	<field name="Nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="Nombre"/>
@@ -40,7 +40,7 @@ FROM (select count(*) as total_af
 		<band height="217">
 			<pieChart>
 				<chart evaluationTime="Report">
-					<reportElement x="310" y="13" width="240" height="200" isPrintInFirstWholeBand="true" uuid="b603040c-ba8c-4433-9728-28e67b0142ca"/>
+					<reportElement x="310" y="13" width="240" height="200" isPrintInFirstWholeBand="true" uuid="704317b6-92d3-42ec-82a1-0d563243c880"/>
 					<chartTitle/>
 					<chartSubtitle/>
 					<chartLegend/>
@@ -63,7 +63,7 @@ FROM (select count(*) as total_af
 			</pieChart>
 			<barChart>
 				<chart evaluationTime="Report">
-					<reportElement x="0" y="13" width="281" height="200" uuid="f8f0f734-1e48-462f-b0f2-66ee0f8b66d1"/>
+					<reportElement x="-1" y="13" width="281" height="200" uuid="f8f0f734-1e48-462f-b0f2-66ee0f8b66d1"/>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<chartTitle/>
 					<chartSubtitle/>
@@ -93,11 +93,11 @@ FROM (select count(*) as total_af
 				</barPlot>
 			</barChart>
 			<staticText>
-				<reportElement x="0" y="-19" width="460" height="30" uuid="fc201c02-7a22-468a-9601-db9a14b5bb29"/>
+				<reportElement x="-1" y="-20" width="491" height="30" uuid="630207f6-57de-4508-83bc-55de4bb78a8c"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<text><![CDATA[Gráficos de tickets analizados distribuidos entre demorados y no demorados.]]></text>
+				<text><![CDATA[Gráficos de tickets analizados, distribuidos entre asociados a un activo fijo y no asociados a un activo fijo.]]></text>
 			</staticText>
 		</band>
 	</summary>

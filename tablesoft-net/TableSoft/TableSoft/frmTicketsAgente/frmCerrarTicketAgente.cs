@@ -115,13 +115,17 @@ namespace TableSoft
                             "Actualización exitosa",
                             MessageBoxButtons.OK, MessageBoxIcon.Information
                         );
+
+                        // Enviar correo al alumno
+                        EnviarEmailNotificacion(ticket, cambioEstado);
+
                         this.DialogResult = DialogResult.OK;
                     }
                     else
                     {
                         MessageBox.Show(
                             "Ha ocurrido un error con la actualización",
-                            "Reasignación no realizada",
+                            "Actualización no realizada",
                             MessageBoxButtons.OK, MessageBoxIcon.Information
                         );
                         this.Close();
@@ -135,6 +139,21 @@ namespace TableSoft
                 this.Close();
             }
             
+        }
+
+        private void EnviarEmailNotificacion(TicketWS.ticket tick, TicketWS.cambioEstadoTicket cambio)
+        {
+            if(tick.alumnoEmail != null)
+            {
+                if(EnvioCorreoNotificacion.NuevoCambioEstado(tick, cambio) == false)
+                {
+                    MessageBox.Show(
+                    "Ha ocurrido un error al enviar el correo de notificación al alumno",
+                    "Correo no enviado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

@@ -20,7 +20,7 @@ namespace TableSoft
         private ComentarioWS.comentario comentarioActual;
         private TicketWS.ticket ticket;
 
-        private EmailWS.EmailWSSoapClient servicioEmail = new EmailWS.EmailWSSoapClient();
+        
 
         private int numPanel = 0;
         private int longitudY = 0;
@@ -248,25 +248,10 @@ namespace TableSoft
         private void EnviarEmailNoficacion(TicketWS.empleado emp)
         {
 
-            StreamReader streamReader = new StreamReader("../../emails/EmailNotificacionComentario.html", System.Text.Encoding.UTF8);
-            string body = streamReader.ReadToEnd();
-            body = body.Replace("*NOMBREPH*", emp.nombre);
-            body = body.Replace("*APELLIDOPH*", emp.apellidoPaterno);
-            body = body.Replace("*TIPOPH*", "agente");
-            body = body.Replace("*TICKETIDPH*", ticket.ticketId.ToString());
-            body = body.Replace("*ASUNTOPH*", ticket.asunto);
-
-            EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
-            correo.FromAddress = "noreply.yanapay@gmail.com";
-            correo.ToRecipients = emp.personaEmail;
-            correo.Subject = "Yanapay - Nuevo comentario";
-            correo.Body = body;
-            correo.IsHtml = true;
-
-            if (servicioEmail.EnviarCorreo(correo) == false)
+            if (EnvioCorreoNotificacion.NuevoComentario(ticket, emp) == false)
             {
                 MessageBox.Show(
-                "Ha ocurrido un error al enviar el correo de confirmación",
+                "Ha ocurrido un error al enviar el correo de notificación al empleado",
                 "Correo no enviado",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
@@ -356,7 +341,7 @@ namespace TableSoft
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error", "Mensaje: "+ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

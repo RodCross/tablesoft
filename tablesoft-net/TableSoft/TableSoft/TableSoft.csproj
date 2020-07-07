@@ -150,6 +150,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="EnvioCorreoNotificacion.cs" />
     <Compile Include="Estado.cs" />
     <Compile Include="frmReportes\frmSeleccionarObjeto.cs">
       <SubType>Form</SubType>

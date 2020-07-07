@@ -155,6 +155,11 @@ namespace TableSoft
                         "Escalado exitoso",
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
+
+                    // Enviar correo al alumno
+                    cambioEstado.comentario = rtfComentario.Text;
+                    EnviarEmailNotificacion(ticket, cambioEstado);
+
                     this.DialogResult = DialogResult.OK;
                 }
                 else
@@ -165,6 +170,21 @@ namespace TableSoft
                         MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                     this.Close();
+                }
+            }
+        }
+
+        private void EnviarEmailNotificacion(TicketWS.ticket tick, TicketWS.cambioEstadoTicket cambio)
+        {
+            if (tick.alumnoEmail != null)
+            {
+                if (EnvioCorreoNotificacion.NuevoCambioEstado(tick, cambio) == false)
+                {
+                    MessageBox.Show(
+                    "Ha ocurrido un error al enviar el correo de notificación al alumno",
+                    "Correo no enviado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
                 }
             }
         }

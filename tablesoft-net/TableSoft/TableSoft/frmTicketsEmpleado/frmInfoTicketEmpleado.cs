@@ -211,18 +211,13 @@ namespace TableSoft
 
                     if (comentarioDAO.insertarComentario(comentarioActual, tCom) != 0)
                     {
-                        //MessageBox.Show(
-                        //"El comentario se ha registrado correctamente.",
-                        //"Registro exitoso",
-                        //MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         // Limpiar respuesta, actualizar lista de comentarios y recargar paneles
                         rtfRespuesta.Text = "";
                         rtfRespuesta.Select();
                         comentarios = comentarioDAO.listarComentariosDeTicket(tCom);
                         RecargarComentarios();
 
-                        // Mandar correo al empleado
+                        // Mandar correo al agente
                         if(ticket.agente != null)
                         {
                             if(ticket.agente.agenteId != 0) EnviarEmailNoficacion(ticket.agente);
@@ -243,25 +238,10 @@ namespace TableSoft
         private void EnviarEmailNoficacion(TicketWS.agente age)
         {
 
-            StreamReader streamReader = new StreamReader("../../emails/EmailNotificacionComentario.html", System.Text.Encoding.UTF8);
-            string body = streamReader.ReadToEnd();
-            body = body.Replace("*NOMBREPH*", age.nombre);
-            body = body.Replace("*APELLIDOPH*", age.apellidoPaterno);
-            body = body.Replace("*TIPOPH*", "empleado");
-            body = body.Replace("*TICKETIDPH*", ticket.ticketId.ToString());
-            body = body.Replace("*ASUNTOPH*", ticket.asunto);
-
-            EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
-            correo.FromAddress = "noreply.yanapay@gmail.com";
-            correo.ToRecipients = age.personaEmail;
-            correo.Subject = "Yanapay - Nuevo comentario";
-            correo.Body = body;
-            correo.IsHtml = true;
-
-            if (servicioEmail.EnviarCorreo(correo) == false)
+            if (EnvioCorreoNotificacion.NuevoComentario(ticket,age) == false)
             {
                 MessageBox.Show(
-                "Ha ocurrido un error al enviar el correo de confirmación",
+                "Ha ocurrido un error al enviar el correo de notificación al agente",
                 "Correo no enviado",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );

@@ -105,7 +105,7 @@ namespace TableSoft.frmReportes
                     dgvLista.DataSource = categorias;
                     break;
                 case 2: //Para listar urgencias
-                    var urge = urgenciaDAO.listarUrgencias();
+                    var urge = urgenciaDAO.listarUrgenciasPorNombre(txtBuscar.Text);
                     if (urge == null)
                     {
                         urgencias = new BindingList<UrgenciaWS.urgencia>();

@@ -41,6 +41,7 @@ namespace TableSoft
                 TicketWS.ticket tck = (TicketWS.ticket)dgvTicketsEspera.CurrentRow.DataBoundItem;
                 TicketWS.estadoTicket estAsignado = new TicketWS.estadoTicket();
                 estAsignado.estadoId = (int)Estado.Asignado;
+                estAsignado.nombre = "ASIGNADO";
 
                 tck.estado = estAsignado;
 

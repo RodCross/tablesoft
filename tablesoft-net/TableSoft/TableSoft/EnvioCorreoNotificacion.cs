@@ -57,11 +57,11 @@ namespace TableSoft
         {
             StreamReader streamReader = new StreamReader("../../emails/EmailNotificacionEstado.html", System.Text.Encoding.UTF8);
             string body = streamReader.ReadToEnd();
-            body = body.Replace("*ROLPH*", frmInicioSesion.agenteLogueado.rol.nombre);
+            body = body.Replace("*ROLPH*", frmInicioSesion.agenteLogueado.rol.nombre.ToLower());
             body = body.Replace("*TICKETIDPH*", ticket.ticketId.ToString());
             body = body.Replace("*ASUNTOPH*", ticket.asunto);
             body = body.Replace("*ESTADOPH*", update.estadoTo.nombre);
-            body = body.Replace("*COMENTARIO*", update.comentario);
+            body = body.Replace("*COMENTARIOPH*", update.comentario);
 
             EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
             correo.FromAddress = "noreply.yanapay@gmail.com";

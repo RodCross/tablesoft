@@ -74,7 +74,14 @@ namespace TableSoft
             if(ticket.estado.estadoId == (int)Estado.Escalado)
             {
                 btnCambiarCategoria.Enabled = false;
-                //btnVerTareas.Enabled = false;
+            }
+            if(ticket.estado.estadoId == (int)Estado.Recategorizado)
+            {
+                btnCambiarCategoria.Enabled = false;
+                btnCerrarTicket.Enabled = false;
+                btnEscalar.Enabled = false;
+                btnVerTareas.Enabled = false;
+                btnResponder.Enabled = false;
             }
 
         }

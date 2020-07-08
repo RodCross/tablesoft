@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,7 +60,8 @@ namespace TableSoft.frmReportes
                     dgvLista.DataSource = urgencias;
                     break;
                 case 3: //Para listar agentes
-                    var agen = agenteDAO.listarAgentes();
+                    var eq = frmInicioSesion.agenteLogueado.equipo;
+                    var agen = agenteDAO.listarAgentesPorEquipo(eq);
                     if (agen == null)
                     {
                         agentes = new BindingList<AgenteWS.agente>();
@@ -118,17 +120,18 @@ namespace TableSoft.frmReportes
                     dgvLista.DataSource = urgencias;
                     break;
                 case 3: //Para listar agentes
-                    var agen = agenteDAO.listarAgentesPorNombre(txtBuscar.Text);
+                    var agen = new BindingList<AgenteWS.agente>();
+                    foreach(AgenteWS.agente ag in agentes)
+                    {
+                        bool coincide = ag.nombre.IndexOf(txtBuscar.Text, StringComparison.OrdinalIgnoreCase) >=0 
+                            || ag.apellidoPaterno.IndexOf(txtBuscar.Text, StringComparison.OrdinalIgnoreCase) >= 0 
+                            || ag.apellidoMaterno.IndexOf(txtBuscar.Text, StringComparison.OrdinalIgnoreCase) >= 0;
+                        if (coincide) agen.Add(ag);
+                    }
                     if (agen == null)
-                    {
-                        agentes = new BindingList<AgenteWS.agente>();
-                    }
-                    else
-                    {
-                        agentes = new BindingList<AgenteWS.agente>(agen);
-                    }
+                    
                     dgvLista.AutoGenerateColumns = false;
-                    dgvLista.DataSource = agentes;
+                    dgvLista.DataSource = agen;
                     break;
                 case 4: //Para listar equipos
                     var equi = equipoDAO.listarEquiposPorNombre(txtBuscar.Text);
@@ -180,6 +183,11 @@ namespace TableSoft.frmReportes
         private void btnVolver_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
         }
     }
 }

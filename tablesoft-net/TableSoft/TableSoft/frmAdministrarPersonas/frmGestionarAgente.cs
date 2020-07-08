@@ -549,7 +549,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
+            if (!Regex.IsMatch(txtEmailPersonal.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
             {
                 MessageBox.Show(
                     "Existe un error en el formato del email personal del agente.",
@@ -567,7 +567,7 @@ namespace TableSoft
                 );
                 return;
             }
-            if (!Regex.IsMatch(txtEmailAgente.Text, @"^([\w-.]+)@(pucp.(edu.)?pe)$"))
+            if (!Regex.IsMatch(txtEmailAgente.Text, @"^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"))
             {
                 MessageBox.Show(
                     "Existe un error en el formato del email del agente.",

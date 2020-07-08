@@ -342,7 +342,7 @@ namespace TableSoft
             {
                 sfdReporte.ShowDialog();
                 ReporteWS.ReporteWSClient daoReporte = new ReporteWS.ReporteWSClient();
-                byte[] arreglo = daoReporte.generarReporteTickets(ticket.ticketId);
+                byte[] arreglo = daoReporte.generarReporteTicket(ticket.ticketId);
                 File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
                 MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }

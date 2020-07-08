@@ -8,6 +8,10 @@
         <servlet-name>ReporteTicketCategoria</servlet-name>
         <servlet-class>pe.edu.pucp.tablesoft.servlets.ReporteTicketCategoria</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReporteTicketUrgencia</servlet-name>
+        <servlet-class>pe.edu.pucp.tablesoft.servlets.ReporteTicketUrgencia</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ReporteTickets</servlet-name>
         <url-pattern>/ReporteTickets</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>ReporteTicketCategoria</servlet-name>
         <url-pattern>/ReporteTicketCategoria</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteTicketUrgencia</servlet-name>
+        <url-pattern>/ReporteTicketUrgencia</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -47,6 +47,7 @@
             this.lblFechaFin = new System.Windows.Forms.Label();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.btnGenerar = new System.Windows.Forms.Button();
+            this.sfdReporte = new System.Windows.Forms.SaveFileDialog();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +59,10 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
-            this.btnBuscar.Location = new System.Drawing.Point(375, 97);
+            this.btnBuscar.Location = new System.Drawing.Point(500, 119);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(81, 35);
+            this.btnBuscar.Size = new System.Drawing.Size(108, 43);
             this.btnBuscar.TabIndex = 18;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -69,18 +71,20 @@
             // txtBuscar
             // 
             this.txtBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(25, 105);
+            this.txtBuscar.Location = new System.Drawing.Point(33, 129);
+            this.txtBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtBuscar.Name = "txtBuscar";
-            this.txtBuscar.Size = new System.Drawing.Size(335, 22);
+            this.txtBuscar.Size = new System.Drawing.Size(445, 26);
             this.txtBuscar.TabIndex = 17;
             // 
             // lblIngresar
             // 
             this.lblIngresar.AutoSize = true;
             this.lblIngresar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
-            this.lblIngresar.Location = new System.Drawing.Point(22, 84);
+            this.lblIngresar.Location = new System.Drawing.Point(29, 103);
+            this.lblIngresar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngresar.Name = "lblIngresar";
-            this.lblIngresar.Size = new System.Drawing.Size(134, 18);
+            this.lblIngresar.Size = new System.Drawing.Size(160, 22);
             this.lblIngresar.TabIndex = 19;
             this.lblIngresar.Text = "Ingrese el nombre:";
             // 
@@ -91,8 +95,9 @@
             this.pnlTitulo.Controls.Add(this.lblListaCategorias);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(554, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(739, 86);
             this.pnlTitulo.TabIndex = 15;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -104,9 +109,10 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(419, 23);
+            this.btnVolver.Location = new System.Drawing.Point(559, 28);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(106, 33);
+            this.btnVolver.Size = new System.Drawing.Size(141, 41);
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -117,9 +123,10 @@
             this.lblListaCategorias.AutoSize = true;
             this.lblListaCategorias.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblListaCategorias.ForeColor = System.Drawing.Color.White;
-            this.lblListaCategorias.Location = new System.Drawing.Point(30, 23);
+            this.lblListaCategorias.Location = new System.Drawing.Point(40, 28);
+            this.lblListaCategorias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblListaCategorias.Name = "lblListaCategorias";
-            this.lblListaCategorias.Size = new System.Drawing.Size(99, 27);
+            this.lblListaCategorias.Size = new System.Drawing.Size(131, 36);
             this.lblListaCategorias.TabIndex = 0;
             this.lblListaCategorias.Text = "Reportes";
             // 
@@ -143,7 +150,8 @@
             this.dgvLista.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id,
             this.Nombre});
-            this.dgvLista.Location = new System.Drawing.Point(25, 148);
+            this.dgvLista.Location = new System.Drawing.Point(33, 182);
+            this.dgvLista.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgvLista.Name = "dgvLista";
             this.dgvLista.ReadOnly = true;
             this.dgvLista.RowHeadersVisible = false;
@@ -151,7 +159,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvLista.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(500, 332);
+            this.dgvLista.Size = new System.Drawing.Size(667, 409);
             this.dgvLista.TabIndex = 16;
             this.dgvLista.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvLista_CellFormatting);
             // 
@@ -182,18 +190,20 @@
             // 
             this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(156, 538);
+            this.dtpFechaFin.Location = new System.Drawing.Point(208, 662);
+            this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(192, 24);
+            this.dtpFechaFin.Size = new System.Drawing.Size(255, 28);
             this.dtpFechaFin.TabIndex = 29;
             // 
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(156, 504);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(208, 620);
+            this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(192, 24);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(255, 28);
             this.dtpFechaInicio.TabIndex = 28;
             // 
             // lblFechaFin
@@ -201,9 +211,10 @@
             this.lblFechaFin.AutoSize = true;
             this.lblFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaFin.Location = new System.Drawing.Point(42, 538);
+            this.lblFechaFin.Location = new System.Drawing.Point(56, 662);
+            this.lblFechaFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(93, 21);
+            this.lblFechaFin.Size = new System.Drawing.Size(116, 26);
             this.lblFechaFin.TabIndex = 31;
             this.lblFechaFin.Text = "Fecha de fin";
             this.lblFechaFin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -213,9 +224,10 @@
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(22, 504);
+            this.lblFechaInicio.Location = new System.Drawing.Point(29, 620);
+            this.lblFechaInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(112, 21);
+            this.lblFechaInicio.Size = new System.Drawing.Size(141, 26);
             this.lblFechaInicio.TabIndex = 30;
             this.lblFechaInicio.Text = "Fecha de inicio";
             this.lblFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -228,18 +240,20 @@
             this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Location = new System.Drawing.Point(419, 514);
+            this.btnGenerar.Location = new System.Drawing.Point(559, 633);
+            this.btnGenerar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(106, 33);
+            this.btnGenerar.Size = new System.Drawing.Size(141, 41);
             this.btnGenerar.TabIndex = 32;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = false;
+            this.btnGenerar.Click += new System.EventHandler(this.btnGenerar_Click);
             // 
             // frmSeleccionarObjeto
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(554, 575);
+            this.ClientSize = new System.Drawing.Size(739, 708);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.dtpFechaFin);
             this.Controls.Add(this.dtpFechaInicio);
@@ -252,7 +266,7 @@
             this.Controls.Add(this.dgvLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSeleccionarObjeto";
             this.Text = "frmSeleccionarObjeto";
             this.pnlTitulo.ResumeLayout(false);
@@ -279,5 +293,6 @@
         private System.Windows.Forms.Button btnVolver;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.SaveFileDialog sfdReporte;
     }
 }

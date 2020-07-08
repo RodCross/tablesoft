@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -188,6 +189,50 @@ namespace TableSoft.frmReportes
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
         {
             Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void btnGenerar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ReporteWS.ReporteWSClient daoReporte = new ReporteWS.ReporteWSClient();
+                byte[] arreglo;
+                switch (tipoSeleccionado)
+                {
+                    case 1: //Para el nombre de la categoria
+                        sfdReporte.ShowDialog();
+                        categoria = (CategoriaWS.categoria)dgvLista.CurrentRow.DataBoundItem;
+                        ReporteWS.categoria cate = new ReporteWS.categoria();
+                        cate.categoriaId = categoria.categoriaId;
+                        cate.nombre = categoria.nombre;
+                        cate.descripcion = categoria.descripcion;
+                        cate.activo = categoria.activo;
+                        arreglo = daoReporte.generarReporteTicketCategoria(cate, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
+                        MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case 2: //Para el nombre de la urgencia
+                        sfdReporte.ShowDialog();
+                        urgencia = (UrgenciaWS.urgencia)dgvLista.CurrentRow.DataBoundItem;
+                        ReporteWS.urgencia urge = new ReporteWS.urgencia();
+                        urge.urgenciaId = urgencia.urgenciaId;
+                        urge.nombre = urgencia.nombre;
+                        urge.plazoMaximo = urgencia.plazoMaximo;
+                        urge.activo = urgencia.activo;
+                        arreglo = daoReporte.generarReporteTicketUrgencia(urge, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
+                        MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    case 3: //Para el nombre de la agente
+                        break;
+                    case 4: //Para el nombre de la equipo
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ha ocurrido un error", "Mensaje: " + ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

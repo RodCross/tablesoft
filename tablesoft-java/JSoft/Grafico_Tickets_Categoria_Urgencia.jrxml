@@ -5,20 +5,20 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
 	<parameter name="FechaFin" class="java.sql.Timestamp"/>
-	<parameter name="Categoria_id" class="java.lang.Integer"/>
+	<parameter name="Urgencia_id" class="java.lang.Integer"/>
 	<queryString>
-		<![CDATA[select B.nombre, count(T.ticket_id) as cantidad
+		<![CDATA[select C.nombre, count(T.ticket_id) as cantidad
 from ticket T
-inner join biblioteca B
-on T.biblioteca_id = B.biblioteca_id
+inner join categoria C
+on T.categoria_id = C.categoria_id
 where T.fecha_envio > $P{FechaInicio} 
 and T.fecha_envio < $P{FechaFin} 
-and T.categoria_id = $P{Categoria_id} 
-group by B.biblioteca_id;]]>
+and T.urgencia_id = $P{Urgencia_id} 
+group by C.categoria_id;]]>
 	</queryString>
 	<field name="nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
-		<property name="com.jaspersoft.studio.field.tree.path" value="biblioteca"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="categoria"/>
 	</field>
 	<field name="cantidad" class="java.lang.Long">
 		<property name="com.jaspersoft.studio.field.label" value="cantidad"/>
@@ -78,7 +78,7 @@ group by B.biblioteca_id;]]>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<text><![CDATA[Gráfico de tickets enviados, distribuidos por biblioteca: ]]></text>
+				<text><![CDATA[Gráfico de tickets enviados, distribuidos por categoría: ]]></text>
 			</staticText>
 		</band>
 	</summary>

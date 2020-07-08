@@ -113,7 +113,7 @@ where TT.ticket_id = $P{Ticket_id}  ;]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="125" splitType="Stretch">
+		<band height="48" splitType="Stretch">
 			<textField>
 				<reportElement x="8" y="10" width="25" height="30" uuid="b94ac1a6-7015-4943-90a1-8476a0ab6cab">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="462a758c-f40c-4cbf-8bf3-3fb770e96477"/>

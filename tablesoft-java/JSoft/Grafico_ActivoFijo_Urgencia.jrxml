@@ -5,37 +5,27 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
 	<parameter name="FechaFin" class="java.sql.Timestamp"/>
-	<parameter name="Categoria_id" class="java.lang.Integer"/>
+	<parameter name="Urgencia_id" class="java.lang.Integer"/>
 	<parameter name="Total" class="java.lang.Long"/>
 	<queryString>
 		<![CDATA[SELECT
-    'No recategorizados' as Nombre,
-    A.total_categoria as Cantidad
-FROM (SELECT count(T.ticket_id) - E.total_escalados AS total_categoria
-      FROM ticket T,
-            (select count(distinct ticket_id) as total_escalados
-             from cambio_estado_ticket
-             where ticket_id in (select ticket_id 
-                                 from ticket 
-                                 WHERE categoria_id = $P{Categoria_id}  
-                                 and fecha_envio > $P{FechaInicio} 
-                                 and fecha_envio <  $P{FechaFin} )
-             and estado_id_to = 5) E
-      WHERE T.categoria_id =   $P{Categoria_id} 
-      AND T.fecha_envio > $P{FechaInicio}
-      AND T.fecha_envio < $P{FechaFin}) A
+    'No asociados a activo fijo' as Nombre,
+    A.total_naf as Cantidad
+FROM (select count(*) as total_naf
+
+      from ticket 
+       WHERE urgencia_id =  $P{Urgencia_id} 
+      and fecha_envio >  $P{FechaInicio} 
+      and fecha_envio <   $P{FechaFin} and activo_fijo_id is null) A
 UNION ALL
 SELECT 
-    'Recategorizados' as Nombre,
-    B.total_escalados as Cantidad
-FROM (select count(distinct ticket_id) as total_escalados
-       from cambio_estado_ticket
-       where ticket_id in (select ticket_id 
-                           from ticket 
-                           WHERE categoria_id =  $P{Categoria_id} 
-                           and fecha_envio > $P{FechaInicio} 
-                           and fecha_envio < $P{FechaFin})
-       and estado_id_to = 5) B]]>
+    'Asociados a activo fijo' as Nombre,
+    B.total_af as Cantidad
+FROM (select count(*) as total_af
+       from ticket
+       WHERE urgencia_id =  $P{Urgencia_id} 
+       and fecha_envio >  $P{FechaInicio} 
+      and fecha_envio <   $P{FechaFin}  and activo_fijo_id is not null) B;]]>
 	</queryString>
 	<field name="Nombre" class="java.lang.String">
 		<property name="com.jaspersoft.studio.field.label" value="Nombre"/>
@@ -50,7 +40,9 @@ FROM (select count(distinct ticket_id) as total_escalados
 		<band height="217">
 			<pieChart>
 				<chart evaluationTime="Report">
-					<reportElement x="310" y="13" width="240" height="200" isPrintInFirstWholeBand="true" uuid="b603040c-ba8c-4433-9728-28e67b0142ca"/>
+					<reportElement x="310" y="13" width="240" height="200" isPrintInFirstWholeBand="true" uuid="704317b6-92d3-42ec-82a1-0d563243c880">
+						<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+					</reportElement>
 					<chartTitle/>
 					<chartSubtitle/>
 					<chartLegend/>
@@ -73,7 +65,9 @@ FROM (select count(distinct ticket_id) as total_escalados
 			</pieChart>
 			<barChart>
 				<chart evaluationTime="Report">
-					<reportElement x="-1" y="13" width="281" height="200" uuid="f8f0f734-1e48-462f-b0f2-66ee0f8b66d1"/>
+					<reportElement x="-1" y="13" width="281" height="200" uuid="f8f0f734-1e48-462f-b0f2-66ee0f8b66d1">
+						<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+					</reportElement>
 					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
 					<chartTitle/>
 					<chartSubtitle/>
@@ -107,7 +101,7 @@ FROM (select count(distinct ticket_id) as total_escalados
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
-				<text><![CDATA[Gráficos de tickets analizados distribuidos entre recategorizados y no recategorizados.]]></text>
+				<text><![CDATA[Gráficos de tickets analizados, distribuidos entre asociados a un activo fijo y no asociados a un activo fijo.]]></text>
 			</staticText>
 		</band>
 	</summary>

@@ -10,7 +10,7 @@
 		<![CDATA[select U.nombre, count(T.ticket_id) as cantidad
 from ticket T
 inner join urgencia U
-on T.biblioteca_id = U.urgencia_id
+on T.urgencia_id = U.urgencia_id
 where T.fecha_envio > $P{FechaInicio} 
 and T.fecha_envio < $P{FechaFin} 
 and T.categoria_id = $P{Categoria_id} 

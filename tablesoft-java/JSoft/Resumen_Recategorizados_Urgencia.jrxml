@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
 	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
 	<parameter name="FechaFin" class="java.sql.Timestamp"/>
-	<parameter name="Categoria_id" class="java.lang.Integer"/>
+	<parameter name="Urgencia_id" class="java.lang.Integer"/>
 	<parameter name="RUTA_GRAFICO" class="java.lang.String"/>
 	<queryString language="SQL">
 		<![CDATA[SELECT 
@@ -13,14 +13,14 @@
     B.total_escalados
 FROM (SELECT count(*) AS total_categoria
       FROM ticket 
-      WHERE categoria_id = $P{Categoria_id}  
+      WHERE urgencia_id = $P{Urgencia_id}  
       AND fecha_envio > $P{FechaInicio}
       AND fecha_envio < $P{FechaFin} ) A,
       (select count(distinct ticket_id) as total_escalados
        from cambio_estado_ticket
        where ticket_id in (select ticket_id 
                            from ticket 
-                           WHERE categoria_id = $P{Categoria_id}  
+                           WHERE urgencia_id = $P{Urgencia_id}  
                             AND fecha_envio > $P{FechaInicio}
       AND fecha_envio < $P{FechaFin} )
        and estado_id_to = 5) B;]]>
@@ -53,11 +53,11 @@ FROM (SELECT count(*) AS total_categoria
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
-				</subreportParameter>
 				<subreportParameter name="Total">
 					<subreportParameterExpression><![CDATA[$F{total_categoria}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Urgencia_id">
+					<subreportParameterExpression><![CDATA[$P{Urgencia_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{RUTA_GRAFICO}]]></subreportExpression>

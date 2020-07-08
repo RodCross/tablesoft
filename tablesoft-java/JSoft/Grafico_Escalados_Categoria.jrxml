@@ -13,7 +13,7 @@
     A.total_categoria as Cantidad
 FROM (SELECT count(T.ticket_id) - E.total_escalados AS total_categoria
       FROM ticket T,
-            (select count(*) as total_escalados
+            (select count(distinct ticket_id) as total_escalados
              from cambio_estado_ticket
              where ticket_id in (select ticket_id 
                                  from ticket 
@@ -28,7 +28,7 @@ UNION ALL
 SELECT 
     'Escalados' as Nombre,
     B.total_escalados as Cantidad
-FROM (select count(*) as total_escalados
+FROM (select count(distinct ticket_id) as total_escalados
        from cambio_estado_ticket
        where ticket_id in (select ticket_id 
                            from ticket 

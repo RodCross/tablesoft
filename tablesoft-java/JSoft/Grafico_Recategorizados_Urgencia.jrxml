@@ -5,7 +5,7 @@
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
 	<parameter name="FechaFin" class="java.sql.Timestamp"/>
-	<parameter name="Categoria_id" class="java.lang.Integer"/>
+	<parameter name="Urgencia_id" class="java.lang.Integer"/>
 	<parameter name="Total" class="java.lang.Long"/>
 	<queryString>
 		<![CDATA[SELECT
@@ -17,11 +17,11 @@ FROM (SELECT count(T.ticket_id) - E.total_escalados AS total_categoria
              from cambio_estado_ticket
              where ticket_id in (select ticket_id 
                                  from ticket 
-                                 WHERE categoria_id = $P{Categoria_id}  
+                                 WHERE urgencia_id = $P{Urgencia_id}  
                                  and fecha_envio > $P{FechaInicio} 
                                  and fecha_envio <  $P{FechaFin} )
              and estado_id_to = 5) E
-      WHERE T.categoria_id =   $P{Categoria_id} 
+      WHERE T.urgencia_id =   $P{Urgencia_id} 
       AND T.fecha_envio > $P{FechaInicio}
       AND T.fecha_envio < $P{FechaFin}) A
 UNION ALL
@@ -32,7 +32,7 @@ FROM (select count(distinct ticket_id) as total_escalados
        from cambio_estado_ticket
        where ticket_id in (select ticket_id 
                            from ticket 
-                           WHERE categoria_id =  $P{Categoria_id} 
+                           WHERE urgencia_id =  $P{Urgencia_id} 
                            and fecha_envio > $P{FechaInicio} 
                            and fecha_envio < $P{FechaFin})
        and estado_id_to = 5) B]]>

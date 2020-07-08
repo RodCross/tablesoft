@@ -11,7 +11,7 @@
 		<![CDATA[SELECT 
     A.total_categoria,
     B.total_escalados
-FROM (SELECT count(*) AS total_categoria
+FROM (SELECT count(distinct ticket_id) AS total_categoria
       FROM ticket 
       WHERE categoria_id = $P{Categoria_id}   
       AND fecha_envio > $P{FechaInicio}

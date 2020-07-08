@@ -27,7 +27,7 @@
 	<parameter name="RUTA_TICKET_BIBLIOTECA" class="java.lang.String"/>
 	<parameter name="RUTA_GRAFICO_ACTIVOFIJO" class="java.lang.String"/>
 	<parameter name="RUTA_RESUMEN_ACTIVOFIJO" class="java.lang.String"/>
-	<parameter name="RUTA_TICKET_URGENCIA" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_CATEGORIA" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select T.ticket_id
 from ticket T 
@@ -274,7 +274,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{RUTA_TICKET_URGENCIA}]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_CATEGORIA}]]></subreportExpression>
 			</subreport>
 		</band>
 	</summary>

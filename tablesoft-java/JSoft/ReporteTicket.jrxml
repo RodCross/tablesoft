@@ -119,28 +119,28 @@ order by T.ticket_id;]]>
 		<band height="492" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="150" y="30" width="330" height="40" uuid="8997d0f9-86a8-480c-af04-c038294030c9"/>
+				<reportElement x="150" y="30" width="400" height="30" uuid="8997d0f9-86a8-480c-af04-c038294030c9"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{asunto}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="-20" y="30" width="140" height="40" uuid="6eb59d56-4ea2-4ec6-9a1f-f09a2667491d"/>
+				<reportElement x="-20" y="30" width="140" height="30" uuid="6eb59d56-4ea2-4ec6-9a1f-f09a2667491d"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Asunto]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="70" width="330" height="69" uuid="ac1901eb-2dea-4508-8297-df55a5b058ed"/>
+				<reportElement x="150" y="60" width="400" height="79" uuid="ac1901eb-2dea-4508-8297-df55a5b058ed"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="-20" y="70" width="140" height="69" uuid="8c6be4c6-f91d-4db7-8da6-b3f0c5c2f4ff"/>
+				<reportElement x="-20" y="60" width="140" height="79" uuid="8c6be4c6-f91d-4db7-8da6-b3f0c5c2f4ff"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>

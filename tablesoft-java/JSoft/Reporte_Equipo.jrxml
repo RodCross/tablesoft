@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_Categoria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea81d21a-8566-4aa4-ab98-f3e1bb848c0e">
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="pixies"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<parameter name="Equipo_id" class="java.lang.Integer"/>
 	<parameter name="Equipo_nombre" class="java.lang.String"/>

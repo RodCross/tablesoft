@@ -312,6 +312,16 @@
 			<location>C:/Users/CARBAJAL/Documents/Repositorios/tablesoft/tablesoft-java/TableSoftReports/build/classes/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper</location>
 		</link>
 		<link>
+			<name>Reporte_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Reporte_Equipo.jasper</location>
+		</link>
+		<link>
+			<name>Reporte_Equipo.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Reporte_Equipo.jrxml</location>
+		</link>
+		<link>
 			<name>Reporte_Urgencia.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Reporte_Urgencia.jasper</location>

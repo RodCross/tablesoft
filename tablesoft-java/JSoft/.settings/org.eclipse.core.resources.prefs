@@ -33,6 +33,7 @@ encoding/Lista_Transferencia_Ticket.jrxml=UTF-8
 encoding/ReporteTicket.jrxml=UTF-8
 encoding/Reporte_Agente.jrxml=UTF-8
 encoding/Reporte_Categoria.jrxml=UTF-8
+encoding/Reporte_Equipo.jrxml=UTF-8
 encoding/Reporte_Urgencia.jrxml=UTF-8
 encoding/Resumen_ActivoFijo_Agente.jrxml=UTF-8
 encoding/Resumen_ActivoFijo_Categoria.jrxml=UTF-8

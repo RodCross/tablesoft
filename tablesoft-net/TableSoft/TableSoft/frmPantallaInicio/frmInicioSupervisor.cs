@@ -8,23 +8,13 @@ namespace TableSoft
         public frmInicioSupervisor()
         {
             InitializeComponent();
+            SetUsername(lblUsuario);
         }
 
-        private void lklFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        private void SetUsername(Label lblUser)
         {
-            frmAyuda frm = new frmAyuda
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
-
-            frm.FormClosing += delegate
-            {
-                this.Show();
-            };
-
-            frm.Show();
-            this.Hide();
+            AgenteWS.agente age = frmInicioSesion.agenteLogueado;
+            lblUser.Text = age.apellidoPaterno + " " + age.apellidoMaterno + ", " + age.nombre;
         }
 
         private void lklLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

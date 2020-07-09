@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmInicioSesion));
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lklFAQ = new System.Windows.Forms.LinkLabel();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.lblTituloLogin = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lklFAQ);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -63,24 +61,6 @@
             this.pnlTitulo.Size = new System.Drawing.Size(884, 106);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lklFAQ
-            // 
-            this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
-            this.lklFAQ.AutoSize = true;
-            this.lklFAQ.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(743, 68);
-            this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(114, 17);
-            this.lklFAQ.TabIndex = 0;
-            this.lklFAQ.TabStop = true;
-            this.lklFAQ.Text = "Manual de ayuda";
-            this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
-            this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);
             // 
             // lblBibliotecasPUCP
             // 
@@ -303,7 +283,6 @@
         private System.Windows.Forms.LinkLabel lklForgot;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.PictureBox picExit;
-        private System.Windows.Forms.LinkLabel lklFAQ;
         private System.Windows.Forms.Label lblErrEmail;
         private System.Windows.Forms.Label lblErrPassword;
         private System.Windows.Forms.PictureBox picEye;

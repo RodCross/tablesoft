@@ -195,23 +195,6 @@ namespace TableSoft
             Movimiento.MoverVentana(Handle, e.Button);
         }
 
-        private void lklFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            frmAyuda frm = new frmAyuda
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
-
-            frm.FormClosing += delegate
-            {
-                this.Show();
-            };
-
-            frm.Show();
-            this.Hide();
-        }
-
         private void lklForgot_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             frmRecuperarPassword frm = new frmRecuperarPassword

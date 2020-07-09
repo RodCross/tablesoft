@@ -32,7 +32,6 @@
             this.pnlOpciones = new System.Windows.Forms.Panel();
             this.lklLogout = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lklFAQ = new System.Windows.Forms.LinkLabel();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.pnlExt = new System.Windows.Forms.Panel();
@@ -52,6 +51,8 @@
             this.lblAtender = new System.Windows.Forms.Label();
             this.lblDetalleAtender = new System.Windows.Forms.Label();
             this.btnAtender = new System.Windows.Forms.Button();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlOpciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlExt.SuspendLayout();
@@ -93,7 +94,8 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lklFAQ);
+            this.pnlTitulo.Controls.Add(this.label1);
+            this.pnlTitulo.Controls.Add(this.lblUsuario);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -102,23 +104,6 @@
             this.pnlTitulo.Size = new System.Drawing.Size(1274, 106);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lklFAQ
-            // 
-            this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
-            this.lklFAQ.AutoSize = true;
-            this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(1128, 65);
-            this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(114, 17);
-            this.lklFAQ.TabIndex = 0;
-            this.lklFAQ.TabStop = true;
-            this.lklFAQ.Text = "Manual de ayuda";
-            this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
-            this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);
             // 
             // lblBibliotecasPUCP
             // 
@@ -345,6 +330,34 @@
             this.btnAtender.UseVisualStyleBackColor = false;
             this.btnAtender.Click += new System.EventHandler(this.btnAtender_Click);
             // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsuario.Location = new System.Drawing.Point(834, 65);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUsuario.Size = new System.Drawing.Size(412, 20);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Apellidos, Nombres";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(1115, 38);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "SUPERVISOR";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
             // frmInicioSupervisor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -382,7 +395,6 @@
         private System.Windows.Forms.Panel pnlOpciones;
         private System.Windows.Forms.LinkLabel lklLogout;
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.LinkLabel lklFAQ;
         private System.Windows.Forms.Label lblBibliotecasPUCP;
         private System.Windows.Forms.Label lblTituloSistema;
         private System.Windows.Forms.Panel pnlExt;
@@ -402,5 +414,7 @@
         private System.Windows.Forms.Label lblDetalleAtender;
         private System.Windows.Forms.Button btnAtender;
         private System.Windows.Forms.PictureBox picGenerar;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }

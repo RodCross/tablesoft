@@ -164,12 +164,6 @@
     <Compile Include="frmTicketsAgente\frmCerrarTicketAgente.Designer.cs">
       <DependentUpon>frmCerrarTicketAgente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioSesion\frmAyuda.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmInicioSesion\frmAyuda.Designer.cs">
-      <DependentUpon>frmAyuda.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTicketsEmpleado\frmCrearNuevoTicket.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -441,9 +435,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTicketsAgente\frmCerrarTicketAgente.resx">
       <DependentUpon>frmCerrarTicketAgente.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioSesion\frmAyuda.resx">
-      <DependentUpon>frmAyuda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTicketsEmpleado\frmCrearNuevoTicket.resx">
       <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>

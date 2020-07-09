@@ -8,6 +8,13 @@ namespace TableSoft
         public frmInicioAdmin()
         {
             InitializeComponent();
+            SetUsername(lblUsuario);
+        }
+
+        private void SetUsername(Label lblUser)
+        {
+            AgenteWS.agente age = frmInicioSesion.agenteLogueado;
+            lblUser.Text = age.apellidoPaterno + " " + age.apellidoMaterno + ", " + age.nombre;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -18,24 +25,6 @@ namespace TableSoft
         private void lklLogout_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             this.Close();
-        }
-
-        private void lklFAQ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-            frmAyuda frm = new frmAyuda
-            {
-                StartPosition = FormStartPosition.Manual,
-                Location = this.Location
-            };
-
-            frm.FormClosing += delegate
-            {
-                this.Show();
-            };
-
-            frm.Show();
-            this.Hide();
         }
 
         private void btnTickets_Click(object sender, EventArgs e)

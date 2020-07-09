@@ -50,9 +50,10 @@
             this.pnlOpciones = new System.Windows.Forms.Panel();
             this.lklLogout = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lklFAQ = new System.Windows.Forms.LinkLabel();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.pnlExt.SuspendLayout();
             this.pnlInt.SuspendLayout();
             this.pnlDer2.SuspendLayout();
@@ -312,7 +313,8 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lklFAQ);
+            this.pnlTitulo.Controls.Add(this.label1);
+            this.pnlTitulo.Controls.Add(this.lblUsuario);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
@@ -321,23 +323,6 @@
             this.pnlTitulo.Size = new System.Drawing.Size(1277, 106);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lklFAQ
-            // 
-            this.lklFAQ.ActiveLinkColor = System.Drawing.Color.Yellow;
-            this.lklFAQ.AutoSize = true;
-            this.lklFAQ.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold);
-            this.lklFAQ.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
-            this.lklFAQ.LinkColor = System.Drawing.Color.White;
-            this.lklFAQ.Location = new System.Drawing.Point(1132, 65);
-            this.lklFAQ.Name = "lklFAQ";
-            this.lklFAQ.Size = new System.Drawing.Size(114, 17);
-            this.lklFAQ.TabIndex = 0;
-            this.lklFAQ.TabStop = true;
-            this.lklFAQ.Text = "Manual de ayuda";
-            this.lklFAQ.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lklFAQ.VisitedLinkColor = System.Drawing.Color.White;
-            this.lklFAQ.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lklFAQ_LinkClicked);
             // 
             // lblBibliotecasPUCP
             // 
@@ -360,6 +345,34 @@
             this.lblTituloSistema.Size = new System.Drawing.Size(340, 34);
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsuario.Location = new System.Drawing.Point(838, 65);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUsuario.Size = new System.Drawing.Size(412, 20);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Apellidos, Nombres";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.label1.Location = new System.Drawing.Point(1061, 38);
+            this.label1.Name = "label1";
+            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label1.Size = new System.Drawing.Size(189, 20);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "ADMINISTRADOR";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmInicioAdmin
             // 
@@ -414,7 +427,6 @@
         private System.Windows.Forms.Panel pnlOpciones;
         private System.Windows.Forms.LinkLabel lklLogout;
         private System.Windows.Forms.Panel pnlTitulo;
-        private System.Windows.Forms.LinkLabel lklFAQ;
         private System.Windows.Forms.Label lblBibliotecasPUCP;
         private System.Windows.Forms.Label lblTituloSistema;
         private System.Windows.Forms.Panel pnlDer2;
@@ -422,5 +434,7 @@
         private System.Windows.Forms.Label lblGestionarSistema;
         private System.Windows.Forms.PictureBox picGestionarSistema;
         private System.Windows.Forms.PictureBox picGenerarReportes;
+        private System.Windows.Forms.Label lblUsuario;
+        private System.Windows.Forms.Label label1;
     }
 }

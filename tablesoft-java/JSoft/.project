@@ -122,6 +122,11 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Escalados_Categoria.jrxml</location>
 		</link>
 		<link>
+			<name>Grafico_Escalados_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Escalados_Equipo.jasper</location>
+		</link>
+		<link>
 			<name>Grafico_Escalados_Equipo.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Escalados_Equipo.jrxml</location>
@@ -155,6 +160,11 @@
 			<name>Grafico_Recategorizados_Categoria.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Recategorizados_Categoria.jrxml</location>
+		</link>
+		<link>
+			<name>Grafico_Recategorizados_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Recategorizados_Equipo.jasper</location>
 		</link>
 		<link>
 			<name>Grafico_Recategorizados_Equipo.jrxml</name>
@@ -332,6 +342,16 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_ActivoFijo_Categoria.jrxml</location>
 		</link>
 		<link>
+			<name>Resumen_ActivoFijo_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_ActivoFijo_Equipo.jasper</location>
+		</link>
+		<link>
+			<name>Resumen_ActivoFijo_Equipo.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_ActivoFijo_Equipo.jrxml</location>
+		</link>
+		<link>
 			<name>Resumen_ActivoFijo_Urgencia.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_ActivoFijo_Urgencia.jasper</location>
@@ -360,6 +380,16 @@
 			<name>Resumen_Demorados_Categoria.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Demorados_Categoria.jrxml</location>
+		</link>
+		<link>
+			<name>Resumen_Demorados_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Demorados_Equipo.jasper</location>
+		</link>
+		<link>
+			<name>Resumen_Demorados_Equipo.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Demorados_Equipo.jrxml</location>
 		</link>
 		<link>
 			<name>Resumen_Demorados_Urgencia.jasper</name>
@@ -392,6 +422,16 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Categoria.jrxml</location>
 		</link>
 		<link>
+			<name>Resumen_Escalados_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Equipo.jasper</location>
+		</link>
+		<link>
+			<name>Resumen_Escalados_Equipo.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Equipo.jrxml</location>
+		</link>
+		<link>
 			<name>Resumen_Escalados_Urgencia.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Urgencia.jasper</location>
@@ -410,6 +450,11 @@
 			<name>Resumen_Recategorizados_Agente.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Recategorizados_Agente.jrxml</location>
+		</link>
+		<link>
+			<name>Resumen_Recategorizados_Equipo.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Recategorizados_Equipo.jrxml</location>
 		</link>
 		<link>
 			<name>Resumen_Recategorizados_Urgencia.jasper</name>

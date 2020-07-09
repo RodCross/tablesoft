@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- Created with Jaspersoft Studio version 6.13.0.final using JasperReports Library version 6.13.0-46ada4d1be8f3c5985fd0b6146f3ed44caed6f05  -->
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Resumen_Recategorizados_Categoria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1a9d7ac-3997-4d81-bf86-72dd306aafcf">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="pixies"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
 	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
 	<parameter name="FechaFin" class="java.sql.Timestamp"/>
 	<parameter name="Equipo_id" class="java.lang.Integer"/>
@@ -58,7 +58,7 @@ FROM (SELECT count(*) AS total_categoria
 				<subreportParameter name="Total">
 					<subreportParameterExpression><![CDATA[$F{total_categoria}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Agente_id">
+				<subreportParameter name="Equipo_id">
 					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>

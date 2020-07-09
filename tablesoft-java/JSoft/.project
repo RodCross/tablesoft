@@ -22,6 +22,16 @@
 	</natures>
 	<linkedResources>
 		<link>
+			<name>Grafico_ActivoFijo_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_ActivoFijo_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_ActivoFijo_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_ActivoFijo_Agente.jrxml</location>
+		</link>
+		<link>
 			<name>Grafico_ActivoFijo_Categoria.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_ActivoFijo_Categoria.jasper</location>
@@ -42,9 +52,14 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_ActivoFijo_Urgencia.jrxml</location>
 		</link>
 		<link>
-			<name>Grafico_ActivosFijos_Categoria.jrxml</name>
+			<name>Grafico_Demorados_Agente.jasper</name>
 			<type>1</type>
-			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_ActivosFijos_Categoria.jrxml</location>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Demorados_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_Demorados_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Demorados_Agente.jrxml</location>
 		</link>
 		<link>
 			<name>Grafico_Demorados_Categoria.jasper</name>
@@ -67,6 +82,16 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Demorados_Urgencia.jrxml</location>
 		</link>
 		<link>
+			<name>Grafico_Escalados_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Escalados_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_Escalados_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Escalados_Agente.jrxml</location>
+		</link>
+		<link>
 			<name>Grafico_Escalados_Categoria.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Escalados_Categoria.jasper</location>
@@ -85,6 +110,16 @@
 			<name>Grafico_Escalados_Urgencia.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Escalados_Urgencia.jrxml</location>
+		</link>
+		<link>
+			<name>Grafico_Recategorizados_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Recategorizados_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_Recategorizados_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Recategorizados_Agente.jrxml</location>
 		</link>
 		<link>
 			<name>Grafico_Recategorizados_Categoria.jasper</name>
@@ -117,6 +152,16 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Biblioteca_Categoria.jrxml</location>
 		</link>
 		<link>
+			<name>Grafico_Tickets_Categoria_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Categoria_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_Tickets_Categoria_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Categoria_Agente.jrxml</location>
+		</link>
+		<link>
 			<name>Grafico_Tickets_Categoria_Urgencia.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Categoria_Urgencia.jasper</location>
@@ -125,6 +170,16 @@
 			<name>Grafico_Tickets_Categoria_Urgencia.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Categoria_Urgencia.jrxml</location>
+		</link>
+		<link>
+			<name>Grafico_Tickets_Dia_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Dia_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_Tickets_Dia_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Dia_Agente.jrxml</location>
 		</link>
 		<link>
 			<name>Grafico_Tickets_Dia_Categoria.jasper</name>
@@ -145,6 +200,16 @@
 			<name>Grafico_Tickets_Dia_Urgencia.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Dia_Urgencia.jrxml</location>
+		</link>
+		<link>
+			<name>Grafico_Tickets_Urgencia_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Urgencia_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_Tickets_Urgencia_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Urgencia_Agente.jrxml</location>
 		</link>
 		<link>
 			<name>Grafico_Tickets_Urgencia_Categoria.jasper</name>
@@ -177,9 +242,24 @@
 			<location>C:/Users/CARBAJAL/Documents/Repositorios/tablesoft/tablesoft-java/TableSoftReports/build/classes/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper</location>
 		</link>
 		<link>
+			<name>Reporte_Urgencia.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Reporte_Urgencia.jasper</location>
+		</link>
+		<link>
 			<name>Reporte_Urgencia.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Reporte_Urgencia.jrxml</location>
+		</link>
+		<link>
+			<name>Resumen_ActivoFijo_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_ActivoFijo_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Resumen_ActivoFijo_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_ActivoFijo_Agente.jrxml</location>
 		</link>
 		<link>
 			<name>Resumen_ActivoFijo_Categoria.jasper</name>
@@ -202,6 +282,16 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_ActivoFijo_Urgencia.jrxml</location>
 		</link>
 		<link>
+			<name>Resumen_Demorados_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Demorados_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Resumen_Demorados_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Demorados_Agente.jrxml</location>
+		</link>
+		<link>
 			<name>Resumen_Demorados_Categoria.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Demorados_Categoria.jasper</location>
@@ -222,6 +312,16 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Demorados_Urgencia.jrxml</location>
 		</link>
 		<link>
+			<name>Resumen_Escalados_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Resumen_Escalados_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Agente.jrxml</location>
+		</link>
+		<link>
 			<name>Resumen_Escalados_Categoria.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Categoria.jasper</location>
@@ -240,6 +340,16 @@
 			<name>Resumen_Escalados_Urgencia.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Escalados_Urgencia.jrxml</location>
+		</link>
+		<link>
+			<name>Resumen_Recategorizados_Agente.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Recategorizados_Agente.jasper</location>
+		</link>
+		<link>
+			<name>Resumen_Recategorizados_Agente.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Recategorizados_Agente.jrxml</location>
 		</link>
 		<link>
 			<name>Resumen_Recategorizados_Urgencia.jasper</name>

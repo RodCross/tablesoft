@@ -34,6 +34,7 @@
             // stLapso
             // 
             this.stLapso.Enabled = true;
+            this.stLapso.Interval = 1000D;
             this.stLapso.Elapsed += new System.Timers.ElapsedEventHandler(this.stLapso_Elapsed);
             // 
             // Daemon

@@ -21,8 +21,10 @@ import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
 import net.sf.jasperreports.view.JasperViewer;
 import pe.edu.pucp.tablesoft.config.DBManager;
+import pe.edu.pucp.tablesoft.model.Agente;
 import pe.edu.pucp.tablesoft.model.Categoria;
 import pe.edu.pucp.tablesoft.model.Urgencia;
+import pe.edu.pucp.tablesoft.servlets.ReporteTicketAgente;
 import pe.edu.pucp.tablesoft.servlets.ReporteTicketCategoria;
 import pe.edu.pucp.tablesoft.servlets.ReporteTicketUrgencia;
 import pe.edu.pucp.tablesoft.servlets.ReporteTickets;
@@ -356,6 +358,147 @@ public class ReporteWS {
             hm.put("Categoria_id", catego.getCategoriaId());
             hm.put("Categoria_nombre", catego.getNombre());
             hm.put("Categoria_descripcion", catego.getDescripcion());
+            Timestamp tsi=new Timestamp(fechaIni.getTime());
+            Timestamp tsf=new Timestamp(fechaFin.getTime());
+            hm.put("FechaInicio", tsi);
+            hm.put("FechaFin", tsf);
+            hm.put("RUTA_REPORTE", rutaSubReporte1Jasper);
+            hm.put("RUTA_LISTA_COMENTARIOS", rutaSubReporte2Jasper);
+            hm.put("RUTA_LISTA_TRANS_TICKET", rutaSubReporte3Jasper);
+            hm.put("RUTA_LISTA_TAREAS", rutaSubReporte4Jasper);
+            hm.put("RUTA_LISTA_CAMBIOS", rutaSubReporte5Jasper);
+            hm.put("RUTA_LISTA_TRANS_EXTERNA", rutaSubReporte6Jasper);
+            hm.put("IMAGEN_REPORTE", imagenReporte);
+            
+            hm.put("RUTA_GRAFICO_ESCALADOS", rutaSubReporte7Jasper);
+            hm.put("RUTA_GRAFICO_DEMORADOS", rutaSubReporte8Jasper);
+            hm.put("RUTA_GRAFICO_RECATEGORIZADOS", rutaSubReporte9Jasper);
+            hm.put("RUTA_RESUMEN_ESCALADOS", rutaSubReporte10Jasper);
+            hm.put("RUTA_RESUMEN_RECATEGORIZADOS", rutaSubReporte11Jasper);
+            hm.put("RUTA_RESUMEN_DEMORADOS", rutaSubReporte12Jasper);
+            hm.put("RUTA_TICKET_DIA", rutaSubReporte13Jasper);
+            hm.put("RUTA_TICKET_BIBLIOTECA", rutaSubReporte14Jasper);
+            
+            
+            hm.put("RUTA_GRAFICO_ACTIVOFIJO", rutaSubReporte15Jasper);
+            hm.put("RUTA_RESUMEN_ACTIVOFIJO", rutaSubReporte16Jasper);
+            hm.put("RUTA_TICKET_URGENCIA", rutaSubReporte17Jasper);
+            
+            //Object JasperPrint
+            JasperPrint objJPrint =
+            JasperFillManager.fillReport(objJR,hm,con);
+            
+            //Cerramos la conexion
+            con.close();
+
+            arreglo = JasperExportManager.exportReportToPdf(objJPrint);
+        
+        }catch(Exception ex){
+            System.out.println(ex.getMessage());
+        }
+        return arreglo;
+    }
+    
+    @WebMethod(operationName = "generarReporteTicketAgente")
+    public byte[] generarReporteTicketAgente(@WebParam(name = "objAgente") Agente agente,@WebParam(name = "fechaIni") Date fechaIni,@WebParam(name = "fechaFin")Date fechaFin) {
+        byte[] arreglo = null;
+        
+        Connection con;
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
+            
+            String rutaImagen
+                = ReporteTicketAgente.class.getResource(
+       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.jpg").getPath().replace("%20", " ");
+        ImageIcon icon = new ImageIcon(rutaImagen);
+        java.awt.Image imagenReporte = icon.getImage();
+
+            String rutaReporteJasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Reporte_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte1Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath().replace("%20", " ");
+            
+            //Obtener la ruta del subreporte
+            String rutaSubReporte2Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Comentarios_Ticket.jasper").getPath().replace("%20", " ");
+
+            //Obtener la ruta del subreporte2
+            String rutaSubReporte3Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte4Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath().replace("%20", " ");
+
+            //Obtener la ruta al archivo
+            String rutaSubReporte5Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte6Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte7Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Escalados_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte8Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Demorados_Agente.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte9Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Recategorizados_Agente.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte10Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Escalados_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte11Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Recategorizados_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte12Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Demorados_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte13Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Dia_Agente.jasper").getPath().replace("%20", " ");
+
+            String rutaSubReporte14Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Categoria_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte15Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_ActivoFijo_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte16Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_ActivoFijo_Agente.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte17Jasper
+            = ReporteTicketAgente.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Urgencia_Agente.jasper").getPath().replace("%20", " ");
+            
+            //Objecto JasperReport
+            JasperReport objJR = 
+                    (JasperReport)
+                    JRLoader.loadObjectFromFile(rutaReporteJasper);
+
+            HashMap hm = new HashMap();
+            
+            hm.put("Agente_id", agente.getAgenteId());
+            hm.put("Agente_nombre", agente.getNombre());
+            hm.put("Agente_codigo", agente.getCodigo());
             Timestamp tsi=new Timestamp(fechaIni.getTime());
             Timestamp tsf=new Timestamp(fechaFin.getTime());
             hm.put("FechaInicio", tsi);

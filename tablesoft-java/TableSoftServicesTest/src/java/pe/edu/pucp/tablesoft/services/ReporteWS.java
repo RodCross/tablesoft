@@ -630,6 +630,11 @@ public class ReporteWS {
             String rutaSubReporte17Jasper
             = ReporteTicketEquipo.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Urgencia_Equipo.jasper").getPath().replace("%20", " ");
+            
+            String rutaSubReporte18Jasper
+            = ReporteTicketEquipo.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Agente_Equipo.jasper").getPath().replace("%20", " ");
+            
             //Objecto JasperReport
             JasperReport objJR = 
                     (JasperReport)
@@ -666,6 +671,7 @@ public class ReporteWS {
             hm.put("RUTA_GRAFICO_ACTIVOFIJO", rutaSubReporte15Jasper);
             hm.put("RUTA_RESUMEN_ACTIVOFIJO", rutaSubReporte16Jasper);
             hm.put("RUTA_TICKET_URGENCIA", rutaSubReporte17Jasper);
+            hm.put("RUTA_TICKET_AGENTE", rutaSubReporte18Jasper);
             //Object JasperPrint
             JasperPrint objJPrint =
             JasperFillManager.fillReport(objJR,hm,con);

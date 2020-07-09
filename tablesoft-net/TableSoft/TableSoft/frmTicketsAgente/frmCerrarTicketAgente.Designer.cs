@@ -74,9 +74,9 @@
             this.lblActualizarEstado.ForeColor = System.Drawing.Color.White;
             this.lblActualizarEstado.Location = new System.Drawing.Point(19, 16);
             this.lblActualizarEstado.Name = "lblActualizarEstado";
-            this.lblActualizarEstado.Size = new System.Drawing.Size(126, 25);
+            this.lblActualizarEstado.Size = new System.Drawing.Size(122, 25);
             this.lblActualizarEstado.TabIndex = 1;
-            this.lblActualizarEstado.Text = "Cerrar Ticket";
+            this.lblActualizarEstado.Text = "Cerrar ticket";
             // 
             // lblIngresarComentario
             // 
@@ -95,11 +95,11 @@
             this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnActualizar.FlatAppearance.BorderSize = 0;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(401, 408);
+            this.btnActualizar.Location = new System.Drawing.Point(380, 403);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(119, 33);
+            this.btnActualizar.Size = new System.Drawing.Size(140, 40);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -122,9 +122,9 @@
             this.lblMensaje.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
             this.lblMensaje.Location = new System.Drawing.Point(21, 80);
             this.lblMensaje.Name = "lblMensaje";
-            this.lblMensaje.Size = new System.Drawing.Size(398, 18);
+            this.lblMensaje.Size = new System.Drawing.Size(410, 18);
             this.lblMensaje.TabIndex = 5;
-            this.lblMensaje.Text = "¿Está seguro de que desea marcar el ticket como resuelto?";
+            this.lblMensaje.Text = "¿Estás seguro de que deseas marcar el ticket como resuelto?";
             // 
             // frmCerrarTicketAgente
             // 

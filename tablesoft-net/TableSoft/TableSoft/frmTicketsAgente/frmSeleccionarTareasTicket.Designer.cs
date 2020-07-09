@@ -37,16 +37,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionarTareasTicket));
             this.dgvLista = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblListaTareas = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.picAdd = new System.Windows.Forms.PictureBox();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Completado = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Eliminar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
@@ -99,6 +99,48 @@
             this.dgvLista.Size = new System.Drawing.Size(694, 352);
             this.dgvLista.TabIndex = 0;
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "tareaId";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ID.FillWeight = 50F;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 50;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "descripcion";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            this.Descripcion.Width = 475;
+            // 
+            // Completado
+            // 
+            this.Completado.DataPropertyName = "completado";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.NullValue = false;
+            this.Completado.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Completado.FalseValue = "False";
+            this.Completado.HeaderText = "Completado";
+            this.Completado.Name = "Completado";
+            this.Completado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Completado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.Completado.TrueValue = "True";
+            // 
+            // Eliminar
+            // 
+            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Eliminar.HeaderText = "Eliminar";
+            this.Eliminar.Name = "Eliminar";
+            // 
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
@@ -144,11 +186,11 @@
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardar.ForeColor = System.Drawing.Color.White;
-            this.btnGuardar.Location = new System.Drawing.Point(610, 509);
+            this.btnGuardar.Location = new System.Drawing.Point(589, 501);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(119, 33);
+            this.btnGuardar.Size = new System.Drawing.Size(140, 41);
             this.btnGuardar.TabIndex = 5;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = false;
@@ -165,6 +207,7 @@
             // 
             // picAdd
             // 
+            this.picAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picAdd.Image = global::TableSoft.Properties.Resources.Plus;
             this.picAdd.Location = new System.Drawing.Point(413, 503);
             this.picAdd.Name = "picAdd";
@@ -173,48 +216,6 @@
             this.picAdd.TabIndex = 13;
             this.picAdd.TabStop = false;
             this.picAdd.Click += new System.EventHandler(this.picAdd_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "tareaId";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ID.DefaultCellStyle = dataGridViewCellStyle2;
-            this.ID.FillWeight = 50F;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "descripcion";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Descripcion.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            this.Descripcion.Width = 475;
-            // 
-            // Completado
-            // 
-            this.Completado.DataPropertyName = "completado";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.NullValue = false;
-            this.Completado.DefaultCellStyle = dataGridViewCellStyle4;
-            this.Completado.FalseValue = "False";
-            this.Completado.HeaderText = "Completado";
-            this.Completado.Name = "Completado";
-            this.Completado.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Completado.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.Completado.TrueValue = "True";
-            // 
-            // Eliminar
-            // 
-            this.Eliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Eliminar.HeaderText = "Eliminar";
-            this.Eliminar.Name = "Eliminar";
             // 
             // frmSeleccionarTareasTicket
             // 

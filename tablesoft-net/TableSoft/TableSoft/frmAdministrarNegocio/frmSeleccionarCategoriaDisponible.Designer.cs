@@ -52,6 +52,7 @@
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
             this.pnlTitulo.Controls.Add(this.lblListaCategorias);
+            this.pnlTitulo.Controls.Add(this.btnVolver);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
@@ -78,11 +79,11 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(666, 437);
+            this.btnVolver.Location = new System.Drawing.Point(807, 22);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 7;
-            this.btnVolver.Text = "< Volver";
+            this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -92,11 +93,11 @@
             this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionar.FlatAppearance.BorderSize = 0;
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(807, 437);
+            this.btnSeleccionar.Location = new System.Drawing.Point(786, 435);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
+            this.btnSeleccionar.Size = new System.Drawing.Size(140, 41);
             this.btnSeleccionar.TabIndex = 9;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -191,7 +192,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(957, 508);
             this.Controls.Add(this.pnlTitulo);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvLista);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

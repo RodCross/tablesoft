@@ -42,9 +42,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaTicketsEmpleado));
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.lblHistorial = new System.Windows.Forms.Label();
-            this.btnVolver = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Agente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +50,9 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Urgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblHistorial = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -63,11 +63,11 @@
             this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSeleccionar.FlatAppearance.BorderSize = 0;
             this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(1093, 545);
+            this.btnSeleccionar.Location = new System.Drawing.Point(1093, 547);
             this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
+            this.btnSeleccionar.Size = new System.Drawing.Size(140, 41);
             this.btnSeleccionar.TabIndex = 2;
             this.btnSeleccionar.Text = "Seleccionar";
             this.btnSeleccionar.UseVisualStyleBackColor = false;
@@ -105,7 +105,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHistorial.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvHistorial.Location = new System.Drawing.Point(23, 92);
+            this.dgvHistorial.Location = new System.Drawing.Point(35, 100);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.ReadOnly = true;
             this.dgvHistorial.RowHeadersVisible = false;
@@ -113,47 +113,9 @@
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvHistorial.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistorial.Size = new System.Drawing.Size(1189, 436);
+            this.dgvHistorial.Size = new System.Drawing.Size(1198, 436);
             this.dgvHistorial.TabIndex = 0;
             this.dgvHistorial.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHistorial_CellFormatting);
-            // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.lblHistorial);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1239, 70);
-            this.pnlTitulo.TabIndex = 3;
-            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // lblHistorial
-            // 
-            this.lblHistorial.AutoSize = true;
-            this.lblHistorial.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorial.ForeColor = System.Drawing.Color.White;
-            this.lblHistorial.Location = new System.Drawing.Point(18, 22);
-            this.lblHistorial.Name = "lblHistorial";
-            this.lblHistorial.Size = new System.Drawing.Size(195, 27);
-            this.lblHistorial.TabIndex = 0;
-            this.lblHistorial.Text = "Historial de tickets";
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(952, 545);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "< Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
             // ID
             // 
@@ -246,12 +208,50 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
+            // pnlTitulo
+            // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.btnVolver);
+            this.pnlTitulo.Controls.Add(this.lblHistorial);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1258, 70);
+            this.pnlTitulo.TabIndex = 3;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(1114, 21);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // lblHistorial
+            // 
+            this.lblHistorial.AutoSize = true;
+            this.lblHistorial.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorial.ForeColor = System.Drawing.Color.White;
+            this.lblHistorial.Location = new System.Drawing.Point(30, 22);
+            this.lblHistorial.Name = "lblHistorial";
+            this.lblHistorial.Size = new System.Drawing.Size(195, 27);
+            this.lblHistorial.TabIndex = 0;
+            this.lblHistorial.Text = "Historial de tickets";
+            // 
             // frmListaTicketsEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1239, 600);
-            this.Controls.Add(this.btnVolver);
+            this.ClientSize = new System.Drawing.Size(1258, 600);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.btnSeleccionar);

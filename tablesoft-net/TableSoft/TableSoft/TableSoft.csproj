@@ -1081,8 +1081,6 @@
     <None Include="images\Eye.png" />
     <None Include="images\EyeMouseDown.png" />
     <None Include="images\EyeMouseEnter.png" />
-    <None Include="Resources\plus.png" />
-    <None Include="Resources\minus.png" />
     <None Include="images\Minus.png" />
     <None Include="images\Plus.png" />
     <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />

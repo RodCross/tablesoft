@@ -51,6 +51,7 @@
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
             this.pnlTitulo.Controls.Add(this.lblListaUrgencias);
+            this.pnlTitulo.Controls.Add(this.btnVolver);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
             this.pnlTitulo.Name = "pnlTitulo";
@@ -77,7 +78,7 @@
             this.btnNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(358, 448);
+            this.btnNuevo.Location = new System.Drawing.Point(354, 447);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(119, 33);
             this.btnNuevo.TabIndex = 2;
@@ -93,11 +94,11 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(50, 448);
+            this.btnVolver.Location = new System.Drawing.Point(531, 22);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "< Volver";
+            this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -107,11 +108,11 @@
             this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEditar.FlatAppearance.BorderSize = 0;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.White;
-            this.btnEditar.Location = new System.Drawing.Point(519, 448);
+            this.btnEditar.Location = new System.Drawing.Point(510, 443);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(119, 33);
+            this.btnEditar.Size = new System.Drawing.Size(140, 41);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -125,7 +126,7 @@
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(202, 448);
+            this.btnEliminar.Location = new System.Drawing.Point(198, 447);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(119, 33);
             this.btnEliminar.TabIndex = 5;
@@ -162,7 +163,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvLista.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvLista.Size = new System.Drawing.Size(603, 332);
+            this.dgvLista.Size = new System.Drawing.Size(615, 332);
             this.dgvLista.TabIndex = 6;
             // 
             // Id
@@ -197,7 +198,7 @@
             this.PlazoMaximo.MinimumWidth = 6;
             this.PlazoMaximo.Name = "PlazoMaximo";
             this.PlazoMaximo.ReadOnly = true;
-            this.PlazoMaximo.Width = 245;
+            this.PlazoMaximo.Width = 258;
             // 
             // frmSeleccionarUrgencia
             // 
@@ -207,7 +208,6 @@
             this.Controls.Add(this.dgvLista);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnNuevo);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

@@ -41,8 +41,6 @@
             this.pnlTitulo = new System.Windows.Forms.Panel();
             this.lblTicketsEspera = new System.Windows.Forms.Label();
             this.dgvTicketsEspera = new System.Windows.Forms.DataGridView();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AbreviaturaBiblioteca = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,6 +48,8 @@
             this.FechaApertura = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NombreUrgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.Button();
             this.pnlTitulo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTicketsEspera)).BeginInit();
             this.SuspendLayout();
@@ -57,6 +57,7 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.btnVolver);
             this.pnlTitulo.Controls.Add(this.lblTicketsEspera);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
@@ -120,38 +121,6 @@
             this.dgvTicketsEspera.Size = new System.Drawing.Size(994, 436);
             this.dgvTicketsEspera.TabIndex = 0;
             this.dgvTicketsEspera.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvTicketsEspera_CellFormatting);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(760, 545);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "< Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSeleccionar.FlatAppearance.BorderSize = 0;
-            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
-            this.btnSeleccionar.Location = new System.Drawing.Point(910, 545);
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.Size = new System.Drawing.Size(119, 33);
-            this.btnSeleccionar.TabIndex = 2;
-            this.btnSeleccionar.Text = "Seleccionar";
-            this.btnSeleccionar.UseVisualStyleBackColor = false;
-            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
             // ID
             // 
@@ -221,12 +190,43 @@
             this.NombreUrgencia.Name = "NombreUrgencia";
             this.NombreUrgencia.ReadOnly = true;
             // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(910, 21);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnSeleccionar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSeleccionar.FlatAppearance.BorderSize = 0;
+            this.btnSeleccionar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeleccionar.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeleccionar.ForeColor = System.Drawing.Color.White;
+            this.btnSeleccionar.Location = new System.Drawing.Point(889, 544);
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.Size = new System.Drawing.Size(140, 41);
+            this.btnSeleccionar.TabIndex = 2;
+            this.btnSeleccionar.Text = "Seleccionar";
+            this.btnSeleccionar.UseVisualStyleBackColor = false;
+            this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
+            // 
             // frmMiEquipoAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 600);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.dgvTicketsEspera);
             this.Controls.Add(this.pnlTitulo);

@@ -1,14 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Drawing.Text;
 using System.IO;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TableSoft
@@ -65,25 +59,31 @@ namespace TableSoft
 
             if(ticket.estado.estadoId == (int)Estado.Cerrado)
             {
-                btnCambiarCategoria.Enabled = false;
-                btnCerrarTicket.Enabled = false;
-                btnEscalar.Enabled = false;
-                btnVerTareas.Enabled = false;
-                btnResponder.Enabled = false;
+                DisableButton(btnCambiarCategoria);
+                DisableButton(btnCerrarTicket);
+                DisableButton(btnEscalar);
+                DisableButton(btnVerTareas);
+                DisableButton(btnResponder);
             }
             if(ticket.estado.estadoId == (int)Estado.Escalado)
             {
-                btnCambiarCategoria.Enabled = false;
+                DisableButton(btnCambiarCategoria);
             }
             if(ticket.estado.estadoId == (int)Estado.Recategorizado)
             {
-                btnCambiarCategoria.Enabled = false;
-                btnCerrarTicket.Enabled = false;
-                btnEscalar.Enabled = false;
-                btnVerTareas.Enabled = false;
-                btnResponder.Enabled = false;
+                DisableButton(btnCambiarCategoria);
+                DisableButton(btnCerrarTicket);
+                DisableButton(btnEscalar);
+                DisableButton(btnVerTareas);
+                DisableButton(btnResponder);
             }
 
+        }
+
+        private void DisableButton(Button button)
+        {
+            button.BackColor = Color.LightGray;
+            button.Enabled = false;
         }
 
         private void LlenarComentarios()
@@ -299,15 +299,15 @@ namespace TableSoft
 
             if (this.ticket.estado.estadoId == (int)Estado.Cerrado)
             {
-                btnCambiarCategoria.Enabled = false;
-                btnCerrarTicket.Enabled = false;
-                btnEscalar.Enabled = false;
-                btnVerTareas.Enabled = false;
-                btnResponder.Enabled = false;
+                DisableButton(btnCambiarCategoria);
+                DisableButton(btnCerrarTicket);
+                DisableButton(btnEscalar);
+                DisableButton(btnVerTareas);
+                DisableButton(btnResponder);
             }
             if (this.ticket.estado.estadoId == (int)Estado.Escalado)
             {
-                btnCambiarCategoria.Enabled = false;
+                DisableButton(btnCambiarCategoria);
                 //btnVerTareas.Enabled = false;
             }
         }

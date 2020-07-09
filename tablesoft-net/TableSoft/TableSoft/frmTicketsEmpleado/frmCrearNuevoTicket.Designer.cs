@@ -77,11 +77,11 @@
             this.btnEnviar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEnviar.FlatAppearance.BorderSize = 0;
             this.btnEnviar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEnviar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEnviar.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviar.ForeColor = System.Drawing.Color.White;
-            this.btnEnviar.Location = new System.Drawing.Point(974, 546);
+            this.btnEnviar.Location = new System.Drawing.Point(954, 540);
             this.btnEnviar.Name = "btnEnviar";
-            this.btnEnviar.Size = new System.Drawing.Size(119, 33);
+            this.btnEnviar.Size = new System.Drawing.Size(140, 41);
             this.btnEnviar.TabIndex = 3;
             this.btnEnviar.Text = "Enviar";
             this.btnEnviar.UseVisualStyleBackColor = false;
@@ -327,6 +327,7 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.btnVolver);
             this.pnlTitulo.Controls.Add(this.lblAbrir);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
@@ -343,11 +344,11 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold);
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(824, 546);
+            this.btnVolver.Location = new System.Drawing.Point(975, 23);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 2;
-            this.btnVolver.Text = "< Volver";
+            this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
@@ -356,7 +357,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1116, 600);
-            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.lblInfo);

@@ -212,11 +212,11 @@
             this.btnEscalar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEscalar.FlatAppearance.BorderSize = 0;
             this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 10F, System.Drawing.FontStyle.Bold);
+            this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEscalar.ForeColor = System.Drawing.Color.White;
-            this.btnEscalar.Location = new System.Drawing.Point(742, 465);
+            this.btnEscalar.Location = new System.Drawing.Point(721, 469);
             this.btnEscalar.Name = "btnEscalar";
-            this.btnEscalar.Size = new System.Drawing.Size(119, 33);
+            this.btnEscalar.Size = new System.Drawing.Size(140, 40);
             this.btnEscalar.TabIndex = 2;
             this.btnEscalar.Text = "Escalar";
             this.btnEscalar.UseVisualStyleBackColor = false;
@@ -269,7 +269,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 510);
+            this.ClientSize = new System.Drawing.Size(880, 520);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.lblIngresar);

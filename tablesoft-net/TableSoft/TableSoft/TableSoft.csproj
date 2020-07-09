@@ -828,7 +828,13 @@
     <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketAgenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketEquipoResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketResponse.datasource">

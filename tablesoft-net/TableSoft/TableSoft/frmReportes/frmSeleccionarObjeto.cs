@@ -224,8 +224,29 @@ namespace TableSoft.frmReportes
                         MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case 3: //Para el nombre de la agente
+                        sfdReporte.ShowDialog();
+                        agente = (AgenteWS.agente)dgvLista.CurrentRow.DataBoundItem;
+                        ReporteWS.agente age = new ReporteWS.agente();
+                        age.agenteId = agente.agenteId;
+                        age.nombre = agente.nombre;
+                        age.apellidoPaterno = agente.apellidoPaterno;
+                        age.apellidoMaterno = agente.apellidoMaterno;
+                        age.codigo = agente.codigo;
+                        age.activo = agente.activo;
+                        arreglo = daoReporte.generarReporteTicketAgente(age, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
+                        MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                     case 4: //Para el nombre de la equipo
+                        sfdReporte.ShowDialog();
+                        equipo = (EquipoWS.equipo)dgvLista.CurrentRow.DataBoundItem;
+                        ReporteWS.equipo equi = new ReporteWS.equipo();
+                        equi.equipoId = equipo.equipoId;
+                        equi.nombre = equipo.nombre;
+                        equi.descripcion = equipo.descripcion;
+                        arreglo = daoReporte.generarReporteTicketEquipo(equi, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
+                        MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
                 }
             }

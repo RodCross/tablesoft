@@ -23,6 +23,18 @@
   <message name="generarReporteTicketCategoriaResponse">
     <part name="parameters" element="tns:generarReporteTicketCategoriaResponse" />
   </message>
+  <message name="generarReporteTicketAgente">
+    <part name="parameters" element="tns:generarReporteTicketAgente" />
+  </message>
+  <message name="generarReporteTicketAgenteResponse">
+    <part name="parameters" element="tns:generarReporteTicketAgenteResponse" />
+  </message>
+  <message name="generarReporteTicketEquipo">
+    <part name="parameters" element="tns:generarReporteTicketEquipo" />
+  </message>
+  <message name="generarReporteTicketEquipoResponse">
+    <part name="parameters" element="tns:generarReporteTicketEquipoResponse" />
+  </message>
   <portType name="ReporteWS">
     <operation name="generarReporteTicket">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketRequest" message="tns:generarReporteTicket" />
@@ -35,6 +47,14 @@
     <operation name="generarReporteTicketCategoria">
       <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketCategoriaRequest" message="tns:generarReporteTicketCategoria" />
       <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketCategoriaResponse" message="tns:generarReporteTicketCategoriaResponse" />
+    </operation>
+    <operation name="generarReporteTicketAgente">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketAgenteRequest" message="tns:generarReporteTicketAgente" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketAgenteResponse" message="tns:generarReporteTicketAgenteResponse" />
+    </operation>
+    <operation name="generarReporteTicketEquipo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketEquipoRequest" message="tns:generarReporteTicketEquipo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketEquipoResponse" message="tns:generarReporteTicketEquipoResponse" />
     </operation>
   </portType>
   <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
@@ -58,6 +78,24 @@
       </output>
     </operation>
     <operation name="generarReporteTicketCategoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteTicketAgente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteTicketEquipo">
       <soap:operation soapAction="" />
       <input>
         <soap:body use="literal" />

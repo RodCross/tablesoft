@@ -9,7 +9,7 @@
 	<parameter name="Total" class="java.lang.Long"/>
 	<queryString>
 		<![CDATA[SELECT
-    'No recategorizados' as Nombre,
+    'No escalados' as Nombre,
     A.total_categoria as Cantidad
 FROM (SELECT count(T.ticket_id) - E.total_escalados AS total_categoria
       FROM (select count(distinct C.ticket_id) as total_escalados
@@ -28,7 +28,7 @@ FROM (SELECT count(T.ticket_id) - E.total_escalados AS total_categoria
       AND T.fecha_envio < $P{FechaFin}) A
 UNION ALL
 SELECT 
-    'Recategorizados' as Nombre,
+    'Escalados' as Nombre,
     B.total_escalados as Cantidad
 FROM (select count(distinct C.ticket_id) as total_escalados
        from cambio_estado_ticket C

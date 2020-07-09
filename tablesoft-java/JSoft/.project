@@ -472,6 +472,11 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Recategorizados_Agente.jrxml</location>
 		</link>
 		<link>
+			<name>Resumen_Recategorizados_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Recategorizados_Equipo.jasper</location>
+		</link>
+		<link>
 			<name>Resumen_Recategorizados_Equipo.jrxml</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Resumen_Recategorizados_Equipo.jrxml</location>

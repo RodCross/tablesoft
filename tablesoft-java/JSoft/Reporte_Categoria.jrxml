@@ -27,7 +27,7 @@
 	<parameter name="RUTA_TICKET_BIBLIOTECA" class="java.lang.String"/>
 	<parameter name="RUTA_GRAFICO_ACTIVOFIJO" class="java.lang.String"/>
 	<parameter name="RUTA_RESUMEN_ACTIVOFIJO" class="java.lang.String"/>
-	<parameter name="RUTA_TICKET_CATEGORIA" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_URGENCIA" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select T.ticket_id
 from ticket T 
@@ -64,7 +64,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<textFieldExpression><![CDATA["Categoría N°"  + $P{Categoria_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="102" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
+				<reportElement x="3" y="102" width="377" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -73,7 +73,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<textFieldExpression><![CDATA["Nombre: "  + $P{Categoria_nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="124" width="280" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
+				<reportElement x="3" y="124" width="552" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
@@ -274,7 +274,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{RUTA_TICKET_CATEGORIA}]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_URGENCIA}]]></subreportExpression>
 			</subreport>
 		</band>
 	</summary>

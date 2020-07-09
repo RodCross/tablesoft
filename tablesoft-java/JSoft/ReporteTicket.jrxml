@@ -119,168 +119,168 @@ order by T.ticket_id;]]>
 		<band height="492" splitType="Stretch">
 			<property name="com.jaspersoft.studio.unit.height" value="px"/>
 			<textField>
-				<reportElement x="150" y="49" width="330" height="30" uuid="8997d0f9-86a8-480c-af04-c038294030c9"/>
+				<reportElement x="150" y="30" width="330" height="40" uuid="8997d0f9-86a8-480c-af04-c038294030c9"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{asunto}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="49" width="140" height="30" uuid="6eb59d56-4ea2-4ec6-9a1f-f09a2667491d"/>
+				<reportElement x="-20" y="30" width="140" height="40" uuid="6eb59d56-4ea2-4ec6-9a1f-f09a2667491d"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Asunto]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="79" width="330" height="30" uuid="ac1901eb-2dea-4508-8297-df55a5b058ed"/>
+				<reportElement x="150" y="70" width="330" height="69" uuid="ac1901eb-2dea-4508-8297-df55a5b058ed"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="79" width="140" height="30" uuid="8c6be4c6-f91d-4db7-8da6-b3f0c5c2f4ff"/>
+				<reportElement x="-20" y="70" width="140" height="69" uuid="8c6be4c6-f91d-4db7-8da6-b3f0c5c2f4ff"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Descripcion]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="109" width="330" height="30" uuid="cccb0fdf-c765-4ab6-9d84-40268c447158"/>
+				<reportElement x="149" y="139" width="330" height="19" uuid="cccb0fdf-c765-4ab6-9d84-40268c447158"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fecha_envio}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="109" width="140" height="30" uuid="dbb69c4e-af86-464a-a51e-9f73c612ab0e"/>
+				<reportElement x="-20" y="139" width="140" height="19" uuid="dbb69c4e-af86-464a-a51e-9f73c612ab0e"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Fecha de envio]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="139" width="330" height="30" uuid="1a10d906-20bf-432b-879e-d4547786ba30"/>
+				<reportElement x="150" y="160" width="330" height="30" uuid="1a10d906-20bf-432b-879e-d4547786ba30"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{fecha_cierre_maximo}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="139" width="140" height="30" uuid="c1c0885a-aa75-4ec7-8e80-97b184d8e140"/>
+				<reportElement x="-20" y="160" width="140" height="30" uuid="c1c0885a-aa75-4ec7-8e80-97b184d8e140"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Fecha de cierre maximo estimado]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="172" width="330" height="30" uuid="c32af3a0-6afd-4886-a5e6-9e3bd98f5fdf"/>
+				<reportElement x="150" y="190" width="330" height="30" uuid="c32af3a0-6afd-4886-a5e6-9e3bd98f5fdf"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($F{fecha_cierre}==null,"Ticket en atencion",$F{fecha_cierre})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="172" width="140" height="30" uuid="5a88ea9d-fc78-4a11-9819-4faaf7611bdd"/>
+				<reportElement x="-20" y="190" width="140" height="30" uuid="5a88ea9d-fc78-4a11-9819-4faaf7611bdd"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Fecha de cierre]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="202" width="330" height="30" uuid="00eb6f41-61ef-4ca9-9381-70e6496190e2"/>
+				<reportElement x="150" y="220" width="330" height="20" uuid="00eb6f41-61ef-4ca9-9381-70e6496190e2"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreEmpleado}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="202" width="140" height="30" uuid="546c91f3-ff27-427e-b753-75286da8eedc"/>
+				<reportElement x="-20" y="220" width="140" height="20" uuid="546c91f3-ff27-427e-b753-75286da8eedc"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Nombre del empleado]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="232" width="330" height="30" uuid="efccd2d5-15d3-4f96-bb8b-18c105b2b59a"/>
+				<reportElement x="150" y="240" width="330" height="30" uuid="efccd2d5-15d3-4f96-bb8b-18c105b2b59a"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($F{nombreAgente} == null,"Sin agente asociado",$F{nombreAgente})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="232" width="140" height="30" uuid="5df6ca40-384a-46ad-8535-244ad08be7eb"/>
+				<reportElement x="-20" y="240" width="140" height="30" uuid="5df6ca40-384a-46ad-8535-244ad08be7eb"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Nombre del agente]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="262" width="330" height="30" uuid="f718841c-a4f4-4c60-97bf-43913f4edef4"/>
+				<reportElement x="150" y="270" width="330" height="30" uuid="f718841c-a4f4-4c60-97bf-43913f4edef4"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[IF($F{alumno_email}==null,"Sin email del alumno asociado",$F{alumno_email})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="262" width="140" height="30" uuid="803ed6d0-0aad-41c9-98f6-e3acfe8b27e2"/>
+				<reportElement x="-21" y="270" width="140" height="30" uuid="803ed6d0-0aad-41c9-98f6-e3acfe8b27e2"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Email del alumno]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="292" width="330" height="30" uuid="e1196e8d-ab53-48b6-bce7-e0ed57024dc3"/>
+				<reportElement x="150" y="300" width="330" height="30" uuid="e1196e8d-ab53-48b6-bce7-e0ed57024dc3"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreEstado}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="292" width="140" height="30" uuid="c2f88b4d-78a6-4c07-964b-09883cf0577b"/>
+				<reportElement x="-20" y="300" width="140" height="30" uuid="c2f88b4d-78a6-4c07-964b-09883cf0577b"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Estado actual del ticket:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="322" width="330" height="30" uuid="56aef169-74b8-4afc-ad45-221c03b1083c"/>
+				<reportElement x="150" y="330" width="330" height="30" uuid="56aef169-74b8-4afc-ad45-221c03b1083c"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreUrgencia}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="322" width="140" height="30" uuid="caaccb6b-5e6a-4b8f-b120-c6f49dba54e8"/>
+				<reportElement x="-20" y="330" width="140" height="30" uuid="caaccb6b-5e6a-4b8f-b120-c6f49dba54e8"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Urgencia del ticket:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="352" width="330" height="30" uuid="07fb1478-3138-4714-bacf-f37f7f12fe54"/>
+				<reportElement x="150" y="360" width="330" height="30" uuid="07fb1478-3138-4714-bacf-f37f7f12fe54"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreCategoria}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="352" width="140" height="30" uuid="14525e81-1667-4e67-89ef-584598b497c1"/>
+				<reportElement x="-20" y="360" width="140" height="30" uuid="14525e81-1667-4e67-89ef-584598b497c1"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Categoria del ticket:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="150" y="382" width="330" height="30" uuid="593fb3da-c8e1-45aa-ab3c-1b3a16d1f185"/>
+				<reportElement x="150" y="390" width="330" height="22" uuid="593fb3da-c8e1-45aa-ab3c-1b3a16d1f185"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$F{nombreBiblioteca}]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="382" width="140" height="30" uuid="5c5c7411-8000-4ff5-9528-2cb196442ad4"/>
+				<reportElement x="-20" y="390" width="140" height="22" uuid="5c5c7411-8000-4ff5-9528-2cb196442ad4"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -294,7 +294,7 @@ order by T.ticket_id;]]>
 				<textFieldExpression><![CDATA[IF($F{nombreActivoFijo}==null,"Sin activo fijo asociado",$F{nombreActivoFijo})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="412" width="140" height="30" uuid="976cbd5e-6559-466e-855d-d1ffe8e168d6"/>
+				<reportElement x="-21" y="410" width="140" height="30" uuid="976cbd5e-6559-466e-855d-d1ffe8e168d6"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -308,7 +308,7 @@ order by T.ticket_id;]]>
 				<textFieldExpression><![CDATA[IF($F{nombreProveedor}==null,"Sin proveedor asociado",$F{nombreProveedor})]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="442" width="140" height="30" uuid="93d3f0ca-d119-46c5-8aa4-d35fa033d210"/>
+				<reportElement x="-20" y="440" width="140" height="30" uuid="93d3f0ca-d119-46c5-8aa4-d35fa033d210"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
@@ -322,14 +322,14 @@ order by T.ticket_id;]]>
 				<textFieldExpression><![CDATA[IF($F{retrasado}==false,"Sin retraso","Con retraso")]]></textFieldExpression>
 			</textField>
 			<staticText>
-				<reportElement x="0" y="472" width="140" height="18" uuid="c8c9c661-0646-4e24-88d6-7a1efda91f88"/>
+				<reportElement x="-20" y="472" width="140" height="18" uuid="c8c9c661-0646-4e24-88d6-7a1efda91f88"/>
 				<textElement>
 					<font fontName="Arial" size="12"/>
 				</textElement>
 				<text><![CDATA[Retrasado:]]></text>
 			</staticText>
 			<textField>
-				<reportElement x="0" y="0" width="160" height="30" uuid="0e8238ed-710b-4246-bf50-acf7647bbaf6"/>
+				<reportElement x="-21" y="0" width="160" height="30" uuid="0e8238ed-710b-4246-bf50-acf7647bbaf6"/>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>

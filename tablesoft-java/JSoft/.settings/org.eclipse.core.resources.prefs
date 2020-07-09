@@ -15,6 +15,7 @@ encoding/Grafico_Recategorizados_Agente.jrxml=UTF-8
 encoding/Grafico_Recategorizados_Categoria.jrxml=UTF-8
 encoding/Grafico_Recategorizados_Equipo.jrxml=UTF-8
 encoding/Grafico_Recategorizados_Urgencia.jrxml=UTF-8
+encoding/Grafico_Tickets_Agente_Equipo.jrxml=UTF-8
 encoding/Grafico_Tickets_Biblioteca_Categoria.jrxml=UTF-8
 encoding/Grafico_Tickets_Categoria_Agente.jrxml=UTF-8
 encoding/Grafico_Tickets_Categoria_Equipo.jrxml=UTF-8

@@ -28,6 +28,7 @@
 	<parameter name="RUTA_RESUMEN_ACTIVOFIJO" class="java.lang.String"/>
 	<parameter name="RUTA_TICKET_CATEGORIA" class="java.lang.String"/>
 	<parameter name="RUTA_TICKET_URGENCIA" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_AGENTE" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select T.ticket_id
 from ticket T 
@@ -62,7 +63,7 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
-				<textFieldExpression><![CDATA["ID del Equipo: "  + $P{Equipo_id}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Equipo N° "  + $P{Equipo_id}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="3" y="102" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
@@ -148,7 +149,7 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="561" splitType="Stretch">
+		<band height="637" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="12" width="160" height="20" uuid="59bb36b9-9bf4-4aa3-998d-317aeacf8a1a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -276,6 +277,20 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{RUTA_TICKET_URGENCIA}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="540" width="550" height="90" uuid="10329c7e-e4d1-41de-8249-8571825c7141"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_AGENTE}]]></subreportExpression>
 			</subreport>
 		</band>
 	</summary>

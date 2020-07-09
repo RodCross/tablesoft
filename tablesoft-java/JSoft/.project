@@ -182,6 +182,16 @@
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Recategorizados_Urgencia.jrxml</location>
 		</link>
 		<link>
+			<name>Grafico_Tickets_Agente_Equipo.jasper</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Agente_Equipo.jasper</location>
+		</link>
+		<link>
+			<name>Grafico_Tickets_Agente_Equipo.jrxml</name>
+			<type>1</type>
+			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Agente_Equipo.jrxml</location>
+		</link>
+		<link>
 			<name>Grafico_Tickets_Biblioteca_Categoria.jasper</name>
 			<type>1</type>
 			<location>C:/Users/CARBAJAL/JaspersoftWorkspace/MyReports/Grafico_Tickets_Biblioteca_Categoria.jasper</location>

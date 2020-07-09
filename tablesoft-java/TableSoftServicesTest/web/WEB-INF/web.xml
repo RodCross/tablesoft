@@ -16,6 +16,10 @@
         <servlet-name>ReporteTicketAgente</servlet-name>
         <servlet-class>pe.edu.pucp.tablesoft.servlets.ReporteTicketAgente</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReporteTicketEquipo</servlet-name>
+        <servlet-class>pe.edu.pucp.tablesoft.servlets.ReporteTicketEquipo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ReporteTickets</servlet-name>
         <url-pattern>/ReporteTickets</url-pattern>
@@ -31,6 +35,10 @@
     <servlet-mapping>
         <servlet-name>ReporteTicketAgente</servlet-name>
         <url-pattern>/ReporteTicketAgente</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteTicketEquipo</servlet-name>
+        <url-pattern>/ReporteTicketEquipo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

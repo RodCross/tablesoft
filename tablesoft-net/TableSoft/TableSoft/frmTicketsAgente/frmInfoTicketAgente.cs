@@ -16,6 +16,7 @@ namespace TableSoft
 
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
 
+        int ticketId;
 
         private int numPanel = 0;
         private int longitudY = 0;
@@ -29,12 +30,13 @@ namespace TableSoft
         public frmInfoTicketAgente(TicketWS.ticket tick)
         {
             ticket = tick;
+            ticketId = ticket.ticketId;
 
             InitializeComponent();
             LlenarComentarios();
             CrearPaneles();
 
-            Refrescar(ticket.ticketId);
+            Refrescar(ticketId);
         }
 
         private void DisableButton(Button button)
@@ -221,8 +223,7 @@ namespace TableSoft
             frmEscalarTicketAgente frm = new frmEscalarTicketAgente(this.ticket);
             frm.ShowDialog();
             
-            Refrescar(ticket.ticketId);
-            
+            Refrescar(ticketId);
         }
 
         private void btnCambiarEstado_Click(object sender, EventArgs e)
@@ -232,6 +233,10 @@ namespace TableSoft
             {
                 this.Close();
             }
+            else
+            {
+                Refrescar(ticketId);
+            }
         }
 
         private void btnCambiarCategoria_Click(object sender, EventArgs e)
@@ -240,6 +245,10 @@ namespace TableSoft
             if (frm.ShowDialog() == DialogResult.OK)
             {
                 this.Close();
+            }
+            else
+            {
+                Refrescar(ticketId);
             }
         }
 

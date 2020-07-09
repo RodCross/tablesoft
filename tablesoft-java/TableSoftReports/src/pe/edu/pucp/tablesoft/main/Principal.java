@@ -94,7 +94,7 @@ public class Principal {
             System.out.println(ex.getMessage());
         }
         */
-        /*
+        
         byte[] arreglo = null;
         Connection con;
         try{
@@ -230,7 +230,7 @@ public class Principal {
         
         }catch(Exception ex){
             System.out.println(ex.getMessage());
-        }*/
+        }
         
         /*
         byte[] arreglo = null;
@@ -507,7 +507,9 @@ public class Principal {
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }*/
-        byte[] arreglo = null;
+        
+        
+        /*byte[] arreglo = null;
         Connection con;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -648,6 +650,6 @@ public class Principal {
         
         }catch(Exception ex){
             System.out.println(ex.getMessage());
-        }
+        }*/
     }
 }

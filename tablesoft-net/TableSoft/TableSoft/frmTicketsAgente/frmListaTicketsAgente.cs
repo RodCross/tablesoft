@@ -13,20 +13,8 @@ namespace TableSoft
         public frmListaTicketsAgente()
         {
             InitializeComponent();
-           
-            agenAux.agenteId =  frmInicioSesion.agenteLogueado.agenteId;
 
-            var arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
-            if (arrTickets == null)
-            {
-                tickets = new BindingList<TicketWS.ticket>();
-            }
-            else
-            {
-                tickets = new BindingList<TicketWS.ticket>(arrTickets);
-            }
-            dgvHistorial.AutoGenerateColumns = false;
-            dgvHistorial.DataSource = tickets;
+            Refrescar();
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -37,7 +25,6 @@ namespace TableSoft
         private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
-            //dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
             dgvHistorial.Rows[e.RowIndex].Cells["Empleado"].Value = data.empleado.nombre + " " + data.empleado.apellidoPaterno + " " + data.empleado.apellidoMaterno;
             dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Urgencia"].Value = data.urgencia.nombre;
@@ -60,11 +47,18 @@ namespace TableSoft
             frm.FormClosing += delegate
             {
                 this.Show();
+                Refrescar();
             };
 
             frm.Show();
             this.Hide();
-            /*var arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
+        }
+
+        private void Refrescar()
+        {
+            agenAux.agenteId = frmInicioSesion.agenteLogueado.agenteId;
+
+            var arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
             if (arrTickets == null)
             {
                 tickets = new BindingList<TicketWS.ticket>();
@@ -74,7 +68,7 @@ namespace TableSoft
                 tickets = new BindingList<TicketWS.ticket>(arrTickets);
             }
             dgvHistorial.AutoGenerateColumns = false;
-            dgvHistorial.DataSource = tickets;*/
+            dgvHistorial.DataSource = tickets;
         }
     }
 }

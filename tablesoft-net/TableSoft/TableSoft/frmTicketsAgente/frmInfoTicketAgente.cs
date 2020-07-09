@@ -14,7 +14,8 @@ namespace TableSoft
         private ComentarioWS.comentario comentarioActual;
         private TicketWS.ticket ticket;
 
-        
+        private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
+
 
         private int numPanel = 0;
         private int longitudY = 0;
@@ -22,6 +23,8 @@ namespace TableSoft
         private Label lblNombre;
         private Label lblFecha;
         private Label lblCom;
+
+        
 
         public frmInfoTicketAgente(TicketWS.ticket tick)
         {
@@ -31,53 +34,7 @@ namespace TableSoft
             LlenarComentarios();
             CrearPaneles();
 
-            lblAsunto.Text = tick.asunto;
-            lblId.Text = "# " + tick.ticketId.ToString();
-            lblFecIni.Text = tick.fechaEnvio.Replace('-', '/').Replace("T", " - ");
-            if(tick.fechaCierreMaximo != null)
-            {
-                lblFecCieEst.Text = tick.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
-            }
-            else
-            {
-                lblFecCieEst.Text = "Error en la fecha";
-            }
-            lblEstado.Text = tick.estado.nombre;
-            lblBib.Text = tick.biblioteca.nombre;
-            lblCat.Text = tick.categoria.nombre;
-            lblUrg.Text = tick.urgencia.nombre;
-            if (tick.activoFijo.activoFijoId > 0)
-            {
-                lblActFij.Text = tick.activoFijo.codigo;
-            }
-            else
-            {
-                lblTituloActFij.Text = "";
-            }
-
-            // Segun el estado del ticket
-
-            if(ticket.estado.estadoId == (int)Estado.Cerrado)
-            {
-                DisableButton(btnCambiarCategoria);
-                DisableButton(btnCerrarTicket);
-                DisableButton(btnEscalar);
-                DisableButton(btnVerTareas);
-                DisableButton(btnResponder);
-            }
-            if(ticket.estado.estadoId == (int)Estado.Escalado)
-            {
-                DisableButton(btnCambiarCategoria);
-            }
-            if(ticket.estado.estadoId == (int)Estado.Recategorizado)
-            {
-                DisableButton(btnCambiarCategoria);
-                DisableButton(btnCerrarTicket);
-                DisableButton(btnEscalar);
-                DisableButton(btnVerTareas);
-                DisableButton(btnResponder);
-            }
-
+            Refrescar(ticket.ticketId);
         }
 
         private void DisableButton(Button button)
@@ -226,11 +183,6 @@ namespace TableSoft
 
                     if (comentarioDAO.insertarComentario(comentarioActual, tCom) != 0)
                     {
-                        //MessageBox.Show(
-                        //"El comentario se ha registrado correctamente.",
-                        //"Registro exitoso",
-                        //MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         // Limpiar respuesta, actualizar lista de comentarios y recargar paneles
                         rtfRespuesta.Text = "";
                         rtfRespuesta.Select();
@@ -238,7 +190,6 @@ namespace TableSoft
                         RecargarComentarios();
                         
                         // Mandar correo al empleado
-
                         EnviarEmailNoficacion(ticket.empleado);
                     }
                     else
@@ -254,7 +205,6 @@ namespace TableSoft
 
         private void EnviarEmailNoficacion(TicketWS.empleado emp)
         {
-
             if (EnvioCorreoNotificacion.NuevoComentario(ticket, emp) == false)
             {
                 MessageBox.Show(
@@ -271,45 +221,8 @@ namespace TableSoft
             frmEscalarTicketAgente frm = new frmEscalarTicketAgente(this.ticket);
             frm.ShowDialog();
             
-            lblAsunto.Text = ticket.asunto;
-            lblId.Text = "# " + ticket.ticketId.ToString();
-            lblFecIni.Text = ticket.fechaEnvio.Replace('-', '/').Replace("T", " - ");
-            if (ticket.fechaCierreMaximo != null)
-            {
-                lblFecCieEst.Text = ticket.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
-            }
-            else
-            {
-                lblFecCieEst.Text = "Error en la fecha";
-            }
-            lblEstado.Text = ticket.estado.nombre;
-            lblBib.Text = ticket.biblioteca.nombre;
-            lblCat.Text = ticket.categoria.nombre;
-            lblUrg.Text = ticket.urgencia.nombre;
-            if (ticket.activoFijo.activoFijoId > 0)
-            {
-                lblActFij.Text = ticket.activoFijo.codigo;
-            }
-            else
-            {
-                lblTituloActFij.Text = "";
-            }
-
-            // Segun el estado del ticket
-
-            if (this.ticket.estado.estadoId == (int)Estado.Cerrado)
-            {
-                DisableButton(btnCambiarCategoria);
-                DisableButton(btnCerrarTicket);
-                DisableButton(btnEscalar);
-                DisableButton(btnVerTareas);
-                DisableButton(btnResponder);
-            }
-            if (this.ticket.estado.estadoId == (int)Estado.Escalado)
-            {
-                DisableButton(btnCambiarCategoria);
-                //btnVerTareas.Enabled = false;
-            }
+            Refrescar(ticket.ticketId);
+            
         }
 
         private void btnCambiarEstado_Click(object sender, EventArgs e)
@@ -349,6 +262,56 @@ namespace TableSoft
             catch (Exception ex)
             {
                 MessageBox.Show("Ha ocurrido un error", "Mensaje: "+ex.Message, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void Refrescar(int ticketId)
+        {
+            ticket = ticketDAO.buscarTicketPorId(ticketId);
+            lblAsunto.Text = ticket.asunto;
+            lblId.Text = "# " + ticket.ticketId.ToString();
+            lblFecIni.Text = ticket.fechaEnvio.Replace('-', '/').Replace("T", " - ");
+            if (ticket.fechaCierreMaximo != null)
+            {
+                lblFecCieEst.Text = ticket.fechaCierreMaximo.Replace('-', '/').Replace("T", " - ");
+            }
+            else
+            {
+                lblFecCieEst.Text = "Error en la fecha";
+            }
+            lblEstado.Text = ticket.estado.nombre;
+            lblBib.Text = ticket.biblioteca.nombre;
+            lblCat.Text = ticket.categoria.nombre;
+            lblUrg.Text = ticket.urgencia.nombre;
+            if (ticket.activoFijo.activoFijoId > 0)
+            {
+                lblActFij.Text = ticket.activoFijo.codigo;
+            }
+            else
+            {
+                lblTituloActFij.Text = "";
+            }
+
+            // Segun el estado del ticket
+
+            if (ticket.estado.estadoId == (int)Estado.Cerrado)
+            {
+                DisableButton(btnCambiarCategoria);
+                DisableButton(btnCerrarTicket);
+                DisableButton(btnEscalar);
+                DisableButton(btnVerTareas);
+                DisableButton(btnResponder);
+            }
+            if (ticket.estado.estadoId == (int)Estado.Escalado)
+            {
+                DisableButton(btnCambiarCategoria);
+            }
+            if (ticket.estado.estadoId == (int)Estado.Recategorizado)
+            {
+                DisableButton(btnCambiarCategoria);
+                DisableButton(btnCerrarTicket);
+                DisableButton(btnEscalar);
+                DisableButton(btnVerTareas);
+                DisableButton(btnResponder);
             }
         }
     }

@@ -16,7 +16,7 @@ FROM (SELECT count(distinct ticket_id) AS total_categoria
       WHERE categoria_id = $P{Categoria_id}   
       AND fecha_envio > $P{FechaInicio}
       AND fecha_envio < $P{FechaFin} ) A,
-      (select count(*) as total_escalados
+      (select count(distinct ticket_id) as total_escalados
        from cambio_estado_ticket
        where ticket_id in (select ticket_id 
                            from ticket 

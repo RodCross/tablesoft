@@ -17,7 +17,7 @@ namespace TableSoft
         public frmEscalarTicketAgente(TicketWS.ticket tck)
         {
             ticket = tck;
-            agente = frmInicioSesion.agenteLogueado;
+            agente = frmLogin.agenteLogueado;
             InitializeComponent();
 
             var provs = proveedorDAO.listarProveedores();

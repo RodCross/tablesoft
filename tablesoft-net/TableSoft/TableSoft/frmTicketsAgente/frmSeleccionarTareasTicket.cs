@@ -21,7 +21,7 @@ namespace TableSoft
             InitializeComponent();
 
             ticket.ticketId = tick.ticketId;
-            agente.agenteId = frmInicioSesion.agenteLogueado.agenteId;
+            agente.agenteId = frmLogin.agenteLogueado.agenteId;
 
             TareaWS.tarea[] arrTareas = tareaDAO.listarTareasPorTicket(ticket);
             

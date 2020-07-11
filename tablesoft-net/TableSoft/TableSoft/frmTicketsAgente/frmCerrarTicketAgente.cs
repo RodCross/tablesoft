@@ -73,7 +73,7 @@ namespace TableSoft
                 if (MessageBox.Show("¿Está seguro de que desea cerrar el ticket?", "Resolución de ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     var ag = new TicketWS.agente();
-                    ag.agenteId = frmInicioSesion.agenteLogueado.agenteId;
+                    ag.agenteId = frmLogin.agenteLogueado.agenteId;
 
                     ticket.estado = estResuelto;
 

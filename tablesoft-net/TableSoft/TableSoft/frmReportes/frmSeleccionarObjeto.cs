@@ -54,7 +54,7 @@ namespace TableSoft.frmReportes
                     dgvLista.DataSource = urgencias;
                     break;
                 case 3: //Para listar agentes
-                    var eq = frmInicioSesion.agenteLogueado.equipo;
+                    var eq = frmLogin.agenteLogueado.equipo;
                     var agen = agenteDAO.listarAgentesPorEquipo(eq);
                     if (agen == null)
                     {

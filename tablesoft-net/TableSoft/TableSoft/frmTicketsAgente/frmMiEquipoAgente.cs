@@ -14,7 +14,7 @@ namespace TableSoft
         public frmMiEquipoAgente()
         {
             InitializeComponent();
-            agente = frmInicioSesion.agenteLogueado;
+            agente = frmLogin.agenteLogueado;
 
             Refrescar();
         }

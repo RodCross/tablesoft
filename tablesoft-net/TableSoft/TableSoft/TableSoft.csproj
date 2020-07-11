@@ -152,6 +152,12 @@
     </Compile>
     <Compile Include="EnvioCorreoNotificacion.cs" />
     <Compile Include="Estado.cs" />
+    <Compile Include="frmInicioSesion\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmReportes\frmSeleccionarObjeto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,12 +320,6 @@
     <Compile Include="frmPantallaInicio\frmInicioEmpleado.Designer.cs">
       <DependentUpon>frmInicioEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmInicioSesion\frmInicioSesion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmInicioSesion\frmInicioSesion.Designer.cs">
-      <DependentUpon>frmInicioSesion.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmTicketsAgente\frmMiEquipoAgente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -430,6 +430,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmInicioSesion\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmReportes\frmSeleccionarObjeto.resx">
       <DependentUpon>frmSeleccionarObjeto.cs</DependentUpon>
     </EmbeddedResource>
@@ -510,9 +513,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPantallaInicio\frmInicioEmpleado.resx">
       <DependentUpon>frmInicioEmpleado.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmInicioSesion\frmInicioSesion.resx">
-      <DependentUpon>frmInicioSesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTicketsAgente\frmMiEquipoAgente.resx">
       <DependentUpon>frmMiEquipoAgente.cs</DependentUpon>
@@ -1086,6 +1086,21 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="images\Cia.jpg" />
+    <None Include="images\LogoPucpSpa.png" />
+    <None Include="images\LoginDisabled.png" />
+    <None Include="images\LoginEnabled.png" />
+    <None Include="images\LoginBoxDown.png" />
+    <None Include="images\LoginBoxEnter.png" />
+    <None Include="images\LoginBox.png" />
+    <None Include="images\LoginEnabledDown.png" />
+    <None Include="images\LoginEnabledEnter.png" />
+    <None Include="images\Close.png" />
+    <None Include="images\CloseDown.png" />
+    <None Include="images\CloseEnter.png" />
+    <None Include="images\PasswordHidden.png" />
+    <None Include="images\PasswordShown.png" />
+    <None Include="images\Loading.gif" />
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup>

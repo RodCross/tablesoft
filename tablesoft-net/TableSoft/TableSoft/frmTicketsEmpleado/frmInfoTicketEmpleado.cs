@@ -197,7 +197,7 @@ namespace TableSoft
                         texto = rtfRespuesta.Text,
                         autor = new ComentarioWS.persona()
                     };
-                    comentarioActual.autor.codigo = frmInicioSesion.empleadoLogueado.codigo;
+                    comentarioActual.autor.codigo = frmLogin.empleadoLogueado.codigo;
                     ComentarioWS.ticket tCom = new ComentarioWS.ticket
                     {
                         ticketId = ticket.ticketId

@@ -17,7 +17,7 @@ namespace TableSoft
         public frmReasignarCategoriaTicketAgente(TicketWS.ticket tck)
         {
             ticket = tck;
-            agente.agenteId = frmInicioSesion.agenteLogueado.agenteId;
+            agente.agenteId = frmLogin.agenteLogueado.agenteId;
 
             InitializeComponent();
 

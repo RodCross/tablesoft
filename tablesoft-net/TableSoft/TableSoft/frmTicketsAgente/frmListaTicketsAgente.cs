@@ -56,7 +56,7 @@ namespace TableSoft
 
         private void Refrescar()
         {
-            agenAux.agenteId = frmInicioSesion.agenteLogueado.agenteId;
+            agenAux.agenteId = frmLogin.agenteLogueado.agenteId;
 
             var arrTickets = ticketDAO.listarTicketsPorAgente(agenAux);
             if (arrTickets == null)

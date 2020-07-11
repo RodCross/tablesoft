@@ -13,7 +13,7 @@ namespace TableSoft
         {
             InitializeComponent();
             TicketWS.empleado empAux = new TicketWS.empleado();
-            empAux.empleadoId = frmInicioSesion.empleadoLogueado.empleadoId;
+            empAux.empleadoId = frmLogin.empleadoLogueado.empleadoId;
             var tic = ticketDAO.listarTicketsPorEmpleado(empAux);
             if(tic == null)
             {

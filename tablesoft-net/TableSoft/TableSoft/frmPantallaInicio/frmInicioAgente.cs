@@ -14,7 +14,7 @@ namespace TableSoft
 
         private void SetUsername(Label lblUser)
         {
-            AgenteWS.agente age = frmInicioSesion.agenteLogueado;
+            AgenteWS.agente age = frmLogin.agenteLogueado;
             lblUser.Text = age.apellidoPaterno + " " + age.apellidoMaterno + ", " + age.nombre;
         }
 

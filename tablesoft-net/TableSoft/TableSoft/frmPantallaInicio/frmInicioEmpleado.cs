@@ -13,7 +13,7 @@ namespace TableSoft
         
         private void SetUsername(Label lblUser)
         {
-            EmpleadoWS.empleado emp = frmInicioSesion.empleadoLogueado;
+            EmpleadoWS.empleado emp = frmLogin.empleadoLogueado;
             lblUser.Text = emp.apellidoPaterno + " " + emp.apellidoMaterno + ", " + emp.nombre;
         }
 

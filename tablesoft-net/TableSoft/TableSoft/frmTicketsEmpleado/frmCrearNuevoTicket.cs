@@ -214,7 +214,7 @@ namespace TableSoft
             ticket.urgencia.activo = urgenciaAux.activo;
 
             ticket.empleado = new TicketWS.empleado();
-            ticket.empleado.empleadoId = frmInicioSesion.empleadoLogueado.empleadoId;
+            ticket.empleado.empleadoId = frmLogin.empleadoLogueado.empleadoId;
             ticket.estado = new TicketWS.estadoTicket();
             ticket.estado.estadoId = 1;
             

@@ -51,10 +51,10 @@
             this.picEmailBox = new System.Windows.Forms.PictureBox();
             this.picPasswordBox = new System.Windows.Forms.PictureBox();
             this.pnlBoxes = new System.Windows.Forms.Panel();
+            this.pnlPassword = new System.Windows.Forms.Panel();
             this.pnlEmail = new System.Windows.Forms.Panel();
             this.lblError = new System.Windows.Forms.Label();
             this.picLoading = new System.Windows.Forms.PictureBox();
-            this.pnlPassword = new System.Windows.Forms.Panel();
             this.pnlMov2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTogglePassword)).BeginInit();
@@ -64,9 +64,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.picEmailBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picPasswordBox)).BeginInit();
             this.pnlBoxes.SuspendLayout();
+            this.pnlPassword.SuspendLayout();
             this.pnlEmail.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).BeginInit();
-            this.pnlPassword.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitulo1
@@ -257,7 +257,7 @@
             this.picCia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picCia.TabIndex = 0;
             this.picCia.TabStop = false;
-            this.picCia.Click += new System.EventHandler(this.OnOuterClick);
+            this.picCia.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnOuterMouseDown);
             // 
             // picLogin
             // 
@@ -327,7 +327,18 @@
             this.pnlBoxes.Name = "pnlBoxes";
             this.pnlBoxes.Size = new System.Drawing.Size(400, 675);
             this.pnlBoxes.TabIndex = 0;
-            this.pnlBoxes.Click += new System.EventHandler(this.OnOuterClick);
+            this.pnlBoxes.MouseDown += new System.Windows.Forms.MouseEventHandler(this.OnOuterMouseDown);
+            // 
+            // pnlPassword
+            // 
+            this.pnlPassword.Controls.Add(this.picTogglePassword);
+            this.pnlPassword.Controls.Add(this.lblPassword);
+            this.pnlPassword.Controls.Add(this.txtPassword);
+            this.pnlPassword.Controls.Add(this.picPasswordBox);
+            this.pnlPassword.Location = new System.Drawing.Point(54, 298);
+            this.pnlPassword.Name = "pnlPassword";
+            this.pnlPassword.Size = new System.Drawing.Size(290, 51);
+            this.pnlPassword.TabIndex = 1;
             // 
             // pnlEmail
             // 
@@ -361,17 +372,6 @@
             this.picLoading.TabStop = false;
             this.picLoading.Visible = false;
             // 
-            // pnlPassword
-            // 
-            this.pnlPassword.Controls.Add(this.picTogglePassword);
-            this.pnlPassword.Controls.Add(this.lblPassword);
-            this.pnlPassword.Controls.Add(this.txtPassword);
-            this.pnlPassword.Controls.Add(this.picPasswordBox);
-            this.pnlPassword.Location = new System.Drawing.Point(54, 298);
-            this.pnlPassword.Name = "pnlPassword";
-            this.pnlPassword.Size = new System.Drawing.Size(290, 51);
-            this.pnlPassword.TabIndex = 1;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -390,7 +390,6 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Yanapay | Iniciar sesión";
-            this.Click += new System.EventHandler(this.OnOuterClick);
             this.pnlMov2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picClose)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTogglePassword)).EndInit();
@@ -401,11 +400,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.picPasswordBox)).EndInit();
             this.pnlBoxes.ResumeLayout(false);
             this.pnlBoxes.PerformLayout();
+            this.pnlPassword.ResumeLayout(false);
+            this.pnlPassword.PerformLayout();
             this.pnlEmail.ResumeLayout(false);
             this.pnlEmail.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picLoading)).EndInit();
-            this.pnlPassword.ResumeLayout(false);
-            this.pnlPassword.PerformLayout();
             this.ResumeLayout(false);
 
         }

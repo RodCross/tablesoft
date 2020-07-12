@@ -170,7 +170,7 @@ namespace TableSoft
 
             frm.FormClosing += delegate
             {
-                this.Show();
+                Show();
             };
 
             frm.Show();
@@ -182,7 +182,7 @@ namespace TableSoft
 
             frm.FormClosing += delegate
             {
-                this.Show();
+                Show();
             };
 
             frm.Show();
@@ -194,7 +194,7 @@ namespace TableSoft
 
             frm.FormClosing += delegate
             {
-                this.Show();
+                Show();
             };
 
             frm.Show();
@@ -206,7 +206,7 @@ namespace TableSoft
 
             frm.FormClosing += delegate
             {
-                this.Show();
+                Show();
             };
 
             frm.Show();
@@ -216,6 +216,10 @@ namespace TableSoft
 
         private void pnlMov_MouseDown(object sender, MouseEventArgs e)
         {
+            if (!loginError)
+            {
+                ActiveControl = null;
+            }
             Movimiento.MoverVentana(Handle, e.Button);
         }
 
@@ -341,12 +345,19 @@ namespace TableSoft
 
         private void txtEmail_Enter(object sender, System.EventArgs e)
         {
+            emailFocused = true;
+
+            if (MouseButtons == MouseButtons.None)
+            {
+                txtEmail.SelectAll();
+            }
+
             if (loginError && currentError == (int)ErrorType.InvalidPassword)
             {
                 loginError = false;
                 picTogglePassword.BackColor = Color.Transparent;
             }
-            emailFocused = true;
+
             picEmailBox.Image = Properties.Resources.LoginBoxDown;
             txtEmail.BackColor = Color.FromArgb(249, 249, 249);
             lblEmail.BackColor = Color.FromArgb(249, 249, 249);
@@ -357,10 +368,12 @@ namespace TableSoft
         private void txtEmail_Leave(object sender, System.EventArgs e)
         {
             emailFocused = false;
+
             picEmailBox.Image = Properties.Resources.LoginBox;
             txtEmail.BackColor = Color.FromArgb(237, 237, 237);
             lblEmail.BackColor = Color.FromArgb(237, 237, 237);
             lblEmail.ForeColor = Color.FromArgb(153, 153, 153);
+
             if (txtEmail.Text == "")
             {
                 currentSizeEmail = 0;
@@ -370,11 +383,18 @@ namespace TableSoft
 
         private void txtPassword_Enter(object sender, System.EventArgs e)
         {
+            passwordFocused = true;
+
+            if (MouseButtons == MouseButtons.None)
+            {
+                txtPassword.SelectAll();
+            }
+
             if (loginError && currentError == (int)ErrorType.InvalidEmail)
             {
                 loginError = false;
             }
-            passwordFocused = true;
+
             picPasswordBox.Image = Properties.Resources.LoginBoxDown;
             txtPassword.BackColor = Color.FromArgb(249, 249, 249);
             lblPassword.BackColor = Color.FromArgb(249, 249, 249);
@@ -386,11 +406,13 @@ namespace TableSoft
         private void txtPassword_Leave(object sender, System.EventArgs e)
         {
             passwordFocused = false;
+
             picPasswordBox.Image = Properties.Resources.LoginBox;
             txtPassword.BackColor = Color.FromArgb(237, 237, 237);
             lblPassword.BackColor = Color.FromArgb(237, 237, 237);
             lblPassword.ForeColor = Color.FromArgb(153, 153, 153);
             picTogglePassword.Visible = false;
+
             if (txtPassword.Text == "")
             {
                 currentSizePassword = 0;
@@ -460,7 +482,7 @@ namespace TableSoft
                             }
                         }
 
-                        this.Hide();
+                        Hide();
                         if (boxesDown)
                         {
                             MoveBoxesUp();
@@ -491,7 +513,7 @@ namespace TableSoft
 
         private void picClose_Click(object sender, System.EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void picClose_MouseEnter(object sender, System.EventArgs e)
@@ -585,16 +607,16 @@ namespace TableSoft
             frmRecuperarPassword frm = new frmRecuperarPassword
             {
                 StartPosition = FormStartPosition.Manual,
-                Location = this.Location
+                Location = Location
             };
 
             frm.FormClosing += delegate
             {
-                this.Show();
+                Show();
             };
 
             frm.Show();
-            this.Hide();
+            Hide();
             if (boxesDown)
             {
                 MoveBoxesUp();
@@ -608,11 +630,11 @@ namespace TableSoft
             txtEmail.Select();
         }
 
-        private void OnOuterClick(object sender, System.EventArgs e)
+        private void OnOuterMouseDown(object sender, MouseEventArgs e)
         {
             if (!loginError)
             {
-                this.ActiveControl = null;
+                ActiveControl = null;
             }
         }
 

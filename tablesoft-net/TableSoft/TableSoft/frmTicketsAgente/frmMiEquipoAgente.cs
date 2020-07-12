@@ -134,7 +134,7 @@ namespace TableSoft
 
             dgvTicketsEspera.Rows[e.RowIndex].Cells["AbreviaturaBiblioteca"].Value = data.biblioteca.abreviatura;
             dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreEmpleado"].Value = data.empleado.apellidoPaterno + " " + data.empleado.apellidoMaterno + ", " + data.empleado.nombre;
-            dgvTicketsEspera.Rows[e.RowIndex].Cells["FechaApertura"].Value = data.fechaEnvio.Replace("T", " ");
+            //dgvTicketsEspera.Rows[e.RowIndex].Cells["FechaApertura"].Value = data.fechaEnvio.Replace("T", " ");
             dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreCategoria"].Value = data.categoria.nombre;
             dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreUrgencia"].Value = data.urgencia.nombre;
 

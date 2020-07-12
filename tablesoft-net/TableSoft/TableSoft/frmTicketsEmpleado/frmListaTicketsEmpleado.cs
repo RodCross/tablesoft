@@ -8,40 +8,33 @@ namespace TableSoft
     {
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
         private BindingList<TicketWS.ticket> tickets;
+        private TicketWS.empleado empAux = new TicketWS.empleado();
 
         public frmListaTicketsEmpleado()
         {
             InitializeComponent();
-            TicketWS.empleado empAux = new TicketWS.empleado();
-            empAux.empleadoId = frmLogin.empleadoLogueado.empleadoId;
-            var tic = ticketDAO.listarTicketsPorEmpleado(empAux);
-            if(tic == null)
-            {
-                tickets = new BindingList<TicketWS.ticket>();
-            }
-            else
-            {
-                tickets = new BindingList<TicketWS.ticket>(tic);
-            }
-            dgvHistorial.AutoGenerateColumns = false;
-            dgvHistorial.DataSource = tickets;
+
+            Refrescar();
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
         }
 
         private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
+
             dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
             if(data.fechaCierre != null)
             {
-                dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = data.fechaCierre;
+                dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = data.fechaCierre.Replace("T", " ");
             }
             else
             {
                 dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = "Ticket abierto";
             }
-            
-            dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
-
             if (data.agente.nombre != null)
             {
                 dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = data.agente.apellidoPaterno + " " + data.agente.apellidoMaterno + ", " + data.agente.nombre;
@@ -50,6 +43,7 @@ namespace TableSoft
             {
                 dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = "Sin agente asignado";
             }
+            dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Urgencia"].Value = data.urgencia.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Categoria"].Value = data.categoria.nombre;
         }
@@ -78,9 +72,26 @@ namespace TableSoft
             this.Hide();
         }
 
-        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        private void Refrescar()
         {
-            Movimiento.MoverVentana(Handle, e.Button);
+            empAux.empleadoId = frmLogin.empleadoLogueado.empleadoId;
+
+            TicketWS.ticket[] arrTickets = ticketDAO.listarTicketsPorEmpleado(empAux);
+            if (arrTickets == null)
+            {
+                tickets = new BindingList<TicketWS.ticket>();
+            }
+            else
+            {
+                tickets = new BindingList<TicketWS.ticket>(arrTickets);
+            }
+            dgvHistorial.AutoGenerateColumns = false;
+            dgvHistorial.DataSource = tickets;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Refrescar();
         }
     }
 }

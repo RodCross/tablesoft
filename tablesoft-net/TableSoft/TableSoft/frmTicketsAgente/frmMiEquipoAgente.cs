@@ -2,19 +2,37 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
-using TableSoft.AgenteWS;
 
 namespace TableSoft
 {
     public partial class frmMiEquipoAgente : Form
     {
-        public AgenteWS.agente agente;
         private TicketWS.TicketWSClient ticketDAO = new TicketWS.TicketWSClient();
         private BindingList<TicketWS.ticket> ticketsEnEspera;
+        public AgenteWS.agente agente = frmLogin.agenteLogueado;
+        private TicketWS.equipo equipo;
+        private TicketWS.estadoTicket estActivo;
+        private TicketWS.estadoTicket estRecategorizado;
+
+
         public frmMiEquipoAgente()
         {
             InitializeComponent();
-            agente = frmLogin.agenteLogueado;
+            
+            equipo = new TicketWS.equipo
+            {
+                equipoId = agente.equipo.equipoId
+            };
+
+            estActivo = new TicketWS.estadoTicket
+            {
+                estadoId = (int)Estado.Activo
+            };
+
+            estRecategorizado = new TicketWS.estadoTicket
+            {
+                estadoId = (int)Estado.Recategorizado
+            };
 
             Refrescar();
         }
@@ -115,7 +133,8 @@ namespace TableSoft
             TicketWS.ticket data = dgvTicketsEspera.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
 
             dgvTicketsEspera.Rows[e.RowIndex].Cells["AbreviaturaBiblioteca"].Value = data.biblioteca.abreviatura;
-            dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreEmpleado"].Value = data.empleado.nombre + " " + data.empleado.apellidoPaterno + " " + data.empleado.apellidoMaterno;
+            dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreEmpleado"].Value = data.empleado.apellidoPaterno + " " + data.empleado.apellidoMaterno + ", " + data.empleado.nombre;
+            dgvTicketsEspera.Rows[e.RowIndex].Cells["FechaApertura"].Value = data.fechaEnvio.Replace("T", " ");
             dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreCategoria"].Value = data.categoria.nombre;
             dgvTicketsEspera.Rows[e.RowIndex].Cells["NombreUrgencia"].Value = data.urgencia.nombre;
 
@@ -123,29 +142,20 @@ namespace TableSoft
 
         private void Refrescar()
         {
-            TicketWS.equipo equip = new TicketWS.equipo();
-            equip.equipoId = agente.equipo.equipoId;
-
-            TicketWS.estadoTicket estActivo = new TicketWS.estadoTicket();
-            estActivo.estadoId = (int)Estado.Activo;
-            TicketWS.estadoTicket estRecategorizado = new TicketWS.estadoTicket();
-            estRecategorizado.estadoId = (int)Estado.Recategorizado;
-
-            var tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estActivo, equip);
-            if (tickts == null)
+            TicketWS.ticket[] arrTickets = ticketDAO.listarTicketsPorEstadoPorEquipo(estActivo, equipo);
+            if (arrTickets == null)
             {
                 ticketsEnEspera = new BindingList<TicketWS.ticket>();
             }
             else
             {
-                ticketsEnEspera = new BindingList<TicketWS.ticket>(tickts.ToList());
+                ticketsEnEspera = new BindingList<TicketWS.ticket>(arrTickets);
             }
 
-            tickts = ticketDAO.listarTicketsPorEstadoPorEquipo(estRecategorizado, equip);
-            if (tickts != null)
+            arrTickets = ticketDAO.listarTicketsPorEstadoPorEquipo(estRecategorizado, equipo);
+            if (arrTickets != null)
             {
-                //ticketsEnEspera.Concat(tickts.ToList());    <- no se si funcionaria
-                foreach (TicketWS.ticket t in tickts)
+                foreach (TicketWS.ticket t in arrTickets)
                 {
                     ticketsEnEspera.Add(t);
                 }
@@ -153,6 +163,11 @@ namespace TableSoft
 
             dgvTicketsEspera.AutoGenerateColumns = false;
             dgvTicketsEspera.DataSource = ticketsEnEspera;
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            Refrescar();
         }
     }
 }

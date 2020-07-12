@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_Ticket" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="19293dc5-7535-4e9a-9184-537f3579eb74">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="TicketId" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT CET.cambio_estado_id, CONCAT(P.nombre, " " ,P.apellido_paterno, " ",  P.apellido_materno) as nombreAgente, CET.fecha_cambio_estado, ET.nombre, CET.comentario 
+FROM cambio_estado_ticket CET 
+inner join estado_ticket ET on CET.estado_id_to = ET.estado_id 
+inner join agente A on CET.agente_id = A.agente_id 
+inner join persona P on P.codigo = A.codigo 
+where CET.ticket_id =    $P{TicketId}  order by cambio_estado_id;]]>
+	</queryString>
+	<field name="cambio_estado_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="cambio_estado_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cambio_estado_ticket"/>
+	</field>
+	<field name="nombreAgente" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreAgente"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="persona"/>
+	</field>
+	<field name="fecha_cambio_estado" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_cambio_estado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cambio_estado_ticket"/>
+	</field>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombre"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estado_ticket"/>
+	</field>
+	<field name="comentario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="comentario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cambio_estado_ticket"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="230" height="22" uuid="3f41b854-68ac-4740-9dbb-d153f30b1fa0"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de cambios de estado del ticket]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="43" splitType="Stretch">
+			<staticText>
+				<reportElement x="140" y="2" width="110" height="30" uuid="46676a13-308f-4836-ad6e-37ab9722a8b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="acf1c226-57e5-4783-9d1d-4407fd1b83d3"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha del cambio de estado]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="30" y="2" width="100" height="30" uuid="5bed0bae-ce8d-4b67-8851-3183b0fe9d55">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31a77cc8-c67b-4e3a-8781-624c17ba35ef"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cambiado a estado:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="2" width="130" height="30" uuid="45f7d88e-708f-4360-87d4-2949a248a05c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e67f9f6-faff-42ac-a5d4-813aeccac587"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comentario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="400" y="2" width="142" height="30" uuid="45363dbc-46e6-4205-be22-f2447479d093">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e67f9f6-faff-42ac-a5d4-813aeccac587"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textElement markup="none">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Agente responsable del cambio:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="2" width="17" height="30" uuid="c3d06841-f279-4bb2-80ad-ca3c7fabeea1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9552afd9-69eb-451a-9fb6-db3d180039ea"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement x="2" y="0" width="542" height="1" forecolor="#006699" uuid="d6b45bde-3c07-4f58-ad34-f8b5f2fdcfa0"/>
+			</line>
+			<line>
+				<reportElement x="2" y="37" width="542" height="1" forecolor="#006699" uuid="87c65465-28e2-4923-98a7-251d665ab942"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="140" y="4" width="110" height="46" uuid="be97d9ae-035c-4ff7-8623-f136b4ce34a1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51f4fb10-1278-4143-a797-47f7e60fba9e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fecha_cambio_estado}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="30" y="4" width="100" height="46" uuid="a2ddae12-9d9e-44fd-9b83-05ab08fa3720">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2c04fe6-7885-4bc3-8bd0-a3de3be9aeff"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="4" width="130" height="46" uuid="2f332f30-4c77-4a57-a52a-ec5fe917da82">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ae5bd232-ed66-4847-b322-f4985bdc3d06"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{comentario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="4" width="142" height="46" uuid="ee9e04b1-970d-4083-827e-dd534b680e4c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa71d1f9-31b1-4e8e-b102-2ece496d4855"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombreAgente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="4" width="17" height="46" uuid="c62a61f2-5c76-4fb3-ba22-9a5a95e85750">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9552afd9-69eb-451a-9fb6-db3d180039ea"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cambio_estado_id}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

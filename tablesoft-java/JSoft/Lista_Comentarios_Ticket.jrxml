@@ -41,7 +41,7 @@ where C.ticket_id =  $P{Ticket_id} ;]]>
 		</band>
 	</pageHeader>
 	<columnHeader>
-		<band height="34" splitType="Stretch">
+		<band height="35" splitType="Stretch">
 			<staticText>
 				<reportElement x="3" y="1" width="40" height="30" uuid="a112c2dc-c20c-42b8-afe7-5a31865d397a">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb2d2e1f-96bc-4f90-b7a7-acfc1237c11f"/>
@@ -55,10 +55,10 @@ where C.ticket_id =  $P{Ticket_id} ;]]>
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<line>
-				<reportElement x="2" y="-2" width="542" height="1" uuid="2f1cb67b-c714-4805-98ca-3be767294868"/>
+				<reportElement mode="Opaque" x="2" y="-2" width="542" height="1" forecolor="#006699" uuid="2f1cb67b-c714-4805-98ca-3be767294868"/>
 			</line>
 			<staticText>
-				<reportElement x="50" y="1" width="210" height="30" uuid="eb7f2bce-d391-4b5f-9972-1f0bb959cdb6">
+				<reportElement x="50" y="1" width="230" height="30" uuid="eb7f2bce-d391-4b5f-9972-1f0bb959cdb6">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b2b6da5-a4f7-4681-9810-5463bc941c42"/>
 				</reportElement>
 				<textElement>
@@ -67,7 +67,7 @@ where C.ticket_id =  $P{Ticket_id} ;]]>
 				<text><![CDATA[Comentario]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="270" y="1" width="100" height="30" uuid="eb444891-c9f1-456a-8fd0-5042116c58c4">
+				<reportElement x="288" y="1" width="80" height="30" uuid="eb444891-c9f1-456a-8fd0-5042116c58c4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="63a4caf3-c318-45a9-bdf2-1a20c61ae0f5"/>
 				</reportElement>
 				<textElement>
@@ -84,12 +84,15 @@ where C.ticket_id =  $P{Ticket_id} ;]]>
 				</textElement>
 				<text><![CDATA[Comentario realizado por:]]></text>
 			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="3" y="34" width="541" height="1" forecolor="#006699" uuid="4fd0742c-e3a4-48ca-8ad7-d1fcfe788d7d"/>
+			</line>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="50" splitType="Stretch">
+		<band height="54" splitType="Stretch">
 			<textField>
-				<reportElement x="3" y="10" width="40" height="30" uuid="0fb0bc69-063c-4a1c-b494-6a36b9ca4413">
+				<reportElement x="3" y="4" width="40" height="50" uuid="0fb0bc69-063c-4a1c-b494-6a36b9ca4413">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb2d2e1f-96bc-4f90-b7a7-acfc1237c11f"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
@@ -97,26 +100,23 @@ where C.ticket_id =  $P{Ticket_id} ;]]>
 				<textFieldExpression><![CDATA[$F{comentario_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="50" y="10" width="210" height="30" uuid="e43edee0-066b-4a96-a345-a3243cdd52f0">
+				<reportElement x="50" y="4" width="230" height="50" uuid="e43edee0-066b-4a96-a345-a3243cdd52f0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b2b6da5-a4f7-4681-9810-5463bc941c42"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{texto}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="270" y="10" width="100" height="30" uuid="cda785e8-2b47-4041-a292-b6cb197bb3f2">
+				<reportElement x="288" y="4" width="80" height="50" uuid="cda785e8-2b47-4041-a292-b6cb197bb3f2">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="63a4caf3-c318-45a9-bdf2-1a20c61ae0f5"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="380" y="10" width="164" height="30" uuid="2e8e2bb9-37ab-4ad7-b91e-9b85e4856841">
+				<reportElement x="380" y="4" width="164" height="50" uuid="2e8e2bb9-37ab-4ad7-b91e-9b85e4856841">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abf13e64-26af-44de-9e4c-add7ddcf8ec3"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
 			</textField>
-			<line>
-				<reportElement x="0" y="0" width="541" height="1" uuid="ba47a2c4-15f6-43f2-88d4-6fa2e074d06d"/>
-			</line>
 		</band>
 	</detail>
 </jasperReport>

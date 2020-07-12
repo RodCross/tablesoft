@@ -68,7 +68,7 @@ where TT.ticket_id = $P{Ticket_id}  ;]]>
 				<text><![CDATA[ID]]></text>
 			</staticText>
 			<line>
-				<reportElement x="5" y="2" width="542" height="1" uuid="a9c8415d-a11a-4b05-b955-3d4c60996274"/>
+				<reportElement mode="Opaque" x="5" y="2" width="542" height="1" forecolor="#006699" uuid="a9c8415d-a11a-4b05-b955-3d4c60996274"/>
 			</line>
 			<staticText>
 				<reportElement x="41" y="7" width="99" height="30" uuid="eab5e540-7005-4195-987b-76056da39ad5">
@@ -86,8 +86,7 @@ where TT.ticket_id = $P{Ticket_id}  ;]]>
 				<textElement>
 					<font fontName="Arial" size="12" isBold="true"/>
 				</textElement>
-				<text><![CDATA[Fecha de la reasignación
-]]></text>
+				<text><![CDATA[Fecha de la reasignación]]></text>
 			</staticText>
 			<staticText>
 				<reportElement x="240" y="7" width="144" height="30" uuid="5b555e8a-bf60-4d42-8357-3d972ca1eb35">
@@ -99,7 +98,7 @@ where TT.ticket_id = $P{Ticket_id}  ;]]>
 				<text><![CDATA[Comentario]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="395" y="7" width="141" height="30" uuid="a7e48d9f-86e0-411c-ac1a-d2682df2f835">
+				<reportElement x="395" y="7" width="105" height="30" uuid="a7e48d9f-86e0-411c-ac1a-d2682df2f835">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ccf63c-7919-4fd0-ae59-275d74d86f3e"/>
 				</reportElement>
 				<textElement>
@@ -108,38 +107,38 @@ where TT.ticket_id = $P{Ticket_id}  ;]]>
 				<text><![CDATA[Categoria a la que fue reasignada]]></text>
 			</staticText>
 			<line>
-				<reportElement x="6" y="36" width="541" height="1" uuid="9d008d3f-1d57-471b-b242-ecd0029111f1"/>
+				<reportElement mode="Opaque" x="6" y="36" width="541" height="1" forecolor="#006699" uuid="9d008d3f-1d57-471b-b242-ecd0029111f1"/>
 			</line>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="48" splitType="Stretch">
+		<band height="60" splitType="Stretch">
 			<textField>
-				<reportElement x="8" y="10" width="25" height="30" uuid="b94ac1a6-7015-4943-90a1-8476a0ab6cab">
+				<reportElement x="8" y="10" width="25" height="50" uuid="b94ac1a6-7015-4943-90a1-8476a0ab6cab">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="462a758c-f40c-4cbf-8bf3-3fb770e96477"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{transferencia_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="41" y="10" width="99" height="30" uuid="e7415c61-777b-4b8e-bdde-f13f5f2de5b4">
+				<reportElement x="41" y="10" width="99" height="50" uuid="e7415c61-777b-4b8e-bdde-f13f5f2de5b4">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83154789-50a6-4dd8-aa4d-d3013aab197d"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="151" y="10" width="80" height="30" uuid="41c227b3-b158-4a6c-8351-17a541422d16">
+				<reportElement x="151" y="10" width="80" height="50" uuid="41c227b3-b158-4a6c-8351-17a541422d16">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be1effdb-9749-4f94-bc2c-28a0e4e9710e"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{fecha_transferencia}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="240" y="10" width="144" height="30" uuid="56524ce3-7f11-49e2-b027-30ead69f1cf0">
+				<reportElement x="240" y="10" width="144" height="50" uuid="56524ce3-7f11-49e2-b027-30ead69f1cf0">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4a93cb4-184d-4192-aae3-0412af083c1e"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{comentario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="395" y="10" width="140" height="30" uuid="eab2380f-8f7e-46b5-846c-3e800a660f32">
+				<reportElement x="395" y="10" width="140" height="50" uuid="eab2380f-8f7e-46b5-846c-3e800a660f32">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2245768c-cf94-441f-a4d0-f516b5a54b59"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{nombreCategoria}]]></textFieldExpression>

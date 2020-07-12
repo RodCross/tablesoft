@@ -20,6 +20,10 @@
         <servlet-name>ReporteTicketEquipo</servlet-name>
         <servlet-class>pe.edu.pucp.tablesoft.servlets.ReporteTicketEquipo</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ReporteTicketGeneral</servlet-name>
+        <servlet-class>pe.edu.pucp.tablesoft.servlets.ReporteTicketGeneral</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ReporteTickets</servlet-name>
         <url-pattern>/ReporteTickets</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>ReporteTicketEquipo</servlet-name>
         <url-pattern>/ReporteTicketEquipo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ReporteTicketGeneral</servlet-name>
+        <url-pattern>/ReporteTicketGeneral</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -23,13 +23,14 @@ import net.sf.jasperreports.engine.JasperFillManager;
 import net.sf.jasperreports.engine.JasperPrint;
 import net.sf.jasperreports.engine.JasperReport;
 import net.sf.jasperreports.engine.util.JRLoader;
+import net.sf.jasperreports.view.JasperViewer;
 import pe.edu.pucp.tablesoft.config.DBManager;
 
 /**
  *
- * @author Fer
+ * @author STEFANO
  */
-public class ReporteTicketEquipo extends HttpServlet {
+public class ReporteTicketGeneral extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,90 +50,93 @@ public class ReporteTicketEquipo extends HttpServlet {
             con = DriverManager.getConnection(DBManager.urlMySQL,DBManager.user, DBManager.password);
             
             String rutaImagen
-                = ReporteTicketEquipo.class.getResource(
+                = ReporteTicketGeneral.class.getResource(
        "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.jpg").getPath().replace("%20", " ");
         ImageIcon icon = new ImageIcon(rutaImagen);
         java.awt.Image imagenReporte = icon.getImage();
 
             String rutaReporteJasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Reporte_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Reporte_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte1Jasper
-            = ReporteTicketEquipo.class.getResource(
+            = ReporteTicketGeneral.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/ReporteTicket.jasper").getPath().replace("%20", " ");
             
             //Obtener la ruta del subreporte
             String rutaSubReporte2Jasper
-            = ReporteTicketEquipo.class.getResource(
+            = ReporteTicketGeneral.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Comentarios_Ticket.jasper").getPath().replace("%20", " ");
 
             //Obtener la ruta del subreporte2
             String rutaSubReporte3Jasper
-            = ReporteTicketEquipo.class.getResource(
+            = ReporteTicketGeneral.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Ticket.jasper").getPath().replace("%20", " ");
 
             String rutaSubReporte4Jasper
-            = ReporteTicketEquipo.class.getResource(
+            = ReporteTicketGeneral.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Tareas_Ticket.jasper").getPath().replace("%20", " ");
 
             //Obtener la ruta al archivo
             String rutaSubReporte5Jasper
-            = ReporteTicketEquipo.class.getResource(
+            = ReporteTicketGeneral.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Reporte_Lista_Cambios_Estado.jasper").getPath().replace("%20", " ");
 
             String rutaSubReporte6Jasper
-            = ReporteTicketEquipo.class.getResource(
+            = ReporteTicketGeneral.class.getResource(
            "/pe/edu/pucp/tablesoft/reports/Lista_Transferencia_Externa.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte7Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_Escalados_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Escalados_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte8Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_Demorados_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Demorados_General.jasper").getPath().replace("%20", " ");
 
             String rutaSubReporte9Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_Recategorizados_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Recategorizados_General.jasper").getPath().replace("%20", " ");
 
             String rutaSubReporte10Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Resumen_Escalados_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Escalados_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte11Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Resumen_Recategorizados_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Recategorizados_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte12Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Resumen_Demorados_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_Demorados_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte13Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Dia_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Dia_General.jasper").getPath().replace("%20", " ");
 
             String rutaSubReporte14Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Biblioteca_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Categoria_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte15Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_ActivoFijo_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_ActivoFijo_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte16Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Resumen_ActivoFijo_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Resumen_ActivoFijo_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte17Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Categoria_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Urgencia_General.jasper").getPath().replace("%20", " ");
             
             String rutaSubReporte18Jasper
-            = ReporteTicketEquipo.class.getResource(
-           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Agente_Equipo.jasper").getPath().replace("%20", " ");
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Agente_General.jasper").getPath().replace("%20", " ");
             
+            String rutaSubReporte19Jasper
+            = ReporteTicketGeneral.class.getResource(
+           "/pe/edu/pucp/tablesoft/reports/Grafico_Tickets_Equipo_General.jasper").getPath().replace("%20", " ");
             //Objecto JasperReport
             JasperReport objJR = 
                     (JasperReport)
@@ -140,12 +144,9 @@ public class ReporteTicketEquipo extends HttpServlet {
 
             HashMap hm = new HashMap();
             
-            hm.put("Equipo_id", 1);
-            hm.put("Equipo_nombre", "Base de datos");
-            hm.put("Equipo_descripcion", "Problemas en Oracle");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
             LocalDateTime fechaIni = LocalDateTime.parse("30-06-2020 12:30:55", formatter);
-            LocalDateTime fechaFin = LocalDateTime.parse("13-07-2020 12:30:55", formatter);
+            LocalDateTime fechaFin = LocalDateTime.parse("08-07-2020 12:30:55", formatter);
             hm.put("FechaInicio", Timestamp.valueOf(fechaIni));
             hm.put("FechaFin", Timestamp.valueOf(fechaFin));
             hm.put("RUTA_REPORTE", rutaSubReporte1Jasper);
@@ -164,13 +165,14 @@ public class ReporteTicketEquipo extends HttpServlet {
             hm.put("RUTA_RESUMEN_RECATEGORIZADOS", rutaSubReporte11Jasper);
             hm.put("RUTA_RESUMEN_DEMORADOS", rutaSubReporte12Jasper);
             hm.put("RUTA_TICKET_DIA", rutaSubReporte13Jasper);
-            hm.put("RUTA_TICKET_BIBLIOTECA", rutaSubReporte14Jasper);
+            hm.put("RUTA_TICKET_CATEGORIA", rutaSubReporte14Jasper);
             
             
             hm.put("RUTA_GRAFICO_ACTIVOFIJO", rutaSubReporte15Jasper);
             hm.put("RUTA_RESUMEN_ACTIVOFIJO", rutaSubReporte16Jasper);
             hm.put("RUTA_TICKET_URGENCIA", rutaSubReporte17Jasper);
             hm.put("RUTA_TICKET_AGENTE", rutaSubReporte18Jasper);
+            hm.put("RUTA_TICKET_EQUIPO", rutaSubReporte19Jasper);
             //Object JasperPrint
             JasperPrint objJPrint =
             JasperFillManager.fillReport(objJR,hm,con);

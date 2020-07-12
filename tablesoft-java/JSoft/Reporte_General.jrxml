@@ -3,9 +3,15 @@
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_Categoria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea81d21a-8566-4aa4-ab98-f3e1bb848c0e">
 	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<parameter name="Categoria_id" class="java.lang.Integer"/>
-	<parameter name="Categoria_nombre" class="java.lang.String"/>
-	<parameter name="Categoria_descripcion" class="java.lang.String"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="RUTA_LISTA_TRANS_TICKET" class="java.lang.String"/>
 	<parameter name="RUTA_LISTA_TRANS_EXTERNA" class="java.lang.String"/>
 	<parameter name="RUTA_LISTA_CAMBIOS" class="java.lang.String"/>
@@ -20,20 +26,21 @@
 	<parameter name="RUTA_GRAFICO_ESCALADOS" class="java.lang.String"/>
 	<parameter name="RUTA_GRAFICO_DEMORADOS" class="java.lang.String"/>
 	<parameter name="RUTA_GRAFICO_RECATEGORIZADOS" class="java.lang.String"/>
+	<parameter name="RUTA_GRAFICO_ACTIVOFIJO" class="java.lang.String"/>
 	<parameter name="RUTA_RESUMEN_ESCALADOS" class="java.lang.String"/>
 	<parameter name="RUTA_RESUMEN_RECATEGORIZADOS" class="java.lang.String"/>
 	<parameter name="RUTA_RESUMEN_DEMORADOS" class="java.lang.String"/>
-	<parameter name="RUTA_TICKET_DIA" class="java.lang.String"/>
-	<parameter name="RUTA_TICKET_BIBLIOTECA" class="java.lang.String"/>
-	<parameter name="RUTA_GRAFICO_ACTIVOFIJO" class="java.lang.String"/>
 	<parameter name="RUTA_RESUMEN_ACTIVOFIJO" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_DIA" class="java.lang.String"/>
 	<parameter name="RUTA_TICKET_CATEGORIA" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_URGENCIA" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_AGENTE" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_EQUIPO" class="java.lang.String"/>
 	<queryString>
 		<![CDATA[select T.ticket_id
 from ticket T 
-
-
-where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and T.fecha_envio < $P{FechaFin}  ;]]>
+where T.fecha_envio> $P{FechaInicio} 
+and T.fecha_envio < $P{FechaFin}  ;]]>
 	</queryString>
 	<field name="ticket_id" class="java.lang.Integer">
 		<property name="com.jaspersoft.studio.field.label" value="ticket_id"/>
@@ -46,34 +53,9 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="212" splitType="Stretch">
+		<band height="147" splitType="Stretch">
 			<textField>
-				<reportElement x="3" y="108" width="225" height="20" uuid="cc444155-2387-4fb7-b8af-fe1919c80502">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement>
-					<font fontName="Arial" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Categoría N°"  + $P{Categoria_id}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="3" y="129" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
-					<property name="com.jaspersoft.studio.unit.height" value="px"/>
-				</reportElement>
-				<textElement>
-					<font fontName="Arial" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Nombre: "  + $P{Categoria_nombre}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="3" y="151" width="280" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
-				<textElement>
-					<font fontName="Arial" size="14"/>
-				</textElement>
-				<textFieldExpression><![CDATA["Descripcion: " + $P{Categoria_descripcion}]]></textFieldExpression>
-			</textField>
-			<textField>
-				<reportElement x="2" y="172" width="553" height="40" uuid="7425fae7-3620-4825-a02a-0037941de7db">
+				<reportElement x="2" y="107" width="553" height="40" uuid="952941c6-8dbc-471c-936d-1eab198a4756">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -82,23 +64,23 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<textFieldExpression><![CDATA["Tickets enviados desde " + DATEFORMAT($P{FechaInicio},"dd-MM-YYYY") +  " hasta "  + DATEFORMAT($P{FechaFin}, "dd-MM-YYYY")]]></textFieldExpression>
 			</textField>
 			<frame>
-				<reportElement mode="Opaque" x="-20" y="6" width="595" height="90" forecolor="#006699" backcolor="#006699" uuid="e6425440-301a-4917-a61d-0fd89bc0dfee"/>
+				<reportElement mode="Opaque" x="-20" y="6" width="595" height="90" forecolor="#006699" backcolor="#006699" uuid="7c52c6ad-b623-48e1-821f-1e4d80b3af2c"/>
 				<staticText>
-					<reportElement x="17" y="-4" width="473" height="66" forecolor="#FFFFFF" uuid="f0ffbabb-35da-47b7-9a7b-1ef388a83ce2"/>
+					<reportElement x="17" y="-4" width="400" height="66" forecolor="#FFFFFF" uuid="876d8ea1-b469-4830-bf64-6dd73fc0c6ca"/>
 					<box>
 						<pen lineColor="#FFFFFF"/>
 					</box>
 					<textElement verticalAlignment="Middle">
 						<font fontName="Arial" size="30" isBold="true"/>
 					</textElement>
-					<text><![CDATA[Reporte de tickets por categoría]]></text>
+					<text><![CDATA[Reporte de tickets]]></text>
 				</staticText>
 				<image>
-					<reportElement x="500" y="10" width="80" height="73" uuid="9471d4c3-fbb7-47db-b94b-f4bdfb35ee81"/>
+					<reportElement x="500" y="10" width="80" height="73" uuid="627637b6-af8a-45fe-a877-687b9c75227a"/>
 					<imageExpression><![CDATA[$P{IMAGEN_REPORTE}]]></imageExpression>
 				</image>
 				<staticText>
-					<reportElement x="17" y="50" width="449" height="29" forecolor="#FFFFFF" uuid="938ce571-f78d-44d2-99aa-a78d6f5cd08d"/>
+					<reportElement x="17" y="50" width="449" height="29" forecolor="#FFFFFF" uuid="a18625f8-b275-44eb-802b-bb1515663cdb"/>
 					<textElement textAlignment="Left">
 						<font fontName="Arial" size="18" isBold="false"/>
 					</textElement>
@@ -110,7 +92,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 	<detail>
 		<band height="41" splitType="Stretch">
 			<subreport>
-				<reportElement positionType="Float" x="0" y="0" width="515" height="41" uuid="483dee88-d172-49a4-bd94-209a87c6c6d0"/>
+				<reportElement positionType="Float" x="-19" y="0" width="555" height="41" uuid="483dee88-d172-49a4-bd94-209a87c6c6d0"/>
 				<subreportParameter name="Ticket_id">
 					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -166,7 +148,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="561" splitType="Stretch">
+		<band height="680" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="12" width="160" height="20" uuid="59bb36b9-9bf4-4aa3-998d-317aeacf8a1a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -184,9 +166,6 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
-				</subreportParameter>
 				<subreportParameter name="RUTA_GRAFICO">
 					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_ESCALADOS}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -200,9 +179,6 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				</subreportParameter>
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="RUTA_GRAFICO">
 					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_DEMORADOS}]]></subreportParameterExpression>
@@ -218,9 +194,6 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
-				</subreportParameter>
 				<subreportParameter name="RUTA_GRAFICO">
 					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_RECATEGORIZADOS}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -234,9 +207,6 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				</subreportParameter>
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
-				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
 				<subreportExpression><![CDATA[$P{RUTA_TICKET_DIA}]]></subreportExpression>
@@ -258,11 +228,8 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
-				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{RUTA_TICKET_BIBLIOTECA}]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_CATEGORIA}]]></subreportExpression>
 			</subreport>
 			<subreport>
 				<reportElement positionType="Float" x="-1" y="266" width="551" height="70" uuid="f7dd559a-5f60-4617-a8b5-2ec0a0588384"/>
@@ -272,9 +239,6 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
-				</subreportParameter>
 				<subreportParameter name="RUTA_GRAFICO">
 					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_ACTIVOFIJO}]]></subreportParameterExpression>
 				</subreportParameter>
@@ -282,18 +246,37 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<subreportExpression><![CDATA[$P{RUTA_RESUMEN_ACTIVOFIJO}]]></subreportExpression>
 			</subreport>
 			<subreport>
-				<reportElement positionType="Float" x="-1" y="460" width="551" height="80" uuid="2adb3c99-fd6f-4f0a-83c7-2558dbc012f4"/>
+				<reportElement positionType="Float" x="-1" y="460" width="551" height="70" uuid="2adb3c99-fd6f-4f0a-83c7-2558dbc012f4"/>
 				<subreportParameter name="FechaInicio">
 					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
 				</subreportParameter>
 				<subreportParameter name="FechaFin">
 					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
 				</subreportParameter>
-				<subreportParameter name="Categoria_id">
-					<subreportParameterExpression><![CDATA[$P{Categoria_id}]]></subreportParameterExpression>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_URGENCIA}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="540" width="551" height="60" uuid="2eeed839-cb7c-4a0f-9f05-e1594c9e5b60"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
 				</subreportParameter>
 				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
-				<subreportExpression><![CDATA[$P{RUTA_TICKET_CATEGORIA}]]></subreportExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_AGENTE}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="610" width="550" height="70" uuid="d2c9835c-aa12-4e6d-97cd-c0a7a9ff9156"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_EQUIPO}]]></subreportExpression>
 			</subreport>
 		</band>
 	</summary>

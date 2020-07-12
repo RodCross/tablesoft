@@ -46,16 +46,9 @@ where T.urgencia_id =  $P{Urgencia_id}  and T.fecha_envio> $P{FechaInicio} and T
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="144" splitType="Stretch">
-			<staticText>
-				<reportElement x="102" y="20" width="350" height="30" uuid="1239aa87-14c1-4283-94e1-680870cdaf65"/>
-				<textElement>
-					<font fontName="Arial" size="22" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Reporte de tickets por urgencia]]></text>
-			</staticText>
+		<band height="216" splitType="Stretch">
 			<textField>
-				<reportElement x="3" y="81" width="225" height="20" uuid="cc444155-2387-4fb7-b8af-fe1919c80502">
+				<reportElement x="3" y="108" width="225" height="20" uuid="cc444155-2387-4fb7-b8af-fe1919c80502">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -64,7 +57,7 @@ where T.urgencia_id =  $P{Urgencia_id}  and T.fecha_envio> $P{FechaInicio} and T
 				<textFieldExpression><![CDATA["Urgencia N°"  + $P{Urgencia_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="102" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
+				<reportElement x="3" y="129" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -73,19 +66,45 @@ where T.urgencia_id =  $P{Urgencia_id}  and T.fecha_envio> $P{FechaInicio} and T
 				<textFieldExpression><![CDATA["Nombre: "  + $P{Urgencia_nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="124" width="467" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
+				<reportElement x="3" y="151" width="467" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Plazo máximo para la resolución del ticket:  " + $P{Urgencia_plazo}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="487" y="2" width="60" height="60" uuid="0fb411b9-210d-45bd-822b-32e269a1f8d2"/>
-				<imageExpression><![CDATA[$P{IMAGEN_REPORTE}]]></imageExpression>
-			</image>
-			<line>
-				<reportElement x="0" y="70" width="555" height="1" uuid="fe3f27c3-9464-47e2-85ce-2c462c3ef8f3"/>
-			</line>
+			<textField>
+				<reportElement x="2" y="172" width="553" height="40" uuid="7f6b3392-2dfe-4b7e-9b85-96fa85296ef0">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tickets enviados desde " + DATEFORMAT($P{FechaInicio},"dd-MM-YYYY") +  " hasta "  + DATEFORMAT($P{FechaFin}, "dd-MM-YYYY")]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="6" width="595" height="90" forecolor="#006699" backcolor="#006699" uuid="09d88d68-e198-48d2-b1b6-6b6ae067307c"/>
+				<staticText>
+					<reportElement x="17" y="-4" width="473" height="66" forecolor="#FFFFFF" uuid="b840a778-6d1c-4f51-a9e2-8682f4a5f40a"/>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="30" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte de tickets por urgencia]]></text>
+				</staticText>
+				<image>
+					<reportElement x="500" y="10" width="80" height="73" uuid="ae16ae99-7825-4d9b-b629-43a775bed839"/>
+					<imageExpression><![CDATA[$P{IMAGEN_REPORTE}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="17" y="50" width="449" height="29" forecolor="#FFFFFF" uuid="73907d01-4c5c-43ae-939d-c832f67a9c7d"/>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="18" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Sistema de Bibliotecas]]></text>
+				</staticText>
+			</frame>
 		</band>
 	</title>
 	<detail>
@@ -147,7 +166,7 @@ where T.urgencia_id =  $P{Urgencia_id}  and T.fecha_envio> $P{FechaInicio} and T
 		</band>
 	</pageFooter>
 	<summary>
-		<band height="561" splitType="Stretch">
+		<band height="540" splitType="Stretch">
 			<textField>
 				<reportElement x="0" y="12" width="160" height="20" uuid="59bb36b9-9bf4-4aa3-998d-317aeacf8a1a">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>

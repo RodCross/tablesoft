@@ -48,16 +48,9 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="146" splitType="Stretch">
-			<staticText>
-				<reportElement x="120" y="20" width="318" height="30" uuid="1239aa87-14c1-4283-94e1-680870cdaf65"/>
-				<textElement>
-					<font fontName="Arial" size="22" isBold="true"/>
-				</textElement>
-				<text><![CDATA[Reporte de tickets por equipo]]></text>
-			</staticText>
+		<band height="212" splitType="Stretch">
 			<textField>
-				<reportElement x="3" y="81" width="225" height="20" uuid="cc444155-2387-4fb7-b8af-fe1919c80502">
+				<reportElement x="3" y="111" width="225" height="20" uuid="cc444155-2387-4fb7-b8af-fe1919c80502">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -66,7 +59,7 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 				<textFieldExpression><![CDATA["Equipo N° "  + $P{Equipo_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="102" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
+				<reportElement x="3" y="132" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>
@@ -75,19 +68,45 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 				<textFieldExpression><![CDATA["Nombre: "  + $P{Equipo_nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="124" width="547" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
+				<reportElement x="3" y="154" width="547" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Descripcion: " + $P{Equipo_descripcion}]]></textFieldExpression>
 			</textField>
-			<image>
-				<reportElement x="487" y="2" width="60" height="60" uuid="0fb411b9-210d-45bd-822b-32e269a1f8d2"/>
-				<imageExpression><![CDATA[$P{IMAGEN_REPORTE}]]></imageExpression>
-			</image>
-			<line>
-				<reportElement x="0" y="70" width="555" height="1" uuid="fe3f27c3-9464-47e2-85ce-2c462c3ef8f3"/>
-			</line>
+			<textField>
+				<reportElement x="2" y="172" width="553" height="40" uuid="11f84904-62a4-4bc8-aa19-8e8fbfe4f236">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tickets enviados desde " + DATEFORMAT($P{FechaInicio},"dd-MM-YYYY") +  " hasta "  + DATEFORMAT($P{FechaFin}, "dd-MM-YYYY")]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="6" width="595" height="90" forecolor="#006699" backcolor="#006699" uuid="5be6eb3e-5ab6-41b9-acdd-7ba2fee8a594"/>
+				<staticText>
+					<reportElement x="17" y="-4" width="473" height="66" forecolor="#FFFFFF" uuid="71987d2e-5af3-4ac2-9473-9771a7d3e358"/>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="30" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte de tickets por equipo]]></text>
+				</staticText>
+				<image>
+					<reportElement x="500" y="10" width="80" height="73" uuid="e3362f89-d445-4043-80be-cc942c35cc75"/>
+					<imageExpression><![CDATA[$P{IMAGEN_REPORTE}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="17" y="50" width="449" height="29" forecolor="#FFFFFF" uuid="4e73b084-3679-42f3-ad67-b1bd9c405aec"/>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="18" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Sistema de Bibliotecas]]></text>
+				</staticText>
+			</frame>
 		</band>
 	</title>
 	<detail>

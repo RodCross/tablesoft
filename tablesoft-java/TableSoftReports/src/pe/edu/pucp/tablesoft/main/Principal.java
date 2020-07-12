@@ -660,7 +660,7 @@ public class Principal {
             
             String rutaImagen
                 = Principal.class.getResource(
-       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.jpg").getPath().replace("%20", " ");
+       "/pe/edu/pucp/tablesoft/reports/Seal_of_Pontifical_Catholic_University_of_Peru.png").getPath().replace("%20", " ");
         ImageIcon icon = new ImageIcon(rutaImagen);
         java.awt.Image imagenReporte = icon.getImage();
 

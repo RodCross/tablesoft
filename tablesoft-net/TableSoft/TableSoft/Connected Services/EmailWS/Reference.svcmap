@@ -19,10 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://23.22.97.25/TableSoftEmail/EmailWS.asmx?WSDL" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://34.200.88.54/TableSoftEmail/EmailWS.asmx?WSDL" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EmailWS.wsdl" MetadataType="Wsdl" ID="ce64eac9-f360-40f7-8e36-1f8675fc4205" SourceId="1" SourceUrl="http://23.22.97.25/TableSoftEmail/EmailWS.asmx?WSDL" />
+    <MetadataFile FileName="EmailWS1.wsdl" MetadataType="Wsdl" ID="9aec8925-ae88-4a8f-87a8-b031525d2e9b" SourceId="1" SourceUrl="http://34.200.88.54/TableSoftEmail/EmailWS.asmx?WSDL" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -136,13 +136,13 @@
   </wsdl:binding>
   <wsdl:service name="EmailWS">
     <wsdl:port name="EmailWSSoap" binding="tns:EmailWSSoap">
-      <soap:address location="http://23.22.97.25/TableSoftEmail/EmailWS.asmx" />
+      <soap:address location="http://34.200.88.54/TableSoftEmail/EmailWS.asmx" />
     </wsdl:port>
     <wsdl:port name="EmailWSSoap12" binding="tns:EmailWSSoap12">
-      <soap12:address location="http://23.22.97.25/TableSoftEmail/EmailWS.asmx" />
+      <soap12:address location="http://34.200.88.54/TableSoftEmail/EmailWS.asmx" />
     </wsdl:port>
     <wsdl:port name="EmailWSHttpPost" binding="tns:EmailWSHttpPost">
-      <http:address location="http://23.22.97.25/TableSoftEmail/EmailWS.asmx" />
+      <http:address location="http://34.200.88.54/TableSoftEmail/EmailWS.asmx" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

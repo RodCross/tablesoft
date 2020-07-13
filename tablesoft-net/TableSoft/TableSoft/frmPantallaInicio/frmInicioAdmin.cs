@@ -90,5 +90,22 @@ namespace TableSoft
             frm.Show();
             this.Hide();
         }
+
+        private void btnTodosLosTickets_Click(object sender, EventArgs e)
+        {
+            frmListaTickets frm = new frmListaTickets
+            {
+                StartPosition = FormStartPosition.Manual,
+                Location = this.Location
+            };
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
     }
 }

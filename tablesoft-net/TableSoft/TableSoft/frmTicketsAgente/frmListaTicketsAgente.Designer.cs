@@ -95,9 +95,9 @@
             this.lblHistorial.ForeColor = System.Drawing.Color.White;
             this.lblHistorial.Location = new System.Drawing.Point(30, 22);
             this.lblHistorial.Name = "lblHistorial";
-            this.lblHistorial.Size = new System.Drawing.Size(195, 27);
+            this.lblHistorial.Size = new System.Drawing.Size(221, 27);
             this.lblHistorial.TabIndex = 1;
-            this.lblHistorial.Text = "Historial de tickets";
+            this.lblHistorial.Text = "Mis tickets asignados";
             // 
             // btnVolver
             // 

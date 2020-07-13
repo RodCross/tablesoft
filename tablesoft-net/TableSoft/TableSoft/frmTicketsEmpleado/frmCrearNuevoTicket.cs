@@ -248,13 +248,18 @@ namespace TableSoft
 
             if (MessageBox.Show("¿Desea crear el registro?", "Crear Ticket", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                if (ticketDAO.insertarTicket(ticket) > 0)
+                int rpta = ticketDAO.insertarTicket(ticket);
+                if (rpta > 0)
                 {
+                    ticket.ticketId = rpta;
                     MessageBox.Show(
                     "Ticket correctamente creado y enviado",
                     "Envio exitoso",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
+
+                    // Enviar correo al alumno
+                    EnviarEmailNotificacion(ticket);
                 }
                 else
                 {
@@ -265,6 +270,20 @@ namespace TableSoft
                     );
                 }
                 limpiarComponentes();
+            }
+        }
+        private void EnviarEmailNotificacion(TicketWS.ticket tick)
+        {
+            if (tick.alumnoEmail != null)
+            {
+                if (EnvioCorreoNotificacion.NuevoTicketEnviado(tick) == false)
+                {
+                    MessageBox.Show(
+                    "Ha ocurrido un error al enviar el correo de notificación al alumno",
+                    "Correo no enviado",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
             }
         }
 

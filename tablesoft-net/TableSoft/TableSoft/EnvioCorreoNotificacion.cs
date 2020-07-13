@@ -72,5 +72,22 @@ namespace TableSoft
 
             return servicioEmail.EnviarCorreo(correo);
         }
+
+        public static bool NuevoTicketEnviado(TicketWS.ticket ticket)
+        {
+            StreamReader streamReader = new StreamReader("../../emails/EmailTicketEnviado.html", System.Text.Encoding.UTF8);
+            string body = streamReader.ReadToEnd();
+            body = body.Replace("*TICKETIDPH*", ticket.ticketId.ToString());
+            body = body.Replace("*ASUNTOPH*", ticket.asunto);
+
+            EmailWS.YanapayEmail correo = new EmailWS.YanapayEmail();
+            correo.FromAddress = "noreply.yanapay@gmail.com";
+            correo.ToRecipients = ticket.alumnoEmail;
+            correo.Subject = "Yanapay - Nuevo ticket enviado";
+            correo.Body = body;
+            correo.IsHtml = true;
+
+            return servicioEmail.EnviarCorreo(correo);
+        }
     }
 }

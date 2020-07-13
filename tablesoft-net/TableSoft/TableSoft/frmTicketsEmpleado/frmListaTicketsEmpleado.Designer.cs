@@ -42,6 +42,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmListaTicketsEmpleado));
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.dgvHistorial = new System.Windows.Forms.DataGridView();
+            this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.btnVolver = new System.Windows.Forms.Button();
+            this.lblHistorial = new System.Windows.Forms.Label();
+            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpFin = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Agente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -50,10 +58,6 @@
             this.Categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Urgencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.btnVolver = new System.Windows.Forms.Button();
-            this.lblHistorial = new System.Windows.Forms.Label();
-            this.btnRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHistorial)).BeginInit();
             this.pnlTitulo.SuspendLayout();
             this.SuspendLayout();
@@ -78,6 +82,8 @@
             // 
             this.dgvHistorial.AllowUserToAddRows = false;
             this.dgvHistorial.AllowUserToDeleteRows = false;
+            this.dgvHistorial.AllowUserToResizeColumns = false;
+            this.dgvHistorial.AllowUserToResizeRows = false;
             this.dgvHistorial.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
             this.dgvHistorial.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -106,7 +112,7 @@
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvHistorial.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dgvHistorial.Location = new System.Drawing.Point(35, 100);
+            this.dgvHistorial.Location = new System.Drawing.Point(35, 140);
             this.dgvHistorial.Name = "dgvHistorial";
             this.dgvHistorial.ReadOnly = true;
             this.dgvHistorial.RowHeadersVisible = false;
@@ -114,9 +120,104 @@
             dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvHistorial.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvHistorial.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvHistorial.Size = new System.Drawing.Size(1198, 436);
+            this.dgvHistorial.Size = new System.Drawing.Size(1198, 396);
             this.dgvHistorial.TabIndex = 0;
             this.dgvHistorial.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvHistorial_CellFormatting);
+            // 
+            // pnlTitulo
+            // 
+            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
+            this.pnlTitulo.Controls.Add(this.btnVolver);
+            this.pnlTitulo.Controls.Add(this.lblHistorial);
+            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Name = "pnlTitulo";
+            this.pnlTitulo.Size = new System.Drawing.Size(1258, 70);
+            this.pnlTitulo.TabIndex = 3;
+            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Location = new System.Drawing.Point(494, 95);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(119, 33);
+            this.btnRefresh.TabIndex = 3;
+            this.btnRefresh.Text = "Buscar";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // btnVolver
+            // 
+            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVolver.FlatAppearance.BorderSize = 0;
+            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVolver.ForeColor = System.Drawing.Color.White;
+            this.btnVolver.Location = new System.Drawing.Point(1114, 21);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(119, 33);
+            this.btnVolver.TabIndex = 1;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = false;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // lblHistorial
+            // 
+            this.lblHistorial.AutoSize = true;
+            this.lblHistorial.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHistorial.ForeColor = System.Drawing.Color.White;
+            this.lblHistorial.Location = new System.Drawing.Point(30, 22);
+            this.lblHistorial.Name = "lblHistorial";
+            this.lblHistorial.Size = new System.Drawing.Size(195, 27);
+            this.lblHistorial.TabIndex = 0;
+            this.lblHistorial.Text = "Historial de tickets";
+            // 
+            // dtpInicio
+            // 
+            this.dtpInicio.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicio.Location = new System.Drawing.Point(124, 100);
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(111, 22);
+            this.dtpInicio.TabIndex = 4;
+            // 
+            // dtpFin
+            // 
+            this.dtpFin.CalendarFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFin.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFin.Location = new System.Drawing.Point(343, 100);
+            this.dtpFin.Name = "dtpFin";
+            this.dtpFin.Size = new System.Drawing.Size(117, 22);
+            this.dtpFin.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(83, 16);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Fecha Inicio:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(267, 102);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(70, 16);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Fecha Fin:";
             // 
             // ID
             // 
@@ -156,6 +257,7 @@
             // 
             // FechaEnvio
             // 
+            this.FechaEnvio.DataPropertyName = "fechaEnvio";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.FechaEnvio.DefaultCellStyle = dataGridViewCellStyle5;
@@ -167,6 +269,7 @@
             // 
             // FechaCierre
             // 
+            this.FechaCierre.DataPropertyName = "fechaCierre";
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F);
             this.FechaCierre.DefaultCellStyle = dataGridViewCellStyle6;
@@ -209,67 +312,16 @@
             this.Estado.Name = "Estado";
             this.Estado.ReadOnly = true;
             // 
-            // pnlTitulo
-            // 
-            this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.btnRefresh);
-            this.pnlTitulo.Controls.Add(this.btnVolver);
-            this.pnlTitulo.Controls.Add(this.lblHistorial);
-            this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(1258, 70);
-            this.pnlTitulo.TabIndex = 3;
-            this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
-            // 
-            // btnVolver
-            // 
-            this.btnVolver.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnVolver.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnVolver.FlatAppearance.BorderSize = 0;
-            this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(1114, 21);
-            this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(119, 33);
-            this.btnVolver.TabIndex = 1;
-            this.btnVolver.Text = "Volver";
-            this.btnVolver.UseVisualStyleBackColor = false;
-            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
-            // 
-            // lblHistorial
-            // 
-            this.lblHistorial.AutoSize = true;
-            this.lblHistorial.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHistorial.ForeColor = System.Drawing.Color.White;
-            this.lblHistorial.Location = new System.Drawing.Point(30, 22);
-            this.lblHistorial.Name = "lblHistorial";
-            this.lblHistorial.Size = new System.Drawing.Size(195, 27);
-            this.lblHistorial.TabIndex = 0;
-            this.lblHistorial.Text = "Historial de tickets";
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Location = new System.Drawing.Point(956, 21);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(119, 33);
-            this.btnRefresh.TabIndex = 3;
-            this.btnRefresh.Text = "Refrescar";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
             // frmListaTicketsEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1258, 600);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.dtpFin);
+            this.Controls.Add(this.dtpInicio);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.pnlTitulo);
             this.Controls.Add(this.dgvHistorial);
             this.Controls.Add(this.btnSeleccionar);
@@ -284,6 +336,7 @@
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -293,6 +346,11 @@
         private System.Windows.Forms.Panel pnlTitulo;
         private System.Windows.Forms.Label lblHistorial;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.DateTimePicker dtpFin;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Asunto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Agente;
@@ -301,6 +359,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Urgencia;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.Button btnRefresh;
     }
 }

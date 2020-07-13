@@ -35,6 +35,8 @@ namespace TableSoft
             };
 
             Refrescar();
+            dgvTicketsEspera.AutoGenerateColumns = false;
+            dgvTicketsEspera.DataSource = ticketsEnEspera;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -63,6 +65,8 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                     Refrescar();
+                    dgvTicketsEspera.AutoGenerateColumns = false;
+                    dgvTicketsEspera.DataSource = ticketsEnEspera;
                     return;
                 }
 
@@ -107,8 +111,9 @@ namespace TableSoft
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
-
                 Refrescar();
+                dgvTicketsEspera.AutoGenerateColumns = false;
+                dgvTicketsEspera.DataSource = ticketsEnEspera;
             }
 
         }
@@ -160,14 +165,37 @@ namespace TableSoft
                     ticketsEnEspera.Add(t);
                 }
             }
-
-            dgvTicketsEspera.AutoGenerateColumns = false;
-            dgvTicketsEspera.DataSource = ticketsEnEspera;
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             Refrescar();
+            var ticks = new BindingList<TicketWS.ticket>();
+            foreach (var t in ticketsEnEspera)
+            {
+                if (CompararFechas(t.fechaEnvio, dtpInicio.Value.Date, dtpFin.Value.Date))
+                {
+                    ticks.Add(t);
+                }
+            }
+            dgvTicketsEspera.AutoGenerateColumns = false;
+            dgvTicketsEspera.DataSource = ticks;
+        }
+        private bool CompararFechas(string fecha, DateTime inicio, DateTime fin)
+        {
+            fin = fin.AddDays(1);
+            bool despInicio = false, antesFin = false, rpta = false;
+            fecha = fecha.Replace('T', ' ');
+            DateTime fechaEvaluar = DateTime.ParseExact(fecha, "yyyy-MM-dd HH:mm:ss", null);
+
+            if (DateTime.Compare(fechaEvaluar, inicio) > 0)
+                despInicio = true;
+            if (DateTime.Compare(fechaEvaluar, fin) < 0)
+                antesFin = true;
+
+            if (despInicio && antesFin) rpta = true;
+
+            return rpta;
         }
     }
 }

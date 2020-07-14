@@ -44,9 +44,10 @@
             this.lblCategoria.AutoSize = true;
             this.lblCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCategoria.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblCategoria.Location = new System.Drawing.Point(87, 103);
+            this.lblCategoria.Location = new System.Drawing.Point(116, 127);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCategoria.Name = "lblCategoria";
-            this.lblCategoria.Size = new System.Drawing.Size(0, 21);
+            this.lblCategoria.Size = new System.Drawing.Size(0, 26);
             this.lblCategoria.TabIndex = 9;
             this.lblCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
@@ -56,8 +57,9 @@
             this.pnlTitulo.Controls.Add(this.lblReportes);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
+            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(444, 70);
+            this.pnlTitulo.Size = new System.Drawing.Size(592, 86);
             this.pnlTitulo.TabIndex = 8;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -66,9 +68,10 @@
             this.lblReportes.AutoSize = true;
             this.lblReportes.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblReportes.ForeColor = System.Drawing.Color.White;
-            this.lblReportes.Location = new System.Drawing.Point(24, 22);
+            this.lblReportes.Location = new System.Drawing.Point(32, 27);
+            this.lblReportes.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblReportes.Name = "lblReportes";
-            this.lblReportes.Size = new System.Drawing.Size(267, 27);
+            this.lblReportes.Size = new System.Drawing.Size(352, 36);
             this.lblReportes.TabIndex = 0;
             this.lblReportes.Text = "Generar reporte de tickets";
             // 
@@ -80,9 +83,10 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(18, 297);
+            this.btnVolver.Location = new System.Drawing.Point(24, 366);
+            this.btnVolver.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(106, 33);
+            this.btnVolver.Size = new System.Drawing.Size(141, 41);
             this.btnVolver.TabIndex = 6;
             this.btnVolver.Text = "< Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -95,9 +99,10 @@
             this.btnGenerarReporteCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReporteCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarReporteCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporteCategoria.Location = new System.Drawing.Point(106, 99);
+            this.btnGenerarReporteCategoria.Location = new System.Drawing.Point(141, 122);
+            this.btnGenerarReporteCategoria.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerarReporteCategoria.Name = "btnGenerarReporteCategoria";
-            this.btnGenerarReporteCategoria.Size = new System.Drawing.Size(231, 38);
+            this.btnGenerarReporteCategoria.Size = new System.Drawing.Size(308, 47);
             this.btnGenerarReporteCategoria.TabIndex = 15;
             this.btnGenerarReporteCategoria.Text = "Generar reporte de categoría";
             this.btnGenerarReporteCategoria.UseVisualStyleBackColor = false;
@@ -110,9 +115,10 @@
             this.btnGenerarReporteUrgencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReporteUrgencia.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarReporteUrgencia.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporteUrgencia.Location = new System.Drawing.Point(106, 163);
+            this.btnGenerarReporteUrgencia.Location = new System.Drawing.Point(141, 201);
+            this.btnGenerarReporteUrgencia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerarReporteUrgencia.Name = "btnGenerarReporteUrgencia";
-            this.btnGenerarReporteUrgencia.Size = new System.Drawing.Size(231, 38);
+            this.btnGenerarReporteUrgencia.Size = new System.Drawing.Size(308, 47);
             this.btnGenerarReporteUrgencia.TabIndex = 16;
             this.btnGenerarReporteUrgencia.Text = "Generar reporte de urgencia";
             this.btnGenerarReporteUrgencia.UseVisualStyleBackColor = false;
@@ -125,9 +131,10 @@
             this.btnGenerarReporteAgente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerarReporteAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerarReporteAgente.ForeColor = System.Drawing.Color.White;
-            this.btnGenerarReporteAgente.Location = new System.Drawing.Point(106, 227);
+            this.btnGenerarReporteAgente.Location = new System.Drawing.Point(141, 279);
+            this.btnGenerarReporteAgente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnGenerarReporteAgente.Name = "btnGenerarReporteAgente";
-            this.btnGenerarReporteAgente.Size = new System.Drawing.Size(231, 38);
+            this.btnGenerarReporteAgente.Size = new System.Drawing.Size(308, 47);
             this.btnGenerarReporteAgente.TabIndex = 17;
             this.btnGenerarReporteAgente.Text = "Generar reporte de agente";
             this.btnGenerarReporteAgente.UseVisualStyleBackColor = false;
@@ -135,9 +142,9 @@
             // 
             // frmGeneradorReportesSupervisor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(444, 354);
+            this.ClientSize = new System.Drawing.Size(592, 436);
             this.Controls.Add(this.btnGenerarReporteAgente);
             this.Controls.Add(this.btnGenerarReporteUrgencia);
             this.Controls.Add(this.btnGenerarReporteCategoria);
@@ -146,6 +153,7 @@
             this.Controls.Add(this.pnlTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGeneradorReportesSupervisor";
             this.Text = "Generar reporte de tickets";
             this.pnlTitulo.ResumeLayout(false);

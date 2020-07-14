@@ -69,5 +69,18 @@ namespace TableSoft
             frm.Show();
             this.Hide();
         }
+
+        private void btnGenerarReporteAgente_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarObjeto frm = new frmSeleccionarObjeto(3);
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
     }
 }

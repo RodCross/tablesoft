@@ -55,14 +55,30 @@ namespace TableSoft.frmReportes
                     break;
                 case 3: //Para listar agentes
                     var eq = frmLogin.agenteLogueado.equipo;
-                    var agen = agenteDAO.listarAgentesPorEquipo(eq);
-                    if (agen == null)
+                    string rol = frmLogin.agenteLogueado.rol.nombre;
+                    if (rol == "SUPERVISOR")
                     {
-                        agentes = new BindingList<AgenteWS.agente>();
+                        var agen = agenteDAO.listarAgentesPorEquipo(eq);
+                        if (agen == null)
+                        {
+                            agentes = new BindingList<AgenteWS.agente>();
+                        }
+                        else
+                        {
+                            agentes = new BindingList<AgenteWS.agente>(agen);
+                        }
                     }
                     else
                     {
-                        agentes = new BindingList<AgenteWS.agente>(agen);
+                        var agen = agenteDAO.listarAgentes();
+                        if (agen == null)
+                        {
+                            agentes = new BindingList<AgenteWS.agente>();
+                        }
+                        else
+                        {
+                            agentes = new BindingList<AgenteWS.agente>(agen);
+                        }
                     }
                     dgvLista.AutoGenerateColumns = false;
                     dgvLista.DataSource = agentes;
@@ -200,7 +216,7 @@ namespace TableSoft.frmReportes
                         cate.nombre = categoria.nombre;
                         cate.descripcion = categoria.descripcion;
                         cate.activo = categoria.activo;
-                        arreglo = daoReporte.generarReporteTicketCategoria(cate, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        arreglo = daoReporte.generarReporteTicketCategoria(cate, dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddDays(1));
                         File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
                         MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
@@ -212,7 +228,7 @@ namespace TableSoft.frmReportes
                         urge.nombre = urgencia.nombre;
                         urge.plazoMaximo = urgencia.plazoMaximo;
                         urge.activo = urgencia.activo;
-                        arreglo = daoReporte.generarReporteTicketUrgencia(urge, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        arreglo = daoReporte.generarReporteTicketUrgencia(urge, dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddDays(1));
                         File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
                         MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
@@ -226,7 +242,7 @@ namespace TableSoft.frmReportes
                         age.apellidoMaterno = agente.apellidoMaterno;
                         age.codigo = agente.codigo;
                         age.activo = agente.activo;
-                        arreglo = daoReporte.generarReporteTicketAgente(age, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        arreglo = daoReporte.generarReporteTicketAgente(age, dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddDays(1));
                         File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
                         MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;
@@ -237,7 +253,7 @@ namespace TableSoft.frmReportes
                         equi.equipoId = equipo.equipoId;
                         equi.nombre = equipo.nombre;
                         equi.descripcion = equipo.descripcion;
-                        arreglo = daoReporte.generarReporteTicketEquipo(equi, dtpFechaInicio.Value, dtpFechaFin.Value);
+                        arreglo = daoReporte.generarReporteTicketEquipo(equi, dtpFechaInicio.Value.Date, dtpFechaFin.Value.Date.AddDays(1));
                         File.WriteAllBytes(sfdReporte.FileName + ".pdf", arreglo);
                         MessageBox.Show("Se ha guardado con exito", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         break;

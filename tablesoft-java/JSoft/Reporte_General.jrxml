@@ -92,7 +92,7 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 	<detail>
 		<band height="41" splitType="Stretch">
 			<subreport>
-				<reportElement positionType="Float" x="-19" y="0" width="555" height="41" uuid="483dee88-d172-49a4-bd94-209a87c6c6d0"/>
+				<reportElement positionType="Float" x="1" y="0" width="555" height="41" uuid="483dee88-d172-49a4-bd94-209a87c6c6d0"/>
 				<subreportParameter name="Ticket_id">
 					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
 				</subreportParameter>

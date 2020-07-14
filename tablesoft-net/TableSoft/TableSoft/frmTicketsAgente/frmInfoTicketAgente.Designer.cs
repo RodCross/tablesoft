@@ -312,7 +312,7 @@
             this.btnEscalar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEscalar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEscalar.ForeColor = System.Drawing.Color.White;
-            this.btnEscalar.Location = new System.Drawing.Point(373, 222);
+            this.btnEscalar.Location = new System.Drawing.Point(375, 188);
             this.btnEscalar.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnEscalar.Name = "btnEscalar";
             this.btnEscalar.Size = new System.Drawing.Size(119, 33);
@@ -329,7 +329,7 @@
             this.btnCerrarTicket.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarTicket.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarTicket.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarTicket.Location = new System.Drawing.Point(521, 222);
+            this.btnCerrarTicket.Location = new System.Drawing.Point(523, 188);
             this.btnCerrarTicket.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnCerrarTicket.Name = "btnCerrarTicket";
             this.btnCerrarTicket.Size = new System.Drawing.Size(165, 33);
@@ -346,7 +346,7 @@
             this.btnCambiarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCambiarCategoria.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCambiarCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnCambiarCategoria.Location = new System.Drawing.Point(179, 222);
+            this.btnCambiarCategoria.Location = new System.Drawing.Point(181, 188);
             this.btnCambiarCategoria.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnCambiarCategoria.Name = "btnCambiarCategoria";
             this.btnCambiarCategoria.Size = new System.Drawing.Size(165, 33);
@@ -363,7 +363,7 @@
             this.btnVerTareas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVerTareas.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVerTareas.ForeColor = System.Drawing.Color.White;
-            this.btnVerTareas.Location = new System.Drawing.Point(31, 222);
+            this.btnVerTareas.Location = new System.Drawing.Point(33, 188);
             this.btnVerTareas.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnVerTareas.Name = "btnVerTareas";
             this.btnVerTareas.Size = new System.Drawing.Size(119, 33);
@@ -392,9 +392,9 @@
             this.pnlComentario.Controls.Add(this.rtfRespuesta);
             this.pnlComentario.Controls.Add(this.btnEscalar);
             this.pnlComentario.Controls.Add(this.btnCerrarTicket);
-            this.pnlComentario.Location = new System.Drawing.Point(320, 354);
+            this.pnlComentario.Location = new System.Drawing.Point(320, 444);
             this.pnlComentario.Name = "pnlComentario";
-            this.pnlComentario.Size = new System.Drawing.Size(732, 275);
+            this.pnlComentario.Size = new System.Drawing.Size(732, 226);
             this.pnlComentario.TabIndex = 0;
             // 
             // btnResponder
@@ -404,7 +404,7 @@
             this.btnResponder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnResponder.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnResponder.ForeColor = System.Drawing.Color.White;
-            this.btnResponder.Location = new System.Drawing.Point(230, 154);
+            this.btnResponder.Location = new System.Drawing.Point(232, 120);
             this.btnResponder.Margin = new System.Windows.Forms.Padding(3, 50, 3, 3);
             this.btnResponder.Name = "btnResponder";
             this.btnResponder.Size = new System.Drawing.Size(252, 45);
@@ -415,8 +415,9 @@
             // 
             // rtfRespuesta
             // 
-            this.rtfRespuesta.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtfRespuesta.Location = new System.Drawing.Point(24, 24);
+            this.rtfRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtfRespuesta.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtfRespuesta.Location = new System.Drawing.Point(24, 3);
             this.rtfRespuesta.Name = "rtfRespuesta";
             this.rtfRespuesta.Size = new System.Drawing.Size(663, 112);
             this.rtfRespuesta.TabIndex = 0;
@@ -427,7 +428,7 @@
             this.pnlMensajes.AutoScroll = true;
             this.pnlMensajes.Location = new System.Drawing.Point(320, 121);
             this.pnlMensajes.Name = "pnlMensajes";
-            this.pnlMensajes.Size = new System.Drawing.Size(732, 227);
+            this.pnlMensajes.Size = new System.Drawing.Size(732, 317);
             this.pnlMensajes.TabIndex = 4;
             // 
             // btnReporte

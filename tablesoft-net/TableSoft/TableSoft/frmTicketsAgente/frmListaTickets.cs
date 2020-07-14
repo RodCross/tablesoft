@@ -76,6 +76,9 @@ namespace TableSoft
 
             frm.FormClosing += delegate
             {
+                Refrescar();
+                dgvHistorial.AutoGenerateColumns = false;
+                dgvHistorial.DataSource = tickets;
                 this.Show();
             };
 

@@ -32,6 +32,8 @@
             this.pnlOpciones = new System.Windows.Forms.Panel();
             this.lklLogout = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
+            this.lblAgente = new System.Windows.Forms.Label();
+            this.lblUsuario = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
             this.pnlDer = new System.Windows.Forms.Panel();
@@ -46,8 +48,7 @@
             this.btnAtender = new System.Windows.Forms.Button();
             this.pnlExt = new System.Windows.Forms.Panel();
             this.pnlInt = new System.Windows.Forms.Panel();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblNombreEquipo = new System.Windows.Forms.Label();
             this.pnlOpciones.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlDer.SuspendLayout();
@@ -87,7 +88,8 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.label1);
+            this.pnlTitulo.Controls.Add(this.lblNombreEquipo);
+            this.pnlTitulo.Controls.Add(this.lblAgente);
             this.pnlTitulo.Controls.Add(this.lblUsuario);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
@@ -97,6 +99,34 @@
             this.pnlTitulo.Size = new System.Drawing.Size(884, 106);
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
+            // 
+            // lblAgente
+            // 
+            this.lblAgente.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAgente.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAgente.ForeColor = System.Drawing.Color.White;
+            this.lblAgente.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblAgente.Location = new System.Drawing.Point(726, 25);
+            this.lblAgente.Name = "lblAgente";
+            this.lblAgente.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblAgente.Size = new System.Drawing.Size(131, 20);
+            this.lblAgente.TabIndex = 5;
+            this.lblAgente.Text = "AGENTE";
+            this.lblAgente.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblUsuario.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.White;
+            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblUsuario.Location = new System.Drawing.Point(445, 45);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblUsuario.Size = new System.Drawing.Size(412, 20);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Apellidos, Nombres";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblBibliotecasPUCP
             // 
@@ -261,33 +291,19 @@
             this.pnlInt.Size = new System.Drawing.Size(770, 300);
             this.pnlInt.TabIndex = 0;
             // 
-            // lblUsuario
+            // lblNombreEquipo
             // 
-            this.lblUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblUsuario.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.White;
-            this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUsuario.Location = new System.Drawing.Point(445, 65);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.lblUsuario.Size = new System.Drawing.Size(412, 20);
-            this.lblUsuario.TabIndex = 3;
-            this.lblUsuario.Text = "Apellidos, Nombres";
-            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(726, 38);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(131, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "AGENTE";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblNombreEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNombreEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreEquipo.ForeColor = System.Drawing.Color.White;
+            this.lblNombreEquipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombreEquipo.Location = new System.Drawing.Point(445, 65);
+            this.lblNombreEquipo.Name = "lblNombreEquipo";
+            this.lblNombreEquipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNombreEquipo.Size = new System.Drawing.Size(412, 20);
+            this.lblNombreEquipo.TabIndex = 6;
+            this.lblNombreEquipo.Text = "Apellidos, Nombres";
+            this.lblNombreEquipo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmInicioAgente
             // 
@@ -339,6 +355,7 @@
         private System.Windows.Forms.Panel pnlExt;
         private System.Windows.Forms.Panel pnlInt;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAgente;
+        private System.Windows.Forms.Label lblNombreEquipo;
     }
 }

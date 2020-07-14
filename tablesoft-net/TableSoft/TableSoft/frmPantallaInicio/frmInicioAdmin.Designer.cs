@@ -48,13 +48,14 @@
             this.btnTickets = new System.Windows.Forms.Button();
             this.lblTickets = new System.Windows.Forms.Label();
             this.pnlOpciones = new System.Windows.Forms.Panel();
+            this.btnTodosLosTickets = new System.Windows.Forms.Button();
             this.lklLogout = new System.Windows.Forms.LinkLabel();
             this.pnlTitulo = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblAdmin = new System.Windows.Forms.Label();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblBibliotecasPUCP = new System.Windows.Forms.Label();
             this.lblTituloSistema = new System.Windows.Forms.Label();
-            this.btnTodosLosTickets = new System.Windows.Forms.Button();
+            this.lblNombreEquipo = new System.Windows.Forms.Label();
             this.pnlExt.SuspendLayout();
             this.pnlInt.SuspendLayout();
             this.pnlDer2.SuspendLayout();
@@ -296,6 +297,21 @@
             this.pnlOpciones.Size = new System.Drawing.Size(1277, 51);
             this.pnlOpciones.TabIndex = 2;
             // 
+            // btnTodosLosTickets
+            // 
+            this.btnTodosLosTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
+            this.btnTodosLosTickets.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTodosLosTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTodosLosTickets.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTodosLosTickets.ForeColor = System.Drawing.Color.White;
+            this.btnTodosLosTickets.Location = new System.Drawing.Point(27, 10);
+            this.btnTodosLosTickets.Name = "btnTodosLosTickets";
+            this.btnTodosLosTickets.Size = new System.Drawing.Size(142, 34);
+            this.btnTodosLosTickets.TabIndex = 3;
+            this.btnTodosLosTickets.Text = "Todos los tickets";
+            this.btnTodosLosTickets.UseVisualStyleBackColor = false;
+            this.btnTodosLosTickets.Click += new System.EventHandler(this.btnTodosLosTickets_Click);
+            // 
             // lklLogout
             // 
             this.lklLogout.ActiveLinkColor = System.Drawing.Color.Yellow;
@@ -315,7 +331,8 @@
             // pnlTitulo
             // 
             this.pnlTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(77)))), ((int)(((byte)(115)))));
-            this.pnlTitulo.Controls.Add(this.label1);
+            this.pnlTitulo.Controls.Add(this.lblNombreEquipo);
+            this.pnlTitulo.Controls.Add(this.lblAdmin);
             this.pnlTitulo.Controls.Add(this.lblUsuario);
             this.pnlTitulo.Controls.Add(this.lblBibliotecasPUCP);
             this.pnlTitulo.Controls.Add(this.lblTituloSistema);
@@ -326,19 +343,19 @@
             this.pnlTitulo.TabIndex = 1;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
-            // label1
+            // lblAdmin
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.label1.Location = new System.Drawing.Point(1061, 38);
-            this.label1.Name = "label1";
-            this.label1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.label1.Size = new System.Drawing.Size(189, 20);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "ADMINISTRADOR";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lblAdmin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblAdmin.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdmin.ForeColor = System.Drawing.Color.White;
+            this.lblAdmin.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblAdmin.Location = new System.Drawing.Point(1061, 25);
+            this.lblAdmin.Name = "lblAdmin";
+            this.lblAdmin.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblAdmin.Size = new System.Drawing.Size(189, 20);
+            this.lblAdmin.TabIndex = 5;
+            this.lblAdmin.Text = "ADMINISTRADOR";
+            this.lblAdmin.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblUsuario
             // 
@@ -346,7 +363,7 @@
             this.lblUsuario.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.White;
             this.lblUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblUsuario.Location = new System.Drawing.Point(838, 65);
+            this.lblUsuario.Location = new System.Drawing.Point(838, 45);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.lblUsuario.Size = new System.Drawing.Size(412, 20);
@@ -376,20 +393,19 @@
             this.lblTituloSistema.TabIndex = 0;
             this.lblTituloSistema.Text = "Sistema de Mesa de Ayuda";
             // 
-            // btnTodosLosTickets
+            // lblNombreEquipo
             // 
-            this.btnTodosLosTickets.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(164)))), ((int)(((byte)(4)))), ((int)(((byte)(4)))));
-            this.btnTodosLosTickets.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTodosLosTickets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTodosLosTickets.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTodosLosTickets.ForeColor = System.Drawing.Color.White;
-            this.btnTodosLosTickets.Location = new System.Drawing.Point(27, 10);
-            this.btnTodosLosTickets.Name = "btnTodosLosTickets";
-            this.btnTodosLosTickets.Size = new System.Drawing.Size(142, 34);
-            this.btnTodosLosTickets.TabIndex = 3;
-            this.btnTodosLosTickets.Text = "Todos los tickets";
-            this.btnTodosLosTickets.UseVisualStyleBackColor = false;
-            this.btnTodosLosTickets.Click += new System.EventHandler(this.btnTodosLosTickets_Click);
+            this.lblNombreEquipo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblNombreEquipo.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreEquipo.ForeColor = System.Drawing.Color.White;
+            this.lblNombreEquipo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblNombreEquipo.Location = new System.Drawing.Point(838, 65);
+            this.lblNombreEquipo.Name = "lblNombreEquipo";
+            this.lblNombreEquipo.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.lblNombreEquipo.Size = new System.Drawing.Size(412, 20);
+            this.lblNombreEquipo.TabIndex = 6;
+            this.lblNombreEquipo.Text = "Apellidos, Nombres";
+            this.lblNombreEquipo.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmInicioAdmin
             // 
@@ -452,7 +468,8 @@
         private System.Windows.Forms.PictureBox picGestionarSistema;
         private System.Windows.Forms.PictureBox picGenerarReportes;
         private System.Windows.Forms.Label lblUsuario;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAdmin;
         private System.Windows.Forms.Button btnTodosLosTickets;
+        private System.Windows.Forms.Label lblNombreEquipo;
     }
 }

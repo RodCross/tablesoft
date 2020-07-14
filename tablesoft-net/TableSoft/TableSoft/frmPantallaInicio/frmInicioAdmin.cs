@@ -9,12 +9,18 @@ namespace TableSoft
         {
             InitializeComponent();
             SetUsername(lblUsuario);
+            SetTeamName(lblNombreEquipo);
         }
 
         private void SetUsername(Label lblUser)
         {
             AgenteWS.agente age = frmLogin.agenteLogueado;
             lblUser.Text = age.apellidoPaterno + " " + age.apellidoMaterno + ", " + age.nombre;
+        }
+
+        private void SetTeamName(Label lblNom)
+        {
+            lblNom.Text = frmLogin.agenteLogueado.equipo.nombre;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)

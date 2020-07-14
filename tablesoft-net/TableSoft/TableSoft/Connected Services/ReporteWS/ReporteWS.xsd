@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="generarReporteGeneral" type="tns:generarReporteGeneral" />
+  <xs:element name="generarReporteGeneralResponse" type="tns:generarReporteGeneralResponse" />
   <xs:element name="generarReporteTicket" type="tns:generarReporteTicket" />
   <xs:element name="generarReporteTicketAgente" type="tns:generarReporteTicketAgente" />
   <xs:element name="generarReporteTicketAgenteResponse" type="tns:generarReporteTicketAgenteResponse" />
@@ -264,6 +266,17 @@
     </xs:sequence>
   </xs:complexType>
   <xs:complexType name="generarReporteTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteGeneral">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fechaIni" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="fechaFin" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarReporteGeneralResponse">
     <xs:sequence>
       <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
     </xs:sequence>

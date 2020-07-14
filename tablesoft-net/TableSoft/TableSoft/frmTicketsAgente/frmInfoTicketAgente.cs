@@ -323,5 +323,11 @@ namespace TableSoft
                 DisableButton(btnResponder);
             }
         }
+
+        private void picRefresh_Click(object sender, EventArgs e)
+        {
+            LlenarComentarios();
+            RecargarComentarios();
+        }
     }
 }

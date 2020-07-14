@@ -54,9 +54,11 @@
             this.btnResponder = new System.Windows.Forms.Button();
             this.rtfRespuesta = new System.Windows.Forms.RichTextBox();
             this.lblAsunto = new System.Windows.Forms.Label();
+            this.picRefresh = new System.Windows.Forms.PictureBox();
             this.pnlDatos.SuspendLayout();
             this.pnlTitulo.SuspendLayout();
             this.pnlComentario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlMensajes
@@ -75,7 +77,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(910, 19);
+            this.btnVolver.Location = new System.Drawing.Point(933, 21);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 0;
@@ -345,16 +347,29 @@
             this.lblAsunto.ForeColor = System.Drawing.Color.Black;
             this.lblAsunto.Location = new System.Drawing.Point(339, 78);
             this.lblAsunto.Name = "lblAsunto";
-            this.lblAsunto.Size = new System.Drawing.Size(690, 37);
+            this.lblAsunto.Size = new System.Drawing.Size(668, 37);
             this.lblAsunto.TabIndex = 3;
             this.lblAsunto.Text = "Asunto del ticket";
             this.lblAsunto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picRefresh
+            // 
+            this.picRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picRefresh.Image = global::TableSoft.Properties.Resources.refresh_button_png_1;
+            this.picRefresh.Location = new System.Drawing.Point(1012, 76);
+            this.picRefresh.Name = "picRefresh";
+            this.picRefresh.Size = new System.Drawing.Size(40, 39);
+            this.picRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRefresh.TabIndex = 14;
+            this.picRefresh.TabStop = false;
+            this.picRefresh.Click += new System.EventHandler(this.picRefresh_Click);
             // 
             // frmInfoTicketEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1064, 640);
+            this.Controls.Add(this.picRefresh);
             this.Controls.Add(this.lblAsunto);
             this.Controls.Add(this.pnlComentario);
             this.Controls.Add(this.pnlMensajes);
@@ -369,6 +384,7 @@
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.pnlComentario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -400,5 +416,6 @@
         private System.Windows.Forms.Button btnResponder;
         private System.Windows.Forms.RichTextBox rtfRespuesta;
         private System.Windows.Forms.Label lblAsunto;
+        private System.Windows.Forms.PictureBox picRefresh;
     }
 }

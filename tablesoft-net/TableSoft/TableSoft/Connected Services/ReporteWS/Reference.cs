@@ -79,6 +79,16 @@ namespace TableSoft.ReporteWS {
             "", ReplyAction="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketEquipoRespons" +
             "e")]
         System.Threading.Tasks.Task<TableSoft.ReporteWS.generarReporteTicketEquipoResponse> generarReporteTicketEquipoAsync(TableSoft.ReporteWS.generarReporteTicketEquipoRequest request);
+        
+        // CODEGEN: Parameter 'return' requires additional schema information that cannot be captured using the parameter mode. The specific attribute is 'System.Xml.Serialization.XmlElementAttribute'.
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteGeneralRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteGeneralResponse")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        [System.ServiceModel.ServiceKnownTypeAttribute(typeof(transferenciaTicket))]
+        [return: System.ServiceModel.MessageParameterAttribute(Name="return")]
+        TableSoft.ReporteWS.generarReporteGeneralResponse generarReporteGeneral(TableSoft.ReporteWS.generarReporteGeneralRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteGeneralRequest", ReplyAction="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteGeneralResponse")]
+        System.Threading.Tasks.Task<TableSoft.ReporteWS.generarReporteGeneralResponse> generarReporteGeneralAsync(TableSoft.ReporteWS.generarReporteGeneralRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -2215,6 +2225,47 @@ namespace TableSoft.ReporteWS {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteGeneral", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class generarReporteGeneralRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime fechaIni;
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=1)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified)]
+        public System.DateTime fechaFin;
+        
+        public generarReporteGeneralRequest() {
+        }
+        
+        public generarReporteGeneralRequest(System.DateTime fechaIni, System.DateTime fechaFin) {
+            this.fechaIni = fechaIni;
+            this.fechaFin = fechaFin;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(WrapperName="generarReporteGeneralResponse", WrapperNamespace="http://services.tablesoft.pucp.edu.pe/", IsWrapped=true)]
+    public partial class generarReporteGeneralResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Namespace="http://services.tablesoft.pucp.edu.pe/", Order=0)]
+        [System.Xml.Serialization.XmlElementAttribute(Form=System.Xml.Schema.XmlSchemaForm.Unqualified, DataType="base64Binary", IsNullable=true)]
+        public byte[] @return;
+        
+        public generarReporteGeneralResponse() {
+        }
+        
+        public generarReporteGeneralResponse(byte[] @return) {
+            this.@return = @return;
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface ReporteWSChannel : TableSoft.ReporteWS.ReporteWS, System.ServiceModel.IClientChannel {
     }
@@ -2371,6 +2422,31 @@ namespace TableSoft.ReporteWS {
             inValue.fechaIni = fechaIni;
             inValue.fechaFin = fechaFin;
             return ((TableSoft.ReporteWS.ReporteWS)(this)).generarReporteTicketEquipoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        TableSoft.ReporteWS.generarReporteGeneralResponse TableSoft.ReporteWS.ReporteWS.generarReporteGeneral(TableSoft.ReporteWS.generarReporteGeneralRequest request) {
+            return base.Channel.generarReporteGeneral(request);
+        }
+        
+        public byte[] generarReporteGeneral(System.DateTime fechaIni, System.DateTime fechaFin) {
+            TableSoft.ReporteWS.generarReporteGeneralRequest inValue = new TableSoft.ReporteWS.generarReporteGeneralRequest();
+            inValue.fechaIni = fechaIni;
+            inValue.fechaFin = fechaFin;
+            TableSoft.ReporteWS.generarReporteGeneralResponse retVal = ((TableSoft.ReporteWS.ReporteWS)(this)).generarReporteGeneral(inValue);
+            return retVal.@return;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<TableSoft.ReporteWS.generarReporteGeneralResponse> TableSoft.ReporteWS.ReporteWS.generarReporteGeneralAsync(TableSoft.ReporteWS.generarReporteGeneralRequest request) {
+            return base.Channel.generarReporteGeneralAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<TableSoft.ReporteWS.generarReporteGeneralResponse> generarReporteGeneralAsync(System.DateTime fechaIni, System.DateTime fechaFin) {
+            TableSoft.ReporteWS.generarReporteGeneralRequest inValue = new TableSoft.ReporteWS.generarReporteGeneralRequest();
+            inValue.fechaIni = fechaIni;
+            inValue.fechaFin = fechaFin;
+            return ((TableSoft.ReporteWS.ReporteWS)(this)).generarReporteGeneralAsync(inValue);
         }
     }
 }

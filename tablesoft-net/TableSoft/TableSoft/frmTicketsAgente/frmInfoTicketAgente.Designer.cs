@@ -60,9 +60,11 @@
             this.pnlMensajes = new System.Windows.Forms.Panel();
             this.btnReporte = new System.Windows.Forms.Button();
             this.sfdReporte = new System.Windows.Forms.SaveFileDialog();
+            this.picRefresh = new System.Windows.Forms.PictureBox();
             this.pnlTitulo.SuspendLayout();
             this.pnlDatos.SuspendLayout();
             this.pnlComentario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picRefresh)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlTitulo
@@ -85,7 +87,7 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(910, 19);
+            this.btnVolver.Location = new System.Drawing.Point(933, 21);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(119, 33);
             this.btnVolver.TabIndex = 0;
@@ -377,7 +379,7 @@
             this.lblAsunto.ForeColor = System.Drawing.Color.Black;
             this.lblAsunto.Location = new System.Drawing.Point(339, 78);
             this.lblAsunto.Name = "lblAsunto";
-            this.lblAsunto.Size = new System.Drawing.Size(690, 37);
+            this.lblAsunto.Size = new System.Drawing.Size(667, 37);
             this.lblAsunto.TabIndex = 3;
             this.lblAsunto.Text = "Asunto del ticket";
             this.lblAsunto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -444,11 +446,24 @@
             this.btnReporte.UseVisualStyleBackColor = false;
             this.btnReporte.Click += new System.EventHandler(this.btnReporte_Click);
             // 
+            // picRefresh
+            // 
+            this.picRefresh.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picRefresh.Image = global::TableSoft.Properties.Resources.refresh_button_png_1;
+            this.picRefresh.Location = new System.Drawing.Point(1012, 78);
+            this.picRefresh.Name = "picRefresh";
+            this.picRefresh.Size = new System.Drawing.Size(40, 39);
+            this.picRefresh.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picRefresh.TabIndex = 13;
+            this.picRefresh.TabStop = false;
+            this.picRefresh.Click += new System.EventHandler(this.picRefresh_Click);
+            // 
             // frmInfoTicketAgente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1070, 686);
+            this.Controls.Add(this.picRefresh);
             this.Controls.Add(this.btnReporte);
             this.Controls.Add(this.pnlMensajes);
             this.Controls.Add(this.pnlComentario);
@@ -464,6 +479,7 @@
             this.pnlDatos.ResumeLayout(false);
             this.pnlDatos.PerformLayout();
             this.pnlComentario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picRefresh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -501,5 +517,6 @@
         private System.Windows.Forms.Panel pnlMensajes;
         private System.Windows.Forms.Button btnReporte;
         private System.Windows.Forms.SaveFileDialog sfdReporte;
+        private System.Windows.Forms.PictureBox picRefresh;
     }
 }

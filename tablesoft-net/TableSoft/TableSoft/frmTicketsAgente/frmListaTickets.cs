@@ -54,6 +54,7 @@ namespace TableSoft
             //{
             //    dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = "Ticket abierto";
             //}
+            dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = data.agente.nombre + " " + data.agente.apellidoPaterno + " " + data.agente.apellidoMaterno;
             dgvHistorial.Rows[e.RowIndex].Cells["Empleado"].Value = data.empleado.nombre + " " + data.empleado.apellidoPaterno + " " + data.empleado.apellidoMaterno;
             dgvHistorial.Rows[e.RowIndex].Cells["Estado"].Value = data.estado.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Urgencia"].Value = data.urgencia.nombre;

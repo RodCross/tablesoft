@@ -158,10 +158,10 @@
     <Compile Include="frmInicioSesion\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmListaTickets.cs">
+    <Compile Include="frmTicketsAgente\frmListaTickets.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmListaTickets.Designer.cs">
+    <Compile Include="frmTicketsAgente\frmListaTickets.Designer.cs">
       <DependentUpon>frmListaTickets.cs</DependentUpon>
     </Compile>
     <Compile Include="frmReportes\frmSeleccionarObjeto.cs">
@@ -439,7 +439,7 @@
     <EmbeddedResource Include="frmInicioSesion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmListaTickets.resx">
+    <EmbeddedResource Include="frmTicketsAgente\frmListaTickets.resx">
       <DependentUpon>frmListaTickets.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReportes\frmSeleccionarObjeto.resx">
@@ -1110,6 +1110,7 @@
     <None Include="images\PasswordHidden.png" />
     <None Include="images\PasswordShown.png" />
     <None Include="images\Loading.gif" />
+    <None Include="Resources\refresh-button-png-1.png" />
     <Content Include="tslogo.ico" />
   </ItemGroup>
   <ItemGroup>

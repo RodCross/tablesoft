@@ -509,7 +509,7 @@ public class Principal {
         }*/
         
         
-        /*byte[] arreglo = null;
+        byte[] arreglo = null;
         Connection con;
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -607,12 +607,12 @@ public class Principal {
 
             HashMap hm = new HashMap();
             
-            hm.put("Equipo_id", 1);
+            hm.put("Equipo_id", 2);
             hm.put("Equipo_nombre", "Base de datos");
             hm.put("Equipo_descripcion", "Problema en Oracle y MySql");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
             LocalDateTime fechaIni = LocalDateTime.parse("30-06-2020 12:30:55", formatter);
-            LocalDateTime fechaFin = LocalDateTime.parse("08-07-2020 12:30:55", formatter);
+            LocalDateTime fechaFin = LocalDateTime.parse("17-07-2020 12:30:55", formatter);
             hm.put("FechaInicio", Timestamp.valueOf(fechaIni));
             hm.put("FechaFin", Timestamp.valueOf(fechaFin));
             hm.put("RUTA_REPORTE", rutaSubReporte1Jasper);
@@ -650,8 +650,9 @@ public class Principal {
         
         }catch(Exception ex){
             System.out.println(ex.getMessage());
-        }*/
+        }
         
+        /*
         byte[] arreglo = null;
         Connection con;
         try{
@@ -755,7 +756,7 @@ public class Principal {
             
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
             LocalDateTime fechaIni = LocalDateTime.parse("30-06-2020 12:30:55", formatter);
-            LocalDateTime fechaFin = LocalDateTime.parse("08-07-2020 12:30:55", formatter);
+            LocalDateTime fechaFin = LocalDateTime.parse("16-07-2020 12:30:55", formatter);
             hm.put("FechaInicio", Timestamp.valueOf(fechaIni));
             hm.put("FechaFin", Timestamp.valueOf(fechaFin));
             hm.put("RUTA_REPORTE", rutaSubReporte1Jasper);
@@ -794,6 +795,6 @@ public class Principal {
         
         }catch(Exception ex){
             System.out.println(ex.getMessage());
-        }
+        }*/
     }
 }

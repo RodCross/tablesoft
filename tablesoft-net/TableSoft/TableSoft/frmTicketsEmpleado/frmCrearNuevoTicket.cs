@@ -274,7 +274,7 @@ namespace TableSoft
         }
         private void EnviarEmailNotificacion(TicketWS.ticket tick)
         {
-            if (tick.alumnoEmail != null)
+            if (tick.alumnoEmail != null || tick.alumnoEmail != "")
             {
                 if (EnvioCorreoNotificacion.NuevoTicketEnviado(tick) == false)
                 {

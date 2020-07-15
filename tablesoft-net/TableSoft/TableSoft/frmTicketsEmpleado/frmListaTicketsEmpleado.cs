@@ -67,6 +67,8 @@ namespace TableSoft
             frm.Location = this.Location;
             frm.FormClosing += delegate
             {
+                Refrescar();
+                dgvHistorial.DataSource = tickets;
                 this.Show();
             };
 

@@ -104,7 +104,7 @@ namespace TableSoft
 
                     lblFecha = new Label
                     {
-                        Font = new Font("Microsoft PhagsPa", 10.25F, FontStyle.Bold, GraphicsUnit.Point, 0),
+                        Font = new Font("Microsoft PhagsPa", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0),
                         Location = new Point(18, 28),
                         Name = "lblFecha" + numPanel,
                         Size = new Size(654, 20),
@@ -114,7 +114,7 @@ namespace TableSoft
 
                     lblCom = new Label
                     {
-                        Font = new Font("Microsoft PhagsPa", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0),
+                        Font = new Font("Microsoft PhagsPa", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0),
                         Location = new Point(18, 53),
                         Name = "lblCom" + numPanel,
                         Size = new Size(10, 10),

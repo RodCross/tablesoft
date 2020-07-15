@@ -333,7 +333,8 @@
             // 
             // rtfRespuesta
             // 
-            this.rtfRespuesta.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtfRespuesta.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.rtfRespuesta.Font = new System.Drawing.Font("Microsoft PhagsPa", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtfRespuesta.Location = new System.Drawing.Point(24, 24);
             this.rtfRespuesta.Name = "rtfRespuesta";
             this.rtfRespuesta.Size = new System.Drawing.Size(663, 112);

@@ -251,6 +251,11 @@ namespace TableSoft
                 cat.descripcion = frmSelec.categoriaSeleccionada.descripcion;
                 cat.activo = frmSelec.categoriaSeleccionada.activo;
 
+                foreach(var c in categorias)
+                {
+                    if (c.categoriaId == cat.categoriaId) return;
+                }
+
                 categorias.Add(cat);
                 dgvListaCategorias.Refresh();
             }

@@ -46,7 +46,7 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 		<band splitType="Stretch"/>
 	</background>
 	<title>
-		<band height="212" splitType="Stretch">
+		<band height="243" splitType="Stretch">
 			<textField>
 				<reportElement x="3" y="108" width="225" height="20" uuid="cc444155-2387-4fb7-b8af-fe1919c80502">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
@@ -66,14 +66,14 @@ where T.categoria_id =  $P{Categoria_id}  and T.fecha_envio> $P{FechaInicio} and
 				<textFieldExpression><![CDATA["Nombre: "  + $P{Categoria_nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="151" width="280" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
+				<reportElement x="3" y="151" width="552" height="49" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
 				<textFieldExpression><![CDATA["Descripcion: " + $P{Categoria_descripcion}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="2" y="172" width="553" height="40" uuid="7425fae7-3620-4825-a02a-0037941de7db">
+				<reportElement x="2" y="203" width="553" height="40" uuid="7425fae7-3620-4825-a02a-0037941de7db">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>

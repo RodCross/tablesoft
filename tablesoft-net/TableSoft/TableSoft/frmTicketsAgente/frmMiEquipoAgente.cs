@@ -154,7 +154,7 @@ namespace TableSoft
             }
             else
             {
-                ticketsEnEspera = new BindingList<TicketWS.ticket>(arrTickets);
+                ticketsEnEspera = new BindingList<TicketWS.ticket>(arrTickets.ToList());
             }
 
             arrTickets = ticketDAO.listarTicketsPorEstadoPorEquipo(estRecategorizado, equipo);

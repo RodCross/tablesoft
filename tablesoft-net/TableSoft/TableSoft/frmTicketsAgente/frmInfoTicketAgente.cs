@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -25,7 +26,7 @@ namespace TableSoft
         private Label lblFecha;
         private Label lblCom;
 
-        
+        private BindingList<TicketWS.cambioEstadoTicket> cambiosEstado;
 
         public frmInfoTicketAgente(TicketWS.ticket tick)
         {
@@ -37,6 +38,17 @@ namespace TableSoft
             CrearPaneles();
 
             Refrescar(ticketId);
+
+            if (frmLogin.agenteLogueado.rol.nombre.Contains("ADMIN"))
+            {
+                this.Width = 1423;
+                btnVolver.Location = new System.Drawing.Point(1282, 21);
+            }
+            else
+            {
+                this.Width = 1068;
+                btnVolver.Location = new System.Drawing.Point(933, 21);
+            }
         }
 
         private void DisableButton(Button button)
@@ -276,6 +288,7 @@ namespace TableSoft
         private void Refrescar(int ticketId)
         {
             ticket = ticketDAO.buscarTicketPorId(ticketId);
+            
             lblAsunto.Text = ticket.asunto;
             lblId.Text = "# " + ticket.ticketId.ToString();
             lblFecIni.Text = ticket.fechaEnvio.Replace('-', '/').Replace("T", " - ");
@@ -322,12 +335,41 @@ namespace TableSoft
                 DisableButton(btnVerTareas);
                 DisableButton(btnResponder);
             }
+            if(ticket.estado.estadoId == (int)Estado.Activo)
+            {
+                DisableButton(btnCambiarCategoria);
+                DisableButton(btnCerrarTicket);
+                DisableButton(btnEscalar);
+                DisableButton(btnVerTareas);
+                DisableButton(btnResponder);
+            }
+
+            if(ticket.historialEstado == null)
+            {
+                cambiosEstado = new BindingList<TicketWS.cambioEstadoTicket>();
+            }
+            else
+            {
+                cambiosEstado = new BindingList<TicketWS.cambioEstadoTicket>(ticket.historialEstado);
+            }
+            dgvHistorial.AutoGenerateColumns = false;
+            dgvHistorial.DataSource = cambiosEstado;
         }
 
         private void picRefresh_Click(object sender, EventArgs e)
         {
             LlenarComentarios();
             RecargarComentarios();
+        }
+
+        private void dgvHistorial_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            TicketWS.cambioEstadoTicket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.cambioEstadoTicket;
+
+            dgvHistorial.Rows[e.RowIndex].Cells["Id"].Value = data.cambioEstadoTicketId;
+            dgvHistorial.Rows[e.RowIndex].Cells["AgenteID"].Value = data.agenteResponsable.agenteId;
+            dgvHistorial.Rows[e.RowIndex].Cells["EstadoTicketUpdate"].Value = data.estadoTo.nombre;
+            dgvHistorial.Rows[e.RowIndex].Cells["Fecha"].Value = data.fechaCambioEstado;
         }
     }
 }

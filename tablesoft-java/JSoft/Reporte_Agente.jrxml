@@ -59,7 +59,7 @@ and T.fecha_envio < $P{FechaFin}  ;]]>
 				<textFieldExpression><![CDATA["ID del Agente: "  + $P{Agente_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="126" width="280" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
+				<reportElement x="3" y="126" width="547" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
 					<property name="com.jaspersoft.studio.unit.height" value="px"/>
 				</reportElement>
 				<textElement>

@@ -66,11 +66,11 @@ where T.urgencia_id =  $P{Urgencia_id}  and T.fecha_envio> $P{FechaInicio} and T
 				<textFieldExpression><![CDATA["Nombre: "  + $P{Urgencia_nombre}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="3" y="151" width="467" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
+				<reportElement x="3" y="151" width="547" height="18" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
 				<textElement>
 					<font fontName="Arial" size="14"/>
 				</textElement>
-				<textFieldExpression><![CDATA["Plazo máximo para la resolución del ticket:  " + $P{Urgencia_plazo}]]></textFieldExpression>
+				<textFieldExpression><![CDATA["Plazo máximo para la resolución del ticket:  " + $P{Urgencia_plazo} +"horas"]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="2" y="172" width="553" height="40" uuid="7f6b3392-2dfe-4b7e-9b85-96fa85296ef0">

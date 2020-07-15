@@ -94,7 +94,7 @@ where TT.ticket_id =  $P{Ticket_id} ;]]>
 				<text><![CDATA[Fecha del escalado]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="229" y="5" width="100" height="30" uuid="e1caae1a-b8ab-4a9d-85c7-a0abc7949661">
+				<reportElement x="229" y="5" width="121" height="30" uuid="e1caae1a-b8ab-4a9d-85c7-a0abc7949661">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e1dedaf-0881-40c0-98f0-51fcdf677807"/>
 				</reportElement>
 				<textElement>
@@ -103,7 +103,7 @@ where TT.ticket_id =  $P{Ticket_id} ;]]>
 				<text><![CDATA[Comentario]]></text>
 			</staticText>
 			<staticText>
-				<reportElement x="340" y="5" width="119" height="30" uuid="1e98385a-1311-475d-9693-53fc9ab0d4a3">
+				<reportElement x="360" y="5" width="99" height="30" uuid="1e98385a-1311-475d-9693-53fc9ab0d4a3">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ccf63c-7919-4fd0-ae59-275d74d86f3e"/>
 				</reportElement>
 				<textElement>
@@ -126,9 +126,9 @@ where TT.ticket_id =  $P{Ticket_id} ;]]>
 		</band>
 	</columnHeader>
 	<detail>
-		<band height="50" splitType="Stretch">
+		<band height="84" splitType="Stretch">
 			<textField>
-				<reportElement x="3" y="10" width="25" height="40" uuid="e840f5a8-1568-42bc-b7f8-5486e307dded">
+				<reportElement x="3" y="10" width="25" height="70" uuid="e840f5a8-1568-42bc-b7f8-5486e307dded">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="53878724-85ac-4790-b963-8f10c94534db"/>
 					<property name="com.jaspersoft.studio.unit.x" value="px"/>
 					<property name="com.jaspersoft.studio.unit.width" value="px"/>
@@ -136,31 +136,31 @@ where TT.ticket_id =  $P{Ticket_id} ;]]>
 				<textFieldExpression><![CDATA[$F{transferencia_id}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="36" y="10" width="94" height="40" uuid="9b041579-5564-46b0-8476-8787c0c296ac">
+				<reportElement x="36" y="10" width="94" height="70" uuid="9b041579-5564-46b0-8476-8787c0c296ac">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf71c8c4-fbe8-4b25-b782-14e18b7cf09d"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="138" y="10" width="80" height="40" uuid="55c0d61a-65eb-4e14-bda3-2d1403265668">
+				<reportElement x="138" y="10" width="80" height="70" uuid="55c0d61a-65eb-4e14-bda3-2d1403265668">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a1d6a45-c383-4694-a61c-9f585ee56d8a"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{fecha_transferencia}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="229" y="10" width="100" height="40" uuid="bcdfa06f-2bd6-4491-af6e-14974caad4ea">
+				<reportElement x="229" y="10" width="121" height="70" uuid="bcdfa06f-2bd6-4491-af6e-14974caad4ea">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e1dedaf-0881-40c0-98f0-51fcdf677807"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{comentario}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="340" y="10" width="119" height="40" uuid="6e23c5b3-40bb-4f33-ae1d-d650ad7a1f45">
+				<reportElement x="360" y="10" width="99" height="70" uuid="6e23c5b3-40bb-4f33-ae1d-d650ad7a1f45">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ccf63c-7919-4fd0-ae59-275d74d86f3e"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{razon_social}]]></textFieldExpression>
 			</textField>
 			<textField>
-				<reportElement x="465" y="10" width="75" height="40" uuid="1c9e7b4b-274c-4d07-8bf9-3519226d1a6c">
+				<reportElement x="465" y="10" width="75" height="70" uuid="1c9e7b4b-274c-4d07-8bf9-3519226d1a6c">
 					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65808f16-0f09-4bc6-b1c2-a88504bec193"/>
 				</reportElement>
 				<textFieldExpression><![CDATA[$F{ruc}]]></textFieldExpression>

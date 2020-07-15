@@ -158,6 +158,12 @@
     <Compile Include="frmInicioSesion\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportes\frmSeleccionarFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes\frmSeleccionarFecha.Designer.cs">
+      <DependentUpon>frmSeleccionarFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTicketsAgente\frmListaTickets.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -438,6 +444,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmInicioSesion\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes\frmSeleccionarFecha.resx">
+      <DependentUpon>frmSeleccionarFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTicketsAgente\frmListaTickets.resx">
       <DependentUpon>frmListaTickets.cs</DependentUpon>

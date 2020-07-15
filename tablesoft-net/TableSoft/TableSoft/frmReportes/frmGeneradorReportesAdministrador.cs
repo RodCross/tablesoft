@@ -82,5 +82,18 @@ namespace TableSoft
             frm.Show();
             this.Hide();
         }
+
+        private void btnGenerarReporteGeneral_Click(object sender, EventArgs e)
+        {
+            frmSeleccionarFecha frm = new frmSeleccionarFecha();
+
+            frm.FormClosing += delegate
+            {
+                this.Show();
+            };
+
+            frm.Show();
+            this.Hide();
+        }
     }
 }

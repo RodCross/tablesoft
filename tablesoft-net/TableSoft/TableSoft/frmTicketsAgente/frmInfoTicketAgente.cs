@@ -41,8 +41,8 @@ namespace TableSoft
 
             if (frmLogin.agenteLogueado.rol.nombre.Contains("ADMIN"))
             {
-                this.Width = 1423;
-                btnVolver.Location = new System.Drawing.Point(1282, 21);
+                this.Width = 1343;
+                btnVolver.Location = new System.Drawing.Point(1207, 21);
             }
             else
             {
@@ -366,8 +366,6 @@ namespace TableSoft
         {
             TicketWS.cambioEstadoTicket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.cambioEstadoTicket;
 
-            dgvHistorial.Rows[e.RowIndex].Cells["Id"].Value = data.cambioEstadoTicketId;
-            dgvHistorial.Rows[e.RowIndex].Cells["AgenteID"].Value = data.agenteResponsable.agenteId;
             dgvHistorial.Rows[e.RowIndex].Cells["EstadoTicketUpdate"].Value = data.estadoTo.nombre;
             dgvHistorial.Rows[e.RowIndex].Cells["Fecha"].Value = data.fechaCambioEstado;
         }

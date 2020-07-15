@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSeleccionarFecha));
             this.dtpFechaFin = new System.Windows.Forms.DateTimePicker();
             this.dtpFechaInicio = new System.Windows.Forms.DateTimePicker();
             this.lblFechaFin = new System.Windows.Forms.Label();
@@ -45,20 +46,18 @@
             // 
             this.dtpFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaFin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaFin.Location = new System.Drawing.Point(209, 188);
-            this.dtpFechaFin.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaFin.Location = new System.Drawing.Point(157, 153);
             this.dtpFechaFin.Name = "dtpFechaFin";
-            this.dtpFechaFin.Size = new System.Drawing.Size(255, 28);
+            this.dtpFechaFin.Size = new System.Drawing.Size(192, 24);
             this.dtpFechaFin.TabIndex = 33;
             // 
             // dtpFechaInicio
             // 
             this.dtpFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpFechaInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpFechaInicio.Location = new System.Drawing.Point(209, 146);
-            this.dtpFechaInicio.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpFechaInicio.Location = new System.Drawing.Point(157, 119);
             this.dtpFechaInicio.Name = "dtpFechaInicio";
-            this.dtpFechaInicio.Size = new System.Drawing.Size(255, 28);
+            this.dtpFechaInicio.Size = new System.Drawing.Size(192, 24);
             this.dtpFechaInicio.TabIndex = 32;
             // 
             // lblFechaFin
@@ -66,10 +65,9 @@
             this.lblFechaFin.AutoSize = true;
             this.lblFechaFin.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaFin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaFin.Location = new System.Drawing.Point(57, 188);
-            this.lblFechaFin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaFin.Location = new System.Drawing.Point(43, 153);
             this.lblFechaFin.Name = "lblFechaFin";
-            this.lblFechaFin.Size = new System.Drawing.Size(116, 26);
+            this.lblFechaFin.Size = new System.Drawing.Size(93, 21);
             this.lblFechaFin.TabIndex = 35;
             this.lblFechaFin.Text = "Fecha de fin";
             this.lblFechaFin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -79,10 +77,9 @@
             this.lblFechaInicio.AutoSize = true;
             this.lblFechaInicio.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblFechaInicio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(82)))), ((int)(((byte)(94)))));
-            this.lblFechaInicio.Location = new System.Drawing.Point(30, 146);
-            this.lblFechaInicio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaInicio.Location = new System.Drawing.Point(24, 119);
             this.lblFechaInicio.Name = "lblFechaInicio";
-            this.lblFechaInicio.Size = new System.Drawing.Size(141, 26);
+            this.lblFechaInicio.Size = new System.Drawing.Size(112, 21);
             this.lblFechaInicio.TabIndex = 34;
             this.lblFechaInicio.Text = "Fecha de inicio";
             this.lblFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -94,9 +91,8 @@
             this.pnlTitulo.Controls.Add(this.lblListaCategorias);
             this.pnlTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlTitulo.Location = new System.Drawing.Point(0, 0);
-            this.pnlTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.pnlTitulo.Name = "pnlTitulo";
-            this.pnlTitulo.Size = new System.Drawing.Size(721, 86);
+            this.pnlTitulo.Size = new System.Drawing.Size(541, 70);
             this.pnlTitulo.TabIndex = 36;
             this.pnlTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlTitulo_MouseDown);
             // 
@@ -108,10 +104,9 @@
             this.btnVolver.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnVolver.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnVolver.ForeColor = System.Drawing.Color.White;
-            this.btnVolver.Location = new System.Drawing.Point(559, 28);
-            this.btnVolver.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVolver.Location = new System.Drawing.Point(419, 23);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(141, 41);
+            this.btnVolver.Size = new System.Drawing.Size(106, 33);
             this.btnVolver.TabIndex = 7;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = false;
@@ -122,10 +117,9 @@
             this.lblListaCategorias.AutoSize = true;
             this.lblListaCategorias.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold);
             this.lblListaCategorias.ForeColor = System.Drawing.Color.White;
-            this.lblListaCategorias.Location = new System.Drawing.Point(40, 28);
-            this.lblListaCategorias.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblListaCategorias.Location = new System.Drawing.Point(30, 23);
             this.lblListaCategorias.Name = "lblListaCategorias";
-            this.lblListaCategorias.Size = new System.Drawing.Size(131, 36);
+            this.lblListaCategorias.Size = new System.Drawing.Size(99, 27);
             this.lblListaCategorias.TabIndex = 0;
             this.lblListaCategorias.Text = "Reportes";
             // 
@@ -133,10 +127,9 @@
             // 
             this.lblIngresar.AutoSize = true;
             this.lblIngresar.Font = new System.Drawing.Font("Microsoft PhagsPa", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIngresar.Location = new System.Drawing.Point(30, 105);
-            this.lblIngresar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblIngresar.Location = new System.Drawing.Point(22, 85);
             this.lblIngresar.Name = "lblIngresar";
-            this.lblIngresar.Size = new System.Drawing.Size(243, 26);
+            this.lblIngresar.Size = new System.Drawing.Size(195, 21);
             this.lblIngresar.TabIndex = 37;
             this.lblIngresar.Text = "Ingrese rango de fechas:";
             // 
@@ -148,10 +141,9 @@
             this.btnGenerar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGenerar.Font = new System.Drawing.Font("Microsoft PhagsPa", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGenerar.ForeColor = System.Drawing.Color.White;
-            this.btnGenerar.Location = new System.Drawing.Point(513, 155);
-            this.btnGenerar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnGenerar.Location = new System.Drawing.Point(385, 124);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(187, 50);
+            this.btnGenerar.Size = new System.Drawing.Size(140, 41);
             this.btnGenerar.TabIndex = 38;
             this.btnGenerar.Text = "Generar";
             this.btnGenerar.UseVisualStyleBackColor = false;
@@ -159,9 +151,9 @@
             // 
             // frmSeleccionarFecha
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(721, 250);
+            this.ClientSize = new System.Drawing.Size(541, 203);
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.lblIngresar);
             this.Controls.Add(this.pnlTitulo);
@@ -170,8 +162,10 @@
             this.Controls.Add(this.lblFechaFin);
             this.Controls.Add(this.lblFechaInicio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmSeleccionarFecha";
-            this.Text = "frmSeleccionarFecha";
+            this.Text = "Reportes";
             this.pnlTitulo.ResumeLayout(false);
             this.pnlTitulo.PerformLayout();
             this.ResumeLayout(false);

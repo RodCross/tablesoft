@@ -30,6 +30,7 @@ namespace TableSoft
             EmpleadoWS.empleado data = dgvLista.Rows[e.RowIndex].DataBoundItem as EmpleadoWS.empleado;
             dgvLista.Rows[e.RowIndex].Cells["Nombre"].Value = data.apellidoPaterno + " " + data.apellidoMaterno + ", " + data.nombre;
             dgvLista.Rows[e.RowIndex].Cells["Biblioteca"].Value = data.biblioteca.nombre;
+            dgvLista.Rows[e.RowIndex].Cells["Activo"].Value = data.activo;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -66,21 +67,21 @@ namespace TableSoft
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             EmpleadoWS.empleado emp = (EmpleadoWS.empleado)dgvLista.CurrentRow.DataBoundItem;
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea desactivar al empleado?", "Desactivar Empleado", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (empleadoDAO.eliminarEmpleado(emp) > -1)
                 {
                     MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
+                    "Se ha desactivado al empleado exitosamente",
+                    "Desactivación exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
                 else
                 {
                     MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
+                     "No se desactivo al empleado",
+                    "Desactivación no realizada",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
@@ -90,8 +91,8 @@ namespace TableSoft
             else
             {
                 MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
+                "No se desactivo al empleado",
+                "Desactivación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }

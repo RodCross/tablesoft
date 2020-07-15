@@ -30,6 +30,7 @@ namespace TableSoft
             dgvLista.Rows[e.RowIndex].Cells["Nombre"].Value = data.apellidoPaterno + " " + data.apellidoMaterno + ", " + data.nombre;
             dgvLista.Rows[e.RowIndex].Cells["Rol"].Value = data.rol.nombre;
             dgvLista.Rows[e.RowIndex].Cells["Equipo"].Value = data.equipo.nombre;
+            dgvLista.Rows[e.RowIndex].Cells["Activo"].Value = data.activo;
         }
 
         private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
@@ -80,21 +81,21 @@ namespace TableSoft
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             AgenteWS.agente age = (AgenteWS.agente)dgvLista.CurrentRow.DataBoundItem;
-            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("¿Desea desactivar al agente?", "Desactivar Agente", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 if (agenteDAO.eliminarAgente(age) > -1)
                 {
                     MessageBox.Show(
-                    "Se ha eliminado el registro exitosamente",
-                    "Eliminación exitosa",
+                    "Se ha desactivado al agente exitosamente",
+                    "Desactivación exitosa",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
                 else
                 {
                     MessageBox.Show(
-                    "No se eliminó el registro",
-                    "Eliminación no realizada",
+                    "No se desactivo al agente",
+                    "Desactivación no realizada",
                     MessageBoxButtons.OK, MessageBoxIcon.Information
                     );
                 }
@@ -104,8 +105,8 @@ namespace TableSoft
             else
             {
                 MessageBox.Show(
-                "No se eliminó el registro",
-                "Eliminación no realizada",
+                "No se desactivo al agente",
+                 "Desactivación no realizada",
                 MessageBoxButtons.OK, MessageBoxIcon.Information
                 );
             }

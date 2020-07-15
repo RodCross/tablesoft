@@ -94,7 +94,7 @@ public class Principal {
             System.out.println(ex.getMessage());
         }
         */
-        /*
+        
         byte[] arreglo = null;
         Connection con;
         try{
@@ -193,7 +193,7 @@ public class Principal {
             hm.put("Categoria_descripcion", "hol");
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
             LocalDateTime fechaIni = LocalDateTime.parse("30-06-2020 12:30:55", formatter);
-            LocalDateTime fechaFin = LocalDateTime.parse("06-07-2020 12:30:55", formatter);
+            LocalDateTime fechaFin = LocalDateTime.parse("17-07-2020 12:30:55", formatter);
             hm.put("FechaInicio", Timestamp.valueOf(fechaIni));
             hm.put("FechaFin", Timestamp.valueOf(fechaFin));
             hm.put("RUTA_REPORTE", rutaSubReporte1Jasper);
@@ -230,7 +230,7 @@ public class Principal {
         
         }catch(Exception ex){
             System.out.println(ex.getMessage());
-        }*/
+        }
         
         /*
         byte[] arreglo = null;
@@ -508,7 +508,7 @@ public class Principal {
             System.out.println(ex.getMessage());
         }*/
         
-        
+        /*
         byte[] arreglo = null;
         Connection con;
         try{
@@ -651,7 +651,7 @@ public class Principal {
         }catch(Exception ex){
             System.out.println(ex.getMessage());
         }
-        
+        */
         /*
         byte[] arreglo = null;
         Connection con;

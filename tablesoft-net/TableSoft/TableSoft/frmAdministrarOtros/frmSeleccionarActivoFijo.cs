@@ -12,7 +12,16 @@ namespace TableSoft
         public frmSeleccionarActivoFijo()
         {
             InitializeComponent();
-            activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
+            var acti = activoFijoDAO.listarActivosFijos();
+
+            if (acti == null)
+            {
+                activosFijos = new BindingList<ActivoFijoWS.activoFijo>();
+            }
+            else
+            {
+                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(acti);
+            }
             dgvLista.AutoGenerateColumns = false;
             dgvLista.DataSource = activosFijos;
         }
@@ -32,8 +41,18 @@ namespace TableSoft
             frmGestionarActivoFijo frm = new frmGestionarActivoFijo();
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
-                dgvLista.DataSource = activoFijoDAO.listarActivosFijos();
+                var acti = activoFijoDAO.listarActivosFijos();
+
+                if (acti == null)
+                {
+                    activosFijos = new BindingList<ActivoFijoWS.activoFijo>();
+                }
+                else
+                {
+                    activosFijos = new BindingList<ActivoFijoWS.activoFijo>(acti);
+                }
+                dgvLista.AutoGenerateColumns = false;
+                dgvLista.DataSource = activosFijos;
             }
         }
 
@@ -43,7 +62,17 @@ namespace TableSoft
             frmGestionarActivoFijo frm = new frmGestionarActivoFijo(activo);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                activosFijos = new BindingList<ActivoFijoWS.activoFijo>(activoFijoDAO.listarActivosFijos().ToArray());
+                var acti = activoFijoDAO.listarActivosFijos();
+
+                if (acti == null)
+                {
+                    activosFijos = new BindingList<ActivoFijoWS.activoFijo>();
+                }
+                else
+                {
+                    activosFijos = new BindingList<ActivoFijoWS.activoFijo>(acti);
+                }
+                dgvLista.AutoGenerateColumns = false;
                 dgvLista.DataSource = activosFijos;
             }
         }

@@ -29,14 +29,10 @@ namespace TableSoft
             TicketWS.ticket data = dgvHistorial.Rows[e.RowIndex].DataBoundItem as TicketWS.ticket;
 
             //dgvHistorial.Rows[e.RowIndex].Cells["FechaEnvio"].Value = data.fechaEnvio.Replace("T", " ");
-            //if(data.fechaCierre != null)
-            //{
-            //    dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = data.fechaCierre.Replace("T", " ");
-            //}
-            //else
-            //{
-            //    dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = "Ticket abierto";
-            //}
+            if (data.fechaCierre == null)
+            {
+                dgvHistorial.Rows[e.RowIndex].Cells["FechaCierre"].Value = "---";
+            }
             if (data.agente.nombre != null)
             {
                 dgvHistorial.Rows[e.RowIndex].Cells["Agente"].Value = data.agente.apellidoPaterno + " " + data.agente.apellidoMaterno + ", " + data.agente.nombre;

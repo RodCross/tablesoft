@@ -72,6 +72,7 @@ namespace TableSoft
         {
             tareaSeleccionada = (TareaPredeterminadaWS.tareaPredeterminada)dgvLista.CurrentRow.DataBoundItem;
             frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(tareaSeleccionada);
+            //a ver
             if(frm.ShowDialog() == DialogResult.OK)
             {
                 var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);

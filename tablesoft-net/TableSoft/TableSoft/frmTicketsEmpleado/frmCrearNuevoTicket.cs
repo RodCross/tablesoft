@@ -167,7 +167,7 @@ namespace TableSoft
                     );
                     return;
                 }
-                if (lblErrActFij.Text == "Código de activo fijo no valido")
+                if (lblErrActFij.Text == "Código de activo fijo no válido")
                 {
                     MessageBox.Show(
                         "El código del activo fijo del ticket debe ser valido.",
@@ -308,7 +308,7 @@ namespace TableSoft
                 }
                 if (actFij == null)
                 {
-                    lblErrActFij.Text = "Codigo de activo fijo no valido";
+                    lblErrActFij.Text = "Código de activo fijo no válido";
                     txtNombreActivoFijo.Text = "";
                 }
                 else

@@ -177,7 +177,10 @@ namespace TableSoft
             {
                 foreach (TicketWS.ticket t in arrTickets)
                 {
-                    ticketsEnEspera.Add(t);
+                    if(t.agente.agenteId == 0)
+                    {
+                        ticketsEnEspera.Add(t);
+                    }
                 }
             }
         }

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="PersonaWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/PersonaWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="verificarPersona">
+    <part name="parameters" element="tns:verificarPersona" />
+  </message>
+  <message name="verificarPersonaResponse">
+    <part name="parameters" element="tns:verificarPersonaResponse" />
+  </message>
+  <message name="verificarCorreo">
+    <part name="parameters" element="tns:verificarCorreo" />
+  </message>
+  <message name="verificarCorreoResponse">
+    <part name="parameters" element="tns:verificarCorreoResponse" />
+  </message>
+  <message name="actualizarPass">
+    <part name="parameters" element="tns:actualizarPass" />
+  </message>
+  <message name="actualizarPassResponse">
+    <part name="parameters" element="tns:actualizarPassResponse" />
+  </message>
+  <message name="buscarPersonaxEmail">
+    <part name="parameters" element="tns:buscarPersonaxEmail" />
+  </message>
+  <message name="buscarPersonaxEmailResponse">
+    <part name="parameters" element="tns:buscarPersonaxEmailResponse" />
+  </message>
+  <portType name="PersonaWS">
+    <operation name="verificarPersona">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarPersonaRequest" message="tns:verificarPersona" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarPersonaResponse" message="tns:verificarPersonaResponse" />
+    </operation>
+    <operation name="verificarCorreo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoRequest" message="tns:verificarCorreo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/verificarCorreoResponse" message="tns:verificarCorreoResponse" />
+    </operation>
+    <operation name="actualizarPass">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassRequest" message="tns:actualizarPass" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/actualizarPassResponse" message="tns:actualizarPassResponse" />
+    </operation>
+    <operation name="buscarPersonaxEmail">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/buscarPersonaxEmailRequest" message="tns:buscarPersonaxEmail" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/PersonaWS/buscarPersonaxEmailResponse" message="tns:buscarPersonaxEmailResponse" />
+    </operation>
+  </portType>
+  <binding name="PersonaWSPortBinding" type="tns:PersonaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="verificarPersona">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="verificarCorreo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarPass">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarPersonaxEmail">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PersonaWS">
+    <port name="PersonaWSPort" binding="tns:PersonaWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/PersonaWS" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="listarPaises" type="tns:listarPaises" />
+  <xs:element name="listarPaisesResponse" type="tns:listarPaisesResponse" />
+  <xs:complexType name="listarPaises">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarPaisesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:pais" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pais">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="paisId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

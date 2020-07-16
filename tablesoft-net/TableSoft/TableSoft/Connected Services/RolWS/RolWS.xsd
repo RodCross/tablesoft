@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarRol" type="tns:actualizarRol" />
+  <xs:element name="actualizarRolResponse" type="tns:actualizarRolResponse" />
+  <xs:element name="eliminarRol" type="tns:eliminarRol" />
+  <xs:element name="eliminarRolResponse" type="tns:eliminarRolResponse" />
+  <xs:element name="insertarRol" type="tns:insertarRol" />
+  <xs:element name="insertarRolResponse" type="tns:insertarRolResponse" />
+  <xs:element name="listarRoles" type="tns:listarRoles" />
+  <xs:element name="listarRolesResponse" type="tns:listarRolesResponse" />
+  <xs:complexType name="eliminarRol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objRol" type="tns:rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rol">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="rolId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarRolResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarRol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objRol" type="tns:rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarRolResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarRol">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objRol" type="tns:rol" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarRolResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarRoles">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarRolesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:rol" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

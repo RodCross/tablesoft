@@ -1,0 +1,1153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{89C35E79-73BC-44FF-8488-62FD9213B8F9}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TableSoft</RootNamespace>
+    <AssemblyName>TableSoft</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>tslogo.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Messaging" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connected Services\ActivoFijoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\AgenteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\BibliotecaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CategoriaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\CiudadWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ComentarioWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EmailWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EmpleadoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EquipoWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\EstadoTicketWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PaisWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\PersonaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ProveedorWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ReporteWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\RolWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TareaPredeterminadaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TareaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\TicketWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\UrgenciaWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioCorreoNotificacion.cs" />
+    <Compile Include="Estado.cs" />
+    <Compile Include="frmInicioSesion\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes\frmSeleccionarFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes\frmSeleccionarFecha.Designer.cs">
+      <DependentUpon>frmSeleccionarFecha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmListaTickets.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmListaTickets.Designer.cs">
+      <DependentUpon>frmListaTickets.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes\frmSeleccionarObjeto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes\frmSeleccionarObjeto.Designer.cs">
+      <DependentUpon>frmSeleccionarObjeto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmCerrarTicketAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmCerrarTicketAgente.Designer.cs">
+      <DependentUpon>frmCerrarTicketAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsEmpleado\frmCrearNuevoTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsEmpleado\frmCrearNuevoTicket.Designer.cs">
+      <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmEscalarTicketAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmEscalarTicketAgente.Designer.cs">
+      <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes\frmGeneradorReportesAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes\frmGeneradorReportesAdministrador.Designer.cs">
+      <DependentUpon>frmGeneradorReportesAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmReportes\frmGeneradorReportesSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportes\frmGeneradorReportesSupervisor.Designer.cs">
+      <DependentUpon>frmGeneradorReportesSupervisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmGestionarActivoFijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmGestionarActivoFijo.Designer.cs">
+      <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmGestionarAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmGestionarAgente.Designer.cs">
+      <DependentUpon>frmGestionarAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmGestionarBiblioteca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmGestionarBiblioteca.Designer.cs">
+      <DependentUpon>frmGestionarBiblioteca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarCategoria.Designer.cs">
+      <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmGestionarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmGestionarEmpleado.Designer.cs">
+      <DependentUpon>frmGestionarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarEquipo.Designer.cs">
+      <DependentUpon>frmGestionarEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarEstado.Designer.cs">
+      <DependentUpon>frmGestionarEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmGestionarSistemaAdministrador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmGestionarSistemaAdministrador.Designer.cs">
+      <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarTareaPredeterminada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarTareaPredeterminada.Designer.cs">
+      <DependentUpon>frmGestionarTareaPredeterminada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmGestionarTareasTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmGestionarTareasTicket.Designer.cs">
+      <DependentUpon>frmGestionarTareasTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarUrgencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmGestionarUrgencia.Designer.cs">
+      <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmGestionarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmGestionarProveedor.Designer.cs">
+      <DependentUpon>frmGestionarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmInfoTicketAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmInfoTicketAgente.Designer.cs">
+      <DependentUpon>frmInfoTicketAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsEmpleado\frmInfoTicketEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsEmpleado\frmInfoTicketEmpleado.Designer.cs">
+      <DependentUpon>frmInfoTicketEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmCrearNuevaPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmCrearNuevaPassword.Designer.cs">
+      <DependentUpon>frmCrearNuevaPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioAdmin.Designer.cs">
+      <DependentUpon>frmInicioAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioAgente.Designer.cs">
+      <DependentUpon>frmInicioAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioSupervisor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioSupervisor.Designer.cs">
+      <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsEmpleado\frmListaTicketsEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsEmpleado\frmListaTicketsEmpleado.Designer.cs">
+      <DependentUpon>frmListaTicketsEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmListaTicketsAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmListaTicketsAgente.Designer.cs">
+      <DependentUpon>frmListaTicketsAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPantallaInicio\frmInicioEmpleado.Designer.cs">
+      <DependentUpon>frmInicioEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmMiEquipoAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmMiEquipoAgente.Designer.cs">
+      <DependentUpon>frmMiEquipoAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmReasignarCategoriaTicketAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmReasignarCategoriaTicketAgente.Designer.cs">
+      <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmRecuperarEnvioExitoso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmRecuperarEnvioExitoso.Designer.cs">
+      <DependentUpon>frmRecuperarEnvioExitoso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmRecuperarPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInicioSesion\frmRecuperarPassword.Designer.cs">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmSeleccionarActivoFijo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmSeleccionarActivoFijo.Designer.cs">
+      <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoriaDisponible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoriaDisponible.Designer.cs">
+      <DependentUpon>frmSeleccionarCategoriaDisponible.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarEmpleado.Designer.cs">
+      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmSeleccionarBiblioteca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmSeleccionarBiblioteca.Designer.cs">
+      <DependentUpon>frmSeleccionarBiblioteca.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarCategoria.Designer.cs">
+      <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarAgente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarPersonas\frmSeleccionarAgente.Designer.cs">
+      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEquipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEquipo.Designer.cs">
+      <DependentUpon>frmSeleccionarEquipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEstado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarEstado.Designer.cs">
+      <DependentUpon>frmSeleccionarEstado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmSeleccionarProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarOtros\frmSeleccionarProveedor.Designer.cs">
+      <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarTareaPredeterminada.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarTareaPredeterminada.Designer.cs">
+      <DependentUpon>frmSeleccionarTareaPredeterminada.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmSeleccionarTareasTicket.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTicketsAgente\frmSeleccionarTareasTicket.Designer.cs">
+      <DependentUpon>frmSeleccionarTareasTicket.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarUrgencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAdministrarNegocio\frmSeleccionarUrgencia.Designer.cs">
+      <DependentUpon>frmSeleccionarUrgencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Movimiento.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RandomGenerator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="frmInicioSesion\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes\frmSeleccionarFecha.resx">
+      <DependentUpon>frmSeleccionarFecha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmListaTickets.resx">
+      <DependentUpon>frmListaTickets.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes\frmSeleccionarObjeto.resx">
+      <DependentUpon>frmSeleccionarObjeto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmCerrarTicketAgente.resx">
+      <DependentUpon>frmCerrarTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsEmpleado\frmCrearNuevoTicket.resx">
+      <DependentUpon>frmCrearNuevoTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmEscalarTicketAgente.resx">
+      <DependentUpon>frmEscalarTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes\frmGeneradorReportesAdministrador.resx">
+      <DependentUpon>frmGeneradorReportesAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportes\frmGeneradorReportesSupervisor.resx">
+      <DependentUpon>frmGeneradorReportesSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarOtros\frmGestionarActivoFijo.resx">
+      <DependentUpon>frmGestionarActivoFijo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarPersonas\frmGestionarAgente.resx">
+      <DependentUpon>frmGestionarAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarOtros\frmGestionarBiblioteca.resx">
+      <DependentUpon>frmGestionarBiblioteca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarCategoria.resx">
+      <DependentUpon>frmGestionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarPersonas\frmGestionarEmpleado.resx">
+      <DependentUpon>frmGestionarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarEquipo.resx">
+      <DependentUpon>frmGestionarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarEstado.resx">
+      <DependentUpon>frmGestionarEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPantallaInicio\frmGestionarSistemaAdministrador.resx">
+      <DependentUpon>frmGestionarSistemaAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarTareaPredeterminada.resx">
+      <DependentUpon>frmGestionarTareaPredeterminada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmGestionarTareasTicket.resx">
+      <DependentUpon>frmGestionarTareasTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmGestionarUrgencia.resx">
+      <DependentUpon>frmGestionarUrgencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarOtros\frmGestionarProveedor.resx">
+      <DependentUpon>frmGestionarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmInfoTicketAgente.resx">
+      <DependentUpon>frmInfoTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsEmpleado\frmInfoTicketEmpleado.resx">
+      <DependentUpon>frmInfoTicketEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioSesion\frmCrearNuevaPassword.resx">
+      <DependentUpon>frmCrearNuevaPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioAdmin.resx">
+      <DependentUpon>frmInicioAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioAgente.resx">
+      <DependentUpon>frmInicioAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioSupervisor.resx">
+      <DependentUpon>frmInicioSupervisor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsEmpleado\frmListaTicketsEmpleado.resx">
+      <DependentUpon>frmListaTicketsEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmListaTicketsAgente.resx">
+      <DependentUpon>frmListaTicketsAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPantallaInicio\frmInicioEmpleado.resx">
+      <DependentUpon>frmInicioEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmMiEquipoAgente.resx">
+      <DependentUpon>frmMiEquipoAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmReasignarCategoriaTicketAgente.resx">
+      <DependentUpon>frmReasignarCategoriaTicketAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioSesion\frmRecuperarEnvioExitoso.resx">
+      <DependentUpon>frmRecuperarEnvioExitoso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInicioSesion\frmRecuperarPassword.resx">
+      <DependentUpon>frmRecuperarPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarOtros\frmSeleccionarActivoFijo.resx">
+      <DependentUpon>frmSeleccionarActivoFijo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarCategoriaDisponible.resx">
+      <DependentUpon>frmSeleccionarCategoriaDisponible.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarPersonas\frmSeleccionarEmpleado.resx">
+      <DependentUpon>frmSeleccionarEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarOtros\frmSeleccionarBiblioteca.resx">
+      <DependentUpon>frmSeleccionarBiblioteca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarCategoria.resx">
+      <DependentUpon>frmSeleccionarCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarPersonas\frmSeleccionarAgente.resx">
+      <DependentUpon>frmSeleccionarAgente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarEquipo.resx">
+      <DependentUpon>frmSeleccionarEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarEstado.resx">
+      <DependentUpon>frmSeleccionarEstado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarOtros\frmSeleccionarProveedor.resx">
+      <DependentUpon>frmSeleccionarProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarTareaPredeterminada.resx">
+      <DependentUpon>frmSeleccionarTareaPredeterminada.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTicketsAgente\frmSeleccionarTareasTicket.resx">
+      <DependentUpon>frmSeleccionarTareasTicket.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarNegocio\frmSeleccionarUrgencia.resx">
+      <DependentUpon>frmSeleccionarUrgencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\ActivoFijoWS\ActivoFijoWS.wsdl" />
+    <None Include="Connected Services\ActivoFijoWS\ActivoFijoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.activoFijo1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.actualizarActivoFijoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.eliminarActivoFijoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.insertarActivoFijoResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosPorNombreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ActivoFijoWS\TableSoft.ActivoFijoWS.listarActivosFijosResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\AgenteWS.wsdl" />
+    <None Include="Connected Services\AgenteWS\AgenteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.actualizarAgenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.agente.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.buscarAgentePorCodigoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.eliminarAgenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.insertarAgenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.listarAgentesPorEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.listarAgentesPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\AgenteWS\TableSoft.AgenteWS.listarAgentesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BibliotecaWS\BibliotecaWS.wsdl" />
+    <None Include="Connected Services\BibliotecaWS\BibliotecaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\BibliotecaWS\TableSoft.BibliotecaWS.actualizarBibliotecaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BibliotecaWS\TableSoft.BibliotecaWS.biblioteca.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BibliotecaWS\TableSoft.BibliotecaWS.eliminarBibliotecaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BibliotecaWS\TableSoft.BibliotecaWS.insertarBibliotecaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\BibliotecaWS\TableSoft.BibliotecaWS.listarBibliotecasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\CategoriaWS.wsdl" />
+    <None Include="Connected Services\CategoriaWS\CategoriaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.actualizarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.categoria.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.eliminarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.insertarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.listarCategoriasDisponiblesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.listarCategoriasPorEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.listarCategoriasPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CategoriaWS\TableSoft.CategoriaWS.listarCategoriasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CiudadWS\CiudadWS.wsdl" />
+    <None Include="Connected Services\CiudadWS\CiudadWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\CiudadWS\TableSoft.CiudadWS.ciudad.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\CiudadWS\TableSoft.CiudadWS.listarCiudadesDePaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ComentarioWS\ComentarioWS.wsdl" />
+    <None Include="Connected Services\ComentarioWS\ComentarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ComentarioWS\TableSoft.ComentarioWS.comentario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ComentarioWS\TableSoft.ComentarioWS.insertarComentarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ComentarioWS\TableSoft.ComentarioWS.listarComentariosDeTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmailWS\EmailWS1.wsdl" />
+    <None Include="Connected Services\EmpleadoWS\EmpleadoWS.wsdl" />
+    <None Include="Connected Services\EmpleadoWS\EmpleadoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.actualizarEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.buscarEmpleadoPorCodigoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.eliminarEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.empleado.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.insertarEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.listarEmpleadosDeBibliotecaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.listarEmpleadosPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\TableSoft.EmpleadoWS.listarEmpleadosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\EquipoWS.wsdl" />
+    <None Include="Connected Services\EquipoWS\EquipoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.actualizarEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.agregarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.eliminarEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.equipo.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.insertarEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.listarEquiposPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.listarEquiposResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EquipoWS\TableSoft.EquipoWS.quitarCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EstadoTicketWS\EstadoTicketWS.wsdl" />
+    <None Include="Connected Services\EstadoTicketWS\EstadoTicketWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\EstadoTicketWS\TableSoft.EstadoTicketWS.actualizarEstadoTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EstadoTicketWS\TableSoft.EstadoTicketWS.eliminarEstadoTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EstadoTicketWS\TableSoft.EstadoTicketWS.estadoTicket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EstadoTicketWS\TableSoft.EstadoTicketWS.insertarEstadoTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\EstadoTicketWS\TableSoft.EstadoTicketWS.listarEstadosTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PaisWS\PaisWS.wsdl" />
+    <None Include="Connected Services\PaisWS\PaisWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PaisWS\TableSoft.PaisWS.listarPaisesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PaisWS\TableSoft.PaisWS.pais.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonaWS\PersonaWS.wsdl" />
+    <None Include="Connected Services\PersonaWS\PersonaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.actualizarPassResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.buscarPersonaxEmailResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.persona.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.verificarCorreoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\PersonaWS\TableSoft.PersonaWS.verificarPersonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProveedorWS\ProveedorWS.wsdl" />
+    <None Include="Connected Services\ProveedorWS\ProveedorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.actualizarProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.eliminarProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.insertarProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.listarProveedoresPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.listarProveedoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ProveedorWS\TableSoft.ProveedorWS.proveedor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\ReporteWS.wsdl" />
+    <None Include="Connected Services\ReporteWS\ReporteWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteGeneralResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketAgenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ReporteWS\TableSoft.ReporteWS.generarReporteTicketUrgenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolWS\RolWS.wsdl" />
+    <None Include="Connected Services\RolWS\RolWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\RolWS\TableSoft.RolWS.actualizarRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolWS\TableSoft.RolWS.eliminarRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolWS\TableSoft.RolWS.insertarRolResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolWS\TableSoft.RolWS.listarRolesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\RolWS\TableSoft.RolWS.rol.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.actualizarTareaPredeterminadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.eliminarTareaPredeterminadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.insertarTareaPredeterminadaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.listarTareasPredeterminadasPorCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaPredeterminadaWS\TableSoft.TareaPredeterminadaWS.tareaPredeterminada.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaPredeterminadaWS\TareaPredeterminadaWS.wsdl" />
+    <None Include="Connected Services\TareaPredeterminadaWS\TareaPredeterminadaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.actualizarInsertarTareasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.actualizarTareaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.eliminarTareaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.eliminarTareasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.insertarTareaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.listarTareasPorTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TableSoft.TareaWS.tarea.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TareaWS\TareaWS.wsdl" />
+    <None Include="Connected Services\TareaWS\TareaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.actualizarTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.buscarTicketPorIdResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.insertarTicketResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.listarTicketsPorAgenteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.listarTicketsPorCategoriaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.listarTicketsPorEmpleadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.listarTicketsPorEstadoPorEquipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.listarTicketsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TableSoft.TicketWS.ticket.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\TicketWS\TicketWS.wsdl" />
+    <None Include="Connected Services\TicketWS\TicketWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.actualizarUrgenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.eliminarUrgenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.insertarUrgenciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.listarUrgenciasPorNombreResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.listarUrgenciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrgenciaWS\TableSoft.UrgenciaWS.urgencia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\UrgenciaWS\UrgenciaWS.wsdl" />
+    <None Include="Connected Services\UrgenciaWS\UrgenciaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="images\InicioEmpleadoAbrir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\InicioEmpleadoVer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ExitMouseDown.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\ExitMouseEnter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="images\InicioSupervisorReporte.png" />
+    <None Include="images\InicioAdministradorSistema.png" />
+    <None Include="Connected Services\UrgenciaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\UrgenciaWS\configuration.svcinfo" />
+    <None Include="Connected Services\UrgenciaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\BibliotecaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\BibliotecaWS\configuration.svcinfo" />
+    <None Include="Connected Services\BibliotecaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\CategoriaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\CategoriaWS\configuration.svcinfo" />
+    <None Include="Connected Services\CategoriaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PersonaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PersonaWS\configuration.svcinfo" />
+    <None Include="Connected Services\PersonaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\AgenteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\AgenteWS\configuration.svcinfo" />
+    <None Include="Connected Services\AgenteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EmpleadoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EmpleadoWS\configuration.svcinfo" />
+    <None Include="Connected Services\EmpleadoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\RolWS\configuration91.svcinfo" />
+    <None Include="Connected Services\RolWS\configuration.svcinfo" />
+    <None Include="Connected Services\RolWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\TicketWS\configuration91.svcinfo" />
+    <None Include="Connected Services\TicketWS\configuration.svcinfo" />
+    <None Include="Connected Services\TicketWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ActivoFijoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ActivoFijoWS\configuration.svcinfo" />
+    <None Include="Connected Services\ActivoFijoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\CiudadWS\configuration91.svcinfo" />
+    <None Include="Connected Services\CiudadWS\configuration.svcinfo" />
+    <None Include="Connected Services\CiudadWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ComentarioWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ComentarioWS\configuration.svcinfo" />
+    <None Include="Connected Services\ComentarioWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EquipoWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EquipoWS\configuration.svcinfo" />
+    <None Include="Connected Services\EquipoWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EstadoTicketWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EstadoTicketWS\configuration.svcinfo" />
+    <None Include="Connected Services\EstadoTicketWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ProveedorWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ProveedorWS\configuration.svcinfo" />
+    <None Include="Connected Services\ProveedorWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\PaisWS\configuration91.svcinfo" />
+    <None Include="Connected Services\PaisWS\configuration.svcinfo" />
+    <None Include="Connected Services\PaisWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\TareaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\TareaWS\configuration.svcinfo" />
+    <None Include="Connected Services\TareaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\TareaPredeterminadaWS\configuration91.svcinfo" />
+    <None Include="Connected Services\TareaPredeterminadaWS\configuration.svcinfo" />
+    <None Include="Connected Services\TareaPredeterminadaWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="images\Eye.png" />
+    <None Include="images\EyeMouseDown.png" />
+    <None Include="images\EyeMouseEnter.png" />
+    <None Include="images\Minus.png" />
+    <None Include="images\Plus.png" />
+    <None Include="Connected Services\ReporteWS\configuration91.svcinfo" />
+    <None Include="Connected Services\ReporteWS\configuration.svcinfo" />
+    <None Include="Connected Services\ReporteWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\EmailWS\configuration91.svcinfo" />
+    <None Include="Connected Services\EmailWS\configuration.svcinfo" />
+    <None Include="Connected Services\EmailWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="images\Cia.jpg" />
+    <None Include="images\LogoPucpSpa.png" />
+    <None Include="images\LoginDisabled.png" />
+    <None Include="images\LoginEnabled.png" />
+    <None Include="images\LoginBoxDown.png" />
+    <None Include="images\LoginBoxEnter.png" />
+    <None Include="images\LoginBox.png" />
+    <None Include="images\LoginEnabledDown.png" />
+    <None Include="images\LoginEnabledEnter.png" />
+    <None Include="images\Close.png" />
+    <None Include="images\CloseDown.png" />
+    <None Include="images\CloseEnter.png" />
+    <None Include="images\PasswordHidden.png" />
+    <None Include="images\PasswordShown.png" />
+    <None Include="images\Loading.gif" />
+    <None Include="Resources\refresh-button-png-1.png" />
+    <Content Include="tslogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ActivoFijoWS\" />
+    <WCFMetadataStorage Include="Connected Services\AgenteWS\" />
+    <WCFMetadataStorage Include="Connected Services\BibliotecaWS\" />
+    <WCFMetadataStorage Include="Connected Services\CategoriaWS\" />
+    <WCFMetadataStorage Include="Connected Services\CiudadWS\" />
+    <WCFMetadataStorage Include="Connected Services\ComentarioWS\" />
+    <WCFMetadataStorage Include="Connected Services\EmailWS\" />
+    <WCFMetadataStorage Include="Connected Services\EmpleadoWS\" />
+    <WCFMetadataStorage Include="Connected Services\EquipoWS\" />
+    <WCFMetadataStorage Include="Connected Services\EstadoTicketWS\" />
+    <WCFMetadataStorage Include="Connected Services\PaisWS\" />
+    <WCFMetadataStorage Include="Connected Services\PersonaWS\" />
+    <WCFMetadataStorage Include="Connected Services\ProveedorWS\" />
+    <WCFMetadataStorage Include="Connected Services\ReporteWS\" />
+    <WCFMetadataStorage Include="Connected Services\RolWS\" />
+    <WCFMetadataStorage Include="Connected Services\TareaPredeterminadaWS\" />
+    <WCFMetadataStorage Include="Connected Services\TareaWS\" />
+    <WCFMetadataStorage Include="Connected Services\TicketWS\" />
+    <WCFMetadataStorage Include="Connected Services\UrgenciaWS\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

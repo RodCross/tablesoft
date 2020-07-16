@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarAgente" type="tns:actualizarAgente" />
+  <xs:element name="actualizarAgenteResponse" type="tns:actualizarAgenteResponse" />
+  <xs:element name="buscarAgentePorCodigo" type="tns:buscarAgentePorCodigo" />
+  <xs:element name="buscarAgentePorCodigoResponse" type="tns:buscarAgentePorCodigoResponse" />
+  <xs:element name="eliminarAgente" type="tns:eliminarAgente" />
+  <xs:element name="eliminarAgenteResponse" type="tns:eliminarAgenteResponse" />
+  <xs:element name="insertarAgente" type="tns:insertarAgente" />
+  <xs:element name="insertarAgenteResponse" type="tns:insertarAgenteResponse" />
+  <xs:element name="listarAgentes" type="tns:listarAgentes" />
+  <xs:element name="listarAgentesPorEquipo" type="tns:listarAgentesPorEquipo" />
+  <xs:element name="listarAgentesPorEquipoResponse" type="tns:listarAgentesPorEquipoResponse" />
+  <xs:element name="listarAgentesPorNombre" type="tns:listarAgentesPorNombre" />
+  <xs:element name="listarAgentesPorNombreResponse" type="tns:listarAgentesPorNombreResponse" />
+  <xs:element name="listarAgentesResponse" type="tns:listarAgentesResponse" />
+  <xs:complexType name="actualizarAgente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objAgente" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="agente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="agenteEmail" type="xs:string" />
+          <xs:element name="agenteId" type="xs:int" />
+          <xs:element minOccurs="0" name="equipo" type="tns:equipo" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="listaTickets" nillable="true" type="tns:ticket" />
+          <xs:element minOccurs="0" name="rol" type="tns:rol" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="dni" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="personaEmail" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+      <xs:element name="tipo" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="equipo">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="equipoId" type="xs:int" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaAgentes" nillable="true" type="tns:agente" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaCategorias" nillable="true" type="tns:categoria" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="categoria">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="categoriaId" type="xs:int" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="tareasPredeterminadas" nillable="true" type="tns:tareaPredeterminada" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="tareaPredeterminada">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
+      <xs:element name="tareaPredeterminadaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ticket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="activoFijo" type="tns:activoFijo" />
+      <xs:element minOccurs="0" name="agente" type="tns:agente" />
+      <xs:element minOccurs="0" name="alumnoEmail" type="xs:string" />
+      <xs:element minOccurs="0" name="asunto" type="xs:string" />
+      <xs:element minOccurs="0" name="biblioteca" type="tns:biblioteca" />
+      <xs:element minOccurs="0" name="categoria" type="tns:categoria" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="comentarios" nillable="true" type="tns:comentario" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="empleado" type="tns:empleado" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoTicket" />
+      <xs:element minOccurs="0" name="fechaCierre" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCierreMaximo" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaEnvio" type="xs:string" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="historialEstado" nillable="true" type="tns:cambioEstadoTicket" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="historialTransfExterna" nillable="true" type="tns:transferenciaExterna" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="historialTransfInterna" nillable="true" type="tns:transferenciaInterna" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="listaTareas" nillable="true" type="tns:tarea" />
+      <xs:element minOccurs="0" name="proveedor" type="tns:proveedor" />
+      <xs:element name="retrasado" type="xs:boolean" />
+      <xs:element name="ticketId" type="xs:int" />
+      <xs:element minOccurs="0" name="urgencia" type="tns:urgencia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="activoFijo">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="activoFijoId" type="xs:int" />
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+      <xs:element minOccurs="0" name="marca" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="tipo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="biblioteca">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="abreviatura" type="xs:string" />
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="bibliotecaId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="comentario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="autor" type="tns:persona" />
+      <xs:element name="comentarioId" type="xs:int" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+      <xs:element minOccurs="0" name="texto" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="empleado">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="biblioteca" type="tns:biblioteca" />
+          <xs:element name="empleadoId" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="listaTickets" nillable="true" type="tns:ticket" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="estadoTicket">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="estadoId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cambioEstadoTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agenteResponsable" type="tns:agente" />
+      <xs:element name="cambioEstadoTicketId" type="xs:int" />
+      <xs:element minOccurs="0" name="comentario" type="xs:string" />
+      <xs:element minOccurs="0" name="estadoTo" type="tns:estadoTicket" />
+      <xs:element minOccurs="0" name="fechaCambioEstado" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transferenciaExterna">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:transferenciaTicket">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="proveedorTo" type="tns:proveedor" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="transferenciaTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agenteResponsable" type="tns:agente" />
+      <xs:element minOccurs="0" name="comentario" type="xs:string" />
+      <xs:element minOccurs="0" name="fecha" type="xs:string" />
+      <xs:element name="transferenciaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="proveedor">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="ciudad" type="tns:ciudad" />
+      <xs:element minOccurs="0" name="direccion" type="xs:string" />
+      <xs:element minOccurs="0" name="email" type="xs:string" />
+      <xs:element name="proveedorId" type="xs:int" />
+      <xs:element minOccurs="0" name="razonSocial" type="xs:string" />
+      <xs:element minOccurs="0" name="ruc" type="xs:string" />
+      <xs:element minOccurs="0" name="telefono" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ciudad">
+    <xs:sequence>
+      <xs:element name="ciudadId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="pais" type="tns:pais" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="pais">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="paisId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="transferenciaInterna">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:transferenciaTicket">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="categoriaTo" type="tns:categoria" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="tarea">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="agente" type="tns:agente" />
+      <xs:element name="completado" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCompletado" type="xs:string" />
+      <xs:element minOccurs="0" name="fechaCreacion" type="xs:string" />
+      <xs:element name="tareaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="urgencia">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="plazoMaximo" type="xs:int" />
+      <xs:element name="urgenciaId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="rol">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element name="rolId" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarAgenteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentesPorEquipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objAgente" type="tns:equipo" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentesPorEquipoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarAgentePorCodigo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="buscarAgentePorCodigoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentes">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarAgentesResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentesPorNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarAgentesPorNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarAgente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objAgente" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarAgenteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAgente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objAgente" type="tns:agente" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarAgenteResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,129 @@
+﻿using System;
+using System.ComponentModel;
+using System.Windows.Forms;
+
+namespace TableSoft
+{
+    public partial class frmSeleccionarTareaPredeterminada : Form
+    {
+        private TareaPredeterminadaWS.categoria categoria;
+        private TareaPredeterminadaWS.tareaPredeterminada tareaSeleccionada;
+        private TareaPredeterminadaWS.TareaPredeterminadaWSClient tareaPredeterminadaDAO;
+        private BindingList<TareaPredeterminadaWS.tareaPredeterminada> tareasPredeterminadas;
+
+        public frmSeleccionarTareaPredeterminada(CategoriaWS.categoria cat)
+        {
+            InitializeComponent();
+            categoria = new TareaPredeterminadaWS.categoria();
+            tareaPredeterminadaDAO = new TareaPredeterminadaWS.TareaPredeterminadaWSClient();
+
+            categoria.categoriaId = cat.categoriaId;
+            categoria.nombre = cat.nombre;
+            categoria.activo = cat.activo;
+
+            var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+            if (tareasPred == null)
+            {
+                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+            }
+            else
+            {
+                tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
+
+            }
+            lblNombreCategoria.Text = categoria.nombre;
+
+            dgvLista.AutoGenerateColumns = false;
+            dgvLista.DataSource = tareasPredeterminadas;
+        }
+
+        private void pnlTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            Movimiento.MoverVentana(Handle, e.Button);
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(categoria);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+                if (tareasPred == null)
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+                }
+                else
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
+
+                }
+                dgvLista.DataSource = tareasPredeterminadas;
+            }
+        }
+
+        private void btnSeleccionar_Click(object sender, EventArgs e)
+        {
+            tareaSeleccionada = (TareaPredeterminadaWS.tareaPredeterminada)dgvLista.CurrentRow.DataBoundItem;
+            frmGestionarTareaPredeterminada frm = new frmGestionarTareaPredeterminada(tareaSeleccionada);
+            //a ver
+            if(frm.ShowDialog() == DialogResult.OK)
+            {
+                var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+                if (tareasPred == null)
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+                }
+                else
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
+
+                }
+                dgvLista.DataSource = tareasPredeterminadas;
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            tareaSeleccionada = (TareaPredeterminadaWS.tareaPredeterminada)dgvLista.CurrentRow.DataBoundItem;
+            if (MessageBox.Show("¿Desea eliminar el registro?", "Eliminar Tarea Predeterminada", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                if (tareaPredeterminadaDAO.eliminarTareaPredeterminada(tareaSeleccionada) > -1)
+                {
+                    MessageBox.Show(
+                    "Se ha eliminado el registro exitosamente",
+                    "Eliminación exitosa",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                else
+                {
+                    MessageBox.Show(
+                    "Ha ocurrido un error al eliminar el registro",
+                    "Eliminación no realizada",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information
+                    );
+                }
+                var tareasPred = tareaPredeterminadaDAO.listarTareasPredeterminadasPorCategoria(categoria);
+
+                if (tareasPred == null)
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>();
+                }
+                else
+                {
+                    tareasPredeterminadas = new BindingList<TareaPredeterminadaWS.tareaPredeterminada>(tareasPred);
+
+                }
+                dgvLista.DataSource = tareasPredeterminadas;
+            }
+        }
+    }
+}

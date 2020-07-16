@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="EmpleadoWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/EmpleadoWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="actualizarEmpleado">
+    <part name="parameters" element="tns:actualizarEmpleado" />
+  </message>
+  <message name="actualizarEmpleadoResponse">
+    <part name="parameters" element="tns:actualizarEmpleadoResponse" />
+  </message>
+  <message name="listarEmpleadosDeBiblioteca">
+    <part name="parameters" element="tns:listarEmpleadosDeBiblioteca" />
+  </message>
+  <message name="listarEmpleadosDeBibliotecaResponse">
+    <part name="parameters" element="tns:listarEmpleadosDeBibliotecaResponse" />
+  </message>
+  <message name="buscarEmpleadoPorCodigo">
+    <part name="parameters" element="tns:buscarEmpleadoPorCodigo" />
+  </message>
+  <message name="buscarEmpleadoPorCodigoResponse">
+    <part name="parameters" element="tns:buscarEmpleadoPorCodigoResponse" />
+  </message>
+  <message name="listarEmpleadosPorNombre">
+    <part name="parameters" element="tns:listarEmpleadosPorNombre" />
+  </message>
+  <message name="listarEmpleadosPorNombreResponse">
+    <part name="parameters" element="tns:listarEmpleadosPorNombreResponse" />
+  </message>
+  <message name="listarEmpleados">
+    <part name="parameters" element="tns:listarEmpleados" />
+  </message>
+  <message name="listarEmpleadosResponse">
+    <part name="parameters" element="tns:listarEmpleadosResponse" />
+  </message>
+  <message name="insertarEmpleado">
+    <part name="parameters" element="tns:insertarEmpleado" />
+  </message>
+  <message name="insertarEmpleadoResponse">
+    <part name="parameters" element="tns:insertarEmpleadoResponse" />
+  </message>
+  <message name="eliminarEmpleado">
+    <part name="parameters" element="tns:eliminarEmpleado" />
+  </message>
+  <message name="eliminarEmpleadoResponse">
+    <part name="parameters" element="tns:eliminarEmpleadoResponse" />
+  </message>
+  <portType name="EmpleadoWS">
+    <operation name="actualizarEmpleado">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoRequest" message="tns:actualizarEmpleado" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/actualizarEmpleadoResponse" message="tns:actualizarEmpleadoResponse" />
+    </operation>
+    <operation name="listarEmpleadosDeBiblioteca">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosDeBibliotecaRequest" message="tns:listarEmpleadosDeBiblioteca" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosDeBibliotecaResponse" message="tns:listarEmpleadosDeBibliotecaResponse" />
+    </operation>
+    <operation name="buscarEmpleadoPorCodigo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/buscarEmpleadoPorCodigoRequest" message="tns:buscarEmpleadoPorCodigo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/buscarEmpleadoPorCodigoResponse" message="tns:buscarEmpleadoPorCodigoResponse" />
+    </operation>
+    <operation name="listarEmpleadosPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreRequest" message="tns:listarEmpleadosPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosPorNombreResponse" message="tns:listarEmpleadosPorNombreResponse" />
+    </operation>
+    <operation name="listarEmpleados">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosRequest" message="tns:listarEmpleados" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/listarEmpleadosResponse" message="tns:listarEmpleadosResponse" />
+    </operation>
+    <operation name="insertarEmpleado">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/insertarEmpleadoRequest" message="tns:insertarEmpleado" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/insertarEmpleadoResponse" message="tns:insertarEmpleadoResponse" />
+    </operation>
+    <operation name="eliminarEmpleado">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/eliminarEmpleadoRequest" message="tns:eliminarEmpleado" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EmpleadoWS/eliminarEmpleadoResponse" message="tns:eliminarEmpleadoResponse" />
+    </operation>
+  </portType>
+  <binding name="EmpleadoWSPortBinding" type="tns:EmpleadoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="actualizarEmpleado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEmpleadosDeBiblioteca">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="buscarEmpleadoPorCodigo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEmpleadosPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEmpleados">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarEmpleado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEmpleado">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EmpleadoWS">
+    <port name="EmpleadoWSPort" binding="tns:EmpleadoWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/EmpleadoWS" />
+    </port>
+  </service>
+</definitions>

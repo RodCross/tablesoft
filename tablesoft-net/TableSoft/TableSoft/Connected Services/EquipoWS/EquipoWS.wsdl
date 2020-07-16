@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="EquipoWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/EquipoWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="listarEquiposPorNombre">
+    <part name="parameters" element="tns:listarEquiposPorNombre" />
+  </message>
+  <message name="listarEquiposPorNombreResponse">
+    <part name="parameters" element="tns:listarEquiposPorNombreResponse" />
+  </message>
+  <message name="actualizarEquipo">
+    <part name="parameters" element="tns:actualizarEquipo" />
+  </message>
+  <message name="actualizarEquipoResponse">
+    <part name="parameters" element="tns:actualizarEquipoResponse" />
+  </message>
+  <message name="eliminarEquipo">
+    <part name="parameters" element="tns:eliminarEquipo" />
+  </message>
+  <message name="eliminarEquipoResponse">
+    <part name="parameters" element="tns:eliminarEquipoResponse" />
+  </message>
+  <message name="insertarEquipo">
+    <part name="parameters" element="tns:insertarEquipo" />
+  </message>
+  <message name="insertarEquipoResponse">
+    <part name="parameters" element="tns:insertarEquipoResponse" />
+  </message>
+  <message name="quitarCategoria">
+    <part name="parameters" element="tns:quitarCategoria" />
+  </message>
+  <message name="quitarCategoriaResponse">
+    <part name="parameters" element="tns:quitarCategoriaResponse" />
+  </message>
+  <message name="listarEquipos">
+    <part name="parameters" element="tns:listarEquipos" />
+  </message>
+  <message name="listarEquiposResponse">
+    <part name="parameters" element="tns:listarEquiposResponse" />
+  </message>
+  <message name="agregarCategoria">
+    <part name="parameters" element="tns:agregarCategoria" />
+  </message>
+  <message name="agregarCategoriaResponse">
+    <part name="parameters" element="tns:agregarCategoriaResponse" />
+  </message>
+  <portType name="EquipoWS">
+    <operation name="listarEquiposPorNombre">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreRequest" message="tns:listarEquiposPorNombre" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposPorNombreResponse" message="tns:listarEquiposPorNombreResponse" />
+    </operation>
+    <operation name="actualizarEquipo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoRequest" message="tns:actualizarEquipo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/actualizarEquipoResponse" message="tns:actualizarEquipoResponse" />
+    </operation>
+    <operation name="eliminarEquipo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoRequest" message="tns:eliminarEquipo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/eliminarEquipoResponse" message="tns:eliminarEquipoResponse" />
+    </operation>
+    <operation name="insertarEquipo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoRequest" message="tns:insertarEquipo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/insertarEquipoResponse" message="tns:insertarEquipoResponse" />
+    </operation>
+    <operation name="quitarCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaRequest" message="tns:quitarCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/quitarCategoriaResponse" message="tns:quitarCategoriaResponse" />
+    </operation>
+    <operation name="listarEquipos">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposRequest" message="tns:listarEquipos" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/listarEquiposResponse" message="tns:listarEquiposResponse" />
+    </operation>
+    <operation name="agregarCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaRequest" message="tns:agregarCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/EquipoWS/agregarCategoriaResponse" message="tns:agregarCategoriaResponse" />
+    </operation>
+  </portType>
+  <binding name="EquipoWSPortBinding" type="tns:EquipoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarEquiposPorNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarEquipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarEquipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarEquipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="quitarCategoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarEquipos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregarCategoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="EquipoWS">
+    <port name="EquipoWSPort" binding="tns:EquipoWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/EquipoWS" />
+    </port>
+  </service>
+</definitions>

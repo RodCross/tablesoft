@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ReporteWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/ReporteWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="generarReporteTicket">
+    <part name="parameters" element="tns:generarReporteTicket" />
+  </message>
+  <message name="generarReporteTicketResponse">
+    <part name="parameters" element="tns:generarReporteTicketResponse" />
+  </message>
+  <message name="generarReporteTicketUrgencia">
+    <part name="parameters" element="tns:generarReporteTicketUrgencia" />
+  </message>
+  <message name="generarReporteTicketUrgenciaResponse">
+    <part name="parameters" element="tns:generarReporteTicketUrgenciaResponse" />
+  </message>
+  <message name="generarReporteTicketCategoria">
+    <part name="parameters" element="tns:generarReporteTicketCategoria" />
+  </message>
+  <message name="generarReporteTicketCategoriaResponse">
+    <part name="parameters" element="tns:generarReporteTicketCategoriaResponse" />
+  </message>
+  <message name="generarReporteTicketAgente">
+    <part name="parameters" element="tns:generarReporteTicketAgente" />
+  </message>
+  <message name="generarReporteTicketAgenteResponse">
+    <part name="parameters" element="tns:generarReporteTicketAgenteResponse" />
+  </message>
+  <message name="generarReporteTicketEquipo">
+    <part name="parameters" element="tns:generarReporteTicketEquipo" />
+  </message>
+  <message name="generarReporteTicketEquipoResponse">
+    <part name="parameters" element="tns:generarReporteTicketEquipoResponse" />
+  </message>
+  <message name="generarReporteGeneral">
+    <part name="parameters" element="tns:generarReporteGeneral" />
+  </message>
+  <message name="generarReporteGeneralResponse">
+    <part name="parameters" element="tns:generarReporteGeneralResponse" />
+  </message>
+  <portType name="ReporteWS">
+    <operation name="generarReporteTicket">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketRequest" message="tns:generarReporteTicket" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketResponse" message="tns:generarReporteTicketResponse" />
+    </operation>
+    <operation name="generarReporteTicketUrgencia">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketUrgenciaRequest" message="tns:generarReporteTicketUrgencia" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketUrgenciaResponse" message="tns:generarReporteTicketUrgenciaResponse" />
+    </operation>
+    <operation name="generarReporteTicketCategoria">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketCategoriaRequest" message="tns:generarReporteTicketCategoria" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketCategoriaResponse" message="tns:generarReporteTicketCategoriaResponse" />
+    </operation>
+    <operation name="generarReporteTicketAgente">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketAgenteRequest" message="tns:generarReporteTicketAgente" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketAgenteResponse" message="tns:generarReporteTicketAgenteResponse" />
+    </operation>
+    <operation name="generarReporteTicketEquipo">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketEquipoRequest" message="tns:generarReporteTicketEquipo" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteTicketEquipoResponse" message="tns:generarReporteTicketEquipoResponse" />
+    </operation>
+    <operation name="generarReporteGeneral">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteGeneralRequest" message="tns:generarReporteGeneral" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/ReporteWS/generarReporteGeneralResponse" message="tns:generarReporteGeneralResponse" />
+    </operation>
+  </portType>
+  <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="generarReporteTicket">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteTicketUrgencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteTicketCategoria">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteTicketAgente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteTicketEquipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="generarReporteGeneral">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ReporteWS">
+    <port name="ReporteWSPort" binding="tns:ReporteWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/ReporteWS" />
+    </port>
+  </service>
+</definitions>

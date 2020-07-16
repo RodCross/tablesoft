@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://services.tablesoft.pucp.edu.pe/" targetNamespace="http://services.tablesoft.pucp.edu.pe/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarEstadoTicket" type="tns:actualizarEstadoTicket" />
+  <xs:element name="actualizarEstadoTicketResponse" type="tns:actualizarEstadoTicketResponse" />
+  <xs:element name="eliminarEstadoTicket" type="tns:eliminarEstadoTicket" />
+  <xs:element name="eliminarEstadoTicketResponse" type="tns:eliminarEstadoTicketResponse" />
+  <xs:element name="insertarEstadoTicket" type="tns:insertarEstadoTicket" />
+  <xs:element name="insertarEstadoTicketResponse" type="tns:insertarEstadoTicketResponse" />
+  <xs:element name="listarEstadosTicket" type="tns:listarEstadosTicket" />
+  <xs:element name="listarEstadosTicketResponse" type="tns:listarEstadosTicketResponse" />
+  <xs:complexType name="actualizarEstadoTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objEstadoTicket" type="tns:estadoTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="estadoTicket">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element minOccurs="0" name="descripcion" type="xs:string" />
+      <xs:element name="estadoId" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarEstadoTicketResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarEstadosTicket">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarEstadosTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:estadoTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarEstadoTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objEstadoTicket" type="tns:estadoTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarEstadoTicketResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarEstadoTicket">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="objEstadoTicket" type="tns:estadoTicket" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarEstadoTicketResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://services.tablesoft.pucp.edu.pe/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="CiudadWS" targetNamespace="http://services.tablesoft.pucp.edu.pe/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://23.22.97.25:8080/TableSoftServicesTest/CiudadWS?xsd=1" namespace="http://services.tablesoft.pucp.edu.pe/" />
+    </xsd:schema>
+  </types>
+  <message name="listarCiudadesDePais">
+    <part name="parameters" element="tns:listarCiudadesDePais" />
+  </message>
+  <message name="listarCiudadesDePaisResponse">
+    <part name="parameters" element="tns:listarCiudadesDePaisResponse" />
+  </message>
+  <portType name="CiudadWS">
+    <operation name="listarCiudadesDePais">
+      <input wsam:Action="http://services.tablesoft.pucp.edu.pe/CiudadWS/listarCiudadesDePaisRequest" message="tns:listarCiudadesDePais" />
+      <output wsam:Action="http://services.tablesoft.pucp.edu.pe/CiudadWS/listarCiudadesDePaisResponse" message="tns:listarCiudadesDePaisResponse" />
+    </operation>
+  </portType>
+  <binding name="CiudadWSPortBinding" type="tns:CiudadWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarCiudadesDePais">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="CiudadWS">
+    <port name="CiudadWSPort" binding="tns:CiudadWSPortBinding">
+      <soap:address location="http://23.22.97.25:8080/TableSoftServicesTest/CiudadWS" />
+    </port>
+  </service>
+</definitions>

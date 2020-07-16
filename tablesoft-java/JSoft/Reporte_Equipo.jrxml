@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Reporte_Categoria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ea81d21a-8566-4aa4-ab98-f3e1bb848c0e">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Equipo_id" class="java.lang.Integer"/>
+	<parameter name="Equipo_nombre" class="java.lang.String"/>
+	<parameter name="Equipo_descripcion" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_TRANS_TICKET" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_TRANS_EXTERNA" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_CAMBIOS" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_TAREAS" class="java.lang.String"/>
+	<parameter name="RUTA_LISTA_COMENTARIOS" class="java.lang.String"/>
+	<parameter name="IMAGEN_REPORTE" class="java.awt.Image">
+		<defaultValueExpression><![CDATA[$P{IMAGEN_REPORTE}]]></defaultValueExpression>
+	</parameter>
+	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
+	<parameter name="FechaFin" class="java.sql.Timestamp"/>
+	<parameter name="RUTA_REPORTE" class="java.lang.String"/>
+	<parameter name="RUTA_GRAFICO_ESCALADOS" class="java.lang.String"/>
+	<parameter name="RUTA_GRAFICO_DEMORADOS" class="java.lang.String"/>
+	<parameter name="RUTA_GRAFICO_RECATEGORIZADOS" class="java.lang.String"/>
+	<parameter name="RUTA_RESUMEN_ESCALADOS" class="java.lang.String"/>
+	<parameter name="RUTA_RESUMEN_RECATEGORIZADOS" class="java.lang.String"/>
+	<parameter name="RUTA_RESUMEN_DEMORADOS" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_DIA" class="java.lang.String"/>
+	<parameter name="RUTA_GRAFICO_ACTIVOFIJO" class="java.lang.String"/>
+	<parameter name="RUTA_RESUMEN_ACTIVOFIJO" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_CATEGORIA" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_URGENCIA" class="java.lang.String"/>
+	<parameter name="RUTA_TICKET_AGENTE" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[select T.ticket_id
+from ticket T 
+INNER JOIN agente A on T.agente_id = A.agente_id
+where A.equipo_id =  $P{Equipo_id}  
+and T.fecha_envio> $P{FechaInicio} 
+and T.fecha_envio < $P{FechaFin}  ;]]>
+	</queryString>
+	<field name="ticket_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ticket_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ticket"/>
+	</field>
+	<variable name="Total" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ticket_id}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="247" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="111" width="225" height="20" uuid="cc444155-2387-4fb7-b8af-fe1919c80502">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Equipo N° "  + $P{Equipo_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="132" width="552" height="20" uuid="a74a0698-304f-4cee-922d-401fdb5daf3b">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nombre: "  + $P{Equipo_nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="154" width="552" height="43" uuid="869e589a-95b3-4828-b871-9d33a46f9755"/>
+				<textElement>
+					<font fontName="Arial" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Descripcion: " + $P{Equipo_descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="2" y="197" width="553" height="40" uuid="11f84904-62a4-4bc8-aa19-8e8fbfe4f236">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tickets enviados desde " + DATEFORMAT($P{FechaInicio},"dd-MM-YYYY") +  " hasta "  + DATEFORMAT($P{FechaFin}, "dd-MM-YYYY")]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="6" width="595" height="90" forecolor="#006699" backcolor="#006699" uuid="5be6eb3e-5ab6-41b9-acdd-7ba2fee8a594"/>
+				<staticText>
+					<reportElement x="17" y="-4" width="473" height="66" forecolor="#FFFFFF" uuid="71987d2e-5af3-4ac2-9473-9771a7d3e358"/>
+					<box>
+						<pen lineColor="#FFFFFF"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Arial" size="30" isBold="true"/>
+					</textElement>
+					<text><![CDATA[Reporte de tickets por equipo]]></text>
+				</staticText>
+				<image>
+					<reportElement x="500" y="10" width="80" height="73" uuid="e3362f89-d445-4043-80be-cc942c35cc75"/>
+					<imageExpression><![CDATA[$P{IMAGEN_REPORTE}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement x="17" y="50" width="449" height="29" forecolor="#FFFFFF" uuid="4e73b084-3679-42f3-ad67-b1bd9c405aec"/>
+					<textElement textAlignment="Left">
+						<font fontName="Arial" size="18" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Sistema de Bibliotecas]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<subreport>
+				<reportElement positionType="Float" x="0" y="0" width="515" height="41" uuid="483dee88-d172-49a4-bd94-209a87c6c6d0"/>
+				<subreportParameter name="Ticket_id">
+					<subreportParameterExpression><![CDATA[$F{ticket_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_LISTA_TRANS_TICKET">
+					<subreportParameterExpression><![CDATA[$P{RUTA_LISTA_TRANS_TICKET}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_LISTA_TRANS_EXTERNA">
+					<subreportParameterExpression><![CDATA[$P{RUTA_LISTA_TRANS_EXTERNA}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_LISTA_CAMBIOS">
+					<subreportParameterExpression><![CDATA[$P{RUTA_LISTA_CAMBIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_LISTA_TAREAS">
+					<subreportParameterExpression><![CDATA[$P{RUTA_LISTA_TAREAS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_LISTA_COMENTARIOS">
+					<subreportParameterExpression><![CDATA[$P{RUTA_LISTA_COMENTARIOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="IMAGEN_REPORTE">
+					<subreportParameterExpression><![CDATA[$P{IMAGEN_REPORTE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_REPORTE}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="25">
+			<textField isBlankWhenNull="false">
+				<reportElement x="434" y="10" width="80" height="13" forecolor="#000000" uuid="25533b18-6c5a-40aa-a85a-5058d1ec1d0d"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Página "+$V{PAGE_NUMBER}+" de"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report" isBlankWhenNull="false">
+				<reportElement x="515" y="10" width="40" height="13" forecolor="#000000" uuid="6eb216b8-2646-4935-ab5d-849ebad867b1"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy" isBlankWhenNull="false">
+				<reportElement x="2" y="11" width="197" height="13" forecolor="#000000" uuid="4b2dd62e-c289-4c6d-b8cb-e0bad8a13a53"/>
+				<textElement verticalAlignment="Middle" markup="none">
+					<font fontName="Arial" size="10" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="6" width="555" height="1" uuid="18dbb32f-557f-412f-9613-c6ad03da62ce"/>
+			</line>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="637" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="12" width="160" height="20" uuid="59bb36b9-9bf4-4aa3-998d-317aeacf8a1a">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Resumen: "]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="65" width="550" height="68" uuid="5f753364-9365-4838-a6af-80fb0a85d29f"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_GRAFICO">
+					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_ESCALADOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_RESUMEN_ESCALADOS}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="195" width="550" height="70" uuid="c158f47b-1a74-4bc5-8323-29e0f80ed704"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_GRAFICO">
+					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_DEMORADOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_RESUMEN_DEMORADOS}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="133" width="550" height="60" uuid="a83f1b76-d765-4786-9f28-1c7ddfcd5bdf"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_GRAFICO">
+					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_RECATEGORIZADOS}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_RESUMEN_RECATEGORIZADOS}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="341" width="550" height="55" uuid="9f4a2c5f-27f3-49cc-b114-406dc0d42c81"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_DIA}]]></subreportExpression>
+			</subreport>
+			<textField>
+				<reportElement x="0" y="44" width="270" height="20" uuid="5fecd3f2-d8cc-46cb-b401-29edbee1dd24">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Cantidad de tickets enviados:  "  + $V{Total}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="396" width="550" height="60" uuid="eb83e028-9a2f-49f2-a954-673d1d69d84c"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_CATEGORIA}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="266" width="551" height="70" uuid="f7dd559a-5f60-4617-a8b5-2ec0a0588384"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="RUTA_GRAFICO">
+					<subreportParameterExpression><![CDATA[$P{RUTA_GRAFICO_ACTIVOFIJO}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_RESUMEN_ACTIVOFIJO}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="-1" y="460" width="551" height="80" uuid="2adb3c99-fd6f-4f0a-83c7-2558dbc012f4"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_URGENCIA}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="540" width="550" height="90" uuid="10329c7e-e4d1-41de-8249-8571825c7141"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Equipo_id">
+					<subreportParameterExpression><![CDATA[$P{Equipo_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_TICKET_AGENTE}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

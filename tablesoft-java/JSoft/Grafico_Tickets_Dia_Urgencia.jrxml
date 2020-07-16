@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Gráfico_Escalados" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79552aa4-87bf-4e53-beba-535a2c6b6472">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
+	<parameter name="FechaFin" class="java.sql.Timestamp"/>
+	<parameter name="Urgencia_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select date(fecha_envio) as "Dia de Envio",
+    count(ticket_id)
+from ticket
+where urgencia_id = $P{Urgencia_id} 
+and fecha_envio > $P{FechaInicio} 
+and fecha_envio <  $P{FechaFin} 
+group by date(fecha_envio)]]>
+	</queryString>
+	<field name="Dia de Envio" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.label" value="Dia de Envio"/>
+	</field>
+	<field name="count(ticket_id)" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="count(ticket_id)"/>
+	</field>
+	<summary>
+		<band height="253">
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="-20" y="17" width="548" height="200" uuid="1a6d4d41-2fd9-4dfa-a5a3-308c6cf4173d">
+						<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Dia de Envio}+""]]></seriesExpression>
+						<categoryExpression><![CDATA[""]]></categoryExpression>
+						<valueExpression><![CDATA[$F{count(ticket_id)}]]></valueExpression>
+						<labelExpression><![CDATA[$F{Dia de Envio}+""]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot>
+						<seriesColor seriesOrder="0" color="#EB636B"/>
+						<seriesColor seriesOrder="1" color="#779ECB"/>
+						<seriesColor seriesOrder="2" color="#B00EF9"/>
+						<seriesColor seriesOrder="3" color="#0D12D7"/>
+						<seriesColor seriesOrder="4" color="#E1E24C"/>
+						<seriesColor seriesOrder="5" color="#0DCB7B"/>
+						<seriesColor seriesOrder="6" color="#6A9EBF"/>
+						<seriesColor seriesOrder="7" color="#DC22FA"/>
+						<seriesColor seriesOrder="8" color="#3CFE93"/>
+						<seriesColor seriesOrder="9" color="#891EC1"/>
+						<seriesColor seriesOrder="10" color="#4D55B5"/>
+						<seriesColor seriesOrder="11" color="#9CD53D"/>
+						<seriesColor seriesOrder="12" color="#DB4DE2"/>
+						<seriesColor seriesOrder="13" color="#4BB7ED"/>
+						<seriesColor seriesOrder="14" color="#9BFED3"/>
+						<seriesColor seriesOrder="15" color="#3D51F4"/>
+						<seriesColor seriesOrder="16" color="#4F3736"/>
+					</plot>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<staticText>
+				<reportElement x="-20" y="-20" width="330" height="30" uuid="cdec6b80-950a-4e48-afd8-6a5e70a40d72"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Gráfico de tickets enviados, distribuidos por día de envío: ]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

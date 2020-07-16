@@ -1,0 +1,58 @@
+package pe.edu.pucp.tablesoft.model;
+
+
+public class EstadoTicket {
+    private int estadoId;
+    private String nombre;
+    private String descripcion;
+    private boolean activo;
+    
+    public EstadoTicket(){
+        
+    }
+
+    public EstadoTicket(int estadoId) {
+        this.estadoId = estadoId;
+    }
+
+    public EstadoTicket(String nombre, String descripcion) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+    }
+    
+
+    public int getEstadoId() {
+        return estadoId;
+    }
+
+    public void setEstadoId(int estadoId) {
+        this.estadoId = estadoId;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public boolean getActivo() {
+        return activo;
+    }
+
+    public void setActivo(boolean activo) {
+        this.activo = activo;
+    }
+    public String mostrarDatos(){
+        return this.getEstadoId() + " - " + this.getNombre() + " - " + this.getDescripcion();
+    }
+}

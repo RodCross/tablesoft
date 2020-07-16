@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Lista_Tareas_Ticket" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8a3df8fa-a7e6-42c6-8d97-dbc2afe8b8a8">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Ticket_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select T.tarea_id, 
+CONCAT(P.nombre, " " ,P.apellido_paterno, " ",  P.apellido_materno) as nombrePersona,
+T.fecha_creacion,
+T.fecha_completado, 
+T.descripcion,
+T.completado
+from tarea T
+inner join agente A
+on T.agente_id = A.agente_id 
+inner join persona P
+on P.codigo = A.codigo  
+where T.ticket_id =  $P{Ticket_id} ;]]>
+	</queryString>
+	<field name="tarea_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="tarea_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tarea"/>
+	</field>
+	<field name="nombrePersona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombrePersona"/>
+	</field>
+	<field name="fecha_creacion" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_creacion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tarea"/>
+	</field>
+	<field name="fecha_completado" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_completado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tarea"/>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="descripcion"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tarea"/>
+	</field>
+	<field name="completado" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="completado"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="tarea"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="7" width="320" height="23" uuid="99f8ed29-f614-4289-9adf-830b46547208"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de tareas del ticket]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="62" splitType="Stretch">
+			<line>
+				<reportElement x="1" y="0" width="542" height="1" forecolor="#006699" uuid="5fcd5582-7511-40eb-9008-022578051a58"/>
+			</line>
+			<line>
+				<reportElement x="2" y="55" width="541" height="1" forecolor="#006699" uuid="0c4ac240-3750-4f55-a8ab-72b773294a39"/>
+			</line>
+			<staticText>
+				<reportElement x="156" y="3" width="94" height="48" uuid="c5081ef4-42e7-4d1a-848e-be965f653c38">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a1d6a45-c383-4694-a61c-9f585ee56d8a"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de finalizacion de la tarea
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="37" y="3" width="100" height="48" uuid="215a5178-1590-4683-aef9-3a9913d8db49">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf71c8c4-fbe8-4b25-b782-14e18b7cf09d"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de creación de la tarea]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="3" width="26" height="48" uuid="6a876340-828e-419f-be39-74aefa1d6a52">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="53878724-85ac-4790-b963-8f10c94534db"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="3" width="196" height="48" uuid="ede402ca-9dba-4308-8a9c-f84bd3d719c1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e1dedaf-0881-40c0-98f0-51fcdf677807"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="466" y="3" width="74" height="48" uuid="f1e8d674-fc63-4796-892a-288e2b7fa29a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ccf63c-7919-4fd0-ae59-275d74d86f3e"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Estado]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="46" splitType="Stretch">
+			<textField>
+				<reportElement x="4" y="4" width="26" height="39" uuid="aa30b334-68ae-41fb-8556-ae1a4764888b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a0a996bf-e1a4-48ac-ad9b-a863e2b26e08"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tarea_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="37" y="6" width="100" height="39" uuid="3b522a5d-7971-4ce7-9859-39e33d3a3321">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bd4513da-7458-41a6-9f64-cd629960ce98"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fecha_creacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="156" y="6" width="94" height="39" uuid="acf61026-58f3-43ba-9399-ad0ffe1fc16f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="683c43d6-f711-4ddd-afe0-a47d99c5d73f"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[IF($F{fecha_completado} == null,"-----",$F{fecha_completado} )]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="7" width="196" height="39" uuid="baac2144-30ae-4f10-8067-0650fe5b7c9a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f0525a23-b022-4dc1-99f1-f25ae1f0d525"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="6" width="74" height="39" uuid="27b31b82-bded-4868-b2bd-ee576b1f6f96">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3e8ab926-5ffc-4588-bfee-386e9e290d40"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[IF($F{completado}==1,"Completa","Incompleta")]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Resumen_Recategorizados_Categoria" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="a1a9d7ac-3997-4d81-bf86-72dd306aafcf">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
+	<parameter name="FechaFin" class="java.sql.Timestamp"/>
+	<parameter name="Urgencia_id" class="java.lang.Integer"/>
+	<parameter name="RUTA_GRAFICO" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT 
+    A.total_categoria,
+    B.total_escalados
+FROM (SELECT count(distinct ticket_id) AS total_categoria
+      FROM ticket 
+      WHERE urgencia_id = $P{Urgencia_id}   
+      AND fecha_envio > $P{FechaInicio}
+      AND fecha_envio < $P{FechaFin} ) A,
+      (select count(distinct ticket_id) as total_escalados
+       from cambio_estado_ticket
+       where ticket_id in (select ticket_id 
+                           from ticket 
+                           WHERE urgencia_id = $P{Urgencia_id}  
+                            AND fecha_envio > $P{FechaInicio}
+      AND fecha_envio < $P{FechaFin} )
+       and estado_id_to = 3) B;]]>
+	</queryString>
+	<field name="total_categoria" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="total_categoria"/>
+	</field>
+	<field name="total_escalados" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="total_escalados"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<summary>
+		<band height="221" splitType="Stretch">
+			<textField>
+				<reportElement x="-20" y="-18" width="520" height="30" uuid="022ee06e-d556-47c2-be29-4c4987a40cf7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="991649b9-73b3-4459-8c82-89f74fdb90f2"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Porcentaje de tickets escalados entre enviados: " + FIXED($F{total_escalados}.doubleValue()/$F{total_categoria}.doubleValue()*100,2) +"%"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="-20" y="15" width="565" height="200" uuid="d3fa76d1-d289-4dc7-9708-6f421b0929ab"/>
+				<subreportParameter name="FechaInicio">
+					<subreportParameterExpression><![CDATA[$P{FechaInicio}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="FechaFin">
+					<subreportParameterExpression><![CDATA[$P{FechaFin}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Total">
+					<subreportParameterExpression><![CDATA[$F{total_categoria}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="Urgencia_id">
+					<subreportParameterExpression><![CDATA[$P{Urgencia_id}]]></subreportParameterExpression>
+				</subreportParameter>
+				<connectionExpression><![CDATA[$P{REPORT_CONNECTION}]]></connectionExpression>
+				<subreportExpression><![CDATA[$P{RUTA_GRAFICO}]]></subreportExpression>
+			</subreport>
+		</band>
+	</summary>
+</jasperReport>

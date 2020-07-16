@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Gráfico_Escalados" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="79552aa4-87bf-4e53-beba-535a2c6b6472">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="FechaInicio" class="java.sql.Timestamp"/>
+	<parameter name="FechaFin" class="java.sql.Timestamp"/>
+	<parameter name="Equipo_id" class="java.lang.Integer"/>
+	<parameter name="Total" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[SELECT
+    'No escalados' as Nombre,
+    A.total_categoria as Cantidad
+FROM (SELECT count(T.ticket_id) - E.total_escalados AS total_categoria
+      FROM (select count(distinct C.ticket_id) as total_escalados
+             from cambio_estado_ticket C
+             where C.ticket_id in (select T.ticket_id 
+                                   from ticket T
+                                   INNER JOIN agente A ON T.agente_id = A.agente_id
+                                   WHERE A.equipo_id =   $P{Equipo_id}  
+                                   and T.fecha_envio > $P{FechaInicio} 
+                                   and T.fecha_envio <  $P{FechaFin} )
+             and C.estado_id_to = 3) E,
+             ticket T
+      INNER JOIN agente A ON T.agente_id = A.agente_id
+      WHERE A.equipo_id =   $P{Equipo_id} 
+      AND T.fecha_envio > $P{FechaInicio}
+      AND T.fecha_envio < $P{FechaFin}) A
+UNION ALL
+SELECT 
+    'Escalados' as Nombre,
+    B.total_escalados as Cantidad
+FROM (select count(distinct C.ticket_id) as total_escalados
+       from cambio_estado_ticket C
+       where C.ticket_id in (select T.ticket_id 
+                             from ticket T
+                             INNER JOIN agente A ON T.agente_id = A.agente_id
+                             WHERE A.equipo_id =   $P{Equipo_id}  
+                             and T.fecha_envio > $P{FechaInicio} 
+                             and T.fecha_envio <  $P{FechaFin} )
+       and C.estado_id_to = 3) B]]>
+	</queryString>
+	<field name="Nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="Nombre"/>
+	</field>
+	<field name="Cantidad" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="Cantidad"/>
+	</field>
+	<variable name="Total" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{Cantidad}.doubleValue()]]></variableExpression>
+	</variable>
+	<summary>
+		<band height="214">
+			<pieChart>
+				<chart evaluationTime="Report">
+					<reportElement x="310" y="12" width="240" height="200" isPrintInFirstWholeBand="true" uuid="b603040c-ba8c-4433-9728-28e67b0142ca">
+						<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+					</reportElement>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<pieDataset>
+					<dataset resetType="Report"/>
+					<keyExpression><![CDATA[$F{Nombre}]]></keyExpression>
+					<valueExpression><![CDATA[$F{Cantidad}]]></valueExpression>
+					<labelExpression><![CDATA[FIXED($F{Cantidad}.doubleValue()*100/$P{Total}.doubleValue(),1)+"%"]]></labelExpression>
+				</pieDataset>
+				<piePlot>
+					<plot>
+						<seriesColor seriesOrder="0" color="#EB636B"/>
+						<seriesColor seriesOrder="1" color="#779ECB"/>
+					</plot>
+					<itemLabel>
+						<font size="8"/>
+					</itemLabel>
+				</piePlot>
+			</pieChart>
+			<barChart>
+				<chart evaluationTime="Report">
+					<reportElement x="-1" y="12" width="281" height="200" uuid="f8f0f734-1e48-462f-b0f2-66ee0f8b66d1">
+						<property name="net.sf.jasperreports.chart.range.axis.integer.unit" value="true"/>
+					</reportElement>
+					<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+					<chartTitle/>
+					<chartSubtitle/>
+					<chartLegend/>
+				</chart>
+				<categoryDataset>
+					<dataset resetType="Report"/>
+					<categorySeries>
+						<seriesExpression><![CDATA[$F{Nombre}]]></seriesExpression>
+						<categoryExpression><![CDATA[""]]></categoryExpression>
+						<valueExpression><![CDATA[$F{Cantidad}]]></valueExpression>
+						<labelExpression><![CDATA[$F{Nombre}]]></labelExpression>
+					</categorySeries>
+				</categoryDataset>
+				<barPlot>
+					<plot>
+						<seriesColor seriesOrder="0" color="#EB636B"/>
+						<seriesColor seriesOrder="1" color="#779ECB"/>
+					</plot>
+					<itemLabel/>
+					<categoryAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</categoryAxisFormat>
+					<valueAxisFormat>
+						<axisFormat labelColor="#000000" tickLabelColor="#000000" axisLineColor="#000000"/>
+					</valueAxisFormat>
+				</barPlot>
+			</barChart>
+			<staticText>
+				<reportElement x="-1" y="-20" width="460" height="30" uuid="160c264b-b966-498a-9267-c5441f03bae8"/>
+				<textElement>
+					<font fontName="Arial" size="12"/>
+				</textElement>
+				<text><![CDATA[Gráficos de tickets analizados, distribuidos entre escalados y no escalados.]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

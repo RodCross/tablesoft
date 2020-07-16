@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Lista_Transferencia_Externa" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="d3dc9253-14fa-498a-965d-64a71912077f">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Ticket_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[select TT.transferencia_id, 
+CONCAT(P.nombre, " " ,P.apellido_paterno, " ",  P.apellido_materno) as nombrePersona,
+TT.fecha_transferencia, 
+TT.comentario,
+C.nombre as nombreCategoria
+from transferencia_ticket TT
+inner join transferencia_interna TI
+on TI.transferencia_id = TT.transferencia_id
+inner join agente A
+on TT.agente_id = A.agente_id 
+inner join persona P
+on P.codigo = A.codigo 
+inner join categoria C
+on C.categoria_id = TI.categoria_id_to
+where TT.ticket_id = $P{Ticket_id}  ;]]>
+	</queryString>
+	<field name="transferencia_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="transferencia_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transferencia_ticket"/>
+	</field>
+	<field name="nombrePersona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombrePersona"/>
+	</field>
+	<field name="fecha_transferencia" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha_transferencia"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transferencia_ticket"/>
+	</field>
+	<field name="comentario" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="comentario"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="transferencia_ticket"/>
+	</field>
+	<field name="nombreCategoria" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombreCategoria"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="categoria"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="5" y="12" width="320" height="23" uuid="f1b7d2d2-6be2-4bea-a86d-8b226839391d"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de reasignaciones de categoría del ticket]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="8" y="7" width="26" height="30" uuid="c0a835ca-57d7-45d1-9c12-3aa97c207d42">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="53878724-85ac-4790-b963-8f10c94534db"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="5" y="2" width="542" height="1" forecolor="#006699" uuid="a9c8415d-a11a-4b05-b955-3d4c60996274"/>
+			</line>
+			<staticText>
+				<reportElement x="41" y="7" width="99" height="30" uuid="eab5e540-7005-4195-987b-76056da39ad5">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bf71c8c4-fbe8-4b25-b782-14e18b7cf09d"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Reasignación realizada por:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="151" y="7" width="80" height="30" uuid="20f544ec-6248-4778-a0a2-d43646c9cd88">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="4a1d6a45-c383-4694-a61c-9f585ee56d8a"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha de la reasignación]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="240" y="7" width="144" height="30" uuid="5b555e8a-bf60-4d42-8357-3d972ca1eb35">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0e1dedaf-0881-40c0-98f0-51fcdf677807"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comentario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="395" y="7" width="105" height="30" uuid="a7e48d9f-86e0-411c-ac1a-d2682df2f835">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="06ccf63c-7919-4fd0-ae59-275d74d86f3e"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Categoria a la que fue reasignada]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="6" y="36" width="541" height="1" forecolor="#006699" uuid="9d008d3f-1d57-471b-b242-ecd0029111f1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="8" y="10" width="25" height="50" uuid="b94ac1a6-7015-4943-90a1-8476a0ab6cab">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="462a758c-f40c-4cbf-8bf3-3fb770e96477"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{transferencia_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="41" y="10" width="99" height="50" uuid="e7415c61-777b-4b8e-bdde-f13f5f2de5b4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="83154789-50a6-4dd8-aa4d-d3013aab197d"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="151" y="10" width="80" height="50" uuid="41c227b3-b158-4a6c-8351-17a541422d16">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="be1effdb-9749-4f94-bc2c-28a0e4e9710e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fecha_transferencia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="240" y="10" width="144" height="50" uuid="56524ce3-7f11-49e2-b027-30ead69f1cf0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4a93cb4-184d-4192-aae3-0412af083c1e"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{comentario}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="395" y="10" width="140" height="50" uuid="eab2380f-8f7e-46b5-846c-3e800a660f32">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2245768c-cf94-441f-a4d0-f516b5a54b59"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombreCategoria}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

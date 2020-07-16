@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Lista_Comentarios_Ticket" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="23a70dba-25ef-4a20-83e5-b97f53f15788">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="ConexionPixies"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="Ticket_id" class="java.lang.Integer"/>
+	<queryString>
+		<![CDATA[SELECT C.comentario_id, CONCAT(P.nombre, " " ,P.apellido_paterno, " ",  P.apellido_materno) as nombrePersona, C.texto, C.fecha
+from comentario C
+inner join persona P 
+on P.codigo = C.codigo_persona
+where C.ticket_id =  $P{Ticket_id} ;]]>
+	</queryString>
+	<field name="comentario_id" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="comentario_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comentario"/>
+	</field>
+	<field name="nombrePersona" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nombrePersona"/>
+	</field>
+	<field name="texto" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="texto"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comentario"/>
+	</field>
+	<field name="fecha" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="fecha"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="comentario"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band height="37" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="7" width="230" height="23" uuid="fb885d2d-3dbe-42df-bc65-1a25fcb9123a"/>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Lista de comentarios del ticket]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="3" y="1" width="40" height="30" uuid="a112c2dc-c20c-42b8-afe7-5a31865d397a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb2d2e1f-96bc-4f90-b7a7-acfc1237c11f"/>
+					<property name="com.jaspersoft.studio.unit.y" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ID]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="2" y="-2" width="542" height="1" forecolor="#006699" uuid="2f1cb67b-c714-4805-98ca-3be767294868"/>
+			</line>
+			<staticText>
+				<reportElement x="50" y="1" width="230" height="30" uuid="eb7f2bce-d391-4b5f-9972-1f0bb959cdb6">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b2b6da5-a4f7-4681-9810-5463bc941c42"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comentario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="288" y="1" width="80" height="30" uuid="eb444891-c9f1-456a-8fd0-5042116c58c4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="63a4caf3-c318-45a9-bdf2-1a20c61ae0f5"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Fecha del comentario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="380" y="1" width="164" height="30" uuid="b7b513ed-5118-4414-8c81-61f49cff6a25">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abf13e64-26af-44de-9e4c-add7ddcf8ec3"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Comentario realizado por:]]></text>
+			</staticText>
+			<line>
+				<reportElement mode="Opaque" x="3" y="34" width="541" height="1" forecolor="#006699" uuid="4fd0742c-e3a4-48ca-8ad7-d1fcfe788d7d"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="3" y="4" width="40" height="50" uuid="0fb0bc69-063c-4a1c-b494-6a36b9ca4413">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb2d2e1f-96bc-4f90-b7a7-acfc1237c11f"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+					<property name="com.jaspersoft.studio.unit.x" value="px"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{comentario_id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="50" y="4" width="230" height="50" uuid="e43edee0-066b-4a96-a345-a3243cdd52f0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1b2b6da5-a4f7-4681-9810-5463bc941c42"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{texto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="288" y="4" width="80" height="50" uuid="cda785e8-2b47-4041-a292-b6cb197bb3f2">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="63a4caf3-c318-45a9-bdf2-1a20c61ae0f5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fecha}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="380" y="4" width="164" height="50" uuid="2e8e2bb9-37ab-4ad7-b91e-9b85e4856841">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="abf13e64-26af-44de-9e4c-add7ddcf8ec3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nombrePersona}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

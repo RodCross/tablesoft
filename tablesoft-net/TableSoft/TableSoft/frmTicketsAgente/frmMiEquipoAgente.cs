@@ -13,6 +13,7 @@ namespace TableSoft
         private TicketWS.equipo equipo;
         private TicketWS.estadoTicket estActivo;
         private TicketWS.estadoTicket estRecategorizado;
+        private TicketWS.estadoTicket estDemorado;
 
 
         public frmMiEquipoAgente()
@@ -32,6 +33,11 @@ namespace TableSoft
             estRecategorizado = new TicketWS.estadoTicket
             {
                 estadoId = (int)Estado.Recategorizado
+            };
+
+            estDemorado = new TicketWS.estadoTicket
+            {
+                estadoId = (int)Estado.Demorado
             };
 
             Refrescar();
@@ -158,6 +164,15 @@ namespace TableSoft
             }
 
             arrTickets = ticketDAO.listarTicketsPorEstadoPorEquipo(estRecategorizado, equipo);
+            if (arrTickets != null)
+            {
+                foreach (TicketWS.ticket t in arrTickets)
+                {
+                    ticketsEnEspera.Add(t);
+                }
+            }
+
+            arrTickets = ticketDAO.listarTicketsPorEstadoPorEquipo(estDemorado, equipo);
             if (arrTickets != null)
             {
                 foreach (TicketWS.ticket t in arrTickets)

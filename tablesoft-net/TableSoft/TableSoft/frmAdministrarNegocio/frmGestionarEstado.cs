@@ -23,6 +23,7 @@ namespace TableSoft
             txtIDEstado.Text = estado.estadoId.ToString();
             txtNombre.Text = estado.nombre;
             txtDescripcion.Text = estado.descripcion;
+            txtNombre.Enabled = false;
             btnActualizar.Visible = true;
             btnGuardar.Visible = false;
         }
